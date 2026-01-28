@@ -1,0 +1,174 @@
+{
+  "terms": [
+    {
+      "en": "Headquarters",
+      "abbr": "HQ",
+      "ko": "본부",
+      "vi": "Trụ sở chính",
+      "definition": {
+        "ko": "기지의 중심 건물. 다른 건물의 최대 레벨을 결정합니다.",
+        "vi": "Công trình trung tâm của căn cứ. Quyết định cấp tối đa của các công trình khác."
+      }
+    },
+    {
+      "en": "Combat Power",
+      "abbr": "CP",
+      "ko": "전투력",
+      "vi": "Sức mạnh chiến đấu",
+      "definition": {
+        "ko": "플레이어의 전체적인 전력을 나타내는 수치입니다.",
+        "vi": "Chỉ số thể hiện sức mạnh tổng thể của người chơi."
+      }
+    },
+    {
+      "en": "Assaulter",
+      "abbr": null,
+      "ko": "어썰터",
+      "vi": "Lính đột kích",
+      "definition": {
+        "ko": "근접 전투 특화 병종. 높은 방어력과 HP를 가집니다.",
+        "vi": "Binh chủng chuyên cận chiến. Có phòng thủ và HP cao."
+      }
+    },
+    {
+      "en": "Shooter",
+      "abbr": null,
+      "ko": "슈터",
+      "vi": "Xạ thủ",
+      "definition": {
+        "ko": "원거리 전투 특화 병종. 높은 공격력을 가집니다.",
+        "vi": "Binh chủng chuyên tầm xa. Có sức tấn công cao."
+      }
+    },
+    {
+      "en": "Rider",
+      "abbr": null,
+      "ko": "라이더",
+      "vi": "Kỵ binh",
+      "definition": {
+        "ko": "이동 속도가 빠른 병종. 기동성이 뛰어납니다.",
+        "vi": "Binh chủng có tốc độ di chuyển nhanh. Cơ động tốt."
+      }
+    },
+    {
+      "en": "Formation",
+      "abbr": null,
+      "ko": "진형",
+      "vi": "Đội hình",
+      "definition": {
+        "ko": "전투에서 부대와 영웅의 배치 구성입니다.",
+        "vi": "Cấu hình bố trí đội quân và anh hùng trong trận chiến."
+      }
+    },
+    {
+      "en": "F2P",
+      "abbr": "F2P",
+      "ko": "무과금",
+      "vi": "Chơi miễn phí",
+      "definition": {
+        "ko": "Free to Play. 실제 돈을 쓰지 않고 플레이하는 방식입니다.",
+        "vi": "Free to Play. Cách chơi không dùng tiền thật."
+      }
+    },
+    {
+      "en": "Hero",
+      "abbr": null,
+      "ko": "영웅",
+      "vi": "Anh hùng",
+      "definition": {
+        "ko": "부대를 이끄는 특수 캐릭터. 고유 스킬을 가집니다.",
+        "vi": "Nhân vật đặc biệt dẫn dắt đội quân. Có kỹ năng riêng."
+      }
+    },
+    {
+      "en": "Research",
+      "abbr": null,
+      "ko": "연구",
+      "vi": "Nghiên cứu",
+      "definition": {
+        "ko": "연구소에서 진행하는 기술 개발. 다양한 보너스를 제공합니다.",
+        "vi": "Phát triển công nghệ tại phòng nghiên cứu. Cung cấp nhiều bonus."
+      }
+    },
+    {
+      "en": "Alliance",
+      "abbr": null,
+      "ko": "연맹",
+      "vi": "Liên minh",
+      "definition": {
+        "ko": "플레이어들이 모여 만든 그룹. 협력 콘텐츠에 참여할 수 있습니다.",
+        "vi": "Nhóm được tạo bởi người chơi. Có thể tham gia nội dung hợp tác."
+      }
+    },
+    {
+      "en": "Event",
+      "abbr": null,
+      "ko": "이벤트",
+      "vi": "Sự kiện",
+      "definition": {
+        "ko": "기간 한정으로 진행되는 특별 콘텐츠입니다.",
+        "vi": "Nội dung đặc biệt diễn ra trong thời gian giới hạn."
+      }
+    },
+    {
+      "en": "Redeem Code",
+      "abbr": null,
+      "ko": "리딤 코드",
+      "vi": "Mã đổi thưởng",
+      "definition": {
+        "ko": "입력하면 무료 보상을 받을 수 있는 코드입니다.",
+        "vi": "Mã có thể nhập để nhận phần thưởng miễn phí."
+      }
+    },
+    {
+      "en": "Blood Rose",
+      "abbr": null,
+      "ko": "블러드 로즈",
+      "vi": "Blood Rose",
+      "definition": {
+        "ko": "3대 진영 중 하나. 공격적인 플레이 스타일에 적합합니다.",
+        "vi": "Một trong 3 phe phái. Phù hợp với phong cách tấn công."
+      }
+    },
+    {
+      "en": "Wings of Dawn",
+      "abbr": null,
+      "ko": "윙즈 오브 던",
+      "vi": "Wings of Dawn",
+      "definition": {
+        "ko": "3대 진영 중 하나. 균형 잡힌 능력치를 가집니다.",
+        "vi": "Một trong 3 phe phái. Có chỉ số cân bằng."
+      }
+    },
+    {
+      "en": "Guard of Order",
+      "abbr": null,
+      "ko": "가드 오브 오더",
+      "vi": "Guard of Order",
+      "definition": {
+        "ko": "3대 진영 중 하나. 방어적인 플레이 스타일에 적합합니다.",
+        "vi": "Một trong 3 phe phái. Phù hợp với phong cách phòng thủ."
+      }
+    },
+    {
+      "en": "Server vs Server",
+      "abbr": "SvS",
+      "ko": "서버 대전",
+      "vi": "Đại chiến máy chủ",
+      "definition": {
+        "ko": "서버 간 대규모 전쟁 이벤트입니다.",
+        "vi": "Sự kiện chiến tranh quy mô lớn giữa các máy chủ."
+      }
+    },
+    {
+      "en": "Alliance Duel",
+      "abbr": null,
+      "ko": "연맹 대결",
+      "vi": "Đấu Liên minh",
+      "definition": {
+        "ko": "연맹 간 대결 콘텐츠입니다.",
+        "vi": "Nội dung đấu giữa các liên minh."
+      }
+    }
+  ]
+}

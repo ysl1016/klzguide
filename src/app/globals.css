@@ -1,26 +1,224 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Military Theme Colors */
+  --color-military: var(--military);
+  --color-military-foreground: var(--military-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-alert: var(--alert);
+  --color-alert-foreground: var(--alert-foreground);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-tip: var(--tip);
+  --color-tip-foreground: var(--tip-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Dark Military Theme (Default) */
+:root {
+  --radius: 0.625rem;
+
+  /* Base Colors - Dark Military Tone */
+  --background: #1A1A2E;
+  --foreground: #F5F5F5;
+
+  /* Card */
+  --card: #232340;
+  --card-foreground: #F5F5F5;
+
+  /* Popover */
+  --popover: #232340;
+  --popover-foreground: #F5F5F5;
+
+  /* Primary - Military Green */
+  --primary: #2D4A3E;
+  --primary-foreground: #F5F5F5;
+
+  /* Secondary */
+  --secondary: #2A2A45;
+  --secondary-foreground: #F5F5F5;
+
+  /* Muted */
+  --muted: #2A2A45;
+  --muted-foreground: #9CA3AF;
+
+  /* Accent */
+  --accent: #2D4A3E;
+  --accent-foreground: #F5F5F5;
+
+  /* Destructive */
+  --destructive: #DC2626;
+
+  /* Border */
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #22D3EE;
+
+  /* Sidebar */
+  --sidebar: #16162A;
+  --sidebar-foreground: #F5F5F5;
+  --sidebar-primary: #2D4A3E;
+  --sidebar-primary-foreground: #F5F5F5;
+  --sidebar-accent: #2A2A45;
+  --sidebar-accent-foreground: #F5F5F5;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #22D3EE;
+
+  /* Charts */
+  --chart-1: #2D4A3E;
+  --chart-2: #FF6B35;
+  --chart-3: #22D3EE;
+  --chart-4: #DC2626;
+  --chart-5: #FBBF24;
+
+  /* Custom Theme Colors */
+  --military: #2D4A3E;
+  --military-foreground: #F5F5F5;
+  --warning: #FF6B35;
+  --warning-foreground: #FFFFFF;
+  --alert: #DC2626;
+  --alert-foreground: #FFFFFF;
+  --highlight: #22D3EE;
+  --highlight-foreground: #1A1A2E;
+  --tip: #10B981;
+  --tip-foreground: #FFFFFF;
+  --info: #3B82F6;
+  --info-foreground: #FFFFFF;
+}
+
+/* Light Mode (Optional) */
+.light {
+  --background: #F8FAFC;
+  --foreground: #1A1A2E;
+
+  --card: #FFFFFF;
+  --card-foreground: #1A1A2E;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A2E;
+
+  --primary: #2D4A3E;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #E2E8F0;
+  --secondary-foreground: #1A1A2E;
+
+  --muted: #E2E8F0;
+  --muted-foreground: #64748B;
+
+  --accent: #2D4A3E;
+  --accent-foreground: #FFFFFF;
+
+  --destructive: #DC2626;
+
+  --border: rgba(0, 0, 0, 0.1);
+  --input: rgba(0, 0, 0, 0.08);
+  --ring: #2D4A3E;
+
+  --sidebar: #F1F5F9;
+  --sidebar-foreground: #1A1A2E;
+  --sidebar-primary: #2D4A3E;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E2E8F0;
+  --sidebar-accent-foreground: #1A1A2E;
+  --sidebar-border: rgba(0, 0, 0, 0.08);
+  --sidebar-ring: #2D4A3E;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Difficulty Badges */
+.badge-beginner { @apply bg-emerald-500/20 text-emerald-400 border-emerald-500/30; }
+.badge-basic { @apply bg-blue-500/20 text-blue-400 border-blue-500/30; }
+.badge-intermediate { @apply bg-yellow-500/20 text-yellow-400 border-yellow-500/30; }
+.badge-advanced { @apply bg-orange-500/20 text-orange-400 border-orange-500/30; }
+.badge-expert { @apply bg-red-500/20 text-red-400 border-red-500/30; }
+
+/* Info Boxes */
+.info-tip {
+  @apply bg-emerald-500/10 border-l-4 border-emerald-500 p-4 rounded-r-lg;
+}
+
+.info-warning {
+  @apply bg-orange-500/10 border-l-4 border-orange-500 p-4 rounded-r-lg;
+}
+
+.info-important {
+  @apply bg-red-500/10 border-l-4 border-red-500 p-4 rounded-r-lg;
+}
+
+.info-note {
+  @apply bg-blue-500/10 border-l-4 border-blue-500 p-4 rounded-r-lg;
 }

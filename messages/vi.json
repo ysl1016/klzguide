@@ -1,0 +1,109 @@
+{
+  "common": {
+    "siteName": "KLZ Guide",
+    "siteDescription": "Hướng dẫn tiếng Việt cho Last Z: Survival Shooter",
+    "lastUpdated": "Cập nhật lần cuối",
+    "readTime": "Thời gian đọc",
+    "minutes": "phút",
+    "difficulty": "Độ khó",
+    "search": "Tìm kiếm",
+    "searchPlaceholder": "Tìm kiếm hướng dẫn...",
+    "home": "Trang chủ",
+    "viewAll": "Xem tất cả",
+    "relatedGuides": "Hướng dẫn liên quan",
+    "tableOfContents": "Mục lục",
+    "share": "Chia sẻ",
+    "language": "Ngôn ngữ"
+  },
+  "nav": {
+    "beginner": "Hướng dẫn cơ bản",
+    "progression": "Hướng dẫn phát triển",
+    "research": "Nghiên cứu & Công nghệ",
+    "heroes": "Anh hùng",
+    "gear": "Trang bị",
+    "pvp": "PvP & Đội hình",
+    "events": "Sự kiện",
+    "economy": "Kinh tế & F2P",
+    "tools": "Công cụ",
+    "info": "Thông tin"
+  },
+  "submenu": {
+    "intro": "Giới thiệu game",
+    "tips": "Mẹo cho người mới",
+    "faction": "Chọn phe phái",
+    "mistakes": "TOP 10 sai lầm ban đầu",
+    "hq": "Nâng cấp Trụ sở",
+    "combatPower": "Tăng Sức mạnh chiến đấu",
+    "dailyRoutine": "Thói quen hàng ngày",
+    "priority": "Ưu tiên nghiên cứu",
+    "techTree": "Cây công nghệ",
+    "tierList": "Bảng xếp hạng anh hùng",
+    "leveling": "Phát triển anh hùng",
+    "synergy": "Kết hợp anh hùng",
+    "enhancement": "Nâng cấp trang bị",
+    "sets": "Hiệu ứng bộ",
+    "formations": "Kết hợp đội hình",
+    "strategy": "Chiến thuật PvP",
+    "daily": "Lịch hàng ngày/tuần",
+    "allianceDuel": "Đấu Liên minh",
+    "svs": "Đại chiến máy chủ",
+    "farming": "Farm tài nguyên",
+    "freeDiamonds": "Kim cương miễn phí",
+    "redeemCodes": "Mã đổi thưởng",
+    "cpCalculator": "Máy tính CP",
+    "heroCompare": "So sánh anh hùng",
+    "glossary": "Từ điển thuật ngữ",
+    "faq": "Câu hỏi thường gặp"
+  },
+  "difficulty": {
+    "beginner": "Cơ bản",
+    "basic": "Sơ cấp",
+    "intermediate": "Trung cấp",
+    "advanced": "Nâng cao",
+    "expert": "Chuyên gia"
+  },
+  "home": {
+    "welcome": "Chào mừng đến Trung tâm chỉ huy",
+    "subtitle": "Hướng dẫn tiếng Việt cho Last Z: Survival Shooter dành cho Liên minh [KLZ]",
+    "latestGuides": "Hướng dẫn mới nhất",
+    "popularGuides": "Hướng dẫn phổ biến",
+    "quickStart": "Bắt đầu nhanh",
+    "quickStartDesc": "Mới chơi game? Hãy xem hướng dẫn cơ bản trước.",
+    "forBeginners": "Dành cho người mới",
+    "forBeginnersDesc": "Chúng tôi sẽ hướng dẫn bạn hệ thống cơ bản và cách phát triển.",
+    "latestCodes": "Mã đổi thưởng mới nhất",
+    "noExpiredCodes": "Chỉ hiển thị mã chưa hết hạn"
+  },
+  "hero": {
+    "name": "Tên",
+    "class": "Lớp",
+    "faction": "Phe phái",
+    "tier": "Xếp hạng",
+    "role": "Vai trò",
+    "rarity": "Độ hiếm",
+    "filterByClass": "Lọc theo lớp",
+    "filterByFaction": "Lọc theo phe phái",
+    "filterByTier": "Lọc theo xếp hạng",
+    "sortBy": "Sắp xếp",
+    "sortByName": "Theo tên",
+    "sortByTier": "Theo xếp hạng",
+    "allClasses": "Tất cả lớp",
+    "allFactions": "Tất cả phe phái",
+    "allTiers": "Tất cả xếp hạng"
+  },
+  "class": {
+    "assaulter": "Lính đột kích",
+    "shooter": "Xạ thủ",
+    "rider": "Kỵ binh"
+  },
+  "faction": {
+    "bloodRose": "Blood Rose",
+    "wingsOfDawn": "Wings of Dawn",
+    "guardOfOrder": "Guard of Order"
+  },
+  "footer": {
+    "disclaimer": "Đây là trang hướng dẫn không chính thức do fan tạo ra. Tất cả nội dung và tài liệu game của Last Z: Survival Shooter thuộc quyền sở hữu của chủ bản quyền tương ứng.",
+    "madeWith": "Được tạo với",
+    "for": "cho Liên minh [KLZ]"
+  }
+}
