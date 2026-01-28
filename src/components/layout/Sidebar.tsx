@@ -146,8 +146,8 @@ export function Sidebar() {
 
   return (
     <aside className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0 lg:z-50 lg:pt-16">
-      <div className="flex flex-col flex-1 bg-sidebar border-r border-sidebar-border">
-        <ScrollArea className="flex-1 py-4">
+      <div className="flex flex-col flex-1 bg-sidebar border-r border-sidebar-border overflow-hidden">
+        <ScrollArea className="h-full py-4">
           <nav className="px-3 space-y-1">
             <Accordion
               type="multiple"
