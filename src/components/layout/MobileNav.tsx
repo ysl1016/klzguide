@@ -154,15 +154,15 @@ export function MobileNav() {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-80 p-0 bg-sidebar">
-        <SheetHeader className="px-4 py-4 border-b border-sidebar-border">
+      <SheetContent side="left" className="w-80 p-0 bg-sidebar flex flex-col overflow-hidden">
+        <SheetHeader className="px-4 py-4 border-b border-sidebar-border shrink-0">
           <SheetTitle className="text-left text-sidebar-foreground flex items-center gap-2">
             <Shield className="h-5 w-5 text-primary" />
             {t('common.siteName')}
           </SheetTitle>
         </SheetHeader>
-        <ScrollArea className="h-[calc(100vh-80px)]">
-          <nav className="p-4 space-y-2">
+        <ScrollArea className="flex-1 overflow-hidden">
+          <nav className="p-4 pb-8 space-y-2">
             {/* Home Link */}
             <Link
               href="/"
