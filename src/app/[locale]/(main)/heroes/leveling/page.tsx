@@ -43,7 +43,7 @@ function HeroLevelingContent({ locale }: { locale: string }) {
   const upgradeOrder = [
     {
       tier: 'S+',
-      name: isKorean ? '유찬/리시아 (블러드 로즈)' : 'Yu Chan/Licia (Blood Rose)',
+      name: isKorean ? '유찬/리시아 (블러디 로즈)' : 'Yu Chan/Licia (Blood Rose)',
       priority: 1,
       reason: isKorean ? '돌격 진형 핵심 딜러, 최고 DPS' : 'Dealer chính đội hình Assaulter, DPS cao nhất',
     },
@@ -260,7 +260,7 @@ function HeroLevelingContent({ locale }: { locale: string }) {
             </p>
             <div className="grid gap-2 sm:grid-cols-2 text-sm">
               <div className="p-3 rounded-lg bg-red-500/10">
-                <p className="font-medium text-red-400">{isKorean ? '블러드 로즈' : 'Blood Rose'}</p>
+                <p className="font-medium text-red-400">{isKorean ? '블러디 로즈' : 'Blood Rose'}</p>
                 <p className="text-muted-foreground">{isKorean ? '→ 돌격과 조합' : '→ Kết hợp với Assaulter'}</p>
               </div>
               <div className="p-3 rounded-lg bg-blue-500/10">

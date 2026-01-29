@@ -22,7 +22,7 @@ function BeginnerIntroContent({ locale }: { locale: string }) {
 
   const factions = [
     {
-      name: isKorean ? '블러드 로즈' : 'Blood Rose',
+      name: isKorean ? '블러디 로즈' : 'Blood Rose',
       style: isKorean ? '공격적인 플레이 스타일' : 'Phong cách tấn công',
       recommend: isKorean ? '공격 위주 플레이어' : 'Người chơi ưa tấn công',
       color: 'text-red-400',

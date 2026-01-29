@@ -37,7 +37,7 @@ function HeroCompareContent({ locale }: { locale: string }) {
 
   const factionNames: Record<string, { ko: string; vi: string }> = {
     wingsOfDawn: { ko: '새벽의 날개', vi: 'Cánh Bình Minh' },
-    bloodRose: { ko: '블러드 로즈', vi: 'Blood Rose' },
+    bloodRose: { ko: '블러디 로즈', vi: 'Blood Rose' },
     guardOfOrder: { ko: '질서의 수호자', vi: 'Người Bảo Vệ Trật Tự' },
   };
 
@@ -180,7 +180,7 @@ function HeroCompareContent({ locale }: { locale: string }) {
             </p>
             <p className="text-sm text-muted-foreground">
               {isKorean
-                ? '메인 진형: 같은 진영 5명 (히든 버프 발동). 추천: 새벽의 날개 5명 (서버 70%가 블러드 로즈 선택으로 카운터 유리) 또는 새벽의 날개 3 + 블러드 로즈 2 조합.'
+                ? '메인 진형: 같은 진영 5명 (히든 버프 발동). 추천: 새벽의 날개 5명 (서버 70%가 블러디 로즈 선택으로 카운터 유리) 또는 새벽의 날개 3 + 블러디 로즈 2 조합.'
                 : 'Đội hình chính: 5 người cùng phe (kích hoạt buff ẩn). Khuyến nghị: 5 Cánh Bình Minh (70% server chọn Blood Rose nên counter có lợi) hoặc 3 Cánh Bình Minh + 2 Blood Rose.'}
             </p>
           </CardContent>

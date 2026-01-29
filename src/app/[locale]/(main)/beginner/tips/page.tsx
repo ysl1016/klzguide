@@ -33,7 +33,7 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
       number: 2,
       title: isKorean ? '진영 하나만 선택하세요' : 'Chỉ chọn một phe',
       desc: isKorean
-        ? '블러드 로즈/새벽의 날개/질서의 수호자 중 하나만 선택하세요. 새벽의 날개(슈터)가 대부분 서버에서 블러드 로즈를 카운터하므로 추천됩니다.'
+        ? '블러디 로즈/새벽의 날개/질서의 수호자 중 하나만 선택하세요. 새벽의 날개(슈터)가 대부분 서버에서 블러디 로즈를 카운터하므로 추천됩니다.'
         : 'Chỉ chọn một trong Blood Rose/Cánh Bình Minh/Người Bảo Vệ Trật Tự. Cánh Bình Minh (Xạ thủ) được khuyến nghị vì counter Blood Rose phổ biến.',
       priority: 'high',
     },

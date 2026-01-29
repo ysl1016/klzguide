@@ -83,7 +83,7 @@ function MistakesContent({ locale }: { locale: string }) {
         ? '3개 진영 영웅을 섞어서 사용'
         : 'Dùng anh hùng từ 3 phe lẫn lộn',
       right: isKorean
-        ? '메인 진영 하나 선택 + 서브 진영 2명 조합 (예: 새벽의 날개 3 + 블러드 로즈 2)'
+        ? '메인 진영 하나 선택 + 서브 진영 2명 조합 (예: 새벽의 날개 3 + 블러디 로즈 2)'
         : 'Chọn một phe chính + 2 phụ (VD: 3 Cánh Bình Minh + 2 Blood Rose)',
       severity: 'high',
     },

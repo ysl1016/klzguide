@@ -23,7 +23,7 @@ function FAQContent({ locale }: { locale: string }) {
     {
       q: isKorean ? '어떤 진영을 선택해야 하나요?' : 'Nên chọn phe nào?',
       a: isKorean
-        ? '새벽의 날개를 권장합니다. 서버의 약 70%가 블러드 로즈를 선택하기 때문에, 새벽의 날개 선택 시 카운터 이점을 얻을 수 있습니다. 카운터 시스템: 새벽의 날개 > 블러드 로즈 > 질서의 수호자 > 새벽의 날개.'
+        ? '새벽의 날개를 권장합니다. 서버의 약 70%가 블러디 로즈를 선택하기 때문에, 새벽의 날개 선택 시 카운터 이점을 얻을 수 있습니다. 카운터 시스템: 새벽의 날개 > 블러디 로즈 > 질서의 수호자 > 새벽의 날개.'
         : 'Khuyến nghị Cánh Bình Minh. Khoảng 70% server chọn Blood Rose, nên chọn Cánh Bình Minh có lợi thế counter. Hệ thống counter: Cánh Bình Minh > Blood Rose > Người Bảo Vệ Trật Tự > Cánh Bình Minh.',
     },
     {

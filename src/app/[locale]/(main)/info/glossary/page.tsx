@@ -73,12 +73,12 @@ function GlossaryContent({ locale }: { locale: string }) {
       ko: '새벽의 날개',
       vi: 'Cánh Bình Minh',
       definition: isKorean
-        ? '세 진영 중 하나. 블러드 로즈에 강함. 슈터 특화'
+        ? '세 진영 중 하나. 블러디 로즈에 강함. 슈터 특화'
         : 'Một trong 3 phe. Mạnh chống Blood Rose. Chuyên Shooter',
     },
     {
-      term: isKorean ? '블러드 로즈' : 'Blood Rose',
-      ko: '블러드 로즈',
+      term: isKorean ? '블러디 로즈' : 'Blood Rose',
+      ko: '블러디 로즈',
       vi: 'Blood Rose',
       definition: isKorean
         ? '세 진영 중 하나. 질서의 수호자에 강함. 돌격 특화'
