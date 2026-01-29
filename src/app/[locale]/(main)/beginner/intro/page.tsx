@@ -28,13 +28,13 @@ function BeginnerIntroContent({ locale }: { locale: string }) {
       color: 'text-red-400',
     },
     {
-      name: isKorean ? '새벽의 날개' : 'Wings of Dawn',
+      name: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
       style: isKorean ? '밸런스 잡힌 능력치' : 'Chỉ số cân bằng',
       recommend: isKorean ? '초보자 추천' : 'Khuyến nghị cho người mới',
       color: 'text-blue-400',
     },
     {
-      name: isKorean ? '질서의 수호자' : 'Guard of Order',
+      name: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
       style: isKorean ? '방어적인 플레이 스타일' : 'Phong cách phòng thủ',
       recommend: isKorean ? '방어 위주 플레이어' : 'Người chơi ưa phòng thủ',
       color: 'text-yellow-400',
@@ -206,7 +206,7 @@ function BeginnerIntroContent({ locale }: { locale: string }) {
               <p className="text-sm text-muted-foreground">
                 {isKorean
                   ? '처음 시작하시는 분들은 새벽의 날개 진영을 추천드립니다. 밸런스가 좋아 다양한 상황에 대응하기 쉽습니다.'
-                  : 'Nếu bạn mới bắt đầu, chúng tôi khuyên bạn chọn phe Wings of Dawn. Sự cân bằng giúp dễ dàng ứng phó trong nhiều tình huống.'}
+                  : 'Nếu bạn mới bắt đầu, chúng tôi khuyên bạn chọn phe Cánh Bình Minh. Sự cân bằng giúp dễ dàng ứng phó trong nhiều tình huống.'}
               </p>
             </div>
           </div>

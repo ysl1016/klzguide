@@ -22,7 +22,7 @@ function FactionContent({ locale }: { locale: string }) {
   // 실제 lastzguides.com 기반 진영 데이터
   const factions = [
     {
-      name: isKorean ? '새벽의 날개' : 'Wings of Dawn',
+      name: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
       nameEn: 'Wings of Dawn',
       color: 'text-blue-400',
       borderColor: 'border-blue-500/30',
@@ -31,17 +31,17 @@ function FactionContent({ locale }: { locale: string }) {
       troopType: isKorean ? '슈터 (Shooter)' : 'Xạ thủ (Shooter)',
       style: isKorean ? '원거리 딜러' : 'Dealer tầm xa',
       description: isKorean
-        ? '슈터 중심의 진영. 서버의 약 70%가 블러드 로즈를 선택하기 때문에, 새벽의 날개은 자연스러운 카운터 이점을 가집니다. 전략적으로 가장 추천되는 진영입니다.'
-        : 'Phe tập trung vào Xạ thủ. Khoảng 70% server chọn Blood Rose, nên Wings of Dawn có lợi thế counter tự nhiên. Phe được khuyến nghị nhất về mặt chiến thuật.',
+        ? '슈터 중심의 진영. 서버의 약 70%가 블러드 로즈를 선택하기 때문에, 새벽의 날개는 자연스러운 카운터 이점을 가집니다. 전략적으로 가장 추천되는 진영입니다.'
+        : 'Phe tập trung vào Xạ thủ. Khoảng 70% server chọn Blood Rose, nên Cánh Bình Minh có lợi thế counter tự nhiên. Phe được khuyến nghị nhất về mặt chiến thuật.',
       pros: isKorean
         ? ['블러드 로즈(메타 진영)를 카운터', '원거리 DPS로 안정적', '대부분의 서버에서 유리']
         : ['Counter Blood Rose (phe meta)', 'DPS tầm xa ổn định', 'Có lợi ở hầu hết server'],
       cons: isKorean
         ? ['질서의 수호자에게 카운터 당함', '로라(Laura)가 유일한 프론트라인']
-        : ['Bị counter bởi Guard of Order', 'Laura là frontline duy nhất'],
+        : ['Bị counter bởi Người Bảo Vệ Trật Tự', 'Laura là frontline duy nhất'],
       recommended: isKorean ? '모든 플레이어 (가장 추천)' : 'Tất cả người chơi (Khuyến nghị nhất)',
       rating: 5,
-      counterInfo: isKorean ? 'Blood Rose를 이김' : 'Thắng Blood Rose',
+      counterInfo: isKorean ? '블러드 로즈를 이김' : 'Thắng Blood Rose',
     },
     {
       name: isKorean ? '블러드 로즈' : 'Blood Rose',
@@ -54,19 +54,19 @@ function FactionContent({ locale }: { locale: string }) {
       style: isKorean ? '근접 돌격' : 'Đột kích cận chiến',
       description: isKorean
         ? '돌격 중심의 진영. 높은 데미지와 프론트라인 강점. 하지만 서버의 약 70%가 이 진영을 선택해서, PvP에서 새벽의 날개에게 카운터 당하는 경우가 많습니다.'
-        : 'Phe tập trung vào Lính đột kích. Sát thương cao và frontline mạnh. Nhưng ~70% server chọn phe này, nên thường bị counter bởi Wings of Dawn trong PvP.',
+        : 'Phe tập trung vào Lính đột kích. Sát thương cao và frontline mạnh. Nhưng ~70% server chọn phe này, nên thường bị counter bởi Cánh Bình Minh trong PvP.',
       pros: isKorean
         ? ['질서의 수호자를 카운터', '높은 데미지 출력', '강력한 프론트라인 영웅들']
-        : ['Counter Guard of Order', 'Sát thương cao', 'Các anh hùng frontline mạnh'],
+        : ['Counter Người Bảo Vệ Trật Tự', 'Sát thương cao', 'Các anh hùng frontline mạnh'],
       cons: isKorean
         ? ['새벽의 날개에게 카운터 당함', '가장 많이 선택되어 카운터 당하기 쉬움']
-        : ['Bị counter bởi Wings of Dawn', 'Được chọn nhiều nhất nên dễ bị counter'],
+        : ['Bị counter bởi Cánh Bình Minh', 'Được chọn nhiều nhất nên dễ bị counter'],
       recommended: isKorean ? '근접 전투 선호자' : 'Người thích cận chiến',
       rating: 3,
-      counterInfo: isKorean ? 'Guard of Order를 이김' : 'Thắng Guard of Order',
+      counterInfo: isKorean ? '질서의 수호자를 이김' : 'Thắng Người Bảo Vệ Trật Tự',
     },
     {
-      name: isKorean ? '질서의 수호자' : 'Guard of Order',
+      name: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
       nameEn: 'Guard of Order',
       color: 'text-yellow-400',
       borderColor: 'border-yellow-500/30',
@@ -75,17 +75,17 @@ function FactionContent({ locale }: { locale: string }) {
       troopType: isKorean ? '라이더 (Rider)' : 'Kỵ binh (Rider)',
       style: isKorean ? '기동성 + 측면공격' : 'Cơ động + Tấn công sườn',
       description: isKorean
-        ? '라이더 중심의 진영. 새벽의 날개을 카운터하지만, 서버에서 새벽의 날개 메타가 확산되지 않는 한 선택률이 낮습니다.'
-        : 'Phe tập trung vào Kỵ binh. Counter Wings of Dawn, nhưng tỷ lệ chọn thấp trừ khi server có meta Wings of Dawn lan rộng.',
+        ? '라이더 중심의 진영. 새벽의 날개를 카운터하지만, 서버에서 새벽의 날개 메타가 확산되지 않는 한 선택률이 낮습니다.'
+        : 'Phe tập trung vào Kỵ binh. Counter Cánh Bình Minh, nhưng tỷ lệ chọn thấp trừ khi server có meta Cánh Bình Minh lan rộng.',
       pros: isKorean
-        ? ['새벽의 날개을 카운터', '높은 기동성', '할리에나 등 강력한 탱크']
-        : ['Counter Wings of Dawn', 'Cơ động cao', 'Tank mạnh như Harleyena'],
+        ? ['새벽의 날개를 카운터', '높은 기동성', '할리에나 등 강력한 탱크']
+        : ['Counter Cánh Bình Minh', 'Cơ động cao', 'Tank mạnh như Harleyena'],
       cons: isKorean
         ? ['블러드 로즈에게 카운터 당함', '선택률이 낮아 카운터 상황이 적음']
         : ['Bị counter bởi Blood Rose', 'Ít được chọn nên ít cơ hội counter'],
-      recommended: isKorean ? '새벽의 날개 메타 서버에서 추천' : 'Khuyến nghị ở server meta Wings of Dawn',
+      recommended: isKorean ? '새벽의 날개 메타 서버에서 추천' : 'Khuyến nghị ở server meta Cánh Bình Minh',
       rating: 3,
-      counterInfo: isKorean ? 'Wings of Dawn을 이김' : 'Thắng Wings of Dawn',
+      counterInfo: isKorean ? '새벽의 날개를 이김' : 'Thắng Cánh Bình Minh',
     },
   ];
 
@@ -118,9 +118,9 @@ function FactionContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '새벽의 날개(슈터) 추천 - 서버 70%가 블러드 로즈라서 카운터 이점' : 'Wings of Dawn (Xạ thủ) được khuyến nghị - Counter 70% server chọn Blood Rose'}</li>
-              <li>• {isKorean ? '상성: 윙즈 > 블러드 > 가드 > 윙즈 (가위바위보)' : 'Tương khắc: Wings > Blood > Guard > Wings (oẳn tù tì)'}</li>
-              <li>• {isKorean ? '최적 조합: 윙즈 3명 + 블러드 2명 (크로스 시너지)' : 'Tổ hợp tối ưu: 3 Wings + 2 Blood (cross synergy)'}</li>
+              <li>• {isKorean ? '새벽의 날개(슈터) 추천 - 서버 70%가 블러드 로즈라서 카운터 이점' : 'Cánh Bình Minh (Xạ thủ) được khuyến nghị - Counter 70% server chọn Blood Rose'}</li>
+              <li>• {isKorean ? '상성: 새벽의 날개 > 블러드 로즈 > 질서의 수호자 > 새벽의 날개 (가위바위보)' : 'Tương khắc: Cánh Bình Minh > Blood Rose > Người Bảo Vệ Trật Tự > Cánh Bình Minh (oẳn tù tì)'}</li>
+              <li>• {isKorean ? '최적 조합: 새벽의 날개 3명 + 블러드 로즈 2명 (크로스 시너지)' : 'Tổ hợp tối ưu: 3 Cánh Bình Minh + 2 Blood Rose (cross synergy)'}</li>
             </ul>
           </CardContent>
         </Card>
@@ -136,13 +136,13 @@ function FactionContent({ locale }: { locale: string }) {
           <CardContent>
             <div className="flex flex-col items-center gap-4">
               <div className="flex items-center justify-center gap-4 text-sm">
-                <span className="text-blue-400 font-semibold">Wings of Dawn</span>
+                <span className="text-blue-400 font-semibold">{isKorean ? '새벽의 날개' : 'Cánh Bình Minh'}</span>
                 <span className="text-muted-foreground">→ {isKorean ? '이김' : 'thắng'} →</span>
-                <span className="text-red-400 font-semibold">Blood Rose</span>
+                <span className="text-red-400 font-semibold">{isKorean ? '블러드 로즈' : 'Blood Rose'}</span>
                 <span className="text-muted-foreground">→ {isKorean ? '이김' : 'thắng'} →</span>
-                <span className="text-yellow-400 font-semibold">Guard of Order</span>
+                <span className="text-yellow-400 font-semibold">{isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự'}</span>
                 <span className="text-muted-foreground">→ {isKorean ? '이김' : 'thắng'} →</span>
-                <span className="text-blue-400 font-semibold">Wings...</span>
+                <span className="text-blue-400 font-semibold">{isKorean ? '새벽의...' : 'Cánh...'}</span>
               </div>
               <p className="text-xs text-muted-foreground text-center">
                 {isKorean
@@ -234,15 +234,15 @@ function FactionContent({ locale }: { locale: string }) {
               <thead>
                 <tr className="border-b border-border">
                   <th className="text-left p-3">{isKorean ? '항목' : 'Hạng mục'}</th>
-                  <th className="text-center p-3 text-blue-400">Wings of Dawn</th>
-                  <th className="text-center p-3 text-red-400">Blood Rose</th>
-                  <th className="text-center p-3 text-yellow-400">Guard of Order</th>
+                  <th className="text-center p-3 text-blue-400">{isKorean ? '새벽의 날개' : 'Cánh Bình Minh'}</th>
+                  <th className="text-center p-3 text-red-400">{isKorean ? '블러드 로즈' : 'Blood Rose'}</th>
+                  <th className="text-center p-3 text-yellow-400">{isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự'}</th>
                 </tr>
               </thead>
               <tbody>
                 {[
                   { label: isKorean ? '병종' : 'Binh chủng', values: [isKorean ? '슈터' : 'Xạ thủ', isKorean ? '돌격' : 'Đột kích', isKorean ? '라이더' : 'Kỵ binh'] },
-                  { label: isKorean ? '카운터' : 'Counter', values: ['Blood Rose', 'Guard of Order', 'Wings of Dawn'] },
+                  { label: isKorean ? '카운터' : 'Counter', values: [isKorean ? '블러드 로즈' : 'Blood Rose', isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự', isKorean ? '새벽의 날개' : 'Cánh Bình Minh'] },
                   { label: isKorean ? '서버 점유율' : 'Tỷ lệ server', values: ['~20%', '~70%', '~10%'] },
                   { label: isKorean ? 'PvP 유리함' : 'PvP lợi thế', values: ['★★★★★', '★★★☆☆', '★★☆☆☆'] },
                   { label: isKorean ? '추천도' : 'Khuyến nghị', values: ['★★★★★', '★★★☆☆', '★★★☆☆'] },
@@ -275,8 +275,8 @@ function FactionContent({ locale }: { locale: string }) {
               </Badge>
               <span className="text-sm">
                 {isKorean
-                  ? 'Wings of Dawn 3명 + Blood Rose 2명 (카운터 이점 + 크로스 시즌 시너지)'
-                  : '3 Wings of Dawn + 2 Blood Rose (lợi thế counter + synergy cross-season)'}
+                  ? '새벽의 날개 3명 + 블러드 로즈 2명 (카운터 이점 + 크로스 시즌 시너지)'
+                  : '3 Cánh Bình Minh + 2 Blood Rose (lợi thế counter + synergy cross-season)'}
               </span>
             </div>
             <div className="flex items-center gap-3">
@@ -285,8 +285,8 @@ function FactionContent({ locale }: { locale: string }) {
               </Badge>
               <span className="text-sm text-muted-foreground">
                 {isKorean
-                  ? 'Guard of Order 3명 + Wings of Dawn 2명 (WoD 메타 서버용)'
-                  : '3 Guard of Order + 2 Wings of Dawn (cho server meta WoD)'}
+                  ? '질서의 수호자 3명 + 새벽의 날개 2명 (새벽의 날개 메타 서버용)'
+                  : '3 Người Bảo Vệ Trật Tự + 2 Cánh Bình Minh (cho server meta Cánh Bình Minh)'}
               </span>
             </div>
           </CardContent>
@@ -317,8 +317,8 @@ function FactionContent({ locale }: { locale: string }) {
               </p>
               <p className="text-sm text-muted-foreground">
                 {isKorean
-                  ? '새벽의 날개(슈터)을 메인 진영으로 선택하세요. 서버의 약 70%가 블러드 로즈를 선택하기 때문에 자연스러운 PvP 이점이 있습니다. 영웅은 진형에 맞춰 슈터 중심으로 키우되, 서브 영웅으로 블러드 로즈 돌격 2명을 추가하면 최적의 조합이 됩니다.'
-                  : 'Chọn Wings of Dawn (Xạ thủ) làm phe chính. ~70% server chọn Blood Rose nên có lợi thế PvP tự nhiên. Nuôi anh hùng tập trung vào Xạ thủ, thêm 2 Lính đột kích Blood Rose làm phụ để có tổ hợp tối ưu.'}
+                  ? '새벽의 날개(슈터)를 메인 진영으로 선택하세요. 서버의 약 70%가 블러드 로즈를 선택하기 때문에 자연스러운 PvP 이점이 있습니다. 영웅은 진형에 맞춰 슈터 중심으로 키우되, 서브 영웅으로 블러드 로즈 돌격 2명을 추가하면 최적의 조합이 됩니다.'
+                  : 'Chọn Cánh Bình Minh (Xạ thủ) làm phe chính. ~70% server chọn Blood Rose nên có lợi thế PvP tự nhiên. Nuôi anh hùng tập trung vào Xạ thủ, thêm 2 Lính đột kích Blood Rose làm phụ để có tổ hợp tối ưu.'}
               </p>
             </div>
           </div>

@@ -39,44 +39,44 @@ function HeroSynergyContent({ locale }: { locale: string }) {
 
   const recommendedFormations = [
     {
-      name: isKorean ? '윙즈 5 (F2P 권장)' : 'Wings 5 (Khuyến nghị F2P)',
-      composition: '5 Wings of Dawn',
+      name: isKorean ? '새벽의 날개 5 (F2P 권장)' : 'Cánh Bình Minh 5 (Khuyến nghị F2P)',
+      composition: isKorean ? '새벽의 날개 5명' : '5 Cánh Bình Minh',
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
       border: 'border-blue-500/30',
       reason: isKorean
-        ? 'F2P 대부분이 블러드로즈 → 윙즈로 +10% 카운터 보너스. 슈터 스킬 시너지 극대화'
-        : 'Đa số F2P dùng Blood Rose → Wings có +10% counter bonus. Tối đa synergy skill Shooter',
+        ? 'F2P 대부분이 블러드 로즈 → 새벽의 날개로 +10% 카운터 보너스. 슈터 스킬 시너지 극대화'
+        : 'Đa số F2P dùng Blood Rose → Cánh Bình Minh có +10% counter bonus. Tối đa synergy skill Shooter',
       troops: isKorean ? '슈터 집중' : 'Tập trung Shooter',
     },
     {
-      name: isKorean ? '윙즈 3 + 블러드 2' : 'Wings 3 + Blood 2',
-      composition: '3 Wings + 2 Blood Rose',
+      name: isKorean ? '새벽의 날개 3 + 블러드 로즈 2' : 'Cánh Bình Minh 3 + Blood Rose 2',
+      composition: isKorean ? '새벽의 날개 3명 + 블러드 로즈 2명' : '3 Cánh Bình Minh + 2 Blood Rose',
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
       border: 'border-purple-500/30',
       reason: isKorean
-        ? '유연한 조합. 윙즈 +107% ATK 보너스 유지하면서 블러드 영웅 활용'
-        : 'Kết hợp linh hoạt. Giữ +107% ATK Wings, tận dụng anh hùng Blood',
+        ? '유연한 조합. 새벽의 날개 +107% ATK 보너스 유지하면서 블러드 로즈 영웅 활용'
+        : 'Kết hợp linh hoạt. Giữ +107% ATK Cánh Bình Minh, tận dụng anh hùng Blood Rose',
       troops: isKorean ? '슈터 + 돌격 혼합' : 'Shooter + Assaulter hỗn hợp',
     },
     {
-      name: isKorean ? '블러드로즈 5' : 'Blood Rose 5',
-      composition: '5 Blood Rose',
+      name: isKorean ? '블러드 로즈 5' : 'Blood Rose 5',
+      composition: isKorean ? '블러드 로즈 5명' : '5 Blood Rose',
       color: 'text-red-400',
       bg: 'bg-red-500/10',
       border: 'border-red-500/30',
       reason: isKorean
         ? '버스트 데미지 특화. 질서의 수호자에 +10% 카운터'
-        : 'Chuyên burst damage. +10% counter chống Guard of Order',
+        : 'Chuyên burst damage. +10% counter chống Người Bảo Vệ Trật Tự',
       troops: isKorean ? '돌격 집중' : 'Tập trung Assaulter',
     },
   ];
 
   const counterSystem = [
-    { attacker: 'Wings of Dawn', defender: 'Blood Rose', color: 'text-blue-400' },
-    { attacker: 'Blood Rose', defender: 'Guard of Order', color: 'text-red-400' },
-    { attacker: 'Guard of Order', defender: 'Wings of Dawn', color: 'text-green-400' },
+    { attacker: isKorean ? '새벽의 날개' : 'Cánh Bình Minh', defender: isKorean ? '블러드 로즈' : 'Blood Rose', color: 'text-blue-400' },
+    { attacker: isKorean ? '블러드 로즈' : 'Blood Rose', defender: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự', color: 'text-red-400' },
+    { attacker: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự', defender: isKorean ? '새벽의 날개' : 'Cánh Bình Minh', color: 'text-green-400' },
   ];
 
   const synergyTips = [
@@ -98,14 +98,14 @@ function HeroSynergyContent({ locale }: { locale: string }) {
       icon: Shield,
       title: isKorean ? 'F2P 메타 카운터' : 'Counter meta F2P',
       tip: isKorean
-        ? 'F2P 다수가 블러드로즈 사용 → 새벽의 날개으로 카운터 (+10%)'
-        : 'Đa số F2P dùng Blood Rose → counter bằng Wings of Dawn (+10%)',
+        ? 'F2P 다수가 블러드 로즈 사용 → 새벽의 날개로 카운터 (+10%)'
+        : 'Đa số F2P dùng Blood Rose → counter bằng Cánh Bình Minh (+10%)',
     },
   ];
 
   const heroMatching = [
     {
-      faction: 'Wings of Dawn',
+      faction: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
       troop: isKorean ? '슈터' : 'Shooter',
       heroes: isKorean
         ? ['퀴니 (S+)', '릴리아나 (S+)', '알마 (S)', '닉스 (S)', '스칼렛 (S)']
@@ -113,7 +113,7 @@ function HeroSynergyContent({ locale }: { locale: string }) {
       color: 'text-blue-400',
     },
     {
-      faction: 'Blood Rose',
+      faction: isKorean ? '블러드 로즈' : 'Blood Rose',
       troop: isKorean ? '돌격' : 'Assaulter',
       heroes: isKorean
         ? ['유찬 (S+)', '리시아 (S+)', '벨라 (S)', '셀레나 (S)']
@@ -121,7 +121,7 @@ function HeroSynergyContent({ locale }: { locale: string }) {
       color: 'text-red-400',
     },
     {
-      faction: 'Guard of Order',
+      faction: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
       troop: isKorean ? '라이더' : 'Rider',
       heroes: isKorean
         ? ['앰버 (S+)', '도데메키 (S+)', '할리에나 (S)', '사쿠라 (S)']
@@ -161,9 +161,9 @@ function HeroSynergyContent({ locale }: { locale: string }) {
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {isKorean ? '같은 진영 5명 → +115% ATK, +10% 진영 보너스' : '5 anh hùng cùng phe → +115% ATK, +10% bonus phe'}</li>
-              <li>• {isKorean ? '카운터: 윙즈 > 블러드 > 가드 > 윙즈 (10% 전투 보너스)' : 'Counter: Wings > Blood > Guard > Wings (10% bonus chiến đấu)'}</li>
-              <li>• {isKorean ? 'F2P 대부분 블러드로즈 → 새벽의 날개으로 카운터' : 'Đa số F2P dùng Blood Rose → counter bằng Wings of Dawn'}</li>
-              <li>• {isKorean ? '블러드→돌격, 윙즈→슈터, 가드→라이더 매칭' : 'Blood→Assaulter, Wings→Shooter, Guard→Rider'}</li>
+              <li>• {isKorean ? '카운터: 새벽의 날개 > 블러드 로즈 > 질서의 수호자 > 새벽의 날개 (10% 전투 보너스)' : 'Counter: Cánh Bình Minh > Blood Rose > Người Bảo Vệ Trật Tự > Cánh Bình Minh (10% bonus chiến đấu)'}</li>
+              <li>• {isKorean ? 'F2P 대부분 블러드 로즈 → 새벽의 날개로 카운터' : 'Đa số F2P dùng Blood Rose → counter bằng Cánh Bình Minh'}</li>
+              <li>• {isKorean ? '블러드 로즈→돌격, 새벽의 날개→슈터, 질서의 수호자→라이더 매칭' : 'Blood Rose→Assaulter, Cánh Bình Minh→Shooter, Người Bảo Vệ Trật Tự→Rider'}</li>
             </ul>
           </CardContent>
         </Card>

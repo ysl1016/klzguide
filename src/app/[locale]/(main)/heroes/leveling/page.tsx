@@ -43,19 +43,19 @@ function HeroLevelingContent({ locale }: { locale: string }) {
   const upgradeOrder = [
     {
       tier: 'S+',
-      name: isKorean ? '유찬/리시아 (Blood Rose)' : 'Yu Chan/Licia (Blood Rose)',
+      name: isKorean ? '유찬/리시아 (블러드 로즈)' : 'Yu Chan/Licia (Blood Rose)',
       priority: 1,
       reason: isKorean ? '돌격 진형 핵심 딜러, 최고 DPS' : 'Dealer chính đội hình Assaulter, DPS cao nhất',
     },
     {
       tier: 'S+',
-      name: isKorean ? '퀴니/릴리아나 (Wings)' : 'Queenie/Liliana (Wings)',
+      name: isKorean ? '퀴니/릴리아나 (새벽의 날개)' : 'Queenie/Liliana (Cánh Bình Minh)',
       priority: 2,
       reason: isKorean ? '슈터 진형 핵심 딜러, F2P 메타 카운터' : 'Dealer chính đội hình Shooter, counter meta F2P',
     },
     {
       tier: 'S+',
-      name: isKorean ? '앰버/도데메키 (Guard)' : 'Amber/Dodemeki (Guard)',
+      name: isKorean ? '앰버/도데메키 (질서의 수호자)' : 'Amber/Dodemeki (Người Bảo Vệ Trật Tự)',
       priority: 3,
       reason: isKorean ? '라이더 진형 핵심, 높은 생존력' : 'Chính đội hình Rider, sinh tồn cao',
     },
@@ -260,11 +260,11 @@ function HeroLevelingContent({ locale }: { locale: string }) {
             </p>
             <div className="grid gap-2 sm:grid-cols-2 text-sm">
               <div className="p-3 rounded-lg bg-red-500/10">
-                <p className="font-medium text-red-400">Blood Rose</p>
-                <p className="text-muted-foreground">{isKorean ? '→ 돌격와 조합' : '→ Kết hợp với Assaulter'}</p>
+                <p className="font-medium text-red-400">{isKorean ? '블러드 로즈' : 'Blood Rose'}</p>
+                <p className="text-muted-foreground">{isKorean ? '→ 돌격과 조합' : '→ Kết hợp với Assaulter'}</p>
               </div>
               <div className="p-3 rounded-lg bg-blue-500/10">
-                <p className="font-medium text-blue-400">Wings of Dawn</p>
+                <p className="font-medium text-blue-400">{isKorean ? '새벽의 날개' : 'Cánh Bình Minh'}</p>
                 <p className="text-muted-foreground">{isKorean ? '→ 슈터와 조합' : '→ Kết hợp với Shooter'}</p>
               </div>
             </div>

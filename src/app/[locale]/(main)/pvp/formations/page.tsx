@@ -66,21 +66,21 @@ function FormationsContent({ locale }: { locale: string }) {
 
   const counterChart = [
     {
-      faction: 'Wings of Dawn',
-      strong: 'Blood Rose',
-      weak: 'Guard of Order',
+      faction: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
+      strong: isKorean ? '블러드 로즈' : 'Blood Rose',
+      weak: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
       color: 'text-blue-400',
     },
     {
-      faction: 'Blood Rose',
-      strong: 'Guard of Order',
-      weak: 'Wings of Dawn',
+      faction: isKorean ? '블러드 로즈' : 'Blood Rose',
+      strong: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
+      weak: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
       color: 'text-red-400',
     },
     {
-      faction: 'Guard of Order',
-      strong: 'Wings of Dawn',
-      weak: 'Blood Rose',
+      faction: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
+      strong: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
+      weak: isKorean ? '블러드 로즈' : 'Blood Rose',
       color: 'text-green-400',
     },
   ];
@@ -90,29 +90,29 @@ function FormationsContent({ locale }: { locale: string }) {
       name: isKorean ? '돌격 (Assaulter)' : 'Assaulter',
       strength: isKorean ? '높은 공격력' : 'ATK cao',
       weakness: isKorean ? '낮은 방어력' : 'DEF thấp',
-      use: isKorean ? '공격 진형, 블러드로즈' : 'Đội hình tấn công, Blood Rose',
+      use: isKorean ? '공격 진형, 블러드 로즈' : 'Đội hình tấn công, Blood Rose',
       color: 'text-red-400',
     },
     {
       name: isKorean ? '슈터 (Shooter)' : 'Shooter',
       strength: isKorean ? '균형 잡힌 스탯' : 'Stat cân bằng',
       weakness: isKorean ? '특화 없음' : 'Không chuyên biệt',
-      use: isKorean ? '범용, 새벽의 날개' : 'Đa năng, Wings of Dawn',
+      use: isKorean ? '범용, 새벽의 날개' : 'Đa năng, Cánh Bình Minh',
       color: 'text-blue-400',
     },
     {
       name: isKorean ? '라이더 (Rider)' : 'Rider',
       strength: isKorean ? '높은 HP/방어' : 'HP/DEF cao',
       weakness: isKorean ? '낮은 공격력' : 'ATK thấp',
-      use: isKorean ? '방어 진형, 질서의 수호자' : 'Đội hình phòng thủ, Guard of Order',
+      use: isKorean ? '방어 진형, 질서의 수호자' : 'Đội hình phòng thủ, Người Bảo Vệ Trật Tự',
       color: 'text-green-400',
     },
   ];
 
   const tips = [
     isKorean
-      ? '서버 70%가 블러드로즈 선택 → 새벽의 날개 카운터로 유리'
-      : '70% server chọn Blood Rose → counter Wings of Dawn có lợi',
+      ? '서버 70%가 블러드 로즈 선택 → 새벽의 날개 카운터로 유리'
+      : '70% server chọn Blood Rose → counter Cánh Bình Minh có lợi',
     isKorean
       ? '동일 진영 5명 = 히든 버프 발동 (공격/방어/병력 스탯 증가)'
       : '5 người cùng phe = buff ẩn (tăng ATK/DEF/stat quân)',
@@ -154,7 +154,7 @@ function FormationsContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '카운터: 윙즈 > 블러드 > 가드 > 윙즈' : 'Counter: Wings > Blood > Guard > Wings'}</li>
+              <li>• {isKorean ? '카운터: 새벽의 날개 > 블러드 로즈 > 질서의 수호자 > 새벽의 날개' : 'Counter: Cánh Bình Minh > Blood Rose > Người Bảo Vệ Trật Tự > Cánh Bình Minh'}</li>
               <li>• {isKorean ? '동일 진영 5명 = 히든 버프 (최대 시너지)' : '5 người cùng phe = buff ẩn (synergy tối đa)'}</li>
               <li>• {isKorean ? '영웅 스킬과 병종 타입 매칭 필수' : 'Bắt buộc kết hợp skill anh hùng với loại quân'}</li>
               <li>• {isKorean ? '고티어 소수 > 저티어 다수' : 'Ít tier cao > nhiều tier thấp'}</li>
@@ -230,8 +230,8 @@ function FormationsContent({ locale }: { locale: string }) {
             <AlertTriangle className="h-5 w-5 text-yellow-400 shrink-0 mt-0.5" />
             <p className="text-sm text-muted-foreground">
               {isKorean
-                ? '서버 대부분(~70%)이 블러드로즈를 선택합니다. 새벽의 날개 선택 시 카운터 이점을 얻을 수 있습니다.'
-                : 'Đa số server (~70%) chọn Blood Rose. Chọn Wings of Dawn có lợi thế counter.'}
+                ? '서버 대부분(~70%)이 블러드 로즈를 선택합니다. 새벽의 날개 선택 시 카운터 이점을 얻을 수 있습니다.'
+                : 'Đa số server (~70%) chọn Blood Rose. Chọn Cánh Bình Minh có lợi thế counter.'}
             </p>
           </div>
         </section>

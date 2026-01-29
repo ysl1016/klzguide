@@ -69,28 +69,28 @@ function GlossaryContent({ locale }: { locale: string }) {
         : 'Tấn công tập thể cùng thành viên liên minh',
     },
     {
-      term: 'Wings of Dawn',
+      term: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
       ko: '새벽의 날개',
       vi: 'Cánh Bình Minh',
       definition: isKorean
-        ? '세 진영 중 하나. 블러드로즈에 강함. 슈터 특화'
+        ? '세 진영 중 하나. 블러드 로즈에 강함. 슈터 특화'
         : 'Một trong 3 phe. Mạnh chống Blood Rose. Chuyên Shooter',
     },
     {
-      term: 'Blood Rose',
-      ko: '블러드로즈',
+      term: isKorean ? '블러드 로즈' : 'Blood Rose',
+      ko: '블러드 로즈',
       vi: 'Blood Rose',
       definition: isKorean
         ? '세 진영 중 하나. 질서의 수호자에 강함. 돌격 특화'
-        : 'Một trong 3 phe. Mạnh chống Guard. Chuyên Assaulter',
+        : 'Một trong 3 phe. Mạnh chống Người Bảo Vệ Trật Tự. Chuyên Assaulter',
     },
     {
-      term: 'Guard of Order',
+      term: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
       ko: '질서의 수호자',
       vi: 'Người Bảo Vệ Trật Tự',
       definition: isKorean
         ? '세 진영 중 하나. 새벽의 날개에 강함. 라이더 특화'
-        : 'Một trong 3 phe. Mạnh chống Wings. Chuyên Rider',
+        : 'Một trong 3 phe. Mạnh chống Cánh Bình Minh. Chuyên Rider',
     },
     {
       term: 'Assaulter',
