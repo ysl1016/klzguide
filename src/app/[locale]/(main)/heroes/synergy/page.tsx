@@ -58,7 +58,7 @@ function HeroSynergyContent({ locale }: { locale: string }) {
       reason: isKorean
         ? '유연한 조합. 윙즈 +107% ATK 보너스 유지하면서 블러드 영웅 활용'
         : 'Kết hợp linh hoạt. Giữ +107% ATK Wings, tận dụng anh hùng Blood',
-      troops: isKorean ? '슈터 + 어썰터 혼합' : 'Shooter + Assaulter hỗn hợp',
+      troops: isKorean ? '슈터 + 돌격 혼합' : 'Shooter + Assaulter hỗn hợp',
     },
     {
       name: isKorean ? '블러드로즈 5' : 'Blood Rose 5',
@@ -67,9 +67,9 @@ function HeroSynergyContent({ locale }: { locale: string }) {
       bg: 'bg-red-500/10',
       border: 'border-red-500/30',
       reason: isKorean
-        ? '버스트 데미지 특화. 가드 오브 오더에 +10% 카운터'
+        ? '버스트 데미지 특화. 질서의 수호자에 +10% 카운터'
         : 'Chuyên burst damage. +10% counter chống Guard of Order',
-      troops: isKorean ? '어썰터 집중' : 'Tập trung Assaulter',
+      troops: isKorean ? '돌격 집중' : 'Tập trung Assaulter',
     },
   ];
 
@@ -98,7 +98,7 @@ function HeroSynergyContent({ locale }: { locale: string }) {
       icon: Shield,
       title: isKorean ? 'F2P 메타 카운터' : 'Counter meta F2P',
       tip: isKorean
-        ? 'F2P 다수가 블러드로즈 사용 → 윙즈 오브 던으로 카운터 (+10%)'
+        ? 'F2P 다수가 블러드로즈 사용 → 새벽의 날개으로 카운터 (+10%)'
         : 'Đa số F2P dùng Blood Rose → counter bằng Wings of Dawn (+10%)',
     },
   ];
@@ -114,7 +114,7 @@ function HeroSynergyContent({ locale }: { locale: string }) {
     },
     {
       faction: 'Blood Rose',
-      troop: isKorean ? '어썰터' : 'Assaulter',
+      troop: isKorean ? '돌격' : 'Assaulter',
       heroes: isKorean
         ? ['유찬 (S+)', '리시아 (S+)', '벨라 (S)', '셀레나 (S)']
         : ['Yu Chan (S+)', 'Licia (S+)', 'Bella (S)', 'Selena (S)'],
@@ -162,8 +162,8 @@ function HeroSynergyContent({ locale }: { locale: string }) {
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {isKorean ? '같은 진영 5명 → +115% ATK, +10% 진영 보너스' : '5 anh hùng cùng phe → +115% ATK, +10% bonus phe'}</li>
               <li>• {isKorean ? '카운터: 윙즈 > 블러드 > 가드 > 윙즈 (10% 전투 보너스)' : 'Counter: Wings > Blood > Guard > Wings (10% bonus chiến đấu)'}</li>
-              <li>• {isKorean ? 'F2P 대부분 블러드로즈 → 윙즈 오브 던으로 카운터' : 'Đa số F2P dùng Blood Rose → counter bằng Wings of Dawn'}</li>
-              <li>• {isKorean ? '블러드→어썰터, 윙즈→슈터, 가드→라이더 매칭' : 'Blood→Assaulter, Wings→Shooter, Guard→Rider'}</li>
+              <li>• {isKorean ? 'F2P 대부분 블러드로즈 → 새벽의 날개으로 카운터' : 'Đa số F2P dùng Blood Rose → counter bằng Wings of Dawn'}</li>
+              <li>• {isKorean ? '블러드→돌격, 윙즈→슈터, 가드→라이더 매칭' : 'Blood→Assaulter, Wings→Shooter, Guard→Rider'}</li>
             </ul>
           </CardContent>
         </Card>

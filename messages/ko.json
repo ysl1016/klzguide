@@ -92,14 +92,14 @@
     "allTiers": "전체 티어"
   },
   "class": {
-    "assaulter": "어썰터",
+    "assaulter": "돌격",
     "shooter": "슈터",
     "rider": "라이더"
   },
   "faction": {
     "bloodRose": "블러드 로즈",
-    "wingsOfDawn": "윙즈 오브 던",
-    "guardOfOrder": "가드 오브 오더"
+    "wingsOfDawn": "새벽의 날개",
+    "guardOfOrder": "질서의 수호자"
   },
   "footer": {
     "disclaimer": "이 사이트는 팬 제작 비공식 가이드입니다. Last Z: Survival Shooter의 모든 게임 콘텐츠 및 자료는 해당 저작권자의 소유입니다.",

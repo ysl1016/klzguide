@@ -32,7 +32,7 @@ function FormationsContent({ locale }: { locale: string }) {
       composition: isKorean
         ? 'DPS 영웅 3 + 서포트 2 또는 DPS 4 + 탱커 1'
         : 'DPS 3 + Support 2 hoặc DPS 4 + Tank 1',
-      troops: isKorean ? '어썰터/슈터 위주' : 'Chủ yếu Assaulter/Shooter',
+      troops: isKorean ? '돌격/슈터 위주' : 'Chủ yếu Assaulter/Shooter',
     },
     {
       name: isKorean ? '방어 진형' : 'Đội hình phòng thủ',
@@ -87,7 +87,7 @@ function FormationsContent({ locale }: { locale: string }) {
 
   const troopTypes = [
     {
-      name: isKorean ? '어썰터 (Assaulter)' : 'Assaulter',
+      name: isKorean ? '돌격 (Assaulter)' : 'Assaulter',
       strength: isKorean ? '높은 공격력' : 'ATK cao',
       weakness: isKorean ? '낮은 방어력' : 'DEF thấp',
       use: isKorean ? '공격 진형, 블러드로즈' : 'Đội hình tấn công, Blood Rose',
@@ -97,21 +97,21 @@ function FormationsContent({ locale }: { locale: string }) {
       name: isKorean ? '슈터 (Shooter)' : 'Shooter',
       strength: isKorean ? '균형 잡힌 스탯' : 'Stat cân bằng',
       weakness: isKorean ? '특화 없음' : 'Không chuyên biệt',
-      use: isKorean ? '범용, 윙즈 오브 던' : 'Đa năng, Wings of Dawn',
+      use: isKorean ? '범용, 새벽의 날개' : 'Đa năng, Wings of Dawn',
       color: 'text-blue-400',
     },
     {
       name: isKorean ? '라이더 (Rider)' : 'Rider',
       strength: isKorean ? '높은 HP/방어' : 'HP/DEF cao',
       weakness: isKorean ? '낮은 공격력' : 'ATK thấp',
-      use: isKorean ? '방어 진형, 가드 오브 오더' : 'Đội hình phòng thủ, Guard of Order',
+      use: isKorean ? '방어 진형, 질서의 수호자' : 'Đội hình phòng thủ, Guard of Order',
       color: 'text-green-400',
     },
   ];
 
   const tips = [
     isKorean
-      ? '서버 70%가 블러드로즈 선택 → 윙즈 오브 던 카운터로 유리'
+      ? '서버 70%가 블러드로즈 선택 → 새벽의 날개 카운터로 유리'
       : '70% server chọn Blood Rose → counter Wings of Dawn có lợi',
     isKorean
       ? '동일 진영 5명 = 히든 버프 발동 (공격/방어/병력 스탯 증가)'
@@ -230,7 +230,7 @@ function FormationsContent({ locale }: { locale: string }) {
             <AlertTriangle className="h-5 w-5 text-yellow-400 shrink-0 mt-0.5" />
             <p className="text-sm text-muted-foreground">
               {isKorean
-                ? '서버 대부분(~70%)이 블러드로즈를 선택합니다. 윙즈 오브 던 선택 시 카운터 이점을 얻을 수 있습니다.'
+                ? '서버 대부분(~70%)이 블러드로즈를 선택합니다. 새벽의 날개 선택 시 카운터 이점을 얻을 수 있습니다.'
                 : 'Đa số server (~70%) chọn Blood Rose. Chọn Wings of Dawn có lợi thế counter.'}
             </p>
           </div>

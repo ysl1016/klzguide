@@ -22,7 +22,7 @@ function FactionContent({ locale }: { locale: string }) {
   // 실제 lastzguides.com 기반 진영 데이터
   const factions = [
     {
-      name: isKorean ? '윙즈 오브 던' : 'Wings of Dawn',
+      name: isKorean ? '새벽의 날개' : 'Wings of Dawn',
       nameEn: 'Wings of Dawn',
       color: 'text-blue-400',
       borderColor: 'border-blue-500/30',
@@ -31,13 +31,13 @@ function FactionContent({ locale }: { locale: string }) {
       troopType: isKorean ? '슈터 (Shooter)' : 'Xạ thủ (Shooter)',
       style: isKorean ? '원거리 딜러' : 'Dealer tầm xa',
       description: isKorean
-        ? '슈터 중심의 진영. 서버의 약 70%가 블러드 로즈를 선택하기 때문에, 윙즈 오브 던은 자연스러운 카운터 이점을 가집니다. 전략적으로 가장 추천되는 진영입니다.'
+        ? '슈터 중심의 진영. 서버의 약 70%가 블러드 로즈를 선택하기 때문에, 새벽의 날개은 자연스러운 카운터 이점을 가집니다. 전략적으로 가장 추천되는 진영입니다.'
         : 'Phe tập trung vào Xạ thủ. Khoảng 70% server chọn Blood Rose, nên Wings of Dawn có lợi thế counter tự nhiên. Phe được khuyến nghị nhất về mặt chiến thuật.',
       pros: isKorean
         ? ['블러드 로즈(메타 진영)를 카운터', '원거리 DPS로 안정적', '대부분의 서버에서 유리']
         : ['Counter Blood Rose (phe meta)', 'DPS tầm xa ổn định', 'Có lợi ở hầu hết server'],
       cons: isKorean
-        ? ['가드 오브 오더에게 카운터 당함', '로라(Laura)가 유일한 프론트라인']
+        ? ['질서의 수호자에게 카운터 당함', '로라(Laura)가 유일한 프론트라인']
         : ['Bị counter bởi Guard of Order', 'Laura là frontline duy nhất'],
       recommended: isKorean ? '모든 플레이어 (가장 추천)' : 'Tất cả người chơi (Khuyến nghị nhất)',
       rating: 5,
@@ -50,23 +50,23 @@ function FactionContent({ locale }: { locale: string }) {
       borderColor: 'border-red-500/30',
       bgColor: 'bg-red-500/10',
       icon: Swords,
-      troopType: isKorean ? '어썰터 (Assaulter)' : 'Lính đột kích (Assaulter)',
+      troopType: isKorean ? '돌격 (Assaulter)' : 'Lính đột kích (Assaulter)',
       style: isKorean ? '근접 돌격' : 'Đột kích cận chiến',
       description: isKorean
-        ? '어썰터 중심의 진영. 높은 데미지와 프론트라인 강점. 하지만 서버의 약 70%가 이 진영을 선택해서, PvP에서 윙즈 오브 던에게 카운터 당하는 경우가 많습니다.'
+        ? '돌격 중심의 진영. 높은 데미지와 프론트라인 강점. 하지만 서버의 약 70%가 이 진영을 선택해서, PvP에서 새벽의 날개에게 카운터 당하는 경우가 많습니다.'
         : 'Phe tập trung vào Lính đột kích. Sát thương cao và frontline mạnh. Nhưng ~70% server chọn phe này, nên thường bị counter bởi Wings of Dawn trong PvP.',
       pros: isKorean
-        ? ['가드 오브 오더를 카운터', '높은 데미지 출력', '강력한 프론트라인 영웅들']
+        ? ['질서의 수호자를 카운터', '높은 데미지 출력', '강력한 프론트라인 영웅들']
         : ['Counter Guard of Order', 'Sát thương cao', 'Các anh hùng frontline mạnh'],
       cons: isKorean
-        ? ['윙즈 오브 던에게 카운터 당함', '가장 많이 선택되어 카운터 당하기 쉬움']
+        ? ['새벽의 날개에게 카운터 당함', '가장 많이 선택되어 카운터 당하기 쉬움']
         : ['Bị counter bởi Wings of Dawn', 'Được chọn nhiều nhất nên dễ bị counter'],
       recommended: isKorean ? '근접 전투 선호자' : 'Người thích cận chiến',
       rating: 3,
       counterInfo: isKorean ? 'Guard of Order를 이김' : 'Thắng Guard of Order',
     },
     {
-      name: isKorean ? '가드 오브 오더' : 'Guard of Order',
+      name: isKorean ? '질서의 수호자' : 'Guard of Order',
       nameEn: 'Guard of Order',
       color: 'text-yellow-400',
       borderColor: 'border-yellow-500/30',
@@ -75,15 +75,15 @@ function FactionContent({ locale }: { locale: string }) {
       troopType: isKorean ? '라이더 (Rider)' : 'Kỵ binh (Rider)',
       style: isKorean ? '기동성 + 측면공격' : 'Cơ động + Tấn công sườn',
       description: isKorean
-        ? '라이더 중심의 진영. 윙즈 오브 던을 카운터하지만, 서버에서 윙즈 오브 던 메타가 확산되지 않는 한 선택률이 낮습니다.'
+        ? '라이더 중심의 진영. 새벽의 날개을 카운터하지만, 서버에서 새벽의 날개 메타가 확산되지 않는 한 선택률이 낮습니다.'
         : 'Phe tập trung vào Kỵ binh. Counter Wings of Dawn, nhưng tỷ lệ chọn thấp trừ khi server có meta Wings of Dawn lan rộng.',
       pros: isKorean
-        ? ['윙즈 오브 던을 카운터', '높은 기동성', '할리에나 등 강력한 탱크']
+        ? ['새벽의 날개을 카운터', '높은 기동성', '할리에나 등 강력한 탱크']
         : ['Counter Wings of Dawn', 'Cơ động cao', 'Tank mạnh như Harleyena'],
       cons: isKorean
         ? ['블러드 로즈에게 카운터 당함', '선택률이 낮아 카운터 상황이 적음']
         : ['Bị counter bởi Blood Rose', 'Ít được chọn nên ít cơ hội counter'],
-      recommended: isKorean ? '윙즈 오브 던 메타 서버에서 추천' : 'Khuyến nghị ở server meta Wings of Dawn',
+      recommended: isKorean ? '새벽의 날개 메타 서버에서 추천' : 'Khuyến nghị ở server meta Wings of Dawn',
       rating: 3,
       counterInfo: isKorean ? 'Wings of Dawn을 이김' : 'Thắng Wings of Dawn',
     },
@@ -118,7 +118,7 @@ function FactionContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '윙즈 오브 던(슈터) 추천 - 서버 70%가 블러드 로즈라서 카운터 이점' : 'Wings of Dawn (Xạ thủ) được khuyến nghị - Counter 70% server chọn Blood Rose'}</li>
+              <li>• {isKorean ? '새벽의 날개(슈터) 추천 - 서버 70%가 블러드 로즈라서 카운터 이점' : 'Wings of Dawn (Xạ thủ) được khuyến nghị - Counter 70% server chọn Blood Rose'}</li>
               <li>• {isKorean ? '상성: 윙즈 > 블러드 > 가드 > 윙즈 (가위바위보)' : 'Tương khắc: Wings > Blood > Guard > Wings (oẳn tù tì)'}</li>
               <li>• {isKorean ? '최적 조합: 윙즈 3명 + 블러드 2명 (크로스 시너지)' : 'Tổ hợp tối ưu: 3 Wings + 2 Blood (cross synergy)'}</li>
             </ul>
@@ -146,7 +146,7 @@ function FactionContent({ locale }: { locale: string }) {
               </div>
               <p className="text-xs text-muted-foreground text-center">
                 {isKorean
-                  ? '슈터 > 어썰터 > 라이더 > 슈터 (가위바위보 구조)'
+                  ? '슈터 > 돌격 > 라이더 > 슈터 (가위바위보 구조)'
                   : 'Xạ thủ > Đột kích > Kỵ binh > Xạ thủ (cấu trúc oẳn tù tì)'}
               </p>
             </div>
@@ -241,7 +241,7 @@ function FactionContent({ locale }: { locale: string }) {
               </thead>
               <tbody>
                 {[
-                  { label: isKorean ? '병종' : 'Binh chủng', values: [isKorean ? '슈터' : 'Xạ thủ', isKorean ? '어썰터' : 'Đột kích', isKorean ? '라이더' : 'Kỵ binh'] },
+                  { label: isKorean ? '병종' : 'Binh chủng', values: [isKorean ? '슈터' : 'Xạ thủ', isKorean ? '돌격' : 'Đột kích', isKorean ? '라이더' : 'Kỵ binh'] },
                   { label: isKorean ? '카운터' : 'Counter', values: ['Blood Rose', 'Guard of Order', 'Wings of Dawn'] },
                   { label: isKorean ? '서버 점유율' : 'Tỷ lệ server', values: ['~20%', '~70%', '~10%'] },
                   { label: isKorean ? 'PvP 유리함' : 'PvP lợi thế', values: ['★★★★★', '★★★☆☆', '★★☆☆☆'] },
@@ -317,7 +317,7 @@ function FactionContent({ locale }: { locale: string }) {
               </p>
               <p className="text-sm text-muted-foreground">
                 {isKorean
-                  ? '윙즈 오브 던(슈터)을 메인 진영으로 선택하세요. 서버의 약 70%가 블러드 로즈를 선택하기 때문에 자연스러운 PvP 이점이 있습니다. 영웅은 진형에 맞춰 슈터 중심으로 키우되, 서브 영웅으로 블러드 로즈 어썰터 2명을 추가하면 최적의 조합이 됩니다.'
+                  ? '새벽의 날개(슈터)을 메인 진영으로 선택하세요. 서버의 약 70%가 블러드 로즈를 선택하기 때문에 자연스러운 PvP 이점이 있습니다. 영웅은 진형에 맞춰 슈터 중심으로 키우되, 서브 영웅으로 블러드 로즈 돌격 2명을 추가하면 최적의 조합이 됩니다.'
                   : 'Chọn Wings of Dawn (Xạ thủ) làm phe chính. ~70% server chọn Blood Rose nên có lợi thế PvP tự nhiên. Nuôi anh hùng tập trung vào Xạ thủ, thêm 2 Lính đột kích Blood Rose làm phụ để có tổ hợp tối ưu.'}
               </p>
             </div>

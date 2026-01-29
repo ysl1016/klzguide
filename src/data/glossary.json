@@ -23,7 +23,7 @@
     {
       "en": "Assaulter",
       "abbr": null,
-      "ko": "어썰터",
+      "ko": "돌격",
       "vi": "Lính đột kích",
       "definition": {
         "ko": "근접 전투 특화 병종. 높은 방어력과 HP를 가집니다.",
@@ -133,8 +133,8 @@
     {
       "en": "Wings of Dawn",
       "abbr": null,
-      "ko": "윙즈 오브 던",
-      "vi": "Wings of Dawn",
+      "ko": "새벽의 날개",
+      "vi": "Cánh Bình Minh",
       "definition": {
         "ko": "3대 진영 중 하나. 균형 잡힌 능력치를 가집니다.",
         "vi": "Một trong 3 phe phái. Có chỉ số cân bằng."
@@ -143,8 +143,8 @@
     {
       "en": "Guard of Order",
       "abbr": null,
-      "ko": "가드 오브 오더",
-      "vi": "Guard of Order",
+      "ko": "질서의 수호자",
+      "vi": "Người Bảo Vệ Trật Tự",
       "definition": {
         "ko": "3대 진영 중 하나. 방어적인 플레이 스타일에 적합합니다.",
         "vi": "Một trong 3 phe phái. Phù hợp với phong cách phòng thủ."

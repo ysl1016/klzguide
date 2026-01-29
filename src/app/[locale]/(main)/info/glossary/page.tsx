@@ -70,8 +70,8 @@ function GlossaryContent({ locale }: { locale: string }) {
     },
     {
       term: 'Wings of Dawn',
-      ko: '윙즈 오브 던',
-      vi: 'Wings of Dawn',
+      ko: '새벽의 날개',
+      vi: 'Cánh Bình Minh',
       definition: isKorean
         ? '세 진영 중 하나. 블러드로즈에 강함. 슈터 특화'
         : 'Một trong 3 phe. Mạnh chống Blood Rose. Chuyên Shooter',
@@ -81,20 +81,20 @@ function GlossaryContent({ locale }: { locale: string }) {
       ko: '블러드로즈',
       vi: 'Blood Rose',
       definition: isKorean
-        ? '세 진영 중 하나. 가드에 강함. 어썰터 특화'
+        ? '세 진영 중 하나. 질서의 수호자에 강함. 돌격 특화'
         : 'Một trong 3 phe. Mạnh chống Guard. Chuyên Assaulter',
     },
     {
       term: 'Guard of Order',
-      ko: '가드 오브 오더',
-      vi: 'Guard of Order',
+      ko: '질서의 수호자',
+      vi: 'Người Bảo Vệ Trật Tự',
       definition: isKorean
-        ? '세 진영 중 하나. 윙즈에 강함. 라이더 특화'
+        ? '세 진영 중 하나. 새벽의 날개에 강함. 라이더 특화'
         : 'Một trong 3 phe. Mạnh chống Wings. Chuyên Rider',
     },
     {
       term: 'Assaulter',
-      ko: '어썰터',
+      ko: '돌격',
       vi: 'Assaulter',
       definition: isKorean
         ? '병종. 높은 공격력, 낮은 방어력'

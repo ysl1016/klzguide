@@ -54,7 +54,7 @@
       "recommended": true,
       "pvpTier": "S",
       "pveTier": "S",
-      "notes": { "ko": "곰이 큰 데미지, 패시브로 어썰터 버프", "vi": "Gấu gây sát thương lớn, buff đột kích qua passive" }
+      "notes": { "ko": "곰이 큰 데미지, 패시브로 돌격 버프", "vi": "Gấu gây sát thương lớn, buff đột kích qua passive" }
     },
     {
       "id": "oliveira",
@@ -499,7 +499,7 @@
   "meta": {
     "lastUpdated": "2024-01-28",
     "notes": {
-      "ko": "시즌4 영웅이 현재 메타 지배. 진영간 상성 존재 (어썰터 > 슈터 > 라이더 > 어썰터). 무과금 플레이어도 90일 내 모든 영웅 획득 가능",
+      "ko": "시즌4 영웅이 현재 메타 지배. 진영간 상성 존재 (돌격 > 슈터 > 라이더 > 돌격). 무과금 플레이어도 90일 내 모든 영웅 획득 가능",
       "vi": "Anh hùng Season 4 thống trị meta hiện tại. Có tương khắc giữa các phe (Đột kích > Xạ thủ > Kỵ binh > Đột kích). F2P có thể có tất cả anh hùng trong 90 ngày"
     },
     "formationTip": {

@@ -45,7 +45,7 @@ function HeroLevelingContent({ locale }: { locale: string }) {
       tier: 'S+',
       name: isKorean ? '유찬/리시아 (Blood Rose)' : 'Yu Chan/Licia (Blood Rose)',
       priority: 1,
-      reason: isKorean ? '어썰터 진형 핵심 딜러, 최고 DPS' : 'Dealer chính đội hình Assaulter, DPS cao nhất',
+      reason: isKorean ? '돌격 진형 핵심 딜러, 최고 DPS' : 'Dealer chính đội hình Assaulter, DPS cao nhất',
     },
     {
       tier: 'S+',
@@ -261,7 +261,7 @@ function HeroLevelingContent({ locale }: { locale: string }) {
             <div className="grid gap-2 sm:grid-cols-2 text-sm">
               <div className="p-3 rounded-lg bg-red-500/10">
                 <p className="font-medium text-red-400">Blood Rose</p>
-                <p className="text-muted-foreground">{isKorean ? '→ 어썰터와 조합' : '→ Kết hợp với Assaulter'}</p>
+                <p className="text-muted-foreground">{isKorean ? '→ 돌격와 조합' : '→ Kết hợp với Assaulter'}</p>
               </div>
               <div className="p-3 rounded-lg bg-blue-500/10">
                 <p className="font-medium text-blue-400">Wings of Dawn</p>

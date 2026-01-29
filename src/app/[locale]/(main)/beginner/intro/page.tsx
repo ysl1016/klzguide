@@ -28,13 +28,13 @@ function BeginnerIntroContent({ locale }: { locale: string }) {
       color: 'text-red-400',
     },
     {
-      name: isKorean ? '윙즈 오브 던' : 'Wings of Dawn',
+      name: isKorean ? '새벽의 날개' : 'Wings of Dawn',
       style: isKorean ? '밸런스 잡힌 능력치' : 'Chỉ số cân bằng',
       recommend: isKorean ? '초보자 추천' : 'Khuyến nghị cho người mới',
       color: 'text-blue-400',
     },
     {
-      name: isKorean ? '가드 오브 오더' : 'Guard of Order',
+      name: isKorean ? '질서의 수호자' : 'Guard of Order',
       style: isKorean ? '방어적인 플레이 스타일' : 'Phong cách phòng thủ',
       recommend: isKorean ? '방어 위주 플레이어' : 'Người chơi ưa phòng thủ',
       color: 'text-yellow-400',
@@ -140,7 +140,7 @@ function BeginnerIntroContent({ locale }: { locale: string }) {
               {
                 title: isKorean ? '부대 편성' : 'Tổ chức đội hình',
                 desc: isKorean
-                  ? '어썰터, 슈터, 라이더 등 병종을 조합하여 최적의 진형을 구성합니다'
+                  ? '돌격, 슈터, 라이더 등 병종을 조합하여 최적의 진형을 구성합니다'
                   : 'Kết hợp các binh chủng như Lính đột kích, Xạ thủ, Kỵ binh',
               },
               {
@@ -205,7 +205,7 @@ function BeginnerIntroContent({ locale }: { locale: string }) {
               </p>
               <p className="text-sm text-muted-foreground">
                 {isKorean
-                  ? '처음 시작하시는 분들은 윙즈 오브 던 진영을 추천드립니다. 밸런스가 좋아 다양한 상황에 대응하기 쉽습니다.'
+                  ? '처음 시작하시는 분들은 새벽의 날개 진영을 추천드립니다. 밸런스가 좋아 다양한 상황에 대응하기 쉽습니다.'
                   : 'Nếu bạn mới bắt đầu, chúng tôi khuyên bạn chọn phe Wings of Dawn. Sự cân bằng giúp dễ dàng ứng phó trong nhiều tình huống.'}
               </p>
             </div>

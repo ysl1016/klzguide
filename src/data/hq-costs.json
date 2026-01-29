@@ -42,7 +42,7 @@
     ]
   },
   "requirementPattern": {
-    "ko": "HQ 8부터 항상 연구소 필요. 두 번째 건물은 순환: 성벽 → 연맹센터 → 어썰터캠프 → 슈터캠프 → 라이더캠프",
+    "ko": "HQ 8부터 항상 연구소 필요. 두 번째 건물은 순환: 성벽 → 연맹센터 → 돌격캠프 → 슈터캠프 → 라이더캠프",
     "vi": "Từ HQ 8 luôn cần Phòng nghiên cứu. Công trình thứ 2 theo chu kỳ: Tường → Trung tâm LM → Trại ĐK → Trại XT → Trại KB"
   },
   "hqLevels": [
@@ -89,7 +89,7 @@
     {
       "level": 5,
       "heroCap": 25,
-      "requirements": { "ko": "레이더, 어썰터 캠프", "vi": "Radar, Trại Đột kích" },
+      "requirements": { "ko": "레이더, 돌격 캠프", "vi": "Radar, Trại Đột kích" },
       "food": 7200,
       "wood": 7200,
       "zent": 1400,
@@ -139,7 +139,7 @@
     {
       "level": 10,
       "heroCap": 50,
-      "requirements": { "ko": "연구소, 어썰터캠프", "vi": "Lab, Trại ĐK" },
+      "requirements": { "ko": "연구소, 돌격캠프", "vi": "Lab, Trại ĐK" },
       "food": 1740000,
       "wood": 1740000,
       "zent": 341000,
@@ -189,7 +189,7 @@
     {
       "level": 15,
       "heroCap": 75,
-      "requirements": { "ko": "연구소, 어썰터캠프", "vi": "Lab, Trại ĐK" },
+      "requirements": { "ko": "연구소, 돌격캠프", "vi": "Lab, Trại ĐK" },
       "food": 16200000,
       "wood": 16200000,
       "zent": 3175000,
@@ -239,7 +239,7 @@
     {
       "level": 20,
       "heroCap": 100,
-      "requirements": { "ko": "연구소, 어썰터캠프", "vi": "Lab, Trại ĐK" },
+      "requirements": { "ko": "연구소, 돌격캠프", "vi": "Lab, Trại ĐK" },
       "food": 68900000,
       "wood": 68900000,
       "zent": 13500000,
@@ -289,7 +289,7 @@
     {
       "level": 25,
       "heroCap": 125,
-      "requirements": { "ko": "연구소, 어썰터캠프", "vi": "Lab, Trại ĐK" },
+      "requirements": { "ko": "연구소, 돌격캠프", "vi": "Lab, Trại ĐK" },
       "food": 333200000,
       "wood": 333200000,
       "zent": 65300000,
@@ -339,7 +339,7 @@
     {
       "level": 30,
       "heroCap": 150,
-      "requirements": { "ko": "연구소, 어썰터캠프", "vi": "Lab, Trại ĐK" },
+      "requirements": { "ko": "연구소, 돌격캠프", "vi": "Lab, Trại ĐK" },
       "food": 1400000000,
       "wood": 1400000000,
       "zent": 277100000,
@@ -394,7 +394,7 @@
     {
       "level": 35,
       "heroCap": 175,
-      "requirements": { "ko": "연구소, 어썰터캠프 + 스틸", "vi": "Lab, Trại ĐK + Thép" },
+      "requirements": { "ko": "연구소, 돌격캠프 + 스틸", "vi": "Lab, Trại ĐK + Thép" },
       "food": 4000000000,
       "wood": 4000000000,
       "zent": 800000000,
@@ -405,7 +405,7 @@
     }
   ],
   "requiredBuildings": {
-    "ko": ["연구소 (HQ 8부터 매번 필요)", "성벽", "연맹 센터", "어썰터 캠프", "슈터 캠프", "라이더 캠프"],
+    "ko": ["연구소 (HQ 8부터 매번 필요)", "성벽", "연맹 센터", "돌격 캠프", "슈터 캠프", "라이더 캠프"],
     "vi": ["Phòng nghiên cứu (cần từ HQ 8)", "Tường thành", "Trung tâm liên minh", "Trại Đột kích", "Trại Xạ thủ", "Trại Kỵ binh"]
   },
   "skipBuildings": {
