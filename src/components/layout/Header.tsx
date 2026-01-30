@@ -3,10 +3,10 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { MobileNav } from './MobileNav';
-import { Search, Shield, Menu } from 'lucide-react';
+import { SearchBar } from './SearchBar';
+import { Search, Shield } from 'lucide-react';
 import { useState } from 'react';
 
 export function Header() {
@@ -36,14 +36,7 @@ export function Header() {
 
         {/* Search (Desktop) */}
         <div className="hidden md:flex flex-1 max-w-md mx-4">
-          <div className="relative w-full">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder={t('searchPlaceholder')}
-              className="w-full pl-10 bg-secondary/50 border-border"
-            />
-          </div>
+          <SearchBar className="w-full" />
         </div>
 
         {/* Actions */}
@@ -65,15 +58,7 @@ export function Header() {
       {/* Mobile Search Expanded */}
       {isSearchOpen && (
         <div className="md:hidden px-4 pb-4">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder={t('searchPlaceholder')}
-              className="w-full pl-10 bg-secondary/50 border-border"
-              autoFocus
-            />
-          </div>
+          <SearchBar autoFocus onClose={() => setIsSearchOpen(false)} />
         </div>
       )}
     </header>
