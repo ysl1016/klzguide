@@ -47,7 +47,7 @@ function FullPrepContent({ locale }: { locale: string }) {
       bg: 'bg-orange-500/10',
       activities: [
         { action: isKorean ? '청사진 소모' : 'Tiêu thụ Blueprint', points: '4pt' },
-        { action: isKorean ? '크립 처치' : 'Kill Creep', points: '840-2000pt' },
+        { action: isKorean ? '좀비/거대좀비 처치' : 'Kill Zombie/Giant Zombie', points: '840-2000pt' },
       ],
     },
     {
@@ -86,8 +86,8 @@ function FullPrepContent({ locale }: { locale: string }) {
       ? '테마 변경 직후 큰 비용의 건설/훈련을 시작하지 마세요'
       : 'KHÔNG bắt đầu xây/huấn luyện tốn kém ngay sau khi đổi theme',
     isKorean
-      ? '차량 개조 테마에서 크립 처치가 최고 효율'
-      : 'Theme Mod Vehicle: kill creep hiệu quả nhất',
+      ? '차량 개조 테마에서 좀비/거대좀비 처치가 최고 효율'
+      : 'Theme Mod Vehicle: kill Zombie/Giant Zombie hiệu quả nhất',
   ];
 
   return (
