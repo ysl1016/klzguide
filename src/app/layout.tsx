@@ -18,6 +18,15 @@ export const metadata: Metadata = {
     '한국어',
     '베트남어',
   ],
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'KLZ Guide',
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
