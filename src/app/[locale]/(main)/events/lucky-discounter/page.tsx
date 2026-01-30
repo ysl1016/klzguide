@@ -58,11 +58,11 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
     {
       source: isKorean ? '럭키 할인 (90%)' : 'Lucky Discounter (90%)',
       efficiency: '5x',
-      note: isKorean ? 'VIP 샵 대비 5배 효율' : 'Hiệu quả gấp 5 lần VIP Shop',
+      note: isKorean ? '특권상점 대비 5배 효율' : 'Hiệu quả gấp 5 lần VIP Shop',
       color: 'text-green-400',
     },
     {
-      source: isKorean ? 'VIP 샵' : 'VIP Shop',
+      source: isKorean ? '특권상점' : 'VIP Shop',
       efficiency: '1x',
       note: isKorean ? '기준 효율' : 'Hiệu quả cơ bản',
       color: 'text-gray-400',
@@ -107,7 +107,7 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
           </h1>
           <p className="text-muted-foreground">
             {isKorean
-              ? '경찰휘장 파밍의 핵심 이벤트입니다. 90% 할인 보장으로 VIP 샵 대비 5배 효율을 제공합니다.'
+              ? '경찰휘장 파밍의 핵심 이벤트입니다. 90% 할인 보장으로 특권상점 대비 5배 효율을 제공합니다.'
               : 'Sự kiện chính để farm badge. Giảm 90% đảm bảo hiệu quả gấp 5 lần VIP Shop.'}
           </p>
         </div>
@@ -119,7 +119,7 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {isKorean ? '주기: 약 4주마다 개최' : 'Chu kỳ: khoảng 4 tuần/lần'}</li>
               <li>• {isKorean ? '90% 할인 보장: 5번째, 9번째, 18번째, 32번째 시도' : '90% đảm bảo: lần thứ 5, 9, 18, 32'}</li>
-              <li>• {isKorean ? 'VIP 샵 대비 5배 효율 (경찰휘장 구매)' : 'Hiệu quả gấp 5 lần VIP Shop (mua badge)'}</li>
+              <li>• {isKorean ? '특권상점 대비 5배 효율 (경찰휘장 구매)' : 'Hiệu quả gấp 5 lần VIP Shop (mua badge)'}</li>
               <li>• {isKorean ? '권장 티켓: 최소 9장, 이상적 18장+' : 'Ticket khuyến nghị: tối thiểu 9, lý tưởng 18+'}</li>
             </ul>
           </CardContent>
@@ -222,7 +222,7 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
               </div>
               <p className="text-sm text-muted-foreground mt-4 text-center">
                 {isKorean
-                  ? '※ 럭키 할인 90% 할인은 VIP 샵에서 경찰휘장를 직접 구매하는 것보다 5배 효율적입니다'
+                  ? '※ 럭키 할인 90% 할인은 특권상점에서 경찰휘장을 직접 구매하는 것보다 5배 효율적입니다'
                   : '※ Giảm 90% Lucky Discounter hiệu quả gấp 5 lần mua badge trực tiếp từ VIP Shop'}
               </p>
             </CardContent>
@@ -239,7 +239,7 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
                   {isKorean ? '핵심 주의사항' : 'Lưu ý quan trọng'}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? 'VIP 샵에서 경찰휘장 직접 구매 금지! 럭키 할인 기다리기' : 'KHÔNG mua badge trực tiếp từ VIP Shop! Chờ Lucky Discounter'}</li>
+                  <li>• {isKorean ? '특권상점에서 경찰휘장 직접 구매 금지! 럭키 할인 기다리기' : 'KHÔNG mua badge trực tiếp từ VIP Shop! Chờ Lucky Discounter'}</li>
                   <li>• {isKorean ? '90% 할인이 아니면 구매 스킵 - 낮은 할인율은 비효율' : 'Không phải 90% thì bỏ qua - tỷ lệ thấp không hiệu quả'}</li>
                   <li>• {isKorean ? '티켓 없이 참여하면 손해 - 미리 모아두기' : 'Tham gia không có ticket bị thiệt - tích trước'}</li>
                 </ul>

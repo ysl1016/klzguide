@@ -48,7 +48,7 @@ function GearSetsContent({ locale }: { locale: string }) {
 
   const gearSources = [
     {
-      source: isKorean ? '메리트 상점 (Merit Shop)' : 'Merit Shop',
+      source: isKorean ? '공훈상점 (Merit Shop)' : 'Merit Shop',
       type: isKorean ? '오렌지 장비' : 'Trang bị cam',
       frequency: isKorean ? '매주' : 'Hàng tuần',
       priority: isKorean ? '필수' : 'Bắt buộc',
@@ -98,7 +98,7 @@ function GearSetsContent({ locale }: { locale: string }) {
       ? 'DPS 영웅에게는 총을 최우선으로 업그레이드 - 가장 큰 파워 스파이크'
       : 'Nâng súng ưu tiên nhất cho DPS - power spike lớn nhất',
     isKorean
-      ? '메리트 상점 오렌지 장비는 절대 놓치지 마세요'
+      ? '공훈상점 오렌지 장비는 절대 놓치지 마세요'
       : 'Đừng bao giờ bỏ lỡ trang bị cam từ Merit Shop',
     isKorean
       ? '보라 장비 상자보다 오렌지 장비 선택 상자가 훨씬 효율적'
@@ -137,7 +137,7 @@ function GearSetsContent({ locale }: { locale: string }) {
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {isKorean ? 'DPS: 공격% → 데미지% → 병력HP (총, 헬멧 우선)' : 'DPS: ATK% → Damage% → HP quân (Súng, Mũ ưu tiên)'}</li>
               <li>• {isKorean ? '탱커: HP% → 방어% → 저항 (중장갑, 부츠 우선)' : 'Tank: HP% → DEF% → Kháng (Giáp, Giày ưu tiên)'}</li>
-              <li>• {isKorean ? '메리트 상점 오렌지 장비 매주 필수 구매' : 'Mua trang bị cam Merit Shop hàng tuần bắt buộc'}</li>
+              <li>• {isKorean ? '공훈상점 오렌지 장비 매주 필수 구매' : 'Mua trang bị cam Merit Shop hàng tuần bắt buộc'}</li>
               <li>• {isKorean ? '개별 스탯이 세트 효과보다 중요할 수 있음' : 'Stat riêng có thể quan trọng hơn bonus set'}</li>
             </ul>
           </CardContent>

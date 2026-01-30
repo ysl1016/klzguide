@@ -366,7 +366,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
               <Lightbulb className="h-5 w-5 text-tip shrink-0" />
               <p className="text-sm text-muted-foreground">
                 {isKorean
-                  ? '메리트 상점에서 매주 오렌지 장비 구매 가능 - 놓치지 마세요!'
+                  ? '공훈상점에서 매주 오렌지 장비 구매 가능 - 놓치지 마세요!'
                   : 'Có thể mua trang bị cam hàng tuần từ Merit Shop - đừng bỏ lỡ!'}
               </p>
             </div>

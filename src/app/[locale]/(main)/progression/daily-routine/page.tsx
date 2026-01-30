@@ -107,7 +107,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       priority: 'high',
     },
     {
-      task: isKorean ? '메리트 상자 3개 열기 (최소 3개 임무 완료)' : 'Mở 3 hộp Merit (hoàn thành ít nhất 3 nhiệm vụ)',
+      task: isKorean ? '공훈상자 3개 열기 (최소 3개 임무 완료)' : 'Mở 3 hộp Merit (hoàn thành ít nhất 3 nhiệm vụ)',
       priority: 'high',
     },
     {
@@ -346,11 +346,11 @@ function DailyRoutineContent({ locale }: { locale: string }) {
           <Zap className="h-5 w-5 text-tip shrink-0 mt-0.5" />
           <div>
             <p className="font-medium text-tip mb-1">
-              {isKorean ? '메리트 상자 팁' : 'Mẹo hộp Merit'}
+              {isKorean ? '공훈상자 팁' : 'Mẹo hộp Merit'}
             </p>
             <p className="text-sm text-muted-foreground">
               {isKorean
-                ? '매일 3개 임무만 완료하면 모든 메리트 상자를 열 수 있습니다. 히어로 이니셔티브와 모드 차량 부스트는 거의 무료로 기여 가능합니다.'
+                ? '매일 3개 임무만 완료하면 모든 공훈상자를 열 수 있습니다. 히어로 이니셔티브와 모드 차량 부스트는 거의 무료로 기여 가능합니다.'
                 : 'Chỉ cần hoàn thành 3 nhiệm vụ mỗi ngày để mở tất cả hộp Merit. Hero Initiative và Mod Vehicle Boost có thể đóng góp gần như miễn phí.'}
             </p>
           </div>

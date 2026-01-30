@@ -205,7 +205,7 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
                 {[
                   isKorean ? '트럭 보내기 (부품상자, 오렌지 조각 획득)' : 'Gửi xe tải (hộp linh kiện, mảnh cam)',
                   isKorean ? '난폭 두목 4회 공격 (일요일 제외)' : 'Tấn công Furylord 4 lần (trừ CN)',
-                  isKorean ? '메리트 상자 3개 열기 (최소 3개 임무 완료)' : 'Mở 3 hộp Merit (hoàn thành ít nhất 3 nhiệm vụ)',
+                  isKorean ? '공훈상자 3개 열기 (최소 3개 임무 완료)' : 'Mở 3 hộp Merit (hoàn thành ít nhất 3 nhiệm vụ)',
                   isKorean ? '연맹 도움 요청 및 도움주기' : 'Yêu cầu và hỗ trợ liên minh',
                   isKorean ? '오늘의 이벤트 요일 확인 후 해당 활동 집중' : 'Kiểm tra ngày sự kiện và tập trung hoạt động phù hợp',
                   isKorean ? '오렌지 바운티/트레이드 우선 완료' : 'Ưu tiên hoàn thành Bounty/Trade cam',

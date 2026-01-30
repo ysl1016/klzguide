@@ -129,7 +129,7 @@ function CombatPowerContent({ locale }: { locale: string }) {
       ? '이벤트 동기화: Full Preparedness 이벤트(08:00/20:00)에 맞춰 업그레이드'
       : 'Đồng bộ sự kiện: Nâng cấp theo sự kiện Full Preparedness (08:00/20:00)',
     isKorean
-      ? '오렌지 장비: 메리트 상점에서 매주 획득 가능, 메인 영웅에게 우선 장착'
+      ? '오렌지 장비: 공훈상점에서 매주 획득 가능, 메인 영웅에게 우선 장착'
       : 'Trang bị cam: Có thể lấy hàng tuần từ Merit Shop, ưu tiên anh hùng chính',
     isKorean
       ? 'HP 연구 우선: HP 연구는 생존력 + 전투력 동시 상승'
