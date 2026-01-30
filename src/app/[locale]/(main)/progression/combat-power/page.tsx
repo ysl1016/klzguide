@@ -23,7 +23,7 @@ function CombatPowerContent({ locale }: { locale: string }) {
     {
       icon: Building2,
       name: isKorean ? '건물 전투력' : 'Sức mạnh công trình',
-      description: isKorean ? 'HQ, 연구소, 캠프 등 건물 레벨' : 'HQ, Lab, Camp levels',
+      description: isKorean ? '본부(HQ), 연구소, 캠프 등 건물 레벨' : 'HQ, Lab, Camp levels',
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
     },
@@ -68,9 +68,9 @@ function CombatPowerContent({ locale }: { locale: string }) {
     },
     {
       rank: 2,
-      title: isKorean ? 'HQ & 연구소 업그레이드' : 'Nâng cấp HQ & Lab',
+      title: isKorean ? '본부(HQ) & 연구소 업그레이드' : 'Nâng cấp HQ & Lab',
       description: isKorean
-        ? 'HQ 없이는 다른 건물 업그레이드가 불가능합니다. 연구소는 HQ 업그레이드의 필수 조건입니다.'
+        ? '본부(HQ) 없이는 다른 건물 업그레이드가 불가능합니다. 연구소는 본부(HQ) 업그레이드의 필수 조건입니다.'
         : 'Không nâng cấp HQ thì không nâng được công trình khác. Lab là điều kiện bắt buộc cho HQ.',
       impact: isKorean ? '전체 진행의 기반' : 'Nền tảng toàn bộ tiến trình',
     },
@@ -135,7 +135,7 @@ function CombatPowerContent({ locale }: { locale: string }) {
       ? 'HP 연구 우선: HP 연구는 생존력 + 전투력 동시 상승'
       : 'Ưu tiên NC HP: NC HP tăng cả sinh tồn + sức mạnh',
     isKorean
-      ? '파워 코어: 오렌지 장비에 고르게 분배, 한 곳에 몰아주지 마세요'
+      ? '에너지코어: 오렌지 장비에 고르게 분배, 한 곳에 몰아주지 마세요'
       : 'Power Core: Phân bổ đều cho trang bị cam, không dồn một chỗ',
   ];
 

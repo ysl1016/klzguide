@@ -58,7 +58,7 @@ function GachaGoContent({ locale }: { locale: string }) {
   ];
 
   const rewards = [
-    { name: 'Golden Wrench', desc: isKorean ? '희귀 차량 개조 아이템' : 'Item cải tạo xe hiếm', rarity: 'legendary' },
+    { name: isKorean ? '황금렌치' : 'Golden Wrench', desc: isKorean ? '희귀 차량 개조 아이템' : 'Item cải tạo xe hiếm', rarity: 'legendary' },
     { name: isKorean ? '청사진' : 'Blueprint', desc: isKorean ? '차량 업그레이드용' : 'Nâng cấp xe', rarity: 'epic' },
     { name: isKorean ? '기프트 박스' : 'Gift Box', desc: isKorean ? '랜덤 고급 아이템' : 'Item cao cấp ngẫu nhiên', rarity: 'epic' },
     { name: isKorean ? '열쇠' : 'Key', desc: isKorean ? '렌치 교환용' : 'Đổi lấy cờ lê', rarity: 'common' },
@@ -96,7 +96,7 @@ function GachaGoContent({ locale }: { locale: string }) {
       ? '10연차가 단일 뽑기보다 효율적 - 보너스 포함'
       : 'Quay 10 hiệu quả hơn quay 1 - có bonus',
     isKorean
-      ? '무과금/소과금은 키 저축에 집중, 대과금은 Golden Wrench 노림'
+      ? '무과금/소과금은 키 저축에 집중, 대과금은 황금렌치 노림'
       : 'F2P/ít tiền tập trung tích key, whale nhắm Golden Wrench',
     isKorean
       ? '예산 한도 미리 정하고 초과 지출 금지'
@@ -123,7 +123,7 @@ function GachaGoContent({ locale }: { locale: string }) {
           </h1>
           <p className="text-muted-foreground">
             {isKorean
-              ? '다이아몬드로 참여하는 뽑기 이벤트입니다. Golden Wrench와 렌치 획득의 핵심 콘텐츠입니다.'
+              ? '다이아몬드로 참여하는 뽑기 이벤트입니다. 황금렌치와 렌치 획득의 핵심 콘텐츠입니다.'
               : 'Sự kiện quay thưởng bằng diamond. Nội dung chính để lấy Golden Wrench và cờ lê.'}
           </p>
         </div>
@@ -134,7 +134,7 @@ function GachaGoContent({ locale }: { locale: string }) {
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {isKorean ? '비용: 500 다이아 = 1회 뽑기, 5,000 다이아 = 10연차' : 'Chi phí: 500 diamond = 1 lần, 5,000 diamond = 10 lần'}</li>
-              <li>• {isKorean ? '핵심 보상: Golden Wrench, 청사진, 기프트 박스' : 'Thưởng chính: Golden Wrench, Blueprint, Gift Box'}</li>
+              <li>• {isKorean ? '핵심 보상: 황금렌치, 청사진, 기프트 박스' : 'Thưởng chính: Golden Wrench, Blueprint, Gift Box'}</li>
               <li>• {isKorean ? '최적 교환: 300 키 → 70 렌치 (4.3 키/렌치)' : 'Đổi tối ưu: 300 key → 70 cờ lê (4.3 key/cờ lê)'}</li>
               <li>• {isKorean ? '키는 이벤트 간 이월됨 - 300개 모아서 교환!' : 'Key chuyển tiếp - tích 300 rồi đổi!'}</li>
             </ul>
@@ -330,7 +330,7 @@ function GachaGoContent({ locale }: { locale: string }) {
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• {isKorean ? '예산 한도를 미리 정하고 초과 지출 금지!' : 'Đặt giới hạn ngân sách trước và KHÔNG vượt quá!'}</li>
-                  <li>• {isKorean ? 'Golden Wrench 확률은 매우 낮음 - 기대하지 말 것' : 'Tỷ lệ Golden Wrench rất thấp - đừng kỳ vọng'}</li>
+                  <li>• {isKorean ? '황금렌치 확률은 매우 낮음 - 기대하지 말 것' : 'Tỷ lệ Golden Wrench rất thấp - đừng kỳ vọng'}</li>
                   <li>• {isKorean ? '키 100개 교환은 비효율 - 300개 모을 때까지 기다림' : 'Đổi 100 key không hiệu quả - chờ đến 300'}</li>
                 </ul>
               </div>

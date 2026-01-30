@@ -41,7 +41,7 @@ function FAQContent({ locale }: { locale: string }) {
     {
       q: isKorean ? '자원 생산 건물을 업그레이드해야 하나요?' : 'Có nên nâng cấp công trình sản xuất?',
       a: isKorean
-        ? '아니요! 농장, 거주지, 풍력발전기, 제련소는 ROI가 매우 낮습니다. 투자 자원 회수에 4개월 이상 소요되므로 스킵하고 HQ/연구소에 집중하세요.'
+        ? '아니요! 농장, 거주지, 풍력발전기, 제련소는 ROI가 매우 낮습니다. 투자 자원 회수에 4개월 이상 소요되므로 스킵하고 본부(HQ)/연구소에 집중하세요.'
         : 'Không! Nông trại, Khu dân cư, Turbine gió, Xưởng luyện kim có ROI rất thấp. Mất 4+ tháng thu hồi đầu tư, bỏ qua và tập trung HQ/Lab.',
     },
     {
@@ -63,7 +63,7 @@ function FAQContent({ locale }: { locale: string }) {
         : 'Chỉ đầu tư trang bị cam. 1) Nâng lên Lv.20 → 2) Thăng 1 hexagon (100 core, hiệu quả nhất) → 3) Nâng đều tất cả 2 sao, 3 sao, 4 sao. F2P dừng ở 4 hexagon.',
     },
     {
-      q: isKorean ? '퓨리로드는 어떻게 공격하나요?' : 'Tấn công Furylord như thế nào?',
+      q: isKorean ? '난폭 두목은 어떻게 공격하나요?' : 'Tấn công Furylord như thế nào?',
       a: isKorean
         ? '매일 4회 (00/06/12/18시), 일요일 제외. 연료가 없어도 공격 가능합니다! 300만 데미지 누적 시 보라 장비가 해금됩니다.'
         : '4 lần/ngày (00/06/12/18h), trừ CN. Có thể tấn công dù không có nhiên liệu! Tích lũy 3M damage mở trang bị tím.',

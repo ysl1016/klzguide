@@ -32,9 +32,9 @@ const latestGuides = [
     categoryVi: 'Cơ bản',
   },
   {
-    title: 'HQ 업그레이드 가이드',
+    title: '본부(HQ) 업그레이드 가이드',
     titleVi: 'Hướng dẫn nâng cấp Trụ sở',
-    description: 'HQ 레벨별 업그레이드 비용과 우선순위를 확인하세요.',
+    description: '본부(HQ) 레벨별 업그레이드 비용과 우선순위를 확인하세요.',
     descriptionVi: 'Xem chi phí và thứ tự ưu tiên nâng cấp theo cấp độ Trụ sở.',
     href: '/progression/hq',
     difficulty: 'basic' as const,

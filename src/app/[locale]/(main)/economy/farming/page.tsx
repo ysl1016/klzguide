@@ -62,7 +62,7 @@ function FarmingContent({ locale }: { locale: string }) {
     { name: isKorean ? '식량' : 'Thực phẩm', color: 'text-green-400', use: isKorean ? '병력 훈련, 건설' : 'Huấn luyện, xây dựng' },
     { name: isKorean ? '목재' : 'Gỗ', color: 'text-yellow-600', use: isKorean ? '건설, 연구' : 'Xây dựng, NC' },
     { name: 'Zent', color: 'text-yellow-400', use: isKorean ? '모든 활동' : 'Mọi hoạt động' },
-    { name: isKorean ? '스틸 (HQ 31+)' : 'Thép (HQ 31+)', color: 'text-orange-400', use: isKorean ? '고레벨 건설' : 'Xây dựng level cao' },
+    { name: isKorean ? '스틸 (본부(HQ) 31+)' : 'Thép (HQ 31+)', color: 'text-orange-400', use: isKorean ? '고레벨 건설' : 'Xây dựng level cao' },
   ];
 
   const tips = [

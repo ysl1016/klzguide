@@ -39,7 +39,7 @@ function MistakesContent({ locale }: { locale: string }) {
         ? '농장, 거주지, 풍력발전기, 제련소, 창고를 업그레이드'
         : 'Nâng cấp Nông trại, Khu dân cư, Turbine gió, Xưởng luyện kim, Kho',
       right: isKorean
-        ? '이 건물들은 ROI가 매우 낮음. HQ와 연구소에만 집중. 요구사항 아니면 스킵'
+        ? '이 건물들은 ROI가 매우 낮음. 본부(HQ)와 연구소에만 집중. 요구사항 아니면 스킵'
         : 'Những công trình này có ROI rất thấp. Chỉ tập trung HQ và Lab. Bỏ qua nếu không phải yêu cầu',
       severity: 'high',
     },
@@ -262,7 +262,7 @@ function MistakesContent({ locale }: { locale: string }) {
             </h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>• {isKorean ? '메인 5명 영웅에만 집중 투자' : 'Chỉ tập trung đầu tư vào 5 anh hùng chính'}</li>
-              <li>• {isKorean ? '자원 생산 건물 스킵, HQ와 연구소에 집중' : 'Bỏ qua công trình sản xuất, tập trung HQ và Lab'}</li>
+              <li>• {isKorean ? '자원 생산 건물 스킵, 본부(HQ)와 연구소에 집중' : 'Bỏ qua công trình sản xuất, tập trung HQ và Lab'}</li>
               <li>• {isKorean ? '가속 아이템은 연맹 대결 테마에 맞춰 사용 (7일 연속, 6테마 순환)' : 'Dùng tăng tốc theo theme Alliance Duel (7 ngày, 6 theme xoay vòng)'}</li>
               <li>• {isKorean ? '전면전비와 연맹 대결 겹칠 때 활동하면 보상 극대화' : 'Hoạt động khi Full Prep + AD trùng để tối đa thưởng'}</li>
               <li>• {isKorean ? '소피아 5성 필수 육성 (건설 비용 절약)' : 'Nuôi Sophia 5 sao bắt buộc (tiết kiệm chi phí xây dựng)'}</li>

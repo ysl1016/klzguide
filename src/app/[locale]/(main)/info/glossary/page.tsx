@@ -25,7 +25,7 @@ function GlossaryContent({ locale }: { locale: string }) {
       ko: '본부',
       vi: 'Trụ sở chính',
       definition: isKorean
-        ? '메인 건물. 다른 모든 건물의 최대 레벨을 결정'
+        ? '본부. 다른 모든 건물의 최대 레벨을 결정'
         : 'Công trình chính. Quyết định level tối đa của mọi công trình khác',
     },
     {
@@ -118,7 +118,7 @@ function GlossaryContent({ locale }: { locale: string }) {
     },
     {
       term: 'Power Core',
-      ko: '파워 코어',
+      ko: '에너지코어',
       vi: 'Power Core',
       definition: isKorean
         ? '오렌지 장비 승급(헥사곤)에 필요한 재화'
@@ -129,12 +129,12 @@ function GlossaryContent({ locale }: { locale: string }) {
       ko: '헥사곤',
       vi: 'Hexagon',
       definition: isKorean
-        ? '장비 성급 시스템. 파워 코어로 업그레이드'
+        ? '장비 성급 시스템. 에너지코어로 업그레이드'
         : 'Hệ thống sao trang bị. Nâng bằng Power Core',
     },
     {
       term: 'Furylord',
-      ko: '퓨리로드',
+      ko: '난폭 두목',
       vi: 'Furylord',
       definition: isKorean
         ? '일일 보스. 4회/일 (00/06/12/18시), 일요일 제외'
@@ -142,7 +142,7 @@ function GlossaryContent({ locale }: { locale: string }) {
     },
     {
       term: 'Full Preparedness',
-      ko: '전투 대비',
+      ko: '전면전비',
       vi: 'Full Preparedness',
       definition: isKorean
         ? '일일 이벤트. 4시간마다 5개 테마가 순환 (건물, 연구, 차량, 영웅, 훈련). 연맹 대결과 겹칠 때 활동하면 보상 2배'

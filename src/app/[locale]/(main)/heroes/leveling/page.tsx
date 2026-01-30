@@ -99,7 +99,7 @@ function HeroLevelingContent({ locale }: { locale: string }) {
       ? '영웅 스킬과 병종 매칭 - 슈터 버프 영웅은 슈터 병종과 조합'
       : 'Kết hợp skill anh hùng với loại quân - skill buff Shooter thì dùng Shooter',
     isKorean
-      ? 'HQ 레벨이 영웅 최대 레벨 결정 - HQ 업그레이드 필수'
+      ? '본부(HQ) 레벨이 영웅 최대 레벨 결정 - 본부(HQ) 업그레이드 필수'
       : 'HQ quyết định max level anh hùng - bắt buộc nâng HQ',
     isKorean
       ? '조각은 이벤트에서 대량 획득 가능 - Full Preparedness 필참'

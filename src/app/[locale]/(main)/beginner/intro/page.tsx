@@ -51,9 +51,9 @@ function BeginnerIntroContent({ locale }: { locale: string }) {
     },
     {
       step: 2,
-      title: isKorean ? 'HQ 레벨업' : 'Nâng cấp HQ',
+      title: isKorean ? '본부(HQ) 레벨업' : 'Nâng cấp HQ',
       desc: isKorean
-        ? 'HQ 레벨이 다른 건물의 레벨 상한을 결정합니다. 가능한 빠르게 HQ를 레벨업하세요.'
+        ? '본부(HQ) 레벨이 다른 건물의 레벨 상한을 결정합니다. 가능한 빠르게 본부(HQ)를 레벨업하세요.'
         : 'Cấp HQ quyết định giới hạn cấp của các công trình khác. Hãy nâng cấp HQ nhanh nhất có thể.',
     },
     {
@@ -268,7 +268,7 @@ function BeginnerIntroContent({ locale }: { locale: string }) {
               },
               {
                 title: isKorean
-                  ? 'HQ 업그레이드 가이드'
+                  ? '본부(HQ) 업그레이드 가이드'
                   : 'Hướng dẫn nâng cấp Trụ sở',
                 href: '/progression/hq',
               },

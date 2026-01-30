@@ -44,11 +44,11 @@ function HQContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Building2 className="h-8 w-8 text-highlight" />
-            {isKorean ? 'HQ 업그레이드 가이드' : 'Hướng dẫn nâng cấp Trụ sở'}
+            {isKorean ? '본부(HQ) 업그레이드 가이드' : 'Hướng dẫn nâng cấp Trụ sở'}
           </h1>
           <p className="text-muted-foreground">
             {isKorean
-              ? 'HQ 1-35 레벨별 업그레이드 비용, 소요 시간, 요구사항을 확인하세요.'
+              ? '본부(HQ) 1-35 레벨별 업그레이드 비용, 소요 시간, 요구사항을 확인하세요.'
               : 'Xem chi phí, thời gian và yêu cầu nâng cấp HQ từ level 1-35.'}
           </p>
         </div>
@@ -58,8 +58,8 @@ function HQContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? 'HQ 1-18: 보너스 포함 2일 이내 가능' : 'HQ 1-18: Có thể dưới 2 ngày với bonus'}</li>
-              <li>• {isKorean ? 'HQ 30: T10 병종 해금 핵심 목표 (140일 기본 시간)' : 'HQ 30: Mục tiêu chính T10 (140 ngày cơ bản)'}</li>
+              <li>• {isKorean ? '본부(HQ) 1-18: 보너스 포함 2일 이내 가능' : 'HQ 1-18: Có thể dưới 2 ngày với bonus'}</li>
+              <li>• {isKorean ? '본부(HQ) 30: T10 병종 해금 핵심 목표 (140일 기본 시간)' : 'HQ 30: Mục tiêu chính T10 (140 ngày cơ bản)'}</li>
               <li>• {isKorean ? '소피아 5성 필수 - 건설 비용 10% 감소로 수십억 자원 절약' : 'Sophia 5 sao bắt buộc - giảm 10% chi phí tiết kiệm hàng tỷ'}</li>
             </ul>
           </CardContent>
@@ -104,7 +104,7 @@ function HQContent({ locale }: { locale: string }) {
         {/* Phases */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? 'HQ 업그레이드 단계' : 'Các giai đoạn nâng cấp HQ'}
+            {isKorean ? '본부(HQ) 업그레이드 단계' : 'Các giai đoạn nâng cấp HQ'}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {hqData.phases.map((phase, idx) => (
@@ -125,7 +125,7 @@ function HQContent({ locale }: { locale: string }) {
         {/* Full Cost Table */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? 'HQ 레벨별 상세 비용표' : 'Bảng chi phí chi tiết theo cấp HQ'}
+            {isKorean ? '본부(HQ) 레벨별 상세 비용표' : 'Bảng chi phí chi tiết theo cấp HQ'}
           </h2>
           <p className="text-sm text-muted-foreground">
             {isKorean
@@ -253,7 +253,7 @@ function HQContent({ locale }: { locale: string }) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-warning">
               <AlertTriangle className="h-5 w-5" />
-              {isKorean ? 'HQ 31+ 스틸(Steel) 자원' : 'Tài nguyên Thép (Steel) HQ 31+'}
+              {isKorean ? '본부(HQ) 31+ 스틸(Steel) 자원' : 'Tài nguyên Thép (Steel) HQ 31+'}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">

@@ -49,7 +49,7 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
       number: 4,
       title: isKorean ? '자원 생산 건물은 스킵하세요' : 'Bỏ qua công trình sản xuất tài nguyên',
       desc: isKorean
-        ? '농장, 거주지, 풍력발전기, 제련소, 창고는 ROI가 낮습니다. HQ와 연구소에 집중하세요. 이 건물들은 요구사항이 아니면 업그레이드하지 마세요.'
+        ? '농장, 거주지, 풍력발전기, 제련소, 창고는 ROI가 낮습니다. 본부(HQ)와 연구소에 집중하세요. 이 건물들은 요구사항이 아니면 업그레이드하지 마세요.'
         : 'Nông trại, Khu dân cư, Turbine gió, Xưởng luyện kim, Kho có ROI thấp. Tập trung vào HQ và Phòng nghiên cứu.',
       priority: 'high',
     },
@@ -87,7 +87,7 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
     },
     {
       number: 9,
-      title: isKorean ? '퓨리로드(Furylord) 공격을 놓치지 마세요' : 'Đừng bỏ lỡ tấn công Furylord',
+      title: isKorean ? '난폭 두목(Furylord) 공격을 놓치지 마세요' : 'Đừng bỏ lỡ tấn công Furylord',
       desc: isKorean
         ? '매일 4회(00:00, 06:00, 12:00, 18:00) 출현. 일요일 제외. 연료 없이도 공격하세요. 300만 데미지로 보라장비 전체 해금.'
         : 'Xuất hiện 4 lần/ngày (00:00, 06:00, 12:00, 18:00), trừ Chủ nhật. Tấn công dù không có nhiên liệu. 3M damage mở khóa toàn bộ trang bị tím.',
@@ -152,7 +152,7 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {isKorean ? '메인 5명 영웅에만 집중, 자원 분산 금지' : 'Chỉ tập trung 5 anh hùng chính, không phân tán tài nguyên'}</li>
               <li>• {isKorean ? '가속 아이템은 연맹 대결 테마에 맞춰 사용 (7일 연속, 6개 테마 순환)' : 'Dùng tăng tốc theo theme Alliance Duel (7 ngày liên tục, 6 theme xoay vòng)'}</li>
-              <li>• {isKorean ? '자원 생산 건물 스킵, HQ와 연구소에 집중' : 'Bỏ qua công trình sản xuất, tập trung HQ và Lab'}</li>
+              <li>• {isKorean ? '자원 생산 건물 스킵, 본부(HQ)와 연구소에 집중' : 'Bỏ qua công trình sản xuất, tập trung HQ và Lab'}</li>
             </ul>
           </CardContent>
         </Card>
@@ -204,7 +204,7 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
               <ul className="space-y-3">
                 {[
                   isKorean ? '트럭 보내기 (부품상자, 오렌지 조각 획득)' : 'Gửi xe tải (hộp linh kiện, mảnh cam)',
-                  isKorean ? '퓨리로드 4회 공격 (일요일 제외)' : 'Tấn công Furylord 4 lần (trừ CN)',
+                  isKorean ? '난폭 두목 4회 공격 (일요일 제외)' : 'Tấn công Furylord 4 lần (trừ CN)',
                   isKorean ? '메리트 상자 3개 열기 (최소 3개 임무 완료)' : 'Mở 3 hộp Merit (hoàn thành ít nhất 3 nhiệm vụ)',
                   isKorean ? '연맹 도움 요청 및 도움주기' : 'Yêu cầu và hỗ trợ liên minh',
                   isKorean ? '오늘의 이벤트 요일 확인 후 해당 활동 집중' : 'Kiểm tra ngày sự kiện và tập trung hoạt động phù hợp',

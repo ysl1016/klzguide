@@ -74,7 +74,7 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
       ? '다이아로 수리 금지! 이벤트 후 무료 수리됨'
       : 'KHÔNG sửa bằng diamond! Sửa miễn phí sau sự kiện',
     isKorean
-      ? '부대 미리 HQ로 소환 - 다른 활동 중이면 참여 불가'
+      ? '부대 미리 본부(HQ)로 소환 - 다른 활동 중이면 참여 불가'
       : 'Triệu hồi quân về HQ trước - quân đang hoạt động không tham gia được',
     isKorean
       ? 'War Frenzy(10분마다)에 집중 공격 - 추가 데미지와 보너스'
@@ -222,8 +222,8 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
                   {isKorean ? '사전 준비' : 'Chuẩn bị'}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? '이벤트 시작 전 부대를 HQ로 소환' : 'Triệu hồi quân về HQ trước sự kiện'}</li>
-                  <li>• {isKorean ? '다른 활동(채집, 크립 등) 완료 후 대기' : 'Hoàn thành hoạt động khác (thu thập, creep, v.v.) rồi chờ'}</li>
+                  <li>• {isKorean ? '이벤트 시작 전 부대를 본부(HQ)로 소환' : 'Triệu hồi quân về HQ trước sự kiện'}</li>
+                  <li>• {isKorean ? '다른 활동(채집, 좀비 처치 등) 완료 후 대기' : 'Hoàn thành hoạt động khác (thu thập, zombie, v.v.) rồi chờ'}</li>
                   <li>• {isKorean ? 'R4/R5가 시작 시간을 연맹 채팅으로 공지' : 'R4/R5 thông báo thời gian bắt đầu qua chat LM'}</li>
                 </ul>
               </div>

@@ -88,7 +88,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       name: isKorean ? '적 파괴자' : 'Enemy Buster',
       nameEn: 'Enemy Buster',
       tasks: isKorean
-        ? ['적 기지 공격', '약한 HQ 타겟', '발로 메달 + 오렌지 장비 조각 획득', '병력 손실 최소화 타겟 선정']
+        ? ['적 기지 공격', '약한 본부(HQ) 타겟', '발로 메달 + 오렌지 장비 조각 획득', '병력 손실 최소화 타겟 선정']
         : ['Tấn công căn cứ địch', 'Nhắm HQ yếu', 'Valor Medal + mảnh trang bị cam', 'Chọn target giảm thiểu mất quân'],
       color: 'text-red-400',
       bg: 'bg-red-500/10',
@@ -103,7 +103,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       priority: 'high',
     },
     {
-      task: isKorean ? '퓨리로드 4회 공격 (00/06/12/18시, 일요일 제외)' : 'Tấn công Furylord 4 lần (00/06/12/18h, trừ CN)',
+      task: isKorean ? '난폭 두목 4회 공격 (00/06/12/18시, 일요일 제외)' : 'Tấn công Furylord 4 lần (00/06/12/18h, trừ CN)',
       priority: 'high',
     },
     {
@@ -300,7 +300,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
         <Card className="border-red-500/30">
           <CardHeader className="pb-2">
             <CardTitle className="text-lg text-red-400">
-              {isKorean ? '퓨리로드 (Furylord) 공략' : 'Công lược Furylord'}
+              {isKorean ? '난폭 두목 (Furylord) 공략' : 'Công lược Furylord'}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">

@@ -48,7 +48,7 @@ function TyrantContent({ locale }: { locale: string }) {
       step: 1,
       title: isKorean ? '부대 소환' : 'Triệu hồi quân',
       desc: isKorean
-        ? '이벤트 시작 5분 전에 모든 부대를 HQ로 소환하세요'
+        ? '이벤트 시작 5분 전에 모든 부대를 본부(HQ)로 소환하세요'
         : 'Triệu hồi tất cả quân về HQ 5 phút trước sự kiện',
       icon: Home,
     },
@@ -72,7 +72,7 @@ function TyrantContent({ locale }: { locale: string }) {
 
   const tips = [
     isKorean
-      ? 'HQ 31-35 플레이어에게 Steel은 핵심 자원 - 좀비폭군이 주요 획득처'
+      ? '본부(HQ) 31-35 플레이어에게 Steel은 핵심 자원 - 좀비폭군이 주요 획득처'
       : 'HQ 31-35 cần Steel - Tyrant là nguồn chính',
     isKorean
       ? 'Engage Offline 설정하면 부재 시에도 자동으로 랠리 참여'
@@ -108,7 +108,7 @@ function TyrantContent({ locale }: { locale: string }) {
           </h1>
           <p className="text-muted-foreground">
             {isKorean
-              ? '연맹 랠리로 진행되는 좀비폭군 이벤트입니다. HQ 31-35 성장에 필요한 Steel의 주요 획득처입니다.'
+              ? '연맹 랠리로 진행되는 좀비폭군 이벤트입니다. 본부(HQ) 31-35 성장에 필요한 Steel의 주요 획득처입니다.'
               : 'Sự kiện rally liên minh Tyrant. Nguồn chính để lấy Steel cho HQ 31-35.'}
           </p>
         </div>
@@ -118,9 +118,9 @@ function TyrantContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '연맹 랠리 이벤트 - HQ 31-35용 Steel 주요 획득처' : 'Sự kiện rally LM - nguồn Steel chính cho HQ 31-35'}</li>
+              <li>• {isKorean ? '연맹 랠리 이벤트 - 본부(HQ) 31-35용 Steel 주요 획득처' : 'Sự kiện rally LM - nguồn Steel chính cho HQ 31-35'}</li>
               <li>• {isKorean ? '최적 랠리 규모: 7-8명 (소규모는 비효율)' : 'Quy mô rally tối ưu: 7-8 người (nhỏ không hiệu quả)'}</li>
-              <li>• {isKorean ? '사전 준비: 시작 5분 전 모든 부대 HQ로 소환' : 'Chuẩn bị: triệu hồi tất cả quân về HQ 5 phút trước'}</li>
+              <li>• {isKorean ? '사전 준비: 시작 5분 전 모든 부대 본부(HQ)로 소환' : 'Chuẩn bị: triệu hồi tất cả quân về HQ 5 phút trước'}</li>
               <li>• {isKorean ? 'Engage Offline 설정으로 부재 시 자동 참여' : 'Bật Engage Offline để tự động tham gia khi vắng'}</li>
             </ul>
           </CardContent>
@@ -192,7 +192,7 @@ function TyrantContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-xs text-muted-foreground">
                   {isKorean
-                    ? '※ 단, 부대가 HQ에 있어야만 자동 참여됩니다. 다른 활동 중인 부대는 참여하지 않습니다.'
+                    ? '※ 단, 부대가 본부(HQ)에 있어야만 자동 참여됩니다. 다른 활동 중인 부대는 참여하지 않습니다.'
                     : '※ Quân phải ở HQ mới tự động tham gia. Quân đang hoạt động khác sẽ không tham gia.'}
                 </p>
               </div>
@@ -217,7 +217,7 @@ function TyrantContent({ locale }: { locale: string }) {
                 <div className="grid gap-3 sm:grid-cols-2 pt-2">
                   <div className="p-3 rounded-lg bg-blue-500/10">
                     <p className="font-semibold text-blue-400">Steel</p>
-                    <p className="text-xs">{isKorean ? 'HQ 31-35 업그레이드 핵심 자원' : 'Tài nguyên chính cho HQ 31-35'}</p>
+                    <p className="text-xs">{isKorean ? '본부(HQ) 31-35 업그레이드 핵심 자원' : 'Tài nguyên chính cho HQ 31-35'}</p>
                   </div>
                   <div className="p-3 rounded-lg bg-purple-500/10">
                     <p className="font-semibold text-purple-400">{isKorean ? '추가 보상' : 'Thưởng thêm'}</p>

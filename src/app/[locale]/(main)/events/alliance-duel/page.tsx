@@ -33,7 +33,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       icon: FlaskConical,
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
-      activity: isKorean ? '연구 완료, 뱃지 관련 연구' : 'Hoàn thành NC, NC liên quan badge',
+      activity: isKorean ? '연구 완료, 경찰휘장 관련 연구' : 'Hoàn thành NC, NC liên quan badge',
       tip: isKorean ? '인터스테이트 트럭 새로고침으로 오렌지 퀘스트 찾기' : 'Refresh Interstate Truck tìm quest cam',
     },
     {
@@ -65,13 +65,13 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       icon: Target,
       color: 'text-green-400',
       bg: 'bg-green-500/10',
-      activity: isKorean ? '적 기지 공격, 약한 HQ 공격' : 'Tấn công căn cứ địch, HQ yếu',
+      activity: isKorean ? '적 기지 공격, 약한 본부(HQ) 공격' : 'Tấn công căn cứ địch, HQ yếu',
       tip: isKorean ? '발로 메달 + 오렌지 장비 조각 - 최고 보상!' : 'Valor Medal + mảnh trang bị cam - thưởng tốt nhất!',
     },
   ];
 
   const rewards = [
-    { item: isKorean ? '영웅 뱃지' : 'Hero Badge', desc: isKorean ? '영웅 성급 업그레이드용' : 'Để nâng sao anh hùng' },
+    { item: isKorean ? '영웅 경찰휘장' : 'Hero Badge', desc: isKorean ? '영웅 성급 업그레이드용' : 'Để nâng sao anh hùng' },
     { item: isKorean ? '오렌지 스킬북' : 'Orange Skill Book', desc: isKorean ? '영웅 스킬 레벨업' : 'Lên level skill anh hùng' },
     { item: isKorean ? '강화 합금' : 'Enhancement Alloy', desc: isKorean ? '장비 강화용' : 'Để nâng cấp trang bị' },
     { item: isKorean ? '다이아몬드' : 'Diamond', desc: isKorean ? '범용 프리미엄 재화' : 'Tiền tệ premium đa năng' },

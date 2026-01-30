@@ -19,7 +19,7 @@
       "description": { "ko": "가속 아이템 관리 필수. 신중한 계획 필요", "vi": "Quản lý tăng tốc bắt buộc. Cần lên kế hoạch cẩn thận" }
     },
     {
-      "name": { "ko": "Phase 4: HQ 30 마일스톤", "vi": "Phase 4: Milestone HQ 30" },
+      "name": { "ko": "Phase 4: 본부(HQ) 30 마일스톤", "vi": "Phase 4: Milestone HQ 30" },
       "levels": "27-30",
       "duration": { "ko": "T10 병종 해금을 위한 핵심 목표", "vi": "Mục tiêu chính để mở khóa binh T10" },
       "description": { "ko": "자원과 가속 비축 필수. 연구소 30 필요", "vi": "Cần tích trữ tài nguyên và tăng tốc. Cần Lab 30" }
@@ -32,7 +32,7 @@
     }
   ],
   "heroCapProgression": {
-    "description": { "ko": "HQ 레벨당 영웅 레벨 상한 +5", "vi": "Mỗi cấp HQ tăng giới hạn anh hùng +5" },
+    "description": { "ko": "본부(HQ) 레벨당 영웅 레벨 상한 +5", "vi": "Mỗi cấp HQ tăng giới hạn anh hùng +5" },
     "examples": [
       { "hq": 1, "heroCap": 5 },
       { "hq": 10, "heroCap": 50 },
@@ -42,7 +42,7 @@
     ]
   },
   "requirementPattern": {
-    "ko": "HQ 8부터 항상 연구소 필요. 두 번째 건물은 순환: 성벽 → 연맹센터 → 돌격캠프 → 슈터캠프 → 라이더캠프",
+    "ko": "본부(HQ) 8부터 항상 연구소 필요. 두 번째 건물은 순환: 성벽 → 연맹센터 → 돌격캠프 → 슈터캠프 → 라이더캠프",
     "vi": "Từ HQ 8 luôn cần Phòng nghiên cứu. Công trình thứ 2 theo chu kỳ: Tường → Trung tâm LM → Trại ĐK → Trại XT → Trại KB"
   },
   "hqLevels": [
@@ -405,7 +405,7 @@
     }
   ],
   "requiredBuildings": {
-    "ko": ["연구소 (HQ 8부터 매번 필요)", "성벽", "연맹 센터", "돌격 캠프", "슈터 캠프", "라이더 캠프"],
+    "ko": ["연구소 (본부(HQ) 8부터 매번 필요)", "성벽", "연맹 센터", "돌격 캠프", "슈터 캠프", "라이더 캠프"],
     "vi": ["Phòng nghiên cứu (cần từ HQ 8)", "Tường thành", "Trung tâm liên minh", "Trại Đột kích", "Trại Xạ thủ", "Trại Kỵ binh"]
   },
   "skipBuildings": {
@@ -414,9 +414,9 @@
   },
   "steelInfo": {
     "ko": {
-      "description": "HQ 30 이후 등장하는 새 자원",
-      "sources": ["오렌지 바운티 (최고 수확량)", "스틸 광산", "퓨리로드", "허브 상점", "시즌4 이벤트"],
-      "tip": "HQ 31-35 완료 후 특별 이벤트에서 대량 스틸 보상"
+      "description": "본부(HQ) 30 이후 등장하는 새 자원",
+      "sources": ["오렌지 바운티 (최고 수확량)", "스틸 광산", "난폭 두목", "허브 상점", "시즌4 이벤트"],
+      "tip": "본부(HQ) 31-35 완료 후 특별 이벤트에서 대량 스틸 보상"
     },
     "vi": {
       "description": "Tài nguyên mới xuất hiện sau HQ 30",
@@ -431,7 +431,7 @@
   "tips": {
     "ko": [
       "소피아(Sophia) 5성을 최대한 빨리 달성하세요 - 수십억 자원 절약",
-      "연맹 대결 2일차까지 HQ 완료를 미루세요 - 녹색 체크마크 누르지 마세요",
+      "연맹 대결 2일차까지 본부(HQ) 완료를 미루세요 - 녹색 체크마크 누르지 마세요",
       "병목현상은 자원이나 스틸이 아닌 '가속 아이템'입니다",
       "자원 생산 건물(농장, 거주지 등)은 스킵하세요 - ROI가 낮습니다",
       "연구소를 두 번째로 업그레이드하면 연구 속도가 2배가 됩니다",

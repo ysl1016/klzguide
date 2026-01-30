@@ -53,7 +53,7 @@ function SVSContent({ locale }: { locale: string }) {
   const capitalClashPoints = [
     { activity: isKorean ? '캐피탈 구역 TvT 전투' : 'Capital Area TVT Combat', points: isKorean ? '최고 배율' : 'Highest multiplier', note: isKorean ? '핵심 포인트원' : 'Nguồn điểm chính' },
     { activity: isKorean ? '터렛 구역 전투' : 'Turret Zone Combat', points: isKorean ? '높은 배율' : 'High multiplier', note: isKorean ? '아군 사망도 포인트' : 'Quân chết cũng có điểm' },
-    { activity: isKorean ? '저레벨 적 HQ 파괴' : 'Destroy Low-level Enemy HQ', points: '50,000+', note: isKorean ? 'Lv.20-24 HQ 스나이프' : 'Snipe HQ Lv.20-24' },
+    { activity: isKorean ? '저레벨 적 본부(HQ) 파괴' : 'Destroy Low-level Enemy HQ', points: '50,000+', note: isKorean ? 'Lv.20-24 본부(HQ) 스나이프' : 'Snipe HQ Lv.20-24' },
     { activity: isKorean ? '랠리 공격 참여' : 'Rally Attack', points: '100,000+', note: isKorean ? '조율된 공격' : 'Tấn công phối hợp' },
     { activity: isKorean ? '아군 지원' : 'Reinforce Ally', points: '20-50,000', note: isKorean ? '방어 시 적 손실분 획득' : 'Được điểm khi địch mất quân' },
   ];
@@ -68,7 +68,7 @@ function SVSContent({ locale }: { locale: string }) {
   const mapZones = [
     { name: isKorean ? '중앙 캐피탈' : 'Central Capital', desc: isKorean ? '100% 점령 시 승리. 최고 가치 구역' : 'Chiếm 100% thắng. Khu giá trị cao nhất', color: 'text-yellow-400' },
     { name: isKorean ? '4개 터렛' : '4 Turrets', desc: isKorean ? '캐피탈에 로켓 지원 공격' : 'Hỗ trợ rocket vào capital', color: 'text-red-400' },
-    { name: isKorean ? '갈색 더트존' : 'Brown Dirt Zone', desc: isKorean ? 'HQ 배치 가능한 전투 구역' : 'Khu có thể đặt HQ chiến đấu', color: 'text-orange-400' },
+    { name: isKorean ? '갈색 더트존' : 'Brown Dirt Zone', desc: isKorean ? '본부(HQ) 배치 가능한 전투 구역' : 'Khu có thể đặt HQ chiến đấu', color: 'text-orange-400' },
     { name: isKorean ? '쉴드 존' : 'Shield Zone', desc: isKorean ? '재정비를 위한 안전 구역' : 'Khu an toàn để hồi phục', color: 'text-green-400' },
   ];
 
@@ -84,7 +84,7 @@ function SVSContent({ locale }: { locale: string }) {
     isKorean ? '2.25M 포인트로 9박스 풀 해금 → 45,000 Valor Medals' : '2.25M điểm mở 9 hộp → 45,000 Valor Medals',
     isKorean ? '팀워크 > 개인 파워 - 연맹 조율이 핵심' : 'Teamwork > Sức mạnh cá nhân - phối hợp LM là chính',
     isKorean ? '방어자: 캐피탈 구역 TvT 집중' : 'Phòng thủ: Tập trung TVT khu capital',
-    isKorean ? '침략자: 저레벨 적 HQ 스나이프로 쉬운 포인트' : 'Xâm lược: Snipe HQ thấp để lấy điểm dễ',
+    isKorean ? '침략자: 저레벨 적 본부(HQ) 스나이프로 쉬운 포인트' : 'Xâm lược: Snipe HQ thấp để lấy điểm dễ',
     isKorean ? '100% 점령 못하면 점령률 높은 서버 승리' : 'Không chiếm 100% thì % cao hơn thắng',
     isKorean ? 'Valor Medals로 블랙마켓 오렌지 장비 구매 - 최고 가치!' : 'Mua trang bị cam Black Market bằng Valor Medals - giá trị nhất!',
   ];

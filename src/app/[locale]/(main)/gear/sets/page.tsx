@@ -62,7 +62,7 @@ function GearSetsContent({ locale }: { locale: string }) {
       color: 'text-yellow-400',
     },
     {
-      source: isKorean ? '퓨리로드 (Furylord)' : 'Furylord',
+      source: isKorean ? '난폭 두목 (Furylord)' : 'Furylord',
       type: isKorean ? '보라 장비' : 'Trang bị tím',
       frequency: isKorean ? '4회/일' : '4 lần/ngày',
       priority: isKorean ? '보통' : 'Trung bình',

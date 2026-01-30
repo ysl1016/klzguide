@@ -140,7 +140,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
           </h1>
           <p className="text-muted-foreground">
             {isKorean
-              ? '장비 등급, 강화 방법, 파워 코어 사용법을 알아봅니다.'
+              ? '장비 등급, 강화 방법, 에너지코어 사용법을 알아봅니다.'
               : 'Tìm hiểu cấp trang bị, cách nâng cấp, cách dùng Power Core.'}
           </p>
         </div>
@@ -191,7 +191,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
-                    ? '강화 합금(Enhancement Alloy)과 파워 코어는 절대 보라/블루/그린 장비에 사용하지 마세요!'
+                    ? '강화 합금(Enhancement Alloy)과 에너지코어는 절대 보라/블루/그린 장비에 사용하지 마세요!'
                     : 'KHÔNG BAO GIỜ dùng Enhancement Alloy và Power Core cho trang bị tím/xanh/xanh lá!'}
                 </p>
               </div>
@@ -209,7 +209,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
               <thead>
                 <tr className="border-b border-border bg-muted/30">
                   <th className="text-left p-3">{isKorean ? '헥사곤' : 'Hexagon'}</th>
-                  <th className="text-right p-3">Power Cores</th>
+                  <th className="text-right p-3">{isKorean ? '에너지코어' : 'Power Cores'}</th>
                   <th className="text-right p-3">Zent</th>
                   <th className="text-left p-3">{isKorean ? '비고' : 'Ghi chú'}</th>
                 </tr>
@@ -300,7 +300,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Power Cores</span>
+                  <span className="text-muted-foreground">{isKorean ? '에너지코어' : 'Power Cores'}</span>
                   <span className="font-mono">{totalCosts.perPiece.cores}</span>
                 </div>
                 <div className="flex justify-between">
@@ -319,7 +319,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Power Cores</span>
+                  <span className="text-muted-foreground">{isKorean ? '에너지코어' : 'Power Cores'}</span>
                   <span className="font-mono text-highlight">{totalCosts.per5Heroes.cores}</span>
                 </div>
                 <div className="flex justify-between">
