@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { MobileNav } from './MobileNav';
 import { SearchBar } from './SearchBar';
-import { Search, Shield } from 'lucide-react';
+import { Home, Search, Shield } from 'lucide-react';
 import { useState } from 'react';
 
 export function Header() {
@@ -49,6 +49,18 @@ export function Header() {
             onClick={() => setIsSearchOpen(!isSearchOpen)}
           >
             <Search className="h-5 w-5" />
+          </Button>
+
+          {/* Home Button (Desktop) */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="hidden md:flex"
+            asChild
+          >
+            <Link href="/">
+              <Home className="h-5 w-5" />
+            </Link>
           </Button>
 
           <LanguageSwitcher />
