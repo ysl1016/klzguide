@@ -102,6 +102,7 @@ const navItems: NavItem[] = [
       { key: 'gachaGo', href: '/events/gacha-go' },
       { key: 'luckyDiscounter', href: '/events/lucky-discounter' },
       { key: 'allianceDuel', href: '/events/alliance-duel' },
+      { key: 'canyonClash', href: '/events/canyon-clash' },
       { key: 'svs', href: '/events/svs' },
     ],
   },
