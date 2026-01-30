@@ -86,7 +86,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       ? '오렌지 레벨 퀘스트(현상금, 트럭) 우선 - 포인트 가치 훨씬 높음'
       : 'Ưu tiên quest cam (bounty, truck) - giá trị điểm cao hơn nhiều',
     isKorean
-      ? 'Full Preparedness와 겹칠 때 활동 = 보상 2배 (골든 아워)'
+      ? '전면전비와 겹칠 때 활동 = 보상 2배 (골든 아워)'
       : 'Hoạt động khi trùng Full Prep = thưởng gấp đôi (Golden Hour)',
     isKorean
       ? '연맹 채팅으로 오늘 테마 공유, 자원 저장 알림 - 조직력 = 순위'
@@ -129,7 +129,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
               <li>• {isKorean ? '7일 연속 이벤트 - 매일 다른 테마 (6개 테마 순환)' : 'Sự kiện 7 ngày liên tục - mỗi ngày theme khác (6 theme xoay vòng)'}</li>
               <li>• {isKorean ? '테마에 맞는 활동만 포인트 획득 - 다른 활동은 최소/0 포인트' : 'Chỉ hoạt động đúng theme được điểm - hoạt động khác = ít/0 điểm'}</li>
               <li>• {isKorean ? '영웅 조각, 모집 티켓은 Hero Initiative 날에만 사용!' : 'Mảnh anh hùng, vé tuyển mộ chỉ dùng ngày Hero Initiative!'}</li>
-              <li>• {isKorean ? 'Full Prep와 겹칠 때 = 보상 2배 (최고 효율)' : 'Khi trùng Full Prep = thưởng gấp đôi (hiệu quả nhất)'}</li>
+              <li>• {isKorean ? '전면전비와 겹칠 때 = 보상 2배 (최고 효율)' : 'Khi trùng Full Prep = thưởng gấp đôi (hiệu quả nhất)'}</li>
             </ul>
           </CardContent>
         </Card>

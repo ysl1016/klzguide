@@ -95,7 +95,12 @@ const navItems: NavItem[] = [
     href: '/events',
     icon: Calendar,
     children: [
-      { key: 'daily', href: '/events/daily' },
+      { key: 'fullPrep', href: '/events/full-prep' },
+      { key: 'furylord', href: '/events/furylord' },
+      { key: 'tyrant', href: '/events/tyrant' },
+      { key: 'zombieSiege', href: '/events/zombie-siege' },
+      { key: 'gachaGo', href: '/events/gacha-go' },
+      { key: 'luckyDiscounter', href: '/events/lucky-discounter' },
       { key: 'allianceDuel', href: '/events/alliance-duel' },
       { key: 'svs', href: '/events/svs' },
     ],

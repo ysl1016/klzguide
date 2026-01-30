@@ -42,11 +42,11 @@ function SVSContent({ locale }: { locale: string }) {
   // State Ruler Point Methods
   const stateRulerPoints = [
     { activity: isKorean ? '연맹 대결 1위' : 'Alliance Duel 1st', points: '6,000', note: isKorean ? '개인 포인트' : 'Điểm cá nhân' },
-    { activity: isKorean ? 'Full Prep 챔피언' : 'Full Prep Champion', points: '500', note: isKorean ? '개인 포인트' : 'Điểm cá nhân' },
+    { activity: isKorean ? '전면전비 챔피언' : 'Full Prep Champion', points: '500', note: isKorean ? '개인 포인트' : 'Điểm cá nhân' },
     { activity: isKorean ? '아레나 챔피언' : 'Arena Champion', points: '20,000', note: isKorean ? '개인 포인트' : 'Điểm cá nhân' },
     { activity: isKorean ? '적 트럭 약탈 성공' : 'Plunder Enemy Truck', points: '100', note: isKorean ? '회당' : 'Mỗi lần' },
     { activity: isKorean ? '연맹 대결 승리' : 'AD Victory', points: '30,000', note: isKorean ? '연맹 포인트' : 'Điểm LM' },
-    { activity: isKorean ? '퓨리로드 Top 200 데미지' : 'Furylord Top 200 Damage', points: '~30,000', note: isKorean ? '1위 기준' : 'Top 1' },
+    { activity: isKorean ? '난폭 두목 Top 200 데미지' : 'Furylord Top 200 Damage', points: '~30,000', note: isKorean ? '1위 기준' : 'Top 1' },
   ];
 
   // Capital Clash Point Methods

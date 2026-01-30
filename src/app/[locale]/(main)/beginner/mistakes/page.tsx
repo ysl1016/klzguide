@@ -105,15 +105,15 @@ function MistakesContent({ locale }: { locale: string }) {
         ? '아무 때나 자원과 아이템 사용'
         : 'Dùng tài nguyên và vật phẩm bất cứ lúc nào',
       right: isKorean
-        ? '연맹 대결(7일, 6테마 순환) + Full Preparedness(4시간마다 5테마 변경) 겹칠 때 활동하면 보상 극대화. 해당 테마에 맞는 가속/아이템 사용'
+        ? '연맹 대결(7일, 6테마 순환) + 전면전비(4시간마다 5테마 변경) 겹칠 때 활동하면 보상 극대화. 해당 테마에 맞는 가속/아이템 사용'
         : 'Hoạt động khi Alliance Duel (7 ngày, 6 theme) + Full Prep (5 theme đổi mỗi 4 tiếng) trùng nhau để tối đa thưởng. Dùng tăng tốc/item theo theme phù hợp',
       severity: 'medium',
     },
     {
       number: 9,
-      title: isKorean ? '퓨리로드 공격 안 함' : 'Không tấn công Furylord',
+      title: isKorean ? '난폭 두목 공격 안 함' : 'Không tấn công Furylord',
       wrong: isKorean
-        ? '연료가 없어서 퓨리로드 공격을 스킵'
+        ? '연료가 없어서 난폭 두목 공격을 스킵'
         : 'Bỏ qua tấn công Furylord vì không có nhiên liệu',
       right: isKorean
         ? '연료 없이도 공격. 일요일 제외 매일 4회(00/06/12/18시). 300만 데미지로 보라장비 해금'
@@ -264,7 +264,7 @@ function MistakesContent({ locale }: { locale: string }) {
               <li>• {isKorean ? '메인 5명 영웅에만 집중 투자' : 'Chỉ tập trung đầu tư vào 5 anh hùng chính'}</li>
               <li>• {isKorean ? '자원 생산 건물 스킵, HQ와 연구소에 집중' : 'Bỏ qua công trình sản xuất, tập trung HQ và Lab'}</li>
               <li>• {isKorean ? '가속 아이템은 연맹 대결 테마에 맞춰 사용 (7일 연속, 6테마 순환)' : 'Dùng tăng tốc theo theme Alliance Duel (7 ngày, 6 theme xoay vòng)'}</li>
-              <li>• {isKorean ? 'Full Prep와 연맹 대결 겹칠 때 활동하면 보상 극대화' : 'Hoạt động khi Full Prep + AD trùng để tối đa thưởng'}</li>
+              <li>• {isKorean ? '전면전비와 연맹 대결 겹칠 때 활동하면 보상 극대화' : 'Hoạt động khi Full Prep + AD trùng để tối đa thưởng'}</li>
               <li>• {isKorean ? '소피아 5성 필수 육성 (건설 비용 절약)' : 'Nuôi Sophia 5 sao bắt buộc (tiết kiệm chi phí xây dựng)'}</li>
             </ul>
           </CardContent>
