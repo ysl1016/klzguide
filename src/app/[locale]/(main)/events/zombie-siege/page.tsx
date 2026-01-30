@@ -100,7 +100,7 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Shield className="h-8 w-8 text-green-400" />
-            {isKorean ? '좀비 포위전 (Zombie Siege) 가이드' : 'Hướng dẫn Zombie Siege'}
+            {isKorean ? '좀비공성 (Zombie Siege) 가이드' : 'Hướng dẫn Zombie Siege'}
           </h1>
           <p className="text-muted-foreground">
             {isKorean
