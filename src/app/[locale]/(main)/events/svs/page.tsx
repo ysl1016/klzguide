@@ -1,9 +1,8 @@
 import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Clock, Globe, Trophy, Target, Lightbulb, AlertTriangle, Calendar, Swords, Map, Users, Building, ArrowRight } from 'lucide-react';
+import { Clock, Globe, Trophy, Target, Lightbulb, AlertTriangle, Calendar, Swords, Map, Users } from 'lucide-react';
 
 export default async function SVSPage({
   params,
@@ -127,30 +126,6 @@ function SVSContent({ locale }: { locale: string }) {
             </ul>
           </CardContent>
         </Card>
-
-        {/* Link to Canyon Clash */}
-        <Link href="/events/canyon-clash">
-          <Card className="border-orange-500/30 bg-orange-500/5 hover:bg-orange-500/10 transition-colors cursor-pointer">
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Building className="h-6 w-6 text-orange-400" />
-                  <div>
-                    <p className="font-semibold text-orange-400">
-                      {isKorean ? '협곡쟁탈전 (Canyon Clash)' : 'Canyon Clash'}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {isKorean
-                        ? '금요일 연맹 대 연맹 1시간 전투 이벤트'
-                        : 'Sự kiện LM vs LM 1 tiếng vào thứ 6'}
-                    </p>
-                  </div>
-                </div>
-                <ArrowRight className="h-5 w-5 text-orange-400" />
-              </div>
-            </CardContent>
-          </Card>
-        </Link>
 
         {/* SVS Schedule */}
         <section className="space-y-4">
