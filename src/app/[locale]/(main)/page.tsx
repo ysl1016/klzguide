@@ -4,6 +4,7 @@ import {
   GuideCard,
   QuickStartCard,
   RedeemCodeCard,
+  VisitorCounter,
 } from '@/components/content';
 import { Compass } from 'lucide-react';
 
@@ -87,6 +88,9 @@ function HomePageContent({ locale }: { locale: string }) {
             {t('subtitle')}
           </p>
         </section>
+
+        {/* Visitor Counter */}
+        <VisitorCounter locale={locale} />
 
         {/* Quick Start Section */}
         <section className="space-y-6">
