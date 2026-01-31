@@ -68,12 +68,12 @@ function GlossaryContent({ locale }: { locale: string }) {
         : 'Sự kiện chiến đấu lớn giữa các server',
     },
     {
-      term: isKorean ? '랠리' : 'Rally',
-      ko: '랠리',
+      term: isKorean ? '랠리 (단결/집결)' : 'Rally',
+      ko: '랠리 (단결/집결)',
       en: 'Rally',
       vi: 'Rally',
       definition: isKorean
-        ? '연맹원들이 함께 공격하는 집단 공격'
+        ? '연맹원들이 함께 공격하는 집단 공격. 게임 내 표기는 "단결" 또는 "집결"'
         : 'Tấn công tập thể cùng thành viên liên minh',
     },
     {
