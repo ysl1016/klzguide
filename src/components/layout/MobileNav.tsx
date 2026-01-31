@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
@@ -153,6 +153,23 @@ export function MobileNav() {
   const t = useTranslations();
   const pathname = usePathname();
 
+  // Find which menu should be open based on current path
+  const getActiveMenu = () => {
+    for (const item of navItems) {
+      if (pathname.startsWith(item.href)) {
+        return item.key;
+      }
+    }
+    return '';
+  };
+
+  const [openMenu, setOpenMenu] = useState<string>(getActiveMenu());
+
+  // Update open menu when pathname changes
+  useEffect(() => {
+    setOpenMenu(getActiveMenu());
+  }, [pathname]);
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -185,7 +202,13 @@ export function MobileNav() {
               {t('common.home')}
             </Link>
 
-            <Accordion type="multiple" className="space-y-1">
+            <Accordion
+              type="single"
+              collapsible
+              value={openMenu}
+              onValueChange={setOpenMenu}
+              className="space-y-1"
+            >
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = pathname.startsWith(item.href);

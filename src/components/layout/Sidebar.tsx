@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
@@ -141,15 +142,22 @@ export function Sidebar() {
   const t = useTranslations();
   const pathname = usePathname();
 
-  const getDefaultOpenValues = () => {
-    const openItems: string[] = [];
-    navItems.forEach((item) => {
+  // Find which menu should be open based on current path
+  const getActiveMenu = () => {
+    for (const item of navItems) {
       if (pathname.startsWith(item.href)) {
-        openItems.push(item.key);
+        return item.key;
       }
-    });
-    return openItems;
+    }
+    return '';
   };
+
+  const [openMenu, setOpenMenu] = useState<string>(getActiveMenu());
+
+  // Update open menu when pathname changes
+  useEffect(() => {
+    setOpenMenu(getActiveMenu());
+  }, [pathname]);
 
   return (
     <aside className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0 lg:z-50 lg:pt-16">
@@ -157,8 +165,10 @@ export function Sidebar() {
         <ScrollArea className="h-full py-4">
           <nav className="px-3 space-y-1">
             <Accordion
-              type="multiple"
-              defaultValue={getDefaultOpenValues()}
+              type="single"
+              collapsible
+              value={openMenu}
+              onValueChange={setOpenMenu}
               className="space-y-1"
             >
               {navItems.map((item) => {
