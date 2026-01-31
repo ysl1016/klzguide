@@ -182,9 +182,9 @@ function ChangelogContent({ locale }: { locale: string }) {
                     {changes.map((change, changeIdx) => (
                       <li
                         key={changeIdx}
-                        className="text-muted-foreground flex items-start gap-2"
+                        className="text-muted-foreground flex items-baseline gap-2"
                       >
-                        <span className="text-highlight mt-1.5">•</span>
+                        <span className="text-highlight">•</span>
                         <span>{change}</span>
                       </li>
                     ))}
