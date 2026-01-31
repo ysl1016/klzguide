@@ -36,35 +36,44 @@ export async function GET() {
     const today = getToday();
     const currentMonth = getCurrentMonth();
 
-    // Get today's count
-    const { data: dailyData } = await supabase
-      .from('visitor_stats')
-      .select('count')
-      .eq('date', today)
-      .single();
+    // Run all queries in parallel for faster response
+    const [dailyResult, monthlyResult, totalResult] = await Promise.all([
+      // Get today's count
+      supabase
+        .from('visitor_stats')
+        .select('count')
+        .eq('date', today)
+        .single(),
+      // Get this month's total
+      supabase
+        .from('visitor_stats')
+        .select('count')
+        .gte('date', `${currentMonth}-01`)
+        .lte('date', `${currentMonth}-31`),
+      // Get total count
+      supabase
+        .from('visitor_stats')
+        .select('count'),
+    ]);
 
-    // Get this month's total
-    const { data: monthlyData } = await supabase
-      .from('visitor_stats')
-      .select('count')
-      .gte('date', `${currentMonth}-01`)
-      .lte('date', `${currentMonth}-31`);
+    const daily = dailyResult.data?.count || 0;
+    const monthly = monthlyResult.data?.reduce((sum, row) => sum + (row.count || 0), 0) || 0;
+    const total = totalResult.data?.reduce((sum, row) => sum + (row.count || 0), 0) || 0;
 
-    // Get total count
-    const { data: totalData } = await supabase
-      .from('visitor_stats')
-      .select('count');
-
-    const daily = dailyData?.count || 0;
-    const monthly = monthlyData?.reduce((sum, row) => sum + (row.count || 0), 0) || 0;
-    const total = totalData?.reduce((sum, row) => sum + (row.count || 0), 0) || 0;
-
-    return NextResponse.json({
-      daily,
-      monthly,
-      total,
-      configured: true,
-    });
+    // Return with cache headers (stale-while-revalidate)
+    return NextResponse.json(
+      {
+        daily,
+        monthly,
+        total,
+        configured: true,
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=30, stale-while-revalidate=60',
+        },
+      }
+    );
   } catch (error) {
     console.error('Error fetching visitor stats:', error);
     return NextResponse.json({
