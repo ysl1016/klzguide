@@ -21,7 +21,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
 
   const gearTiers = [
     {
-      name: isKorean ? '오렌지 (레전더리)' : 'Cam (Legendary)',
+      name: isKorean ? '오렌지 (전설)' : 'Cam (Legendary)',
       color: 'text-orange-400',
       bg: 'bg-orange-500/10',
       maxLevel: 'Lv.50 → 75 (5헥사곤) → 100 (미식)',
