@@ -144,6 +144,7 @@ const navItems: NavItem[] = [
     children: [
       { key: 'glossary', href: '/info/glossary' },
       { key: 'faq', href: '/info/faq' },
+      { key: 'changelog', href: '/info/changelog' },
     ],
   },
 ];

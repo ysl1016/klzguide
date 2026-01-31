@@ -60,7 +60,8 @@
     "cpCalculator": "CP 계산기",
     "heroCompare": "영웅 비교",
     "glossary": "용어 사전",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "changelog": "업데이트 내역"
   },
   "difficulty": {
     "beginner": "입문",
