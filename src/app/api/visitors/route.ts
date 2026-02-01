@@ -1,21 +1,32 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSupabase, isSupabaseConfigured } from '@/lib/supabase';
 
-// Get today's date in YYYY-MM-DD format
-function getToday(): string {
-  return new Date().toISOString().split('T')[0];
-}
+// Korea timezone offset (UTC+9)
+const KST_OFFSET = 9 * 60 * 60 * 1000; // 9 hours in milliseconds
 
-// Get current month in YYYY-MM format
-function getCurrentMonth(): string {
-  return new Date().toISOString().slice(0, 7);
-}
-
-// Get the last day of the current month in YYYY-MM-DD format
-function getLastDayOfMonth(): string {
+// Get current date in Korea timezone (KST)
+function getKoreaDate(): Date {
   const now = new Date();
+  return new Date(now.getTime() + KST_OFFSET);
+}
+
+// Get today's date in YYYY-MM-DD format (Korea time)
+function getToday(): string {
+  return getKoreaDate().toISOString().split('T')[0];
+}
+
+// Get current month in YYYY-MM format (Korea time)
+function getCurrentMonth(): string {
+  return getKoreaDate().toISOString().slice(0, 7);
+}
+
+// Get the last day of the current month in YYYY-MM-DD format (Korea time)
+function getLastDayOfMonth(): string {
+  const koreaDate = getKoreaDate();
+  const year = koreaDate.getUTCFullYear();
+  const month = koreaDate.getUTCMonth();
   // Create date for the last day of current month
-  const lastDay = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 0));
+  const lastDay = new Date(Date.UTC(year, month + 1, 0));
   return lastDay.toISOString().split('T')[0];
 }
 
