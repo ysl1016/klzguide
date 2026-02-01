@@ -11,6 +11,14 @@ function getCurrentMonth(): string {
   return new Date().toISOString().slice(0, 7);
 }
 
+// Get the last day of the current month in YYYY-MM-DD format
+function getLastDayOfMonth(): string {
+  const now = new Date();
+  // Create date for the last day of current month
+  const lastDay = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 0));
+  return lastDay.toISOString().split('T')[0];
+}
+
 // GET: Fetch visitor counts
 export async function GET() {
   if (!isSupabaseConfigured()) {
@@ -35,6 +43,7 @@ export async function GET() {
   try {
     const today = getToday();
     const currentMonth = getCurrentMonth();
+    const lastDayOfMonth = getLastDayOfMonth();
 
     // Run all queries in parallel for faster response
     const [dailyResult, monthlyResult, totalResult] = await Promise.all([
@@ -44,12 +53,12 @@ export async function GET() {
         .select('count')
         .eq('date', today)
         .single(),
-      // Get this month's total
+      // Get this month's total (use actual last day of month)
       supabase
         .from('visitor_stats')
         .select('count')
         .gte('date', `${currentMonth}-01`)
-        .lte('date', `${currentMonth}-31`),
+        .lte('date', lastDayOfMonth),
       // Get total count
       supabase
         .from('visitor_stats')
