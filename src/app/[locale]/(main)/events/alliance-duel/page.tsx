@@ -2,7 +2,21 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clock, Trophy, Building2, FlaskConical, Swords, Users, Wrench, Target, Lightbulb, AlertTriangle, Calendar } from 'lucide-react';
+import {
+  Clock,
+  Trophy,
+  Building2,
+  FlaskConical,
+  Swords,
+  Users,
+  Wrench,
+  Target,
+  Lightbulb,
+  AlertTriangle,
+  Calendar,
+  Timer,
+  Zap,
+} from 'lucide-react';
 
 export default async function AllianceDuelPage({
   params,
@@ -19,55 +33,106 @@ function AllianceDuelContent({ locale }: { locale: string }) {
   const t = useTranslations();
   const isKorean = locale === 'ko';
 
-  const duelThemes = [
+  // Alliance Duel themes by day (Day 1-6, Sunday-Friday)
+  const duelThemesByDay = [
     {
-      name: isKorean ? '건물 업그레이드' : 'Shelter Upgrade',
-      icon: Building2,
-      color: 'text-blue-400',
-      bg: 'bg-blue-500/10',
-      activity: isKorean ? '건물 개선, 건설 가속 사용' : 'Cải thiện công trình, dùng tăng tốc xây',
-      tip: isKorean ? '오렌지 현상금 새로고침, 고가치 퀘스트 우선' : 'Refresh bounty cam, ưu tiên quest giá trị cao',
-    },
-    {
-      name: isKorean ? '과학의 시대' : 'Age of Science',
-      icon: FlaskConical,
-      color: 'text-purple-400',
-      bg: 'bg-purple-500/10',
-      activity: isKorean ? '연구 완료, 경찰휘장 관련 연구' : 'Hoàn thành NC, NC liên quan badge',
-      tip: isKorean ? '인터스테이트 트럭 새로고침으로 오렌지 퀘스트 찾기' : 'Refresh Interstate Truck tìm quest cam',
-    },
-    {
-      name: isKorean ? '영웅 이니셔티브' : 'Hero Initiative',
-      icon: Users,
-      color: 'text-yellow-400',
-      bg: 'bg-yellow-500/10',
-      activity: isKorean ? '영웅 업그레이드, 조각, 모집 티켓' : 'Nâng anh hùng, mảnh, vé tuyển mộ',
-      tip: isKorean ? '이 날을 위해 조각/티켓 저장 - 다른 날 사용 금지!' : 'Lưu mảnh/vé cho ngày này - KHÔNG dùng ngày khác!',
-    },
-    {
-      name: isKorean ? '종합 성장' : 'Holistic Growth',
-      icon: Swords,
-      color: 'text-red-400',
-      bg: 'bg-red-500/10',
-      activity: isKorean ? '병력 훈련, 훈련 가속 사용' : 'Huấn luyện quân, dùng tăng tốc HL',
-      tip: isKorean ? '일반 병사 훈련이 자원 대비 최적 포인트' : 'Huấn luyện lính thường = điểm tối ưu/tài nguyên',
-    },
-    {
+      day: 1,
+      dayName: isKorean ? '일요일' : 'Chủ nhật',
       name: isKorean ? '차량 개조' : 'Modded Vehicle Boost',
+      nameEn: 'Modded Vehicle Boost',
       icon: Wrench,
       color: 'text-orange-400',
       bg: 'bg-orange-500/10',
-      activity: isKorean ? '렌치, 설계도, 부품으로 차량 업그레이드' : 'Nâng xe bằng cờ lê, bản vẽ, linh kiện',
-      tip: isKorean ? '강력한 부머 처치로 추가 포인트' : 'Tiêu diệt Boomer mạnh để có thêm điểm',
+      activities: isKorean
+        ? ['렌치/골든렌치 사용', '설계도 소모', '차량 부품 상자 개봉', '부머 레이드 (Lv.9-10)', '레이더 이벤트']
+        : ['Dùng cờ lê/golden wrench', 'Tiêu bản vẽ', 'Mở hộp linh kiện xe', 'Raid Boomer (Lv.9-10)', 'Sự kiện Radar'],
+      goldenHour: { apoc: '00:00', korea: '11:00' },
     },
     {
+      day: 2,
+      dayName: isKorean ? '월요일' : 'Thứ hai',
+      name: isKorean ? '건물 업그레이드' : 'Shelter Upgrade',
+      nameEn: 'Shelter Upgrade',
+      icon: Building2,
+      color: 'text-blue-400',
+      bg: 'bg-blue-500/10',
+      activities: isKorean
+        ? ['건물 업그레이드 완료', '건설 가속 사용', '오렌지 현상금 퀘스트 우선', '모집 티켓 사용']
+        : ['Hoàn thành nâng cấp công trình', 'Dùng tăng tốc xây', 'Ưu tiên bounty cam', 'Dùng vé tuyển mộ'],
+      goldenHour: { apoc: '00:00', korea: '11:00' },
+    },
+    {
+      day: 3,
+      dayName: isKorean ? '화요일' : 'Thứ ba',
+      name: isKorean ? '과학의 시대' : 'Age of Science',
+      nameEn: 'Age of Science',
+      icon: FlaskConical,
+      color: 'text-purple-400',
+      bg: 'bg-purple-500/10',
+      activities: isKorean
+        ? ['연구 완료', '연구 가속 사용', '경찰휘장 소모 연구', '인터스테이트 트럭 새로고침 (오렌지 퀘스트)']
+        : ['Hoàn thành nghiên cứu', 'Dùng tăng tốc NC', 'NC tiêu badge', 'Refresh Interstate Truck (quest cam)'],
+      goldenHour: { apoc: '00:00', korea: '11:00' },
+    },
+    {
+      day: 4,
+      dayName: isKorean ? '수요일' : 'Thứ tư',
+      name: isKorean ? '영웅 이니셔티브' : 'Hero Initiative',
+      nameEn: 'Hero Initiative',
+      icon: Users,
+      color: 'text-yellow-400',
+      bg: 'bg-yellow-500/10',
+      activities: isKorean
+        ? ['영웅 조각 사용', '모집 티켓 사용', '프라임 리크루트', '에너지코어 사용', '오렌지 장비 조각']
+        : ['Dùng mảnh anh hùng', 'Dùng vé tuyển mộ', 'Prime Recruit', 'Dùng Power Core', 'Mảnh trang bị cam'],
+      goldenHour: { apoc: '00:00', korea: '11:00' },
+    },
+    {
+      day: 5,
+      dayName: isKorean ? '목요일' : 'Thứ năm',
+      name: isKorean ? '종합 성장' : 'Holistic Growth',
+      nameEn: 'Holistic Growth / Army Expansion',
+      icon: Swords,
+      color: 'text-red-400',
+      bg: 'bg-red-500/10',
+      activities: isKorean
+        ? ['병력 훈련', '훈련 가속 사용', '병력 승급', '건설/연구 가속도 포인트 획득']
+        : ['Huấn luyện quân', 'Dùng tăng tốc HL', 'Thăng cấp quân', 'Tăng tốc xây/NC cũng được điểm'],
+      goldenHour: { apoc: '00:00', korea: '11:00' },
+    },
+    {
+      day: 6,
+      dayName: isKorean ? '금요일' : 'Thứ sáu',
       name: isKorean ? '적 파괴자' : 'Enemy Buster',
+      nameEn: 'Enemy Buster',
       icon: Target,
       color: 'text-green-400',
       bg: 'bg-green-500/10',
-      activity: isKorean ? '적 기지 공격, 약한 본부(HQ) 공격' : 'Tấn công căn cứ địch, HQ yếu',
-      tip: isKorean ? '발로 메달 + 오렌지 장비 조각 - 최고 보상!' : 'Valor Medal + mảnh trang bị cam - thưởng tốt nhất!',
+      activities: isKorean
+        ? ['적 기지 공격 (승/패 무관)', 'TvT 전투', '약한 본부(HQ) 타겟팅', '발로 메달 + 오렌지 장비 조각 보상']
+        : ['Tấn công căn cứ địch (thắng/thua đều được)', 'Chiến đấu TvT', 'Target HQ yếu', 'Thưởng Valor Medal + mảnh trang bị cam'],
+      goldenHour: null, // No matching Full Prep theme
     },
+  ];
+
+  // Full Preparedness schedule by day (for Golden Hour reference)
+  const fullPrepSchedule = [
+    { day: isKorean ? '일요일' : 'CN', slots: ['차량', '건물', '훈련', '연구', '영웅', '훈련'] },
+    { day: isKorean ? '월요일' : 'T2', slots: ['건물', '연구', '차량', '영웅', '훈련', '차량'] },
+    { day: isKorean ? '화요일' : 'T3', slots: ['연구', '영웅', '건물', '훈련', '차량', '건물'] },
+    { day: isKorean ? '수요일' : 'T4', slots: ['영웅', '훈련', '연구', '차량', '건물', '연구'] },
+    { day: isKorean ? '목요일' : 'T5', slots: ['훈련', '차량', '영웅', '건물', '연구', '영웅'] },
+    { day: isKorean ? '금요일' : 'T6', slots: ['차량', '건물', '훈련', '연구', '영웅', '훈련'] },
+    { day: isKorean ? '토요일' : 'T7', slots: ['연구', '차량', '영웅', '건물', '훈련', '영웅'] },
+  ];
+
+  const timeSlots = [
+    { apoc: '00:00', korea: '11:00' },
+    { apoc: '04:00', korea: '15:00' },
+    { apoc: '08:00', korea: '19:00' },
+    { apoc: '12:00', korea: '23:00' },
+    { apoc: '16:00', korea: '03:00 (+1)' },
+    { apoc: '20:00', korea: '07:00 (+1)' },
   ];
 
   const rewards = [
@@ -80,20 +145,20 @@ function AllianceDuelContent({ locale }: { locale: string }) {
 
   const tips = [
     isKorean
-      ? '테마에 맞지 않는 날에 가속/조각/티켓 사용 시 포인트 대폭 손실'
-      : 'Dùng tăng tốc/mảnh/vé không đúng ngày theme = mất điểm lớn',
+      ? '영웅 조각, 모집 티켓은 반드시 4일차(수요일) Hero Initiative에만 사용!'
+      : 'Mảnh anh hùng, vé tuyển mộ PHẢI dùng vào ngày 4 (Thứ tư) Hero Initiative!',
     isKorean
-      ? '오렌지 레벨 퀘스트(현상금, 트럭) 우선 - 포인트 가치 훨씬 높음'
+      ? '골든아워(전면전비 일치 시간)에 활동하면 양쪽 이벤트에서 동시 포인트 획득'
+      : 'Hoạt động trong Golden Hour = nhận điểm cả 2 sự kiện cùng lúc',
+    isKorean
+      ? '오렌지 레벨 퀘스트(현상금, 트럭) 우선 - 포인트 가치가 훨씬 높음'
       : 'Ưu tiên quest cam (bounty, truck) - giá trị điểm cao hơn nhiều',
     isKorean
-      ? '전면전비와 겹칠 때 활동 = 보상 2배 (골든 아워)'
-      : 'Hoạt động khi trùng Full Prep = thưởng gấp đôi (Golden Hour)',
+      ? '6일차(금요일) Enemy Buster는 전면전비와 겹치지 않음 - 언제든 공격 가능'
+      : 'Ngày 6 (Thứ sáu) Enemy Buster không trùng Full Prep - tấn công bất cứ lúc nào',
     isKorean
-      ? '연맹 채팅으로 오늘 테마 공유, 자원 저장 알림 - 조직력 = 순위'
-      : 'Chia sẻ theme hôm nay qua chat LM, nhắc lưu tài nguyên - tổ chức = xếp hạng',
-    isKorean
-      ? 'Enemy Buster 날에는 병력 손실 최소화 타겟 선정 필수'
-      : 'Ngày Enemy Buster bắt buộc chọn target để giảm thiểu mất quân',
+      ? '연맹 인정(AR) 연구 완료 시 렌치당 포인트 3배 이상 증가!'
+      : 'Khi hoàn thành NC Alliance Recognition, điểm/wrench tăng gấp 3+!',
   ];
 
   return (
@@ -107,7 +172,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
             </Badge>
             <span className="flex items-center text-sm text-muted-foreground">
               <Clock className="h-4 w-4 mr-1" />
-              10 {t('common.minutes')}
+              12 {t('common.minutes')}
             </span>
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
@@ -116,8 +181,8 @@ function AllianceDuelContent({ locale }: { locale: string }) {
           </h1>
           <p className="text-muted-foreground">
             {isKorean
-              ? '7일간 진행되는 연맹 대결의 테마별 전략과 보상을 알아봅니다.'
-              : 'Tìm hiểu chiến thuật theo theme và phần thưởng Alliance Duel 7 ngày.'}
+              ? '6일간 진행되는 연맹 대결의 일차별 테마와 골든아워 전략을 상세히 알아봅니다.'
+              : 'Tìm hiểu chi tiết theme theo ngày và chiến thuật Golden Hour trong Alliance Duel 6 ngày.'}
           </p>
         </div>
 
@@ -126,57 +191,203 @@ function AllianceDuelContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '7일 연속 이벤트 - 매일 다른 테마 (6개 테마 순환)' : 'Sự kiện 7 ngày liên tục - mỗi ngày theme khác (6 theme xoay vòng)'}</li>
-              <li>• {isKorean ? '테마에 맞는 활동만 포인트 획득 - 다른 활동은 최소/0 포인트' : 'Chỉ hoạt động đúng theme được điểm - hoạt động khác = ít/0 điểm'}</li>
-              <li>• {isKorean ? '영웅 조각, 모집 티켓은 Hero Initiative 날에만 사용!' : 'Mảnh anh hùng, vé tuyển mộ chỉ dùng ngày Hero Initiative!'}</li>
-              <li>• {isKorean ? '전면전비와 겹칠 때 = 보상 2배 (최고 효율)' : 'Khi trùng Full Prep = thưởng gấp đôi (hiệu quả nhất)'}</li>
+              <li>• {isKorean ? '일~금 6일간 진행, 토요일은 휴식일' : 'Diễn ra 6 ngày (CN-T6), Thứ 7 nghỉ'}</li>
+              <li>• {isKorean ? '매일 다른 테마 - 해당 테마 활동만 포인트 획득' : 'Mỗi ngày theme khác - chỉ hoạt động đúng theme mới được điểm'}</li>
+              <li>• {isKorean ? '골든아워: 전면전비와 테마가 일치할 때 (양쪽 포인트 동시 획득)' : 'Golden Hour: khi theme trùng với Full Prep (nhận điểm cả 2)'}</li>
+              <li>• {isKorean ? 'Apocalypse Time = UTC-2 (한국시간 -11시간)' : 'Apocalypse Time = UTC-2 (giờ Hàn Quốc -11 tiếng)'}</li>
             </ul>
           </CardContent>
         </Card>
 
-        {/* Event Duration */}
+        {/* Apocalypse Time Explanation */}
         <Card className="border-highlight/30">
           <CardContent className="p-4">
-            <div className="flex items-center gap-3">
-              <Calendar className="h-8 w-8 text-highlight" />
+            <div className="flex items-start gap-3">
+              <Timer className="h-6 w-6 text-highlight shrink-0 mt-1" />
               <div>
-                <p className="font-semibold text-highlight">
-                  {isKorean ? '7일 연속 이벤트' : 'Sự kiện 7 ngày liên tục'}
+                <p className="font-semibold text-highlight mb-2">
+                  {isKorean ? 'Apocalypse Time (게임 서버 시간)' : 'Apocalypse Time (Giờ server game)'}
                 </p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground mb-3">
                   {isKorean
-                    ? '각 날마다 다른 테마가 적용됩니다. 테마에 해당하는 활동으로만 포인트를 획득할 수 있습니다.'
-                    : 'Mỗi ngày có theme khác nhau. Chỉ hoạt động đúng theme mới được điểm.'}
+                    ? 'Apocalypse Time은 UTC-2 시간대입니다. 한국시간(KST)으로 변환하려면 +11시간 하세요.'
+                    : 'Apocalypse Time là múi giờ UTC-2. Để chuyển sang giờ Hàn Quốc (KST), cộng thêm 11 tiếng.'}
                 </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                  {timeSlots.map((slot) => (
+                    <div key={slot.apoc} className="bg-muted/50 rounded p-2 text-center">
+                      <p className="text-muted-foreground">Apoc {slot.apoc}</p>
+                      <p className="font-semibold text-highlight">
+                        {isKorean ? `한국 ${slot.korea}` : `Hàn ${slot.korea}`}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Themes */}
+        {/* Daily Themes - Day by Day */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold">
-            {isKorean ? '6개 테마 (매일 순환)' : '6 Theme (Xoay vòng hàng ngày)'}
+          <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Calendar className="h-6 w-6" />
+            {isKorean ? '일차별 테마 (1일차~6일차)' : 'Theme theo ngày (Ngày 1-6)'}
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {duelThemes.map((theme) => {
+          <div className="space-y-4">
+            {duelThemesByDay.map((theme) => {
               const Icon = theme.icon;
               return (
-                <Card key={theme.name} className={`${theme.bg} border-none`}>
+                <Card key={theme.day} className={`${theme.bg} border-none`}>
                   <CardHeader className="pb-2">
-                    <CardTitle className={`flex items-center gap-2 text-base ${theme.color}`}>
-                      <Icon className="h-5 w-5" />
-                      {theme.name}
+                    <CardTitle className="flex flex-wrap items-center gap-2">
+                      <Badge variant="outline" className={`${theme.color} border-current`}>
+                        {isKorean ? `${theme.day}일차` : `Ngày ${theme.day}`}
+                      </Badge>
+                      <span className="text-sm text-muted-foreground">({theme.dayName})</span>
+                      <span className={`flex items-center gap-1 text-base ${theme.color}`}>
+                        <Icon className="h-5 w-5" />
+                        {theme.name}
+                      </span>
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-2">
-                    <p className="text-sm text-muted-foreground">{theme.activity}</p>
-                    <p className="text-xs text-muted-foreground/70 italic">{theme.tip}</p>
+                  <CardContent className="space-y-3">
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-1">
+                        {isKorean ? '포인트 획득 활동:' : 'Hoạt động lấy điểm:'}
+                      </p>
+                      <ul className="text-sm text-muted-foreground space-y-1">
+                        {theme.activities.map((activity, idx) => (
+                          <li key={idx}>• {activity}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    {theme.goldenHour ? (
+                      <div className="flex items-center gap-2 p-2 rounded bg-yellow-500/20 border border-yellow-500/30">
+                        <Zap className="h-4 w-4 text-yellow-400" />
+                        <span className="text-sm">
+                          <span className="font-semibold text-yellow-400">
+                            {isKorean ? '골든아워: ' : 'Golden Hour: '}
+                          </span>
+                          <span className="text-muted-foreground">
+                            Apoc {theme.goldenHour.apoc} = {isKorean ? '한국' : 'Hàn'} {theme.goldenHour.korea}
+                          </span>
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2 p-2 rounded bg-muted/50 border border-border">
+                        <AlertTriangle className="h-4 w-4 text-muted-foreground" />
+                        <span className="text-sm text-muted-foreground">
+                          {isKorean
+                            ? '전면전비와 일치하는 테마 없음 - 언제든 활동 가능'
+                            : 'Không có theme Full Prep trùng - hoạt động bất cứ lúc nào'}
+                        </span>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               );
             })}
           </div>
+        </section>
+
+        {/* Golden Hour Section */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Zap className="h-6 w-6 text-yellow-400" />
+            {isKorean ? '골든아워 상세 설명' : 'Chi tiết Golden Hour'}
+          </h2>
+          <Card className="border-yellow-500/30 bg-yellow-500/5">
+            <CardContent className="p-4 space-y-4">
+              <p className="text-muted-foreground">
+                {isKorean
+                  ? '골든아워는 연맹 대결 테마와 전면전비 테마가 일치하는 시간대입니다. 이 시간에 활동하면 두 이벤트에서 동시에 포인트를 획득할 수 있어 효율이 2배가 됩니다.'
+                  : 'Golden Hour là khi theme Alliance Duel trùng với theme Full Prep. Hoạt động lúc này sẽ nhận điểm từ cả 2 sự kiện, hiệu quả gấp đôi.'}
+              </p>
+
+              <div>
+                <p className="font-semibold mb-2 text-yellow-400">
+                  {isKorean ? '일차별 골든아워 시간 (한국시간 기준):' : 'Golden Hour theo ngày (giờ Hàn Quốc):'}
+                </p>
+                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="p-2 rounded bg-orange-500/10 text-center">
+                    <p className="text-xs text-muted-foreground">{isKorean ? '1일차 (일)' : 'Ngày 1 (CN)'} - {isKorean ? '차량' : 'Xe'}</p>
+                    <p className="font-bold text-orange-400">11:00</p>
+                  </div>
+                  <div className="p-2 rounded bg-blue-500/10 text-center">
+                    <p className="text-xs text-muted-foreground">{isKorean ? '2일차 (월)' : 'Ngày 2 (T2)'} - {isKorean ? '건물' : 'Xây'}</p>
+                    <p className="font-bold text-blue-400">11:00</p>
+                  </div>
+                  <div className="p-2 rounded bg-purple-500/10 text-center">
+                    <p className="text-xs text-muted-foreground">{isKorean ? '3일차 (화)' : 'Ngày 3 (T3)'} - {isKorean ? '연구' : 'NC'}</p>
+                    <p className="font-bold text-purple-400">11:00</p>
+                  </div>
+                  <div className="p-2 rounded bg-yellow-500/10 text-center">
+                    <p className="text-xs text-muted-foreground">{isKorean ? '4일차 (수)' : 'Ngày 4 (T4)'} - {isKorean ? '영웅' : 'Anh hùng'}</p>
+                    <p className="font-bold text-yellow-400">11:00</p>
+                  </div>
+                  <div className="p-2 rounded bg-red-500/10 text-center">
+                    <p className="text-xs text-muted-foreground">{isKorean ? '5일차 (목)' : 'Ngày 5 (T5)'} - {isKorean ? '훈련' : 'HL'}</p>
+                    <p className="font-bold text-red-400">11:00</p>
+                  </div>
+                  <div className="p-2 rounded bg-muted/30 text-center">
+                    <p className="text-xs text-muted-foreground">{isKorean ? '6일차 (금)' : 'Ngày 6 (T6)'} - {isKorean ? '적 파괴' : 'Enemy'}</p>
+                    <p className="font-bold text-muted-foreground">{isKorean ? '없음' : 'Không có'}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-3 rounded bg-muted/30 border border-border">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-highlight">💡 {isKorean ? '팁' : 'Mẹo'}:</span>{' '}
+                  {isKorean
+                    ? '가속 아이템, 렌치, 영웅 조각 등 중요 자원은 골든아워에 사용하세요. 같은 자원으로 2배의 보상을 받을 수 있습니다!'
+                    : 'Dùng tăng tốc, cờ lê, mảnh anh hùng trong Golden Hour. Cùng tài nguyên nhưng thưởng gấp đôi!'}
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Full Prep Schedule Reference */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">
+            {isKorean ? '전면전비 스케줄 참고표' : 'Lịch Full Prep tham khảo'}
+          </h2>
+          <Card>
+            <CardContent className="p-4 overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-muted-foreground">{isKorean ? '요일' : 'Ngày'}</th>
+                    {timeSlots.map((slot) => (
+                      <th key={slot.apoc} className="text-center p-2 text-muted-foreground text-xs">
+                        <div>{slot.apoc}</div>
+                        <div className="text-highlight">{slot.korea}</div>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {fullPrepSchedule.map((row, idx) => (
+                    <tr key={idx} className="border-b border-border/50">
+                      <td className="p-2 font-medium">{row.day}</td>
+                      {row.slots.map((slot, slotIdx) => (
+                        <td key={slotIdx} className="text-center p-2 text-xs text-muted-foreground">
+                          {slot}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="text-xs text-muted-foreground mt-2 text-center">
+                {isKorean
+                  ? '* 상단: Apocalypse Time / 하단: 한국시간 (KST)'
+                  : '* Trên: Apocalypse Time / Dưới: Giờ Hàn Quốc (KST)'}
+              </p>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Warning */}
@@ -186,13 +397,14 @@ function AllianceDuelContent({ locale }: { locale: string }) {
               <AlertTriangle className="h-6 w-6 text-destructive shrink-0" />
               <div>
                 <p className="font-semibold text-destructive mb-1">
-                  {isKorean ? '흔한 실수 - 피해야 할 것' : 'Sai lầm phổ biến - cần tránh'}
+                  {isKorean ? '흔한 실수 - 반드시 피해야 할 것' : 'Sai lầm phổ biến - PHẢI tránh'}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? '잘못된 테마 날에 가속/조각/티켓 사용' : 'Dùng tăng tốc/mảnh/vé vào ngày theme sai'}</li>
-                  <li>• {isKorean ? '오렌지 레벨 퀘스트 무시' : 'Bỏ qua quest cấp cam'}</li>
-                  <li>• {isKorean ? 'Enemy Buster에서 계획 없이 공격' : 'Tấn công không có kế hoạch trong Enemy Buster'}</li>
-                  <li>• {isKorean ? '연맹원과 협력 없이 단독 행동' : 'Hành động đơn độc không hợp tác với LM'}</li>
+                  <li>• {isKorean ? '영웅 조각/모집 티켓을 4일차(수요일) 외에 사용' : 'Dùng mảnh anh hùng/vé tuyển mộ ngoài ngày 4 (Thứ tư)'}</li>
+                  <li>• {isKorean ? '렌치를 1일차(일요일) 외에 사용' : 'Dùng cờ lê ngoài ngày 1 (Chủ nhật)'}</li>
+                  <li>• {isKorean ? '골든아워 외 시간에 가속 아이템 대량 소모' : 'Dùng nhiều tăng tốc ngoài Golden Hour'}</li>
+                  <li>• {isKorean ? '오렌지 레벨 퀘스트(현상금, 트럭) 무시' : 'Bỏ qua quest cấp cam (bounty, truck)'}</li>
+                  <li>• {isKorean ? '6일차(금요일)에 무작정 강한 적 공격 (병력 손실 주의)' : 'Ngày 6 tấn công địch mạnh bừa bãi (coi chừng mất quân)'}</li>
                 </ul>
               </div>
             </div>
@@ -240,6 +452,26 @@ function AllianceDuelContent({ locale }: { locale: string }) {
             ))}
           </div>
         </section>
+
+        {/* Sources */}
+        <Card className="border-border/50">
+          <CardContent className="p-4">
+            <p className="text-xs text-muted-foreground">
+              {isKorean ? '참고 자료: ' : 'Nguồn tham khảo: '}
+              <a href="https://bacons-last-z-guide.fandom.com/wiki/Alliance_Duel" className="text-highlight hover:underline" target="_blank" rel="noopener noreferrer">
+                Bacon&apos;s Guide Wiki
+              </a>
+              {', '}
+              <a href="https://lastz.fandom.com/wiki/Apocalypse_Time" className="text-highlight hover:underline" target="_blank" rel="noopener noreferrer">
+                Last Z Wiki
+              </a>
+              {', '}
+              <a href="https://lastzdata.com/home/alliance-duel/" className="text-highlight hover:underline" target="_blank" rel="noopener noreferrer">
+                LastZData
+              </a>
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
