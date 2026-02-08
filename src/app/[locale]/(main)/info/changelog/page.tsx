@@ -15,28 +15,39 @@ interface ChangelogEntry {
 
 const changelogData: ChangelogEntry[] = [
   {
-    date: '2025-02-01',
+    date: '2025-02-08',
     isNew: true,
     changes: {
       ko: [
         '연맹 대결 페이지 전면 개편 (6개 테마, 골든아워, 전면전비 스케줄)',
+        '연맹 대결 일차 순서 수정 (1일차=월요일, 6일차=토요일)',
         '골든아워 시간대 수정 (Apoc 08:00-12:00, 20:00-00:00)',
         '방문자 카운터 한국시간(KST) 기준으로 변경',
-        '업데이트 내역 페이지 추가',
-        'HQ 업그레이드 요구사항 데이터 수정',
-        '사이드바 아코디언 동작 개선',
-        '방문자 카운터 로딩 최적화',
         '월간 방문자 카운터 버그 수정 (2월 등 31일 미만 달)',
       ],
       vi: [
         'Cải tiến trang Alliance Duel (6 theme, Golden Hour, lịch Full Prep)',
+        'Sửa thứ tự ngày Alliance Duel (Ngày 1=Thứ hai, Ngày 6=Thứ bảy)',
         'Sửa giờ Golden Hour (Apoc 08:00-12:00, 20:00-00:00)',
         'Đổi bộ đếm khách theo giờ Hàn Quốc (KST)',
+        'Sửa lỗi bộ đếm khách hàng tháng (tháng có ít hơn 31 ngày)',
+      ],
+    },
+  },
+  {
+    date: '2025-02-01',
+    changes: {
+      ko: [
+        '업데이트 내역 페이지 추가',
+        'HQ 업그레이드 요구사항 데이터 수정',
+        '사이드바 아코디언 동작 개선',
+        '방문자 카운터 로딩 최적화',
+      ],
+      vi: [
         'Thêm trang lịch sử cập nhật',
         'Sửa dữ liệu yêu cầu nâng cấp HQ',
         'Cải thiện hoạt động accordion sidebar',
         'Tối ưu hóa tải bộ đếm khách truy cập',
-        'Sửa lỗi bộ đếm khách hàng tháng (tháng có ít hơn 31 ngày)',
       ],
     },
   },
