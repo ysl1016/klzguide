@@ -19,8 +19,8 @@ const changelogData: ChangelogEntry[] = [
     isNew: true,
     changes: {
       ko: [
-        '가챠 고 → 행운의 흔들기 (Lucky Shake) 이름 및 내용 수정',
-        '행운의 흔들기 비용 정보 업데이트 (1회 100다이아, 5회 500다이아)',
+        '행운의 흔들기 페이지 전면 개편 (키 시스템, 마일스톤, 효율 비교)',
+        '행운의 흔들기 정확한 비용: 1회 500다이아, 키 교환 비율 추가',
         '연맹 대결 페이지 전면 개편 (6개 테마, 골든아워, 전면전비 스케줄)',
         '연맹 대결 일차 순서 수정 (1일차=월요일, 6일차=토요일)',
         '골든아워 시간대 수정 (Apoc 08:00-12:00, 20:00-00:00)',
@@ -28,8 +28,8 @@ const changelogData: ChangelogEntry[] = [
         '월간 방문자 카운터 버그 수정 (2월 등 31일 미만 달)',
       ],
       vi: [
-        'Đổi tên Gacha Go → Lucky Shake và cập nhật nội dung',
-        'Cập nhật chi phí Lucky Shake (1 lần 100 diamond, 5 lần 500 diamond)',
+        'Cải tiến trang Lucky Shake (hệ thống Key, Milestone, so sánh hiệu quả)',
+        'Chi phí Lucky Shake chính xác: 500 diamond/lần, tỷ lệ đổi Key',
         'Cải tiến trang Alliance Duel (6 theme, Golden Hour, lịch Full Prep)',
         'Sửa thứ tự ngày Alliance Duel (Ngày 1=Thứ hai, Ngày 6=Thứ bảy)',
         'Sửa giờ Golden Hour (Apoc 08:00-12:00, 20:00-00:00)',
