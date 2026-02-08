@@ -46,7 +46,10 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       activities: isKorean
         ? ['렌치/골든렌치 사용', '설계도 소모', '차량 부품 상자 개봉', '부머 레이드 (Lv.9-10)', '레이더 이벤트']
         : ['Dùng cờ lê/golden wrench', 'Tiêu bản vẽ', 'Mở hộp linh kiện xe', 'Raid Boomer (Lv.9-10)', 'Sự kiện Radar'],
-      goldenHour: { apoc: '00:00', korea: '11:00' },
+      goldenHour: [
+        { apoc: '08:00-12:00', korea: '19:00-23:00' },
+        { apoc: '20:00-00:00', korea: '07:00-11:00' },
+      ],
     },
     {
       day: 2,
@@ -59,7 +62,10 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       activities: isKorean
         ? ['건물 업그레이드 완료', '건설 가속 사용', '오렌지 현상금 퀘스트 우선', '모집 티켓 사용']
         : ['Hoàn thành nâng cấp công trình', 'Dùng tăng tốc xây', 'Ưu tiên bounty cam', 'Dùng vé tuyển mộ'],
-      goldenHour: { apoc: '00:00', korea: '11:00' },
+      goldenHour: [
+        { apoc: '08:00-12:00', korea: '19:00-23:00' },
+        { apoc: '20:00-00:00', korea: '07:00-11:00' },
+      ],
     },
     {
       day: 3,
@@ -72,7 +78,10 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       activities: isKorean
         ? ['연구 완료', '연구 가속 사용', '경찰휘장 소모 연구', '인터스테이트 트럭 새로고침 (오렌지 퀘스트)']
         : ['Hoàn thành nghiên cứu', 'Dùng tăng tốc NC', 'NC tiêu badge', 'Refresh Interstate Truck (quest cam)'],
-      goldenHour: { apoc: '00:00', korea: '11:00' },
+      goldenHour: [
+        { apoc: '08:00-12:00', korea: '19:00-23:00' },
+        { apoc: '20:00-00:00', korea: '07:00-11:00' },
+      ],
     },
     {
       day: 4,
@@ -85,7 +94,10 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       activities: isKorean
         ? ['영웅 조각 사용', '모집 티켓 사용', '프라임 리크루트', '에너지코어 사용', '오렌지 장비 조각']
         : ['Dùng mảnh anh hùng', 'Dùng vé tuyển mộ', 'Prime Recruit', 'Dùng Power Core', 'Mảnh trang bị cam'],
-      goldenHour: { apoc: '00:00', korea: '11:00' },
+      goldenHour: [
+        { apoc: '08:00-12:00', korea: '19:00-23:00' },
+        { apoc: '20:00-00:00', korea: '07:00-11:00' },
+      ],
     },
     {
       day: 5,
@@ -98,7 +110,10 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       activities: isKorean
         ? ['병력 훈련', '훈련 가속 사용', '병력 승급', '건설/연구 가속도 포인트 획득']
         : ['Huấn luyện quân', 'Dùng tăng tốc HL', 'Thăng cấp quân', 'Tăng tốc xây/NC cũng được điểm'],
-      goldenHour: { apoc: '00:00', korea: '11:00' },
+      goldenHour: [
+        { apoc: '08:00-12:00', korea: '19:00-23:00' },
+        { apoc: '20:00-00:00', korea: '07:00-11:00' },
+      ],
     },
     {
       day: 6,
@@ -263,16 +278,20 @@ function AllianceDuelContent({ locale }: { locale: string }) {
                       </ul>
                     </div>
                     {theme.goldenHour ? (
-                      <div className="flex items-center gap-2 p-2 rounded bg-yellow-500/20 border border-yellow-500/30">
-                        <Zap className="h-4 w-4 text-yellow-400" />
-                        <span className="text-sm">
-                          <span className="font-semibold text-yellow-400">
-                            {isKorean ? '골든아워: ' : 'Golden Hour: '}
+                      <div className="p-2 rounded bg-yellow-500/20 border border-yellow-500/30 space-y-1">
+                        <div className="flex items-center gap-2">
+                          <Zap className="h-4 w-4 text-yellow-400" />
+                          <span className="font-semibold text-yellow-400 text-sm">
+                            {isKorean ? '골든아워:' : 'Golden Hour:'}
                           </span>
-                          <span className="text-muted-foreground">
-                            Apoc {theme.goldenHour.apoc} = {isKorean ? '한국' : 'Hàn'} {theme.goldenHour.korea}
-                          </span>
-                        </span>
+                        </div>
+                        <div className="text-sm text-muted-foreground ml-6 space-y-0.5">
+                          {theme.goldenHour.map((gh, idx) => (
+                            <p key={idx}>
+                              Apoc {gh.apoc} = {isKorean ? '한국' : 'Hàn'} {gh.korea}
+                            </p>
+                          ))}
+                        </div>
                       </div>
                     ) : (
                       <div className="flex items-center gap-2 p-2 rounded bg-muted/50 border border-border">
@@ -305,44 +324,45 @@ function AllianceDuelContent({ locale }: { locale: string }) {
                   : 'Golden Hour là khi theme Alliance Duel trùng với theme Full Prep. Hoạt động lúc này sẽ nhận điểm từ cả 2 sự kiện, hiệu quả gấp đôi.'}
               </p>
 
-              <div>
-                <p className="font-semibold mb-2 text-yellow-400">
-                  {isKorean ? '일차별 골든아워 시간 (한국시간 기준):' : 'Golden Hour theo ngày (giờ Hàn Quốc):'}
+              {/* Golden Hour Time Windows */}
+              <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+                <p className="font-bold text-yellow-400 mb-3 text-center">
+                  {isKorean ? '골든아워 시간대 (매일 2회)' : 'Khung giờ Golden Hour (2 lần/ngày)'}
                 </p>
-                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                  <div className="p-2 rounded bg-orange-500/10 text-center">
-                    <p className="text-xs text-muted-foreground">{isKorean ? '1일차 (일)' : 'Ngày 1 (CN)'} - {isKorean ? '차량' : 'Xe'}</p>
-                    <p className="font-bold text-orange-400">11:00</p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="text-center p-3 rounded bg-background/50">
+                    <p className="text-xs text-muted-foreground mb-1">
+                      {isKorean ? '1차 골든아워' : 'Golden Hour 1'}
+                    </p>
+                    <p className="text-sm text-muted-foreground">Apoc 08:00 - 12:00</p>
+                    <p className="font-bold text-yellow-400 text-lg">
+                      {isKorean ? '한국 19:00 - 23:00' : 'Hàn 19:00 - 23:00'}
+                    </p>
                   </div>
-                  <div className="p-2 rounded bg-blue-500/10 text-center">
-                    <p className="text-xs text-muted-foreground">{isKorean ? '2일차 (월)' : 'Ngày 2 (T2)'} - {isKorean ? '건물' : 'Xây'}</p>
-                    <p className="font-bold text-blue-400">11:00</p>
-                  </div>
-                  <div className="p-2 rounded bg-purple-500/10 text-center">
-                    <p className="text-xs text-muted-foreground">{isKorean ? '3일차 (화)' : 'Ngày 3 (T3)'} - {isKorean ? '연구' : 'NC'}</p>
-                    <p className="font-bold text-purple-400">11:00</p>
-                  </div>
-                  <div className="p-2 rounded bg-yellow-500/10 text-center">
-                    <p className="text-xs text-muted-foreground">{isKorean ? '4일차 (수)' : 'Ngày 4 (T4)'} - {isKorean ? '영웅' : 'Anh hùng'}</p>
-                    <p className="font-bold text-yellow-400">11:00</p>
-                  </div>
-                  <div className="p-2 rounded bg-red-500/10 text-center">
-                    <p className="text-xs text-muted-foreground">{isKorean ? '5일차 (목)' : 'Ngày 5 (T5)'} - {isKorean ? '훈련' : 'HL'}</p>
-                    <p className="font-bold text-red-400">11:00</p>
-                  </div>
-                  <div className="p-2 rounded bg-muted/30 text-center">
-                    <p className="text-xs text-muted-foreground">{isKorean ? '6일차 (금)' : 'Ngày 6 (T6)'} - {isKorean ? '적 파괴' : 'Enemy'}</p>
-                    <p className="font-bold text-muted-foreground">{isKorean ? '없음' : 'Không có'}</p>
+                  <div className="text-center p-3 rounded bg-background/50">
+                    <p className="text-xs text-muted-foreground mb-1">
+                      {isKorean ? '2차 골든아워' : 'Golden Hour 2'}
+                    </p>
+                    <p className="text-sm text-muted-foreground">Apoc 20:00 - 00:00</p>
+                    <p className="font-bold text-yellow-400 text-lg">
+                      {isKorean ? '한국 07:00 - 11:00' : 'Hàn 07:00 - 11:00'}
+                    </p>
                   </div>
                 </div>
+              </div>
+
+              <div>
+                <p className="font-semibold mb-2 text-muted-foreground">
+                  {isKorean ? '1~5일차는 골든아워 적용, 6일차(Enemy Buster)는 해당 없음' : 'Ngày 1-5 có Golden Hour, Ngày 6 (Enemy Buster) không có'}
+                </p>
               </div>
 
               <div className="p-3 rounded bg-muted/30 border border-border">
                 <p className="text-sm text-muted-foreground">
                   <span className="font-semibold text-highlight">💡 {isKorean ? '팁' : 'Mẹo'}:</span>{' '}
                   {isKorean
-                    ? '가속 아이템, 렌치, 영웅 조각 등 중요 자원은 골든아워에 사용하세요. 같은 자원으로 2배의 보상을 받을 수 있습니다!'
-                    : 'Dùng tăng tốc, cờ lê, mảnh anh hùng trong Golden Hour. Cùng tài nguyên nhưng thưởng gấp đôi!'}
+                    ? '가속 아이템, 렌치, 영웅 조각 등 중요 자원은 골든아워(19:00-23:00 또는 07:00-11:00)에 사용하세요. 같은 자원으로 2배의 보상!'
+                    : 'Dùng tăng tốc, cờ lê, mảnh anh hùng trong Golden Hour (19:00-23:00 hoặc 07:00-11:00). Cùng tài nguyên nhưng thưởng gấp đôi!'}
                 </p>
               </div>
             </CardContent>
