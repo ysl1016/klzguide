@@ -33,11 +33,11 @@ function AllianceDuelContent({ locale }: { locale: string }) {
   const t = useTranslations();
   const isKorean = locale === 'ko';
 
-  // Alliance Duel themes by day (Day 1-6, Sunday-Friday)
+  // Alliance Duel themes by day (Day 1-6, Monday-Saturday)
   const duelThemesByDay = [
     {
       day: 1,
-      dayName: isKorean ? '일요일' : 'Chủ nhật',
+      dayName: isKorean ? '월요일' : 'Thứ hai',
       name: isKorean ? '차량 개조' : 'Modded Vehicle Boost',
       nameEn: 'Modded Vehicle Boost',
       icon: Wrench,
@@ -53,7 +53,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
     },
     {
       day: 2,
-      dayName: isKorean ? '월요일' : 'Thứ hai',
+      dayName: isKorean ? '화요일' : 'Thứ ba',
       name: isKorean ? '건물 업그레이드' : 'Shelter Upgrade',
       nameEn: 'Shelter Upgrade',
       icon: Building2,
@@ -69,7 +69,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
     },
     {
       day: 3,
-      dayName: isKorean ? '화요일' : 'Thứ ba',
+      dayName: isKorean ? '수요일' : 'Thứ tư',
       name: isKorean ? '과학의 시대' : 'Age of Science',
       nameEn: 'Age of Science',
       icon: FlaskConical,
@@ -85,7 +85,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
     },
     {
       day: 4,
-      dayName: isKorean ? '수요일' : 'Thứ tư',
+      dayName: isKorean ? '목요일' : 'Thứ năm',
       name: isKorean ? '영웅 이니셔티브' : 'Hero Initiative',
       nameEn: 'Hero Initiative',
       icon: Users,
@@ -101,7 +101,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
     },
     {
       day: 5,
-      dayName: isKorean ? '목요일' : 'Thứ năm',
+      dayName: isKorean ? '금요일' : 'Thứ sáu',
       name: isKorean ? '종합 성장' : 'Holistic Growth',
       nameEn: 'Holistic Growth / Army Expansion',
       icon: Swords,
@@ -117,7 +117,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
     },
     {
       day: 6,
-      dayName: isKorean ? '금요일' : 'Thứ sáu',
+      dayName: isKorean ? '토요일' : 'Thứ bảy',
       name: isKorean ? '적 파괴자' : 'Enemy Buster',
       nameEn: 'Enemy Buster',
       icon: Target,
@@ -160,7 +160,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
 
   const tips = [
     isKorean
-      ? '영웅 조각, 모집 티켓은 반드시 4일차(수요일) Hero Initiative에만 사용!'
+      ? '영웅 조각, 모집 티켓은 반드시 4일차 목요일 Hero Initiative에만 사용!'
       : 'Mảnh anh hùng, vé tuyển mộ PHẢI dùng vào ngày 4 (Thứ tư) Hero Initiative!',
     isKorean
       ? '골든아워(전면전비 일치 시간)에 활동하면 양쪽 이벤트에서 동시 포인트 획득'
@@ -169,7 +169,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       ? '오렌지 레벨 퀘스트(현상금, 트럭) 우선 - 포인트 가치가 훨씬 높음'
       : 'Ưu tiên quest cam (bounty, truck) - giá trị điểm cao hơn nhiều',
     isKorean
-      ? '6일차(금요일) Enemy Buster는 전면전비와 겹치지 않음 - 언제든 공격 가능'
+      ? '6일차 토요일 Enemy Buster는 전면전비와 겹치지 않음 - 언제든 공격 가능'
       : 'Ngày 6 (Thứ sáu) Enemy Buster không trùng Full Prep - tấn công bất cứ lúc nào',
     isKorean
       ? '연맹 인정(AR) 연구 완료 시 렌치당 포인트 3배 이상 증가!'
@@ -206,7 +206,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '일~금 6일간 진행, 토요일은 휴식일' : 'Diễn ra 6 ngày (CN-T6), Thứ 7 nghỉ'}</li>
+              <li>• {isKorean ? '월~토 6일간 진행, 일요일은 휴식일' : 'Diễn ra 6 ngày (T2-T7), Chủ nhật nghỉ'}</li>
               <li>• {isKorean ? '매일 다른 테마 - 해당 테마 활동만 포인트 획득' : 'Mỗi ngày theme khác - chỉ hoạt động đúng theme mới được điểm'}</li>
               <li>• {isKorean ? '골든아워: 전면전비와 테마가 일치할 때 (양쪽 포인트 동시 획득)' : 'Golden Hour: khi theme trùng với Full Prep (nhận điểm cả 2)'}</li>
               <li>• {isKorean ? 'Apocalypse Time = UTC-2 (한국시간 -11시간)' : 'Apocalypse Time = UTC-2 (giờ Hàn Quốc -11 tiếng)'}</li>
@@ -259,7 +259,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
                       <Badge variant="outline" className={`${theme.color} border-current`}>
                         {isKorean ? `${theme.day}일차` : `Ngày ${theme.day}`}
                       </Badge>
-                      <span className="text-sm text-muted-foreground">({theme.dayName})</span>
+                      <span className="text-sm text-muted-foreground">{theme.dayName}</span>
                       <span className={`flex items-center gap-1 text-base ${theme.color}`}>
                         <Icon className="h-5 w-5" />
                         {theme.name}
@@ -420,11 +420,11 @@ function AllianceDuelContent({ locale }: { locale: string }) {
                   {isKorean ? '흔한 실수 - 반드시 피해야 할 것' : 'Sai lầm phổ biến - PHẢI tránh'}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? '영웅 조각/모집 티켓을 4일차(수요일) 외에 사용' : 'Dùng mảnh anh hùng/vé tuyển mộ ngoài ngày 4 (Thứ tư)'}</li>
-                  <li>• {isKorean ? '렌치를 1일차(일요일) 외에 사용' : 'Dùng cờ lê ngoài ngày 1 (Chủ nhật)'}</li>
+                  <li>• {isKorean ? '영웅 조각/모집 티켓을 4일차 목요일 외에 사용' : 'Dùng mảnh anh hùng/vé tuyển mộ ngoài ngày 4 (Thứ năm)'}</li>
+                  <li>• {isKorean ? '렌치를 1일차 월요일 외에 사용' : 'Dùng cờ lê ngoài ngày 1 (Thứ hai)'}</li>
                   <li>• {isKorean ? '골든아워 외 시간에 가속 아이템 대량 소모' : 'Dùng nhiều tăng tốc ngoài Golden Hour'}</li>
                   <li>• {isKorean ? '오렌지 레벨 퀘스트(현상금, 트럭) 무시' : 'Bỏ qua quest cấp cam (bounty, truck)'}</li>
-                  <li>• {isKorean ? '6일차(금요일)에 무작정 강한 적 공격 (병력 손실 주의)' : 'Ngày 6 tấn công địch mạnh bừa bãi (coi chừng mất quân)'}</li>
+                  <li>• {isKorean ? '6일차 토요일에 무작정 강한 적 공격 (병력 손실 주의)' : 'Ngày 6 (Thứ bảy) tấn công địch mạnh bừa bãi (coi chừng mất quân)'}</li>
                 </ul>
               </div>
             </div>
