@@ -20,6 +20,7 @@ const changelogData: ChangelogEntry[] = [
     changes: {
       ko: [
         '연맹 대결 페이지 전면 개편 (6개 테마, 골든아워, 전면전비 스케줄)',
+        '골든아워 시간대 수정 (Apoc 08:00-12:00, 20:00-00:00)',
         '방문자 카운터 한국시간(KST) 기준으로 변경',
         '업데이트 내역 페이지 추가',
         'HQ 업그레이드 요구사항 데이터 수정',
@@ -29,6 +30,7 @@ const changelogData: ChangelogEntry[] = [
       ],
       vi: [
         'Cải tiến trang Alliance Duel (6 theme, Golden Hour, lịch Full Prep)',
+        'Sửa giờ Golden Hour (Apoc 08:00-12:00, 20:00-00:00)',
         'Đổi bộ đếm khách theo giờ Hàn Quốc (KST)',
         'Thêm trang lịch sử cập nhật',
         'Sửa dữ liệu yêu cầu nâng cấp HQ',
