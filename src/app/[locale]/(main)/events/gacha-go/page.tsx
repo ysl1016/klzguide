@@ -79,24 +79,24 @@ function GachaGoContent({ locale }: { locale: string }) {
 
   const budgetGuide = [
     {
-      budget: '15,000',
-      pulls: '30',
+      budget: '1,000',
+      pulls: '10',
       result: isKorean ? '최소 참여 (키 축적용)' : 'Tham gia tối thiểu (tích key)',
     },
     {
-      budget: '30,000',
-      pulls: '60',
+      budget: '3,000',
+      pulls: '30',
       result: isKorean ? '기본 참여' : 'Tham gia cơ bản',
     },
     {
-      budget: '55,000',
-      pulls: '110',
+      budget: '5,000',
+      pulls: '50',
       result: isKorean ? '적극 참여 (마일스톤 목표)' : 'Tham gia tích cực (nhắm milestone)',
       recommended: true,
     },
     {
-      budget: '100,000+',
-      pulls: '200+',
+      budget: '10,000+',
+      pulls: '100+',
       result: isKorean ? '과금 유저' : 'Whale',
     },
   ];
@@ -109,8 +109,8 @@ function GachaGoContent({ locale }: { locale: string }) {
       ? '300키 → 70렌치 교환이 가장 효율적 (키당 4.3개)'
       : '300 key → 70 cờ lê hiệu quả nhất (4.3 key/cờ lê)',
     isKorean
-      ? '렌치당 약 410 다이아 소요 - VIP 상점(300 다이아)보다 비효율'
-      : '~410 diamond/cờ lê - kém hiệu quả hơn VIP shop (300 diamond)',
+      ? '황금렌치와 마일스톤 보상이 주 목적 - 순수 렌치만 원하면 VIP 상점 이용'
+      : 'Mục tiêu chính là Golden Wrench và milestone - chỉ muốn cờ lê thì dùng VIP shop',
     isKorean
       ? '마일스톤 보상이 핵심 - 예산에 맞는 마일스톤 목표 설정'
       : 'Thưởng milestone là chính - đặt mục tiêu milestone theo ngân sách',
@@ -151,7 +151,7 @@ function GachaGoContent({ locale }: { locale: string }) {
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li className="flex items-baseline gap-2">
                 <span className="text-primary">•</span>
-                <span>{isKorean ? '비용: 1회 뽑기 = 500 다이아몬드' : 'Chi phí: 1 lần quay = 500 diamond'}</span>
+                <span>{isKorean ? '비용: 1회 뽑기 = 100 다이아몬드, 5회 = 500 다이아' : 'Chi phí: 1 lần = 100 diamond, 5 lần = 500 diamond'}</span>
               </li>
               <li className="flex items-baseline gap-2">
                 <span className="text-primary">•</span>
@@ -181,10 +181,10 @@ function GachaGoContent({ locale }: { locale: string }) {
           </h2>
           <Card className="border-highlight/30 bg-highlight/5">
             <CardContent className="p-6 text-center">
-              <p className="text-5xl font-bold text-highlight">500</p>
+              <p className="text-5xl font-bold text-highlight">100</p>
               <p className="text-lg text-muted-foreground">{isKorean ? '다이아몬드 / 1회 뽑기' : 'diamond / 1 lần quay'}</p>
               <p className="text-sm text-muted-foreground mt-2">
-                {isKorean ? '5회 연속 뽑기 = 2,500 다이아' : '5 lần liên tục = 2,500 diamond'}
+                {isKorean ? '5회 연속 뽑기 = 500 다이아' : '5 lần liên tục = 500 diamond'}
               </p>
             </CardContent>
           </Card>
@@ -202,7 +202,7 @@ function GachaGoContent({ locale }: { locale: string }) {
                 <div className="text-3xl mb-2">1️⃣</div>
                 <p className="font-semibold">{isKorean ? '다이아로 뽑기' : 'Quay bằng diamond'}</p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean ? '500 다이아 = 1회' : '500 diamond = 1 lần'}
+                  {isKorean ? '100 다이아 = 1회' : '100 diamond = 1 lần'}
                 </p>
               </CardContent>
             </Card>
@@ -396,8 +396,8 @@ function GachaGoContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
-                    ? '행운의 흔들기에서 렌치 1개당 약 410 다이아가 소요됩니다. VIP 상점에서는 300 다이아에 렌치 구매가 가능하므로, 순수 렌치 획득 목적이라면 VIP 상점이 더 효율적입니다. 행운의 흔들기는 황금렌치와 마일스톤 보상이 목적일 때 참여하세요.'
-                    : 'Lucky Shake tốn ~410 diamond/cờ lê. VIP shop bán 300 diamond/cờ lê, hiệu quả hơn nếu chỉ muốn cờ lê. Tham gia Lucky Shake khi muốn Golden Wrench và thưởng milestone.'}
+                    ? '행운의 흔들기는 황금렌치와 마일스톤 보상 획득이 주 목적입니다. VIP 상점에서는 300 다이아에 일반 렌치 구매가 가능하므로, 순수 렌치 획득 목적이라면 VIP 상점을 이용하세요. 행운의 흔들기는 황금렌치가 필요할 때 참여하는 것이 효율적입니다.'
+                    : 'Lucky Shake chủ yếu để lấy Golden Wrench và thưởng milestone. VIP shop bán 300 diamond/cờ lê thường, nếu chỉ muốn cờ lê thì dùng VIP shop. Tham gia Lucky Shake khi cần Golden Wrench.'}
                 </p>
               </div>
             </div>
@@ -440,8 +440,8 @@ function GachaGoContent({ locale }: { locale: string }) {
               </div>
               <p className="text-xs text-muted-foreground mt-3 text-center">
                 {isKorean
-                  ? '※ 권장 예산: 30,000~55,000 다이아 (마일스톤 달성 목표)'
-                  : '※ Ngân sách khuyến nghị: 30,000~55,000 diamond (đạt milestone)'}
+                  ? '※ 권장 예산: 3,000~5,000 다이아 (마일스톤 달성 목표)'
+                  : '※ Ngân sách khuyến nghị: 3,000~5,000 diamond (đạt milestone)'}
               </p>
             </CardContent>
           </Card>
