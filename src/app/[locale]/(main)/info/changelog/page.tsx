@@ -19,6 +19,8 @@ const changelogData: ChangelogEntry[] = [
     isNew: true,
     changes: {
       ko: [
+        '연맹 대결 페이지 전면 개편 (6개 테마, 골든아워, 전면전비 스케줄)',
+        '방문자 카운터 한국시간(KST) 기준으로 변경',
         '업데이트 내역 페이지 추가',
         'HQ 업그레이드 요구사항 데이터 수정',
         '사이드바 아코디언 동작 개선',
@@ -26,6 +28,8 @@ const changelogData: ChangelogEntry[] = [
         '월간 방문자 카운터 버그 수정 (2월 등 31일 미만 달)',
       ],
       vi: [
+        'Cải tiến trang Alliance Duel (6 theme, Golden Hour, lịch Full Prep)',
+        'Đổi bộ đếm khách theo giờ Hàn Quốc (KST)',
         'Thêm trang lịch sử cập nhật',
         'Sửa dữ liệu yêu cầu nâng cấp HQ',
         'Cải thiện hoạt động accordion sidebar',
