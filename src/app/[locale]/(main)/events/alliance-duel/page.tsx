@@ -60,8 +60,8 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
       activities: isKorean
-        ? ['건물 업그레이드 완료', '건설 가속 사용', '오렌지 현상금 퀘스트 우선', '모집 티켓 사용']
-        : ['Hoàn thành nâng cấp công trình', 'Dùng tăng tốc xây', 'Ưu tiên bounty cam', 'Dùng vé tuyển mộ'],
+        ? ['건물 업그레이드 완료', '건설 가속 사용', '오렌지 현상금 퀘스트 우선', '피난민 모집 티켓 사용']
+        : ['Hoàn thành nâng cấp công trình', 'Dùng tăng tốc xây', 'Ưu tiên bounty cam', 'Dùng vé tuyển mộ tị nạn'],
       goldenHour: [
         { apoc: '08:00-12:00', korea: '19:00-23:00' },
         { apoc: '20:00-00:00', korea: '07:00-11:00' },
@@ -92,8 +92,8 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
       activities: isKorean
-        ? ['영웅 조각 사용', '모집 티켓 사용', '프라임 리크루트', '에너지코어 사용', '오렌지 장비 조각']
-        : ['Dùng mảnh anh hùng', 'Dùng vé tuyển mộ', 'Prime Recruit', 'Dùng Power Core', 'Mảnh trang bị cam'],
+        ? ['영웅 조각 사용', '영웅 모집 티켓 사용', '프라임 리크루트', '에너지코어 사용', '오렌지 장비 조각']
+        : ['Dùng mảnh anh hùng', 'Dùng vé tuyển mộ anh hùng', 'Prime Recruit', 'Dùng Power Core', 'Mảnh trang bị cam'],
       goldenHour: [
         { apoc: '08:00-12:00', korea: '19:00-23:00' },
         { apoc: '20:00-00:00', korea: '07:00-11:00' },
