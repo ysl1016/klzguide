@@ -293,7 +293,7 @@ function GlossaryContent({ locale }: { locale: string }) {
       en: 'Valor Medals',
       vi: 'Valor Medals',
       definition: isKorean
-        ? 'SVS 보상. 블랙마켓에서 오렌지 장비 교환 가능'
+        ? 'SVS 보상. 공훈상점에서 오렌지 장비 교환 가능'
         : 'Thưởng SVS. Có thể đổi trang bị cam ở Black Market',
     },
     {
@@ -343,12 +343,12 @@ function GlossaryContent({ locale }: { locale: string }) {
         : 'Shop cao cấp theo level VIP',
     },
     {
-      term: isKorean ? '블랙마켓' : 'Black Market',
-      ko: '블랙마켓',
+      term: isKorean ? '암시장' : 'Black Market',
+      ko: '암시장',
       en: 'Black Market',
       vi: 'Black Market',
       definition: isKorean
-        ? '용사훈장으로 오렌지 장비를 구매하는 상점'
+        ? '용사훈장으로 오렌지 장비를 구매하는 상점 (공훈상점)'
         : 'Shop mua trang bị cam bằng Valor Medals',
     },
     // 기타

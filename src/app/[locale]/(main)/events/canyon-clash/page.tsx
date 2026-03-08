@@ -187,7 +187,7 @@ function CanyonClashContent({ locale }: { locale: string }) {
     isKorean ? '사망 부대는 즉시 재편성 - 병원 점령 시 힐링 빠름' : 'Đội chết tái tổ chức ngay - heal nhanh nếu chiếm bệnh viện',
     isKorean ? '매칭은 TOP 30 전투력 기준 - 고전력 멤버 참여 중요' : 'Matching theo CP top 30 - quan trọng có thành viên CP cao',
     isKorean ? 'R4/R5만 등록 가능 - 수요일 전 반드시 확인' : 'Chỉ R4/R5 đăng ký được - kiểm tra trước thứ 4',
-    isKorean ? '용사훈장으로 블랙마켓 오렌지 장비 구매!' : 'Mua trang bị cam Black Market bằng Valor Medals!',
+    isKorean ? '용사훈장으로 공훈상점 오렌지 장비 구매!' : 'Mua trang bị cam Black Market bằng Valor Medals!',
   ];
 
   return (

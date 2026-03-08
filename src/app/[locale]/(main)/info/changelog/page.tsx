@@ -24,6 +24,7 @@ const changelogData: ChangelogEntry[] = [
         '용어사전에 연구 관련 용어 9개 추가',
         '용어사전 좀비 포위전 → 좀비공성 수정',
         '발로 메달 → 용사훈장 용어 변경 (전체 페이지 반영)',
+        '블랙마켓 → 암시장, 용사훈장 사용 상점 → 공훈상점 용어 변경',
         '연구 용어 전체 페이지 일괄 수정 (연구 우선순위, 기술 트리, FAQ, 초보 실수, 전투력, 용어사전 등)',
       ],
       vi: [
@@ -32,6 +33,7 @@ const changelogData: ChangelogEntry[] = [
         'Thêm 9 thuật ngữ nghiên cứu vào từ điển',
         'Sửa thuật ngữ 좀비 포위전 → 좀비공성 trong từ điển',
         'Đổi thuật ngữ Valor Medals → 용사훈장 (toàn bộ trang)',
+        'Đổi thuật ngữ Black Market → 암시장/공훈상점',
         'Đồng bộ thuật ngữ NC trên toàn bộ trang (ưu tiên NC, cây công nghệ, FAQ, lỗi newbie, sức mạnh, từ điển, v.v.)',
       ],
     },

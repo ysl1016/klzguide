@@ -374,7 +374,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
               <Lightbulb className="h-5 w-5 text-tip shrink-0" />
               <p className="text-sm text-muted-foreground">
                 {isKorean
-                  ? '용사훈장으로 블랙마켓에서 오렌지 장비 교환 가능 (SVS 보상)'
+                  ? '용사훈장으로 공훈상점에서 오렌지 장비 교환 가능 (SVS 보상)'
                   : 'Đổi trang bị cam ở Black Market bằng Valor Medals (phần thưởng SVS)'}
               </p>
             </div>
