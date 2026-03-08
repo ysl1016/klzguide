@@ -55,9 +55,9 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
     },
     {
       number: 5,
-      title: isKorean ? '연맹 인정(Alliance Recognition) 연구 먼저' : 'Nghiên cứu Alliance Recognition trước',
+      title: isKorean ? '연맹표창(Alliance Recognition) 연구 먼저' : 'Nghiên cứu Alliance Recognition trước',
       desc: isKorean
-        ? '전투 연구보다 연맹 인정 연구를 먼저 완료하세요. 일일 보상(배지, 합금, 조각)이 2배가 됩니다.'
+        ? '전투 연구보다 연맹표창 연구를 먼저 완료하세요. 일일 보상(배지, 합금, 조각)이 2배가 됩니다.'
         : 'Hoàn thành nghiên cứu Alliance Recognition trước nghiên cứu chiến đấu. Phần thưởng hàng ngày (huy hiệu, hợp kim, mảnh) tăng gấp đôi.',
       priority: 'high',
     },

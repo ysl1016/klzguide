@@ -172,7 +172,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       ? '6일차 토요일 Enemy Buster는 전면전비와 겹치지 않음 - 언제든 공격 가능'
       : 'Ngày 6 (Thứ sáu) Enemy Buster không trùng Full Prep - tấn công bất cứ lúc nào',
     isKorean
-      ? '연맹 인정(AR) 연구 완료 시 렌치당 포인트 3배 이상 증가!'
+      ? '연맹표창(AR) 연구 완료 시 렌치당 포인트 3배 이상 증가!'
       : 'Khi hoàn thành NC Alliance Recognition, điểm/wrench tăng gấp 3+!',
   ];
 

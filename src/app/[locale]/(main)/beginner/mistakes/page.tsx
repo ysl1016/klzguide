@@ -56,12 +56,12 @@ function MistakesContent({ locale }: { locale: string }) {
     },
     {
       number: 4,
-      title: isKorean ? '연맹 인정(AR) 연구 미루기' : 'Trì hoãn nghiên cứu Alliance Recognition',
+      title: isKorean ? '연맹표창(AR) 연구 미루기' : 'Trì hoãn nghiên cứu Alliance Recognition',
       wrong: isKorean
-        ? '전투 연구부터 시작하고 연맹 인정은 나중에'
+        ? '전투 연구부터 시작하고 연맹표창은 나중에'
         : 'Bắt đầu nghiên cứu chiến đấu trước, Alliance Recognition sau',
       right: isKorean
-        ? '연맹 인정 연구를 먼저 완료. 일일 보상(배지, 합금, 조각)이 2배됨'
+        ? '연맹표창 연구를 먼저 완료. 일일 보상(배지, 합금, 조각)이 2배됨'
         : 'Hoàn thành AR trước. Phần thưởng hàng ngày (huy hiệu, hợp kim, mảnh) tăng gấp đôi',
       severity: 'high',
     },

@@ -140,7 +140,7 @@ function ResearchPriorityContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '연맹 인정(AR) 최우선 - 일일 보상 2배' : 'Alliance Recognition ưu tiên nhất - gấp đôi phần thưởng'}</li>
+              <li>• {isKorean ? '연맹표창(AR) 최우선 - 일일 보상 2배' : 'Alliance Recognition ưu tiên nhất - gấp đôi phần thưởng'}</li>
               <li>• {isKorean ? '영웅훈련은 조종석까지만 (배지 함정 주의)' : 'Hero Training chỉ tới Cockpit (cẩn thận bẫy badge)'}</li>
               <li>• {isKorean ? 'HP 연구 집중 - 생존력 + 전투력 동시 증가' : 'Tập trung NC HP - tăng sinh tồn + sức mạnh'}</li>
               <li>• {isKorean ? '두 번째 연구소 구매로 속도 2배' : 'Mua Lab thứ 2 để gấp đôi tốc độ'}</li>
@@ -153,7 +153,7 @@ function ResearchPriorityContent({ locale }: { locale: string }) {
           <CardHeader>
             <CardTitle className="text-highlight flex items-center gap-2">
               <span className="text-2xl">⭐</span>
-              {isKorean ? '최우선: 연맹 인정 (Alliance Recognition)' : 'Ưu tiên nhất: Alliance Recognition'}
+              {isKorean ? '최우선: 연맹표창 (Alliance Recognition)' : 'Ưu tiên nhất: Alliance Recognition'}
             </CardTitle>
           </CardHeader>
           <CardContent>

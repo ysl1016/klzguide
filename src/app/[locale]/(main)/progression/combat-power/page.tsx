@@ -60,7 +60,7 @@ function CombatPowerContent({ locale }: { locale: string }) {
   const priorities = [
     {
       rank: 1,
-      title: isKorean ? '연맹 인정(AR) 연구 완료' : 'Hoàn thành NC Alliance Recognition',
+      title: isKorean ? '연맹표창(AR) 연구 완료' : 'Hoàn thành NC Alliance Recognition',
       description: isKorean
         ? '일일 보상(배지, 합금, 조각)이 2배가 됩니다. 다른 모든 성장을 가속화하는 핵심 연구입니다.'
         : 'Phần thưởng hàng ngày (badge, hợp kim, mảnh) tăng gấp đôi. NC cốt lõi tăng tốc mọi phát triển.',
@@ -169,7 +169,7 @@ function CombatPowerContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '연맹 인정(AR) 연구 최우선 - 모든 보상 2배' : 'NC Alliance Recognition ưu tiên nhất - gấp đôi mọi phần thưởng'}</li>
+              <li>• {isKorean ? '연맹표창(AR) 연구 최우선 - 모든 보상 2배' : 'NC Alliance Recognition ưu tiên nhất - gấp đôi mọi phần thưởng'}</li>
               <li>• {isKorean ? '메인 5영웅에만 집중 투자' : 'Chỉ tập trung đầu tư 5 anh hùng chính'}</li>
               <li>• {isKorean ? '자원 생산 건물 스킵 (ROI 4개월+)' : 'Bỏ qua công trình sản xuất (ROI 4+ tháng)'}</li>
               <li>• {isKorean ? '진영 시너지 활용 - 같은 진영 5명으로 히든 버프' : 'Tận dụng synergy phe - 5 anh hùng cùng phe cho buff ẩn'}</li>

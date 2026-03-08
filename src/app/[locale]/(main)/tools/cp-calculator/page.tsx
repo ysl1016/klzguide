@@ -70,7 +70,7 @@ export default function CPCalculatorPage() {
         ? '연구소에서 완료한 연구 수에서 발생'
         : 'Từ số nghiên cứu hoàn thành trong Lab',
       howToIncrease: isKorean
-        ? '연맹 인정(AR) 연구 먼저 완료'
+        ? '연맹표창(AR) 연구 먼저 완료'
         : 'Hoàn thành NC Alliance Recognition trước',
       idealRange: '10-15%',
     },
@@ -525,7 +525,7 @@ export default function CPCalculatorPage() {
               <li className="flex items-start gap-2">
                 <span className="text-tip">•</span>
                 {isKorean
-                  ? '연맹 인정(AR) 연구를 먼저 완료하면 모든 보상이 2배가 됩니다.'
+                  ? '연맹표창(AR) 연구를 먼저 완료하면 모든 보상이 2배가 됩니다.'
                   : 'Hoàn thành NC Alliance Recognition trước để nhân đôi mọi phần thưởng.'}
               </li>
             </ul>

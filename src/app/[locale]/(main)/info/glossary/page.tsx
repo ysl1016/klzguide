@@ -49,8 +49,8 @@ function GlossaryContent({ locale }: { locale: string }) {
         : 'Cách chơi không nạp tiền',
     },
     {
-      term: isKorean ? '연맹 인정 (AR)' : 'AR (Alliance Recognition)',
-      ko: '연맹 인정',
+      term: isKorean ? '연맹표창 (AR)' : 'AR (Alliance Recognition)',
+      ko: '연맹표창',
       en: 'Alliance Recognition',
       vi: 'Alliance Recognition',
       definition: isKorean
@@ -120,6 +120,88 @@ function GlossaryContent({ locale }: { locale: string }) {
       definition: isKorean
         ? '연맹 간 경쟁 이벤트. 렌치 획득처'
         : 'Sự kiện cạnh tranh giữa các liên minh. Nguồn farm Wrench',
+    },
+    // 연구
+    {
+      term: isKorean ? '영웅훈련' : 'Hero Training',
+      ko: '영웅훈련',
+      en: 'Hero Training',
+      vi: 'Hero Training',
+      definition: isKorean
+        ? '영웅 스킬 및 스탯 강화 연구 트리. 조종석까지만 진행 권장'
+        : 'Cây NC tăng kỹ năng và stat anh hùng. Chỉ nên làm tới Cockpit',
+    },
+    {
+      term: isKorean ? '조종석' : 'Cockpit',
+      ko: '조종석',
+      en: 'Cockpit',
+      vi: 'Cockpit',
+      definition: isKorean
+        ? '영웅훈련 연구 트리의 주요 분기점. 이후는 배지 대비 효율이 극히 낮음'
+        : 'Điểm rẽ chính trong cây NC Hero Training. Sau đó hiệu quả badge cực thấp',
+    },
+    {
+      term: isKorean ? '엘리트부대' : 'Elite Troops',
+      ko: '엘리트부대',
+      en: 'Elite Troops',
+      vi: 'Elite Troops',
+      definition: isKorean
+        ? '병력 기본 스탯 강화 연구 트리. 100% 완료 시 군사이론 해금'
+        : 'Cây NC tăng stat cơ bản quân. 100% mở Military Strategies',
+    },
+    {
+      term: isKorean ? '군사이론' : 'Military Strategies',
+      ko: '군사이론',
+      en: 'Military Strategies',
+      vi: 'Military Strategies',
+      definition: isKorean
+        ? '병력 HP 및 전투 버프 연구 트리. 엘리트부대 100% 후 해금'
+        : 'Cây NC HP quân và buff chiến đấu. Mở sau Elite Troops 100%',
+    },
+    {
+      term: isKorean ? '피난소건설' : 'Shelter',
+      ko: '피난소건설',
+      en: 'Shelter',
+      vi: 'Shelter',
+      definition: isKorean
+        ? '방어 및 자원 보호 연구 트리. 50% 완료 시 전쟁수호 해금 조건'
+        : 'Cây NC phòng thủ và bảo vệ tài nguyên. 50% là điều kiện mở Peace Shield',
+    },
+    {
+      term: isKorean ? '전쟁수호' : 'Peace Shield',
+      ko: '전쟁수호',
+      en: 'Peace Shield',
+      vi: 'Peace Shield',
+      definition: isKorean
+        ? '방어 연구 트리. 긴급구조(-20% 병력 손실) 포함. 피난소건설 50% + 군사이론 45% 필요'
+        : 'Cây NC phòng thủ. Gồm Urgent Rescue (-20% mất quân). Cần Shelter 50% + Military 45%',
+    },
+    {
+      term: isKorean ? '긴급구조' : 'Urgent Rescue',
+      ko: '긴급구조',
+      en: 'Urgent Rescue',
+      vi: 'Urgent Rescue',
+      definition: isKorean
+        ? '전쟁수호 연구. 병력 손실 -20% 감소. 방어 플레이어 필수'
+        : 'NC trong Peace Shield. Giảm 20% mất quân. Bắt buộc cho phòng thủ',
+    },
+    {
+      term: isKorean ? '도시함락' : 'Siege to Seize',
+      ko: '도시함락',
+      en: 'Siege to Seize',
+      vi: 'Siege to Seize',
+      definition: isKorean
+        ? '공격 보너스 연구 트리. 군사이론 40% 필요. 100% 완료 시 야전연구 해금'
+        : 'Cây NC bonus tấn công. Cần Military Strategies 40%. 100% mở Field Research',
+    },
+    {
+      term: isKorean ? '야전연구' : 'Field Research',
+      ko: '야전연구',
+      en: 'Field Research',
+      vi: 'Field Research',
+      definition: isKorean
+        ? '고급 연구 트리. Recharge Shield 등 엔드게임 콘텐츠. 도시함락 100% 필요'
+        : 'Cây NC cao cấp. Nội dung endgame như Recharge Shield. Cần Siege to Seize 100%',
     },
     // 진영
     {

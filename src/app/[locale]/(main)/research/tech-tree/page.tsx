@@ -222,7 +222,7 @@ function TechTreeContent({ locale }: { locale: string }) {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-highlight/20 text-highlight text-xs font-bold">1</span>
                 <span className="text-muted-foreground">
                   {isKorean
-                    ? 'Alliance Recognition 완료 (최우선)'
+                    ? '연맹표창 완료 (최우선)'
                     : 'Hoàn thành Alliance Recognition (ưu tiên nhất)'}
                 </span>
               </li>
