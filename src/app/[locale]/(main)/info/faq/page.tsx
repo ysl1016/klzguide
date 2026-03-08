@@ -59,7 +59,7 @@ function FAQContent({ locale }: { locale: string }) {
     {
       q: isKorean ? '장비는 어떻게 업그레이드하나요?' : 'Nâng cấp trang bị như thế nào?',
       a: isKorean
-        ? '오렌지 장비에만 투자하세요. 1) Lv.20까지 강화 → 2) 1헥사곤 승급 (100코어, 최고 효율) → 3) 모든 장비 고르게 2성, 3성, 4성 순으로. F2P는 4헥사곤에서 멈춤.'
+        ? '주황 장비에만 투자하세요. 1) Lv.20까지 강화 → 2) 1헥사곤 승급 (100코어, 최고 효율) → 3) 모든 장비 고르게 2성, 3성, 4성 순으로. F2P는 4헥사곤에서 멈춤.'
         : 'Chỉ đầu tư trang bị cam. 1) Nâng lên Lv.20 → 2) Thăng 1 hexagon (100 core, hiệu quả nhất) → 3) Nâng đều tất cả 2 sao, 3 sao, 4 sao. F2P dừng ở 4 hexagon.',
     },
     {

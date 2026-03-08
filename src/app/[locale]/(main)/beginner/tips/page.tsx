@@ -73,7 +73,7 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
       number: 7,
       title: isKorean ? '매일 트럭을 보내세요' : 'Gửi xe tải mỗi ngày',
       desc: isKorean
-        ? '트럭에서 부품 상자, 오렌지 장비 조각을 얻을 수 있습니다. 매일 빠짐없이 보내세요.'
+        ? '트럭에서 부품 상자, 주황 장비 조각을 얻을 수 있습니다. 매일 빠짐없이 보내세요.'
         : 'Xe tải có thể cho hộp linh kiện, mảnh trang bị cam. Gửi mỗi ngày không bỏ lỡ.',
       priority: 'medium',
     },
@@ -203,12 +203,12 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
             <CardContent className="p-4">
               <ul className="space-y-3">
                 {[
-                  isKorean ? '트럭 보내기 (부품상자, 오렌지 조각 획득)' : 'Gửi xe tải (hộp linh kiện, mảnh cam)',
+                  isKorean ? '트럭 보내기 (부품상자, 주황 조각 획득)' : 'Gửi xe tải (hộp linh kiện, mảnh cam)',
                   isKorean ? '난폭 두목 4회 공격 (일요일 제외)' : 'Tấn công Furylord 4 lần (trừ CN)',
                   isKorean ? '공훈상자 3개 열기 (최소 3개 임무 완료)' : 'Mở 3 hộp Merit (hoàn thành ít nhất 3 nhiệm vụ)',
                   isKorean ? '연맹 도움 요청 및 도움주기' : 'Yêu cầu và hỗ trợ liên minh',
                   isKorean ? '오늘의 이벤트 요일 확인 후 해당 활동 집중' : 'Kiểm tra ngày sự kiện và tập trung hoạt động phù hợp',
-                  isKorean ? '오렌지 바운티/트레이드 우선 완료' : 'Ưu tiên hoàn thành Bounty/Trade cam',
+                  isKorean ? '주황 바운티/트레이드 우선 완료' : 'Ưu tiên hoàn thành Bounty/Trade cam',
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-tip shrink-0" />

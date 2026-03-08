@@ -41,7 +41,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
       buy: [
-        isKorean ? '오렌지 영웅 조각' : 'Orange Hero Fragments',
+        isKorean ? '주황 영웅 조각' : 'Orange Hero Fragments',
         isKorean ? '황금렌치 (주 5개)' : 'Golden Wrenches (5/week)',
         isKorean ? '장비 프레임워크 조각' : 'Equipment Framework Fragments',
       ],
@@ -57,7 +57,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       bg: 'bg-blue-500/10',
       buy: [
         isKorean ? '에너지코어 (이벤트 중)' : 'Power Cores (during events)',
-        isKorean ? '오렌지 조각' : 'Orange Fragments',
+        isKorean ? '주황 조각' : 'Orange Fragments',
       ],
       skip: [
         isKorean ? '보라 장비 박스' : 'Purple Equipment Boxes',
@@ -71,7 +71,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       bg: 'bg-green-500/10',
       buy: [
         isKorean ? '모든 경찰휘장' : 'All Badges',
-        isKorean ? '범용 오렌지 조각' : 'Versatile Orange Fragments',
+        isKorean ? '범용 주황 조각' : 'Versatile Orange Fragments',
       ],
       skip: [
         isKorean ? '보라 영웅 조각' : 'Purple Hero Fragments',

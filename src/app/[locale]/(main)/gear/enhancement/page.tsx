@@ -21,7 +21,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
 
   const gearTiers = [
     {
-      name: isKorean ? '오렌지 (전설)' : 'Cam (Legendary)',
+      name: isKorean ? '주황 (전설)' : 'Cam (Legendary)',
       color: 'text-orange-400',
       bg: 'bg-orange-500/10',
       maxLevel: 'Lv.50 → 75 (5헥사곤) → 100 (미식)',
@@ -94,7 +94,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
   ];
 
   const upgradeSteps = [
-    isKorean ? '모든 오렌지 장비 Lv.20까지 강화 (승급 해금)' : 'Nâng tất cả trang bị cam lên Lv.20 (mở thăng cấp)',
+    isKorean ? '모든 주황 장비 Lv.20까지 강화 (승급 해금)' : 'Nâng tất cả trang bị cam lên Lv.20 (mở thăng cấp)',
     isKorean ? '모든 장비 1성(1헥사곤)으로 승급 (100코어, 최고 효율)' : 'Thăng cấp tất cả lên 1 sao (100 core, hiệu quả nhất)',
     isKorean ? '모든 장비 2성 → 3성 → 4성 순서로 진행' : 'Tiến hành 2 sao → 3 sao → 4 sao cho tất cả',
     isKorean ? 'F2P는 4헥사곤에서 멈춤 (5헥사곤 효율 낮음)' : 'F2P dừng ở 4 hexagon (5 hexagon hiệu quả thấp)',
@@ -103,7 +103,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
   const mistakes = [
     {
       wrong: isKorean ? '보라/블루/그린 장비에 합금/코어 사용' : 'Dùng alloy/core cho trang bị tím/xanh',
-      right: isKorean ? '오렌지 장비에만 투자' : 'Chỉ đầu tư vào trang bị cam',
+      right: isKorean ? '주황 장비에만 투자' : 'Chỉ đầu tư vào trang bị cam',
     },
     {
       wrong: isKorean ? '한 장비만 집중 업그레이드' : 'Chỉ tập trung nâng một trang bị',
@@ -150,7 +150,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '오렌지 장비에만 투자 (보라/블루/그린 X)' : 'Chỉ đầu tư trang bị cam (tím/xanh X)'}</li>
+              <li>• {isKorean ? '주황 장비에만 투자 (보라/블루/그린 X)' : 'Chỉ đầu tư trang bị cam (tím/xanh X)'}</li>
               <li>• {isKorean ? '1헥사곤이 최고 효율 (100코어로 대폭 상승)' : '1 hexagon hiệu quả nhất (100 core tăng lớn)'}</li>
               <li>• {isKorean ? 'F2P는 4헥사곤에서 멈춤' : 'F2P dừng ở 4 hexagon'}</li>
               <li>• {isKorean ? '한 장비 집중 X → 모든 장비 고르게 업그레이드' : 'Không tập trung 1 → nâng đều tất cả'}</li>
@@ -308,7 +308,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
                   <span className="font-mono">{totalCosts.perPiece.zent}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">{isKorean ? '오렌지 아이템' : 'Item cam'}</span>
+                  <span className="text-muted-foreground">{isKorean ? '주황 아이템' : 'Item cam'}</span>
                   <span className="font-mono">{totalCosts.perPiece.items}</span>
                 </div>
               </CardContent>
@@ -327,7 +327,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
                   <span className="font-mono text-highlight">{totalCosts.per5Heroes.zent}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">{isKorean ? '오렌지 아이템' : 'Item cam'}</span>
+                  <span className="text-muted-foreground">{isKorean ? '주황 아이템' : 'Item cam'}</span>
                   <span className="font-mono text-highlight">{totalCosts.per5Heroes.items}</span>
                 </div>
               </CardContent>
@@ -366,7 +366,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
               <Lightbulb className="h-5 w-5 text-tip shrink-0" />
               <p className="text-sm text-muted-foreground">
                 {isKorean
-                  ? '공훈상점에서 매주 오렌지 장비 구매 가능 - 놓치지 마세요!'
+                  ? '공훈상점에서 매주 주황 장비 구매 가능 - 놓치지 마세요!'
                   : 'Có thể mua trang bị cam hàng tuần từ Merit Shop - đừng bỏ lỡ!'}
               </p>
             </div>
@@ -374,7 +374,7 @@ function GearEnhancementContent({ locale }: { locale: string }) {
               <Lightbulb className="h-5 w-5 text-tip shrink-0" />
               <p className="text-sm text-muted-foreground">
                 {isKorean
-                  ? '용사훈장으로 공훈상점에서 오렌지 장비 교환 가능 (SVS 보상)'
+                  ? '용사훈장으로 공훈상점에서 주황 장비 교환 가능 (SVS 보상)'
                   : 'Đổi trang bị cam ở Black Market bằng Valor Medals (phần thưởng SVS)'}
               </p>
             </div>

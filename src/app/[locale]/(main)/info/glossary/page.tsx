@@ -266,7 +266,7 @@ function GlossaryContent({ locale }: { locale: string }) {
       en: 'Power Core',
       vi: 'Power Core',
       definition: isKorean
-        ? '오렌지 장비 승급(헥사곤)에 필요한 재화'
+        ? '주황 장비 승급(헥사곤)에 필요한 재화'
         : 'Tiền tệ cần để thăng cấp (hexagon) trang bị cam',
     },
     {
@@ -293,7 +293,7 @@ function GlossaryContent({ locale }: { locale: string }) {
       en: 'Valor Medals',
       vi: 'Valor Medals',
       definition: isKorean
-        ? 'SVS 보상. 공훈상점에서 오렌지 장비 교환 가능'
+        ? 'SVS 보상. 공훈상점에서 주황 장비 교환 가능'
         : 'Thưởng SVS. Có thể đổi trang bị cam ở Black Market',
     },
     {
@@ -348,7 +348,7 @@ function GlossaryContent({ locale }: { locale: string }) {
       en: 'Black Market',
       vi: 'Black Market',
       definition: isKorean
-        ? '용사훈장으로 오렌지 장비를 구매하는 상점 (공훈상점)'
+        ? '용사훈장으로 주황 장비를 구매하는 상점 (공훈상점)'
         : 'Shop mua trang bị cam bằng Valor Medals',
     },
     // 기타

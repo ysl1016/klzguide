@@ -33,7 +33,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       name: isKorean ? '건물 업그레이드' : 'Shelter Upgrade',
       nameEn: 'Shelter Upgrade',
       tasks: isKorean
-        ? ['건물 개선 완료', '건설 가속 사용', '오렌지 바운티 새로고침', '고가치 퀘스트 우선']
+        ? ['건물 개선 완료', '건설 가속 사용', '주황 바운티 새로고침', '고가치 퀘스트 우선']
         : ['Hoàn thành cải thiện công trình', 'Dùng tăng tốc xây', 'Refresh bounty cam', 'Ưu tiên quest giá trị cao'],
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
@@ -44,7 +44,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       name: isKorean ? '과학의 시대' : 'Age of Science',
       nameEn: 'Age of Science',
       tasks: isKorean
-        ? ['연구 완료', '연구 가속 사용', '배지 관련 연구', '인터스테이트 트럭 오렌지 퀘스트 찾기']
+        ? ['연구 완료', '연구 가속 사용', '배지 관련 연구', '인터스테이트 트럭 주황 퀘스트 찾기']
         : ['Hoàn thành NC', 'Dùng tăng tốc NC', 'NC liên quan badge', 'Refresh Interstate Truck tìm quest cam'],
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
@@ -88,7 +88,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       name: isKorean ? '적 파괴자' : 'Enemy Buster',
       nameEn: 'Enemy Buster',
       tasks: isKorean
-        ? ['적 기지 공격', '약한 본부(HQ) 타겟', '용사훈장 + 오렌지 장비 조각 획득', '병력 손실 최소화 타겟 선정']
+        ? ['적 기지 공격', '약한 본부(HQ) 타겟', '용사훈장 + 주황 장비 조각 획득', '병력 손실 최소화 타겟 선정']
         : ['Tấn công căn cứ địch', 'Nhắm HQ yếu', 'Valor Medal + mảnh trang bị cam', 'Chọn target giảm thiểu mất quân'],
       color: 'text-red-400',
       bg: 'bg-red-500/10',
@@ -99,7 +99,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
   // 매일 해야 할 필수 작업
   const dailyTasks = [
     {
-      task: isKorean ? '트럭 보내기 (부품상자, 오렌지 조각 획득)' : 'Gửi xe tải (hộp linh kiện, mảnh cam)',
+      task: isKorean ? '트럭 보내기 (부품상자, 주황 조각 획득)' : 'Gửi xe tải (hộp linh kiện, mảnh cam)',
       priority: 'high',
     },
     {

@@ -129,13 +129,13 @@ function CombatPowerContent({ locale }: { locale: string }) {
       ? '이벤트 동기화: Full Preparedness 이벤트(08:00/20:00)에 맞춰 업그레이드'
       : 'Đồng bộ sự kiện: Nâng cấp theo sự kiện Full Preparedness (08:00/20:00)',
     isKorean
-      ? '오렌지 장비: 공훈상점에서 매주 획득 가능, 메인 영웅에게 우선 장착'
+      ? '주황 장비: 공훈상점에서 매주 획득 가능, 메인 영웅에게 우선 장착'
       : 'Trang bị cam: Có thể lấy hàng tuần từ Merit Shop, ưu tiên anh hùng chính',
     isKorean
       ? 'HP 연구 우선: HP 연구는 생존력 + 전투력 동시 상승'
       : 'Ưu tiên NC HP: NC HP tăng cả sinh tồn + sức mạnh',
     isKorean
-      ? '에너지코어: 오렌지 장비에 고르게 분배, 한 곳에 몰아주지 마세요'
+      ? '에너지코어: 주황 장비에 고르게 분배, 한 곳에 몰아주지 마세요'
       : 'Power Core: Phân bổ đều cho trang bị cam, không dồn một chỗ',
   ];
 

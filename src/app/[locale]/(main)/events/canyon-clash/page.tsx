@@ -148,9 +148,9 @@ function CanyonClashContent({ locale }: { locale: string }) {
 
   // Rewards
   const personalRewards = [
-    { points: '50,000+', rewards: isKorean ? '5,000 용사훈장 + 150 오렌지 스킬북' : '5,000 Valor Medals + 150 Orange Skill Book' },
-    { points: '100,000+', rewards: isKorean ? '10,000 용사훈장 + 300 오렌지 스킬북' : '10,000 Valor Medals + 300 Orange Skill Book' },
-    { points: '150,000+', rewards: isKorean ? '15,000 용사훈장 + 500 오렌지 스킬북' : '15,000 Valor Medals + 500 Orange Skill Book' },
+    { points: '50,000+', rewards: isKorean ? '5,000 용사훈장 + 150 주황 스킬북' : '5,000 Valor Medals + 150 Orange Skill Book' },
+    { points: '100,000+', rewards: isKorean ? '10,000 용사훈장 + 300 주황 스킬북' : '10,000 Valor Medals + 300 Orange Skill Book' },
+    { points: '150,000+', rewards: isKorean ? '15,000 용사훈장 + 500 주황 스킬북' : '15,000 Valor Medals + 500 Orange Skill Book' },
   ];
 
   // Eligibility
@@ -187,7 +187,7 @@ function CanyonClashContent({ locale }: { locale: string }) {
     isKorean ? '사망 부대는 즉시 재편성 - 병원 점령 시 힐링 빠름' : 'Đội chết tái tổ chức ngay - heal nhanh nếu chiếm bệnh viện',
     isKorean ? '매칭은 TOP 30 전투력 기준 - 고전력 멤버 참여 중요' : 'Matching theo CP top 30 - quan trọng có thành viên CP cao',
     isKorean ? 'R4/R5만 등록 가능 - 수요일 전 반드시 확인' : 'Chỉ R4/R5 đăng ký được - kiểm tra trước thứ 4',
-    isKorean ? '용사훈장으로 공훈상점 오렌지 장비 구매!' : 'Mua trang bị cam Black Market bằng Valor Medals!',
+    isKorean ? '용사훈장으로 공훈상점 주황 장비 구매!' : 'Mua trang bị cam Black Market bằng Valor Medals!',
   ];
 
   return (
@@ -223,7 +223,7 @@ function CanyonClashContent({ locale }: { locale: string }) {
               <li>• {isKorean ? '일정: 월~화(투표) → 수(등록) → 목(매칭) → 금(전투)' : 'Lịch: T2-T3(vote) → T4(đăng ký) → T5(matching) → T6(chiến đấu)'}</li>
               <li>• {isKorean ? '전투 시간: 준비 10분 + 본전투 40분 = 총 50분' : 'Thời gian: 10p chuẩn bị + 40p chiến đấu = 50 phút'}</li>
               <li>• {isKorean ? '보스 스폰: 5분, 15분, 25분 (버프 획득 기회)' : 'Boss spawn: 5, 15, 25 phút (cơ hội lấy buff)'}</li>
-              <li>• {isKorean ? '최대 보상: 150K+ 포인트 → 15,000 용사훈장 + 500 오렌지 스킬북' : 'Thưởng max: 150K+ điểm → 15,000 Valor Medals + 500 Orange Skill Book'}</li>
+              <li>• {isKorean ? '최대 보상: 150K+ 포인트 → 15,000 용사훈장 + 500 주황 스킬북' : 'Thưởng max: 150K+ điểm → 15,000 Valor Medals + 500 Orange Skill Book'}</li>
             </ul>
           </CardContent>
         </Card>

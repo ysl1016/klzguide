@@ -69,8 +69,8 @@ function HeroLevelingContent({ locale }: { locale: string }) {
 
   const fragmentSources = [
     { name: isKorean ? '일일 임무' : 'Nhiệm vụ hàng ngày', type: isKorean ? '모든 등급' : 'Mọi cấp' },
-    { name: 'Full Preparedness', type: isKorean ? '오렌지/보라/블루' : 'Cam/Tím/Xanh' },
-    { name: isKorean ? '부머 이벤트' : 'Sự kiện Boomer', type: isKorean ? '오렌지' : 'Cam' },
+    { name: 'Full Preparedness', type: isKorean ? '주황/보라/블루' : 'Cam/Tím/Xanh' },
+    { name: isKorean ? '부머 이벤트' : 'Sự kiện Boomer', type: isKorean ? '주황' : 'Cam' },
     { name: isKorean ? '트럭 미션' : 'Nhiệm vụ Truck', type: isKorean ? '조각' : 'Mảnh' },
     { name: 'VS Event / SvS', type: isKorean ? '대량' : 'Số lượng lớn' },
     { name: 'Canyon / Capital Clash', type: isKorean ? '대량' : 'Số lượng lớn' },

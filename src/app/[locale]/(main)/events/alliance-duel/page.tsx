@@ -60,7 +60,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
       activities: isKorean
-        ? ['건물 업그레이드 완료', '건설 가속 사용', '오렌지 현상금 퀘스트 우선', '피난민 모집 티켓 사용']
+        ? ['건물 업그레이드 완료', '건설 가속 사용', '주황 현상금 퀘스트 우선', '피난민 모집 티켓 사용']
         : ['Hoàn thành nâng cấp công trình', 'Dùng tăng tốc xây', 'Ưu tiên bounty cam', 'Dùng vé tuyển mộ tị nạn'],
       goldenHour: [
         { apoc: '08:00-12:00', korea: '19:00-23:00' },
@@ -76,7 +76,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
       activities: isKorean
-        ? ['연구 완료', '연구 가속 사용', '경찰휘장 소모 연구', '인터스테이트 트럭 새로고침 (오렌지 퀘스트)']
+        ? ['연구 완료', '연구 가속 사용', '경찰휘장 소모 연구', '인터스테이트 트럭 새로고침 (주황 퀘스트)']
         : ['Hoàn thành nghiên cứu', 'Dùng tăng tốc NC', 'NC tiêu badge', 'Refresh Interstate Truck (quest cam)'],
       goldenHour: [
         { apoc: '08:00-12:00', korea: '19:00-23:00' },
@@ -92,7 +92,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
       activities: isKorean
-        ? ['영웅 조각 사용', '영웅 모집 티켓 사용', '프라임 리크루트', '에너지코어 사용', '오렌지 장비 조각']
+        ? ['영웅 조각 사용', '영웅 모집 티켓 사용', '프라임 리크루트', '에너지코어 사용', '주황 장비 조각']
         : ['Dùng mảnh anh hùng', 'Dùng vé tuyển mộ anh hùng', 'Prime Recruit', 'Dùng Power Core', 'Mảnh trang bị cam'],
       goldenHour: [
         { apoc: '08:00-12:00', korea: '19:00-23:00' },
@@ -124,7 +124,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       color: 'text-green-400',
       bg: 'bg-green-500/10',
       activities: isKorean
-        ? ['적 기지 공격 (승/패 무관)', 'TvT 전투', '약한 본부(HQ) 타겟팅', '용사훈장 + 오렌지 장비 조각 보상']
+        ? ['적 기지 공격 (승/패 무관)', 'TvT 전투', '약한 본부(HQ) 타겟팅', '용사훈장 + 주황 장비 조각 보상']
         : ['Tấn công căn cứ địch (thắng/thua đều được)', 'Chiến đấu TvT', 'Target HQ yếu', 'Thưởng Valor Medal + mảnh trang bị cam'],
       goldenHour: null, // No matching Full Prep theme
     },
@@ -152,7 +152,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
 
   const rewards = [
     { item: isKorean ? '영웅 경찰휘장' : 'Hero Badge', desc: isKorean ? '영웅 성급 업그레이드용' : 'Để nâng sao anh hùng' },
-    { item: isKorean ? '오렌지 스킬북' : 'Orange Skill Book', desc: isKorean ? '영웅 스킬 레벨업' : 'Lên level skill anh hùng' },
+    { item: isKorean ? '주황 스킬북' : 'Orange Skill Book', desc: isKorean ? '영웅 스킬 레벨업' : 'Lên level skill anh hùng' },
     { item: isKorean ? '강화 합금' : 'Enhancement Alloy', desc: isKorean ? '장비 강화용' : 'Để nâng cấp trang bị' },
     { item: isKorean ? '다이아몬드' : 'Diamond', desc: isKorean ? '범용 프리미엄 재화' : 'Tiền tệ premium đa năng' },
     { item: isKorean ? '가속 아이템' : 'Speedup', desc: isKorean ? '각종 가속 아이템' : 'Các item tăng tốc' },
@@ -166,7 +166,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       ? '골든아워(전면전비 일치 시간)에 활동하면 양쪽 이벤트에서 동시 포인트 획득'
       : 'Hoạt động trong Golden Hour = nhận điểm cả 2 sự kiện cùng lúc',
     isKorean
-      ? '오렌지 레벨 퀘스트(현상금, 트럭) 우선 - 포인트 가치가 훨씬 높음'
+      ? '주황 레벨 퀘스트(현상금, 트럭) 우선 - 포인트 가치가 훨씬 높음'
       : 'Ưu tiên quest cam (bounty, truck) - giá trị điểm cao hơn nhiều',
     isKorean
       ? '6일차 토요일 Enemy Buster는 전면전비와 겹치지 않음 - 언제든 공격 가능'
@@ -423,7 +423,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
                   <li>• {isKorean ? '영웅 조각/모집 티켓을 4일차 목요일 외에 사용' : 'Dùng mảnh anh hùng/vé tuyển mộ ngoài ngày 4 (Thứ năm)'}</li>
                   <li>• {isKorean ? '렌치를 1일차 월요일 외에 사용' : 'Dùng cờ lê ngoài ngày 1 (Thứ hai)'}</li>
                   <li>• {isKorean ? '골든아워 외 시간에 가속 아이템 대량 소모' : 'Dùng nhiều tăng tốc ngoài Golden Hour'}</li>
-                  <li>• {isKorean ? '오렌지 레벨 퀘스트(현상금, 트럭) 무시' : 'Bỏ qua quest cấp cam (bounty, truck)'}</li>
+                  <li>• {isKorean ? '주황 레벨 퀘스트(현상금, 트럭) 무시' : 'Bỏ qua quest cấp cam (bounty, truck)'}</li>
                   <li>• {isKorean ? '6일차 토요일에 무작정 강한 적 공격 (병력 손실 주의)' : 'Ngày 6 (Thứ bảy) tấn công địch mạnh bừa bãi (coi chừng mất quân)'}</li>
                 </ul>
               </div>
