@@ -47,7 +47,7 @@ function FAQContent({ locale }: { locale: string }) {
     {
       q: isKorean ? '연구 우선순위는 어떻게 되나요?' : 'Ưu tiên NC như thế nào?',
       a: isKorean
-        ? '1) 연맹 인정(AR) 완료 - 일일 보상 2배, 2) Hero Training은 Cockpit까지만, 3) Military Strategies의 HP 연구 집중, 4) 두 번째 연구소 구매 필수.'
+        ? '1) 연맹 인정(AR) 완료 - 일일 보상 2배, 2) 영웅훈련은 조종석까지만, 3) 군사이론의 HP 연구 집중, 4) 두 번째 연구소 구매 필수.'
         : '1) Hoàn thành AR - gấp đôi thưởng hàng ngày, 2) Hero Training chỉ tới Cockpit, 3) Tập trung NC HP trong Military Strategies, 4) Bắt buộc mua Lab thứ 2.',
     },
     {

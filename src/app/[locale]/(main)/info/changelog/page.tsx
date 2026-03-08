@@ -15,8 +15,21 @@ interface ChangelogEntry {
 
 const changelogData: ChangelogEntry[] = [
   {
-    date: '2025-02-08',
+    date: '2026-03-09',
     isNew: true,
+    changes: {
+      ko: [
+        '연구 페이지 용어 한국어화 (조종석, 엘리트부대, 전쟁수호, 긴급구조, 피난소건설, 군사이론, 도시함락, 야전연구, 영웅훈련)',
+        '연구 용어 전체 페이지 일괄 수정 (연구 우선순위, 기술 트리, FAQ, 초보 실수, 전투력 페이지)',
+      ],
+      vi: [
+        'Hàn hóa thuật ngữ trang nghiên cứu (Cockpit, Elite Troops, Peace Shield, Urgent Rescue, Shelter, Military Strategies, Siege to Seize, Field Research, Hero Training)',
+        'Đồng bộ thuật ngữ NC trên toàn bộ trang (ưu tiên NC, cây công nghệ, FAQ, lỗi newbie, sức mạnh)',
+      ],
+    },
+  },
+  {
+    date: '2025-02-08',
     changes: {
       ko: [
         '행운의 흔들기 페이지 전면 개편 (키 시스템, 마일스톤, 효율 비교)',

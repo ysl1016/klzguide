@@ -89,12 +89,12 @@ function MistakesContent({ locale }: { locale: string }) {
     },
     {
       number: 7,
-      title: isKorean ? '영웅 훈련 연구 깊이 파기' : 'Đào sâu nghiên cứu Hero Training',
+      title: isKorean ? '영웅훈련 연구 깊이 파기' : 'Đào sâu nghiên cứu Hero Training',
       wrong: isKorean
-        ? '영웅 훈련(Hero Training) 연구를 끝까지 완료'
+        ? '영웅훈련(Hero Training) 연구를 끝까지 완료'
         : 'Hoàn thành toàn bộ nghiên cứu Hero Training',
       right: isKorean
-        ? 'Cockpit까지만 하고 멈춤. 이후는 배지 대비 효율이 극히 낮음 (배지 함정)'
+        ? '조종석까지만 하고 멈춤. 이후는 배지 대비 효율이 극히 낮음 (배지 함정)'
         : 'Dừng ở Cockpit. Sau đó hiệu quả badge cực thấp (bẫy badge)',
       severity: 'medium',
     },

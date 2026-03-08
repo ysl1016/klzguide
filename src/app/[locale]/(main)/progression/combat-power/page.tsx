@@ -114,7 +114,7 @@ function CombatPowerContent({ locale }: { locale: string }) {
         : 'Anh hùng ngoài 5 người chính chỉ nuôi tới 4 sao.',
     },
     {
-      name: isKorean ? '영웅 훈련 연구 (Cockpit 이후)' : 'NC Hero Training (sau Cockpit)',
+      name: isKorean ? '영웅훈련 연구 (조종석 이후)' : 'NC Hero Training (sau Cockpit)',
       reason: isKorean
         ? '배지 대비 효율이 극히 낮은 "배지 함정"입니다.'
         : '"Bẫy badge" với hiệu quả badge cực thấp.',

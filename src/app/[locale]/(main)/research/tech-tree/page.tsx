@@ -21,96 +21,96 @@ function TechTreeContent({ locale }: { locale: string }) {
 
   const techTrees = [
     {
-      name: 'Elite Troops',
+      name: isKorean ? '엘리트부대' : 'Elite Troops',
       icon: Users,
       color: 'text-green-400',
       bg: 'bg-green-500/10',
       description: isKorean
         ? '병력 기본 스탯 강화. 모든 연구의 기초가 되는 트리'
         : 'Tăng stat cơ bản quân. Cây nền tảng cho mọi NC',
-      unlocks: isKorean ? '100% 완료 시 Military Strategies 해금' : '100% mở Military Strategies',
+      unlocks: isKorean ? '100% 완료 시 군사이론 해금' : '100% mở Military Strategies',
       priority: isKorean ? '필수' : 'Bắt buộc',
       priorityColor: 'text-green-400',
     },
     {
-      name: 'Hero Training',
+      name: isKorean ? '영웅훈련' : 'Hero Training',
       icon: Zap,
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
       description: isKorean
-        ? '영웅 스킬 및 스탯 강화. Cockpit까지만 진행 권장'
+        ? '영웅 스킬 및 스탯 강화. 조종석까지만 진행 권장'
         : 'Tăng kỹ năng và stat anh hùng. Chỉ nên làm tới Cockpit',
       unlocks: isKorean ? '초반 해금됨' : 'Mở sẵn từ đầu',
-      priority: isKorean ? 'Cockpit까지만' : 'Chỉ tới Cockpit',
+      priority: isKorean ? '조종석까지만' : 'Chỉ tới Cockpit',
       priorityColor: 'text-yellow-400',
     },
     {
-      name: 'Shelter',
+      name: isKorean ? '피난소건설' : 'Shelter',
       icon: Shield,
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
       description: isKorean
-        ? '방어 및 자원 보호. Peace Shield 해금 조건 중 하나'
+        ? '방어 및 자원 보호. 전쟁수호 해금 조건 중 하나'
         : 'Phòng thủ và bảo vệ tài nguyên. Điều kiện mở Peace Shield',
-      unlocks: isKorean ? '50% 완료 시 Peace Shield 해금 조건' : '50% là điều kiện mở Peace Shield',
+      unlocks: isKorean ? '50% 완료 시 전쟁수호 해금 조건' : '50% là điều kiện mở Peace Shield',
       priority: isKorean ? '50%까지' : 'Tới 50%',
       priorityColor: 'text-blue-400',
     },
     {
-      name: 'Military Strategies',
+      name: isKorean ? '군사이론' : 'Military Strategies',
       icon: Swords,
       color: 'text-red-400',
       bg: 'bg-red-500/10',
       description: isKorean
         ? '병력 HP 및 전투 버프. HP 연구에 집중'
         : 'HP quân và buff chiến đấu. Tập trung NC HP',
-      unlocks: isKorean ? 'Elite Troops 100% 필요' : 'Cần Elite Troops 100%',
+      unlocks: isKorean ? '엘리트부대 100% 필요' : 'Cần Elite Troops 100%',
       priority: isKorean ? 'HP 집중' : 'Tập trung HP',
       priorityColor: 'text-red-400',
     },
     {
-      name: 'Peace Shield',
+      name: isKorean ? '전쟁수호' : 'Peace Shield',
       icon: Shield,
       color: 'text-cyan-400',
       bg: 'bg-cyan-500/10',
       description: isKorean
-        ? 'Urgent Rescue (-20% 손실) 포함. 방어 플레이어 필수'
+        ? '긴급구조 (-20% 손실) 포함. 방어 플레이어 필수'
         : 'Gồm Urgent Rescue (-20% mất). Bắt buộc cho phòng thủ',
-      unlocks: isKorean ? 'Shelter 50% + Military 45% 필요' : 'Cần Shelter 50% + Military 45%',
+      unlocks: isKorean ? '피난소건설 50% + 군사이론 45% 필요' : 'Cần Shelter 50% + Military 45%',
       priority: isKorean ? '방어 필수' : 'Bắt buộc phòng thủ',
       priorityColor: 'text-cyan-400',
     },
     {
-      name: 'Siege to Seize',
+      name: isKorean ? '도시함락' : 'Siege to Seize',
       icon: Target,
       color: 'text-orange-400',
       bg: 'bg-orange-500/10',
       description: isKorean
         ? '공격 보너스 제공. 공격 성향 플레이어용'
         : 'Bonus tấn công. Cho người chơi thiên về tấn công',
-      unlocks: isKorean ? 'Military Strategies 40% 필요' : 'Cần Military Strategies 40%',
+      unlocks: isKorean ? '군사이론 40% 필요' : 'Cần Military Strategies 40%',
       priority: isKorean ? '공격형만' : 'Chỉ tấn công',
       priorityColor: 'text-orange-400',
     },
     {
-      name: 'Field Research',
+      name: isKorean ? '야전연구' : 'Field Research',
       icon: GitBranch,
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
       description: isKorean
         ? 'Recharge Shield 등 고급 연구. 엔드게임 콘텐츠'
         : 'NC cao cấp như Recharge Shield. Nội dung endgame',
-      unlocks: isKorean ? 'Siege to Seize 100% 필요' : 'Cần Siege to Seize 100%',
+      unlocks: isKorean ? '도시함락 100% 필요' : 'Cần Siege to Seize 100%',
       priority: isKorean ? '후순위' : 'Sau cùng',
       priorityColor: 'text-purple-400',
     },
   ];
 
   const unlockFlow = [
-    { from: 'Elite Troops', to: 'Military Strategies', condition: '100%' },
-    { from: 'Shelter + Military', to: 'Peace Shield', condition: '50% + 45%' },
-    { from: 'Military Strategies', to: 'Siege to Seize', condition: '40%' },
-    { from: 'Siege to Seize', to: 'Field Research', condition: '100%' },
+    { from: isKorean ? '엘리트부대' : 'Elite Troops', to: isKorean ? '군사이론' : 'Military Strategies', condition: '100%' },
+    { from: isKorean ? '피난소건설 + 군사이론' : 'Shelter + Military', to: isKorean ? '전쟁수호' : 'Peace Shield', condition: '50% + 45%' },
+    { from: isKorean ? '군사이론' : 'Military Strategies', to: isKorean ? '도시함락' : 'Siege to Seize', condition: '40%' },
+    { from: isKorean ? '도시함락' : 'Siege to Seize', to: isKorean ? '야전연구' : 'Field Research', condition: '100%' },
   ];
 
   return (
@@ -143,10 +143,10 @@ function TechTreeContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? 'Elite Troops 100% → Military Strategies 해금' : 'Elite Troops 100% → mở Military Strategies'}</li>
-              <li>• {isKorean ? 'Hero Training은 Cockpit에서 멈춤' : 'Hero Training dừng ở Cockpit'}</li>
-              <li>• {isKorean ? 'Military Strategies에서 HP 연구 집중' : 'Tập trung NC HP trong Military Strategies'}</li>
-              <li>• {isKorean ? 'Peace Shield의 Urgent Rescue로 손실 -20%' : 'Urgent Rescue trong Peace Shield giảm 20% mất quân'}</li>
+              <li>• {isKorean ? '엘리트부대 100% → 군사이론 해금' : 'Elite Troops 100% → mở Military Strategies'}</li>
+              <li>• {isKorean ? '영웅훈련은 조종석에서 멈춤' : 'Hero Training dừng ở Cockpit'}</li>
+              <li>• {isKorean ? '군사이론에서 HP 연구 집중' : 'Tập trung NC HP trong Military Strategies'}</li>
+              <li>• {isKorean ? '전쟁수호의 긴급구조로 손실 -20%' : 'Urgent Rescue trong Peace Shield giảm 20% mất quân'}</li>
             </ul>
           </CardContent>
         </Card>
@@ -230,7 +230,7 @@ function TechTreeContent({ locale }: { locale: string }) {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-highlight/20 text-highlight text-xs font-bold">2</span>
                 <span className="text-muted-foreground">
                   {isKorean
-                    ? 'Elite Troops 100% (Military Strategies 해금)'
+                    ? '엘리트부대 100% (군사이론 해금)'
                     : 'Elite Troops 100% (mở Military Strategies)'}
                 </span>
               </li>
@@ -238,7 +238,7 @@ function TechTreeContent({ locale }: { locale: string }) {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-highlight/20 text-highlight text-xs font-bold">3</span>
                 <span className="text-muted-foreground">
                   {isKorean
-                    ? 'Hero Training → Cockpit까지'
+                    ? '영웅훈련 → 조종석까지'
                     : 'Hero Training → tới Cockpit'}
                 </span>
               </li>
@@ -246,7 +246,7 @@ function TechTreeContent({ locale }: { locale: string }) {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-highlight/20 text-highlight text-xs font-bold">4</span>
                 <span className="text-muted-foreground">
                   {isKorean
-                    ? 'Military Strategies HP 연구 집중'
+                    ? '군사이론 HP 연구 집중'
                     : 'Tập trung NC HP trong Military Strategies'}
                 </span>
               </li>
@@ -254,7 +254,7 @@ function TechTreeContent({ locale }: { locale: string }) {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-highlight/20 text-highlight text-xs font-bold">5</span>
                 <span className="text-muted-foreground">
                   {isKorean
-                    ? 'Shelter 50% + Military 45% → Peace Shield'
+                    ? '피난소건설 50% + 군사이론 45% → 전쟁수호'
                     : 'Shelter 50% + Military 45% → Peace Shield'}
                 </span>
               </li>
@@ -262,7 +262,7 @@ function TechTreeContent({ locale }: { locale: string }) {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-highlight/20 text-highlight text-xs font-bold">6</span>
                 <span className="text-muted-foreground">
                   {isKorean
-                    ? '(공격 성향) Siege to Seize → Field Research'
+                    ? '(공격 성향) 도시함락 → 야전연구'
                     : '(Tấn công) Siege to Seize → Field Research'}
                 </span>
               </li>
