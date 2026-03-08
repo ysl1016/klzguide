@@ -27,6 +27,7 @@ const changelogData: ChangelogEntry[] = [
         '블랙마켓 → 암시장, 용사훈장 사용 상점 → 공훈상점 용어 변경',
         '용어사전 크립 → 좀비 수정',
         '오렌지 → 주황 용어 변경 (전체 페이지 반영)',
+        '영웅 닉스 → 니콜스 이름 변경 (티어리스트, 육성, 시너지, 영웅 데이터)',
         '연구 용어 전체 페이지 일괄 수정 (연구 우선순위, 기술 트리, FAQ, 초보 실수, 전투력, 용어사전 등)',
       ],
       vi: [
@@ -38,6 +39,7 @@ const changelogData: ChangelogEntry[] = [
         'Đổi thuật ngữ Black Market → 암시장/공훈상점',
         'Sửa thuật ngữ 크립 → 좀비 trong từ điển',
         'Đổi thuật ngữ 오렌지 → 주황 (toàn bộ trang)',
+        'Đổi tên anh hùng Nyx → 니콜스 (tier list, leveling, synergy, dữ liệu)',
         'Đồng bộ thuật ngữ NC trên toàn bộ trang (ưu tiên NC, cây công nghệ, FAQ, lỗi newbie, sức mạnh, từ điển, v.v.)',
       ],
     },

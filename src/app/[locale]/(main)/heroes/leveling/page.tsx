@@ -63,7 +63,7 @@ function HeroLevelingContent({ locale }: { locale: string }) {
       tier: 'S',
       name: isKorean ? 'S티어 영웅들 4성 먼저' : 'S-tier 4 sao trước',
       priority: 4,
-      reason: isKorean ? '알마, 닉스, 벨라, 셀레나 등 - 4번째 스킬 해금이 핵심' : 'Alma, Nyx, Bella, Selena... - Mở skill thứ 4 là quan trọng nhất',
+      reason: isKorean ? '알마, 니콜스, 벨라, 셀레나 등 - 4번째 스킬 해금이 핵심' : 'Alma, Nyx, Bella, Selena... - Mở skill thứ 4 là quan trọng nhất',
     },
   ];
 

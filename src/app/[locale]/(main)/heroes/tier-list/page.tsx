@@ -62,7 +62,7 @@ function TierListPageContent({ locale }: { locale: string }) {
               <li>
                 •{' '}
                 {isKorean
-                  ? 'S티어: 벨라, 셀레나, 알마, 닉스, 스칼렛, 로라, 할리에나, 사쿠라 - 핵심 전력'
+                  ? 'S티어: 벨라, 셀레나, 알마, 니콜스, 스칼렛, 로라, 할리에나, 사쿠라 - 핵심 전력'
                   : 'Tier S: Bella, Selena, Alma, Nyx, Scarlett, Laura, Harleyena, Sakura - Lực lượng chính'}
               </li>
               <li>

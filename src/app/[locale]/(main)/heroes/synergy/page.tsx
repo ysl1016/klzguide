@@ -108,7 +108,7 @@ function HeroSynergyContent({ locale }: { locale: string }) {
       faction: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
       troop: isKorean ? '슈터' : 'Shooter',
       heroes: isKorean
-        ? ['퀴니 (S+)', '릴리아나 (S+)', '알마 (S)', '닉스 (S)', '스칼렛 (S)']
+        ? ['퀴니 (S+)', '릴리아나 (S+)', '알마 (S)', '니콜스 (S)', '스칼렛 (S)']
         : ['Queenie (S+)', 'Liliana (S+)', 'Alma (S)', 'Nyx (S)', 'Scarlett (S)'],
       color: 'text-blue-400',
     },
