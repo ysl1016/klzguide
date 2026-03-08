@@ -104,8 +104,8 @@ function GlossaryContent({ locale }: { locale: string }) {
         : 'Boss rally liên minh. Sự kiện chính để farm Steel',
     },
     {
-      term: isKorean ? '좀비 포위전' : 'Zombie Siege',
-      ko: '좀비 포위전',
+      term: isKorean ? '좀비공성' : 'Zombie Siege',
+      ko: '좀비공성',
       en: 'Zombie Siege',
       vi: 'Zombie Siege',
       definition: isKorean
@@ -302,7 +302,7 @@ function GlossaryContent({ locale }: { locale: string }) {
       en: 'Wrench',
       vi: 'Wrench',
       definition: isKorean
-        ? '차량 개조에 필요한 재화. 연맹 대결/좀비 포위전에서 획득'
+        ? '차량 개조에 필요한 재화. 연맹 대결/좀비공성에서 획득'
         : 'Tiền tệ để mod xe. Farm từ Alliance Duel/Zombie Siege',
     },
     {
