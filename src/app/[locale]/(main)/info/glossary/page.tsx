@@ -353,8 +353,8 @@ function GlossaryContent({ locale }: { locale: string }) {
     },
     // 기타
     {
-      term: isKorean ? '크립' : 'Creep',
-      ko: '크립',
+      term: isKorean ? '좀비' : 'Creep',
+      ko: '좀비',
       en: 'Creep',
       vi: 'Creep',
       definition: isKorean
