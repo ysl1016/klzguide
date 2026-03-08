@@ -88,7 +88,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       name: isKorean ? '적 파괴자' : 'Enemy Buster',
       nameEn: 'Enemy Buster',
       tasks: isKorean
-        ? ['적 기지 공격', '약한 본부(HQ) 타겟', '발로 메달 + 오렌지 장비 조각 획득', '병력 손실 최소화 타겟 선정']
+        ? ['적 기지 공격', '약한 본부(HQ) 타겟', '용사훈장 + 오렌지 장비 조각 획득', '병력 손실 최소화 타겟 선정']
         : ['Tấn công căn cứ địch', 'Nhắm HQ yếu', 'Valor Medal + mảnh trang bị cam', 'Chọn target giảm thiểu mất quân'],
       color: 'text-red-400',
       bg: 'bg-red-500/10',

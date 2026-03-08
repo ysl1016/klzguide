@@ -124,7 +124,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       color: 'text-green-400',
       bg: 'bg-green-500/10',
       activities: isKorean
-        ? ['적 기지 공격 (승/패 무관)', 'TvT 전투', '약한 본부(HQ) 타겟팅', '발로 메달 + 오렌지 장비 조각 보상']
+        ? ['적 기지 공격 (승/패 무관)', 'TvT 전투', '약한 본부(HQ) 타겟팅', '용사훈장 + 오렌지 장비 조각 보상']
         : ['Tấn công căn cứ địch (thắng/thua đều được)', 'Chiến đấu TvT', 'Target HQ yếu', 'Thưởng Valor Medal + mảnh trang bị cam'],
       goldenHour: null, // No matching Full Prep theme
     },

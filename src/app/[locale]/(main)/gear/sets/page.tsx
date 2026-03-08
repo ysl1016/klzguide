@@ -55,7 +55,7 @@ function GearSetsContent({ locale }: { locale: string }) {
       color: 'text-green-400',
     },
     {
-      source: isKorean ? '블랙마켓 (Valor Medals)' : 'Black Market (Valor Medals)',
+      source: isKorean ? '블랙마켓 (용사훈장)' : 'Black Market (Valor Medals)',
       type: isKorean ? '오렌지 장비' : 'Trang bị cam',
       frequency: isKorean ? 'SVS 후' : 'Sau SVS',
       priority: isKorean ? '높음' : 'Cao',

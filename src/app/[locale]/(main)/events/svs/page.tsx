@@ -76,17 +76,17 @@ function SVSContent({ locale }: { locale: string }) {
   const svsBoxRewards = [
     { boxes: '1-3', rewards: isKorean ? '자원, 소량 다이아' : 'Tài nguyên, ít diamond' },
     { boxes: '4-6', rewards: isKorean ? '오렌지 스킬북, 배지 합금' : 'Orange skill book, badge alloy' },
-    { boxes: '7-9', rewards: isKorean ? '~45,000 Valor Medals' : '~45,000 Valor Medals' },
+    { boxes: '7-9', rewards: isKorean ? '~45,000 용사훈장' : '~45,000 Valor Medals' },
   ];
 
   // Tips
   const svsTips = [
-    isKorean ? '2.25M 포인트로 9박스 풀 해금 → 45,000 Valor Medals' : '2.25M điểm mở 9 hộp → 45,000 Valor Medals',
+    isKorean ? '2.25M 포인트로 9박스 풀 해금 → 45,000 용사훈장' : '2.25M điểm mở 9 hộp → 45,000 Valor Medals',
     isKorean ? '팀워크 > 개인 파워 - 연맹 조율이 핵심' : 'Teamwork > Sức mạnh cá nhân - phối hợp LM là chính',
     isKorean ? '방어자: 캐피탈 구역 TvT 집중' : 'Phòng thủ: Tập trung TVT khu capital',
     isKorean ? '침략자: 저레벨 적 본부(HQ) 스나이프로 쉬운 포인트' : 'Xâm lược: Snipe HQ thấp để lấy điểm dễ',
     isKorean ? '100% 점령 못하면 점령률 높은 서버 승리' : 'Không chiếm 100% thì % cao hơn thắng',
-    isKorean ? 'Valor Medals로 블랙마켓 오렌지 장비 구매 - 최고 가치!' : 'Mua trang bị cam Black Market bằng Valor Medals - giá trị nhất!',
+    isKorean ? '용사훈장으로 블랙마켓 오렌지 장비 구매 - 최고 가치!' : 'Mua trang bị cam Black Market bằng Valor Medals - giá trị nhất!',
   ];
 
   return (
@@ -121,8 +121,8 @@ function SVSContent({ locale }: { locale: string }) {
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {isKorean ? '2주 주기, State Ruler(일~금) + Capital Clash(토)' : '2 tuần, State Ruler (CN~T6) + Capital Clash (T7)'}</li>
               <li>• {isKorean ? '4서버 토너먼트 - 모든 서버가 2경기 진행' : '4 server tournament - tất cả chơi 2 trận'}</li>
-              <li>• {isKorean ? '9박스 = 2.25M 포인트 → ~45,000 Valor Medals' : '9 hộp = 2.25M điểm → ~45,000 Valor Medals'}</li>
-              <li>• {isKorean ? 'Valor Medals로 블랙마켓 오렌지 장비 구매!' : 'Mua trang bị cam Black Market bằng Valor Medals!'}</li>
+              <li>• {isKorean ? '9박스 = 2.25M 포인트 → ~45,000 용사훈장' : '9 hộp = 2.25M điểm → ~45,000 Valor Medals'}</li>
+              <li>• {isKorean ? '용사훈장으로 블랙마켓 오렌지 장비 구매!' : 'Mua trang bị cam Black Market bằng Valor Medals!'}</li>
             </ul>
           </CardContent>
         </Card>
