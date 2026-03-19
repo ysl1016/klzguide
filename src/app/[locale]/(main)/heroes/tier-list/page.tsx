@@ -1,4 +1,4 @@
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -113,7 +113,7 @@ function TierListPageContent({ locale }: { locale: string }) {
         </div>
 
         {/* Tier List */}
-        <TierList heroes={heroesData.heroes as any} />
+        <TierList heroes={heroesData.heroes as Parameters<typeof TierList>[0]['heroes']} />
 
         {/* Last Updated */}
         <p className="text-xs text-muted-foreground text-center">

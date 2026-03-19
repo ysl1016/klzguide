@@ -97,7 +97,14 @@
     "sortByTier": "티어순",
     "allClasses": "전체 클래스",
     "allFactions": "전체 진영",
-    "allTiers": "전체 티어"
+    "allTiers": "전체 티어",
+    "overview": "개요",
+    "skills": "스킬",
+    "synergies": "시너지",
+    "investmentPriority": "육성 우선순위",
+    "obtainMethod": "획득 방법",
+    "heroDatabase": "영웅 도감",
+    "allHeroes": "전체 영웅"
   },
   "class": {
     "assaulter": "돌격",

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -275,10 +276,11 @@ export function TierList({ heroes }: TierListProps) {
                       const ClassIcon = classIcons[hero.class];
                       const hasNote = hero.notes && hero.notes[locale];
                       return (
-                        <div
+                        <Link
                           key={hero.id}
+                          href={`/${locale}/heroes/${hero.id}`}
                           className={cn(
-                            'flex items-center gap-3 p-3 rounded-lg border bg-secondary/30 transition-colors hover:bg-secondary/50',
+                            'flex items-center gap-3 p-3 rounded-lg border bg-secondary/30 transition-all hover:bg-secondary/50 hover:scale-[1.01] hover:shadow-sm',
                             hero.recommended && 'border-highlight/30'
                           )}
                         >
@@ -334,7 +336,7 @@ export function TierList({ heroes }: TierListProps) {
                               PvE: {hero.pveTier}
                             </span>
                           </div>
-                        </div>
+                        </Link>
                       );
                     })}
                   </TooltipProvider>

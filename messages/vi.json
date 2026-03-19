@@ -97,7 +97,14 @@
     "sortByTier": "Theo xếp hạng",
     "allClasses": "Tất cả lớp",
     "allFactions": "Tất cả phe phái",
-    "allTiers": "Tất cả xếp hạng"
+    "allTiers": "Tất cả xếp hạng",
+    "overview": "Tổng quan",
+    "skills": "Kỹ năng",
+    "synergies": "Hiệp lực",
+    "investmentPriority": "Ưu tiên phát triển",
+    "obtainMethod": "Cách nhận",
+    "heroDatabase": "Cơ sở dữ liệu anh hùng",
+    "allHeroes": "Tất cả anh hùng"
   },
   "class": {
     "assaulter": "Lính đột kích",

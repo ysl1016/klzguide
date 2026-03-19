@@ -1,0 +1,47 @@
+{
+  "codes": [
+    {
+      "code": "MONDAYGO7X3F",
+      "rewards": { "ko": "자원 및 보상", "vi": "Tài nguyên và phần thưởng" },
+      "expiry": "2026-03-31",
+      "isNew": false,
+      "isActive": true
+    },
+    {
+      "code": "CELEBRATE220KTY",
+      "rewards": { "ko": "자원 및 보상", "vi": "Tài nguyên và phần thưởng" },
+      "expiry": null,
+      "isNew": true,
+      "isActive": true
+    },
+    {
+      "code": "WELCOMELZX",
+      "rewards": { "ko": "신규 유저 보상", "vi": "Phần thưởng người chơi mới" },
+      "expiry": null,
+      "isNew": true,
+      "isActive": true
+    },
+    {
+      "code": "WELCOMELZFB",
+      "rewards": { "ko": "신규 유저 보상", "vi": "Phần thưởng người chơi mới" },
+      "expiry": null,
+      "isNew": true,
+      "isActive": true
+    },
+    {
+      "code": "WELCOMELZDC",
+      "rewards": { "ko": "신규 유저 보상", "vi": "Phần thưởng người chơi mới" },
+      "expiry": null,
+      "isNew": true,
+      "isActive": true
+    },
+    {
+      "code": "STARTWEEK9R5",
+      "rewards": { "ko": "자원 및 보상", "vi": "Tài nguyên và phần thưởng" },
+      "expiry": null,
+      "isNew": false,
+      "isActive": true
+    }
+  ],
+  "lastUpdated": "2026-03-19"
+}
