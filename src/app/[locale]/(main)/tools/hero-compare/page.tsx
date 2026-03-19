@@ -1,190 +1,621 @@
-import { useTranslations } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
-import { Badge } from '@/components/ui/badge';
+'use client';
+
+import { useState, useMemo } from 'react';
+import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clock, Users, Star, Swords, Shield, Zap } from 'lucide-react';
-import heroesData from '@/data/heroes.json';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { getAllHeroes } from '@/lib/heroes';
+import type { Hero } from '@/types/hero';
+import {
+  Users,
+  Shield,
+  Crosshair,
+  Bike,
+  Plus,
+  X,
+  Search,
+  Star,
+  ChevronDown,
+} from 'lucide-react';
 
-export default async function HeroComparePage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+const TIER_ORDER = ['S+', 'S', 'A+', 'A', 'B+', 'B', 'C'];
 
-  return <HeroCompareContent locale={locale} />;
+const TIER_COLORS: Record<string, string> = {
+  'S+': 'bg-fuchsia-500/20 text-fuchsia-400 border-fuchsia-500/30',
+  S: 'bg-red-500/20 text-red-400 border-red-500/30',
+  'A+': 'bg-orange-500/20 text-orange-400 border-orange-500/30',
+  A: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+  'B+': 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
+  B: 'bg-lime-500/20 text-lime-400 border-lime-500/30',
+  C: 'bg-gray-500/20 text-gray-400 border-gray-500/30',
+};
+
+const FACTION_COLORS: Record<string, string> = {
+  bloodRose: 'text-red-400',
+  wingsOfDawn: 'text-blue-400',
+  guardOfOrder: 'text-yellow-400',
+};
+
+const FACTION_NAMES: Record<string, { ko: string; vi: string }> = {
+  bloodRose: { ko: '블러디 로즈', vi: 'Blood Rose' },
+  wingsOfDawn: { ko: '새벽의 날개', vi: 'Cánh Bình Minh' },
+  guardOfOrder: { ko: '질서의 수호자', vi: 'Người Bảo Vệ' },
+};
+
+const CLASS_ICONS: Record<string, React.ElementType> = {
+  assaulter: Shield,
+  shooter: Crosshair,
+  rider: Bike,
+};
+
+const CLASS_NAMES: Record<string, { ko: string; vi: string }> = {
+  assaulter: { ko: '돌격', vi: 'Đột kích' },
+  shooter: { ko: '사격', vi: 'Xạ thủ' },
+  rider: { ko: '기마', vi: 'Kỵ binh' },
+};
+
+const SKILL_TYPE_COLORS: Record<string, string> = {
+  active: 'bg-blue-500/20 text-blue-400',
+  passive: 'bg-green-500/20 text-green-400',
+  global: 'bg-purple-500/20 text-purple-400',
+};
+
+function getTierRank(tier: string): number {
+  const idx = TIER_ORDER.indexOf(tier);
+  return idx === -1 ? 99 : idx;
 }
 
-function HeroCompareContent({ locale }: { locale: string }) {
+function isBetterTier(a: string, b: string): boolean {
+  return getTierRank(a) < getTierRank(b);
+}
+
+function InvestmentStars({ priority }: { priority: number }) {
+  return (
+    <div className="flex gap-0.5">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <Star
+          key={i}
+          className={`h-3.5 w-3.5 ${
+            i <= priority
+              ? 'text-yellow-400 fill-yellow-400'
+              : 'text-gray-600'
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default function HeroComparePage() {
+  const locale = useLocale() as 'ko' | 'vi';
   const t = useTranslations();
   const isKorean = locale === 'ko';
+  const allHeroes = getAllHeroes();
 
-  // Get top heroes by tier (S+ and S)
-  const sTierHeroes = heroesData.heroes.filter(h => h.tier === 'S+' || h.tier === 'S').slice(0, 6);
+  const [selectedIds, setSelectedIds] = useState<(string | null)[]>([
+    null,
+    null,
+    null,
+    null,
+  ]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeSlot, setActiveSlot] = useState<number | null>(null);
+  const [factionFilter, setFactionFilter] = useState<string>('all');
+  const [classFilter, setClassFilter] = useState<string>('all');
 
-  const roleIcons: Record<string, React.ElementType> = {
-    dps: Swords,
-    tank: Shield,
-    support: Zap,
+  const selectedHeroes = selectedIds.map((id) =>
+    id ? allHeroes.find((h) => h.id === id) ?? null : null
+  );
+
+  const alreadySelectedIds = new Set(selectedIds.filter(Boolean) as string[]);
+
+  const filteredHeroes = useMemo(() => {
+    return allHeroes.filter((h) => {
+      if (alreadySelectedIds.has(h.id)) return false;
+      const name = (isKorean ? h.name.ko : h.name.vi).toLowerCase();
+      const en = h.name.en?.toLowerCase() ?? '';
+      const q = searchQuery.toLowerCase();
+      if (q && !name.includes(q) && !en.includes(q)) return false;
+      if (factionFilter !== 'all' && h.faction !== factionFilter) return false;
+      if (classFilter !== 'all' && h.class !== classFilter) return false;
+      return true;
+    });
+  }, [allHeroes, searchQuery, factionFilter, classFilter, alreadySelectedIds, isKorean]);
+
+  const selectHero = (heroId: string) => {
+    if (activeSlot === null) return;
+    const next = [...selectedIds];
+    next[activeSlot] = heroId;
+    setSelectedIds(next);
+    setActiveSlot(null);
+    setSearchQuery('');
+    setFactionFilter('all');
+    setClassFilter('all');
   };
 
-  const factionColors: Record<string, string> = {
-    wingsOfDawn: 'text-blue-400',
-    bloodRose: 'text-red-400',
-    guardOfOrder: 'text-green-400',
+  const removeHero = (slotIndex: number) => {
+    const next = [...selectedIds];
+    next[slotIndex] = null;
+    setSelectedIds(next);
   };
 
-  const factionNames: Record<string, { ko: string; vi: string }> = {
-    wingsOfDawn: { ko: '새벽의 날개', vi: 'Cánh Bình Minh' },
-    bloodRose: { ko: '블러디 로즈', vi: 'Blood Rose' },
-    guardOfOrder: { ko: '질서의 수호자', vi: 'Người Bảo Vệ Trật Tự' },
-  };
+  const heroName = (hero: Hero) => (isKorean ? hero.name.ko : hero.name.vi);
+
+  const selectedCount = selectedIds.filter(Boolean).length;
+
+  // Determine best tier among selected for highlighting
+  const selectedTiers = selectedHeroes
+    .filter((h): h is Hero => h !== null)
+    .map((h) => h.tier);
+  const bestOverall =
+    selectedTiers.length > 0
+      ? selectedTiers.reduce((a, b) => (isBetterTier(a, b) ? a : b))
+      : null;
+
+  const selectedPvpTiers = selectedHeroes
+    .filter((h): h is Hero => h !== null)
+    .map((h) => h.pvpTier);
+  const bestPvp =
+    selectedPvpTiers.length > 0
+      ? selectedPvpTiers.reduce((a, b) => (isBetterTier(a, b) ? a : b))
+      : null;
+
+  const selectedPveTiers = selectedHeroes
+    .filter((h): h is Hero => h !== null)
+    .map((h) => h.pveTier);
+  const bestPve =
+    selectedPveTiers.length > 0
+      ? selectedPveTiers.reduce((a, b) => (isBetterTier(a, b) ? a : b))
+      : null;
 
   return (
     <div className="py-8 px-4 lg:px-8">
-      <div className="max-w-6xl mx-auto space-y-8">
+      <div className="max-w-6xl mx-auto space-y-6">
         {/* Header */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <Badge variant="outline" className="badge-basic">
-              {t('difficulty.basic')}
-            </Badge>
-            <span className="flex items-center text-sm text-muted-foreground">
-              <Clock className="h-4 w-4 mr-1" />
-              5 {t('common.minutes')}
-            </span>
-          </div>
+        <div className="space-y-2">
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Users className="h-8 w-8 text-highlight" />
-            {isKorean ? '영웅 비교' : 'So sánh Anh hùng'}
+            {isKorean ? '영웅 비교' : 'So sanh Anh hung'}
           </h1>
           <p className="text-muted-foreground">
             {isKorean
-              ? 'S티어 영웅들의 특성을 비교합니다.'
-              : 'So sánh đặc điểm của các anh hùng S-tier.'}
+              ? '최대 4명의 영웅을 선택하여 상세 비교하세요.'
+              : 'Chon toi da 4 anh hung de so sanh chi tiet.'}
           </p>
         </div>
 
-        {/* S-Tier Heroes Comparison */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-bold flex items-center gap-2">
-            <Star className="h-6 w-6 text-yellow-400 fill-yellow-400" />
-            {isKorean ? 'S티어 영웅 비교' : 'So sánh anh hùng S-Tier'}
-          </h2>
+        {/* Hero Selection Slots */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {selectedIds.map((id, idx) => {
+            const hero = selectedHeroes[idx];
+            if (hero) {
+              const ClassIcon = CLASS_ICONS[hero.class] || Users;
+              return (
+                <Card key={idx} className="relative group">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute top-1 right-1 h-6 w-6 opacity-60 group-hover:opacity-100 z-10"
+                    onClick={() => removeHero(idx)}
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                  <CardContent className="p-3 text-center">
+                    <div className="flex items-center justify-center gap-1 mb-1">
+                      <ClassIcon className="h-4 w-4 text-muted-foreground" />
+                      <Badge
+                        className={`text-xs ${TIER_COLORS[hero.tier] || ''}`}
+                      >
+                        {hero.tier}
+                      </Badge>
+                    </div>
+                    <Link
+                      href={`/${locale}/heroes/${hero.id}`}
+                      className={`font-semibold text-sm hover:underline ${FACTION_COLORS[hero.faction]}`}
+                    >
+                      {heroName(hero)}
+                    </Link>
+                  </CardContent>
+                </Card>
+              );
+            }
+            return (
+              <Card
+                key={idx}
+                className={`cursor-pointer border-dashed hover:border-highlight/50 transition-colors ${
+                  activeSlot === idx ? 'border-highlight ring-1 ring-highlight/30' : ''
+                }`}
+                onClick={() => setActiveSlot(activeSlot === idx ? null : idx)}
+              >
+                <CardContent className="p-3 flex items-center justify-center min-h-[72px]">
+                  <Plus className="h-6 w-6 text-muted-foreground" />
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border bg-muted/30">
-                  <th className="text-left p-3">{isKorean ? '영웅' : 'Anh hùng'}</th>
-                  <th className="text-left p-3">{isKorean ? '진영' : 'Phe'}</th>
-                  <th className="text-left p-3">{isKorean ? '역할' : 'Vai trò'}</th>
-                  <th className="text-left p-3">{isKorean ? '병종' : 'Loại quân'}</th>
-                  <th className="text-left p-3">{isKorean ? '특징' : 'Đặc điểm'}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sTierHeroes.map((hero) => {
-                  const RoleIcon = roleIcons[hero.role] || Users;
+        {/* Hero Picker Dropdown */}
+        {activeSlot !== null && (
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base">
+                {isKorean ? '영웅 선택' : 'Chon anh hung'}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex flex-col sm:flex-row gap-2">
+                <div className="relative flex-1">
+                  <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder={isKorean ? '이름 검색...' : 'Tim kiem...'}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-8"
+                  />
+                </div>
+                <select
+                  value={factionFilter}
+                  onChange={(e) => setFactionFilter(e.target.value)}
+                  className="bg-background border border-input rounded-md px-3 py-2 text-sm"
+                >
+                  <option value="all">
+                    {isKorean ? '전체 진영' : 'Tat ca phe'}
+                  </option>
+                  <option value="bloodRose">
+                    {FACTION_NAMES.bloodRose[locale]}
+                  </option>
+                  <option value="wingsOfDawn">
+                    {FACTION_NAMES.wingsOfDawn[locale]}
+                  </option>
+                  <option value="guardOfOrder">
+                    {FACTION_NAMES.guardOfOrder[locale]}
+                  </option>
+                </select>
+                <select
+                  value={classFilter}
+                  onChange={(e) => setClassFilter(e.target.value)}
+                  className="bg-background border border-input rounded-md px-3 py-2 text-sm"
+                >
+                  <option value="all">
+                    {isKorean ? '전체 병종' : 'Tat ca loai'}
+                  </option>
+                  <option value="assaulter">{CLASS_NAMES.assaulter[locale]}</option>
+                  <option value="shooter">{CLASS_NAMES.shooter[locale]}</option>
+                  <option value="rider">{CLASS_NAMES.rider[locale]}</option>
+                </select>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 max-h-60 overflow-y-auto">
+                {filteredHeroes.map((hero) => {
+                  const ClassIcon = CLASS_ICONS[hero.class] || Users;
                   return (
-                    <tr key={hero.id} className="border-b border-border/50 hover:bg-muted/20">
-                      <td className="p-3">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">{isKorean ? hero.name.ko : hero.name.vi}</span>
-                          <Badge className="bg-yellow-500/20 text-yellow-400 text-xs">S</Badge>
-                        </div>
-                      </td>
-                      <td className={`p-3 ${factionColors[hero.faction] || ''}`}>
-                        {isKorean ? factionNames[hero.faction]?.ko : factionNames[hero.faction]?.vi}
-                      </td>
-                      <td className="p-3">
-                        <div className="flex items-center gap-1">
-                          <RoleIcon className="h-4 w-4" />
-                          <span className="uppercase">{hero.role}</span>
-                        </div>
-                      </td>
-                      <td className="p-3 text-muted-foreground capitalize">
-                        {hero.class}
-                      </td>
-                      <td className="p-3 text-muted-foreground max-w-[200px]">
-                        {isKorean ? hero.notes.ko : hero.notes.vi}
-                      </td>
-                    </tr>
+                    <button
+                      key={hero.id}
+                      onClick={() => selectHero(hero.id)}
+                      className="flex items-center gap-2 p-2 rounded-md border border-border hover:bg-muted/50 transition-colors text-left text-sm"
+                    >
+                      <ClassIcon className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
+                      <span
+                        className={`truncate ${FACTION_COLORS[hero.faction]}`}
+                      >
+                        {heroName(hero)}
+                      </span>
+                      <Badge
+                        className={`text-[10px] px-1 py-0 ml-auto shrink-0 ${
+                          TIER_COLORS[hero.tier] || ''
+                        }`}
+                      >
+                        {hero.tier}
+                      </Badge>
+                    </button>
                   );
                 })}
-              </tbody>
-            </table>
-          </div>
-        </section>
+                {filteredHeroes.length === 0 && (
+                  <p className="col-span-full text-center text-muted-foreground py-4 text-sm">
+                    {isKorean ? '검색 결과 없음' : 'Khong tim thay'}
+                  </p>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
-        {/* Role Comparison */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-bold">
-            {isKorean ? '역할별 특성' : 'Đặc điểm theo vai trò'}
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <Card className="bg-red-500/5 border-red-500/20">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center gap-2 text-red-400">
-                  <Swords className="h-5 w-5" />
-                  DPS
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• {isKorean ? '높은 공격력/데미지' : 'ATK/Damage cao'}</li>
-                  <li>• {isKorean ? '적 처치 특화' : 'Chuyên tiêu diệt địch'}</li>
-                  <li>• {isKorean ? '총/헬멧 우선 업그레이드' : 'Ưu tiên Súng/Mũ'}</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="bg-blue-500/5 border-blue-500/20">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center gap-2 text-blue-400">
-                  <Shield className="h-5 w-5" />
-                  Tank
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• {isKorean ? '높은 HP/방어력' : 'HP/DEF cao'}</li>
-                  <li>• {isKorean ? '피해 흡수 특화' : 'Chuyên hấp thụ damage'}</li>
-                  <li>• {isKorean ? '갑옷/부츠 우선 업그레이드' : 'Ưu tiên Giáp/Giày'}</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="bg-green-500/5 border-green-500/20">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center gap-2 text-green-400">
-                  <Zap className="h-5 w-5" />
-                  Support
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• {isKorean ? '팀 버프/힐' : 'Buff/Heal team'}</li>
-                  <li>• {isKorean ? '유틸리티 특화' : 'Chuyên utility'}</li>
-                  <li>• {isKorean ? '균형 업그레이드' : 'Nâng cấp cân bằng'}</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+        {/* Comparison Table */}
+        {selectedCount >= 2 && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-lg">
+                {isKorean ? '상세 비교' : 'So sanh chi tiet'}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border bg-muted/30">
+                    <th className="text-left p-3 min-w-[100px] text-muted-foreground">
+                      {isKorean ? '항목' : 'Muc'}
+                    </th>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <th
+                            key={idx}
+                            className="text-center p-3 min-w-[120px]"
+                          >
+                            <Link
+                              href={`/${locale}/heroes/${hero.id}`}
+                              className={`hover:underline font-semibold ${FACTION_COLORS[hero.faction]}`}
+                            >
+                              {heroName(hero)}
+                            </Link>
+                          </th>
+                        )
+                    )}
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* Tier */}
+                  <tr className="border-b border-border/50">
+                    <td className="p-3 text-muted-foreground font-medium">
+                      {isKorean ? '종합 티어' : 'Tier tong'}
+                    </td>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <td key={idx} className="p-3 text-center">
+                            <Badge
+                              className={`${TIER_COLORS[hero.tier] || ''} ${
+                                bestOverall && hero.tier === bestOverall
+                                  ? 'ring-1 ring-green-400/50'
+                                  : ''
+                              }`}
+                            >
+                              {hero.tier}
+                            </Badge>
+                          </td>
+                        )
+                    )}
+                  </tr>
+                  {/* PvP Tier */}
+                  <tr className="border-b border-border/50">
+                    <td className="p-3 text-muted-foreground font-medium">
+                      PvP
+                    </td>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <td key={idx} className="p-3 text-center">
+                            <Badge
+                              className={`${TIER_COLORS[hero.pvpTier] || ''} ${
+                                bestPvp && hero.pvpTier === bestPvp
+                                  ? 'ring-1 ring-green-400/50'
+                                  : ''
+                              }`}
+                            >
+                              {hero.pvpTier}
+                            </Badge>
+                          </td>
+                        )
+                    )}
+                  </tr>
+                  {/* PvE Tier */}
+                  <tr className="border-b border-border/50">
+                    <td className="p-3 text-muted-foreground font-medium">
+                      PvE
+                    </td>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <td key={idx} className="p-3 text-center">
+                            <Badge
+                              className={`${TIER_COLORS[hero.pveTier] || ''} ${
+                                bestPve && hero.pveTier === bestPve
+                                  ? 'ring-1 ring-green-400/50'
+                                  : ''
+                              }`}
+                            >
+                              {hero.pveTier}
+                            </Badge>
+                          </td>
+                        )
+                    )}
+                  </tr>
+                  {/* Role */}
+                  <tr className="border-b border-border/50">
+                    <td className="p-3 text-muted-foreground font-medium">
+                      {isKorean ? '역할' : 'Vai tro'}
+                    </td>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <td
+                            key={idx}
+                            className="p-3 text-center uppercase text-xs tracking-wide"
+                          >
+                            {hero.role}
+                          </td>
+                        )
+                    )}
+                  </tr>
+                  {/* Faction */}
+                  <tr className="border-b border-border/50">
+                    <td className="p-3 text-muted-foreground font-medium">
+                      {isKorean ? '진영' : 'Phe'}
+                    </td>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <td
+                            key={idx}
+                            className={`p-3 text-center text-xs ${FACTION_COLORS[hero.faction]}`}
+                          >
+                            {FACTION_NAMES[hero.faction]?.[locale]}
+                          </td>
+                        )
+                    )}
+                  </tr>
+                  {/* Class */}
+                  <tr className="border-b border-border/50">
+                    <td className="p-3 text-muted-foreground font-medium">
+                      {isKorean ? '병종' : 'Loai quan'}
+                    </td>
+                    {selectedHeroes.map((hero, idx) => {
+                      if (!hero) return null;
+                      const ClassIcon = CLASS_ICONS[hero.class] || Users;
+                      return (
+                        <td key={idx} className="p-3 text-center">
+                          <div className="flex items-center justify-center gap-1">
+                            <ClassIcon className="h-3.5 w-3.5" />
+                            <span className="text-xs">
+                              {CLASS_NAMES[hero.class]?.[locale]}
+                            </span>
+                          </div>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                  {/* Investment Priority */}
+                  <tr className="border-b border-border/50">
+                    <td className="p-3 text-muted-foreground font-medium">
+                      {isKorean ? '투자 우선도' : 'Uu tien dau tu'}
+                    </td>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <td key={idx} className="p-3">
+                            <div className="flex justify-center">
+                              <InvestmentStars
+                                priority={hero.investmentPriority}
+                              />
+                            </div>
+                          </td>
+                        )
+                    )}
+                  </tr>
+                  {/* F2P Friendly */}
+                  <tr className="border-b border-border/50">
+                    <td className="p-3 text-muted-foreground font-medium">
+                      F2P
+                    </td>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <td key={idx} className="p-3 text-center">
+                            <Badge
+                              variant="outline"
+                              className={
+                                hero.f2pFriendly
+                                  ? 'border-green-500/30 text-green-400'
+                                  : 'border-red-500/30 text-red-400'
+                              }
+                            >
+                              {hero.f2pFriendly
+                                ? isKorean
+                                  ? '무과금 가능'
+                                  : 'OK'
+                                : isKorean
+                                ? '과금 권장'
+                                : 'P2W'}
+                            </Badge>
+                          </td>
+                        )
+                    )}
+                  </tr>
+                  {/* Skills */}
+                  <tr className="border-b border-border/50">
+                    <td className="p-3 text-muted-foreground font-medium align-top">
+                      {isKorean ? '스킬' : 'Ky nang'}
+                    </td>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <td key={idx} className="p-3 align-top">
+                            <div className="space-y-2">
+                              {hero.skills.map((skill, si) => (
+                                <div key={si} className="space-y-0.5">
+                                  <div className="flex items-center gap-1 flex-wrap">
+                                    <Badge
+                                      className={`text-[10px] px-1 py-0 ${
+                                        SKILL_TYPE_COLORS[skill.type] || ''
+                                      }`}
+                                    >
+                                      {skill.type}
+                                    </Badge>
+                                    <span className="text-xs font-medium">
+                                      {isKorean
+                                        ? skill.name.ko
+                                        : skill.name.vi}
+                                    </span>
+                                  </div>
+                                  <p className="text-[11px] text-muted-foreground leading-tight">
+                                    {isKorean
+                                      ? skill.description.ko
+                                      : skill.description.vi}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </td>
+                        )
+                    )}
+                  </tr>
+                  {/* Synergies */}
+                  <tr>
+                    <td className="p-3 text-muted-foreground font-medium align-top">
+                      {isKorean ? '시너지' : 'Hiep dong'}
+                    </td>
+                    {selectedHeroes.map(
+                      (hero, idx) =>
+                        hero && (
+                          <td key={idx} className="p-3 align-top">
+                            <div className="flex flex-wrap gap-1">
+                              {hero.synergies.map((synId) => {
+                                const synHero = allHeroes.find(
+                                  (h) => h.id === synId
+                                );
+                                if (!synHero) return null;
+                                return (
+                                  <Link
+                                    key={synId}
+                                    href={`/${locale}/heroes/${synId}`}
+                                    className="text-xs hover:underline"
+                                  >
+                                    <Badge
+                                      variant="outline"
+                                      className={`text-[10px] ${FACTION_COLORS[synHero.faction]}`}
+                                    >
+                                      {heroName(synHero)}
+                                    </Badge>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          </td>
+                        )
+                    )}
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+        )}
 
-        {/* Recommendation */}
-        <Card className="border-highlight/30 bg-highlight/5">
-          <CardContent className="p-4">
-            <p className="font-semibold text-highlight mb-2">
-              {isKorean ? '권장 조합' : 'Kết hợp khuyến nghị'}
-            </p>
-            <p className="text-sm text-muted-foreground">
-              {isKorean
-                ? '메인 진형: 같은 진영 5명 (히든 버프 발동). 추천: 새벽의 날개 5명 (서버 70%가 블러디 로즈 선택으로 카운터 유리) 또는 새벽의 날개 3 + 블러디 로즈 2 조합.'
-                : 'Đội hình chính: 5 người cùng phe (kích hoạt buff ẩn). Khuyến nghị: 5 Cánh Bình Minh (70% server chọn Blood Rose nên counter có lợi) hoặc 3 Cánh Bình Minh + 2 Blood Rose.'}
-            </p>
-          </CardContent>
-        </Card>
+        {/* Empty state */}
+        {selectedCount < 2 && (
+          <Card className="border-dashed">
+            <CardContent className="p-8 text-center text-muted-foreground">
+              <Users className="h-10 w-10 mx-auto mb-3 opacity-30" />
+              <p>
+                {isKorean
+                  ? '위에서 2명 이상의 영웅을 선택하면 비교표가 나타납니다.'
+                  : 'Chon it nhat 2 anh hung o tren de xem bang so sanh.'}
+              </p>
+            </CardContent>
+          </Card>
+        )}
       </div>
     </div>
   );

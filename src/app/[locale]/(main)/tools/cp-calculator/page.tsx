@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { cn } from '@/lib/utils';
 import {
   Calculator,
   Building2,
@@ -32,8 +33,47 @@ export default function CPCalculatorPage() {
   const [troopPower, setTroopPower] = useState<number>(0);
   const [heroPower, setHeroPower] = useState<number>(0);
   const [vehiclePower, setVehiclePower] = useState<number>(0);
+  const [targetMilestone, setTargetMilestone] = useState<number>(0);
+
+  // Load from localStorage
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('klz-cp-calculator');
+      if (saved) {
+        const data = JSON.parse(saved);
+        if (data.structure) setStructurePower(data.structure);
+        if (data.tech) setTechPower(data.tech);
+        if (data.troop) setTroopPower(data.troop);
+        if (data.hero) setHeroPower(data.hero);
+        if (data.vehicle) setVehiclePower(data.vehicle);
+        if (data.target) setTargetMilestone(data.target);
+      }
+    } catch {}
+  }, []);
+
+  // Save to localStorage
+  useEffect(() => {
+    const total = structurePower + techPower + troopPower + heroPower + vehiclePower;
+    if (total > 0) {
+      localStorage.setItem('klz-cp-calculator', JSON.stringify({
+        structure: structurePower, tech: techPower, troop: troopPower,
+        hero: heroPower, vehicle: vehiclePower, target: targetMilestone,
+      }));
+    }
+  }, [structurePower, techPower, troopPower, heroPower, vehiclePower, targetMilestone]);
 
   const totalPower = structurePower + techPower + troopPower + heroPower + vehiclePower;
+
+  const milestones = [
+    { label: '500K', value: 500000 },
+    { label: '1M', value: 1000000 },
+    { label: '2M', value: 2000000 },
+    { label: '5M', value: 5000000 },
+    { label: '10M', value: 10000000 },
+    { label: '30M', value: 30000000 },
+    { label: '50M', value: 50000000 },
+    { label: '100M', value: 100000000 },
+  ];
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) return `${(num / 1000000).toFixed(2)}M`;
@@ -324,6 +364,64 @@ export default function CPCalculatorPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Milestone Target */}
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="flex items-center gap-2 text-lg">
+              <Target className="h-5 w-5 text-highlight" />
+              {isKorean ? '목표 마일스톤' : 'Mục tiêu mốc'}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex flex-wrap gap-2">
+              {milestones.map((m) => (
+                <button
+                  key={m.value}
+                  onClick={() => setTargetMilestone(m.value === targetMilestone ? 0 : m.value)}
+                  className={cn(
+                    'px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors',
+                    targetMilestone === m.value
+                      ? 'bg-highlight/20 text-highlight border-highlight/50'
+                      : totalPower >= m.value
+                        ? 'bg-green-500/10 text-green-400 border-green-500/30'
+                        : 'bg-muted/50 text-muted-foreground border-border hover:bg-muted'
+                  )}
+                >
+                  {totalPower >= m.value ? '✓ ' : ''}{m.label}
+                </button>
+              ))}
+            </div>
+            {targetMilestone > 0 && totalPower > 0 && (
+              <div className="p-3 rounded-lg bg-secondary/30 border">
+                {totalPower >= targetMilestone ? (
+                  <p className="text-sm text-green-400 font-medium">
+                    {isKorean
+                      ? `목표 달성! 현재 ${formatNumber(totalPower)} / ${formatNumber(targetMilestone)}`
+                      : `Đạt mục tiêu! Hiện tại ${formatNumber(totalPower)} / ${formatNumber(targetMilestone)}`}
+                  </p>
+                ) : (
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {isKorean
+                        ? `목표까지 ${formatNumber(targetMilestone - totalPower)} 남음`
+                        : `Còn ${formatNumber(targetMilestone - totalPower)} để đạt mục tiêu`}
+                    </p>
+                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-highlight rounded-full transition-all"
+                        style={{ width: `${Math.min((totalPower / targetMilestone) * 100, 100)}%` }}
+                      />
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-1 text-right">
+                      {((totalPower / targetMilestone) * 100).toFixed(1)}%
+                    </p>
+                  </div>
+                )}
               </div>
             )}
           </CardContent>
