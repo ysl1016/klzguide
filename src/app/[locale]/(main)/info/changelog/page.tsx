@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, History, CalendarDays } from 'lucide-react';
+import changelogData from '@/data/changelog.json';
 
 interface ChangelogEntry {
   date: string;
@@ -13,165 +14,13 @@ interface ChangelogEntry {
   };
 }
 
-const changelogData: ChangelogEntry[] = [
-  {
-    date: '2026-03-09',
-    isNew: true,
-    changes: {
-      ko: [
-        '연구 페이지 용어 한국어화 (조종석, 엘리트부대, 전쟁수호, 긴급구조, 피난소건설, 군사이론, 도시함락, 야전연구, 영웅훈련)',
-        '연맹 인정 → 연맹표창 용어 변경 (전체 페이지 반영)',
-        '용어사전에 연구 관련 용어 9개 추가',
-        '용어사전 좀비 포위전 → 좀비공성 수정',
-        '발로 메달 → 용사훈장 용어 변경 (전체 페이지 반영)',
-        '블랙마켓 → 암시장, 용사훈장 사용 상점 → 공훈상점 용어 변경',
-        '용어사전 크립 → 좀비 수정',
-        '오렌지 → 주황 용어 변경 (전체 페이지 반영)',
-        '영웅 닉스 → 니콜스 이름 변경 (티어리스트, 육성, 시너지, 영웅 데이터)',
-        '연구 용어 전체 페이지 일괄 수정 (연구 우선순위, 기술 트리, FAQ, 초보 실수, 전투력, 용어사전 등)',
-      ],
-      vi: [
-        'Hàn hóa thuật ngữ trang nghiên cứu (Cockpit, Elite Troops, Peace Shield, Urgent Rescue, Shelter, Military Strategies, Siege to Seize, Field Research, Hero Training)',
-        'Đổi thuật ngữ Alliance Recognition → 연맹표창 (toàn bộ trang)',
-        'Thêm 9 thuật ngữ nghiên cứu vào từ điển',
-        'Sửa thuật ngữ 좀비 포위전 → 좀비공성 trong từ điển',
-        'Đổi thuật ngữ Valor Medals → 용사훈장 (toàn bộ trang)',
-        'Đổi thuật ngữ Black Market → 암시장/공훈상점',
-        'Sửa thuật ngữ 크립 → 좀비 trong từ điển',
-        'Đổi thuật ngữ 오렌지 → 주황 (toàn bộ trang)',
-        'Đổi tên anh hùng Nyx → 니콜스 (tier list, leveling, synergy, dữ liệu)',
-        'Đồng bộ thuật ngữ NC trên toàn bộ trang (ưu tiên NC, cây công nghệ, FAQ, lỗi newbie, sức mạnh, từ điển, v.v.)',
-      ],
-    },
-  },
-  {
-    date: '2025-02-08',
-    changes: {
-      ko: [
-        '행운의 흔들기 페이지 전면 개편 (키 시스템, 마일스톤, 효율 비교)',
-        '행운의 흔들기 정확한 비용: 1회 100다이아, 5회 500다이아',
-        '연맹 대결 페이지 전면 개편 (6개 테마, 골든아워, 전면전비 스케줄)',
-        '연맹 대결 모집티켓 구분 (2일차: 피난민, 4일차: 영웅)',
-        '연맹 대결 일차 순서 수정 (1일차=월요일, 6일차=토요일)',
-        '골든아워 시간대 수정 (Apoc 08:00-12:00, 20:00-00:00)',
-        '방문자 카운터 한국시간(KST) 기준으로 변경',
-        '월간 방문자 카운터 버그 수정 (2월 등 31일 미만 달)',
-      ],
-      vi: [
-        'Cải tiến trang Lucky Shake (hệ thống Key, Milestone, so sánh hiệu quả)',
-        'Chi phí Lucky Shake chính xác: 100 diamond/lần, 500 diamond/5 lần',
-        'Cải tiến trang Alliance Duel (6 theme, Golden Hour, lịch Full Prep)',
-        'Phân biệt vé tuyển mộ Alliance Duel (Ngày 2: tị nạn, Ngày 4: anh hùng)',
-        'Sửa thứ tự ngày Alliance Duel (Ngày 1=Thứ hai, Ngày 6=Thứ bảy)',
-        'Sửa giờ Golden Hour (Apoc 08:00-12:00, 20:00-00:00)',
-        'Đổi bộ đếm khách theo giờ Hàn Quốc (KST)',
-        'Sửa lỗi bộ đếm khách hàng tháng (tháng có ít hơn 31 ngày)',
-      ],
-    },
-  },
-  {
-    date: '2025-02-01',
-    changes: {
-      ko: [
-        '업데이트 내역 페이지 추가',
-        'HQ 업그레이드 요구사항 데이터 수정',
-        '사이드바 아코디언 동작 개선',
-        '방문자 카운터 로딩 최적화',
-      ],
-      vi: [
-        'Thêm trang lịch sử cập nhật',
-        'Sửa dữ liệu yêu cầu nâng cấp HQ',
-        'Cải thiện hoạt động accordion sidebar',
-        'Tối ưu hóa tải bộ đếm khách truy cập',
-      ],
-    },
-  },
-  {
-    date: '2025-01-31',
-    changes: {
-      ko: [
-        '용어사전 한국어 중심 개선',
-        'PC 버전 홈 버튼 추가',
-        '검색 기능 구현',
-      ],
-      vi: [
-        'Cải thiện từ điển thuật ngữ theo tiếng Hàn',
-        'Thêm nút Home cho phiên bản PC',
-        'Triển khai chức năng tìm kiếm',
-      ],
-    },
-  },
-  {
-    date: '2025-01-30',
-    changes: {
-      ko: [
-        'PWA 지원 추가 (홈 화면 추가 기능)',
-        '이벤트 페이지 대폭 확장 (전면전비, 난폭 두목, 좀비폭군, 좀비공성, 가챠 고, 럭키 할인, 협곡쟁탈전)',
-        '한국어 게임 용어 전면 수정',
-      ],
-      vi: [
-        'Thêm hỗ trợ PWA (thêm vào màn hình chính)',
-        'Mở rộng các trang sự kiện (Full Prep, Furylord, Tyrant, Zombie Siege, Gacha Go, Lucky Discounter, Canyon Clash)',
-        'Sửa đổi toàn bộ thuật ngữ game tiếng Hàn',
-      ],
-    },
-  },
-  {
-    date: '2025-01-29',
-    changes: {
-      ko: [
-        '다국어 지원 개선 (한국어/베트남어)',
-        '네비게이션 구조 개선',
-        '모바일 반응형 디자인 수정',
-      ],
-      vi: [
-        'Cải thiện hỗ trợ đa ngôn ngữ (Hàn/Việt)',
-        'Cải thiện cấu trúc điều hướng',
-        'Sửa thiết kế responsive cho mobile',
-      ],
-    },
-  },
-  {
-    date: '2025-01-28',
-    changes: {
-      ko: [
-        '영웅 티어표 페이지 추가',
-        '장비 강화 가이드 추가',
-        '리딤 코드 페이지 추가',
-      ],
-      vi: [
-        'Thêm trang bảng xếp hạng anh hùng',
-        'Thêm hướng dẫn nâng cấp trang bị',
-        'Thêm trang mã đổi thưởng',
-      ],
-    },
-  },
-  {
-    date: '2025-01-27',
-    changes: {
-      ko: [
-        '사이트 초기 런칭',
-        '입문 가이드 섹션 추가',
-        '성장 가이드 섹션 추가',
-        'FAQ 페이지 추가',
-      ],
-      vi: [
-        'Ra mắt website',
-        'Thêm phần hướng dẫn cơ bản',
-        'Thêm phần hướng dẫn phát triển',
-        'Thêm trang FAQ',
-      ],
-    },
-  },
-];
-
-// Check if a date is within the last 7 days
+// Check if a date is within the last 14 days
 function isRecent(dateStr: string): boolean {
   const date = new Date(dateStr);
   const now = new Date();
   const diffTime = now.getTime() - date.getTime();
   const diffDays = diffTime / (1000 * 60 * 60 * 24);
-  return diffDays <= 7;
+  return diffDays <= 14;
 }
 
 export default async function ChangelogPage({
@@ -188,6 +37,8 @@ export default async function ChangelogPage({
 function ChangelogContent({ locale }: { locale: string }) {
   const t = useTranslations();
   const isKorean = locale === 'ko';
+
+  const entries = changelogData as ChangelogEntry[];
 
   return (
     <div className="py-8 px-4 lg:px-8">
@@ -216,7 +67,7 @@ function ChangelogContent({ locale }: { locale: string }) {
 
         {/* Changelog List */}
         <div className="space-y-4">
-          {changelogData.map((entry, idx) => {
+          {entries.map((entry, idx) => {
             const showNewBadge = entry.isNew || isRecent(entry.date);
             const changes = isKorean ? entry.changes.ko : entry.changes.vi;
 

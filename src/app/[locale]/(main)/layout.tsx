@@ -1,4 +1,4 @@
-import { Header, Sidebar, Footer } from '@/components/layout';
+import { Header, Sidebar, Footer, Breadcrumb } from '@/components/layout';
 
 export default function MainLayout({
   children,
@@ -10,6 +10,7 @@ export default function MainLayout({
       <Header />
       <Sidebar />
       <div className="lg:pl-64">
+        <Breadcrumb />
         <main className="min-h-[calc(100vh-4rem)]">{children}</main>
         <Footer />
       </div>

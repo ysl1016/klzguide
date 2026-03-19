@@ -169,6 +169,106 @@
         "ko": "연맹 간 대결 콘텐츠입니다.",
         "vi": "Nội dung đấu giữa các liên minh."
       }
+    },
+    {
+      "en": "Vehicle Modification",
+      "abbr": null,
+      "ko": "차량 개조",
+      "vi": "Cải tiến xe",
+      "definition": {
+        "ko": "황금렌치를 사용하여 차량 부품을 업그레이드하는 시스템입니다.",
+        "vi": "Hệ thống nâng cấp linh kiện xe bằng Cờ lê vàng."
+      }
+    },
+    {
+      "en": "Arena",
+      "abbr": null,
+      "ko": "아레나",
+      "vi": "Đấu trường",
+      "definition": {
+        "ko": "매일 5회 도전 가능한 PvP 콘텐츠. 주간 순위에 따라 다이아몬드 보상을 받습니다.",
+        "vi": "Nội dung PvP có thể thách đấu 5 lần/ngày. Nhận kim cương theo xếp hạng tuần."
+      }
+    },
+    {
+      "en": "Refugees",
+      "abbr": null,
+      "ko": "피난민",
+      "vi": "Người tị nạn",
+      "definition": {
+        "ko": "건물에 배치하여 다양한 보너스를 제공하는 NPC입니다. 외교관, 집사, 과학자 등의 종류가 있습니다.",
+        "vi": "NPC đặt trong công trình để cung cấp bonus. Gồm Ngoại giao, Quản gia, Nhà khoa học, v.v."
+      }
+    },
+    {
+      "en": "Steel",
+      "abbr": null,
+      "ko": "Steel",
+      "vi": "Thép",
+      "definition": {
+        "ko": "HQ 31 이상에서 필요한 고급 자원입니다. 주로 좀비폭군에서 획득합니다.",
+        "vi": "Tài nguyên cao cấp cần cho HQ 31+. Chủ yếu nhận từ Tyrant."
+      }
+    },
+    {
+      "en": "Chip System",
+      "abbr": null,
+      "ko": "칩 시스템",
+      "vi": "Hệ thống Chip",
+      "definition": {
+        "ko": "진형에 장착하여 전투력을 강화하는 시스템. 진영별로 별도 칩이 필요하며 변경 비용이 높습니다.",
+        "vi": "Hệ thống gắn chip vào đội hình để tăng sức mạnh. Mỗi phe cần chip riêng, chi phí đổi rất cao."
+      }
+    },
+    {
+      "en": "Golden Wrench",
+      "abbr": null,
+      "ko": "황금렌치",
+      "vi": "Cờ lê vàng",
+      "definition": {
+        "ko": "차량 개조에 사용되는 핵심 재료입니다.",
+        "vi": "Vật liệu chính dùng cho cải tiến xe."
+      }
+    },
+    {
+      "en": "Power Core",
+      "abbr": null,
+      "ko": "에너지코어",
+      "vi": "Lõi năng lượng",
+      "definition": {
+        "ko": "장비 강화에 사용되는 재화입니다.",
+        "vi": "Tiền tệ dùng để nâng cấp trang bị."
+      }
+    },
+    {
+      "en": "Rally",
+      "abbr": null,
+      "ko": "랠리",
+      "vi": "Tập kết",
+      "definition": {
+        "ko": "연맹원들이 함께 하나의 목표를 공격하는 집결 공격입니다.",
+        "vi": "Tấn công tập kết khi các thành viên liên minh cùng tấn công một mục tiêu."
+      }
+    },
+    {
+      "en": "Farm Account",
+      "abbr": null,
+      "ko": "팜 계정",
+      "vi": "Tài khoản farm",
+      "definition": {
+        "ko": "메인 계정에 자원을 보내기 위해 만드는 부계정입니다.",
+        "vi": "Tài khoản phụ được tạo để gửi tài nguyên cho tài khoản chính."
+      }
+    },
+    {
+      "en": "Full Preparedness",
+      "abbr": null,
+      "ko": "전면전비",
+      "vi": "Full Preparedness",
+      "definition": {
+        "ko": "매일 4시간마다 테마가 바뀌는 상시 이벤트. 테마에 맞는 활동으로 포인트를 획득합니다.",
+        "vi": "Sự kiện thường trực đổi chủ đề mỗi 4 giờ. Nhận điểm bằng hoạt động phù hợp chủ đề."
+      }
     }
   ]
 }
