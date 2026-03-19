@@ -6,3 +6,6 @@ export { VisitorCounter } from './VisitorCounter';
 export { HeroCard } from './HeroCard';
 export { HeroDetail } from './HeroDetail';
 export { SkillCard } from './SkillCard';
+export { ActiveCodesWidget } from './ActiveCodesWidget';
+export { HeroTierSnapshot } from './HeroTierSnapshot';
+export { EventCalendarPreview } from './EventCalendarPreview';

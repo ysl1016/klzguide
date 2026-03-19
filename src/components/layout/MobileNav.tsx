@@ -78,6 +78,7 @@ const navItems: NavItem[] = [
     href: '/heroes',
     icon: Users,
     children: [
+      { key: 'heroDatabase', href: '/heroes' },
       { key: 'tierList', href: '/heroes/tier-list' },
       { key: 'leveling', href: '/heroes/leveling' },
       { key: 'synergy', href: '/heroes/synergy' },
@@ -106,6 +107,7 @@ const navItems: NavItem[] = [
     href: '/events',
     icon: Calendar,
     children: [
+      { key: 'eventCalendar', href: '/events/calendar' },
       { key: 'fullPrep', href: '/events/full-prep' },
       { key: 'furylord', href: '/events/furylord' },
       { key: 'tyrant', href: '/events/tyrant' },
@@ -135,6 +137,7 @@ const navItems: NavItem[] = [
     children: [
       { key: 'cpCalculator', href: '/tools/cp-calculator' },
       { key: 'heroCompare', href: '/tools/hero-compare' },
+      { key: 'teamBuilder', href: '/tools/team-builder' },
     ],
   },
   {

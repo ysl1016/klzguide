@@ -37,6 +37,7 @@
     "dailyRoutine": "Thói quen hàng ngày",
     "priority": "Ưu tiên nghiên cứu",
     "techTree": "Cây công nghệ",
+    "heroDatabase": "Cơ sở dữ liệu anh hùng",
     "tierList": "Bảng xếp hạng anh hùng",
     "leveling": "Phát triển anh hùng",
     "synergy": "Kết hợp anh hùng",
@@ -52,6 +53,7 @@
     "luckyDiscounter": "Lucky Discounter",
     "allianceDuel": "Đấu Liên minh",
     "canyonClash": "Canyon Clash",
+    "eventCalendar": "Lịch sự kiện",
     "svs": "Đại chiến máy chủ",
     "shopGuide": "Shop Guide",
     "farming": "Farm tài nguyên",
@@ -59,6 +61,7 @@
     "redeemCodes": "Mã đổi thưởng",
     "cpCalculator": "Máy tính CP",
     "heroCompare": "So sánh anh hùng",
+    "teamBuilder": "Xây dựng đội",
     "glossary": "Từ điển thuật ngữ",
     "faq": "Câu hỏi thường gặp",
     "changelog": "Lịch sử cập nhật"

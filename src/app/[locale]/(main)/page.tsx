@@ -3,12 +3,16 @@ import { setRequestLocale } from 'next-intl/server';
 import {
   GuideCard,
   QuickStartCard,
-  RedeemCodeCard,
   VisitorCounter,
+  ActiveCodesWidget,
+  HeroTierSnapshot,
+  EventCalendarPreview,
 } from '@/components/content';
 import { Compass } from 'lucide-react';
+import { getAllHeroes } from '@/lib/heroes';
+import { getActiveCodes, getLastUpdated } from '@/lib/redeem-codes';
+import { getSixDayRotation, getFullPrepThemes } from '@/lib/events';
 
-// Sample data - in production, this would come from MDX files
 const latestGuides = [
   {
     title: '게임 소개',
@@ -44,8 +48,8 @@ const latestGuides = [
     categoryVi: 'Phát triển',
   },
   {
-    title: '영웅 티어표 (2025)',
-    titleVi: 'Bảng xếp hạng anh hùng (2025)',
+    title: '영웅 티어표 (2026)',
+    titleVi: 'Bảng xếp hạng anh hùng (2026)',
     description: '현재 메타에서 가장 강력한 영웅들의 순위를 확인하세요.',
     descriptionVi: 'Xem thứ hạng của các anh hùng mạnh nhất trong meta hiện tại.',
     href: '/heroes/tier-list',
@@ -55,10 +59,6 @@ const latestGuides = [
     categoryVi: 'Anh hùng',
   },
 ];
-
-// 리딤 코드는 redeem-codes 페이지에서 관리됨
-// 현재 유효한 코드가 없을 경우 빈 배열 유지
-const redeemCodes: { code: string; rewards: string; isNew: boolean }[] = [];
 
 export default async function HomePage({
   params,
@@ -76,11 +76,17 @@ function HomePageContent({ locale }: { locale: string }) {
   const tc = useTranslations('common');
   const isKorean = locale === 'ko';
 
+  const heroes = getAllHeroes();
+  const activeCodes = getActiveCodes();
+  const codesLastUpdated = getLastUpdated();
+  const sixDayRotation = getSixDayRotation();
+  const fullPrepThemes = getFullPrepThemes();
+
   return (
     <div className="py-8 px-4 lg:px-8">
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="max-w-6xl mx-auto space-y-10">
         {/* Hero Section */}
-        <section className="text-center space-y-4 py-8">
+        <section className="text-center space-y-4 py-6">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
             {t('welcome')}
           </h1>
@@ -92,13 +98,25 @@ function HomePageContent({ locale }: { locale: string }) {
         {/* Visitor Counter */}
         <VisitorCounter locale={locale} />
 
+        {/* Active Redeem Codes + Today's Event - Side by Side */}
+        <div className="grid gap-6 lg:grid-cols-2">
+          <ActiveCodesWidget codes={activeCodes} lastUpdated={codesLastUpdated} />
+          <EventCalendarPreview
+            sixDayRotation={sixDayRotation}
+            fullPrepThemes={fullPrepThemes}
+          />
+        </div>
+
+        {/* S+ Hero Tier Snapshot */}
+        <HeroTierSnapshot heroes={heroes} />
+
         {/* Quick Start Section */}
         <section className="space-y-6">
           <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
             <Compass className="h-6 w-6 text-highlight" />
             {t('quickStart')}
           </h2>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             <QuickStartCard
               title={t('forBeginners')}
               description={t('forBeginnersDesc')}
@@ -118,11 +136,11 @@ function HomePageContent({ locale }: { locale: string }) {
               color="warning"
             />
             <QuickStartCard
-              title={isKorean ? '영웅 티어표' : 'Bảng xếp hạng anh hùng'}
+              title={isKorean ? '영웅 도감' : 'Cơ sở dữ liệu anh hùng'}
               description={
                 isKorean
-                  ? '어떤 영웅을 키워야 할지 확인하세요.'
-                  : 'Xem nên đầu tư vào anh hùng nào.'
+                  ? '37명 전체 영웅의 스킬, 시너지, 육성 가이드를 확인하세요.'
+                  : 'Xem kỹ năng, hiệp lực, hướng dẫn phát triển của 37 anh hùng.'
               }
               href="/heroes/tier-list"
               iconName="users"
@@ -142,45 +160,33 @@ function HomePageContent({ locale }: { locale: string }) {
           </div>
         </section>
 
-        {/* Main Content Grid */}
-        <div className="grid gap-8 lg:grid-cols-3">
-          {/* Latest Guides - takes 2 columns */}
-          <section className="lg:col-span-2 space-y-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-foreground">
-                {t('latestGuides')}
-              </h2>
-              <a
-                href="#"
-                className="text-sm text-highlight hover:underline"
-              >
-                {tc('viewAll')}
-              </a>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {latestGuides.map((guide) => (
-                <GuideCard
-                  key={guide.href}
-                  title={isKorean ? guide.title : guide.titleVi}
-                  description={isKorean ? guide.description : guide.descriptionVi}
-                  href={guide.href}
-                  difficulty={guide.difficulty}
-                  readTime={guide.readTime}
-                  category={isKorean ? guide.category : guide.categoryVi}
-                />
-              ))}
-            </div>
-          </section>
-
-          {/* Redeem Codes Sidebar */}
-          <section className="space-y-6">
-            <RedeemCodeCard
-              title={t('latestCodes')}
-              codes={redeemCodes}
-              noExpiredText={t('noExpiredCodes')}
-            />
-          </section>
-        </div>
+        {/* Latest Guides */}
+        <section className="space-y-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-bold text-foreground">
+              {t('latestGuides')}
+            </h2>
+            <a
+              href={`/${locale}/info/changelog`}
+              className="text-sm text-highlight hover:underline"
+            >
+              {tc('viewAll')}
+            </a>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {latestGuides.map((guide) => (
+              <GuideCard
+                key={guide.href}
+                title={isKorean ? guide.title : guide.titleVi}
+                description={isKorean ? guide.description : guide.descriptionVi}
+                href={guide.href}
+                difficulty={guide.difficulty}
+                readTime={guide.readTime}
+                category={isKorean ? guide.category : guide.categoryVi}
+              />
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
