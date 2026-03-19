@@ -60,6 +60,9 @@ const navItems: NavItem[] = [
     icon: TrendingUp,
     children: [
       { key: 'hq', href: '/progression/hq' },
+      { key: 'baseBuilding', href: '/progression/base-building' },
+      { key: 'vehicleMod', href: '/progression/vehicle-modification' },
+      { key: 'refugees', href: '/progression/refugees' },
       { key: 'combatPower', href: '/progression/combat-power' },
       { key: 'dailyRoutine', href: '/progression/daily-routine' },
     ],
@@ -98,6 +101,7 @@ const navItems: NavItem[] = [
     href: '/pvp',
     icon: Swords,
     children: [
+      { key: 'arena', href: '/pvp/arena' },
       { key: 'formations', href: '/pvp/formations' },
       { key: 'strategy', href: '/pvp/strategy' },
     ],

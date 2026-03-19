@@ -101,6 +101,22 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
         : 'Chơi 30 phút mỗi ngày hiệu quả hơn 5 giờ mỗi tuần. Thói quen hàng ngày đều đặn là chìa khóa.',
       priority: 'medium',
     },
+    {
+      number: 11,
+      title: isKorean ? '아레나를 매일 5회 반드시 도전하세요' : 'Nhat dinh phai thach dau Arena 5 lan moi ngay',
+      desc: isKorean
+        ? '아레나를 매일 5회 반드시 도전하세요. 주간 순위에 따라 최대 5,000 다이아를 받을 수 있습니다. 무료 도전 횟수를 낭비하지 마세요.'
+        : 'Nhat dinh phai thach dau Arena 5 lan moi ngay. Theo xep hang hang tuan co the nhan toi da 5.000 kim cuong. Dung lang phi luot thach dau mien phi.',
+      priority: 'high',
+    },
+    {
+      number: 12,
+      title: isKorean ? '시즌2 전에 팜 계정을 만들어두세요' : 'Tao tai khoan farm truoc Mua 2',
+      desc: isKorean
+        ? '시즌2 전에 팜 계정을 만들어두세요. 자원 이전으로 메인 계정 성장 속도를 크게 높일 수 있습니다. 팜 계정은 자원 생산과 트럭 보내기에 집중하세요.'
+        : 'Tao tai khoan farm truoc Mua 2. Chuyen tai nguyen giup tang toc do phat trien tai khoan chinh dang ke. Tai khoan farm nen tap trung san xuat tai nguyen va gui xe tai.',
+      priority: 'medium',
+    },
   ];
 
   const priorityConfig = {
@@ -136,7 +152,7 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
             </span>
           </div>
           <h1 className="text-3xl font-bold">
-            {isKorean ? '초보자 필수 팁 10가지' : '10 mẹo quan trọng cho người mới'}
+            {isKorean ? '초보자 필수 팁 12가지' : '12 mẹo quan trọng cho người mới'}
           </h1>
           <p className="text-muted-foreground">
             {isKorean

@@ -122,6 +122,14 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       task: isKorean ? '오늘의 이벤트 요일 확인 후 해당 활동 집중' : 'Kiểm tra ngày sự kiện và tập trung hoạt động phù hợp',
       priority: 'medium',
     },
+    {
+      task: isKorean ? '아레나 5회 도전 (주간 다이아 보상)' : 'Thach dau Arena 5 lan (phan thuong kim cuong tuan)',
+      priority: 'medium',
+    },
+    {
+      task: isKorean ? '피난민 디스패치 확인' : 'Kiem tra phai cu Nguoi ti nan',
+      priority: 'medium',
+    },
   ];
 
   // 연맹 대결 테마별 가속 사용 (7일 연속, 6개 테마 순환)

@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clock, Swords, Shield, Target, Eye, Lightbulb, AlertTriangle } from 'lucide-react';
+import { Clock, Swords, Shield, Target, Eye, Lightbulb, AlertTriangle, Search, Timer } from 'lucide-react';
 
 export default async function PvPStrategyPage({
   params,
@@ -211,6 +211,155 @@ function PvPStrategyContent({ locale }: { locale: string }) {
                   <span className="text-sm text-muted-foreground">{mistake}</span>
                 </div>
               ))}
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Faction Counter Triangle */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Swords className="h-6 w-6 text-highlight" />
+            {isKorean ? '진영 상성 시스템' : 'He thong tuong khac phe'}
+          </h2>
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex flex-col items-center space-y-4">
+                <div className="flex items-center justify-center gap-3 flex-wrap">
+                  <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-sm px-3 py-1">
+                    {isKorean ? '슈터 (새벽의 날개)' : 'Shooter (Canh Binh Minh)'}
+                  </Badge>
+                  <span className="text-green-400 font-bold text-lg">&rarr;</span>
+                  <Badge className="bg-red-500/20 text-red-400 border-red-500/30 text-sm px-3 py-1">
+                    {isKorean ? '돌격 (블러디 로즈)' : 'Assaulter (Blood Rose)'}
+                  </Badge>
+                  <span className="text-green-400 font-bold text-lg">&rarr;</span>
+                  <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-sm px-3 py-1">
+                    {isKorean ? '라이더 (질서의 수호자)' : 'Rider (Nguoi Bao Ve Trat Tu)'}
+                  </Badge>
+                  <span className="text-green-400 font-bold text-lg">&rarr;</span>
+                  <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-sm px-3 py-1">
+                    {isKorean ? '슈터' : 'Shooter'}
+                  </Badge>
+                </div>
+                <p className="text-sm text-muted-foreground text-center">
+                  {isKorean
+                    ? '화살표 방향이 카운터 관계입니다. 슈터는 돌격을, 돌격은 라이더를, 라이더는 슈터를 이깁니다.'
+                    : 'Huong mui ten la quan he counter. Shooter thang Assaulter, Assaulter thang Rider, Rider thang Shooter.'}
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Recommended Composition */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Target className="h-6 w-6 text-highlight" />
+            {isKorean ? '추천 구성' : 'Cau hinh khuyen nghi'}
+          </h2>
+          <Card className="border-blue-500/30 bg-blue-500/5">
+            <CardContent className="p-4 space-y-3">
+              <div className="flex items-center gap-2">
+                <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">
+                  {isKorean ? '최적 조합' : 'To hop toi uu'}
+                </Badge>
+              </div>
+              <p className="text-sm">
+                {isKorean
+                  ? '새벽의 날개(슈터) 3명 + 블러디 로즈(돌격) 2명 하이브리드 구성이 최적입니다.'
+                  : 'Ket hop 3 Canh Binh Minh (Shooter) + 2 Blood Rose (Assaulter) la toi uu.'}
+              </p>
+              <p className="text-sm text-muted-foreground">
+                {isKorean
+                  ? '이유: 대부분의 서버에서 블러디 로즈 유저가 다수이므로 슈터 위주 구성이 카운터 이점을 가집니다.'
+                  : 'Ly do: Da so server co nhieu Blood Rose nen doi hinh Shooter co loi the counter.'}
+              </p>
+            </CardContent>
+          </Card>
+          <div className="info-warning flex gap-3">
+            <AlertTriangle className="h-5 w-5 text-warning shrink-0 mt-0.5" />
+            <p className="text-sm text-muted-foreground">
+              {isKorean
+                ? '칩은 진영 고정이므로 변경 비용이 매우 높습니다. 메인 진영을 신중하게 결정한 후 칩을 투자하세요.'
+                : 'Chip co dinh theo phe nen chi phi thay doi rat cao. Hay can nhac ky truoc khi dau tu chip vao phe chinh.'}
+            </p>
+          </div>
+        </section>
+
+        {/* Scout Protocol */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Search className="h-6 w-6 text-highlight" />
+            {isKorean ? '정찰 프로토콜' : 'Quy trinh trinh sat'}
+          </h2>
+          <Card>
+            <CardContent className="p-4">
+              <p className="text-sm text-muted-foreground mb-3">
+                {isKorean
+                  ? '공격 전 반드시 다음 항목을 확인하세요:'
+                  : 'Bat buoc kiem tra cac muc sau truoc khi tan cong:'}
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2 text-sm">
+                  <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
+                  <span>
+                    {isKorean
+                      ? '킬수 vs 파워 비교: 높은 파워 + 낮은 킬수 = 건물/연구로 부풀린 파워 (쉬운 타겟)'
+                      : 'So sanh Kill vs Power: Power cao + Kill thap = Power thoi phong tu cong trinh/NC (muc tieu de)'}
+                  </span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
+                  <span>{isKorean ? '영웅 파워 확인' : 'Kiem tra Power anh hung'}</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
+                  <span>{isKorean ? '차량 개조 파워 확인' : 'Kiem tra Power xe do'}</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
+                  <span>{isKorean ? '기술 연구 진행도 확인' : 'Kiem tra tien do nghien cuu ky thuat'}</span>
+                </li>
+                <li className="flex items-start gap-2 text-sm">
+                  <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
+                  <span>{isKorean ? '연맹 소속 및 지원 가능성 확인' : 'Kiem tra lien minh va kha nang ho tro'}</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Saturday Attack Timing */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Timer className="h-6 w-6 text-highlight" />
+            {isKorean ? '토요일 공격 타이밍' : 'Thoi diem tan cong thu Bay'}
+          </h2>
+          <Card className="border-destructive/30 bg-destructive/5">
+            <CardContent className="p-4 space-y-3">
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5 text-destructive" />
+                <span className="font-semibold text-destructive">
+                  {isKorean ? '토요일 공격이 가장 효율적' : 'Tan cong thu Bay hieu qua nhat'}
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                {isKorean
+                  ? '토요일에는 Enemy Buster + State Ruler 이벤트가 동시에 진행되어 병원 용량이 2배로 증가합니다.'
+                  : 'Thu Bay co Enemy Buster + State Ruler dong thoi, dung luong benh vien tang gap 2.'}
+              </p>
+              <div className="bg-background rounded-lg p-3 border border-border">
+                <p className="text-sm">
+                  {isKorean
+                    ? '각 LV25 병원: 3,480 슬롯 (토요일 2배 = 6,960 슬롯)'
+                    : 'Moi benh vien LV25: 3.480 slot (thu Bay x2 = 6.960 slot)'}
+                </p>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                {isKorean
+                  ? '병원 용량 증가로 병력 손실 부담이 줄어들어, 적극적인 공격이 가능합니다. 또한 Enemy Buster 포인트와 State Ruler 포인트를 동시에 획득할 수 있습니다.'
+                  : 'Dung luong benh vien tang giup giam mat quan, co the tan cong tich cuc hon. Dong thoi nhan diem Enemy Buster va State Ruler.'}
+              </p>
             </CardContent>
           </Card>
         </section>

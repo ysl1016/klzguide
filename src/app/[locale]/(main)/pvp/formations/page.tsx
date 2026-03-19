@@ -275,6 +275,105 @@ function FormationsContent({ locale }: { locale: string }) {
             ))}
           </div>
         </section>
+
+        {/* Recommended Team Compositions */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Users className="h-6 w-6 text-highlight" />
+            {isKorean ? '추천 팀 구성' : 'Doi hinh khuyen nghi'}
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <Card className="border-blue-500/30 bg-blue-500/5">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg text-blue-400">
+                  {isKorean ? '메인 푸시 (3 WoD + 2 BR)' : 'Main Push (3 WoD + 2 BR)'}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <div className="space-y-1">
+                  <p className="text-blue-400 font-medium">{isKorean ? '새벽의 날개' : 'Canh Binh Minh'}</p>
+                  <p className="text-muted-foreground">Queenie, Liliana, Alma</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-red-400 font-medium">{isKorean ? '블러디 로즈' : 'Blood Rose'}</p>
+                  <p className="text-muted-foreground">Yu Chan, Licia</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-green-500/30 bg-green-500/5">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg text-green-400">
+                  {isKorean ? 'F2P 균형' : 'F2P Can bang'}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <div className="space-y-1">
+                  <p className="text-muted-foreground">Laura ({isKorean ? '탱크' : 'Tank'}), Amelia, Christina</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground">Sophia, Miranda</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-yellow-500/30 bg-yellow-500/5">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg text-yellow-400">
+                  {isKorean ? '질서의 수호자' : 'Nguoi Bao Ve Trat Tu'}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <div className="space-y-1">
+                  <p className="text-muted-foreground">Amber, Dodemeki, Harleyena</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-muted-foreground">Sakura, Mia</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Chip System Warning */}
+        <section className="space-y-4">
+          <Card className="border-destructive/30 bg-destructive/5">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg flex items-center gap-2 text-destructive">
+                <AlertTriangle className="h-5 w-5" />
+                {isKorean ? '칩 시스템 경고' : 'Canh bao he thong Chip'}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive font-bold">!</span>
+                  <span className="text-muted-foreground">
+                    {isKorean
+                      ? '각 진형마다 별도 칩이 필요합니다.'
+                      : 'Moi doi hinh can chip rieng.'}
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive font-bold">!</span>
+                  <span className="text-muted-foreground">
+                    {isKorean
+                      ? '메인 진영을 칩 도착 전에 결정해야 합니다.'
+                      : 'Phai quyet dinh phe chinh truoc khi nhan chip.'}
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive font-bold">!</span>
+                  <span className="text-muted-foreground">
+                    {isKorean
+                      ? '진영 변경 후 칩 재투자 비용이 매우 높습니다.'
+                      : 'Chi phi tai dau tu chip sau khi doi phe rat cao.'}
+                  </span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   );
