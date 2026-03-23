@@ -80,15 +80,15 @@ export function HeroCard({ hero, compact = false }: HeroCardProps) {
   }
 
   return (
-    <Link href={`/${locale}/heroes/${hero.id}`}>
+    <Link href={`/${locale}/heroes/${hero.id}`} className="h-full">
       <Card
         className={cn(
-          'transition-all hover:scale-[1.02] hover:shadow-lg cursor-pointer border',
+          'transition-all hover:scale-[1.02] hover:shadow-lg cursor-pointer border h-full flex flex-col',
           factionBg[hero.faction]
         )}
       >
-        <CardContent className="p-4">
-          <div className="flex items-start gap-3">
+        <CardContent className="p-4 flex flex-col flex-1">
+          <div className="flex items-start gap-3 flex-1">
             <div
               className={cn(
                 'flex h-12 w-12 items-center justify-center rounded-xl bg-background shrink-0',
@@ -120,7 +120,7 @@ export function HeroCard({ hero, compact = false }: HeroCardProps) {
                   </>
                 )}
               </div>
-              <p className="text-xs text-muted-foreground line-clamp-2">
+              <p className="text-xs text-muted-foreground line-clamp-2 min-h-[2lh]">
                 {hero.notes[locale]}
               </p>
             </div>
@@ -131,7 +131,7 @@ export function HeroCard({ hero, compact = false }: HeroCardProps) {
               {hero.tier}
             </Badge>
           </div>
-          <div className="flex items-center gap-4 mt-3 pt-3 border-t border-border/50 text-xs text-muted-foreground">
+          <div className="flex items-center gap-4 mt-auto pt-3 border-t border-border/50 text-xs text-muted-foreground">
             <span>PvP: {hero.pvpTier}</span>
             <span>PvE: {hero.pveTier}</span>
             <span className="ml-auto">
