@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: locale === 'ko' ? '차량 개조 가이드 | KLZ Guide' : 'Hướng dẫn Cải tiến Xe | KLZ Guide',
     description: locale === 'ko'
-      ? '차량 개조 시스템 완벽 가이드 - 차량 진행, 렌치 비용, 황금렌치 획득법'
-      : 'Hướng dẫn hoàn chỉnh hệ thống cải tiến xe - tiến trình xe, chi phi cờ lê, cách nhận cờ lê vàng',
+      ? '차량 개조 시스템 완벽 가이드 - 차량 진행, 골드렌치 비용, 획득법'
+      : 'Hướng dẫn hoàn chỉnh hệ thống cải tiến xe - tiến trình xe, chi phí cờ lê vàng, cách nhận',
   };
 }
 
@@ -27,97 +27,121 @@ function VehicleModContent({ locale }: { locale: string }) {
 
   const vehicles = [
     {
+      name: isKorean ? '정복자 (Conqueror)' : 'Conqueror',
+      tier: isKorean ? '튜토리얼' : 'Tutorial',
+      color: 'text-gray-400',
+      bg: 'bg-gray-500/10',
+      desc: isKorean ? '튜토리얼 차량. 게임 시작 시 무료 해금' : 'Xe hướng dẫn. Mở khóa miễn phí khi bắt đầu',
+      priority: isKorean ? '시스템 학습용 - 빠르게 통과' : 'Học hệ thống - qua nhanh',
+      unlock: 'Lv.0',
+      wrenchCost: '0',
+    },
+    {
       name: isKorean ? '치타 (Cheetah)' : 'Cheetah',
       tier: isKorean ? '초반' : 'Early',
       color: 'text-green-400',
       bg: 'bg-green-500/10',
-      desc: isKorean ? '기본 차량. 본부(HQ) Lv.5에서 해금' : 'Xe cơ bản. Mở khóa ở HQ Lv.5',
-      priority: isKorean ? '레벨 60까지만 투자' : 'Chỉ đầu tư đến level 60',
+      desc: isKorean ? '장갑 차량. 개조 레벨 45에서 해금' : 'Xe bọc thép. Mở khóa ở Modification Lv.45',
+      priority: isKorean ? '핵심 스킬: 자기폭풍 방패 (Lv.65) - 영웅 방어력 증가' : 'Skill chính: Magnetic Storm Shield (Lv.65) - tăng DEF anh hùng',
+      unlock: 'Lv.45',
+      wrenchCost: '150',
     },
     {
-      name: isKorean ? '헤라클레스 (Hercules)' : 'Hercules',
+      name: isKorean ? '타이탄 (Hercules)' : 'Hercules',
       tier: isKorean ? '중반' : 'Mid',
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
-      desc: isKorean ? '탱크형 차량. 본부(HQ) Lv.12에서 해금' : 'Xe tank. Mở khóa ở HQ Lv.12',
-      priority: isKorean ? '레벨 120까지 주력으로 사용' : 'Dùng chính đến level 120',
+      desc: isKorean ? '탱크형 차량. 개조 레벨 95에서 해금' : 'Xe tank. Mở khóa ở Modification Lv.95',
+      priority: isKorean ? '핵심 스킬: 전쟁 광란 (Lv.105) - 영웅 공격력 증가' : 'Skill chính: War Frenzy (Lv.105) - tăng ATK anh hùng',
+      unlock: 'Lv.95',
+      wrenchCost: '1,670',
     },
     {
-      name: isKorean ? '디스트로이어 (Destroyer)' : 'Destroyer',
+      name: isKorean ? '파괴자 (Destroyer)' : 'Destroyer',
       tier: isKorean ? '후반' : 'Late',
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
-      desc: isKorean ? '공격형 차량. 본부(HQ) Lv.20에서 해금' : 'Xe tấn công. Mở khóa ở HQ Lv.20',
-      priority: isKorean ? '레벨 180 이상 투자 권장' : 'Khuyến nghị đầu tư 180+',
+      desc: isKorean ? '공격형 차량. 개조 레벨 145에서 해금' : 'Xe tấn công. Mở khóa ở Modification Lv.145',
+      priority: isKorean ? '장기 투자 대상 - 높은 골드렌치 요구량' : 'Đầu tư dài hạn - cần nhiều cờ lê vàng',
+      unlock: 'Lv.145',
+      wrenchCost: '10,380',
     },
     {
-      name: isKorean ? '디스트로이어 EX' : 'Destroyer EX',
+      name: isKorean ? '파괴자 EX' : 'Destroyer EX',
       tier: isKorean ? '최종' : 'End',
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
-      desc: isKorean ? '최종 차량. 디스트로이어 Lv.240 달성 후 해금' : 'Xe cuối cùng. Mở khóa sau Destroyer Lv.240',
-      priority: isKorean ? '장기 목표 - 무과금은 6개월+' : 'Mục tiêu dài hạn - F2P 6 tháng+',
+      desc: isKorean ? '최종 차량. 개조 레벨 195에서 해금' : 'Xe cuối cùng. Mở khóa ở Modification Lv.195',
+      priority: isKorean ? '최종 목표 - 무과금은 장기간 소요' : 'Mục tiêu cuối - F2P cần thời gian dài',
+      unlock: 'Lv.195',
+      wrenchCost: '35,240',
     },
   ];
 
-  const wrenchCosts = [
-    { level: '0 -> 30', normal: '450', golden: '0' },
-    { level: '30 -> 60', normal: '1,350', golden: '0' },
-    { level: '60 -> 90', normal: '2,700', golden: '15' },
-    { level: '90 -> 120', normal: '4,500', golden: '45' },
-    { level: '120 -> 150', normal: '6,750', golden: '90' },
-    { level: '150 -> 180', normal: '9,450', golden: '150' },
-    { level: '180 -> 210', normal: '12,600', golden: '225' },
-    { level: '210 -> 240', normal: '16,200', golden: '315' },
+  const modifierTiers = [
+    { tier: isKorean ? '인턴 개조사' : 'Intern Modifier', level: 'Lv.0 ~ 15', cost: isKorean ? '1 골드렌치/레벨' : '1 wrench/level' },
+    { tier: isKorean ? '초보 개조사' : 'Novice Modifier', level: 'Lv.20 ~ 35', cost: isKorean ? '2~4 골드렌치/레벨' : '2-4 wrench/level' },
+    { tier: isKorean ? '베테랑 개조사' : 'Veteran Modifier', level: 'Lv.45 ~ 65', cost: isKorean ? '8~18 골드렌치/레벨' : '8-18 wrench/level' },
+    { tier: isKorean ? '엘리트 개조사' : 'Elite Modifier', level: 'Lv.70 ~ 95', cost: isKorean ? '20~40 골드렌치/레벨' : '20-40 wrench/level' },
+    { tier: isKorean ? '전문 개조사' : 'Expert Modifier', level: 'Lv.100 ~ 135', cost: isKorean ? '45~124 골드렌치/레벨' : '45-124 wrench/level' },
+    { tier: isKorean ? '마스터 이상' : 'Master+', level: 'Lv.140 ~ 240', cost: isKorean ? '124~480 골드렌치/레벨' : '124-480 wrench/level' },
   ];
 
   const goldenSources = [
     {
-      source: isKorean ? '6일 로테이션 (Day 1)' : '6-day Rotation (Day 1)',
-      amount: isKorean ? '매 로테이션 보상' : 'Mỗi vòng xoay',
+      source: isKorean ? '연맹 발굴 (Alliance Digging)' : 'Alliance Digging',
+      amount: isKorean ? '주 30~40개' : '30-40/tuần',
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
-      desc: isKorean ? '6일 로테이션 첫째 날 보상에서 획득' : 'Nhận từ phần thưởng ngày đầu vòng xoay 6 ngày',
+      desc: isKorean ? '연맹 활동으로 꾸준히 획득 — 가장 안정적인 공급원' : 'Nhận đều đặn từ hoạt động liên minh — nguồn ổn định nhất',
+    },
+    {
+      source: isKorean ? '좀비공성 (Zombie Siege)' : 'Zombie Siege',
+      amount: isKorean ? '주 ~12개' : '~12/tuần',
+      color: 'text-red-400',
+      bg: 'bg-red-500/10',
+      desc: isKorean ? '주간 좀비공성 완료 보상으로 획득' : 'Nhận từ hoàn thành Zombie Siege hàng tuần',
+    },
+    {
+      source: isKorean ? '특권상점 (VIP Store, Lv.5+)' : 'VIP Store (Lv.5+)',
+      amount: isKorean ? '주 10개' : '10/tuần',
+      color: 'text-purple-400',
+      bg: 'bg-purple-500/10',
+      desc: isKorean ? 'VIP 레벨 5 이상에서 매주 구매 가능' : 'Mua hàng tuần từ VIP level 5+',
+    },
+    {
+      source: isKorean ? '영광상점 (Glory Store)' : 'Glory Store',
+      amount: isKorean ? '주 5개' : '5/tuần',
+      color: 'text-blue-400',
+      bg: 'bg-blue-500/10',
+      desc: isKorean ? '영광 포인트로 매주 구매 가능' : 'Mua hàng tuần bằng Glory Points',
     },
     {
       source: isKorean ? '가챠 고 이벤트' : 'Gacha Go Event',
-      amount: isKorean ? '이벤트 보상' : 'Phần thưởng event',
-      color: 'text-purple-400',
-      bg: 'bg-purple-500/10',
-      desc: isKorean ? '가챠 고 마일스톤 보상에서 획득 가능' : 'Nhận từ mốc thưởng Gacha Go',
-    },
-    {
-      source: isKorean ? '특별 이벤트/패키지' : 'Special Events/Packages',
-      amount: isKorean ? '비정기' : 'Không cố định',
-      color: 'text-blue-400',
-      bg: 'bg-blue-500/10',
-      desc: isKorean ? '시즌 이벤트, 특별 패키지에서 소량 획득' : 'Nhận ít từ event mùa, gói đặc biệt',
+      amount: isKorean ? '이벤트 보상 (120개 상자)' : 'Event (hộp 120)',
+      color: 'text-orange-400',
+      bg: 'bg-orange-500/10',
+      desc: isKorean ? '가챠 고 마일스톤 보상에서 획득 — 대량 확보 기회' : 'Nhận từ mốc thưởng Gacha Go — cơ hội lấy nhiều',
     },
     {
       source: isKorean ? '전면전비 (차량 개조 테마)' : 'Full Prep (Vehicle Mod Theme)',
       amount: isKorean ? '테마 보상' : 'Thưởng theme',
-      color: 'text-orange-400',
-      bg: 'bg-orange-500/10',
+      color: 'text-green-400',
+      bg: 'bg-green-500/10',
       desc: isKorean ? '차량 개조 테마 순위 보상에서 획득 가능' : 'Nhận từ xếp hạng theme cải tiến xe',
     },
   ];
 
   const tips = [
     isKorean
-      ? '차량 개조는 CP 상승폭이 크므로 매일 렌치를 꾸준히 모으세요'
-      : 'Cải tiến xe tăng CP nhiều nên hãy tích cờ lê mỗi ngày',
+      ? '차량 개조는 CP 상승폭이 크므로 매일 골드렌치를 꾸준히 모으세요 (월 300개 이상 가능)'
+      : 'Cải tiến xe tăng CP nhiều nên hãy tích cờ lê vàng mỗi ngày (300+/tháng)',
     isKorean
-      ? '황금렌치는 절대 낭비하지 마세요 - 레벨 60 이상부터 필요합니다'
-      : 'Đừng lãng phí cờ lê vàng - cần từ level 60 trở lên',
+      ? '전문 개조사(Expert Modifier)는 타이탄 완료 후 해금 — 경험치 2배 부스트 (30분, 100회 업그레이드). 개조도면 약 150,000장 미리 준비하세요'
+      : 'Expert Modifier mở khóa sau Hercules — boost EXP x2 (30 phút, 100 nâng cấp). Chuẩn bị ~150,000 blueprint',
     isKorean
-      ? '전문 개조사(Expert Modifier)를 반드시 활용하세요 - 렌치 효율 30% 증가'
-      : 'Nhất định phải dùng Expert Modifier - tăng hiệu quả cờ lê 30%',
-    isKorean
-      ? '치타에 과투자하지 마세요 - 헤라클레스로 빨리 넘어가는 것이 효율적'
-      : 'Đừng đầu tư quá vào Cheetah - chuyển sang Hercules nhanh hơn hiệu quả hơn',
-    isKorean
-      ? '고급 개조 면허(Advanced Mod License)는 황금렌치 소모를 줄여줍니다'
-      : 'Advanced Mod License giảm tiêu thụ cờ lê vàng',
+      ? '치타에 과투자하지 마세요 — 타이탄으로 빨리 넘어가는 것이 효율적'
+      : 'Đừng đầu tư quá vào Cheetah — chuyển sang Hercules nhanh hơn hiệu quả hơn',
     isKorean
       ? '전면전비 차량 개조 테마 때 좀비/거대좀비 처치로 포인트를 빠르게 쌓으세요'
       : 'Khi theme cải tiến xe Full Prep, kill zombie/giant zombie để tích điểm nhanh',
@@ -143,20 +167,20 @@ function VehicleModContent({ locale }: { locale: string }) {
           </h1>
           <p className="text-muted-foreground">
             {isKorean
-              ? '차량 개조 시스템의 모든 것 - 차량 선택부터 렌치 관리, 황금렌치 획득법까지 완벽 정리'
-              : 'Tất cả về hệ thống cải tiến xe - từ chọn xe đến quản lý cờ lê và cách nhận cờ lê vàng'}
+              ? '차량 개조 시스템의 모든 것 — 차량 진행, 골드렌치 비용, 획득법까지 완벽 정리'
+              : 'Tất cả về hệ thống cải tiến xe — tiến trình xe, chi phí cờ lê vàng, cách nhận'}
           </p>
         </div>
 
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tom tat'}</h2>
+            <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '차량 진행: 치타 -> 헤라클레스 -> 디스트로이어 -> 디스트로이어 EX' : 'Tiến trình xe: Cheetah -> Hercules -> Destroyer -> Destroyer EX'}</li>
-              <li>• {isKorean ? '전문 개조사 필수 사용 - 렌치 효율 30% 증가' : 'Bắt buộc dùng Expert Modifier - tăng hiệu quả cờ lê 30%'}</li>
-              <li>• {isKorean ? '황금렌치는 레벨 60 이상부터 필요 - 미리 모아두세요' : 'Cờ lê vàng cần từ level 60+ - hãy tích trước'}</li>
-              <li>• {isKorean ? '6일 로테이션 Day 1이 황금렌치의 주요 공급원' : '6-day Rotation Day 1 là nguồn cờ lê vàng chính'}</li>
+              <li>• {isKorean ? '차량 진행: 정복자 → 치타 → 타이탄 → 파괴자 → 파괴자 EX' : 'Tiến trình xe: Conqueror → Cheetah → Hercules → Destroyer → Destroyer EX'}</li>
+              <li>• {isKorean ? '총 골드렌치 필요량: Lv.0 → 240 = 약 70,640개' : 'Tổng cờ lê vàng cần: Lv.0 → 240 = ~70,640'}</li>
+              <li>• {isKorean ? '전문 개조사(Expert Modifier): 타이탄 완료 후 해금 — 경험치 2배 부스트' : 'Expert Modifier: mở sau Hercules — boost EXP x2'}</li>
+              <li>• {isKorean ? '고급 개조 면허: 개조도면 절약 (골드렌치는 절약 안 됨)' : 'Advanced Mod License: tiết kiệm blueprint (KHÔNG giảm cờ lê vàng)'}</li>
             </ul>
           </CardContent>
         </Card>
@@ -167,7 +191,7 @@ function VehicleModContent({ locale }: { locale: string }) {
             <ArrowRight className="h-6 w-6 text-highlight" />
             {isKorean ? '차량 진행 단계' : 'Tiến trình Xe'}
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {vehicles.map((vehicle, idx) => (
               <Card key={idx} className={`${vehicle.bg} border-none`}>
                 <CardContent className="p-4">
@@ -178,10 +202,16 @@ function VehicleModContent({ locale }: { locale: string }) {
                     </Badge>
                   </div>
                   <p className="text-sm text-muted-foreground mb-2">{vehicle.desc}</p>
-                  <div className="flex items-center gap-2 mt-3 pt-3 border-t border-white/10">
-                    <Star className={`h-4 w-4 ${vehicle.color}`} />
-                    <span className="text-xs text-muted-foreground">{vehicle.priority}</span>
+                  <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/10">
+                    <div className="flex items-center gap-2">
+                      <Star className={`h-4 w-4 ${vehicle.color}`} />
+                      <span className="text-xs text-muted-foreground">{vehicle.unlock}</span>
+                    </div>
+                    <span className="text-xs font-mono text-yellow-400">
+                      🔧 {vehicle.wrenchCost}
+                    </span>
                   </div>
+                  <p className="text-xs text-muted-foreground mt-2">{vehicle.priority}</p>
                 </CardContent>
               </Card>
             ))}
@@ -192,7 +222,7 @@ function VehicleModContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Wrench className="h-6 w-6 text-orange-400" />
-            {isKorean ? '레벨 구간별 렌치 비용' : 'Chi phi co le theo cap do'}
+            {isKorean ? '개조 등급별 골드렌치 비용' : 'Chi phí cờ lê vàng theo cấp'}
           </h2>
           <Card>
             <CardContent className="p-4">
@@ -201,32 +231,35 @@ function VehicleModContent({ locale }: { locale: string }) {
                   <thead>
                     <tr className="border-b border-border">
                       <th className="text-left py-2 px-3 text-muted-foreground font-medium">
-                        {isKorean ? '레벨 구간' : 'Khoang level'}
+                        {isKorean ? '개조 등급' : 'Cấp cải tiến'}
+                      </th>
+                      <th className="text-center py-2 px-3 text-muted-foreground font-medium">
+                        {isKorean ? '레벨 범위' : 'Khoảng level'}
                       </th>
                       <th className="text-right py-2 px-3 text-muted-foreground font-medium">
-                        {isKorean ? '일반 렌치' : 'Co le thuong'}
-                      </th>
-                      <th className="text-right py-2 px-3 text-muted-foreground font-medium">
-                        {isKorean ? '황금렌치' : 'Co le vang'}
+                        {isKorean ? '골드렌치/레벨' : 'Wrench/level'}
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {wrenchCosts.map((row, idx) => (
+                    {modifierTiers.map((row, idx) => (
                       <tr key={idx} className="border-b border-border/50">
-                        <td className="py-2 px-3 font-mono">{row.level}</td>
-                        <td className="py-2 px-3 text-right font-mono text-orange-400">{row.normal}</td>
-                        <td className="py-2 px-3 text-right font-mono text-yellow-400">{row.golden}</td>
+                        <td className="py-2 px-3">{row.tier}</td>
+                        <td className="py-2 px-3 text-center font-mono text-muted-foreground">{row.level}</td>
+                        <td className="py-2 px-3 text-right font-mono text-yellow-400">{row.cost}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-muted-foreground mt-3 text-center">
-                {isKorean
-                  ? '* 전문 개조사 미사용 기준. 전문 개조사 사용 시 약 30% 절감'
-                  : '* Chua tinh Expert Modifier. Dung Expert Modifier giam ~30%'}
-              </p>
+              <div className="mt-4 p-3 rounded-lg bg-secondary/30 text-xs text-muted-foreground space-y-1">
+                <p>{isKorean ? '* 차량 해금 마일스톤 (누적 골드렌치):' : '* Vehicle unlock milestones (cumulative wrenches):'}</p>
+                <p className="font-mono">
+                  {isKorean
+                    ? '치타 Lv.45 = 150개 → 타이탄 Lv.95 = 1,670개 → 파괴자 Lv.145 = 10,380개 → 파괴자 EX Lv.195 = 35,240개 → 최종 Lv.240 = 70,640개'
+                    : 'Cheetah Lv.45 = 150 → Hercules Lv.95 = 1,670 → Destroyer Lv.145 = 10,380 → Destroyer EX Lv.195 = 35,240 → Final Lv.240 = 70,640'}
+                </p>
+              </div>
             </CardContent>
           </Card>
         </section>
@@ -242,17 +275,21 @@ function VehicleModContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-sm text-muted-foreground mb-2">
                   {isKorean
-                    ? '차량 개조 시 전문 개조사를 사용하면 렌치 소모가 약 30% 감소합니다. 항상 전문 개조사를 활성화한 상태에서 개조하세요.'
-                    : 'Khi cai tien xe, dung Expert Modifier giam ~30% co le. Luon bat Expert Modifier truoc khi cai tien.'}
+                    ? '타이탄(Hercules) 업그레이드 완료 후 해금되는 시간제한 부스트입니다. 활성화 시 30분간 (최대 100회 업그레이드) 경험치가 2배로 적용됩니다. 사용 전 개조도면(Blueprint)을 약 150,000장 이상 준비하세요. 준비 기준: 현재 업그레이드 비용 × 130.'
+                    : 'Boost có thời hạn, mở khóa sau khi hoàn thành Hercules. Kích hoạt: EXP x2 trong 30 phút (tối đa 100 nâng cấp). Chuẩn bị ~150,000 blueprint trước khi dùng. Công thức: chi phí nâng cấp hiện tại × 130.'}
                 </p>
-                <div className="grid gap-2 sm:grid-cols-2 mt-3">
-                  <div className="p-3 rounded-lg bg-green-500/10 text-center">
-                    <p className="text-green-400 font-bold">{isKorean ? '사용 O' : 'Co dung'}</p>
-                    <p className="text-xs text-muted-foreground">{isKorean ? '렌치 비용 ~30% 절감' : 'Giam ~30% co le'}</p>
+                <div className="grid gap-2 sm:grid-cols-3 mt-3">
+                  <div className="p-3 rounded-lg bg-blue-500/10 text-center">
+                    <p className="text-blue-400 font-bold">{isKorean ? '해금 조건' : 'Điều kiện'}</p>
+                    <p className="text-xs text-muted-foreground">{isKorean ? '타이탄 완료' : 'Hoàn thành Hercules'}</p>
                   </div>
-                  <div className="p-3 rounded-lg bg-red-500/10 text-center">
-                    <p className="text-red-400 font-bold">{isKorean ? '사용 X' : 'Khong dung'}</p>
-                    <p className="text-xs text-muted-foreground">{isKorean ? '렌치 낭비 - 절대 금지!' : 'Lang phi co le - KHONG!'}</p>
+                  <div className="p-3 rounded-lg bg-green-500/10 text-center">
+                    <p className="text-green-400 font-bold">{isKorean ? '효과' : 'Hiệu ứng'}</p>
+                    <p className="text-xs text-muted-foreground">{isKorean ? '경험치 2배 (30분)' : 'EXP x2 (30 phút)'}</p>
+                  </div>
+                  <div className="p-3 rounded-lg bg-orange-500/10 text-center">
+                    <p className="text-orange-400 font-bold">{isKorean ? '준비물' : 'Chuẩn bị'}</p>
+                    <p className="text-xs text-muted-foreground">{isKorean ? '개조도면 ~150,000장' : '~150,000 blueprint'}</p>
                   </div>
                 </div>
               </div>
@@ -271,9 +308,17 @@ function VehicleModContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
-                    ? '고급 개조 면허는 황금렌치의 소모량을 줄여줍니다. 장기적으로 큰 절약 효과가 있으므로 가능한 빨리 획득하세요. 높은 레벨 구간에서는 황금렌치가 대량으로 필요하기 때문에 면허의 가치가 더욱 커집니다.'
-                    : 'Advanced Mod License giam luong co le vang tieu thu. Tiet kiem lon ve lau dai nen hay lay som nhat co the. O cap do cao can nhieu co le vang nen gia tri cua license cang lon.'}
+                    ? '개조도면(Blueprint) 소모량을 줄여줍니다. 초반에는 수천 장, 후반에는 수십만 장의 개조도면을 절약할 수 있습니다. 가능한 빨리 획득하세요.'
+                    : 'Giảm tiêu thụ blueprint. Tiết kiệm hàng ngàn lúc đầu, hàng trăm ngàn lúc sau. Hãy lấy sớm nhất có thể.'}
                 </p>
+                <div className="mt-3 p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-xs text-amber-400 flex items-start gap-2">
+                  <AlertTriangle className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+                  <span>
+                    {isKorean
+                      ? '주의: 개조도면만 절약됩니다. 골드렌치 소모는 줄어들지 않습니다!'
+                      : 'Chú ý: Chỉ tiết kiệm blueprint. KHÔNG giảm cờ lê vàng!'}
+                  </span>
+                </div>
               </div>
             </div>
           </CardContent>
@@ -283,9 +328,9 @@ function VehicleModContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <RotateCw className="h-6 w-6 text-yellow-400" />
-            {isKorean ? '황금렌치 획득처' : 'Nguon co le vang'}
+            {isKorean ? '골드렌치 획득처 (월 300개 이상)' : 'Nguồn cờ lê vàng (300+/tháng)'}
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {goldenSources.map((source, idx) => (
               <Card key={idx} className={`${source.bg} border-none`}>
                 <CardContent className="p-4">
@@ -309,12 +354,12 @@ function VehicleModContent({ locale }: { locale: string }) {
               <AlertTriangle className="h-6 w-6 text-destructive shrink-0" />
               <div>
                 <p className="font-semibold text-destructive mb-1">
-                  {isKorean ? '주의사항' : 'Luu y'}
+                  {isKorean ? '주의사항' : 'Lưu ý'}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? '전문 개조사 없이 개조하지 마세요 - 렌치 30% 손해' : 'Khong cai tien ma khong co Expert Modifier - mat 30% co le'}</li>
-                  <li>• {isKorean ? '치타에 렌치를 과투자하면 나중에 후회합니다' : 'Dau tu qua vao Cheetah se hoi han sau nay'}</li>
-                  <li>• {isKorean ? '황금렌치를 함부로 쓰지 마세요 - 후반 구간에서 대량 필요' : 'Dung lang phi co le vang - can nhieu o cap do cao'}</li>
+                  <li>• {isKorean ? '전문 개조사 없이 개조하지 마세요 — 개조도면 150,000장 이상을 준비한 뒤 사용하세요' : 'Đừng cải tiến khi chưa có Expert Modifier — chuẩn bị 150,000+ blueprint'}</li>
+                  <li>• {isKorean ? '치타에 골드렌치를 과투자하면 나중에 후회합니다 — 타이탄 해금에 집중' : 'Đầu tư quá vào Cheetah sẽ hối hận — tập trung mở Hercules'}</li>
+                  <li>• {isKorean ? '고급 개조 면허는 골드렌치를 절약하지 않습니다 — 개조도면만 절약!' : 'Advanced Mod License KHÔNG tiết kiệm cờ lê vàng — chỉ blueprint!'}</li>
                 </ul>
               </div>
             </div>
@@ -323,7 +368,7 @@ function VehicleModContent({ locale }: { locale: string }) {
 
         {/* Tips */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold">{isKorean ? '팁' : 'Meo'}</h2>
+          <h2 className="text-2xl font-bold">{isKorean ? '팁' : 'Mẹo'}</h2>
           <div className="grid gap-3">
             {tips.map((tip, idx) => (
               <div key={idx} className="info-tip flex gap-3">

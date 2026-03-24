@@ -58,9 +58,10 @@ const CLASS_NAMES: Record<string, { ko: string; vi: string }> = {
 };
 
 const SKILL_TYPE_COLORS: Record<string, string> = {
-  active: 'bg-blue-500/20 text-blue-400',
-  passive: 'bg-green-500/20 text-green-400',
-  global: 'bg-purple-500/20 text-purple-400',
+  normal: 'bg-gray-500/20 text-gray-400',
+  active: 'bg-red-500/20 text-red-400',
+  deployment: 'bg-green-500/20 text-green-400',
+  potential: 'bg-purple-500/20 text-purple-400',
 };
 
 function getTierRank(tier: string): number {

@@ -5,7 +5,7 @@ export interface LocalizedString {
 
 export interface HeroSkill {
   name: LocalizedString;
-  type: 'active' | 'passive' | 'global';
+  type: 'normal' | 'active' | 'deployment' | 'potential';
   description: LocalizedString;
 }
 

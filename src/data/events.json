@@ -5,8 +5,8 @@
         "day": 1,
         "theme": "modification",
         "name": { "ko": "수정의 날", "vi": "Ngày Cải tiến" },
-        "description": { "ko": "황금렌치, 차량 개조 도면, 개조 부품 상자 획득", "vi": "Nhận Cờ lê vàng, Bản vẽ cải tiến xe, Hộp linh kiện" },
-        "primaryRewards": { "ko": "황금렌치, 개조 도면, 부품 상자", "vi": "Cờ lê vàng, Bản vẽ cải tiến, Hộp linh kiện" }
+        "description": { "ko": "골드렌치, 차량 개조 도면, 개조 부품 상자 획득", "vi": "Nhận Cờ lê vàng, Bản vẽ cải tiến xe, Hộp linh kiện" },
+        "primaryRewards": { "ko": "골드렌치, 개조 도면, 부품 상자", "vi": "Cờ lê vàng, Bản vẽ cải tiến, Hộp linh kiện" }
       },
       {
         "day": 2,

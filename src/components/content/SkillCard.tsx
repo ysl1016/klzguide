@@ -2,27 +2,32 @@
 
 import { useLocale } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
-import { Zap, Eye, Globe } from 'lucide-react';
+import { Sword, Zap, Globe, Star } from 'lucide-react';
 import type { HeroSkill } from '@/types/hero';
 
 const skillTypeConfig: Record<
   string,
   { icon: React.ElementType; label: { ko: string; vi: string }; color: string }
 > = {
+  normal: {
+    icon: Sword,
+    label: { ko: '일반공격', vi: 'Tấn công thường' },
+    color: 'bg-gray-500/20 text-gray-400 border-gray-500/30',
+  },
   active: {
     icon: Zap,
     label: { ko: '액티브', vi: 'Chủ động' },
     color: 'bg-red-500/20 text-red-400 border-red-500/30',
   },
-  passive: {
-    icon: Eye,
-    label: { ko: '패시브', vi: 'Bị động' },
-    color: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  },
-  global: {
+  deployment: {
     icon: Globe,
-    label: { ko: '글로벌', vi: 'Toàn cục' },
+    label: { ko: '전체효력', vi: 'Hiệu lực toàn bộ' },
     color: 'bg-green-500/20 text-green-400 border-green-500/30',
+  },
+  potential: {
+    icon: Star,
+    label: { ko: '전속 포텐셜', vi: 'Tiềm năng chuyên thuộc' },
+    color: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
   },
 };
 

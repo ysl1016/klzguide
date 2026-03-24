@@ -158,8 +158,8 @@ export default function CPCalculatorPage() {
         ? '차량 레벨, 개조, 부품에서 발생'
         : 'Từ level xe, cải tạo, linh kiện',
       howToIncrease: isKorean
-        ? '부품 레벨 100+ 목표, Hercules 우선'
-        : 'Mục tiêu linh kiện level 100+, ưu tiên Hercules',
+        ? '부품 레벨 100+ 목표, 타이탄(Titan) 우선'
+        : 'Mục tiêu linh kiện level 100+, ưu tiên Titan',
       idealRange: '5-10%',
     },
   ];

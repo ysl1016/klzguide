@@ -307,7 +307,7 @@ function CombatPowerContent({ locale }: { locale: string }) {
           <CardContent>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="p-4 rounded-lg bg-orange-500/10 border border-orange-500/30">
-                <p className="font-semibold text-orange-400">Hercules</p>
+                <p className="font-semibold text-orange-400">{isKorean ? '타이탄 (Titan)' : 'Titan'}</p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
                     ? 'F2P/캐주얼 플레이어 최우선 목표. 빠르게 획득 가능하며 효율적입니다.'
@@ -315,7 +315,7 @@ function CombatPowerContent({ locale }: { locale: string }) {
                 </p>
               </div>
               <div className="p-4 rounded-lg bg-muted/30">
-                <p className="font-semibold">Destroyer+</p>
+                <p className="font-semibold">{isKorean ? '파괴자 (Destroyer)+' : 'Destroyer+'}</p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
                     ? '과금 플레이어용. 더 높은 성능을 제공하지만 투자 필요.'

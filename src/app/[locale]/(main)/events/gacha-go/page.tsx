@@ -51,25 +51,25 @@ function GachaGoContent({ locale }: { locale: string }) {
     {
       points: '5,000',
       rewards: isKorean
-        ? '황금렌치 + 보너스 아이템'
+        ? '골드렌치 + 보너스 아이템'
         : 'Golden Wrench + bonus items',
     },
     {
       points: '8,000',
       rewards: isKorean
-        ? '황금렌치 15개, 개조 청사진, 기프트 바우처'
+        ? '골드렌치 15개, 개조 청사진, 기프트 바우처'
         : '15 Golden Wrench, Blueprint, Gift Voucher',
     },
     {
       points: '10,000+',
       rewards: isKorean
-        ? '추가 황금렌치 및 희귀 아이템'
+        ? '추가 골드렌치 및 희귀 아이템'
         : 'Thêm Golden Wrench và item hiếm',
     },
   ];
 
   const rewards = [
-    { name: isKorean ? '황금렌치' : 'Golden Wrench', desc: isKorean ? '최고 보상 - 프리미엄 차량 개조용' : 'Thưởng tốt nhất - cải tạo xe cao cấp', rarity: 'legendary' },
+    { name: isKorean ? '골드렌치' : 'Golden Wrench', desc: isKorean ? '최고 보상 - 프리미엄 차량 개조용' : 'Thưởng tốt nhất - cải tạo xe cao cấp', rarity: 'legendary' },
     { name: isKorean ? '키 (Key)' : 'Key', desc: isKorean ? '렌치 교환용 - 300개 모으기 권장' : 'Đổi lấy cờ lê - nên tích 300', rarity: 'epic' },
     { name: isKorean ? '개조 청사진' : 'Modification Blueprint', desc: isKorean ? '차량 개조 재료' : 'Nguyên liệu cải tạo xe', rarity: 'epic' },
     { name: isKorean ? '기프트 박스' : 'Gift Box', desc: isKorean ? '다양한 보상 포함' : 'Chứa nhiều phần thưởng', rarity: 'rare' },
@@ -109,7 +109,7 @@ function GachaGoContent({ locale }: { locale: string }) {
       ? '300키 → 70렌치 교환이 가장 효율적 (키당 4.3개)'
       : '300 key → 70 cờ lê hiệu quả nhất (4.3 key/cờ lê)',
     isKorean
-      ? '황금렌치와 마일스톤 보상이 주 목적 - 순수 렌치만 원하면 VIP 상점 이용'
+      ? '골드렌치와 마일스톤 보상이 주 목적 - 순수 렌치만 원하면 VIP 상점 이용'
       : 'Mục tiêu chính là Golden Wrench và milestone - chỉ muốn cờ lê thì dùng VIP shop',
     isKorean
       ? '마일스톤 보상이 핵심 - 예산에 맞는 마일스톤 목표 설정'
@@ -139,7 +139,7 @@ function GachaGoContent({ locale }: { locale: string }) {
           </h1>
           <p className="text-muted-foreground">
             {isKorean
-              ? '다이아몬드로 참여하는 뽑기 이벤트입니다. 키를 모아 렌치로 교환하고, 마일스톤 보상으로 황금렌치를 획득하세요.'
+              ? '다이아몬드로 참여하는 뽑기 이벤트입니다. 키를 모아 렌치로 교환하고, 마일스톤 보상으로 골드렌치를 획득하세요.'
               : 'Sự kiện quay thưởng bằng diamond. Tích key để đổi cờ lê, lấy Golden Wrench từ thưởng milestone.'}
           </p>
         </div>
@@ -167,7 +167,7 @@ function GachaGoContent({ locale }: { locale: string }) {
               </li>
               <li className="flex items-baseline gap-2">
                 <span className="text-primary">•</span>
-                <span>{isKorean ? '마일스톤 포인트로 황금렌치 추가 획득' : 'Nhận thêm Golden Wrench từ điểm milestone'}</span>
+                <span>{isKorean ? '마일스톤 포인트로 골드렌치 추가 획득' : 'Nhận thêm Golden Wrench từ điểm milestone'}</span>
               </li>
             </ul>
           </CardContent>
@@ -373,11 +373,11 @@ function GachaGoContent({ locale }: { locale: string }) {
               <Wrench className="h-6 w-6 text-yellow-400 shrink-0" />
               <div>
                 <p className="font-semibold text-yellow-400 mb-1">
-                  {isKorean ? '황금렌치 (Golden Wrench)' : 'Golden Wrench'}
+                  {isKorean ? '골드렌치 (Golden Wrench)' : 'Golden Wrench'}
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
-                    ? '행운의 흔들기에서 획득 가능한 최고 보상입니다. 프리미엄 차량 개조에 사용되며, 일반 렌치로는 할 수 없는 고급 업그레이드가 가능합니다. 마일스톤 보상에서 확정적으로 획득할 수 있으며, 뽑기에서 직접 나오기도 합니다.'
+                    ? '행운의 흔들기에서 획득 가능한 최고 보상입니다. 프리미엄 차량 개조에 사용되며, 개조도면로는 할 수 없는 고급 업그레이드가 가능합니다. 마일스톤 보상에서 확정적으로 획득할 수 있으며, 뽑기에서 직접 나오기도 합니다.'
                     : 'Phần thưởng tốt nhất trong Lucky Shake. Dùng để cải tạo xe cao cấp, có thể nâng cấp mà cờ lê thường không làm được. Có thể nhận chắc chắn từ thưởng milestone, cũng có thể rơi trực tiếp khi quay.'}
                 </p>
               </div>
@@ -396,7 +396,7 @@ function GachaGoContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
-                    ? '행운의 흔들기는 황금렌치와 마일스톤 보상 획득이 주 목적입니다. VIP 상점에서는 300 다이아에 일반 렌치 구매가 가능하므로, 순수 렌치 획득 목적이라면 VIP 상점을 이용하세요. 행운의 흔들기는 황금렌치가 필요할 때 참여하는 것이 효율적입니다.'
+                    ? '행운의 흔들기는 골드렌치와 마일스톤 보상 획득이 주 목적입니다. VIP 상점에서는 300 다이아에 개조도면 구매가 가능하므로, 순수 렌치 획득 목적이라면 VIP 상점을 이용하세요. 행운의 흔들기는 골드렌치가 필요할 때 참여하는 것이 효율적입니다.'
                     : 'Lucky Shake chủ yếu để lấy Golden Wrench và thưởng milestone. VIP shop bán 300 diamond/cờ lê thường, nếu chỉ muốn cờ lê thì dùng VIP shop. Tham gia Lucky Shake khi cần Golden Wrench.'}
                 </p>
               </div>

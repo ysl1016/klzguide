@@ -27,7 +27,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
       buy: [
-        isKorean ? '황금렌치' : 'Golden Wrenches',
+        isKorean ? '골드렌치' : 'Golden Wrenches',
         isKorean ? '할인 가속' : 'Discounted Speedups',
       ],
       skip: [
@@ -42,7 +42,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       bg: 'bg-purple-500/10',
       buy: [
         isKorean ? '주황 영웅 조각' : 'Orange Hero Fragments',
-        isKorean ? '황금렌치 (주 5개)' : 'Golden Wrenches (5/week)',
+        isKorean ? '골드렌치 (주 5개)' : 'Golden Wrenches (5/week)',
         isKorean ? '장비 프레임워크 조각' : 'Equipment Framework Fragments',
       ],
       skip: [
@@ -165,7 +165,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       ? '럭키 할인 90%에서 경찰휘장 구매 = 특권상점 대비 5배 효율'
       : 'Buying badges at 90% Lucky Discounter = 5x value vs VIP Shop',
     isKorean
-      ? '이벤트 일정에 맞춰 구매 - 황금렌치는 차량 개조 테마 때'
+      ? '이벤트 일정에 맞춰 구매 - 골드렌치는 차량 개조 테마 때'
       : 'Match purchases with events - Golden Wrenches during Vehicle Boost',
     isKorean
       ? '에너지코어는 이벤트로 주 150-250개 획득 가능 - 직접 구매 불필요'

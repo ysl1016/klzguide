@@ -176,7 +176,7 @@
       "ko": "차량 개조",
       "vi": "Cải tiến xe",
       "definition": {
-        "ko": "황금렌치를 사용하여 차량 부품을 업그레이드하는 시스템입니다.",
+        "ko": "골드렌치를 사용하여 차량 부품을 업그레이드하는 시스템입니다.",
         "vi": "Hệ thống nâng cấp linh kiện xe bằng Cờ lê vàng."
       }
     },
@@ -223,7 +223,7 @@
     {
       "en": "Golden Wrench",
       "abbr": null,
-      "ko": "황금렌치",
+      "ko": "골드렌치",
       "vi": "Cờ lê vàng",
       "definition": {
         "ko": "차량 개조에 사용되는 핵심 재료입니다.",
