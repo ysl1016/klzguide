@@ -25,7 +25,8 @@
         "전면전비 테마 스케줄: 요일별 6주기 테마 순서 적용 (기존 고정 순서 → 실제 게임 스케줄)",
         "리딤 코드 페이지 수정: 공유 데이터 소스(redeem-codes.json) 연동, 코드 최신화, 사용법 수정 (last-z.com/giftCenter)",
         "리딤 코드 자동 갱신: GitHub Actions 매일 크론 (ldshop.gg + lootbar.gg 스크래핑, 실패 시 Issue 자동 생성)",
-        "용어 추가: 영웅 이니셔티브→영웅육성"
+        "용어 추가: 영웅 이니셔티브→영웅육성",
+        "오늘의 이벤트 카드 레이아웃 개선: 뱃지+카운트다운 한 줄 표시, 컴팩트 시간 포맷 (Nh Nm)"
       ],
       "vi": [
         "Đại tu hệ thống skill anh hùng: 3 slot → 4 slot (normal/active/deployment/potential)",
@@ -47,7 +48,8 @@
         "Lịch Full Prep: áp dụng thứ tự theme theo ngày trong tuần",
         "Sửa trang mã đổi thưởng: kết nối nguồn dữ liệu chung, cập nhật mã mới",
         "Tự động cập nhật mã đổi thưởng: GitHub Actions cron hàng ngày",
-        "Đổi thuật ngữ: Hero Initiative → 영웅육성"
+        "Đổi thuật ngữ: Hero Initiative → 영웅육성",
+        "Cải thiện layout card sự kiện: badge + đếm ngược 1 dòng, format thời gian gọn (Nh Nm)"
       ]
     }
   },
