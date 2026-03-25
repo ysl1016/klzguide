@@ -92,7 +92,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
     {
       day: 4,
       dayName: isKorean ? '목요일' : 'Thứ năm',
-      name: isKorean ? '영웅 이니셔티브' : 'Hero Initiative',
+      name: isKorean ? '영웅육성' : 'Hero Initiative',
       nameEn: 'Hero Initiative',
       icon: Users,
       color: 'text-yellow-400',

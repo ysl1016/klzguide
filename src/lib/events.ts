@@ -1,5 +1,6 @@
 import eventsData from '@/data/events.json';
 import type { EventData, DayRotation } from '@/types/event';
+import { getRotationDay } from '@/lib/game-time';
 
 const data = eventsData as EventData;
 
@@ -24,12 +25,8 @@ export function getHotEventRotation(): string[] {
 }
 
 export function getTodayRotation(): DayRotation | undefined {
-  const dayOfYear = Math.floor(
-    (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) /
-      (1000 * 60 * 60 * 24)
-  );
-  const rotationIndex = (dayOfYear - 1) % 6;
-  return data.schedule.sixDayRotation[rotationIndex];
+  const day = getRotationDay();
+  return data.schedule.sixDayRotation[day - 1];
 }
 
 export function getEventsLastUpdated(): string {

@@ -52,7 +52,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
     },
     {
       theme: 3,
-      name: isKorean ? '영웅 이니셔티브' : 'Hero Initiative',
+      name: isKorean ? '영웅육성' : 'Hero Initiative',
       nameEn: 'Hero Initiative',
       tasks: isKorean
         ? ['영웅 업그레이드', '영웅 조각 사용', '모집권 사용', '이 날을 위해 조각/티켓 저장!']
@@ -115,7 +115,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       priority: 'high',
     },
     {
-      task: isKorean ? '히어로 이니셔티브 / 모드 차량 부스트 (거의 무료)' : 'Hero Initiative / Mod Vehicle Boost (gần như miễn phí)',
+      task: isKorean ? '영웅육성 / 모드 차량 부스트 (거의 무료)' : 'Hero Initiative / Mod Vehicle Boost (gần như miễn phí)',
       priority: 'medium',
     },
     {
@@ -358,7 +358,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
             </p>
             <p className="text-sm text-muted-foreground">
               {isKorean
-                ? '매일 3개 임무만 완료하면 모든 공훈상자를 열 수 있습니다. 히어로 이니셔티브와 모드 차량 부스트는 거의 무료로 기여 가능합니다.'
+                ? '매일 3개 임무만 완료하면 모든 공훈상자를 열 수 있습니다. 영웅육성와 모드 차량 부스트는 거의 무료로 기여 가능합니다.'
                 : 'Chỉ cần hoàn thành 3 nhiệm vụ mỗi ngày để mở tất cả hộp Merit. Hero Initiative và Mod Vehicle Boost có thể đóng góp gần như miễn phí.'}
             </p>
           </div>

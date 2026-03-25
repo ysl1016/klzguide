@@ -7,6 +7,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, ChevronRight, Clock } from 'lucide-react';
 import type { DayRotation, FullPrepTheme } from '@/types/event';
+import {
+  getRotationDay,
+  getCurrentFullPrepThemeIndex,
+  getFullPrepTimeLeft,
+} from '@/lib/game-time';
 
 interface EventCalendarPreviewProps {
   sixDayRotation: DayRotation[];
@@ -20,9 +25,13 @@ export function EventCalendarPreview({
   const locale = useLocale() as 'ko' | 'vi';
   const isKorean = locale === 'ko';
   const [mounted, setMounted] = useState(false);
+  const [now, setNow] = useState(new Date());
 
   useEffect(() => {
     setMounted(true);
+    // Update every minute for accurate countdown
+    const interval = setInterval(() => setNow(new Date()), 60 * 1000);
+    return () => clearInterval(interval);
   }, []);
 
   if (!mounted) {
@@ -33,19 +42,16 @@ export function EventCalendarPreview({
     );
   }
 
-  const now = new Date();
-  const dayOfYear = Math.floor(
-    (now.getTime() - new Date(now.getFullYear(), 0, 0).getTime()) /
-      (1000 * 60 * 60 * 24)
-  );
-  const rotationIndex = (dayOfYear - 1) % 6;
-  const todayRotation = sixDayRotation[rotationIndex];
+  // 6-day rotation (Apocalypse Time based)
+  const rotationDay = getRotationDay(now);
+  const todayRotation = sixDayRotation[rotationDay - 1]; // array is 0-indexed
 
-  const hour = now.getHours();
-  const fullPrepIndex = Math.floor(hour / 4) % fullPrepThemes.length;
-  const currentFullPrep = fullPrepThemes[fullPrepIndex];
-  const nextRotationHour = (Math.floor(hour / 4) + 1) * 4;
-  const hoursLeft = nextRotationHour - hour;
+  // Full Prep current theme (Apocalypse Time based, day-specific schedule)
+  const fullPrepThemeIndex = getCurrentFullPrepThemeIndex(now);
+  const currentFullPrep = fullPrepThemes[fullPrepThemeIndex];
+
+  // Time left until next Full Prep cycle
+  const timeLeft = getFullPrepTimeLeft(now);
 
   return (
     <section className="space-y-4">
@@ -72,7 +78,7 @@ export function EventCalendarPreview({
                 {isKorean ? '6일 로테이션' : 'Xoay vòng 6 ngày'}
               </Badge>
               <Badge variant="secondary" className="text-xs">
-                Day {rotationIndex + 1}
+                Day {rotationDay}
               </Badge>
             </div>
             <h3 className="font-semibold text-lg mb-1">
@@ -93,7 +99,8 @@ export function EventCalendarPreview({
               </Badge>
               <div className="flex items-center gap-1 text-xs text-muted-foreground">
                 <Clock className="h-3 w-3" />
-                {hoursLeft}{isKorean ? '시간 남음' : 'h left'}
+                {timeLeft.hours > 0 && `${timeLeft.hours}${isKorean ? '시간 ' : 'h '}`}
+                {timeLeft.minutes}{isKorean ? '분 남음' : 'm left'}
               </div>
             </div>
             <h3 className="font-semibold text-lg mb-1">

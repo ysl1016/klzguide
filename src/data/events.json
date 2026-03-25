@@ -57,7 +57,7 @@
       },
       {
         "id": "hero",
-        "name": { "ko": "영웅주도", "vi": "Anh hùng Dẫn đầu" },
+        "name": { "ko": "영웅육성", "vi": "Anh hùng Dẫn đầu" },
         "description": { "ko": "영웅 관련 과제", "vi": "Nhiệm vụ liên quan anh hùng" }
       },
       {

@@ -51,7 +51,7 @@ function FullPrepContent({ locale }: { locale: string }) {
       ],
     },
     {
-      name: isKorean ? '영웅 이니셔티브' : 'Hero Initiative',
+      name: isKorean ? '영웅육성' : 'Hero Initiative',
       icon: Users,
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
