@@ -51,11 +51,10 @@ export function Header() {
             <Search className="h-5 w-5" />
           </Button>
 
-          {/* Home Button (Desktop) */}
+          {/* Home Button (Desktop + Mobile) */}
           <Button
             variant="ghost"
             size="icon"
-            className="hidden md:flex"
             asChild
           >
             <Link href="/">
