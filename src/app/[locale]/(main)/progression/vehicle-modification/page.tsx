@@ -50,7 +50,7 @@ function VehicleModContent({ locale }: { locale: string }) {
       wrenchCost: '150',
     },
     {
-      name: l('타이탄 (Hercules)', 'Hercules', 'Hercules (Titan)'),
+      name: l('타이탄 (Titan)', 'Hercules', 'Hercules (Titan)'),
       tier: l('중반', 'Mid', 'Mid'),
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
@@ -290,7 +290,7 @@ function VehicleModContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-sm text-muted-foreground mb-2">
                   {l(
-                    '타이탄(Hercules) 업그레이드 완료 후 해금되는 시간제한 부스트입니다. 활성화 시 30분간 (최대 100회 업그레이드) 경험치가 2배로 적용됩니다. 사용 전 개조도면(Blueprint)을 약 150,000장 이상 준비하세요. 준비 기준: 현재 업그레이드 비용 × 130.',
+                    '타이탄(Titan) 업그레이드 완료 후 해금되는 시간제한 부스트입니다. 활성화 시 30분간 (최대 100회 업그레이드) 경험치가 2배로 적용됩니다. 사용 전 개조도면(Blueprint)을 약 150,000장 이상 준비하세요. 준비 기준: 현재 업그레이드 비용 × 130.',
                     'Boost có thời hạn, mở khóa sau khi hoàn thành Hercules. Kích hoạt: EXP x2 trong 30 phút (tối đa 100 nâng cấp). Chuẩn bị ~150,000 blueprint trước khi dùng. Công thức: chi phí nâng cấp hiện tại × 130.',
                     'A timed boost that unlocks after completing Hercules. When activated, grants 2x EXP for 30 minutes (up to 100 upgrades). Prepare ~150,000 Mod Blueprints before using. Formula: current upgrade cost x 130.'
                   )}
