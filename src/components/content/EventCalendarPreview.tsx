@@ -75,17 +75,15 @@ export function EventCalendarPreview({
         {/* Today's Rotation */}
         <Card className="border-blue-500/30">
           <CardContent className="p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/30">
-                {isKorean ? '연맹 대결' : 'Alliance Duel'}
-              </Badge>
-              <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/30 text-xs">
-                Day {rotationDay}
-              </Badge>
-              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                <Clock className="h-3 w-3" />
-                {rotationTimeLeft.hours}{isKorean ? '시간 ' : 'h '}
-                {rotationTimeLeft.minutes}{isKorean ? '분 남음' : 'm left'}
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-1.5">
+                <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/30 text-[11px] px-1.5 py-0">
+                  {isKorean ? '연맹 대결' : 'AD'} D{rotationDay}
+                </Badge>
+              </div>
+              <div className="flex items-center gap-1 text-[11px] text-muted-foreground whitespace-nowrap">
+                <Clock className="h-3 w-3 shrink-0" />
+                {rotationTimeLeft.hours}h {rotationTimeLeft.minutes}m
               </div>
             </div>
             <h3 className="font-semibold text-lg text-blue-400 mb-1">
@@ -100,14 +98,13 @@ export function EventCalendarPreview({
         {/* Current Full Prep Theme */}
         <Card className="border-highlight/30">
           <CardContent className="p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <Badge variant="outline" className="bg-highlight/10 text-highlight border-highlight/30">
+            <div className="flex items-center justify-between mb-2">
+              <Badge variant="outline" className="bg-highlight/10 text-highlight border-highlight/30 text-[11px] px-1.5 py-0">
                 {isKorean ? '전면전비' : 'Full Prep'}
               </Badge>
-              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                <Clock className="h-3 w-3" />
-                {timeLeft.hours > 0 && `${timeLeft.hours}${isKorean ? '시간 ' : 'h '}`}
-                {timeLeft.minutes}{isKorean ? '분 남음' : 'm left'}
+              <div className="flex items-center gap-1 text-[11px] text-muted-foreground whitespace-nowrap">
+                <Clock className="h-3 w-3 shrink-0" />
+                {timeLeft.hours > 0 && `${timeLeft.hours}h `}{timeLeft.minutes}m
               </div>
             </div>
             <h3 className="font-semibold text-lg text-highlight mb-1">
