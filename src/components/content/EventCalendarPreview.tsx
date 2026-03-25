@@ -11,6 +11,7 @@ import {
   getRotationDay,
   getCurrentFullPrepThemeIndex,
   getFullPrepTimeLeft,
+  getRotationTimeLeft,
 } from '@/lib/game-time';
 
 interface EventCalendarPreviewProps {
@@ -50,8 +51,9 @@ export function EventCalendarPreview({
   const fullPrepThemeIndex = getCurrentFullPrepThemeIndex(now);
   const currentFullPrep = fullPrepThemes[fullPrepThemeIndex];
 
-  // Time left until next Full Prep cycle
+  // Time left
   const timeLeft = getFullPrepTimeLeft(now);
+  const rotationTimeLeft = getRotationTimeLeft(now);
 
   return (
     <section className="space-y-4">
@@ -71,17 +73,22 @@ export function EventCalendarPreview({
 
       <div className="grid gap-3 sm:grid-cols-2">
         {/* Today's Rotation */}
-        <Card className="border-primary/30">
+        <Card className="border-blue-500/30">
           <CardContent className="p-4">
             <div className="flex items-center gap-2 mb-2">
-              <Badge variant="outline" className="bg-primary/10 text-primary border-primary/30">
-                {isKorean ? '6일 로테이션' : 'Xoay vòng 6 ngày'}
+              <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/30">
+                {isKorean ? '연맹 대결' : 'Alliance Duel'}
               </Badge>
-              <Badge variant="secondary" className="text-xs">
+              <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/30 text-xs">
                 Day {rotationDay}
               </Badge>
+              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                <Clock className="h-3 w-3" />
+                {rotationTimeLeft.hours}{isKorean ? '시간 ' : 'h '}
+                {rotationTimeLeft.minutes}{isKorean ? '분 남음' : 'm left'}
+              </div>
             </div>
-            <h3 className="font-semibold text-lg mb-1">
+            <h3 className="font-semibold text-lg text-blue-400 mb-1">
               {todayRotation?.name[locale]}
             </h3>
             <p className="text-xs text-muted-foreground line-clamp-2">
@@ -103,7 +110,7 @@ export function EventCalendarPreview({
                 {timeLeft.minutes}{isKorean ? '분 남음' : 'm left'}
               </div>
             </div>
-            <h3 className="font-semibold text-lg mb-1">
+            <h3 className="font-semibold text-lg text-highlight mb-1">
               {currentFullPrep?.name[locale]}
             </h3>
             <p className="text-xs text-muted-foreground">

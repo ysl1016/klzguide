@@ -49,6 +49,27 @@ export function getRotationDay(date: Date = new Date()): number {
 }
 
 /**
+ * Get remaining time until next rotation day change (Apoc 00:00)
+ * Returns { hours, minutes }
+ */
+export function getRotationTimeLeft(date: Date = new Date()): {
+  hours: number;
+  minutes: number;
+} {
+  const apoc = toApocTime(date);
+  const hour = apoc.getUTCHours();
+  const minute = apoc.getUTCMinutes();
+
+  const hoursLeft = 23 - hour;
+  const minutesLeft = 60 - minute;
+
+  return {
+    hours: minutesLeft === 60 ? hoursLeft + 1 : hoursLeft,
+    minutes: minutesLeft === 60 ? 0 : minutesLeft,
+  };
+}
+
+/**
  * Get current Full Prep theme index (0-5) based on 4-hour Apoc cycles
  * Cycles: Apoc 00:00, 04:00, 08:00, 12:00, 16:00, 20:00
  */
