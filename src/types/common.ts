@@ -4,6 +4,7 @@ export interface RedeemCode {
   code: string;
   rewards: LocalizedString;
   expiry: string | null;
+  limitType: 'time' | 'quantity' | 'both' | 'unknown';
   isNew: boolean;
   isActive: boolean;
 }

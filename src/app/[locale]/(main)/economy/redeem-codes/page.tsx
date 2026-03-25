@@ -12,6 +12,9 @@ import {
   Gift,
   ExternalLink,
   AlertCircle,
+  Users,
+  AlertTriangle,
+  Timer,
 } from 'lucide-react';
 import { getAllCodes, getLastUpdated } from '@/lib/redeem-codes';
 
@@ -119,6 +122,21 @@ export default function RedeemCodesPage() {
             </p>
           </div>
 
+          <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1">
+              <Timer className="h-3 w-3 text-warning" />
+              {l('유효기간', 'Giới hạn thời gian', 'Time Limited')}
+            </span>
+            <span className="flex items-center gap-1">
+              <Users className="h-3 w-3 text-orange-400" />
+              {l('인원제한 (선착순)', 'Giới hạn số lượng', 'Quantity Limited')}
+            </span>
+            <span className="flex items-center gap-1">
+              <AlertCircle className="h-3 w-3 text-muted-foreground" />
+              {l('제한 미확인', 'Chưa xác nhận', 'Limit Unknown')}
+            </span>
+          </div>
+
           {activeCodes.length > 0 ? (
             <div className="grid gap-3">
               {activeCodes.map((item) => (
@@ -146,12 +164,32 @@ export default function RedeemCodesPage() {
                         <p className="text-sm text-muted-foreground">
                           {item.rewards[locale as 'ko' | 'vi' | 'en'] ?? item.rewards['en']}
                         </p>
-                        {item.expiry && (
-                          <p className="text-xs text-warning mt-1">
-                            {l('만료: ', 'Hết hạn: ', 'Expires: ')}
-                            {item.expiry}
-                          </p>
-                        )}
+                        <div className="flex flex-wrap items-center gap-2 mt-1.5">
+                          {item.expiry && (
+                            <span className="flex items-center gap-1 text-xs text-warning">
+                              <Timer className="h-3 w-3" />
+                              {l('만료: ', 'Hết hạn: ', 'Expires: ')}{item.expiry}
+                            </span>
+                          )}
+                          {(item.limitType === 'quantity' || item.limitType === 'both') && (
+                            <span className="flex items-center gap-1 text-xs text-orange-400">
+                              <Users className="h-3 w-3" />
+                              {l('인원제한', 'Giới hạn số lượng', 'Limited Redemptions')}
+                            </span>
+                          )}
+                          {item.limitType === 'time' && !item.expiry && (
+                            <span className="flex items-center gap-1 text-xs text-yellow-400">
+                              <Clock className="h-3 w-3" />
+                              {l('기간제한', 'Giới hạn thời gian', 'Time Limited')}
+                            </span>
+                          )}
+                          {item.limitType === 'unknown' && (
+                            <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                              <AlertCircle className="h-3 w-3" />
+                              {l('제한 미확인', 'Chưa xác nhận giới hạn', 'Limit Unknown')}
+                            </span>
+                          )}
+                        </div>
                       </div>
                       <Button
                         variant={copiedCode === item.code ? 'default' : 'outline'}
@@ -326,9 +364,17 @@ export default function RedeemCodesPage() {
               <li>
                 •{' '}
                 {l(
-                  '코드는 예고 없이 만료될 수 있습니다',
-                  'Mã có thể hết hạn mà không báo trước',
-                  'Codes may expire without notice'
+                  '코드에는 유효기간(날짜 만료) 또는 인원제한(선착순 소진)이 있을 수 있습니다',
+                  'Mã có thể có giới hạn thời gian (hết hạn theo ngày) hoặc giới hạn số lượng (hết khi đủ người dùng)',
+                  'Codes may have a time limit (date expiry) or a quantity cap (first-come, first-served)'
+                )}
+              </li>
+              <li>
+                •{' '}
+                {l(
+                  '인원제한 코드는 예고 없이 소진될 수 있으니, 발견 즉시 사용을 권장합니다',
+                  'Mã giới hạn số lượng có thể hết bất cứ lúc nào, hãy sử dụng ngay khi thấy',
+                  'Quantity-limited codes can run out at any time — redeem as soon as you see them'
                 )}
               </li>
               <li>

@@ -8,6 +8,7 @@
         "en": "Various Rewards"
       },
       "expiry": "2026-03-31",
+      "limitType": "both",
       "isNew": false,
       "isActive": true
     },
@@ -19,6 +20,7 @@
         "en": "Various Rewards"
       },
       "expiry": null,
+      "limitType": "quantity",
       "isNew": false,
       "isActive": true
     },
@@ -30,6 +32,7 @@
         "en": "Limited Rewards"
       },
       "expiry": null,
+      "limitType": "quantity",
       "isNew": false,
       "isActive": true
     },
@@ -41,6 +44,7 @@
         "en": "Limited Rewards"
       },
       "expiry": null,
+      "limitType": "quantity",
       "isNew": false,
       "isActive": true
     },
@@ -52,6 +56,7 @@
         "en": "New Player Rewards"
       },
       "expiry": null,
+      "limitType": "quantity",
       "isNew": false,
       "isActive": true
     },
@@ -63,6 +68,7 @@
         "en": "New Player Rewards"
       },
       "expiry": null,
+      "limitType": "quantity",
       "isNew": false,
       "isActive": true
     },
@@ -74,6 +80,7 @@
         "en": "New Player Rewards"
       },
       "expiry": null,
+      "limitType": "quantity",
       "isNew": false,
       "isActive": true
     },
@@ -85,6 +92,7 @@
         "en": "Various Rewards"
       },
       "expiry": null,
+      "limitType": "quantity",
       "isNew": false,
       "isActive": false
     },
@@ -96,6 +104,7 @@
         "en": "Various Rewards"
       },
       "expiry": "2026-03-01",
+      "limitType": "time",
       "isNew": false,
       "isActive": false
     },
@@ -107,6 +116,7 @@
         "en": "Various Rewards"
       },
       "expiry": "2026-03-01",
+      "limitType": "time",
       "isNew": false,
       "isActive": false
     },
@@ -118,6 +128,7 @@
         "en": "Various Rewards"
       },
       "expiry": null,
+      "limitType": "quantity",
       "isNew": false,
       "isActive": false
     },
@@ -129,6 +140,7 @@
         "en": "Various Rewards"
       },
       "expiry": null,
+      "limitType": "unknown",
       "isNew": true,
       "isActive": true
     }

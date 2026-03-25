@@ -6,7 +6,7 @@ import { useLocale } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Copy, Check, Gift, ExternalLink } from 'lucide-react';
+import { Copy, Check, Gift, ExternalLink, Clock, Users, AlertTriangle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { RedeemCode } from '@/types/common';
 
@@ -59,15 +59,31 @@ export function ActiveCodesWidget({ codes, lastUpdated }: ActiveCodesWidgetProps
             key={item.code}
             className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-secondary/50 border border-border"
           >
-            <div className="flex items-center gap-2 min-w-0">
-              <code className="font-mono text-sm text-highlight truncate">
-                {item.code}
-              </code>
-              {item.isNew && (
-                <Badge className="bg-tip text-tip-foreground text-[10px] px-1.5 py-0">
-                  NEW
-                </Badge>
-              )}
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2">
+                <code className="font-mono text-sm text-highlight truncate">
+                  {item.code}
+                </code>
+                {item.isNew && (
+                  <Badge className="bg-tip text-tip-foreground text-[10px] px-1.5 py-0">
+                    NEW
+                  </Badge>
+                )}
+              </div>
+              <div className="flex items-center gap-2 mt-0.5">
+                {item.expiry && (
+                  <span className="flex items-center gap-0.5 text-[10px] text-warning">
+                    <Clock className="h-2.5 w-2.5" />
+                    ~{item.expiry}
+                  </span>
+                )}
+                {(item.limitType === 'quantity' || item.limitType === 'both') && (
+                  <span className="flex items-center gap-0.5 text-[10px] text-orange-400">
+                    <Users className="h-2.5 w-2.5" />
+                    {l('인원제한', 'Giới hạn', 'Limited')}
+                  </span>
+                )}
+              </div>
             </div>
             <Button
               variant="ghost"
@@ -91,6 +107,14 @@ export function ActiveCodesWidget({ codes, lastUpdated }: ActiveCodesWidgetProps
             +{activeCodes.length - 4} {l('개 더보기', 'thêm', 'more')}
           </p>
         )}
+        <p className="text-[10px] text-muted-foreground/70 flex items-center gap-1 pt-1">
+          <AlertTriangle className="h-2.5 w-2.5 shrink-0" />
+          {l(
+            '코드는 유효기간 또는 인원제한이 있을 수 있습니다. 빠른 사용을 권장합니다.',
+            'Mã có thể có giới hạn thời gian hoặc số lượng. Nên sử dụng sớm.',
+            'Codes may have time limits or quantity caps. Redeem as soon as possible.'
+          )}
+        </p>
       </CardContent>
     </Card>
   );
