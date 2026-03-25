@@ -184,12 +184,32 @@ async function main() {
     process.exit(1);
   }
 
-  // Cross-reference: codes found in both sources get higher confidence
+  // Merge active codes from all sources
   const lootbarSet = new Set(lootbarCodes.map((c) => c.code));
   const allFoundActive = new Set();
 
+  // Add active codes from ldshop (primary)
   for (const item of ldshopCodes) {
     if (item.isActive) {
+      allFoundActive.add(item.code);
+    }
+  }
+
+  // Also add codes found in BOTH ldshop and lootbar (cross-validated)
+  // Or codes only in lootbar that match known Last Z naming patterns (LZ prefix, WELCOME prefix, etc.)
+  const ldshopSet = new Set(ldshopCodes.map((c) => c.code));
+  for (const item of lootbarCodes) {
+    if (
+      ldshopSet.has(item.code) ||                          // Found in both sources
+      item.code.startsWith('LZ') ||                        // Last Z prefix pattern
+      item.code.startsWith('WELCOME') ||                   // Welcome codes
+      item.code.startsWith('STARTWEEK') ||                 // Known pattern
+      item.code.startsWith('MONDAY') ||                    // Known pattern
+      item.code.startsWith('CELEBRATE') ||                 // Known pattern
+      item.code.startsWith('GOLDBAR') ||                   // Known pattern
+      item.code.startsWith('NEWWEEK') ||                   // Known pattern
+      PERMANENT_CODES.has(item.code)
+    ) {
       allFoundActive.add(item.code);
     }
   }
