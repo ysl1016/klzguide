@@ -52,6 +52,11 @@ async function fetchFromLdshop() {
 
   const html = await fetchWithTimeout(url);
 
+  // Verify this is a Last Z page, not Last War
+  if (!html.includes('Last Z') && !html.includes('last-z') && !html.includes('last z')) {
+    throw new Error('Page does not appear to be about Last Z: Survival Shooter. Possible wrong game (Last War?).');
+  }
+
   // Extract code patterns: alphanumeric codes typically 6-20 chars, all caps or mixed
   // ldshop.gg lists codes in <strong> or <code> tags, or in list items
   const codes = [];
@@ -114,6 +119,12 @@ async function fetchFromLootbar() {
 
   try {
     const html = await fetchWithTimeout(url);
+
+    // Verify this is a Last Z page
+    if (!html.includes('Last Z') && !html.includes('last-z') && !html.includes('last z')) {
+      throw new Error('Page does not appear to be about Last Z: Survival Shooter.');
+    }
+
     const codes = [];
     const codePattern = /\b([A-Z][A-Z0-9]{5,19})\b/g;
 
