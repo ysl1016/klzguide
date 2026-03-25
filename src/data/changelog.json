@@ -1,7 +1,46 @@
 [
   {
-    "date": "2026-03-19",
+    "date": "2026-03-25",
     "isNew": true,
+    "changes": {
+      "ko": [
+        "영웅 스킬 체계 전면 개편: 3슬롯(active/passive/global) → 4슬롯(normal/active/deployment/potential) 마이그레이션",
+        "영웅 스킬 데이터 29명 웹 검증 완료 (lastzdata.com, lastz.info 교차 검증)",
+        "차량 개조 페이지 전면 수정: 정복자 추가, 해금 조건 교정, 골드렌치 비용 교정 (총 70,640개), 전문 개조사/고급 개조 면허 설명 수정",
+        "신규 페이지: 전장 돌파 (Battlefield Breakout) 가이드 — 5스테이지 공략, 추천 팀, 보상 티어",
+        "신규 페이지: 트랩 계정 감지 가이드 — 경고 신호, 킬/전투력 비율, 진영 우위 메커니즘",
+        "신규 페이지: 야전연구 비용표 — 14노드/145레벨 경찰휘장 594,430개 상세",
+        "전면전비 보강: 개인 마일스톤 (1,500/4,000/12,000), 골든 아워 시간대 (08:00, 20:00)",
+        "연맹 대결 보강: 일차별 난이도/핵심 포인트 팁 추가 (오렌지 칩 100만점, 피난민 16.5만점 등)",
+        "행운 할인 보강: 가치 비교 카드 (0.3 vs 1.5 다이아/뱃지), 할인율별 구매 전략 (90%/70%/50%/30%)",
+        "상점 가이드 보강: 구매 금지 목록 7개 + 사유, 좀비폭군 에너지코어 주 500개 무료 강조",
+        "무과금 다이아 보강: 2,000 다이아 금요일 비축 규칙, 현상금 상자 벌크 오픈 전략, 아레나 주간 1,000~5,000",
+        "연구 우선순위 보강: HP 스택 전략 (35~40% HP), 연맹표창 9상자 과투자 경고",
+        "진형 가이드 보강: 3+2 혼합 메타 근거 (70% BR → WoD 카운터), 지휘관 슬롯 규칙",
+        "피난민 시스템: 외교관 우선순위 '중' → '최우선' 변경, 헬프 시간 증폭 복리 효과 설명",
+        "기지 건설: 자원 생산 건물 스킵 (채집 10~50배), 랠리 광장 Lv.20 캡, 생산센터 우선",
+        "용어 통일: 럭키→행운, 난민→피난민, 모집 티켓→모집권, 헤라클레스→타이탄, 디스트로이어→파괴자, 불스아이→사격장, 황금렌치→골드렌치, 일반 렌치→개조도면"
+      ],
+      "vi": [
+        "Đại tu hệ thống skill anh hùng: 3 slot → 4 slot (normal/active/deployment/potential)",
+        "Xác minh skill 29 anh hùng từ lastzdata.com, lastz.info",
+        "Sửa trang cải tiến xe: thêm Conqueror, sửa điều kiện mở, chi phí wrench (tổng 70,640)",
+        "Trang mới: Battlefield Breakout — chiến lược 5 giai đoạn, đội hình, phần thưởng",
+        "Trang mới: Phát hiện Bẫy — tín hiệu cảnh báo, tỷ lệ kill/CP, lợi thế phe",
+        "Trang mới: Chi phí Field Research — 14 node/145 level, 594,430 badge",
+        "Cải thiện Full Prep: mốc cá nhân, Golden Hour (08:00, 20:00)",
+        "Cải thiện Alliance Duel: độ khó + tip điểm theo ngày",
+        "Cải thiện Lucky Discounter: so sánh giá trị, chiến lược mua theo mức giảm giá",
+        "Cải thiện Shop Guide: 7 item cấm mua + lý do",
+        "Cải thiện Diamond F2P: quy tắc 2,000 diamond, mở bulk hộp bounty",
+        "Cải thiện NC: HP stack 35-40%, cảnh báo AR 9 hộp",
+        "Cải thiện đội hình: lý do meta 3+2, quy tắc slot chỉ huy",
+        "Đồng bộ thuật ngữ toàn bộ trang"
+      ]
+    }
+  },
+  {
+    "date": "2026-03-19",
     "changes": {
       "ko": [
         "사이트 대규모 리뉴얼 (Phase 1~5)",
