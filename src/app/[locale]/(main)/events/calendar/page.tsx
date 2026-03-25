@@ -48,7 +48,7 @@ function EventCalendarContent({ locale }: { locale: string }) {
   const hotEventNames: Record<string, { ko: string; vi: string }> = {
     gachaGo: { ko: '행운의 흔들기', vi: 'Lucky Shake' },
     bullseye: { ko: '사격장', vi: 'Bullseye' },
-    luckyDiscounter: { ko: '럭키 할인', vi: 'Lucky Discounter' },
+    luckyDiscounter: { ko: '행운 할인', vi: 'Lucky Discounter' },
     luckyChest: { ko: '행운의 금고', vi: 'Lucky Chest' },
   };
 

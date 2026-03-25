@@ -42,7 +42,7 @@ const routeLabels: Record<string, { ko: string; vi: string }> = {
   tyrant: { ko: '좀비폭군', vi: 'Tyrant' },
   'zombie-siege': { ko: '좀비공성', vi: 'Zombie Siege' },
   'gacha-go': { ko: '행운의 흔들기', vi: 'Lucky Shake' },
-  'lucky-discounter': { ko: '럭키 할인', vi: 'Lucky Disc.' },
+  'lucky-discounter': { ko: '행운 할인', vi: 'Lucky Disc.' },
   'alliance-duel': { ko: '연맹 대결', vi: 'Đấu LM' },
   'canyon-clash': { ko: '협곡쟁탈전', vi: 'Canyon Clash' },
   svs: { ko: '서버 대전', vi: 'SVS' },

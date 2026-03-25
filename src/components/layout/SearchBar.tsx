@@ -98,7 +98,7 @@ const searchKeywords: Record<string, string[]> = {
   tyrant: ['좀비폭군', 'tyrant', 'rally', 'steel'],
   zombieSiege: ['좀비공성', 'siege', 'zombie', '포위'],
   gachaGo: ['가챠', 'gacha', '뽑기', 'pull'],
-  luckyDiscounter: ['럭키', '할인', 'lucky', 'discount', '경찰휘장'],
+  luckyDiscounter: ['행운', '할인', 'lucky', 'discount', '경찰휘장'],
   allianceDuel: ['연맹 대결', 'duel', 'alliance'],
   canyonClash: ['협곡', 'canyon', 'clash'],
   svs: ['서버 대전', 'SVS', 'server'],

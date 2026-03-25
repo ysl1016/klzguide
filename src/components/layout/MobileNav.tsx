@@ -74,6 +74,7 @@ const navItems: NavItem[] = [
     children: [
       { key: 'priority', href: '/research/priority' },
       { key: 'techTree', href: '/research/tech-tree' },
+      { key: 'fieldResearch', href: '/research/field-research' },
     ],
   },
   {
@@ -104,6 +105,7 @@ const navItems: NavItem[] = [
       { key: 'arena', href: '/pvp/arena' },
       { key: 'formations', href: '/pvp/formations' },
       { key: 'strategy', href: '/pvp/strategy' },
+      { key: 'trapDetection', href: '/pvp/trap-detection' },
     ],
   },
   {
@@ -119,6 +121,7 @@ const navItems: NavItem[] = [
       { key: 'gachaGo', href: '/events/gacha-go' },
       { key: 'luckyDiscounter', href: '/events/lucky-discounter' },
       { key: 'allianceDuel', href: '/events/alliance-duel' },
+      { key: 'battlefieldBreakout', href: '/events/battlefield-breakout' },
       { key: 'canyonClash', href: '/events/canyon-clash' },
       { key: 'svs', href: '/events/svs' },
     ],

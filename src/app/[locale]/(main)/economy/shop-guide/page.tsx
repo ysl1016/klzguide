@@ -61,7 +61,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       ],
       skip: [
         isKorean ? '보라 장비 박스' : 'Purple Equipment Boxes',
-        isKorean ? '기본 모집 티켓' : 'Basic Recruitment Tickets',
+        isKorean ? '기본 모집권' : 'Basic Recruitment Tickets',
       ],
     },
     {
@@ -102,7 +102,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       items: [
         { name: isKorean ? 'Key Licenses (전략, 개조, 연구)' : 'Key Licenses (Strategy, Modification, Research)', desc: isKorean ? '1회 구매, 영구 혜택' : 'One-time purchase, lifetime benefits' },
         { name: isKorean ? '4명의 건설자 (Builders)' : 'All 4 Builders', desc: isKorean ? '건설 효율 대폭 향상' : 'Dramatically improves construction' },
-        { name: isKorean ? '난민 모집 티켓' : 'Refugee Recruitment Tickets', desc: isKorean ? '집사(건설), 과학자(연구) 우선' : 'Focus on Butlers & Scientists' },
+        { name: isKorean ? '피난민 모집권' : 'Refugee Recruitment Tickets', desc: isKorean ? '집사(건설), 과학자(연구) 우선' : 'Focus on Butlers & Scientists' },
         { name: isKorean ? '주간 쉴드' : 'Weekly Shields', desc: isKorean ? '금요일까지 최소 2,000 다이아 유지' : 'Keep 2,000 diamonds by Friday' },
       ],
     },
@@ -111,7 +111,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       label: isKorean ? '고가치' : 'High Value',
       color: 'text-yellow-400',
       items: [
-        { name: isKorean ? '럭키 할인 가속 (40%+ 할인)' : 'Lucky Discounter Speedups (40%+ off)', desc: isKorean ? '약 4주마다 개최' : 'Every ~4 weeks' },
+        { name: isKorean ? '행운 할인 가속 (40%+ 할인)' : 'Lucky Discounter Speedups (40%+ off)', desc: isKorean ? '약 4주마다 개최' : 'Every ~4 weeks' },
         { name: isKorean ? '특권상점 할인 가속' : 'VIP Shop Discounted Speedups', desc: isKorean ? '할인 시에만 구매' : 'Only when discounted' },
       ],
     },
@@ -143,11 +143,13 @@ function ShopGuideContent({ locale }: { locale: string }) {
 
   // Never buy items
   const neverBuy = [
-    isKorean ? '직접 가속 버튼 (Direct Speedup)' : 'Direct Speedup Button',
-    isKorean ? '보라 장비 박스' : 'Purple Equipment Boxes',
-    isKorean ? '기본 모집 티켓' : 'Basic Recruitment Tickets',
-    isKorean ? '자원 선택 상자' : 'Resource Choice Crates',
-    isKorean ? '일반 보라 영웅 조각' : 'Ordinary Purple Hero Fragments',
+    { item: isKorean ? '직접 가속 버튼 (Direct Speedup)' : 'Direct Speedup Button', reason: isKorean ? '게임 내 최악의 거래 — 할인 가속 대비 3~5배 손해' : 'Worst trade in game — 3-5x worse than discounted speedups' },
+    { item: isKorean ? '보라 장비 박스' : 'Purple Equipment Boxes', reason: isKorean ? '오렌지가 아니면 가치 없음' : 'No value unless orange' },
+    { item: isKorean ? '기본 모집권' : 'Basic Recruitment Tickets', reason: isKorean ? '효율 극히 낮음' : 'Extremely low efficiency' },
+    { item: isKorean ? '자원 선택 상자' : 'Resource Choice Crates', reason: isKorean ? 'ROI 극히 낮음 — 채집이 10~50배 효율적' : 'Very low ROI — gathering is 10-50x better' },
+    { item: isKorean ? '일반 보라 영웅 조각' : 'Ordinary Purple Hero Fragments', reason: isKorean ? '오렌지 조각만 투자 가치 있음' : 'Only orange fragments worth investing' },
+    { item: isKorean ? '이벤트 외 에너지코어 직접 구매' : 'Power Cores outside events', reason: isKorean ? '좀비폭군에서 주 500개 무료 획득 가능' : 'Get 500 free weekly from Tyrant' },
+    { item: isKorean ? '정가 가속 (할인 없이)' : 'Full-price Speedups', reason: isKorean ? '연맹 대결 테마와 행운 할인에 맞춰 할인 구매만' : 'Only buy discounted, timed with AD and Lucky Discounter' },
   ];
 
   // Free diamond sources
@@ -162,7 +164,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
 
   const tips = [
     isKorean
-      ? '럭키 할인 90%에서 경찰휘장 구매 = 특권상점 대비 5배 효율'
+      ? '행운 할인 90%에서 경찰휘장 구매 = 특권상점 대비 5배 효율'
       : 'Buying badges at 90% Lucky Discounter = 5x value vs VIP Shop',
     isKorean
       ? '이벤트 일정에 맞춰 구매 - 골드렌치는 차량 개조 테마 때'
@@ -171,7 +173,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       ? '에너지코어는 이벤트로 주 150-250개 획득 가능 - 직접 구매 불필요'
       : 'Power Cores: earn 150-250 weekly via events - no need to buy',
     isKorean
-      ? '실제 사례: 럭키 할인으로 42,000 경찰휘장 = 30,700 다이아 (특권상점 63,000 다이아)'
+      ? '실제 사례: 행운 할인으로 42,000 경찰휘장 = 30,700 다이아 (특권상점 63,000 다이아)'
       : 'Real case: 42,000 badges via Lucky Discounter = 30,700 diamonds (vs 63,000 in VIP Shop)',
   ];
 
@@ -205,8 +207,8 @@ function ShopGuideContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Key Takeaways'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '럭키 할인 90% = 특권상점 대비 5배 효율' : 'Lucky Discounter 90% = 5x value vs VIP Shop'}</li>
-              <li>• {isKorean ? '필수 구매: Key Licenses, 4명 건설자, 난민 모집 티켓' : 'Essential: Key Licenses, 4 Builders, Refugee Tickets'}</li>
+              <li>• {isKorean ? '행운 할인 90% = 특권상점 대비 5배 효율' : 'Lucky Discounter 90% = 5x value vs VIP Shop'}</li>
+              <li>• {isKorean ? '필수 구매: Key Licenses, 4명 건설자, 피난민 모집권' : 'Essential: Key Licenses, 4 Builders, Refugee Tickets'}</li>
               <li>• {isKorean ? '직접 가속 버튼, 보라 장비 박스 = 절대 구매 금지' : 'Never buy: Direct Speedup, Purple Equipment Boxes'}</li>
               <li>• {isKorean ? '이벤트 일정에 맞춰 구매 타이밍 조절' : 'Time purchases with event schedules'}</li>
             </ul>
@@ -289,7 +291,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
         {/* VIP Shop vs Lucky Discounter */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '특권상점 vs 럭키 할인 효율 비교' : 'VIP Shop vs Lucky Discounter'}
+            {isKorean ? '특권상점 vs 행운 할인 효율 비교' : 'VIP Shop vs Lucky Discounter'}
           </h2>
           <Card>
             <CardContent className="p-4">
@@ -299,7 +301,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
                     <tr className="border-b border-border bg-muted/30">
                       <th className="text-left p-2">{isKorean ? '항목' : 'Item'}</th>
                       <th className="text-left p-2">{isKorean ? '특권상점' : 'VIP Shop'}</th>
-                      <th className="text-left p-2">{isKorean ? '럭키 할인 (90%)' : 'Lucky Discounter (90%)'}</th>
+                      <th className="text-left p-2">{isKorean ? '행운 할인 (90%)' : 'Lucky Discounter (90%)'}</th>
                       <th className="text-center p-2">{isKorean ? '효율' : 'Value'}</th>
                     </tr>
                   </thead>
@@ -326,7 +328,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
         {/* Lucky Discounter Guide */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '럭키 할인 구매 기준' : 'Lucky Discounter Purchase Guide'}
+            {isKorean ? '행운 할인 구매 기준' : 'Lucky Discounter Purchase Guide'}
           </h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {discountGuide.map((level) => (
@@ -356,11 +358,14 @@ function ShopGuideContent({ locale }: { locale: string }) {
                 <p className="font-semibold text-destructive mb-2">
                   {isKorean ? '절대 구매 금지 항목' : 'Never Purchase'}
                 </p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  {neverBuy.map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <X className="h-3 w-3 text-destructive" />
-                      {item}
+                <ul className="text-sm text-muted-foreground space-y-2">
+                  {neverBuy.map((entry, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <X className="h-3 w-3 text-destructive shrink-0 mt-1" />
+                      <div>
+                        <span className="font-medium text-foreground/80">{entry.item}</span>
+                        <span className="text-xs text-muted-foreground/70"> — {entry.reason}</span>
+                      </div>
                     </li>
                   ))}
                 </ul>

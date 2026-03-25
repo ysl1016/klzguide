@@ -123,7 +123,8 @@ function FullPrepContent({ locale }: { locale: string }) {
               <li>• {isKorean ? '5개 테마가 4시간마다 순환' : '5 theme xoay vòng mỗi 4 tiếng'}</li>
               <li>• {isKorean ? '현재 테마에 해당하는 활동만 포인트 획득 가능' : 'Chỉ hoạt động đúng theme hiện tại mới được điểm'}</li>
               <li>• {isKorean ? '4시간 창 끝나기 전 수동으로 상자 수령 필수!' : 'Thu thủ công hộp trước khi hết 4 tiếng!'}</li>
-              <li>• {isKorean ? '연맹 대결과 겹칠 때 = 보상 2배' : 'Khi trùng AD = thưởng gấp đôi'}</li>
+              <li>• {isKorean ? '개인 마일스톤: 1,500점 → 4,000점 → 12,000점' : 'Mốc cá nhân: 1,500 → 4,000 → 12,000 điểm'}</li>
+              <li>• {isKorean ? '골든 아워 (08:00, 20:00): 연맹 대결과 겹칠 때 = 보상 2배' : 'Golden Hour (08:00, 20:00): trùng AD = thưởng gấp đôi'}</li>
             </ul>
           </CardContent>
         </Card>
@@ -188,13 +189,40 @@ function FullPrepContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
-                    ? '연맹 대결과 전면전비의 테마가 겹칠 때 활동하면 두 이벤트에서 동시에 포인트를 획득합니다. 가속 아이템 사용의 최적 타이밍입니다.'
-                    : 'Khi theme AD và Full Prep trùng nhau, hoạt động sẽ được điểm cả hai sự kiện. Đây là thời điểm tốt nhất để dùng tăng tốc.'}
+                    ? '연맹 대결과 전면전비의 테마가 겹칠 때 (주로 08:00, 20:00 주기) 활동하면 두 이벤트에서 동시에 포인트를 획득합니다. 가속 아이템 사용의 최적 타이밍입니다.'
+                    : 'Khi theme AD và Full Prep trùng nhau (thường chu kỳ 08:00, 20:00), hoạt động sẽ được điểm cả hai sự kiện. Đây là thời điểm tốt nhất để dùng tăng tốc.'}
                 </p>
               </div>
             </div>
           </CardContent>
         </Card>
+
+        {/* Personal Milestones */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">
+            {isKorean ? '개인 마일스톤 보상' : 'Mốc thưởng cá nhân'}
+          </h2>
+          <div className="grid gap-3 sm:grid-cols-3">
+            <Card className="bg-green-500/10 border-none">
+              <CardContent className="p-4 text-center">
+                <p className="text-green-400 font-bold text-2xl">1,500</p>
+                <p className="text-xs text-muted-foreground mt-1">{isKorean ? '1단계 상자' : 'Hộp giai đoạn 1'}</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-blue-500/10 border-none">
+              <CardContent className="p-4 text-center">
+                <p className="text-blue-400 font-bold text-2xl">4,000</p>
+                <p className="text-xs text-muted-foreground mt-1">{isKorean ? '2단계 상자' : 'Hộp giai đoạn 2'}</p>
+              </CardContent>
+            </Card>
+            <Card className="bg-purple-500/10 border-none">
+              <CardContent className="p-4 text-center">
+                <p className="text-purple-400 font-bold text-2xl">12,000</p>
+                <p className="text-xs text-muted-foreground mt-1">{isKorean ? '3단계 상자 (최종)' : 'Hộp giai đoạn 3 (cuối)'}</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
         {/* Competition Info */}
         <section className="space-y-4">

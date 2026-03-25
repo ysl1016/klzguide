@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clock, Diamond, Calendar, Trophy, Target, Gift, Lightbulb } from 'lucide-react';
+import { Clock, Diamond, Calendar, Trophy, Target, Gift, Lightbulb, AlertTriangle, Shield, Package } from 'lucide-react';
 
 export default async function FreeDiamondsPage({
   params,
@@ -21,80 +21,107 @@ function FreeDiamondsContent({ locale }: { locale: string }) {
 
   const diamondSources = [
     {
-      name: isKorean ? '일일 임무' : 'Nhiệm vụ hàng ngày',
-      icon: Calendar,
-      diamonds: '50-100',
-      frequency: isKorean ? '매일' : 'Hàng ngày',
-      tip: isKorean ? '매일 완료 필수' : 'Bắt buộc hoàn thành mỗi ngày',
+      name: isKorean ? '아레나 순위 보상' : 'Arena Rank Rewards',
+      icon: Trophy,
+      diamonds: '1,000-5,000',
+      frequency: isKorean ? '매주' : 'Hàng tuần',
+      tip: isKorean ? '골드 티어 이상 유지 — 가장 안정적인 대량 공급원' : 'Duy trì Gold tier+ — nguồn lớn ổn định nhất',
     },
     {
-      name: isKorean ? '주간 임무' : 'Nhiệm vụ hàng tuần',
+      name: isKorean ? '난폭 두목 업적' : 'Furylord Achievements',
+      icon: Target,
+      diamonds: isKorean ? '다양' : 'Đa dạng',
+      frequency: isKorean ? '매일 4회' : '4 lần/ngày',
+      tip: isKorean ? '매일 4회 공격 필수 — 연료는 자동 회복' : '4 lần tấn công/ngày — nhiên liệu tự phục hồi',
+    },
+    {
+      name: isKorean ? '현상금 상자 (벌크 오픈)' : 'Bounty Mission Chests (Bulk)',
+      icon: Package,
+      diamonds: '100-5,000',
+      frequency: isKorean ? '모아서 한번에' : 'Tích rồi mở 1 lần',
+      tip: isKorean ? '10,000개 모아 벌크 오픈 시 20,000+ 다이아 가능' : 'Tích 10,000 hộp mở một lần = 20,000+ diamond',
+    },
+    {
+      name: isKorean ? '일일/주간 임무' : 'Daily/Weekly Tasks',
       icon: Calendar,
-      diamonds: '200-500',
-      frequency: isKorean ? '매주' : 'Hàng tuần',
-      tip: isKorean ? '주간 목표 달성' : 'Đạt mục tiêu hàng tuần',
+      diamonds: '50-500',
+      frequency: isKorean ? '매일/매주' : 'Hàng ngày/tuần',
+      tip: isKorean ? '150 포인트 달성하여 모든 보상 해금' : 'Đạt 150 điểm để mở tất cả thưởng',
     },
     {
       name: isKorean ? '연맹 대결' : 'Alliance Duel',
       icon: Trophy,
       diamonds: '100-500',
-      frequency: isKorean ? '주 3회' : '3 lần/tuần',
-      tip: isKorean ? '활성 연맹 필수' : 'Cần LM hoạt động',
+      frequency: isKorean ? '매주 6일' : '6 ngày/tuần',
+      tip: isKorean ? '활성 연맹 필수 — 상자 9개 해금 목표' : 'Cần LM hoạt động — mục tiêu 9 hộp',
     },
     {
       name: 'SVS',
       icon: Trophy,
-      diamonds: '500-2000',
+      diamonds: '500-2,000',
       frequency: isKorean ? '정기' : 'Định kỳ',
-      tip: isKorean ? '참여 보상 + 순위 보상' : 'Thưởng tham gia + xếp hạng',
+      tip: isKorean ? '개인 박스 1-3 + 순위 보상' : 'Hộp cá nhân 1-3 + xếp hạng',
     },
     {
-      name: isKorean ? '업적/도전' : 'Thành tựu',
-      icon: Target,
+      name: isKorean ? '월드맵 다이아 노드' : 'World Map Diamond Nodes',
+      icon: Diamond,
       diamonds: isKorean ? '다양' : 'Đa dạng',
-      frequency: isKorean ? '1회' : '1 lần',
-      tip: isKorean ? '장기 목표 달성 시' : 'Khi đạt mục tiêu dài hạn',
+      frequency: isKorean ? '매일 확인' : 'Kiểm tra hàng ngày',
+      tip: isKorean ? '정기적으로 맵을 확인하여 채집' : 'Kiểm tra bản đồ thường xuyên',
     },
     {
       name: isKorean ? '리딤 코드' : 'Redeem Code',
       icon: Gift,
       diamonds: isKorean ? '다양' : 'Đa dạng',
       frequency: isKorean ? '비정기' : 'Không định kỳ',
-      tip: isKorean ? '공식 채널 확인' : 'Kiểm tra kênh chính thức',
+      tip: isKorean ? '공식 SNS, 디스코드 정기 확인' : 'Kiểm tra SNS, Discord chính thức',
     },
   ];
 
   const spendingPriority = [
     {
-      item: isKorean ? '두 번째 연구소' : 'Lab thứ 2',
+      item: isKorean ? '주간 방패 (금요일까지 2,000 다이아)' : 'Weekly Shield (2,000 by Friday)',
       priority: 1,
-      reason: isKorean ? '연구 속도 2배 - 최우선 구매' : 'Gấp đôi tốc độ NC - ưu tiên mua nhất',
+      reason: isKorean ? '토요일 Enemy Buster 대비 — 방패는 어떤 구매보다 가치 있음' : 'Chuẩn bị Enemy Buster thứ 7 — khiên giá trị hơn mọi mua sắm',
     },
     {
-      item: 'VIP',
+      item: isKorean ? 'Key Licenses (전략, 개조, 연구)' : 'Key Licenses (Strategy, Mod, Research)',
       priority: 2,
-      reason: isKorean ? 'VIP 레벨 상승으로 다양한 보너스' : 'Tăng VIP level cho nhiều bonus',
+      reason: isKorean ? '1회 구매, 영구 혜택 — 게임 초반 최우선' : 'Mua 1 lần, lợi ích vĩnh viễn — ưu tiên đầu game',
     },
     {
-      item: isKorean ? '영웅 조각' : 'Mảnh anh hùng',
+      item: isKorean ? '피난민 모집권' : 'Refugee Tickets',
       priority: 3,
-      reason: isKorean ? '메인 영웅 성급 업그레이드용' : 'Để nâng sao anh hùng chính',
+      reason: isKorean ? '집사(건설속도), 과학자(연구속도) 우선 — 영구 계정 보너스' : 'Butler(xây), Scientist(NC) — bonus vĩnh viễn',
+    },
+    {
+      item: isKorean ? '행운 할인 (40%+ 할인 시만)' : 'Lucky Discounter (40%+ only)',
+      priority: 4,
+      reason: isKorean ? '경찰휘장 + 가속 — 특권상점 대비 5배 효율' : 'Badge + speed-up — gấp 5 lần VIP Shop',
+    },
+    {
+      item: isKorean ? '할인 가속만 구매 (정가 금지)' : 'Discounted Speedups Only',
+      priority: 5,
+      reason: isKorean ? '직접 가속 버튼 사용 금지 — 연맹 대결 테마에 맞춰 사용' : 'KHÔNG dùng nút speed-up trực tiếp — dùng theo theme AD',
     },
   ];
 
   const tips = [
     isKorean
-      ? '두 번째 연구소 구매가 가장 효율적인 다이아 사용처'
-      : 'Mua Lab thứ 2 là cách dùng diamond hiệu quả nhất',
+      ? '난폭 두목 매일 4회 공격 필수 — 연료 자동 회복, 업적 다이아 축적'
+      : 'Tấn công Furylord 4 lần/ngày — nhiên liệu tự hồi, tích diamond thành tựu',
     isKorean
-      ? '일일/주간 임무 놓치지 않기 - 꾸준한 다이아 수입원'
-      : 'Không bỏ lỡ nhiệm vụ hàng ngày/tuần - nguồn diamond đều đặn',
+      ? '현상금 상자를 모아뒀다가 한번에 벌크 오픈 — 10,000개 오픈 시 20,000+ 다이아 가능'
+      : 'Tích hộp bounty rồi mở bulk — 10,000 hộp = 20,000+ diamond',
     isKorean
-      ? '리딤 코드 정기적으로 확인 (공식 SNS, 디스코드)'
-      : 'Kiểm tra redeem code định kỳ (SNS, Discord chính thức)',
+      ? '아레나 무료 새로고침 활용하여 약한 상대만 공격 — Top 50 유지 시 범용 영웅 조각 보너스'
+      : 'Dùng free refresh arena đánh đối thủ yếu — Top 50 = bonus mảnh anh hùng',
     isKorean
-      ? 'VIP 포인트 아이템으로 VIP 레벨업 - 장기적 보너스'
-      : 'Lên VIP bằng item VIP point - bonus dài hạn',
+      ? '이벤트 구매는 반드시 활성 이벤트와 동기화 — 같은 자원으로 2배 보상'
+      : 'Mua sắm phải sync với event đang hoạt động — cùng tài nguyên, thưởng gấp đôi',
+    isKorean
+      ? '직접 가속 버튼은 절대 사용 금지 — 게임 내 최악의 거래'
+      : 'KHÔNG BAO GIỜ dùng nút speed-up trực tiếp — giao dịch tệ nhất game',
   ];
 
   return (
@@ -127,11 +154,63 @@ function FreeDiamondsContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '두 번째 연구소 = 다이아 최우선 사용처' : 'Lab thứ 2 = ưu tiên dùng diamond nhất'}</li>
-              <li>• {isKorean ? '일일/주간 임무 매일 완료' : 'Hoàn thành nhiệm vụ hàng ngày/tuần mỗi ngày'}</li>
-              <li>• {isKorean ? '연맹 대결, SVS 적극 참여' : 'Tích cực tham gia Alliance Duel, SVS'}</li>
-              <li>• {isKorean ? '리딤 코드 정기 확인' : 'Kiểm tra redeem code định kỳ'}</li>
+              <li>• {isKorean ? '금요일까지 최소 2,000 다이아 유지 (토요일 방패용) — 방패는 어떤 구매보다 가치 있음' : 'Giữ tối thiểu 2,000 diamond đến thứ 6 (khiên thứ 7) — khiên giá trị hơn mọi mua sắm'}</li>
+              <li>• {isKorean ? '아레나 골드 티어 이상 = 주간 1,000~5,000 다이아 안정 수입' : 'Arena Gold tier+ = 1,000-5,000 diamond/tuần ổn định'}</li>
+              <li>• {isKorean ? '현상금 상자 모아서 벌크 오픈 = 대량 다이아 획득' : 'Tích hộp bounty rồi mở bulk = diamond lớn'}</li>
+              <li>• {isKorean ? '꾸준한 주간 수집 > 일회성 잭팟' : 'Thu thập đều hàng tuần > jackpot một lần'}</li>
             </ul>
+          </CardContent>
+        </Card>
+
+        {/* Shield Reserve Warning */}
+        <Card className="border-destructive/50 bg-destructive/10">
+          <CardContent className="p-4">
+            <div className="flex gap-3">
+              <Shield className="h-6 w-6 text-destructive shrink-0" />
+              <div>
+                <p className="font-semibold text-destructive mb-1">
+                  {isKorean ? '금요일까지 2,000 다이아 필수 비축' : 'Bắt buộc giữ 2,000 diamond đến thứ 6'}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {isKorean
+                    ? '토요일 Enemy Buster(적 파괴자) 이벤트에서 방패가 필요합니다. 방패 없이 공격당하면 병력을 대량 손실합니다. 방패는 게임 내 어떤 구매보다 가치 있습니다.'
+                    : 'Cần khiên cho sự kiện Enemy Buster thứ 7. Bị tấn công không có khiên = mất quân lớn. Khiên giá trị hơn mọi mua sắm trong game.'}
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Bulk Chest Strategy */}
+        <Card className="border-highlight/30 bg-highlight/5">
+          <CardContent className="p-4">
+            <div className="flex gap-3">
+              <Package className="h-6 w-6 text-highlight shrink-0" />
+              <div>
+                <p className="font-semibold text-highlight mb-1">
+                  {isKorean ? '현상금 상자 벌크 오픈 전략' : 'Chiến lược mở bulk hộp Bounty'}
+                </p>
+                <p className="text-sm text-muted-foreground mb-2">
+                  {isKorean
+                    ? '현상금 임무 상자를 바로 열지 말고 모아두세요. 10,000개 이상 모아서 한번에 벌크 오픈하면 20,000+ 다이아를 획득할 수 있습니다.'
+                    : 'Đừng mở hộp bounty ngay. Tích 10,000+ hộp rồi mở một lần = 20,000+ diamond.'}
+                </p>
+                <div className="grid gap-2 sm:grid-cols-3 text-center text-xs">
+                  <div className="p-2 rounded-lg bg-secondary/30">
+                    <p className="text-muted-foreground">{isKorean ? '상자당 내용물' : 'Mỗi hộp'}</p>
+                    <p className="font-mono text-foreground/80">{isKorean ? '~90% 자원 + 다이아' : '~90% tài nguyên + diamond'}</p>
+                  </div>
+                  <div className="p-2 rounded-lg bg-secondary/30">
+                    <p className="text-muted-foreground">{isKorean ? '다이아 범위' : 'Diamond range'}</p>
+                    <p className="font-mono text-highlight">100 ~ 5,000</p>
+                  </div>
+                  <div className="p-2 rounded-lg bg-secondary/30">
+                    <p className="text-muted-foreground">{isKorean ? '잭팟 (극히 희귀)' : 'Jackpot (rất hiếm)'}</p>
+                    <p className="font-mono text-yellow-400">10,000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </CardContent>
         </Card>
 

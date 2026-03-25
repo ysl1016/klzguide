@@ -55,7 +55,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       name: isKorean ? '영웅 이니셔티브' : 'Hero Initiative',
       nameEn: 'Hero Initiative',
       tasks: isKorean
-        ? ['영웅 업그레이드', '영웅 조각 사용', '모집 티켓 사용', '이 날을 위해 조각/티켓 저장!']
+        ? ['영웅 업그레이드', '영웅 조각 사용', '모집권 사용', '이 날을 위해 조각/티켓 저장!']
         : ['Nâng anh hùng', 'Dùng mảnh anh hùng', 'Dùng vé tuyển mộ', 'Lưu mảnh/vé cho ngày này!'],
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',

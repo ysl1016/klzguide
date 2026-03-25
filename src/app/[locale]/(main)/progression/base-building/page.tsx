@@ -180,6 +180,15 @@ function BaseBuildingContent({ locale }: { locale: string }) {
     isKorean
       ? 'HQ 업그레이드 상세 비용은 HQ 업그레이드 가이드를 참고하세요'
       : 'Chi phí chi tiết nâng HQ xem ở hướng dẫn Nâng cấp Trụ sở',
+    isKorean
+      ? '자원 생산 건물(농장, 거주지, 풍력발전)은 스킵하세요 — 채집이 10~50배 더 효율적입니다'
+      : 'Bỏ qua tòa nhà sản xuất tài nguyên (Farmhouse, Residence, Wind Turbine) — thu thập gấp 10-50 lần hiệu quả',
+    isKorean
+      ? '랠리 광장은 레벨 20까지만 투자하세요 — 그 이상은 효율이 없습니다'
+      : 'Rally Square chỉ đầu tư đến level 20 — quá đó không hiệu quả',
+    isKorean
+      ? '생산센터를 우선 업그레이드하세요 — 채집속도 + 부대 적재량 동시 증가'
+      : 'Ưu tiên nâng Production Center — tăng tốc thu thập + tải quân',
   ];
 
   return (

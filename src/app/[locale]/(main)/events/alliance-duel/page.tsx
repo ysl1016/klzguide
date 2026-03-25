@@ -43,9 +43,11 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       icon: Wrench,
       color: 'text-orange-400',
       bg: 'bg-orange-500/10',
+      difficulty: isKorean ? '보통' : 'Normal',
+      keyTip: isKorean ? '오렌지 칩 상자 = 100만 포인트. 렌치와 도면을 집중 사용' : 'Orange chip chest = 1M pts. Tập trung dùng cờ lê và blueprint',
       activities: isKorean
-        ? ['렌치/골든렌치 사용', '설계도 소모', '차량 부품 상자 개봉', '부머 레이드 (Lv.9-10)', '레이더 이벤트']
-        : ['Dùng cờ lê/golden wrench', 'Tiêu bản vẽ', 'Mở hộp linh kiện xe', 'Raid Boomer (Lv.9-10)', 'Sự kiện Radar'],
+        ? ['렌치/골드렌치 사용', '개조도면 소모', '차량 부품 상자 개봉', '부머 레이드 (Lv.9-10)', '레이더 이벤트']
+        : ['Dùng cờ lê/golden wrench', 'Tiêu blueprint', 'Mở hộp linh kiện xe', 'Raid Boomer (Lv.9-10)', 'Sự kiện Radar'],
       goldenHour: [
         { apoc: '08:00-12:00', korea: '19:00-23:00' },
         { apoc: '20:00-00:00', korea: '07:00-11:00' },
@@ -59,8 +61,10 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       icon: Building2,
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
+      difficulty: isKorean ? '어려움' : 'Hard',
+      keyTip: isKorean ? '가장 어려운 날. 피난민 모집 = 16.5만 포인트' : 'Ngày khó nhất. Tuyển tị nạn = 165K pts',
       activities: isKorean
-        ? ['건물 업그레이드 완료', '건설 가속 사용', '주황 현상금 퀘스트 우선', '피난민 모집 티켓 사용']
+        ? ['건물 업그레이드 완료', '건설 가속 사용', '주황 현상금 퀘스트 우선', '피난민 모집권 사용']
         : ['Hoàn thành nâng cấp công trình', 'Dùng tăng tốc xây', 'Ưu tiên bounty cam', 'Dùng vé tuyển mộ tị nạn'],
       goldenHour: [
         { apoc: '08:00-12:00', korea: '19:00-23:00' },
@@ -75,6 +79,8 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       icon: FlaskConical,
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
+      difficulty: isKorean ? '보통' : 'Normal',
+      keyTip: isKorean ? '뱃지 전용 날. 오렌지 교역 4회 = 120만 포인트. 주간 뱃지 10,000개 생산 가능' : 'Ngày badge. 4 giao dịch cam = 1.2M pts. Có thể tạo 10,000 badge/tuần',
       activities: isKorean
         ? ['연구 완료', '연구 가속 사용', '경찰휘장 소모 연구', '인터스테이트 트럭 새로고침 (주황 퀘스트)']
         : ['Hoàn thành nghiên cứu', 'Dùng tăng tốc NC', 'NC tiêu badge', 'Refresh Interstate Truck (quest cam)'],
@@ -91,8 +97,10 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       icon: Users,
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
+      difficulty: isKorean ? '쉬움' : 'Easy',
+      keyTip: isKorean ? '가장 쉬운 날. 영웅 조각/에너지코어/모집권을 모아뒀다가 이 날 사용' : 'Ngày dễ nhất. Tích mảnh anh hùng/Power Core/vé để dùng hôm nay',
       activities: isKorean
-        ? ['영웅 조각 사용', '영웅 모집 티켓 사용', '프라임 리크루트', '에너지코어 사용', '주황 장비 조각']
+        ? ['영웅 조각 사용', '영웅 모집권 사용', '프라임 리크루트', '에너지코어 사용', '주황 장비 조각']
         : ['Dùng mảnh anh hùng', 'Dùng vé tuyển mộ anh hùng', 'Prime Recruit', 'Dùng Power Core', 'Mảnh trang bị cam'],
       goldenHour: [
         { apoc: '08:00-12:00', korea: '19:00-23:00' },
@@ -107,6 +115,8 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       icon: Swords,
       color: 'text-red-400',
       bg: 'bg-red-500/10',
+      difficulty: isKorean ? '보통' : 'Normal',
+      keyTip: isKorean ? '목요일에 저장한 레이더 작업을 이 날 수행. 훈련 가속 집중 사용' : 'Dùng radar đã lưu từ thứ 5. Tập trung tăng tốc huấn luyện',
       activities: isKorean
         ? ['병력 훈련', '훈련 가속 사용', '병력 승급', '건설/연구 가속도 포인트 획득']
         : ['Huấn luyện quân', 'Dùng tăng tốc HL', 'Thăng cấp quân', 'Tăng tốc xây/NC cũng được điểm'],
@@ -123,6 +133,8 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       icon: Target,
       color: 'text-green-400',
       bg: 'bg-green-500/10',
+      difficulty: isKorean ? '쉬움' : 'Easy',
+      keyTip: isKorean ? '가장 쉬운 이벤트. 승패 무관. 다이아 2,000개 이상 준비 (방패용)' : 'Event dễ nhất. Thắng thua không quan trọng. Chuẩn bị 2,000+ diamond (khiên)',
       activities: isKorean
         ? ['적 기지 공격 (승/패 무관)', 'TvT 전투', '약한 본부(HQ) 타겟팅', '용사훈장 + 주황 장비 조각 보상']
         : ['Tấn công căn cứ địch (thắng/thua đều được)', 'Chiến đấu TvT', 'Target HQ yếu', 'Thưởng Valor Medal + mảnh trang bị cam'],
@@ -160,7 +172,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
 
   const tips = [
     isKorean
-      ? '영웅 조각, 모집 티켓은 반드시 4일차 목요일 Hero Initiative에만 사용!'
+      ? '영웅 조각, 모집권은 반드시 4일차 목요일 Hero Initiative에만 사용!'
       : 'Mảnh anh hùng, vé tuyển mộ PHẢI dùng vào ngày 4 (Thứ tư) Hero Initiative!',
     isKorean
       ? '골든아워(전면전비 일치 시간)에 활동하면 양쪽 이벤트에서 동시 포인트 획득'
@@ -264,9 +276,19 @@ function AllianceDuelContent({ locale }: { locale: string }) {
                         <Icon className="h-5 w-5" />
                         {theme.name}
                       </span>
+                      {'difficulty' in theme && (
+                        <Badge variant="outline" className="text-xs text-muted-foreground">
+                          {(theme as { difficulty: string }).difficulty}
+                        </Badge>
+                      )}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
+                    {'keyTip' in theme && (
+                      <p className="text-xs font-medium text-highlight bg-highlight/10 rounded p-2">
+                        {(theme as { keyTip: string }).keyTip}
+                      </p>
+                    )}
                     <div>
                       <p className="text-xs text-muted-foreground mb-1">
                         {isKorean ? '포인트 획득 활동:' : 'Hoạt động lấy điểm:'}
@@ -420,7 +442,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
                   {isKorean ? '흔한 실수 - 반드시 피해야 할 것' : 'Sai lầm phổ biến - PHẢI tránh'}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? '영웅 조각/모집 티켓을 4일차 목요일 외에 사용' : 'Dùng mảnh anh hùng/vé tuyển mộ ngoài ngày 4 (Thứ năm)'}</li>
+                  <li>• {isKorean ? '영웅 조각/모집권을 4일차 목요일 외에 사용' : 'Dùng mảnh anh hùng/vé tuyển mộ ngoài ngày 4 (Thứ năm)'}</li>
                   <li>• {isKorean ? '렌치를 1일차 월요일 외에 사용' : 'Dùng cờ lê ngoài ngày 1 (Thứ hai)'}</li>
                   <li>• {isKorean ? '골든아워 외 시간에 가속 아이템 대량 소모' : 'Dùng nhiều tăng tốc ngoài Golden Hour'}</li>
                   <li>• {isKorean ? '주황 레벨 퀘스트(현상금, 트럭) 무시' : 'Bỏ qua quest cấp cam (bounty, truck)'}</li>

@@ -56,7 +56,7 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
 
   const valueComparison = [
     {
-      source: isKorean ? '럭키 할인 (90%)' : 'Lucky Discounter (90%)',
+      source: isKorean ? '행운 할인 (90%)' : 'Lucky Discounter (90%)',
       efficiency: '5x',
       note: isKorean ? '특권상점 대비 5배 효율' : 'Hiệu quả gấp 5 lần VIP Shop',
       color: 'text-green-400',
@@ -103,7 +103,7 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Percent className="h-8 w-8 text-green-400" />
-            {isKorean ? '럭키 할인 (Lucky Discounter) 가이드' : 'Hướng dẫn Lucky Discounter'}
+            {isKorean ? '행운 할인 (Lucky Discounter) 가이드' : 'Hướng dẫn Lucky Discounter'}
           </h1>
           <p className="text-muted-foreground">
             {isKorean
@@ -136,7 +136,7 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
-                    ? '럭키 할인은 약 4주마다 개최됩니다. 티켓을 미리 모아두고 이벤트가 열리면 보장 횟수까지 사용하세요.'
+                    ? '행운 할인은 약 4주마다 개최됩니다. 티켓을 미리 모아두고 이벤트가 열리면 보장 횟수까지 사용하세요.'
                     : 'Lucky Discounter diễn ra khoảng 4 tuần/lần. Tích ticket trước và dùng đến số lần đảm bảo khi event mở.'}
                 </p>
               </div>
@@ -222,7 +222,7 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
               </div>
               <p className="text-sm text-muted-foreground mt-4 text-center">
                 {isKorean
-                  ? '※ 럭키 할인 90% 할인은 특권상점에서 경찰휘장을 직접 구매하는 것보다 5배 효율적입니다'
+                  ? '※ 행운 할인 90% 할인은 특권상점에서 경찰휘장을 직접 구매하는 것보다 5배 효율적입니다'
                   : '※ Giảm 90% Lucky Discounter hiệu quả gấp 5 lần mua badge trực tiếp từ VIP Shop'}
               </p>
             </CardContent>
@@ -239,7 +239,7 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
                   {isKorean ? '핵심 주의사항' : 'Lưu ý quan trọng'}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? '특권상점에서 경찰휘장 직접 구매 금지! 럭키 할인 기다리기' : 'KHÔNG mua badge trực tiếp từ VIP Shop! Chờ Lucky Discounter'}</li>
+                  <li>• {isKorean ? '특권상점에서 경찰휘장 직접 구매 금지! 행운 할인 기다리기' : 'KHÔNG mua badge trực tiếp từ VIP Shop! Chờ Lucky Discounter'}</li>
                   <li>• {isKorean ? '90% 할인이 아니면 구매 스킵 - 낮은 할인율은 비효율' : 'Không phải 90% thì bỏ qua - tỷ lệ thấp không hiệu quả'}</li>
                   <li>• {isKorean ? '티켓 없이 참여하면 손해 - 미리 모아두기' : 'Tham gia không có ticket bị thiệt - tích trước'}</li>
                 </ul>
@@ -275,6 +275,63 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
               </ol>
             </CardContent>
           </Card>
+        </section>
+
+        {/* Value Comparison */}
+        <Card className="border-highlight/30 bg-highlight/5">
+          <CardContent className="p-4 space-y-3">
+            <p className="font-semibold text-highlight">
+              {isKorean ? '경찰휘장 가치 비교' : 'So sánh giá trị Badge'}
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="p-3 rounded-lg bg-green-500/10 text-center">
+                <p className="text-green-400 font-bold">{isKorean ? '행운 할인 90%' : 'Lucky Discounter 90%'}</p>
+                <p className="text-2xl font-bold text-green-400">0.3</p>
+                <p className="text-xs text-muted-foreground">{isKorean ? '다이아/뱃지' : 'diamond/badge'}</p>
+              </div>
+              <div className="p-3 rounded-lg bg-red-500/10 text-center">
+                <p className="text-red-400 font-bold">{isKorean ? '특권상점 (VIP)' : 'VIP Store'}</p>
+                <p className="text-2xl font-bold text-red-400">1.5</p>
+                <p className="text-xs text-muted-foreground">{isKorean ? '다이아/뱃지' : 'diamond/badge'}</p>
+              </div>
+            </div>
+            <p className="text-xs text-muted-foreground text-center">
+              {isKorean ? '행운 할인 90% = VIP 대비 5배 효율' : 'Lucky Discounter 90% = hiệu quả gấp 5 lần VIP'}
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Discount Strategy */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold">
+            {isKorean ? '할인율별 구매 전략' : 'Chiến lược mua theo mức giảm giá'}
+          </h2>
+          <div className="grid gap-2">
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-green-500/10">
+              <Badge className="bg-green-500 text-white font-bold">90%</Badge>
+              <span className="text-sm text-muted-foreground">
+                {isKorean ? '경찰휘장 + 가속 모두 구매 — 최고 효율' : 'Mua badge + speed-up — hiệu quả nhất'}
+              </span>
+            </div>
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-500/10">
+              <Badge className="bg-blue-500 text-white font-bold">70%</Badge>
+              <span className="text-sm text-muted-foreground">
+                {isKorean ? '경찰휘장만 구매, 가속은 스킵' : 'Chỉ mua badge, bỏ qua speed-up'}
+              </span>
+            </div>
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-yellow-500/10">
+              <Badge className="bg-yellow-500 text-white font-bold">50%</Badge>
+              <span className="text-sm text-muted-foreground">
+                {isKorean ? '다이아 여유 있을 때만 경찰휘장 구매' : 'Chỉ mua badge khi dư diamond'}
+              </span>
+            </div>
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-red-500/10">
+              <Badge className="bg-red-500 text-white font-bold">30%↓</Badge>
+              <span className="text-sm text-muted-foreground">
+                {isKorean ? '전부 스킵 — 티켓 절약' : 'Bỏ qua tất cả — tiết kiệm vé'}
+              </span>
+            </div>
+          </div>
         </section>
 
         {/* Tips */}

@@ -52,9 +52,9 @@ function ResearchPriorityContent({ locale }: { locale: string }) {
       bg: 'bg-blue-500/10',
       border: 'border-blue-500/30',
       description: isKorean
-        ? '긴급구조 해금 (-20% 병력 손실). 피난소건설 50% + 군사이론 45% 필요'
+        ? '긴급 구조 해금 (-20% 병력 손실). 피난소건설 50% + 군사이론 45% 필요'
         : 'Mở Urgent Rescue (-20% mất quân). Cần Shelter 50% + Military 45%',
-      tip: isKorean ? '※ 긴급구조: 10랭크, 방어 플레이어 필수' : '※ Urgent Rescue: 10 rank, bắt buộc cho phòng thủ',
+      tip: isKorean ? '※ 긴급 구조: 10랭크, 방어 플레이어 필수' : '※ Urgent Rescue: 10 rank, bắt buộc cho phòng thủ',
     },
     {
       name: isKorean ? '도시함락 (Siege to Seize)' : 'Siege to Seize',
@@ -92,7 +92,7 @@ function ResearchPriorityContent({ locale }: { locale: string }) {
   const badgeCosts = [
     { name: isKorean ? '긴급구조' : 'Urgent Rescue', badges: '~50K', note: isKorean ? '10랭크' : '10 rank' },
     { name: 'T10 Units (UST)', badges: '~1.4M', note: isKorean ? 'F2P 수년 소요' : 'F2P mất nhiều năm' },
-    { name: 'Recharge Shield', badges: '594K', note: isKorean ? '야전연구' : 'Field Research' },
+    { name: isKorean ? '에너지 실드' : 'Recharge Shield', badges: '594K', note: isKorean ? '야전연구 (총 뱃지 594,430개)' : 'Field Research (tổng 594,430 badge)' },
   ];
 
   const tips = [
@@ -159,8 +159,8 @@ function ResearchPriorityContent({ locale }: { locale: string }) {
           <CardContent>
             <p className="text-muted-foreground mb-4">
               {isKorean
-                ? '다른 모든 연구보다 먼저 완료하세요. 일일 보상(배지, 합금, 조각)이 2배가 되어 이후 모든 성장이 가속화됩니다.'
-                : 'Hoàn thành trước mọi NC khác. Phần thưởng hàng ngày (badge, hợp kim, mảnh) tăng gấp đôi, tăng tốc mọi phát triển sau đó.'}
+                ? '다른 모든 연구보다 먼저 완료하세요. 일일 보상(경찰휘장, 합금, 조각)이 2배가 되어 이후 모든 성장이 가속화됩니다. 단, 9상자 이상 과투자는 금물 — 전투력 성장이 2~3개월 지연됩니다.'
+                : 'Hoàn thành trước mọi NC khác. Phần thưởng hàng ngày (badge, hợp kim, mảnh) tăng gấp đôi. Nhưng KHÔNG đầu tư quá 9 hộp — sẽ chậm sức mạnh 2-3 tháng.'}
             </p>
             <div className="grid grid-cols-3 gap-4 text-center">
               <div className="p-3 rounded-lg bg-yellow-500/10">
@@ -209,6 +209,43 @@ function ResearchPriorityContent({ locale }: { locale: string }) {
             })}
           </div>
         </section>
+
+        {/* HP Stacking Strategy */}
+        <Card className="border-green-500/30 bg-green-500/5">
+          <CardHeader>
+            <CardTitle className="text-green-400 flex items-center gap-2">
+              <Shield className="h-5 w-5" />
+              {isKorean ? 'HP 스택 전략 (35~40% 추가 HP)' : 'Chiến lược HP Stack (35-40% HP thêm)'}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-sm text-muted-foreground">
+              {isKorean
+                ? '군사이론 + 전쟁수호 + 도시함락의 에너지 실드를 모두 조합하면 35~40%의 추가 HP를 확보합니다. 이것은 게임 체인저입니다.'
+                : 'Kết hợp Military Strategies + Peace Shield + Siege to Seize Recharge Shield = 35-40% HP thêm. Đây là game changer.'}
+            </p>
+            <div className="grid gap-2 sm:grid-cols-3">
+              <div className="p-3 rounded-lg bg-red-500/10 text-center">
+                <p className="text-red-400 font-bold text-sm">{isKorean ? '군사이론' : 'Military Strategies'}</p>
+                <p className="text-lg font-bold text-red-400">10~15%</p>
+                <p className="text-xs text-muted-foreground">HP</p>
+              </div>
+              <div className="p-3 rounded-lg bg-blue-500/10 text-center">
+                <p className="text-blue-400 font-bold text-sm">{isKorean ? '전쟁수호 에너지 실드' : 'Peace Shield Recharge'}</p>
+                <p className="text-lg font-bold text-blue-400">+%</p>
+                <p className="text-xs text-muted-foreground">{isKorean ? 'Lv.10 기준' : 'Lv.10'}</p>
+              </div>
+              <div className="p-3 rounded-lg bg-orange-500/10 text-center">
+                <p className="text-orange-400 font-bold text-sm">{isKorean ? '도시함락 에너지 실드' : 'Siege Recharge'}</p>
+                <p className="text-lg font-bold text-orange-400">+%</p>
+                <p className="text-xs text-muted-foreground">{isKorean ? 'Lv.10 기준' : 'Lv.10'}</p>
+              </div>
+            </div>
+            <p className="text-xs text-muted-foreground text-center font-medium">
+              {isKorean ? '= 합산 35~40% 추가 HP (배수 적용)' : '= Tổng 35-40% HP thêm (nhân)'}
+            </p>
+          </CardContent>
+        </Card>
 
         {/* Badge Costs */}
         <section className="space-y-4">

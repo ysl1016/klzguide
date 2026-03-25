@@ -263,6 +263,34 @@ function FormationsContent({ locale }: { locale: string }) {
           </div>
         </section>
 
+        {/* Mixed Formation Meta */}
+        <Card className="border-highlight/30 bg-highlight/5">
+          <CardContent className="p-4 space-y-3">
+            <p className="font-semibold text-highlight">
+              {isKorean ? '3+2 혼합 진형이 유리한 이유' : 'Tại sao đội hình trộn 3+2 có lợi'}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {isKorean
+                ? '서버 플레이어의 약 70%가 블러디 로즈를 선택합니다. 새벽의 날개 3명 + 블러디 로즈 2명 구성은 대부분의 상대를 카운터하면서 시즌 시너지 보너스도 확보합니다. 120M 새벽의 날개 진형이 130M 블러디 로즈 진형을 이길 수 있습니다 — 진영 우위가 1,000만 전투력 차이를 극복합니다.'
+                : 'Khoảng 70% người chơi server chọn Blood Rose. Đội hình Wings of Dawn 3 + Blood Rose 2 counter đa số đối thủ và có bonus season synergy. Đội 120M WoD thắng 130M BR — lợi thế phe vượt qua 10M chênh lệch CP.'}
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Commander Slot */}
+        <Card className="border-blue-500/30 bg-blue-500/5">
+          <CardContent className="p-4 space-y-2">
+            <p className="font-semibold text-blue-400">
+              {isKorean ? '지휘관 슬롯 배치 규칙' : 'Quy tắc đặt slot Chỉ huy'}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {isKorean
+                ? '지휘관 슬롯에는 전체 병종 버프 영웅을 배치하세요 — 추가 보너스가 적용됩니다. 추천 영웅: 퀴니, 릴리아나. 유틸 전용 영웅(레이더, 자원 생산)은 전투 진형에서 제외하세요.'
+                : 'Đặt anh hùng buff toàn quân ở slot Chỉ huy — có bonus thêm. Đề xuất: Queenie, Liliana. Loại bỏ anh hùng utility (radar, sản xuất tài nguyên) khỏi đội hình chiến đấu.'}
+            </p>
+          </CardContent>
+        </Card>
+
         {/* Tips */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">{isKorean ? '진형 팁' : 'Mẹo đội hình'}</h2>

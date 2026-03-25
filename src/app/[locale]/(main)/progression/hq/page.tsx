@@ -129,7 +129,7 @@ function HQContent({ locale }: { locale: string }) {
           </h2>
           <p className="text-sm text-muted-foreground">
             {isKorean
-              ? '※ 표시된 시간은 보너스 없는 기본 시간입니다. 연구/난민/버프로 크게 단축됩니다.'
+              ? '※ 표시된 시간은 보너스 없는 기본 시간입니다. 연구/피난민/버프로 크게 단축됩니다.'
               : '※ Thời gian hiển thị là cơ bản không bonus. Có thể rút ngắn nhiều với NC/người tị nạn/buff.'}
           </p>
           <div className="overflow-x-auto">

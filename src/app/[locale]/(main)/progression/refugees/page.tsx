@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: locale === 'ko' ? '피난민 시스템 가이드 | KLZ Guide' : 'Hướng dẫn Hệ thống Người tị nạn | KLZ Guide',
     description: locale === 'ko'
-      ? '피난민 시스템 완벽 가이드 - 피난민 유형, 티켓 전략, 파견 우선순위'
+      ? '피난민 시스템 완벽 가이드 - 피난민 유형, 모집권 전략, 파견 우선순위'
       : 'Hướng dẫn hoàn chỉnh hệ thống người tị nạn - loại người tị nạn, chiến lược vé, ưu tiên cử đi',
   };
 }
@@ -29,12 +29,12 @@ function RefugeesContent({ locale }: { locale: string }) {
     {
       name: isKorean ? '외교관 (Diplomat)' : 'Diplomat',
       building: isKorean ? '연맹 센터' : 'Alliance Center',
-      bonus: isKorean ? '연맹 관련 버프 증가' : 'Tăng buff liên minh',
+      bonus: isKorean ? '연맹 헬프 용량/시간 증폭' : 'Tăng dung lượng/thời gian help liên minh',
       icon: Briefcase,
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
-      priority: isKorean ? '중' : 'Trung bình',
-      desc: isKorean ? '연맹 활동이 많은 플레이어에게 유용' : 'Hữu ích cho người chơi hoạt động liên minh nhiều',
+      priority: isKorean ? '최우선' : 'Highest',
+      desc: isKorean ? '헬프 시간 증폭으로 건설/연구/치료 가속 — 복리 효과' : 'Tăng thời gian help → tăng tốc xây/NC/chữa — hiệu ứng lãi kép',
     },
     {
       name: isKorean ? '집사 (Butler)' : 'Butler',
@@ -115,7 +115,7 @@ function RefugeesContent({ locale }: { locale: string }) {
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
       desc: isKorean
-        ? '최고급 피난민 보장. 장기간 티켓을 모아서 한 번에 사용하는 전략.'
+        ? '최고급 피난민 보장. 장기간 모집권을 모아서 한 번에 사용하는 전략.'
         : 'Đảm bảo người tị nạn tốt nhất. Chiến lược tích vé lâu dùng một lần.',
       recommended: false,
     },
@@ -162,10 +162,10 @@ function RefugeesContent({ locale }: { locale: string }) {
 
   const tips = [
     isKorean
-      ? '피난민 티켓은 2,000장 단위로 모아서 한 번에 사용하세요 - 고급 보장 구간입니다'
+      ? '피난민 모집권은 2,000장 단위로 모아서 한 번에 사용하세요 - 고급 보장 구간입니다'
       : 'Tích vé người tị nạn 2,000 vé rồi dùng một lần - đảm bảo cao cấp',
     isKorean
-      ? '난폭 두목 이벤트에서 피난민 티켓을 획득할 수 있습니다'
+      ? '난폭 두목 이벤트에서 피난민 모집권을 획득할 수 있습니다'
       : 'Có thể nhận vé người tị nạn từ event Furylord',
     isKorean
       ? '과학자와 장교를 최우선으로 파견하세요 - 성장 속도에 직접적인 영향'
@@ -177,7 +177,7 @@ function RefugeesContent({ locale }: { locale: string }) {
       ? '매일 무료 소환을 잊지 마세요 - 작지만 꾸준히 쌓입니다'
       : 'Đừng quên triệu hồi miễn phí hàng ngày - ít nhưng tích dần',
     isKorean
-      ? '이벤트 기간 중 피난민 소환 보너스가 있을 때 티켓을 사용하면 더 효율적입니다'
+      ? '이벤트 기간 중 피난민 소환 보너스가 있을 때 모집권을 사용하면 더 효율적입니다'
       : 'Dùng vé khi có bonus triệu hồi trong event sẽ hiệu quả hơn',
   ];
 
@@ -213,8 +213,8 @@ function RefugeesContent({ locale }: { locale: string }) {
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {isKorean ? '6종 피난민: 외교관, 집사, 과학자, 간호사, 장교, 교관' : '6 loại: Diplomat, Butler, Scientist, Nurse, Officer, Instructor'}</li>
               <li>• {isKorean ? '파견 우선순위: 과학자 > 장교 > 집사' : 'Ưu tiên cử đi: Scientist > Officer > Butler'}</li>
-              <li>• {isKorean ? '티켓 2,000장 단위 소환 권장 - 고급 보장' : 'Khuyến nghị dùng 2,000 vé/lần - đảm bảo cao cấp'}</li>
-              <li>• {isKorean ? '난폭 두목에서 티켓 획득 가능' : 'Có thể lấy vé từ Furylord'}</li>
+              <li>• {isKorean ? '모집권 2,000장 단위 소환 권장 - 고급 보장' : 'Khuyến nghị dùng 2,000 vé/lần - đảm bảo cao cấp'}</li>
+              <li>• {isKorean ? '난폭 두목에서 모집권 획득 가능' : 'Có thể lấy vé từ Furylord'}</li>
             </ul>
           </CardContent>
         </Card>
@@ -265,7 +265,7 @@ function RefugeesContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Ticket className="h-6 w-6 text-yellow-400" />
-            {isKorean ? '티켓 소환 전략' : 'Chiến lược triệu hồi vé'}
+            {isKorean ? '모집권 소환 전략' : 'Chiến lược triệu hồi vé'}
           </h2>
           <div className="grid gap-4 sm:grid-cols-3">
             {ticketThresholds.map((threshold, idx) => (
@@ -322,11 +322,11 @@ function RefugeesContent({ locale }: { locale: string }) {
               <Ticket className="h-6 w-6 text-highlight shrink-0" />
               <div>
                 <p className="font-semibold text-highlight mb-1">
-                  {isKorean ? '난폭 두목 - 티켓 획득처' : 'Furylord - Nguồn vé'}
+                  {isKorean ? '난폭 두목 - 모집권 획득처' : 'Furylord - Nguồn vé'}
                 </p>
                 <p className="text-sm text-muted-foreground">
                   {isKorean
-                    ? '난폭 두목 이벤트에서 피난민 티켓을 획득할 수 있습니다. 매일 참가하여 티켓을 꾸준히 모으세요. 2,000장을 목표로 모아서 한 번에 소환하는 것이 가장 효율적입니다.'
+                    ? '난폭 두목 이벤트에서 피난민 모집권을 획득할 수 있습니다. 매일 참가하여 모집권을 꾸준히 모으세요. 2,000장을 목표로 모아서 한 번에 소환하는 것이 가장 효율적입니다.'
                     : 'Có thể nhận vé người tị nạn từ event Furylord. Tham gia hàng ngày để tích vé đều đặn. Mục tiêu 2,000 vé rồi triệu hồi một lần là hiệu quả nhất.'}
                 </p>
               </div>
