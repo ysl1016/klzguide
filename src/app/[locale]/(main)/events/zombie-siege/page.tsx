@@ -17,71 +17,81 @@ export default async function ZombieSiegePage({
 
 function ZombieSiegeContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const eventInfo = [
     {
-      label: isKorean ? '총 웨이브' : 'Tổng wave',
+      label: l('총 웨이브', 'Tổng wave', 'Total Waves'),
       value: '30',
-      unit: isKorean ? '웨이브' : 'wave',
+      unit: l('웨이브', 'wave', 'waves'),
     },
     {
-      label: isKorean ? '총 시간' : 'Tổng thời gian',
+      label: l('총 시간', 'Tổng thời gian', 'Total Duration'),
       value: '1h 45m',
       unit: '',
     },
     {
-      label: isKorean ? '일정' : 'Lịch',
-      value: isKorean ? '월/화요일' : 'T2/T3',
+      label: l('일정', 'Lịch', 'Schedule'),
+      value: l('월/화요일', 'T2/T3', 'Mon/Tue'),
       unit: '',
     },
     {
       label: 'War Frenzy',
       value: '10',
-      unit: isKorean ? '분마다' : 'phút/lần',
+      unit: l('분마다', 'phút/lần', 'min interval'),
     },
   ];
 
   const phases = [
     {
       waves: '1-10',
-      difficulty: isKorean ? '쉬움' : 'Dễ',
+      difficulty: l('쉬움', 'Dễ', 'Easy'),
       color: 'text-green-400',
       bg: 'bg-green-500/10',
-      desc: isKorean ? '워밍업 단계, 대부분의 플레이어가 처리 가능' : 'Giai đoạn khởi động, hầu hết người chơi xử lý được',
+      desc: l('워밍업 단계, 대부분의 플레이어가 처리 가능', 'Giai đoạn khởi động, hầu hết người chơi xử lý được', 'Warm-up phase, most players can handle it'),
     },
     {
       waves: '11-20',
-      difficulty: isKorean ? '보통' : 'Trung bình',
+      difficulty: l('보통', 'Trung bình', 'Medium'),
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
-      desc: isKorean ? '난이도 상승, 협력 필요' : 'Độ khó tăng, cần hợp tác',
+      desc: l('난이도 상승, 협력 필요', 'Độ khó tăng, cần hợp tác', 'Difficulty ramps up, cooperation needed'),
     },
     {
       waves: '21-30',
-      difficulty: isKorean ? '어려움' : 'Khó',
+      difficulty: l('어려움', 'Khó', 'Hard'),
       color: 'text-red-400',
       bg: 'bg-red-500/10',
-      desc: isKorean ? '최고 난이도, 연맹 전체 협력 필수' : 'Độ khó cao nhất, cần hợp tác toàn LM',
+      desc: l('최고 난이도, 연맹 전체 협력 필수', 'Độ khó cao nhất, cần hợp tác toàn LM', 'Highest difficulty, full alliance cooperation required'),
     },
   ];
 
   const tips = [
-    isKorean
-      ? 'R4/R5만 이벤트 시작 가능 - 시작 시간 미리 연맹 채팅으로 공지'
-      : 'Chỉ R4/R5 mới bắt đầu được - thông báo thời gian qua chat LM',
-    isKorean
-      ? '다이아로 수리 금지! 이벤트 후 무료 수리됨'
-      : 'KHÔNG sửa bằng diamond! Sửa miễn phí sau sự kiện',
-    isKorean
-      ? '부대 미리 본부(HQ)로 소환 - 다른 활동 중이면 참여 불가'
-      : 'Triệu hồi quân về HQ trước - quân đang hoạt động không tham gia được',
-    isKorean
-      ? 'War Frenzy(10분마다)에 집중 공격 - 추가 데미지와 보너스'
-      : 'Tập trung tấn công khi War Frenzy (10 phút/lần) - damage và bonus thêm',
-    isKorean
-      ? '렌치 보상으로 연맹 대결 차량 개조 가능'
-      : 'Thưởng cờ lê dùng để cải tạo xe trong AD',
+    l(
+      'R4/R5만 이벤트 시작 가능 - 시작 시간 미리 연맹 채팅으로 공지',
+      'Chỉ R4/R5 mới bắt đầu được - thông báo thời gian qua chat LM',
+      'Only R4/R5 can start the event - announce the start time in alliance chat beforehand'
+    ),
+    l(
+      '다이아로 수리 금지! 이벤트 후 무료 수리됨',
+      'KHÔNG sửa bằng diamond! Sửa miễn phí sau sự kiện',
+      'Do NOT repair with diamonds! Repairs are free after the event'
+    ),
+    l(
+      '부대 미리 본부(HQ)로 소환 - 다른 활동 중이면 참여 불가',
+      'Triệu hồi quân về HQ trước - quân đang hoạt động không tham gia được',
+      'Recall troops to HQ beforehand - troops in other activities cannot participate'
+    ),
+    l(
+      'War Frenzy(10분마다)에 집중 공격 - 추가 데미지와 보너스',
+      'Tập trung tấn công khi War Frenzy (10 phút/lần) - damage và bonus thêm',
+      'Focus attacks during War Frenzy (every 10 min) - bonus damage and rewards'
+    ),
+    l(
+      '렌치 보상으로 연맹 대결 차량 개조 가능',
+      'Thưởng cờ lê dùng để cải tạo xe trong AD',
+      'Wrench rewards can be used for vehicle mods in Alliance Duel'
+    ),
   ];
 
   return (
@@ -100,24 +110,26 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Shield className="h-8 w-8 text-green-400" />
-            {isKorean ? '좀비공성 (Zombie Siege) 가이드' : 'Hướng dẫn Zombie Siege'}
+            {l('좀비공성 (Zombie Siege) 가이드', 'Hướng dẫn Zombie Siege', 'Zombie Siege Guide')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '30웨이브 연맹 방어 이벤트입니다. 렌치 획득의 주요 콘텐츠입니다.'
-              : 'Sự kiện phòng thủ LM 30 wave. Nội dung chính để lấy cờ lê.'}
+            {l(
+              '30웨이브 연맹 방어 이벤트입니다. 렌치 획득의 주요 콘텐츠입니다.',
+              'Sự kiện phòng thủ LM 30 wave. Nội dung chính để lấy cờ lê.',
+              'A 30-wave alliance defense event. The main content for earning Wrenches.'
+            )}
           </p>
         </div>
 
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '30웨이브, 총 1시간 45분 소요' : '30 wave, tổng 1 tiếng 45 phút'}</li>
-              <li>• {isKorean ? '일정: 월/화요일 (R4/R5만 시작 가능)' : 'Lịch: T2/T3 (chỉ R4/R5 bắt đầu được)'}</li>
-              <li>• {isKorean ? '보상: 렌치 (연맹 대결 차량 개조용)' : 'Thưởng: Cờ lê (cải tạo xe AD)'}</li>
-              <li>• {isKorean ? '다이아로 수리 금지 - 이벤트 후 무료 수리!' : 'KHÔNG sửa bằng diamond - sửa miễn phí sau!'}</li>
+              <li>• {l('30웨이브, 총 1시간 45분 소요', '30 wave, tổng 1 tiếng 45 phút', '30 waves, 1 hour 45 minutes total')}</li>
+              <li>• {l('일정: 월/화요일 (R4/R5만 시작 가능)', 'Lịch: T2/T3 (chỉ R4/R5 bắt đầu được)', 'Schedule: Mon/Tue (only R4/R5 can start)')}</li>
+              <li>• {l('보상: 렌치 (연맹 대결 차량 개조용)', 'Thưởng: Cờ lê (cải tạo xe AD)', 'Rewards: Wrenches (for Alliance Duel vehicle mods)')}</li>
+              <li>• {l('다이아로 수리 금지 - 이벤트 후 무료 수리!', 'KHÔNG sửa bằng diamond - sửa miễn phí sau!', 'Do NOT repair with diamonds - free repairs after the event!')}</li>
             </ul>
           </CardContent>
         </Card>
@@ -126,7 +138,7 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Calendar className="h-6 w-6 text-highlight" />
-            {isKorean ? '이벤트 정보' : 'Thông tin sự kiện'}
+            {l('이벤트 정보', 'Thông tin sự kiện', 'Event Info')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {eventInfo.map((info, idx) => (
@@ -147,7 +159,7 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Waves className="h-6 w-6 text-blue-400" />
-            {isKorean ? '웨이브 단계' : 'Giai đoạn wave'}
+            {l('웨이브 단계', 'Giai đoạn wave', 'Wave Phases')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-3">
             {phases.map((phase, idx) => (
@@ -174,9 +186,11 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
                   War Frenzy
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean
-                    ? '10분마다 War Frenzy가 활성화됩니다. 이 시간에 공격하면 추가 데미지와 보너스 포인트를 획득할 수 있습니다. War Frenzy 시간에 집중적으로 공격하세요.'
-                    : 'War Frenzy kích hoạt mỗi 10 phút. Tấn công lúc này được damage và điểm bonus thêm. Tập trung tấn công khi War Frenzy.'}
+                  {l(
+                    '10분마다 War Frenzy가 활성화됩니다. 이 시간에 공격하면 추가 데미지와 보너스 포인트를 획득할 수 있습니다. War Frenzy 시간에 집중적으로 공격하세요.',
+                    'War Frenzy kích hoạt mỗi 10 phút. Tấn công lúc này được damage và điểm bonus thêm. Tập trung tấn công khi War Frenzy.',
+                    'War Frenzy activates every 10 minutes. Attacking during this time grants bonus damage and points. Focus your attacks during War Frenzy.'
+                  )}
                 </p>
               </div>
             </div>
@@ -187,24 +201,26 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Wrench className="h-6 w-6 text-orange-400" />
-            {isKorean ? '보상' : 'Phần thưởng'}
+            {l('보상', 'Phần thưởng', 'Rewards')}
           </h2>
           <Card>
             <CardContent className="p-4">
               <div className="space-y-3 text-sm text-muted-foreground">
                 <p>
-                  {isKorean
-                    ? '주요 보상은 렌치(Wrench)입니다. 렌치는 연맹 대결에서 차량을 개조하는 데 사용됩니다.'
-                    : 'Phần thưởng chính là cờ lê (Wrench). Cờ lê dùng để cải tạo xe trong Alliance Duel.'}
+                  {l(
+                    '주요 보상은 렌치(Wrench)입니다. 렌치는 연맹 대결에서 차량을 개조하는 데 사용됩니다.',
+                    'Phần thưởng chính là cờ lê (Wrench). Cờ lê dùng để cải tạo xe trong Alliance Duel.',
+                    'The main reward is Wrenches. Wrenches are used to mod vehicles in Alliance Duel.'
+                  )}
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2 pt-2">
                   <div className="p-3 rounded-lg bg-orange-500/10">
-                    <p className="font-semibold text-orange-400">{isKorean ? '렌치' : 'Cờ lê'}</p>
-                    <p className="text-xs">{isKorean ? '연맹 대결 차량 개조용' : 'Cải tạo xe Alliance Duel'}</p>
+                    <p className="font-semibold text-orange-400">{l('렌치', 'Cờ lê', 'Wrenches')}</p>
+                    <p className="text-xs">{l('연맹 대결 차량 개조용', 'Cải tạo xe Alliance Duel', 'For Alliance Duel vehicle mods')}</p>
                   </div>
                   <div className="p-3 rounded-lg bg-purple-500/10">
-                    <p className="font-semibold text-purple-400">{isKorean ? '추가 보상' : 'Thưởng thêm'}</p>
-                    <p className="text-xs">{isKorean ? '웨이브 클리어 마일스톤' : 'Milestone clear wave'}</p>
+                    <p className="font-semibold text-purple-400">{l('추가 보상', 'Thưởng thêm', 'Bonus Rewards')}</p>
+                    <p className="text-xs">{l('웨이브 클리어 마일스톤', 'Milestone clear wave', 'Wave clear milestones')}</p>
                   </div>
                 </div>
               </div>
@@ -219,12 +235,12 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
               <Home className="h-6 w-6 text-blue-400 shrink-0" />
               <div>
                 <p className="font-semibold text-blue-400 mb-1">
-                  {isKorean ? '사전 준비' : 'Chuẩn bị'}
+                  {l('사전 준비', 'Chuẩn bị', 'Preparation')}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? '이벤트 시작 전 부대를 본부(HQ)로 소환' : 'Triệu hồi quân về HQ trước sự kiện'}</li>
-                  <li>• {isKorean ? '다른 활동(채집, 좀비 처치 등) 완료 후 대기' : 'Hoàn thành hoạt động khác (thu thập, zombie, v.v.) rồi chờ'}</li>
-                  <li>• {isKorean ? 'R4/R5가 시작 시간을 연맹 채팅으로 공지' : 'R4/R5 thông báo thời gian bắt đầu qua chat LM'}</li>
+                  <li>• {l('이벤트 시작 전 부대를 본부(HQ)로 소환', 'Triệu hồi quân về HQ trước sự kiện', 'Recall troops to HQ before the event')}</li>
+                  <li>• {l('다른 활동(채집, 좀비 처치 등) 완료 후 대기', 'Hoàn thành hoạt động khác (thu thập, zombie, v.v.) rồi chờ', 'Finish other activities (gathering, zombie kills, etc.) then wait')}</li>
+                  <li>• {l('R4/R5가 시작 시간을 연맹 채팅으로 공지', 'R4/R5 thông báo thời gian bắt đầu qua chat LM', 'R4/R5 should announce the start time in alliance chat')}</li>
                 </ul>
               </div>
             </div>
@@ -238,12 +254,12 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
               <AlertTriangle className="h-6 w-6 text-destructive shrink-0" />
               <div>
                 <p className="font-semibold text-destructive mb-1">
-                  {isKorean ? '핵심 주의사항' : 'Lưu ý quan trọng'}
+                  {l('핵심 주의사항', 'Lưu ý quan trọng', 'Critical Notes')}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? '다이아로 부대 수리 금지! 이벤트 종료 후 무료 수리됨' : 'KHÔNG sửa quân bằng diamond! Sửa miễn phí sau sự kiện'}</li>
-                  <li>• {isKorean ? 'R4/R5만 이벤트 시작 가능 - 일반 연맹원은 참여만' : 'Chỉ R4/R5 bắt đầu được - thành viên thường chỉ tham gia'}</li>
-                  <li>• {isKorean ? '1시간 45분 전체 참여가 이상적 - 중간 이탈 시 보상 감소' : 'Tham gia đủ 1h45m lý tưởng - rời giữa chừng giảm thưởng'}</li>
+                  <li>• {l('다이아로 부대 수리 금지! 이벤트 종료 후 무료 수리됨', 'KHÔNG sửa quân bằng diamond! Sửa miễn phí sau sự kiện', 'Do NOT repair troops with diamonds! Free repairs after the event')}</li>
+                  <li>• {l('R4/R5만 이벤트 시작 가능 - 일반 연맹원은 참여만', 'Chỉ R4/R5 bắt đầu được - thành viên thường chỉ tham gia', 'Only R4/R5 can start the event - regular members can only join')}</li>
+                  <li>• {l('1시간 45분 전체 참여가 이상적 - 중간 이탈 시 보상 감소', 'Tham gia đủ 1h45m lý tưởng - rời giữa chừng giảm thưởng', 'Full 1h45m participation is ideal - leaving early reduces rewards')}</li>
                 </ul>
               </div>
             </div>
@@ -252,7 +268,7 @@ function ZombieSiegeContent({ locale }: { locale: string }) {
 
         {/* Tips */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold">{isKorean ? '팁' : 'Mẹo'}</h2>
+          <h2 className="text-2xl font-bold">{l('팁', 'Mẹo', 'Tips')}</h2>
           <div className="grid gap-3">
             {tips.map((tip, idx) => (
               <div key={idx} className="info-tip flex gap-3">

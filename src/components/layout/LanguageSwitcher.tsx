@@ -15,6 +15,7 @@ import { locales, type Locale } from '@/i18n/routing';
 const languageNames: Record<Locale, { name: string; flag: string }> = {
   ko: { name: '한국어', flag: '🇰🇷' },
   vi: { name: 'Tiếng Việt', flag: '🇻🇳' },
+  en: { name: 'English', flag: '🇺🇸' },
 };
 
 export function LanguageSwitcher() {

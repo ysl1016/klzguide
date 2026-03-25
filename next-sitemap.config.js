@@ -12,5 +12,9 @@ module.exports = {
       href: 'https://klzguide.vercel.app/vi',
       hreflang: 'vi',
     },
+    {
+      href: 'https://klzguide.vercel.app/en',
+      hreflang: 'en',
+    },
   ],
 };

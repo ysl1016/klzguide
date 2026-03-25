@@ -1,38 +1,38 @@
 {
   "phases": [
     {
-      "name": { "ko": "Phase 1: 빠른 성장기", "vi": "Phase 1: Tăng trưởng nhanh" },
+      "name": { "ko": "Phase 1: 빠른 성장기", "vi": "Phase 1: Tăng trưởng nhanh", "en": "Phase 1: Rapid Growth" },
       "levels": "1-18",
-      "duration": { "ko": "보너스 포함 2일 이내", "vi": "Dưới 2 ngày với bonus" },
-      "description": { "ko": "빠르고 저렴함. 기초 다지기 구간", "vi": "Nhanh và rẻ. Giai đoạn xây nền tảng" }
+      "duration": { "ko": "보너스 포함 2일 이내", "vi": "Dưới 2 ngày với bonus", "en": "Under 2 days with bonuses" },
+      "description": { "ko": "빠르고 저렴함. 기초 다지기 구간", "vi": "Nhanh và rẻ. Giai đoạn xây nền tảng", "en": "Fast and cheap. Foundation-building phase" }
     },
     {
-      "name": { "ko": "Phase 2: 본격 성장기", "vi": "Phase 2: Tăng trưởng thực sự" },
+      "name": { "ko": "Phase 2: 본격 성장기", "vi": "Phase 2: Tăng trưởng thực sự", "en": "Phase 2: Real Growth" },
       "levels": "18-24",
-      "duration": { "ko": "일부 업그레이드 1주일 초과", "vi": "Một số nâng cấp vượt 1 tuần" },
-      "description": { "ko": "자원 비용 급증. 계획적 플레이 필요", "vi": "Chi phí tài nguyên tăng mạnh. Cần chơi có kế hoạch" }
+      "duration": { "ko": "일부 업그레이드 1주일 초과", "vi": "Một số nâng cấp vượt 1 tuần", "en": "Some upgrades exceed 1 week" },
+      "description": { "ko": "자원 비용 급증. 계획적 플레이 필요", "vi": "Chi phí tài nguyên tăng mạnh. Cần chơi có kế hoạch", "en": "Resource costs surge. Planned gameplay required" }
     },
     {
-      "name": { "ko": "Phase 3: 전략적 성장", "vi": "Phase 3: Tăng trưởng chiến lược" },
+      "name": { "ko": "Phase 3: 전략적 성장", "vi": "Phase 3: Tăng trưởng chiến lược", "en": "Phase 3: Strategic Growth" },
       "levels": "24-27",
-      "duration": { "ko": "체크포인트 레벨들", "vi": "Các level checkpoint" },
-      "description": { "ko": "가속 아이템 관리 필수. 신중한 계획 필요", "vi": "Quản lý tăng tốc bắt buộc. Cần lên kế hoạch cẩn thận" }
+      "duration": { "ko": "체크포인트 레벨들", "vi": "Các level checkpoint", "en": "Checkpoint levels" },
+      "description": { "ko": "가속 아이템 관리 필수. 신중한 계획 필요", "vi": "Quản lý tăng tốc bắt buộc. Cần lên kế hoạch cẩn thận", "en": "Speed-up management essential. Careful planning required" }
     },
     {
-      "name": { "ko": "Phase 4: 본부(HQ) 30 마일스톤", "vi": "Phase 4: Milestone HQ 30" },
+      "name": { "ko": "Phase 4: 본부(HQ) 30 마일스톤", "vi": "Phase 4: Milestone HQ 30", "en": "Phase 4: HQ 30 Milestone" },
       "levels": "27-30",
-      "duration": { "ko": "T10 병종 해금을 위한 핵심 목표", "vi": "Mục tiêu chính để mở khóa binh T10" },
-      "description": { "ko": "자원과 가속 비축 필수. 연구소 30 필요", "vi": "Cần tích trữ tài nguyên và tăng tốc. Cần Lab 30" }
+      "duration": { "ko": "T10 병종 해금을 위한 핵심 목표", "vi": "Mục tiêu chính để mở khóa binh T10", "en": "Key goal to unlock T10 troops" },
+      "description": { "ko": "자원과 가속 비축 필수. 연구소 30 필요", "vi": "Cần tích trữ tài nguyên và tăng tốc. Cần Lab 30", "en": "Must stockpile resources and speed-ups. Requires Research Lab 30" }
     },
     {
-      "name": { "ko": "Phase 5: 엔드게임", "vi": "Phase 5: Endgame" },
+      "name": { "ko": "Phase 5: 엔드게임", "vi": "Phase 5: Endgame", "en": "Phase 5: Endgame" },
       "levels": "31-35",
-      "duration": { "ko": "일부 업그레이드 6개월 이상 (보너스 없이)", "vi": "Một số nâng cấp trên 6 tháng (không có bonus)" },
-      "description": { "ko": "새 자원 '스틸(Steel)' 필요. T11 준비 구간", "vi": "Cần tài nguyên mới 'Thép'. Giai đoạn chuẩn bị T11" }
+      "duration": { "ko": "일부 업그레이드 6개월 이상 (보너스 없이)", "vi": "Một số nâng cấp trên 6 tháng (không có bonus)", "en": "Some upgrades over 6 months (without bonuses)" },
+      "description": { "ko": "새 자원 '스틸(Steel)' 필요. T11 준비 구간", "vi": "Cần tài nguyên mới 'Thép'. Giai đoạn chuẩn bị T11", "en": "New resource 'Steel' required. T11 preparation phase" }
     }
   ],
   "heroCapProgression": {
-    "description": { "ko": "본부(HQ) 레벨당 영웅 레벨 상한 +5", "vi": "Mỗi cấp HQ tăng giới hạn anh hùng +5" },
+    "description": { "ko": "본부(HQ) 레벨당 영웅 레벨 상한 +5", "vi": "Mỗi cấp HQ tăng giới hạn anh hùng +5", "en": "Hero level cap +5 per HQ level" },
     "examples": [
       { "hq": 1, "heroCap": 5 },
       { "hq": 10, "heroCap": 50 },
@@ -43,390 +43,399 @@
   },
   "requirementPattern": {
     "ko": "본부(HQ) 8-30: 연구소 필수. 첫 번째 건물 순환: 돌격캠프 → 슈터캠프 → 라이더캠프 → 성벽 → 연맹센터. HQ 31+: 연구소 불필요, 스틸 필요",
-    "vi": "HQ 8-30: Luôn cần Lab. Công trình 1 theo chu kỳ: Trại ĐK → Trại XT → Trại KB → Tường → TT LM. HQ 31+: Không cần Lab, cần Thép"
+    "vi": "HQ 8-30: Luôn cần Lab. Công trình 1 theo chu kỳ: Trại ĐK → Trại XT → Trại KB → Tường → TT LM. HQ 31+: Không cần Lab, cần Thép",
+    "en": "HQ 8-30: Research Lab always required. Building cycle: Assaulter Camp → Shooter Camp → Rider Camp → Wall → Alliance Center. HQ 31+: No Research Lab needed, Steel required"
   },
   "hqLevels": [
     {
       "level": 1,
       "heroCap": 5,
-      "requirements": { "ko": "-", "vi": "-" },
+      "requirements": { "ko": "-", "vi": "-", "en": "-" },
       "food": 0,
       "wood": 0,
       "zent": 0,
-      "time": { "ko": "즉시", "vi": "Ngay" },
+      "time": { "ko": "즉시", "vi": "Ngay", "en": "Instant" },
       "power": 0
     },
     {
       "level": 2,
       "heroCap": 10,
-      "requirements": { "ko": "-", "vi": "-" },
+      "requirements": { "ko": "-", "vi": "-", "en": "-" },
       "food": 10300,
       "wood": 10300,
       "zent": 0,
-      "time": { "ko": "3초", "vi": "3 giây" },
+      "time": { "ko": "3초", "vi": "3 giây", "en": "3s" },
       "power": 50
     },
     {
       "level": 3,
       "heroCap": 15,
-      "requirements": { "ko": "-", "vi": "-" },
+      "requirements": { "ko": "-", "vi": "-", "en": "-" },
       "food": 15500,
       "wood": 15500,
       "zent": 0,
-      "time": { "ko": "5초", "vi": "5 giây" },
+      "time": { "ko": "5초", "vi": "5 giây", "en": "5s" },
       "power": 150
     },
     {
       "level": 4,
       "heroCap": 20,
-      "requirements": { "ko": "성벽", "vi": "Tường thành" },
+      "requirements": { "ko": "성벽", "vi": "Tường thành", "en": "Wall" },
       "food": 23300,
       "wood": 23300,
       "zent": 0,
-      "time": { "ko": "1분 57초", "vi": "1 phút 57 giây" },
+      "time": { "ko": "1분 57초", "vi": "1 phút 57 giây", "en": "1m 57s" },
       "power": 400
     },
     {
       "level": 5,
       "heroCap": 25,
-      "requirements": { "ko": "돌격캠프, 레이더", "vi": "Trại ĐK, Radar" },
+      "requirements": { "ko": "돌격캠프, 레이더", "vi": "Trại ĐK, Radar", "en": "Assaulter Camp, Radar" },
       "food": 46600,
       "wood": 46600,
       "zent": 0,
-      "time": { "ko": "13분 20초", "vi": "13 phút 20 giây" },
+      "time": { "ko": "13분 20초", "vi": "13 phút 20 giây", "en": "13m 20s" },
       "power": 800
     },
     {
       "level": 6,
       "heroCap": 30,
-      "requirements": { "ko": "군사센터", "vi": "Trung tâm Quân sự" },
+      "requirements": { "ko": "군사센터", "vi": "Trung tâm Quân sự", "en": "Military Center" },
       "food": 139900,
       "wood": 139900,
       "zent": 27400,
-      "time": { "ko": "19분 43초", "vi": "19 phút 43 giây" },
+      "time": { "ko": "19분 43초", "vi": "19 phút 43 giây", "en": "19m 43s" },
       "power": 1500
     },
     {
       "level": 7,
       "heroCap": 35,
-      "requirements": { "ko": "훈련소, 연맹센터", "vi": "Trại huấn luyện, Trung tâm LM" },
+      "requirements": { "ko": "훈련소, 연맹센터", "vi": "Trại huấn luyện, Trung tâm LM", "en": "Training Camp, Alliance Center" },
       "food": 279900,
       "wood": 279900,
       "zent": 54800,
-      "time": { "ko": "40분 38초", "vi": "40 phút 38 giây" },
+      "time": { "ko": "40분 38초", "vi": "40 phút 38 giây", "en": "40m 38s" },
       "power": 2800
     },
     {
       "level": 8,
       "heroCap": 40,
-      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab" },
+      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab", "en": "Assaulter Camp, Research Lab" },
       "food": 447900,
       "wood": 447900,
       "zent": 87800,
-      "time": { "ko": "1시간 15분", "vi": "1 giờ 15 phút" },
+      "time": { "ko": "1시간 15분", "vi": "1 giờ 15 phút", "en": "1h 15m" },
       "power": 5000
     },
     {
       "level": 9,
       "heroCap": 45,
-      "requirements": { "ko": "응급병원, 연구소", "vi": "Bệnh viện, Lab" },
+      "requirements": { "ko": "응급병원, 연구소", "vi": "Bệnh viện, Lab", "en": "Hospital, Research Lab" },
       "food": 716600,
       "wood": 716600,
       "zent": 140000,
-      "time": { "ko": "1시간 50분", "vi": "1 giờ 50 phút" },
+      "time": { "ko": "1시간 50분", "vi": "1 giờ 50 phút", "en": "1h 50m" },
       "power": 8500
     },
     {
       "level": 10,
       "heroCap": 50,
-      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab" },
+      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab", "en": "Shooter Camp, Research Lab" },
       "food": 859900,
       "wood": 859900,
       "zent": 168000,
-      "time": { "ko": "2시간 45분", "vi": "2 giờ 45 phút" },
+      "time": { "ko": "2시간 45분", "vi": "2 giờ 45 phút", "en": "2h 45m" },
       "power": 14000
     },
     {
       "level": 11,
       "heroCap": 55,
-      "requirements": { "ko": "라이더캠프, 연구소", "vi": "Trại KB, Lab" },
+      "requirements": { "ko": "라이더캠프, 연구소", "vi": "Trại KB, Lab", "en": "Rider Camp, Research Lab" },
       "food": 2100000,
       "wood": 2100000,
       "zent": 421000,
-      "time": { "ko": "3시간 53분", "vi": "3 giờ 53 phút" },
+      "time": { "ko": "3시간 53분", "vi": "3 giờ 53 phút", "en": "3h 53m" },
       "power": 22000
     },
     {
       "level": 12,
       "heroCap": 60,
-      "requirements": { "ko": "성벽, 연구소", "vi": "Tường, Lab" },
+      "requirements": { "ko": "성벽, 연구소", "vi": "Tường, Lab", "en": "Wall, Research Lab" },
       "food": 3600000,
       "wood": 3600000,
       "zent": 716000,
-      "time": { "ko": "5시간", "vi": "5 giờ" },
+      "time": { "ko": "5시간", "vi": "5 giờ", "en": "5h" },
       "power": 34000
     },
     {
       "level": 13,
       "heroCap": 65,
-      "requirements": { "ko": "연맹센터, 연구소", "vi": "Trung tâm LM, Lab" },
+      "requirements": { "ko": "연맹센터, 연구소", "vi": "Trung tâm LM, Lab", "en": "Alliance Center, Research Lab" },
       "food": 4000000,
       "wood": 4000000,
       "zent": 788000,
-      "time": { "ko": "8시간", "vi": "8 giờ" },
+      "time": { "ko": "8시간", "vi": "8 giờ", "en": "8h" },
       "power": 50000
     },
     {
       "level": 14,
       "heroCap": 70,
-      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab" },
+      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab", "en": "Assaulter Camp, Research Lab" },
       "food": 5600000,
       "wood": 5600000,
       "zent": 1100000,
-      "time": { "ko": "12시간 51분", "vi": "12 giờ 51 phút" },
+      "time": { "ko": "12시간 51분", "vi": "12 giờ 51 phút", "en": "12h 51m" },
       "power": 72000
     },
     {
       "level": 15,
       "heroCap": 75,
-      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab" },
+      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab", "en": "Shooter Camp, Research Lab" },
       "food": 7800000,
       "wood": 7800000,
       "zent": 1500000,
-      "time": { "ko": "18시간 17분", "vi": "18 giờ 17 phút" },
+      "time": { "ko": "18시간 17분", "vi": "18 giờ 17 phút", "en": "18h 17m" },
       "power": 100000
     },
     {
       "level": 16,
       "heroCap": 80,
-      "requirements": { "ko": "라이더캠프, 연구소", "vi": "Trại KB, Lab" },
+      "requirements": { "ko": "라이더캠프, 연구소", "vi": "Trại KB, Lab", "en": "Rider Camp, Research Lab" },
       "food": 14000000,
       "wood": 14000000,
       "zent": 2700000,
-      "time": { "ko": "1일 3시간", "vi": "1 ngày 3 giờ" },
+      "time": { "ko": "1일 3시간", "vi": "1 ngày 3 giờ", "en": "1d 3h" },
       "power": 138000
     },
     {
       "level": 17,
       "heroCap": 85,
-      "requirements": { "ko": "성벽, 연구소", "vi": "Tường, Lab" },
+      "requirements": { "ko": "성벽, 연구소", "vi": "Tường, Lab", "en": "Wall, Research Lab" },
       "food": 18200000,
       "wood": 18200000,
       "zent": 3500000,
-      "time": { "ko": "1일 15시간", "vi": "1 ngày 15 giờ" },
+      "time": { "ko": "1일 15시간", "vi": "1 ngày 15 giờ", "en": "1d 15h" },
       "power": 186000
     },
     {
       "level": 18,
       "heroCap": 90,
-      "requirements": { "ko": "연맹센터, 연구소", "vi": "Trung tâm LM, Lab" },
+      "requirements": { "ko": "연맹센터, 연구소", "vi": "Trung tâm LM, Lab", "en": "Alliance Center, Research Lab" },
       "food": 31900000,
       "wood": 31900000,
       "zent": 6200000,
-      "time": { "ko": "2일", "vi": "2 ngày" },
+      "time": { "ko": "2일", "vi": "2 ngày", "en": "2d" },
       "power": 250000
     },
     {
       "level": 19,
       "heroCap": 95,
-      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab" },
+      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab", "en": "Assaulter Camp, Research Lab" },
       "food": 38200000,
       "wood": 38200000,
       "zent": 7500000,
-      "time": { "ko": "3일 8시간", "vi": "3 ngày 8 giờ" },
+      "time": { "ko": "3일 8시간", "vi": "3 ngày 8 giờ", "en": "3d 8h" },
       "power": 330000
     },
     {
       "level": 20,
       "heroCap": 100,
-      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab" },
+      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab", "en": "Shooter Camp, Research Lab" },
       "food": 68900000,
       "wood": 68900000,
       "zent": 13500000,
-      "time": { "ko": "5일 10시간", "vi": "5 ngày 10 giờ" },
+      "time": { "ko": "5일 10시간", "vi": "5 ngày 10 giờ", "en": "5d 10h" },
       "power": 430000
     },
     {
       "level": 21,
       "heroCap": 105,
-      "requirements": { "ko": "라이더캠프, 연구소", "vi": "Trại KB, Lab" },
+      "requirements": { "ko": "라이더캠프, 연구소", "vi": "Trại KB, Lab", "en": "Rider Camp, Research Lab" },
       "food": 96400000,
       "wood": 96400000,
       "zent": 18900000,
-      "time": { "ko": "3일 1시간", "vi": "3 ngày 1 giờ" },
+      "time": { "ko": "3일 1시간", "vi": "3 ngày 1 giờ", "en": "3d 1h" },
       "power": 560000
     },
     {
       "level": 22,
       "heroCap": 110,
-      "requirements": { "ko": "성벽, 연구소", "vi": "Tường, Lab" },
+      "requirements": { "ko": "성벽, 연구소", "vi": "Tường, Lab", "en": "Wall, Research Lab" },
       "food": 125400000,
       "wood": 125400000,
       "zent": 24600000,
-      "time": { "ko": "12일", "vi": "12 ngày" },
+      "time": { "ko": "12일", "vi": "12 ngày", "en": "12d" },
       "power": 720000
     },
     {
       "level": 23,
       "heroCap": 115,
-      "requirements": { "ko": "연맹센터, 연구소", "vi": "Trung tâm LM, Lab" },
+      "requirements": { "ko": "연맹센터, 연구소", "vi": "Trung tâm LM, Lab", "en": "Alliance Center, Research Lab" },
       "food": 156800000,
       "wood": 156800000,
       "zent": 30700000,
-      "time": { "ko": "18일", "vi": "18 ngày" },
+      "time": { "ko": "18일", "vi": "18 ngày", "en": "18d" },
       "power": 920000
     },
     {
       "level": 24,
       "heroCap": 120,
-      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab" },
+      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab", "en": "Assaulter Camp, Research Lab" },
       "food": 196000000,
       "wood": 196000000,
       "zent": 38400000,
-      "time": { "ko": "25일 4시간", "vi": "25 ngày 4 giờ" },
+      "time": { "ko": "25일 4시간", "vi": "25 ngày 4 giờ", "en": "25d 4h" },
       "power": 1170000
     },
     {
       "level": 25,
       "heroCap": 125,
-      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab" },
+      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab", "en": "Shooter Camp, Research Lab" },
       "food": 333200000,
       "wood": 333200000,
       "zent": 65300000,
-      "time": { "ko": "35일 4시간", "vi": "35 ngày 4 giờ" },
+      "time": { "ko": "35일 4시간", "vi": "35 ngày 4 giờ", "en": "35d 4h" },
       "power": 1480000
     },
     {
       "level": 26,
       "heroCap": 130,
-      "requirements": { "ko": "라이더캠프, 연구소", "vi": "Trại KB, Lab" },
+      "requirements": { "ko": "라이더캠프, 연구소", "vi": "Trại KB, Lab", "en": "Rider Camp, Research Lab" },
       "food": 466500000,
       "wood": 466500000,
       "zent": 91400000,
-      "time": { "ko": "49일 3시간", "vi": "49 ngày 3 giờ" },
+      "time": { "ko": "49일 3시간", "vi": "49 ngày 3 giờ", "en": "49d 3h" },
       "power": 1850000
     },
     {
       "level": 27,
       "heroCap": 135,
-      "requirements": { "ko": "성벽, 연구소", "vi": "Tường, Lab" },
+      "requirements": { "ko": "성벽, 연구소", "vi": "Tường, Lab", "en": "Wall, Research Lab" },
       "food": 606400000,
       "wood": 606400000,
       "zent": 119000000,
-      "time": { "ko": "63일 20시간", "vi": "63 ngày 20 giờ" },
+      "time": { "ko": "63일 20시간", "vi": "63 ngày 20 giờ", "en": "63d 20h" },
       "power": 2300000
     },
     {
       "level": 28,
       "heroCap": 140,
-      "requirements": { "ko": "연맹센터, 연구소", "vi": "Trung tâm LM, Lab" },
+      "requirements": { "ko": "연맹센터, 연구소", "vi": "Trung tâm LM, Lab", "en": "Alliance Center, Research Lab" },
       "food": 806500000,
       "wood": 806500000,
       "zent": 157700000,
-      "time": { "ko": "82일 23시간", "vi": "82 ngày 23 giờ" },
+      "time": { "ko": "82일 23시간", "vi": "82 ngày 23 giờ", "en": "82d 23h" },
       "power": 2900000
     },
     {
       "level": 29,
       "heroCap": 145,
-      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab" },
+      "requirements": { "ko": "돌격캠프, 연구소", "vi": "Trại ĐK, Lab", "en": "Assaulter Camp, Research Lab" },
       "food": 1100000000,
       "wood": 1100000000,
       "zent": 221300000,
-      "time": { "ko": "107일 19시간", "vi": "107 ngày 19 giờ" },
+      "time": { "ko": "107일 19시간", "vi": "107 ngày 19 giờ", "en": "107d 19h" },
       "power": 3650000
     },
     {
       "level": 30,
       "heroCap": 150,
-      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab" },
+      "requirements": { "ko": "슈터캠프, 연구소", "vi": "Trại XT, Lab", "en": "Shooter Camp, Research Lab" },
       "food": 1400000000,
       "wood": 1400000000,
       "zent": 277100000,
-      "time": { "ko": "140일 1시간", "vi": "140 ngày 1 giờ" },
+      "time": { "ko": "140일 1시간", "vi": "140 ngày 1 giờ", "en": "140d 1h" },
       "power": 4600000,
-      "unlocks": { "ko": "T10 병종 연구 해금", "vi": "Mở khóa nghiên cứu binh T10" }
+      "unlocks": { "ko": "T10 병종 연구 해금", "vi": "Mở khóa nghiên cứu binh T10", "en": "Unlocks T10 troop research" }
     },
     {
       "level": 31,
       "heroCap": 155,
-      "requirements": { "ko": "라이더캠프 + 스틸", "vi": "Trại KB + Thép" },
+      "requirements": { "ko": "라이더캠프 + 스틸", "vi": "Trại KB + Thép", "en": "Rider Camp + Steel" },
       "food": 1200000000,
       "wood": 1200000000,
       "zent": 241400000,
       "steel": 2200000,
-      "time": { "ko": "136일 23시간", "vi": "136 ngày 23 giờ" },
+      "time": { "ko": "136일 23시간", "vi": "136 ngày 23 giờ", "en": "136d 23h" },
       "power": 5800000
     },
     {
       "level": 32,
       "heroCap": 160,
-      "requirements": { "ko": "성벽 + 스틸", "vi": "Tường + Thép" },
+      "requirements": { "ko": "성벽 + 스틸", "vi": "Tường + Thép", "en": "Wall + Steel" },
       "food": 1400000000,
       "wood": 1400000000,
       "zent": 289800000,
       "steel": 3100000,
-      "time": { "ko": "164일 8시간", "vi": "164 ngày 8 giờ" },
+      "time": { "ko": "164일 8시간", "vi": "164 ngày 8 giờ", "en": "164d 8h" },
       "power": 7200000
     },
     {
       "level": 33,
       "heroCap": 165,
-      "requirements": { "ko": "연맹센터 + 스틸", "vi": "Trung tâm LM + Thép" },
+      "requirements": { "ko": "연맹센터 + 스틸", "vi": "Trung tâm LM + Thép", "en": "Alliance Center + Steel" },
       "food": 1700000000,
       "wood": 1700000000,
       "zent": 347600000,
       "steel": 4100000,
-      "time": { "ko": "197일 5시간", "vi": "197 ngày 5 giờ" },
+      "time": { "ko": "197일 5시간", "vi": "197 ngày 5 giờ", "en": "197d 5h" },
       "power": 9000000
     },
     {
       "level": 34,
       "heroCap": 170,
-      "requirements": { "ko": "돌격캠프 + 스틸", "vi": "Trại ĐK + Thép" },
+      "requirements": { "ko": "돌격캠프 + 스틸", "vi": "Trại ĐK + Thép", "en": "Assaulter Camp + Steel" },
       "food": 2000000000,
       "wood": 2000000000,
       "zent": 399500000,
       "steel": 5300000,
-      "time": { "ko": "226일 19시간", "vi": "226 ngày 19 giờ" },
+      "time": { "ko": "226일 19시간", "vi": "226 ngày 19 giờ", "en": "226d 19h" },
       "power": 11000000
     },
     {
       "level": 35,
       "heroCap": 175,
-      "requirements": { "ko": "슈터캠프 + 스틸", "vi": "Trại XT + Thép" },
+      "requirements": { "ko": "슈터캠프 + 스틸", "vi": "Trại XT + Thép", "en": "Shooter Camp + Steel" },
       "food": 2300000000,
       "wood": 2300000000,
       "zent": 459800000,
       "steel": 6400000,
-      "time": { "ko": "260일 20시간", "vi": "260 ngày 20 giờ" },
+      "time": { "ko": "260일 20시간", "vi": "260 ngày 20 giờ", "en": "260d 20h" },
       "power": 14000000,
-      "unlocks": { "ko": "T11 병종 준비 완료", "vi": "Sẵn sàng cho binh T11" }
+      "unlocks": { "ko": "T11 병종 준비 완료", "vi": "Sẵn sàng cho binh T11", "en": "T11 troop preparation complete" }
     }
   ],
   "requiredBuildings": {
     "ko": ["연구소 (본부(HQ) 8부터 매번 필요)", "성벽", "연맹 센터", "돌격 캠프", "슈터 캠프", "라이더 캠프"],
-    "vi": ["Phòng nghiên cứu (cần từ HQ 8)", "Tường thành", "Trung tâm liên minh", "Trại Đột kích", "Trại Xạ thủ", "Trại Kỵ binh"]
+    "vi": ["Phòng nghiên cứu (cần từ HQ 8)", "Tường thành", "Trung tâm liên minh", "Trại Đột kích", "Trại Xạ thủ", "Trại Kỵ binh"],
+    "en": ["Research Lab (required from HQ 8)", "Wall", "Alliance Center", "Assaulter Camp", "Shooter Camp", "Rider Camp"]
   },
   "skipBuildings": {
     "ko": ["농장/거주지/풍력발전기/제련소 (ROI 낮음)", "창고 (필요할 때만)", "명예의 전당", "랜덤 파란화살표 건물들"],
-    "vi": ["Nông trại/Khu dân cư/Turbine gió/Xưởng luyện kim (ROI thấp)", "Kho (chỉ khi cần)", "Đại sảnh Danh dự", "Các công trình mũi tên xanh ngẫu nhiên"]
+    "vi": ["Nông trại/Khu dân cư/Turbine gió/Xưởng luyện kim (ROI thấp)", "Kho (chỉ khi cần)", "Đại sảnh Danh dự", "Các công trình mũi tên xanh ngẫu nhiên"],
+    "en": ["Farm/Residence/Wind Turbine/Smelter (low ROI)", "Warehouse (only when needed)", "Hall of Fame", "Random blue arrow buildings"]
   },
   "steelInfo": {
-    "ko": {
-      "description": "본부(HQ) 30 이후 등장하는 새 자원",
-      "sources": ["오렌지 바운티 (최고 수확량)", "스틸 광산", "난폭 두목", "허브 상점", "시즌4 이벤트"],
-      "tip": "본부(HQ) 31-35 완료 후 특별 이벤트에서 대량 스틸 보상"
+    "description": {
+      "ko": "본부(HQ) 30 이후 등장하는 새 자원",
+      "vi": "Tài nguyên mới xuất hiện sau HQ 30",
+      "en": "New resource appearing after HQ 30"
     },
-    "vi": {
-      "description": "Tài nguyên mới xuất hiện sau HQ 30",
-      "sources": ["Bounty cam (thu hoạch cao nhất)", "Mỏ thép", "Furylord", "Shop hub", "Sự kiện Season 4"],
-      "tip": "Sự kiện đặc biệt sau HQ 31-35 cho phần thưởng thép lớn"
+    "sources": {
+      "ko": ["오렌지 바운티 (최고 수확량)", "스틸 광산", "난폭 두목", "허브 상점", "시즌4 이벤트"],
+      "vi": ["Bounty cam (thu hoạch cao nhất)", "Mỏ thép", "Furylord", "Shop hub", "Sự kiện Season 4"],
+      "en": ["Orange Bounty (highest yield)", "Steel Mine", "Furylord", "Hub Shop", "Season 4 events"]
+    },
+    "tip": {
+      "ko": "본부(HQ) 31-35 완료 후 특별 이벤트에서 대량 스틸 보상",
+      "vi": "Sự kiện đặc biệt sau HQ 31-35 cho phần thưởng thép lớn",
+      "en": "Special events after HQ 31-35 grant large Steel rewards"
     }
   },
   "constructionBoosts": {
     "ko": ["빌라 (건설 보너스)", "빌라 피난민 (속도 부스트)", "소피아 5성 (비용 10% 감소 + 속도 증가)", "연구소 버프", "연맹 시티4 점령", "연맹 연구소 연구"],
-    "vi": ["Villa (bonus xây dựng)", "Người tị nạn Villa (boost tốc độ)", "Sophia 5 sao (giảm 10% chi phí + tăng tốc)", "Buff Lab", "Chiếm Alliance City 4", "Nghiên cứu Lab liên minh"]
+    "vi": ["Villa (bonus xây dựng)", "Người tị nạn Villa (boost tốc độ)", "Sophia 5 sao (giảm 10% chi phí + tăng tốc)", "Buff Lab", "Chiếm Alliance City 4", "Nghiên cứu Lab liên minh"],
+    "en": ["Villa (construction bonus)", "Villa Refugees (speed boost)", "Sophia 5-star (10% cost reduction + speed increase)", "Research Lab buff", "Alliance City 4 capture", "Alliance Research Lab research"]
   },
   "tips": {
     "ko": [
@@ -444,6 +453,14 @@
       "Bỏ qua công trình sản xuất (nông trại, khu dân cư) - ROI thấp",
       "Nâng cấp Lab thứ hai để tăng gấp đôi tốc độ nghiên cứu",
       "Thời gian hiển thị là thời gian cơ bản không bonus. Có thể rút ngắn nhiều với NC/người tị nạn/buff"
+    ],
+    "en": [
+      "Get Sophia to 5-star ASAP - saves billions in resources",
+      "Delay HQ completion until Alliance Duel day 2 - don't press the green checkmark",
+      "The bottleneck is speed-ups, not resources or Steel",
+      "Skip resource production buildings (farms, residences) - low ROI",
+      "Upgrade Research Lab second to double research speed",
+      "Times shown are base times without bonuses. Can be greatly reduced with research/refugees/buffs"
     ]
   }
 }

@@ -24,9 +24,9 @@ interface HeroTierSnapshotProps {
 }
 
 export function HeroTierSnapshot({ heroes }: HeroTierSnapshotProps) {
-  const locale = useLocale() as 'ko' | 'vi';
+  const locale = useLocale() as 'ko' | 'vi' | 'en';
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale] ?? en);
 
   const topHeroes = heroes.filter((h) => h.tier === 'S+');
 
@@ -35,13 +35,13 @@ export function HeroTierSnapshot({ heroes }: HeroTierSnapshotProps) {
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold flex items-center gap-2">
           <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-          {isKorean ? 'S+ 티어 영웅' : 'Anh hùng S+'}
+          {l('S+ 티어 영웅', 'Anh hùng S+', 'S+ Tier Heroes')}
         </h2>
         <Link
           href={`/${locale}/heroes/tier-list`}
           className="text-sm text-highlight hover:underline flex items-center gap-1"
         >
-          {isKorean ? '티어표 보기' : 'Xem bảng xếp hạng'}
+          {l('티어표 보기', 'Xem bảng xếp hạng', 'View Tier List')}
           <ChevronRight className="h-3 w-3" />
         </Link>
       </div>

@@ -49,10 +49,20 @@ function setCachedStats(stats: VisitorStats) {
 }
 
 export function VisitorCounter({ locale }: VisitorCounterProps) {
-  // Initialize with cached data for instant display
-  const [stats, setStats] = useState<VisitorStats | null>(() => getCachedStats());
-  const [isLoading, setIsLoading] = useState(!getCachedStats());
-  const isKorean = locale === 'ko';
+  const [stats, setStats] = useState<VisitorStats | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
+
+  // Mark as mounted to avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+    const cached = getCachedStats();
+    if (cached) {
+      setStats(cached);
+      setIsLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -101,8 +111,8 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
     return () => controller.abort();
   }, []);
 
-  // Show skeleton while loading (only if no cached data)
-  if (isLoading && !stats) {
+  // Always show skeleton on server and before mount to prevent hydration mismatch
+  if (!mounted || (isLoading && !stats)) {
     return (
       <Card className="border-border/50 bg-muted/30">
         <CardContent className="p-4">
@@ -139,7 +149,7 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
           <div className="text-center">
             <div className="flex items-center justify-center gap-1.5 text-muted-foreground mb-1">
               <CalendarDays className="h-4 w-4" />
-              <span className="text-xs">{isKorean ? '오늘' : 'Hôm nay'}</span>
+              <span className="text-xs">{l('오늘', 'Hôm nay', 'Today')}</span>
             </div>
             <p className="text-2xl font-bold text-foreground">
               {formatNumber(stats.daily)}
@@ -153,7 +163,7 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
           <div className="text-center">
             <div className="flex items-center justify-center gap-1.5 text-muted-foreground mb-1">
               <Calendar className="h-4 w-4" />
-              <span className="text-xs">{isKorean ? '이번 달' : 'Tháng này'}</span>
+              <span className="text-xs">{l('이번 달', 'Tháng này', 'This Month')}</span>
             </div>
             <p className="text-2xl font-bold text-foreground">
               {formatNumber(stats.monthly)}
@@ -167,7 +177,7 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
           <div className="text-center">
             <div className="flex items-center justify-center gap-1.5 text-muted-foreground mb-1">
               <Users className="h-4 w-4" />
-              <span className="text-xs">{isKorean ? '총 방문' : 'Tổng cộng'}</span>
+              <span className="text-xs">{l('총 방문', 'Tổng cộng', 'Total')}</span>
             </div>
             <p className="text-2xl font-bold text-highlight">
               {formatNumber(stats.total)}

@@ -39,10 +39,10 @@ const FACTION_COLORS: Record<string, string> = {
   guardOfOrder: 'text-yellow-400',
 };
 
-const FACTION_NAMES: Record<string, { ko: string; vi: string }> = {
-  bloodRose: { ko: '블러디 로즈', vi: 'Blood Rose' },
-  wingsOfDawn: { ko: '새벽의 날개', vi: 'Cánh Bình Minh' },
-  guardOfOrder: { ko: '질서의 수호자', vi: 'Người Bảo Vệ' },
+const FACTION_NAMES: Record<string, { ko: string; vi: string; en: string }> = {
+  bloodRose: { ko: '블러디 로즈', vi: 'Blood Rose', en: 'Blood Rose' },
+  wingsOfDawn: { ko: '새벽의 날개', vi: 'Cánh Bình Minh', en: 'Dawn Wings' },
+  guardOfOrder: { ko: '질서의 수호자', vi: 'Người Bảo Vệ', en: 'Order Keepers' },
 };
 
 const CLASS_ICONS: Record<string, React.ElementType> = {
@@ -51,10 +51,10 @@ const CLASS_ICONS: Record<string, React.ElementType> = {
   rider: Bike,
 };
 
-const CLASS_NAMES: Record<string, { ko: string; vi: string }> = {
-  assaulter: { ko: '돌격', vi: 'Đột kích' },
-  shooter: { ko: '사격', vi: 'Xạ thủ' },
-  rider: { ko: '기마', vi: 'Kỵ binh' },
+const CLASS_NAMES: Record<string, { ko: string; vi: string; en: string }> = {
+  assaulter: { ko: '돌격', vi: 'Đột kích', en: 'Assaulter' },
+  shooter: { ko: '사격', vi: 'Xạ thủ', en: 'Shooter' },
+  rider: { ko: '기마', vi: 'Kỵ binh', en: 'Rider' },
 };
 
 const SKILL_TYPE_COLORS: Record<string, string> = {
@@ -91,9 +91,10 @@ function InvestmentStars({ priority }: { priority: number }) {
 }
 
 export default function HeroComparePage() {
-  const locale = useLocale() as 'ko' | 'vi';
+  const locale = useLocale();
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
+  const localeKey = (locale === 'ko' || locale === 'vi') ? locale : 'en';
   const allHeroes = getAllHeroes();
 
   const [selectedIds, setSelectedIds] = useState<(string | null)[]>([
@@ -116,7 +117,7 @@ export default function HeroComparePage() {
   const filteredHeroes = useMemo(() => {
     return allHeroes.filter((h) => {
       if (alreadySelectedIds.has(h.id)) return false;
-      const name = (isKorean ? h.name.ko : h.name.vi).toLowerCase();
+      const name = (locale === 'ko' ? h.name.ko : h.name.vi).toLowerCase();
       const en = h.name.en?.toLowerCase() ?? '';
       const q = searchQuery.toLowerCase();
       if (q && !name.includes(q) && !en.includes(q)) return false;
@@ -124,7 +125,7 @@ export default function HeroComparePage() {
       if (classFilter !== 'all' && h.class !== classFilter) return false;
       return true;
     });
-  }, [allHeroes, searchQuery, factionFilter, classFilter, alreadySelectedIds, isKorean]);
+  }, [allHeroes, searchQuery, factionFilter, classFilter, alreadySelectedIds, locale]);
 
   const selectHero = (heroId: string) => {
     if (activeSlot === null) return;
@@ -143,7 +144,11 @@ export default function HeroComparePage() {
     setSelectedIds(next);
   };
 
-  const heroName = (hero: Hero) => (isKorean ? hero.name.ko : hero.name.vi);
+  const heroName = (hero: Hero) => {
+    if (locale === 'ko') return hero.name.ko;
+    if (locale === 'vi') return hero.name.vi;
+    return hero.name.en ?? hero.name.ko;
+  };
 
   const selectedCount = selectedIds.filter(Boolean).length;
 
@@ -179,12 +184,14 @@ export default function HeroComparePage() {
         <div className="space-y-2">
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Users className="h-8 w-8 text-highlight" />
-            {isKorean ? '영웅 비교' : 'So sanh Anh hung'}
+            {l('영웅 비교', 'So sanh Anh hung', 'Hero Compare')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '최대 4명의 영웅을 선택하여 상세 비교하세요.'
-              : 'Chon toi da 4 anh hung de so sanh chi tiet.'}
+            {l(
+              '최대 4명의 영웅을 선택하여 상세 비교하세요.',
+              'Chon toi da 4 anh hung de so sanh chi tiet.',
+              'Select up to 4 heroes for a detailed comparison.'
+            )}
           </p>
         </div>
 
@@ -244,7 +251,7 @@ export default function HeroComparePage() {
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-base">
-                {isKorean ? '영웅 선택' : 'Chon anh hung'}
+                {l('영웅 선택', 'Chon anh hung', 'Select Hero')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -252,7 +259,7 @@ export default function HeroComparePage() {
                 <div className="relative flex-1">
                   <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder={isKorean ? '이름 검색...' : 'Tim kiem...'}
+                    placeholder={l('이름 검색...', 'Tim kiem...', 'Search name...')}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-8"
@@ -264,16 +271,16 @@ export default function HeroComparePage() {
                   className="bg-background border border-input rounded-md px-3 py-2 text-sm"
                 >
                   <option value="all">
-                    {isKorean ? '전체 진영' : 'Tat ca phe'}
+                    {l('전체 진영', 'Tat ca phe', 'All Factions')}
                   </option>
                   <option value="bloodRose">
-                    {FACTION_NAMES.bloodRose[locale]}
+                    {FACTION_NAMES.bloodRose[localeKey]}
                   </option>
                   <option value="wingsOfDawn">
-                    {FACTION_NAMES.wingsOfDawn[locale]}
+                    {FACTION_NAMES.wingsOfDawn[localeKey]}
                   </option>
                   <option value="guardOfOrder">
-                    {FACTION_NAMES.guardOfOrder[locale]}
+                    {FACTION_NAMES.guardOfOrder[localeKey]}
                   </option>
                 </select>
                 <select
@@ -282,11 +289,11 @@ export default function HeroComparePage() {
                   className="bg-background border border-input rounded-md px-3 py-2 text-sm"
                 >
                   <option value="all">
-                    {isKorean ? '전체 병종' : 'Tat ca loai'}
+                    {l('전체 병종', 'Tat ca loai', 'All Classes')}
                   </option>
-                  <option value="assaulter">{CLASS_NAMES.assaulter[locale]}</option>
-                  <option value="shooter">{CLASS_NAMES.shooter[locale]}</option>
-                  <option value="rider">{CLASS_NAMES.rider[locale]}</option>
+                  <option value="assaulter">{CLASS_NAMES.assaulter[localeKey]}</option>
+                  <option value="shooter">{CLASS_NAMES.shooter[localeKey]}</option>
+                  <option value="rider">{CLASS_NAMES.rider[localeKey]}</option>
                 </select>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 max-h-60 overflow-y-auto">
@@ -316,7 +323,7 @@ export default function HeroComparePage() {
                 })}
                 {filteredHeroes.length === 0 && (
                   <p className="col-span-full text-center text-muted-foreground py-4 text-sm">
-                    {isKorean ? '검색 결과 없음' : 'Khong tim thay'}
+                    {l('검색 결과 없음', 'Khong tim thay', 'No results found')}
                   </p>
                 )}
               </div>
@@ -329,7 +336,7 @@ export default function HeroComparePage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-lg">
-                {isKorean ? '상세 비교' : 'So sanh chi tiet'}
+                {l('상세 비교', 'So sanh chi tiet', 'Detailed Comparison')}
               </CardTitle>
             </CardHeader>
             <CardContent className="overflow-x-auto">
@@ -337,7 +344,7 @@ export default function HeroComparePage() {
                 <thead>
                   <tr className="border-b border-border bg-muted/30">
                     <th className="text-left p-3 min-w-[100px] text-muted-foreground">
-                      {isKorean ? '항목' : 'Muc'}
+                      {l('항목', 'Muc', 'Category')}
                     </th>
                     {selectedHeroes.map(
                       (hero, idx) =>
@@ -361,7 +368,7 @@ export default function HeroComparePage() {
                   {/* Tier */}
                   <tr className="border-b border-border/50">
                     <td className="p-3 text-muted-foreground font-medium">
-                      {isKorean ? '종합 티어' : 'Tier tong'}
+                      {l('종합 티어', 'Tier tong', 'Overall Tier')}
                     </td>
                     {selectedHeroes.map(
                       (hero, idx) =>
@@ -427,7 +434,7 @@ export default function HeroComparePage() {
                   {/* Role */}
                   <tr className="border-b border-border/50">
                     <td className="p-3 text-muted-foreground font-medium">
-                      {isKorean ? '역할' : 'Vai tro'}
+                      {l('역할', 'Vai tro', 'Role')}
                     </td>
                     {selectedHeroes.map(
                       (hero, idx) =>
@@ -444,7 +451,7 @@ export default function HeroComparePage() {
                   {/* Faction */}
                   <tr className="border-b border-border/50">
                     <td className="p-3 text-muted-foreground font-medium">
-                      {isKorean ? '진영' : 'Phe'}
+                      {l('진영', 'Phe', 'Faction')}
                     </td>
                     {selectedHeroes.map(
                       (hero, idx) =>
@@ -453,7 +460,7 @@ export default function HeroComparePage() {
                             key={idx}
                             className={`p-3 text-center text-xs ${FACTION_COLORS[hero.faction]}`}
                           >
-                            {FACTION_NAMES[hero.faction]?.[locale]}
+                            {FACTION_NAMES[hero.faction]?.[localeKey]}
                           </td>
                         )
                     )}
@@ -461,7 +468,7 @@ export default function HeroComparePage() {
                   {/* Class */}
                   <tr className="border-b border-border/50">
                     <td className="p-3 text-muted-foreground font-medium">
-                      {isKorean ? '병종' : 'Loai quan'}
+                      {l('병종', 'Loai quan', 'Class')}
                     </td>
                     {selectedHeroes.map((hero, idx) => {
                       if (!hero) return null;
@@ -471,7 +478,7 @@ export default function HeroComparePage() {
                           <div className="flex items-center justify-center gap-1">
                             <ClassIcon className="h-3.5 w-3.5" />
                             <span className="text-xs">
-                              {CLASS_NAMES[hero.class]?.[locale]}
+                              {CLASS_NAMES[hero.class]?.[localeKey]}
                             </span>
                           </div>
                         </td>
@@ -481,7 +488,7 @@ export default function HeroComparePage() {
                   {/* Investment Priority */}
                   <tr className="border-b border-border/50">
                     <td className="p-3 text-muted-foreground font-medium">
-                      {isKorean ? '투자 우선도' : 'Uu tien dau tu'}
+                      {l('투자 우선도', 'Uu tien dau tu', 'Investment Priority')}
                     </td>
                     {selectedHeroes.map(
                       (hero, idx) =>
@@ -514,12 +521,8 @@ export default function HeroComparePage() {
                               }
                             >
                               {hero.f2pFriendly
-                                ? isKorean
-                                  ? '무과금 가능'
-                                  : 'OK'
-                                : isKorean
-                                ? '과금 권장'
-                                : 'P2W'}
+                                ? l('무과금 가능', 'OK', 'F2P Friendly')
+                                : l('과금 권장', 'P2W', 'P2W Recommended')}
                             </Badge>
                           </td>
                         )
@@ -528,7 +531,7 @@ export default function HeroComparePage() {
                   {/* Skills */}
                   <tr className="border-b border-border/50">
                     <td className="p-3 text-muted-foreground font-medium align-top">
-                      {isKorean ? '스킬' : 'Ky nang'}
+                      {l('스킬', 'Ky nang', 'Skills')}
                     </td>
                     {selectedHeroes.map(
                       (hero, idx) =>
@@ -546,15 +549,19 @@ export default function HeroComparePage() {
                                       {skill.type}
                                     </Badge>
                                     <span className="text-xs font-medium">
-                                      {isKorean
+                                      {locale === 'ko'
                                         ? skill.name.ko
-                                        : skill.name.vi}
+                                        : locale === 'vi'
+                                          ? skill.name.vi
+                                          : skill.name.en ?? skill.name.ko}
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-muted-foreground leading-tight">
-                                    {isKorean
+                                    {locale === 'ko'
                                       ? skill.description.ko
-                                      : skill.description.vi}
+                                      : locale === 'vi'
+                                        ? skill.description.vi
+                                        : skill.description.en ?? skill.description.ko}
                                   </p>
                                 </div>
                               ))}
@@ -566,7 +573,7 @@ export default function HeroComparePage() {
                   {/* Synergies */}
                   <tr>
                     <td className="p-3 text-muted-foreground font-medium align-top">
-                      {isKorean ? '시너지' : 'Hiep dong'}
+                      {l('시너지', 'Hiep dong', 'Synergies')}
                     </td>
                     {selectedHeroes.map(
                       (hero, idx) =>
@@ -610,9 +617,11 @@ export default function HeroComparePage() {
             <CardContent className="p-8 text-center text-muted-foreground">
               <Users className="h-10 w-10 mx-auto mb-3 opacity-30" />
               <p>
-                {isKorean
-                  ? '위에서 2명 이상의 영웅을 선택하면 비교표가 나타납니다.'
-                  : 'Chon it nhat 2 anh hung o tren de xem bang so sanh.'}
+                {l(
+                  '위에서 2명 이상의 영웅을 선택하면 비교표가 나타납니다.',
+                  'Chon it nhat 2 anh hung o tren de xem bang so sanh.',
+                  'Select at least 2 heroes above to see the comparison table.'
+                )}
               </p>
             </CardContent>
           </Card>

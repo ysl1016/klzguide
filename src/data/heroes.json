@@ -18,51 +18,60 @@
       "pveTier": "S+",
       "notes": {
         "ko": "엄청난 딜량. 경쟁 플레이 필수",
-        "vi": "Sát thương cực lớn. Bắt buộc cho chơi cạnh tranh"
+        "vi": "Sát thương cực lớn. Bắt buộc cho chơi cạnh tranh",
+        "en": "Massive damage output. Essential for competitive play"
       },
       "skills": [
         {
           "name": {
             "ko": "영웅 스킬",
-            "vi": "Kỹ Năng Anh Hùng"
+            "vi": "Kỹ Năng Anh Hùng",
+            "en": "Hero Skill"
           },
           "type": "normal",
           "description": {
             "ko": "적에게 강력한 스킬 피해를 입힌다",
-            "vi": "Gây sát thương kỹ năng mạnh cho địch"
+            "vi": "Gây sát thương kỹ năng mạnh cho địch",
+            "en": "Deals powerful skill damage to enemies"
           }
         },
         {
           "name": {
             "ko": "스킬 강화",
-            "vi": "Tăng Cường Kỹ Năng"
+            "vi": "Tăng Cường Kỹ Năng",
+            "en": "Skill Enhancement"
           },
           "type": "active",
           "description": {
             "ko": "영웅 스킬 데미지 24% 증가 (5성 시 추가 10%)",
-            "vi": "Tăng 24% sát thương kỹ năng anh hùng (thêm 10% ở 5 sao)"
+            "vi": "Tăng 24% sát thương kỹ năng anh hùng (thêm 10% ở 5 sao)",
+            "en": "Increases hero skill damage by 24% (additional 10% at 5-star)"
           }
         },
         {
           "name": {
             "ko": "상성 강화",
-            "vi": "Tăng Cường Tương Khắc"
+            "vi": "Tăng Cường Tương Khắc",
+            "en": "Counter Enhancement"
           },
           "type": "deployment",
           "description": {
             "ko": "상성 유리한 진영에 데미지 10% 증가, 상성 불리한 진영으로부터 받는 데미지 10% 감소",
-            "vi": "Tăng 10% sát thương cho phe tương khắc có lợi, giảm 10% sát thương nhận từ phe tương khắc bất lợi"
+            "vi": "Tăng 10% sát thương cho phe tương khắc có lợi, giảm 10% sát thương nhận từ phe tương khắc bất lợi",
+            "en": "Increases damage by 10% against countered factions, reduces damage taken by 10% from factions that counter you"
           }
         },
         {
           "name": {
             "ko": "전속 포텐셜",
-            "vi": "Tiềm Năng Chuyên Thuộc"
+            "vi": "Tiềm Năng Chuyên Thuộc",
+            "en": "Exclusive Potential"
           },
           "type": "potential",
           "description": {
             "ko": "업데이트 중",
-            "vi": "Đang cập nhật"
+            "vi": "Đang cập nhật",
+            "en": "To be updated"
           }
         }
       ],
@@ -75,7 +84,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌4 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 4"
+        "vi": "Tuyển mộ sự kiện Season 4",
+        "en": "Season 4 Event Recruitment"
       }
     },
     {
@@ -96,51 +106,60 @@
       "pveTier": "S+",
       "notes": {
         "ko": "시즌3 없으면 극히 어려움",
-        "vi": "Season 3 cực kỳ khó nếu không có cô ấy"
+        "vi": "Season 3 cực kỳ khó nếu không có cô ấy",
+        "en": "Extremely difficult without her in Season 3"
       },
       "skills": [
         {
           "name": {
             "ko": "영웅 스킬",
-            "vi": "Kỹ Năng Anh Hùng"
+            "vi": "Kỹ Năng Anh Hùng",
+            "en": "Hero Skill"
           },
           "type": "normal",
           "description": {
             "ko": "적에게 강력한 스킬 피해를 입힌다",
-            "vi": "Gây sát thương kỹ năng mạnh cho địch"
+            "vi": "Gây sát thương kỹ năng mạnh cho địch",
+            "en": "Deals powerful skill damage to enemies"
           }
         },
         {
           "name": {
             "ko": "부대 강화",
-            "vi": "Tăng Cường Đội Quân"
+            "vi": "Tăng Cường Đội Quân",
+            "en": "Troop Enhancement"
           },
           "type": "active",
           "description": {
             "ko": "병력 수용량 +90 (고정), 영웅 공격력/방어력 최대 20% 증가",
-            "vi": "Sức chứa quân +90 (cố định), tăng tấn công/phòng thủ anh hùng tối đa 20%"
+            "vi": "Sức chứa quân +90 (cố định), tăng tấn công/phòng thủ anh hùng tối đa 20%",
+            "en": "Troop capacity +90 (fixed), increases hero ATK/DEF by up to 20%"
           }
         },
         {
           "name": {
             "ko": "시즌 시너지",
-            "vi": "Hiệp Đồng Mùa"
+            "vi": "Hiệp Đồng Mùa",
+            "en": "Season Synergy"
           },
           "type": "deployment",
           "description": {
             "ko": "S2 영웅과 함께 배치 시 피해 저항 7.5% 증가. 5성: 병력 수용량 7.5% 추가 증가, 모든 병종에 적용",
-            "vi": "Tăng 7.5% kháng sát thương khi triển khai cùng anh hùng S2. 5 sao: thêm 7.5% sức chứa quân, áp dụng cho mọi loại quân"
+            "vi": "Tăng 7.5% kháng sát thương khi triển khai cùng anh hùng S2. 5 sao: thêm 7.5% sức chứa quân, áp dụng cho mọi loại quân",
+            "en": "Increases damage resistance by 7.5% when deployed with S2 heroes. 5-star: additional 7.5% troop capacity, applies to all troop types"
           }
         },
         {
           "name": {
             "ko": "전속 포텐셜",
-            "vi": "Tiềm Năng Chuyên Thuộc"
+            "vi": "Tiềm Năng Chuyên Thuộc",
+            "en": "Exclusive Potential"
           },
           "type": "potential",
           "description": {
             "ko": "업데이트 중",
-            "vi": "Đang cập nhật"
+            "vi": "Đang cập nhật",
+            "en": "To be updated"
           }
         }
       ],
@@ -153,7 +172,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌3 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 3"
+        "vi": "Tuyển mộ sự kiện Season 3",
+        "en": "Season 3 Event Recruitment"
       }
     },
     {
@@ -174,51 +194,60 @@
       "pveTier": "S",
       "notes": {
         "ko": "강력한 DPS 옵션",
-        "vi": "Lựa chọn DPS mạnh"
+        "vi": "Lựa chọn DPS mạnh",
+        "en": "Strong DPS option"
       },
       "skills": [
         {
           "name": {
             "ko": "영혼파괴의 꿰뚫기",
-            "vi": "Doomsoul Piercer"
+            "vi": "Doomsoul Piercer",
+            "en": "Doomsoul Piercer"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 성급 업그레이드 시 최대 +210 추가 피해 계수",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng thêm tối đa +210 hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng thêm tối đa +210 hệ số",
+            "en": "Normal attack damage coefficient 900. Star upgrades add up to +210 bonus coefficient"
           }
         },
         {
           "name": {
             "ko": "정의의 분노",
-            "vi": "Wrath of Justice"
+            "vi": "Wrath of Justice",
+            "en": "Wrath of Justice"
           },
           "type": "active",
           "description": {
             "ko": "적 위로 질주하며 짓밟고 범위 피해. 피해 계수 1200. 성급 업그레이드 시 밟기 추가 및 피해 계수 최대 +300",
-            "vi": "Phi qua kẻ địch, dẫm đạp gây sát thương diện rộng. Hệ số 1200. Nâng sao thêm dẫm và +300 hệ số"
+            "vi": "Phi qua kẻ địch, dẫm đạp gây sát thương diện rộng. Hệ số 1200. Nâng sao thêm dẫm và +300 hệ số",
+            "en": "Charges over enemies, trampling and dealing AoE damage. Coefficient 1200. Star upgrades add extra stomps and up to +300 coefficient"
           }
         },
         {
           "name": {
             "ko": "태양의 분노",
-            "vi": "Solar Fury"
+            "vi": "Solar Fury",
+            "en": "Solar Fury"
           },
           "type": "deployment",
           "description": {
             "ko": "부대 내 돌격 병종 체력 5% 증가. 성급 업그레이드 시 돌격 피해량 최대 10% 추가 증가",
-            "vi": "Tăng 5% HP Đột kích trong đội. Nâng sao tăng thêm tối đa 10% sát thương Đột kích"
+            "vi": "Tăng 5% HP Đột kích trong đội. Nâng sao tăng thêm tối đa 10% sát thương Đột kích",
+            "en": "Increases Assaulter troop HP by 5%. Star upgrades add up to 10% bonus Assaulter damage"
           }
         },
         {
           "name": {
             "ko": "영원한 후광",
-            "vi": "Perpetual Halo"
+            "vi": "Perpetual Halo",
+            "en": "Perpetual Halo"
           },
           "type": "potential",
           "description": {
             "ko": "블러디 로즈 영웅 5명 배치 시 부대 체력 10% 증가",
-            "vi": "Triển khai 5 anh hùng Blood Rose tăng 10% HP đội"
+            "vi": "Triển khai 5 anh hùng Blood Rose tăng 10% HP đội",
+            "en": "Deploying 5 Blood Rose heroes increases troop HP by 10%"
           }
         }
       ],
@@ -231,7 +260,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌2 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 2"
+        "vi": "Tuyển mộ sự kiện Season 2",
+        "en": "Season 2 Event Recruitment"
       }
     },
     {
@@ -252,51 +282,60 @@
       "pveTier": "S",
       "notes": {
         "ko": "미배치 시에도 진영 병력 데미지 10% 버프. 배치 시 최대 45% 방어 증가",
-        "vi": "Buff 10% sát thương quân phe ngay cả khi không triển khai. Khi triển khai tăng phòng thủ tối đa 45%"
+        "vi": "Buff 10% sát thương quân phe ngay cả khi không triển khai. Khi triển khai tăng phòng thủ tối đa 45%",
+        "en": "Buffs faction troop damage by 10% even when not deployed. Up to 45% DEF increase when deployed"
       },
       "skills": [
         {
           "name": {
             "ko": "찢긴 상처",
-            "vi": "Torn Wound"
+            "vi": "Torn Wound",
+            "en": "Torn Wound"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 레벨업 시 피해 계수 증가 (Lv1-3: +90, Lv4-5: +120)",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng cấp tăng hệ số (Lv1-3: +90, Lv4-5: +120)"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng cấp tăng hệ số (Lv1-3: +90, Lv4-5: +120)",
+            "en": "Normal attack damage coefficient 900. Upgrades increase coefficient (Lv1-3: +90, Lv4-5: +120)"
           }
         },
         {
           "name": {
             "ko": "야생의 소환",
-            "vi": "Wild Summon"
+            "vi": "Wild Summon",
+            "en": "Wild Summon"
           },
           "type": "active",
           "description": {
             "ko": "전투곰을 소환하여 돌진 후 물어뜯고, 적 명중 시 지면을 내리쳐 범위 피해. 피해 계수 1200",
-            "vi": "Triệu hồi gấu chiến lao về phía trước cắn, đập đất gây sát thương diện rộng. Hệ số sát thương 1200"
+            "vi": "Triệu hồi gấu chiến lao về phía trước cắn, đập đất gây sát thương diện rộng. Hệ số sát thương 1200",
+            "en": "Summons a war bear that charges and bites, then slams the ground for AoE damage on hit. Coefficient 1200"
           }
         },
         {
           "name": {
             "ko": "자연의 힘",
-            "vi": "Power of Nature"
+            "vi": "Power of Nature",
+            "en": "Power of Nature"
           },
           "type": "deployment",
           "description": {
             "ko": "배치 여부와 관계없이 돌격 병종 방어력 45% 증가",
-            "vi": "Tăng 45% phòng thủ Đột kích bất kể có triển khai hay không"
+            "vi": "Tăng 45% phòng thủ Đột kích bất kể có triển khai hay không",
+            "en": "Increases Assaulter troop DEF by 45% regardless of deployment"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "배치 여부와 관계없이 모든 돌격 병종 피해량 10% 증가",
-            "vi": "Tăng 10% sát thương tất cả Đột kích bất kể có triển khai hay không"
+            "vi": "Tăng 10% sát thương tất cả Đột kích bất kể có triển khai hay không",
+            "en": "Increases all Assaulter troop damage by 10% regardless of deployment"
           }
         }
       ],
@@ -309,7 +348,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌1 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 1"
+        "vi": "Tuyển mộ sự kiện Season 1",
+        "en": "Season 1 Event Recruitment"
       }
     },
     {
@@ -330,51 +370,60 @@
       "pveTier": "A+",
       "notes": {
         "ko": "스킬1 '치명타': 일반 공격 피해 계수 900. 스킬2 '칼날 폭풍': 회전 칼날 피해 1200, 4초간 지속. 돌격 캠프 훈련속도 20% 증가",
-        "vi": "Skill 1 'Đòn Chí Mạng': hệ số sát thương thường 900. Skill 2 'Bão Lưỡi Dao': sát thương lưỡi xoay 1200, 4 giây. Tăng 20% tốc độ huấn luyện Đột Kích"
+        "vi": "Skill 1 'Đòn Chí Mạng': hệ số sát thương thường 900. Skill 2 'Bão Lưỡi Dao': sát thương lưỡi xoay 1200, 4 giây. Tăng 20% tốc độ huấn luyện Đột Kích",
+        "en": "Skill 1 'Fatal Blow': normal attack coefficient 900. Skill 2 'Blade Storm': spinning blade damage 1200, lasts 4s. Assaulter camp training speed +20%"
       },
       "skills": [
         {
           "name": {
             "ko": "치명타",
-            "vi": "Fatal Blow"
+            "vi": "Fatal Blow",
+            "en": "Fatal Blow"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 성급 업그레이드 시 피해 계수 +90~+210 증가",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số",
+            "en": "Normal attack damage coefficient 900. Star upgrades increase coefficient by +90~+210"
           }
         },
         {
           "name": {
             "ko": "칼날 폭풍",
-            "vi": "Blade Storm"
+            "vi": "Blade Storm",
+            "en": "Blade Storm"
           },
           "type": "active",
           "description": {
             "ko": "지정 위치에 회전 칼날을 배치하여 범위 내 적에게 피해. 피해 계수 1200, 4초간 지속",
-            "vi": "Đặt lưỡi xoay tại vị trí chỉ định gây sát thương diện rộng. Hệ số 1200, kéo dài 4 giây"
+            "vi": "Đặt lưỡi xoay tại vị trí chỉ định gây sát thương diện rộng. Hệ số 1200, kéo dài 4 giây",
+            "en": "Places spinning blades at a target location dealing AoE damage. Coefficient 1200, lasts 4 seconds"
           }
         },
         {
           "name": {
             "ko": "천재 소녀",
-            "vi": "Gifted Girl"
+            "vi": "Gifted Girl",
+            "en": "Gifted Girl"
           },
           "type": "deployment",
           "description": {
             "ko": "돌격 캠프 훈련속도 20% 증가. 성급: 훈련속도 +10%, 방어력 +10%, 자원 비용 -5%, 공격력 +10%, 5성 시 모든 병종에 적용",
-            "vi": "Tăng 20% tốc độ huấn luyện Đột kích. Nâng sao: tốc độ +10%, phòng thủ +10%, chi phí -5%, tấn công +10%, 5 sao áp dụng mọi loại quân"
+            "vi": "Tăng 20% tốc độ huấn luyện Đột kích. Nâng sao: tốc độ +10%, phòng thủ +10%, chi phí -5%, tấn công +10%, 5 sao áp dụng mọi loại quân",
+            "en": "Assaulter camp training speed +20%. Star upgrades: speed +10%, DEF +10%, resource cost -5%, ATK +10%, at 5-star applies to all troop types"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "블러디 로즈 영웅 1명 배치 시마다 부대 공격력/방어력 5% 증가. 5명 배치 시 병력 수용량 추가 10% 증가",
-            "vi": "Mỗi anh hùng Blood Rose triển khai tăng 5% ATK/DEF đội. 5 anh hùng: tăng thêm 10% sức chứa quân"
+            "vi": "Mỗi anh hùng Blood Rose triển khai tăng 5% ATK/DEF đội. 5 anh hùng: tăng thêm 10% sức chứa quân",
+            "en": "Each deployed Blood Rose hero increases troop ATK/DEF by 5%. With 5 deployed: additional 10% troop capacity"
           }
         }
       ],
@@ -387,7 +436,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌1 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 1"
+        "vi": "Tuyển mộ sự kiện Season 1",
+        "en": "Season 1 Event Recruitment"
       }
     },
     {
@@ -408,51 +458,60 @@
       "pveTier": "A",
       "notes": {
         "ko": "핵심 가치: 건설 가속. 무료 건설시간 최대 90분 + 건설속도 최대 40% 증가 (필수 육성)",
-        "vi": "Giá trị cốt lõi: tăng tốc xây dựng. Miễn phí thời gian xây dựng tối đa 90 phút + tốc độ xây dựng tối đa 40% (bắt buộc nuôi)"
+        "vi": "Giá trị cốt lõi: tăng tốc xây dựng. Miễn phí thời gian xây dựng tối đa 90 phút + tốc độ xây dựng tối đa 40% (bắt buộc nuôi)",
+        "en": "Core value: construction acceleration. Free build time up to 90 min + construction speed up to 40% (must-raise hero)"
       },
       "skills": [
         {
           "name": {
             "ko": "멸망의 사냥꾼",
-            "vi": "Doom Hunter"
+            "vi": "Doom Hunter",
+            "en": "Doom Hunter"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 성급 업그레이드 시 최대 +590 추가 피해 계수",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng thêm tối đa +590 hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng thêm tối đa +590 hệ số",
+            "en": "Normal attack damage coefficient 900. Star upgrades add up to +590 bonus coefficient"
           }
         },
         {
           "name": {
             "ko": "종말의 분노",
-            "vi": "Apocalypse Fury"
+            "vi": "Apocalypse Fury",
+            "en": "Apocalypse Fury"
           },
           "type": "active",
           "description": {
             "ko": "기동 부대를 호출하여 목표를 맹렬히 공격. 피해 계수 2094, 최대 성급 시 2544",
-            "vi": "Gọi quân cơ động hỗ trợ tấn công dữ dội mục tiêu. Hệ số 2094, tối đa 2544 khi max sao"
+            "vi": "Gọi quân cơ động hỗ trợ tấn công dữ dội mục tiêu. Hệ số 2094, tối đa 2544 khi max sao",
+            "en": "Calls in mobile units to fiercely attack the target. Coefficient 2094, up to 2544 at max star"
           }
         },
         {
           "name": {
             "ko": "공주의 선물",
-            "vi": "Princess's Gift"
+            "vi": "Princess's Gift",
+            "en": "Princess's Gift"
           },
           "type": "deployment",
           "description": {
             "ko": "무료 건설시간 90분 + 건설속도 39% 증가. 성급 업그레이드: 건설시간 추가, 건설속도 +10%, 자원 비용 -10%",
-            "vi": "Miễn phí xây dựng 90 phút + tốc độ xây dựng +39%. Nâng sao: thêm thời gian, tốc độ +10%, chi phí -10%"
+            "vi": "Miễn phí xây dựng 90 phút + tốc độ xây dựng +39%. Nâng sao: thêm thời gian, tốc độ +10%, chi phí -10%",
+            "en": "Free build time 90 min + construction speed +39%. Star upgrades: additional time, speed +10%, resource cost -10%"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "자신의 공격력 10%, 방어력 10%, 병력 수용량 5% 증가",
-            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân"
+            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân",
+            "en": "Increases own ATK by 10%, DEF by 10%, and troop capacity by 5%"
           }
         }
       ],
@@ -465,7 +524,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -486,51 +546,60 @@
       "pveTier": "B+",
       "notes": {
         "ko": "핵심 가치: 연료 생산. 연료 +100/일 + 연료 회복속도 10% 증가",
-        "vi": "Giá trị cốt lõi: sản xuất nhiên liệu. Nhiên liệu +100/ngày + tốc độ phục hồi nhiên liệu tăng 10%"
+        "vi": "Giá trị cốt lõi: sản xuất nhiên liệu. Nhiên liệu +100/ngày + tốc độ phục hồi nhiên liệu tăng 10%",
+        "en": "Core value: fuel production. Fuel +100/day + fuel recovery speed +10%"
       },
       "skills": [
         {
           "name": {
             "ko": "폭발 탄환",
-            "vi": "Explosive Bullets"
+            "vi": "Explosive Bullets",
+            "en": "Explosive Bullets"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 성급 업그레이드 시 피해 계수 +90~+210 증가",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số",
+            "en": "Normal attack damage coefficient 900. Star upgrades increase coefficient by +90~+210"
           }
         },
         {
           "name": {
             "ko": "전력 공격",
-            "vi": "All-out Assault"
+            "vi": "All-out Assault",
+            "en": "All-out Assault"
           },
           "type": "active",
           "description": {
             "ko": "정예 부대에 전체 화력 개방 명령. 피해 계수 2094, 6초간 지속. 성급 업그레이드 시 피해 +150~+300, 지속시간 +1초",
-            "vi": "Ra lệnh toàn bộ hỏa lực cho đội tinh nhuệ. Hệ số 2094, 6 giây. Nâng sao +150~+300, thêm 1 giây"
+            "vi": "Ra lệnh toàn bộ hỏa lực cho đội tinh nhuệ. Hệ số 2094, 6 giây. Nâng sao +150~+300, thêm 1 giây",
+            "en": "Orders elite troops to open full firepower. Coefficient 2094, lasts 6s. Star upgrades: damage +150~+300, duration +1s"
           }
         },
         {
           "name": {
             "ko": "탐험의 천재",
-            "vi": "Exploration Genius"
+            "vi": "Exploration Genius",
+            "en": "Exploration Genius"
           },
           "type": "deployment",
           "description": {
             "ko": "탐험 스테이지 경험치 45% 증가. 매일 무료 연료 100 + 방치 경험치 5~10% 증가 + 연료 회복속도 10% 증가",
-            "vi": "Tăng 45% EXP giai đoạn khám phá. Nhiên liệu miễn phí 100/ngày + EXP treo máy +5~10% + tốc độ phục hồi nhiên liệu +10%"
+            "vi": "Tăng 45% EXP giai đoạn khám phá. Nhiên liệu miễn phí 100/ngày + EXP treo máy +5~10% + tốc độ phục hồi nhiên liệu +10%",
+            "en": "Exploration stage EXP +45%. Daily free fuel 100 + idle EXP +5~10% + fuel recovery speed +10%"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "자신의 공격력 10%, 방어력 10%, 병력 수용량 5% 증가",
-            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân"
+            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân",
+            "en": "Increases own ATK by 10%, DEF by 10%, and troop capacity by 5%"
           }
         }
       ],
@@ -542,7 +611,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -563,51 +633,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "초반용, 글로벌 패시브 유지",
-        "vi": "Giai đoạn đầu, giữ passive toàn cục"
+        "vi": "Giai đoạn đầu, giữ passive toàn cục",
+        "en": "Early game use, maintains global passive"
       },
       "skills": [
         {
           "name": {
             "ko": "영웅 스킬",
-            "vi": "Kỹ Năng Anh Hùng"
+            "vi": "Kỹ Năng Anh Hùng",
+            "en": "Hero Skill"
           },
           "type": "normal",
           "description": {
             "ko": "적에게 스킬 피해를 입힌다",
-            "vi": "Gây sát thương kỹ năng cho địch"
+            "vi": "Gây sát thương kỹ năng cho địch",
+            "en": "Deals skill damage to enemies"
           }
         },
         {
           "name": {
             "ko": "서포트",
-            "vi": "Hỗ Trợ"
+            "vi": "Hỗ Trợ",
+            "en": "Support"
           },
           "type": "active",
           "description": {
             "ko": "블러디 로즈 보조 패시브 (정확한 수치 미확인)",
-            "vi": "Passive hỗ trợ Blood Rose (chưa xác nhận số liệu chính xác)"
+            "vi": "Passive hỗ trợ Blood Rose (chưa xác nhận số liệu chính xác)",
+            "en": "Blood Rose support passive (exact values unconfirmed)"
           }
         },
         {
           "name": {
             "ko": "글로벌 서포트",
-            "vi": "Hỗ Trợ Toàn Cục"
+            "vi": "Hỗ Trợ Toàn Cục",
+            "en": "Global Support"
           },
           "type": "deployment",
           "description": {
             "ko": "블러디 로즈 진영 글로벌 서포트 (정확한 수치 미확인)",
-            "vi": "Hỗ trợ toàn cục Blood Rose (chưa xác nhận số liệu chính xác)"
+            "vi": "Hỗ trợ toàn cục Blood Rose (chưa xác nhận số liệu chính xác)",
+            "en": "Blood Rose faction global support (exact values unconfirmed)"
           }
         },
         {
           "name": {
             "ko": "전속 포텐셜",
-            "vi": "Tiềm Năng Chuyên Thuộc"
+            "vi": "Tiềm Năng Chuyên Thuộc",
+            "en": "Exclusive Potential"
           },
           "type": "potential",
           "description": {
             "ko": "업데이트 중",
-            "vi": "Đang cập nhật"
+            "vi": "Đang cập nhật",
+            "en": "To be updated"
           }
         }
       ],
@@ -619,7 +698,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -640,51 +720,60 @@
       "pveTier": "B+",
       "notes": {
         "ko": "초반 서포트, 초반에 좋은 성능",
-        "vi": "Hỗ trợ giai đoạn đầu, hoạt động tốt"
+        "vi": "Hỗ trợ giai đoạn đầu, hoạt động tốt",
+        "en": "Early game support, performs well in early stages"
       },
       "skills": [
         {
           "name": {
             "ko": "화학 반응",
-            "vi": "Chemical Reaction"
+            "vi": "Chemical Reaction",
+            "en": "Chemical Reaction"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +45, 레벨 4: +60, 레벨 5: +105",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +45, Lv4: +60, Lv5: +105"
           }
         },
         {
           "name": {
             "ko": "위험한 물약",
-            "vi": "Perilous Potion"
+            "vi": "Perilous Potion",
+            "en": "Perilous Potion"
           },
           "type": "active",
           "description": {
             "ko": "독 물약 투척. 레벨 1-2: +90, 레벨 3: 독 효과, 레벨 4: +220, 레벨 5: 독 강화",
-            "vi": "Ném thuốc độc. Lv1-2: +90, Lv3: độc, Lv4: +220, Lv5: độc mạnh"
+            "vi": "Ném thuốc độc. Lv1-2: +90, Lv3: độc, Lv4: +220, Lv5: độc mạnh",
+            "en": "Throws poison potion. Lv1-2: +90, Lv3: poison effect, Lv4: +220, Lv5: enhanced poison"
           }
         },
         {
           "name": {
             "ko": "공격 전문가",
-            "vi": "Attack Expert"
+            "vi": "Attack Expert",
+            "en": "Attack Expert"
           },
           "type": "deployment",
           "description": {
             "ko": "공격력 증가. 레벨 1-2: +50, 레벨 3: +100, 레벨 4: +200, 레벨 5: +500",
-            "vi": "Tăng ATK. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +500"
+            "vi": "Tăng ATK. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +500",
+            "en": "Increases ATK. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +500"
           }
         },
         {
           "name": {
             "ko": "진영 공격",
-            "vi": "Faction Attack"
+            "vi": "Faction Attack",
+            "en": "Faction Attack"
           },
           "type": "potential",
           "description": {
             "ko": "블러디 로즈 영웅 공격력 10% 증가",
-            "vi": "Tăng 10% ATK anh hùng Blood Rose"
+            "vi": "Tăng 10% ATK anh hùng Blood Rose",
+            "en": "Increases Blood Rose hero ATK by 10%"
           }
         }
       ],
@@ -696,7 +785,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -717,51 +807,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "좀비 전투 연료 비용 감소. 고성급 시 미배치 상태에서도 패시브 적용",
-        "vi": "Giảm chi phí nhiên liệu khi đánh zombie. Ở sao cao passive áp dụng cả khi không triển khai"
+        "vi": "Giảm chi phí nhiên liệu khi đánh zombie. Ở sao cao passive áp dụng cả khi không triển khai",
+        "en": "Reduces fuel cost for zombie battles. At high star, passive applies even when not deployed"
       },
       "skills": [
         {
           "name": {
             "ko": "마법 카드",
-            "vi": "Magic Cards"
+            "vi": "Magic Cards",
+            "en": "Magic Cards"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +45, 레벨 4: +60, 레벨 5: +105",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +45, Lv4: +60, Lv5: +105"
           }
         },
         {
           "name": {
             "ko": "카드 트릭",
-            "vi": "Card Trick"
+            "vi": "Card Trick",
+            "en": "Card Trick"
           },
           "type": "active",
           "description": {
             "ko": "카드 공격. 레벨 1-2: +90, 레벨 3: 범위 +30%, 레벨 4: +200 피해",
-            "vi": "Tấn công bài. Lv1-2: +90, Lv3: phạm vi +30%, Lv4: +200"
+            "vi": "Tấn công bài. Lv1-2: +90, Lv3: phạm vi +30%, Lv4: +200",
+            "en": "Card attack. Lv1-2: +90, Lv3: range +30%, Lv4: +200 damage"
           }
         },
         {
           "name": {
             "ko": "불꽃 탄생",
-            "vi": "Born of Fire"
+            "vi": "Born of Fire",
+            "en": "Born of Fire"
           },
           "type": "deployment",
           "description": {
             "ko": "연료 비용 -1 감소. 거대좀비 연료 비용 추가 -2 감소. 피해량 +10%",
-            "vi": "Chi phí nhiên liệu -1. Boomer nhiên liệu -2. Sát thương +10%"
+            "vi": "Chi phí nhiên liệu -1. Boomer nhiên liệu -2. Sát thương +10%",
+            "en": "Fuel cost -1. Giant zombie fuel cost additional -2. Damage +10%"
           }
         },
         {
           "name": {
             "ko": "현장 전문가",
-            "vi": "Field Specialist"
+            "vi": "Field Specialist",
+            "en": "Field Specialist"
           },
           "type": "potential",
           "description": {
             "ko": "여러 부대가 동일한 좀비를 동시 공격 가능",
-            "vi": "Nhiều đội có thể tấn công cùng một zombie"
+            "vi": "Nhiều đội có thể tấn công cùng một zombie",
+            "en": "Multiple squads can attack the same zombie simultaneously"
           }
         }
       ],
@@ -772,7 +871,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "초반 자동 획득",
-        "vi": "Tự động nhận ban đầu"
+        "vi": "Tự động nhận ban đầu",
+        "en": "Automatically obtained early game"
       }
     },
     {
@@ -793,51 +893,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "무과금용 프론트라인, 교체 전까지 사용",
-        "vi": "Frontline F2P, dùng đến khi thay thế"
+        "vi": "Frontline F2P, dùng đến khi thay thế",
+        "en": "F2P frontline option, use until replaced"
       },
       "skills": [
         {
           "name": {
             "ko": "관통 탄환",
-            "vi": "Penetrating Bullets"
+            "vi": "Penetrating Bullets",
+            "en": "Penetrating Bullets"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +45, 레벨 4: +60, 레벨 5: +105",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +45, Lv4: +60, Lv5: +105"
           }
         },
         {
           "name": {
             "ko": "속사",
-            "vi": "Rapid Shooting"
+            "vi": "Rapid Shooting",
+            "en": "Rapid Shooting"
           },
           "type": "active",
           "description": {
             "ko": "속사 공격. 레벨 1-2: +90, 레벨 3: 기절 효과, 레벨 4: +200, 레벨 5: 기절 +1초",
-            "vi": "Bắn nhanh. Lv1-2: +90, Lv3: choáng, Lv4: +200, Lv5: choáng +1s"
+            "vi": "Bắn nhanh. Lv1-2: +90, Lv3: choáng, Lv4: +200, Lv5: choáng +1s",
+            "en": "Rapid fire attack. Lv1-2: +90, Lv3: stun effect, Lv4: +200, Lv5: stun +1s"
           }
         },
         {
           "name": {
             "ko": "방어 전문가",
-            "vi": "Defense Expert"
+            "vi": "Defense Expert",
+            "en": "Defense Expert"
           },
           "type": "deployment",
           "description": {
             "ko": "방어력 증가. 레벨 1-2: +50, 레벨 3: +100, 레벨 4: +200, 레벨 5: +300",
-            "vi": "Tăng DEF. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
+            "vi": "Tăng DEF. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300",
+            "en": "Increases DEF. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
           }
         },
         {
           "name": {
             "ko": "진영 공격",
-            "vi": "Faction Attack"
+            "vi": "Faction Attack",
+            "en": "Faction Attack"
           },
           "type": "potential",
           "description": {
             "ko": "블러디 로즈 영웅 방어력 10% 증가",
-            "vi": "Tăng 10% DEF anh hùng Blood Rose"
+            "vi": "Tăng 10% DEF anh hùng Blood Rose",
+            "en": "Increases Blood Rose hero DEF by 10%"
           }
         }
       ],
@@ -849,7 +958,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -870,51 +980,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "훈련속도 30% 증가 패시브 보유",
-        "vi": "Có passive tăng 30% tốc độ huấn luyện"
+        "vi": "Có passive tăng 30% tốc độ huấn luyện",
+        "en": "Has passive for +30% training speed"
       },
       "skills": [
         {
           "name": {
             "ko": "주먹 난타",
-            "vi": "Fist Fury"
+            "vi": "Fist Fury",
+            "en": "Fist Fury"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +30, 레벨 4: +40, 레벨 5: +70",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +30, Lv4: +40, Lv5: +70"
           }
         },
         {
           "name": {
             "ko": "태국 권법",
-            "vi": "Thai Boxing Impact"
+            "vi": "Thai Boxing Impact",
+            "en": "Thai Boxing Impact"
           },
           "type": "active",
           "description": {
             "ko": "격투 공격. 레벨 1-3: +60, 레벨 4: +80, 레벨 5: +140",
-            "vi": "Tấn công quyền thuật. Lv1-3: +60, Lv4: +80, Lv5: +140"
+            "vi": "Tấn công quyền thuật. Lv1-3: +60, Lv4: +80, Lv5: +140",
+            "en": "Martial arts attack. Lv1-3: +60, Lv4: +80, Lv5: +140"
           }
         },
         {
           "name": {
             "ko": "훈련 강화",
-            "vi": "Well Training"
+            "vi": "Well Training",
+            "en": "Well Training"
           },
           "type": "deployment",
           "description": {
             "ko": "병력 훈련속도 증가. 레벨 1-2: +2%, 레벨 3-4: +3%, 레벨 5: +5%",
-            "vi": "Tăng tốc huấn luyện. Lv1-2: +2%, Lv3-4: +3%, Lv5: +5%"
+            "vi": "Tăng tốc huấn luyện. Lv1-2: +2%, Lv3-4: +3%, Lv5: +5%",
+            "en": "Increases troop training speed. Lv1-2: +2%, Lv3-4: +3%, Lv5: +5%"
           }
         },
         {
           "name": {
             "ko": "진영 방어",
-            "vi": "Faction Defense"
+            "vi": "Faction Defense",
+            "en": "Faction Defense"
           },
           "type": "potential",
           "description": {
             "ko": "블러디 로즈 영웅 방어력 5% 증가",
-            "vi": "Tăng 5% DEF anh hùng Blood Rose"
+            "vi": "Tăng 5% DEF anh hùng Blood Rose",
+            "en": "Increases Blood Rose hero DEF by 5%"
           }
         }
       ],
@@ -925,7 +1044,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "초반 자동 획득",
-        "vi": "Tự động nhận ban đầu"
+        "vi": "Tự động nhận ban đầu",
+        "en": "Automatically obtained early game"
       }
     },
     {
@@ -946,51 +1066,60 @@
       "pveTier": "C",
       "notes": {
         "ko": "채집 영웅 전용",
-        "vi": "Chỉ dùng để thu thập"
+        "vi": "Chỉ dùng để thu thập",
+        "en": "Gathering hero only"
       },
       "skills": [
         {
           "name": {
             "ko": "합금 빠루",
-            "vi": "Alloy Crowbar"
+            "vi": "Alloy Crowbar",
+            "en": "Alloy Crowbar"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +30, 레벨 4: +40, 레벨 5: +70",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +30, Lv4: +40, Lv5: +70"
           }
         },
         {
           "name": {
             "ko": "빠루 충격",
-            "vi": "Crowbar Impact"
+            "vi": "Crowbar Impact",
+            "en": "Crowbar Impact"
           },
           "type": "active",
           "description": {
             "ko": "빠루 공격. 레벨 1-3: +60, 레벨 4: +80, 레벨 5: +140",
-            "vi": "Tấn công xà beng. Lv1-3: +60, Lv4: +80, Lv5: +140"
+            "vi": "Tấn công xà beng. Lv1-3: +60, Lv4: +80, Lv5: +140",
+            "en": "Crowbar attack. Lv1-3: +60, Lv4: +80, Lv5: +140"
           }
         },
         {
           "name": {
             "ko": "채집 달인: 목재",
-            "vi": "Gathering Master: Wood"
+            "vi": "Gathering Master: Wood",
+            "en": "Gathering Master: Wood"
           },
           "type": "deployment",
           "description": {
             "ko": "목재 채집 속도 증가. 레벨 1-4: +3%, 레벨 5: +5%",
-            "vi": "Tăng tốc thu thập gỗ. Lv1-4: +3%, Lv5: +5%"
+            "vi": "Tăng tốc thu thập gỗ. Lv1-4: +3%, Lv5: +5%",
+            "en": "Increases wood gathering speed. Lv1-4: +3%, Lv5: +5%"
           }
         },
         {
           "name": {
             "ko": "진영 공격",
-            "vi": "Faction Attack"
+            "vi": "Faction Attack",
+            "en": "Faction Attack"
           },
           "type": "potential",
           "description": {
             "ko": "블러디 로즈 영웅 공격력 5% 증가",
-            "vi": "Tăng 5% ATK anh hùng Blood Rose"
+            "vi": "Tăng 5% ATK anh hùng Blood Rose",
+            "en": "Increases Blood Rose hero ATK by 5%"
           }
         }
       ],
@@ -1001,7 +1130,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "초반 자동 획득",
-        "vi": "Tự động nhận ban đầu"
+        "vi": "Tự động nhận ban đầu",
+        "en": "Automatically obtained early game"
       }
     },
     {
@@ -1022,51 +1152,60 @@
       "pveTier": "S+",
       "notes": {
         "ko": "시즌4 엄청나게 강력한 영웅",
-        "vi": "Anh hùng cực mạnh Season 4"
+        "vi": "Anh hùng cực mạnh Season 4",
+        "en": "Extremely powerful Season 4 hero"
       },
       "skills": [
         {
           "name": {
             "ko": "영웅 스킬",
-            "vi": "Kỹ Năng Anh Hùng"
+            "vi": "Kỹ Năng Anh Hùng",
+            "en": "Hero Skill"
           },
           "type": "normal",
           "description": {
             "ko": "적에게 강력한 스킬 피해를 입힌다",
-            "vi": "Gây sát thương kỹ năng mạnh cho địch"
+            "vi": "Gây sát thương kỹ năng mạnh cho địch",
+            "en": "Deals powerful skill damage to enemies"
           }
         },
         {
           "name": {
             "ko": "스킬 강화",
-            "vi": "Tăng Cường Kỹ Năng"
+            "vi": "Tăng Cường Kỹ Năng",
+            "en": "Skill Enhancement"
           },
           "type": "active",
           "description": {
             "ko": "영웅 스킬 데미지 24% 증가 (5성 시 추가 10%)",
-            "vi": "Tăng 24% sát thương kỹ năng anh hùng (thêm 10% ở 5 sao)"
+            "vi": "Tăng 24% sát thương kỹ năng anh hùng (thêm 10% ở 5 sao)",
+            "en": "Increases hero skill damage by 24% (additional 10% at 5-star)"
           }
         },
         {
           "name": {
             "ko": "상성 강화",
-            "vi": "Tăng Cường Tương Khắc"
+            "vi": "Tăng Cường Tương Khắc",
+            "en": "Counter Enhancement"
           },
           "type": "deployment",
           "description": {
             "ko": "상성 유리한 진영에 데미지 10% 증가, 상성 불리한 진영으로부터 받는 데미지 10% 감소",
-            "vi": "Tăng 10% sát thương cho phe tương khắc có lợi, giảm 10% sát thương nhận từ phe tương khắc bất lợi"
+            "vi": "Tăng 10% sát thương cho phe tương khắc có lợi, giảm 10% sát thương nhận từ phe tương khắc bất lợi",
+            "en": "Increases damage by 10% against countered factions, reduces damage taken by 10% from factions that counter you"
           }
         },
         {
           "name": {
             "ko": "전속 포텐셜",
-            "vi": "Tiềm Năng Chuyên Thuộc"
+            "vi": "Tiềm Năng Chuyên Thuộc",
+            "en": "Exclusive Potential"
           },
           "type": "potential",
           "description": {
             "ko": "업데이트 중",
-            "vi": "Đang cập nhật"
+            "vi": "Đang cập nhật",
+            "en": "To be updated"
           }
         }
       ],
@@ -1079,7 +1218,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌4 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 4"
+        "vi": "Tuyển mộ sự kiện Season 4",
+        "en": "Season 4 Event Recruitment"
       }
     },
     {
@@ -1100,51 +1240,60 @@
       "pveTier": "S+",
       "notes": {
         "ko": "시즌3 진입에 절대적으로 중요",
-        "vi": "Tuyệt đối quan trọng khi vào Season 3"
+        "vi": "Tuyệt đối quan trọng khi vào Season 3",
+        "en": "Absolutely critical for entering Season 3"
       },
       "skills": [
         {
           "name": {
             "ko": "영웅 스킬",
-            "vi": "Kỹ Năng Anh Hùng"
+            "vi": "Kỹ Năng Anh Hùng",
+            "en": "Hero Skill"
           },
           "type": "normal",
           "description": {
             "ko": "적에게 강력한 스킬 피해를 입힌다",
-            "vi": "Gây sát thương kỹ năng mạnh cho địch"
+            "vi": "Gây sát thương kỹ năng mạnh cho địch",
+            "en": "Deals powerful skill damage to enemies"
           }
         },
         {
           "name": {
             "ko": "부대 강화",
-            "vi": "Tăng Cường Đội Quân"
+            "vi": "Tăng Cường Đội Quân",
+            "en": "Troop Enhancement"
           },
           "type": "active",
           "description": {
             "ko": "병력 수용량 +90 (고정), 영웅 공격력/방어력 최대 20% 증가",
-            "vi": "Sức chứa quân +90 (cố định), tăng tấn công/phòng thủ anh hùng tối đa 20%"
+            "vi": "Sức chứa quân +90 (cố định), tăng tấn công/phòng thủ anh hùng tối đa 20%",
+            "en": "Troop capacity +90 (fixed), increases hero ATK/DEF by up to 20%"
           }
         },
         {
           "name": {
             "ko": "시즌 시너지",
-            "vi": "Hiệp Đồng Mùa"
+            "vi": "Hiệp Đồng Mùa",
+            "en": "Season Synergy"
           },
           "type": "deployment",
           "description": {
             "ko": "S2 영웅과 함께 배치 시 피해 저항 7.5% 증가. 5성: 병력 수용량 7.5% 추가 증가, 모든 병종에 적용",
-            "vi": "Tăng 7.5% kháng sát thương khi triển khai cùng anh hùng S2. 5 sao: thêm 7.5% sức chứa quân, áp dụng cho mọi loại quân"
+            "vi": "Tăng 7.5% kháng sát thương khi triển khai cùng anh hùng S2. 5 sao: thêm 7.5% sức chứa quân, áp dụng cho mọi loại quân",
+            "en": "Increases damage resistance by 7.5% when deployed with S2 heroes. 5-star: additional 7.5% troop capacity, applies to all troop types"
           }
         },
         {
           "name": {
             "ko": "전속 포텐셜",
-            "vi": "Tiềm Năng Chuyên Thuộc"
+            "vi": "Tiềm Năng Chuyên Thuộc",
+            "en": "Exclusive Potential"
           },
           "type": "potential",
           "description": {
             "ko": "업데이트 중",
-            "vi": "Đang cập nhật"
+            "vi": "Đang cập nhật",
+            "en": "To be updated"
           }
         }
       ],
@@ -1157,7 +1306,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌3 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 3"
+        "vi": "Tuyển mộ sự kiện Season 3",
+        "en": "Season 3 Event Recruitment"
       }
     },
     {
@@ -1178,51 +1328,60 @@
       "pveTier": "S+",
       "notes": {
         "ko": "부대를 크게 강화시킴",
-        "vi": "Nâng cao đáng kể sức mạnh đội"
+        "vi": "Nâng cao đáng kể sức mạnh đội",
+        "en": "Significantly enhances squad power"
       },
       "skills": [
         {
           "name": {
             "ko": "영웅 스킬",
-            "vi": "Kỹ Năng Anh Hùng"
+            "vi": "Kỹ Năng Anh Hùng",
+            "en": "Hero Skill"
           },
           "type": "normal",
           "description": {
             "ko": "적에게 강력한 스킬 피해를 입힌다",
-            "vi": "Gây sát thương kỹ năng mạnh cho địch"
+            "vi": "Gây sát thương kỹ năng mạnh cho địch",
+            "en": "Deals powerful skill damage to enemies"
           }
         },
         {
           "name": {
             "ko": "진영 강화",
-            "vi": "Tăng Cường Phe"
+            "vi": "Tăng Cường Phe",
+            "en": "Faction Enhancement"
           },
           "type": "active",
           "description": {
             "ko": "병력 체력 15% 증가, 진영 병종 데미지 25% 증가",
-            "vi": "Tăng 15% HP quân, tăng 25% sát thương cho quân cùng phe"
+            "vi": "Tăng 15% HP quân, tăng 25% sát thương cho quân cùng phe",
+            "en": "Increases troop HP by 15%, faction troop damage by 25%"
           }
         },
         {
           "name": {
             "ko": "진영 결속",
-            "vi": "Kết Nối Phe"
+            "vi": "Kết Nối Phe",
+            "en": "Faction Bond"
           },
           "type": "deployment",
           "description": {
             "ko": "같은 진영 영웅 5명 배치 시 병력 체력 10% 증가",
-            "vi": "Tăng 10% HP quân khi triển khai 5 anh hùng cùng phe"
+            "vi": "Tăng 10% HP quân khi triển khai 5 anh hùng cùng phe",
+            "en": "Deploying 5 same-faction heroes increases troop HP by 10%"
           }
         },
         {
           "name": {
             "ko": "전속 포텐셜",
-            "vi": "Tiềm Năng Chuyên Thuộc"
+            "vi": "Tiềm Năng Chuyên Thuộc",
+            "en": "Exclusive Potential"
           },
           "type": "potential",
           "description": {
             "ko": "업데이트 중",
-            "vi": "Đang cập nhật"
+            "vi": "Đang cập nhật",
+            "en": "To be updated"
           }
         }
       ],
@@ -1235,7 +1394,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌2 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 2"
+        "vi": "Tuyển mộ sự kiện Season 2",
+        "en": "Season 2 Event Recruitment"
       }
     },
     {
@@ -1256,51 +1416,60 @@
       "pveTier": "S",
       "notes": {
         "ko": "미배치 시에도 진영 병력 데미지 10% 버프. 배치 시 최대 45% 방어 증가",
-        "vi": "Buff 10% sát thương quân phe ngay cả khi không triển khai. Khi triển khai tăng phòng thủ tối đa 45%"
+        "vi": "Buff 10% sát thương quân phe ngay cả khi không triển khai. Khi triển khai tăng phòng thủ tối đa 45%",
+        "en": "Buffs faction troop damage by 10% even when not deployed. Up to 45% DEF increase when deployed"
       },
       "skills": [
         {
           "name": {
             "ko": "마술 공격",
-            "vi": "Witchcraft Attack"
+            "vi": "Witchcraft Attack",
+            "en": "Witchcraft Attack"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 레벨업 시 피해 계수 증가",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng cấp tăng hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng cấp tăng hệ số",
+            "en": "Normal attack damage coefficient 900. Upgrades increase coefficient"
           }
         },
         {
           "name": {
             "ko": "영혼 인형",
-            "vi": "Spirit Doll"
+            "vi": "Spirit Doll",
+            "en": "Spirit Doll"
           },
           "type": "active",
           "description": {
             "ko": "자폭 인형 4체를 조종하여 적을 공격. 피해 계수 1200",
-            "vi": "Điều khiển 4 búp bê tự hủy tấn công kẻ địch. Hệ số sát thương 1200"
+            "vi": "Điều khiển 4 búp bê tự hủy tấn công kẻ địch. Hệ số sát thương 1200",
+            "en": "Controls 4 self-destructing dolls to attack enemies. Coefficient 1200"
           }
         },
         {
           "name": {
             "ko": "정신 지배",
-            "vi": "Mind Control"
+            "vi": "Mind Control",
+            "en": "Mind Control"
           },
           "type": "deployment",
           "description": {
             "ko": "부대 내 사격 병종 방어력 15% 증가 (최대 16%)",
-            "vi": "Tăng 15% phòng thủ Xạ thủ trong đội (tối đa 16%)"
+            "vi": "Tăng 15% phòng thủ Xạ thủ trong đội (tối đa 16%)",
+            "en": "Increases Shooter troop DEF by 15% (up to 16%)"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "배치 여부와 관계없이 모든 사격 병종 피해량 10% 증가",
-            "vi": "Tăng 10% sát thương tất cả Xạ thủ bất kể có triển khai hay không"
+            "vi": "Tăng 10% sát thương tất cả Xạ thủ bất kể có triển khai hay không",
+            "en": "Increases all Shooter troop damage by 10% regardless of deployment"
           }
         }
       ],
@@ -1313,7 +1482,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌1 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 1"
+        "vi": "Tuyển mộ sự kiện Season 1",
+        "en": "Season 1 Event Recruitment"
       }
     },
     {
@@ -1334,51 +1504,60 @@
       "pveTier": "S",
       "notes": {
         "ko": "진영 병종 훈련속도 70% 증가. 5성 시 모든 병종 공격력/방어력 증가",
-        "vi": "Tăng 70% tốc độ huấn luyện quân phe. 5 sao: tăng ATK/DEF mọi loại quân"
+        "vi": "Tăng 70% tốc độ huấn luyện quân phe. 5 sao: tăng ATK/DEF mọi loại quân",
+        "en": "Faction troop training speed +70%. At 5-star: increases ATK/DEF for all troop types"
       },
       "skills": [
         {
           "name": {
             "ko": "그림자 습격",
-            "vi": "Shadow Assault"
+            "vi": "Shadow Assault",
+            "en": "Shadow Assault"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가 (Lv1-3: +90, Lv4: +120, Lv5: +210)",
-            "vi": "Tăng hệ số sát thương thường (Lv1-3: +90, Lv4: +120, Lv5: +210)"
+            "vi": "Tăng hệ số sát thương thường (Lv1-3: +90, Lv4: +120, Lv5: +210)",
+            "en": "Increases normal attack damage coefficient (Lv1-3: +90, Lv4: +120, Lv5: +210)"
           }
         },
         {
           "name": {
             "ko": "전자기 펄스",
-            "vi": "EM Pulse"
+            "vi": "EM Pulse",
+            "en": "EM Pulse"
           },
           "type": "active",
           "description": {
             "ko": "무기를 충전하여 전방으로 강력한 에너지 펄스 발사. 피해 계수 1200. 레벨업 시 펄스 분열 및 개수 증가",
-            "vi": "Nạp năng lượng vũ khí, phóng xung năng lượng mạnh về phía trước. Hệ số sát thương 1200. Nâng cấp tách và tăng số xung"
+            "vi": "Nạp năng lượng vũ khí, phóng xung năng lượng mạnh về phía trước. Hệ số sát thương 1200. Nâng cấp tách và tăng số xung",
+            "en": "Charges weapon and fires a powerful energy pulse forward. Coefficient 1200. Upgrades split and increase pulse count"
           }
         },
         {
           "name": {
             "ko": "지배의 힘",
-            "vi": "Power of Dominance"
+            "vi": "Power of Dominance",
+            "en": "Power of Dominance"
           },
           "type": "deployment",
           "description": {
             "ko": "훈련속도 +10%, 사격 방어력 +10%, 훈련 자원소모 -5%, 사격 공격력 +10%. 5성: 모든 병종에 적용",
-            "vi": "Tốc độ huấn luyện +10%, phòng thủ Xạ thủ +10%, chi phí huấn luyện -5%, tấn công Xạ thủ +10%. 5 sao: áp dụng mọi loại quân"
+            "vi": "Tốc độ huấn luyện +10%, phòng thủ Xạ thủ +10%, chi phí huấn luyện -5%, tấn công Xạ thủ +10%. 5 sao: áp dụng mọi loại quân",
+            "en": "Training speed +10%, Shooter DEF +10%, training cost -5%, Shooter ATK +10%. At 5-star: applies to all troop types"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "새벽의 날개 영웅 1명 배치 시마다 부대 공격력/방어력 5% 증가. 5명 배치 시 병력 수용량 추가 10% 증가",
-            "vi": "Mỗi anh hùng Wings of Dawn triển khai tăng 5% ATK/DEF đội. 5 anh hùng: tăng thêm 10% sức chứa quân"
+            "vi": "Mỗi anh hùng Wings of Dawn triển khai tăng 5% ATK/DEF đội. 5 anh hùng: tăng thêm 10% sức chứa quân",
+            "en": "Each deployed Wings of Dawn hero increases troop ATK/DEF by 5%. With 5 deployed: additional 10% troop capacity"
           }
         }
       ],
@@ -1391,7 +1570,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌1 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 1"
+        "vi": "Tuyển mộ sự kiện Season 1",
+        "en": "Season 1 Event Recruitment"
       }
     },
     {
@@ -1412,51 +1592,60 @@
       "pveTier": "S",
       "notes": {
         "ko": "핵심 가치: 레이더 탐색. 무료 레이더 이벤트 최대 20회/일 + 레이더 경험치 최대 50% 증가. 5성: 탐험 상자 최대 10회/일",
-        "vi": "Giá trị cốt lõi: radar. Sự kiện radar miễn phí tối đa 20 lần/ngày + EXP radar tối đa 50%. 5 sao: hộp thám hiểm tối đa 10 lần/ngày"
+        "vi": "Giá trị cốt lõi: radar. Sự kiện radar miễn phí tối đa 20 lần/ngày + EXP radar tối đa 50%. 5 sao: hộp thám hiểm tối đa 10 lần/ngày",
+        "en": "Core value: radar exploration. Free radar events up to 20/day + radar EXP up to 50%. 5-star: exploration chests up to 10/day"
       },
       "skills": [
         {
           "name": {
             "ko": "사냥꾼의 본능",
-            "vi": "Hunter's Instinct"
+            "vi": "Hunter's Instinct",
+            "en": "Hunter's Instinct"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 성급 업그레이드 시 피해 계수 +90~+210 증가",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số",
+            "en": "Normal attack damage coefficient 900. Star upgrades increase coefficient by +90~+210"
           }
         },
         {
           "name": {
             "ko": "화살 소나기",
-            "vi": "Arrow Shower"
+            "vi": "Arrow Shower",
+            "en": "Arrow Shower"
           },
           "type": "active",
           "description": {
             "ko": "충전 후 전방으로 다수의 폭발 화살 발사. 피해 계수 1200, 3초간 지속. 성급 업그레이드 시 화상 효과 추가",
-            "vi": "Nạp năng lượng bắn nhiều mũi tên nổ về phía trước. Hệ số 1200, 3 giây. Nâng sao thêm hiệu ứng bỏng"
+            "vi": "Nạp năng lượng bắn nhiều mũi tên nổ về phía trước. Hệ số 1200, 3 giây. Nâng sao thêm hiệu ứng bỏng",
+            "en": "Charges and fires multiple explosive arrows forward. Coefficient 1200, lasts 3s. Star upgrades add burn effect"
           }
         },
         {
           "name": {
             "ko": "사냥꾼의 선물",
-            "vi": "Hunter's Gift"
+            "vi": "Hunter's Gift",
+            "en": "Hunter's Gift"
           },
           "type": "deployment",
           "description": {
             "ko": "매일 무료 레이더 이벤트 20회 + 레이더 경험치 30% 증가. 성급 업그레이드 시 추가 미션 및 탐험 상자 보상",
-            "vi": "Nhận 20 sự kiện radar miễn phí/ngày + EXP radar +30%. Nâng sao thêm nhiệm vụ và hộp thám hiểm"
+            "vi": "Nhận 20 sự kiện radar miễn phí/ngày + EXP radar +30%. Nâng sao thêm nhiệm vụ và hộp thám hiểm",
+            "en": "20 free radar events/day + radar EXP +30%. Star upgrades add bonus missions and exploration chests"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "자신의 공격력 10%, 방어력 10%, 병력 수용량 5% 증가",
-            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân"
+            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân",
+            "en": "Increases own ATK by 10%, DEF by 10%, and troop capacity by 5%"
           }
         }
       ],
@@ -1469,7 +1658,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "기본 모집 (장기 육성)",
-        "vi": "Tuyển mộ cơ bản (nuôi dài hạn)"
+        "vi": "Tuyển mộ cơ bản (nuôi dài hạn)",
+        "en": "Recruitment System (long-term investment)"
       }
     },
     {
@@ -1490,51 +1680,60 @@
       "pveTier": "A+",
       "notes": {
         "ko": "핵심 가치: 연구 가속. 무료 연구시간 최대 90분 + 연구속도 최대 40% 증가 + 연구 비용 15% 감소",
-        "vi": "Giá trị cốt lõi: tăng tốc nghiên cứu. Miễn phí thời gian nghiên cứu tối đa 90 phút + tốc độ nghiên cứu tối đa 40% + giảm 15% chi phí nghiên cứu"
+        "vi": "Giá trị cốt lõi: tăng tốc nghiên cứu. Miễn phí thời gian nghiên cứu tối đa 90 phút + tốc độ nghiên cứu tối đa 40% + giảm 15% chi phí nghiên cứu",
+        "en": "Core value: research acceleration. Free research time up to 90 min + research speed up to 40% + research cost -15%"
       },
       "skills": [
         {
           "name": {
             "ko": "암살자의 집중",
-            "vi": "Assassin Focus"
+            "vi": "Assassin Focus",
+            "en": "Assassin Focus"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 성급 업그레이드 시 피해 계수 +90~+210 증가",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số",
+            "en": "Normal attack damage coefficient 900. Star upgrades increase coefficient by +90~+210"
           }
         },
         {
           "name": {
             "ko": "정밀 폭발",
-            "vi": "Precision Blast"
+            "vi": "Precision Blast",
+            "en": "Precision Blast"
           },
           "type": "active",
           "description": {
             "ko": "무작위 적 3명에 표적 지정 후 폭발 피해 및 주변 범위 피해. 피해 계수 1200. 성급 업그레이드 시 화상 효과, 표적 2배, 피해 계수 최대 +300",
-            "vi": "Đánh dấu 3 mục tiêu ngẫu nhiên, gây sát thương nổ cho mục tiêu và xung quanh. Hệ số 1200. Nâng sao thêm bỏng, nhân đôi mục tiêu, +300 hệ số"
+            "vi": "Đánh dấu 3 mục tiêu ngẫu nhiên, gây sát thương nổ cho mục tiêu và xung quanh. Hệ số 1200. Nâng sao thêm bỏng, nhân đôi mục tiêu, +300 hệ số",
+            "en": "Marks 3 random enemies for explosive damage with AoE splash. Coefficient 1200. Star upgrades add burn, double targets, up to +300 coefficient"
           }
         },
         {
           "name": {
             "ko": "과학자",
-            "vi": "Scientist"
+            "vi": "Scientist",
+            "en": "Scientist"
           },
           "type": "deployment",
           "description": {
             "ko": "무료 연구시간 90분 + 연구속도 20% 증가. 성급 업그레이드: 연구시간 추가, 연구속도 +10%, 자원 비용 -5~10% 감소",
-            "vi": "Miễn phí nghiên cứu 90 phút + tốc độ nghiên cứu +20%. Nâng sao: thêm thời gian, tốc độ +10%, chi phí -5~10%"
+            "vi": "Miễn phí nghiên cứu 90 phút + tốc độ nghiên cứu +20%. Nâng sao: thêm thời gian, tốc độ +10%, chi phí -5~10%",
+            "en": "Free research time 90 min + research speed +20%. Star upgrades: additional time, speed +10%, resource cost -5~10%"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "자신의 공격력 10%, 방어력 10%, 병력 수용량 5% 증가",
-            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân"
+            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân",
+            "en": "Increases own ATK by 10%, DEF by 10%, and troop capacity by 5%"
           }
         }
       ],
@@ -1547,7 +1746,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -1568,51 +1768,60 @@
       "pveTier": "A",
       "notes": {
         "ko": "강한 서포트, 교체해도 유용함",
-        "vi": "Hỗ trợ mạnh, vẫn hữu ích khi thay đổi"
+        "vi": "Hỗ trợ mạnh, vẫn hữu ích khi thay đổi",
+        "en": "Strong support, remains useful even when swapped"
       },
       "skills": [
         {
           "name": {
             "ko": "심판의 기사",
-            "vi": "Judgement Knight"
+            "vi": "Judgement Knight",
+            "en": "Judgement Knight"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +45, 레벨 4: +60, 레벨 5: +105",
-            "vi": "Tăng hệ số sát thương thường. Lv1-3: +45, Lv4: +60, Lv5: +105"
+            "vi": "Tăng hệ số sát thương thường. Lv1-3: +45, Lv4: +60, Lv5: +105",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +45, Lv4: +60, Lv5: +105"
           }
         },
         {
           "name": {
             "ko": "화염 폭풍",
-            "vi": "Flame Storm"
+            "vi": "Flame Storm",
+            "en": "Flame Storm"
           },
           "type": "active",
           "description": {
             "ko": "적에게 화염 피해. 레벨 1-2: +90, 레벨 3: 화상 효과, 레벨 4: +220, 레벨 5: 화상 강화",
-            "vi": "Gây sát thương lửa cho địch. Lv1-2: +90, Lv3: bỏng, Lv4: +220, Lv5: bỏng mạnh hơn"
+            "vi": "Gây sát thương lửa cho địch. Lv1-2: +90, Lv3: bỏng, Lv4: +220, Lv5: bỏng mạnh hơn",
+            "en": "Deals fire damage to enemies. Lv1-2: +90, Lv3: burn effect, Lv4: +220, Lv5: enhanced burn"
           }
         },
         {
           "name": {
             "ko": "공성 전문가",
-            "vi": "Siege Expert"
+            "vi": "Siege Expert",
+            "en": "Siege Expert"
           },
           "type": "deployment",
           "description": {
             "ko": "연료 소모 -2 감소. 철거 시간 15~30초 단축",
-            "vi": "Giảm tiêu thụ nhiên liệu -2. Giảm thời gian phá hủy 15~30 giây"
+            "vi": "Giảm tiêu thụ nhiên liệu -2. Giảm thời gian phá hủy 15~30 giây",
+            "en": "Fuel consumption -2. Demolition time reduced by 15~30 seconds"
           }
         },
         {
           "name": {
             "ko": "공성 전문가 (강화)",
-            "vi": "Siege Specialist"
+            "vi": "Siege Specialist",
+            "en": "Siege Specialist"
           },
           "type": "potential",
           "description": {
             "ko": "공성 전문가 효과가 크리스티나 배치 여부와 관계없이 전체 편대에 적용",
-            "vi": "Hiệu ứng Siege Expert áp dụng cho toàn bộ đội hình bất kể Christina có triển khai hay không"
+            "vi": "Hiệu ứng Siege Expert áp dụng cho toàn bộ đội hình bất kể Christina có triển khai hay không",
+            "en": "Siege Expert effect applies to the entire formation regardless of whether Christina is deployed"
           }
         }
       ],
@@ -1625,7 +1834,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -1646,51 +1856,60 @@
       "pveTier": "B+",
       "notes": {
         "ko": "초반 캐리, 후반에 약해짐",
-        "vi": "Carry giai đoạn đầu, yếu dần về sau"
+        "vi": "Carry giai đoạn đầu, yếu dần về sau",
+        "en": "Early game carry, falls off in late game"
       },
       "skills": [
         {
           "name": {
             "ko": "화염 강화",
-            "vi": "Flame Enhancement"
+            "vi": "Flame Enhancement",
+            "en": "Flame Enhancement"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +45, 레벨 4: +60, 레벨 5: +105",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +45, Lv4: +60, Lv5: +105"
           }
         },
         {
           "name": {
             "ko": "화염 분사",
-            "vi": "Flame Jet"
+            "vi": "Flame Jet",
+            "en": "Flame Jet"
           },
           "type": "active",
           "description": {
             "ko": "화염 공격. 레벨 1-2: +100, 레벨 3: 범위 +30%, 레벨 4: +200, 레벨 5: 지속 +2초",
-            "vi": "Phun lửa. Lv1-2: +100, Lv3: phạm vi +30%, Lv4: +200, Lv5: +2s"
+            "vi": "Phun lửa. Lv1-2: +100, Lv3: phạm vi +30%, Lv4: +200, Lv5: +2s",
+            "en": "Flame attack. Lv1-2: +100, Lv3: range +30%, Lv4: +200, Lv5: duration +2s"
           }
         },
         {
           "name": {
             "ko": "공격 전문가",
-            "vi": "Attack Expert"
+            "vi": "Attack Expert",
+            "en": "Attack Expert"
           },
           "type": "deployment",
           "description": {
             "ko": "공격력 증가. 레벨 1-2: +50, 레벨 3: +100, 레벨 4: +200, 레벨 5: +300",
-            "vi": "Tăng ATK. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
+            "vi": "Tăng ATK. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300",
+            "en": "Increases ATK. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
           }
         },
         {
           "name": {
             "ko": "진영 공격",
-            "vi": "Faction Attack"
+            "vi": "Faction Attack",
+            "en": "Faction Attack"
           },
           "type": "potential",
           "description": {
             "ko": "새벽의 날개 영웅 공격력 10% 증가",
-            "vi": "Tăng 10% ATK anh hùng Wings of Dawn"
+            "vi": "Tăng 10% ATK anh hùng Wings of Dawn",
+            "en": "Increases Wings of Dawn hero ATK by 10%"
           }
         }
       ],
@@ -1702,7 +1921,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -1723,51 +1943,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "초반 프론트라인 시너지, 후반 못 따라감",
-        "vi": "Synergy frontline giai đoạn đầu, không theo kịp sau"
+        "vi": "Synergy frontline giai đoạn đầu, không theo kịp sau",
+        "en": "Early game frontline synergy, cannot keep up in late game"
       },
       "skills": [
         {
           "name": {
             "ko": "강화 탄환",
-            "vi": "Enhanced Bullets"
+            "vi": "Enhanced Bullets",
+            "en": "Enhanced Bullets"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +45, 레벨 4: +60, 레벨 5: +105",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +45, Lv4: +60, Lv5: +105"
           }
         },
         {
           "name": {
             "ko": "쌍권총 사격",
-            "vi": "Dual Gun Strike"
+            "vi": "Dual Gun Strike",
+            "en": "Dual Gun Strike"
           },
           "type": "active",
           "description": {
             "ko": "쌍권총 공격. 레벨 1-2: +90, 레벨 4: +200, 레벨 5: 속박 +1초",
-            "vi": "Bắn súng đôi. Lv1-2: +90, Lv4: +200, Lv5: bất động +1s"
+            "vi": "Bắn súng đôi. Lv1-2: +90, Lv4: +200, Lv5: bất động +1s",
+            "en": "Dual pistol attack. Lv1-2: +90, Lv4: +200, Lv5: immobilize +1s"
           }
         },
         {
           "name": {
             "ko": "방어 전문가",
-            "vi": "Defense Expert"
+            "vi": "Defense Expert",
+            "en": "Defense Expert"
           },
           "type": "deployment",
           "description": {
             "ko": "방어력 증가. 레벨 1-2: +50, 레벨 3: +100, 레벨 4: +200, 레벨 5: +300",
-            "vi": "Tăng DEF. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
+            "vi": "Tăng DEF. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300",
+            "en": "Increases DEF. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
           }
         },
         {
           "name": {
             "ko": "진영 방어",
-            "vi": "Faction Defense"
+            "vi": "Faction Defense",
+            "en": "Faction Defense"
           },
           "type": "potential",
           "description": {
             "ko": "새벽의 날개 영웅 방어력 10% 증가",
-            "vi": "Tăng 10% DEF anh hùng Wings of Dawn"
+            "vi": "Tăng 10% DEF anh hùng Wings of Dawn",
+            "en": "Increases Wings of Dawn hero DEF by 10%"
           }
         }
       ],
@@ -1779,7 +2008,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -1800,51 +2030,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "훈련속도 30% 증가 패시브 보유",
-        "vi": "Có passive tăng 30% tốc độ huấn luyện"
+        "vi": "Có passive tăng 30% tốc độ huấn luyện",
+        "en": "Has passive for +30% training speed"
       },
       "skills": [
         {
           "name": {
             "ko": "독소 주입",
-            "vi": "Toxin Injection"
+            "vi": "Toxin Injection",
+            "en": "Toxin Injection"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +30, 레벨 4: +40, 레벨 5: +70",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +30, Lv4: +40, Lv5: +70"
           }
         },
         {
           "name": {
             "ko": "혈청 수류탄",
-            "vi": "Serum Grenade"
+            "vi": "Serum Grenade",
+            "en": "Serum Grenade"
           },
           "type": "active",
           "description": {
             "ko": "수류탄 공격. 레벨 1-3: +60, 레벨 4: +80, 레벨 5: +140",
-            "vi": "Ném lựu đạn huyết thanh. Lv1-3: +60, Lv4: +80, Lv5: +140"
+            "vi": "Ném lựu đạn huyết thanh. Lv1-3: +60, Lv4: +80, Lv5: +140",
+            "en": "Serum grenade attack. Lv1-3: +60, Lv4: +80, Lv5: +140"
           }
         },
         {
           "name": {
             "ko": "훈련 강화",
-            "vi": "Well Training"
+            "vi": "Well Training",
+            "en": "Well Training"
           },
           "type": "deployment",
           "description": {
             "ko": "병력 훈련속도 증가. 레벨 1-2: +2%, 레벨 3-4: +3%, 레벨 5: +5%",
-            "vi": "Tăng tốc huấn luyện. Lv1-2: +2%, Lv3-4: +3%, Lv5: +5%"
+            "vi": "Tăng tốc huấn luyện. Lv1-2: +2%, Lv3-4: +3%, Lv5: +5%",
+            "en": "Increases troop training speed. Lv1-2: +2%, Lv3-4: +3%, Lv5: +5%"
           }
         },
         {
           "name": {
             "ko": "진영 방어",
-            "vi": "Faction Defense"
+            "vi": "Faction Defense",
+            "en": "Faction Defense"
           },
           "type": "potential",
           "description": {
             "ko": "새벽의 날개 영웅 방어력 5% 증가",
-            "vi": "Tăng 5% DEF anh hùng Wings of Dawn"
+            "vi": "Tăng 5% DEF anh hùng Wings of Dawn",
+            "en": "Increases Wings of Dawn hero DEF by 5%"
           }
         }
       ],
@@ -1856,7 +2095,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -1877,51 +2117,60 @@
       "pveTier": "C",
       "notes": {
         "ko": "채집 영웅 전용",
-        "vi": "Chỉ dùng để thu thập"
+        "vi": "Chỉ dùng để thu thập",
+        "en": "Gathering hero only"
       },
       "skills": [
         {
           "name": {
             "ko": "강화 석궁",
-            "vi": "Enhanced Crossbow"
+            "vi": "Enhanced Crossbow",
+            "en": "Enhanced Crossbow"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +30, 레벨 4: +40, 레벨 5: +70",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +30, Lv4: +40, Lv5: +70"
           }
         },
         {
           "name": {
             "ko": "석궁 사격",
-            "vi": "Crossbow Shooting"
+            "vi": "Crossbow Shooting",
+            "en": "Crossbow Shooting"
           },
           "type": "active",
           "description": {
             "ko": "석궁 공격. 레벨 1-3: +60, 레벨 4: +80, 레벨 5: +140",
-            "vi": "Bắn nỏ. Lv1-3: +60, Lv4: +80, Lv5: +140"
+            "vi": "Bắn nỏ. Lv1-3: +60, Lv4: +80, Lv5: +140",
+            "en": "Crossbow attack. Lv1-3: +60, Lv4: +80, Lv5: +140"
           }
         },
         {
           "name": {
             "ko": "채집 달인: 식량",
-            "vi": "Gathering Master: Food"
+            "vi": "Gathering Master: Food",
+            "en": "Gathering Master: Food"
           },
           "type": "deployment",
           "description": {
             "ko": "식량 채집 속도 증가. 레벨 1-4: +3%, 레벨 5: +5%",
-            "vi": "Tăng tốc thu thập thức ăn. Lv1-4: +3%, Lv5: +5%"
+            "vi": "Tăng tốc thu thập thức ăn. Lv1-4: +3%, Lv5: +5%",
+            "en": "Increases food gathering speed. Lv1-4: +3%, Lv5: +5%"
           }
         },
         {
           "name": {
             "ko": "진영 공격",
-            "vi": "Faction Attack"
+            "vi": "Faction Attack",
+            "en": "Faction Attack"
           },
           "type": "potential",
           "description": {
             "ko": "새벽의 날개 영웅 공격력 5% 증가",
-            "vi": "Tăng 5% ATK anh hùng Wings of Dawn"
+            "vi": "Tăng 5% ATK anh hùng Wings of Dawn",
+            "en": "Increases Wings of Dawn hero ATK by 5%"
           }
         }
       ],
@@ -1932,7 +2181,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "초반 자동 획득",
-        "vi": "Tự động nhận ban đầu"
+        "vi": "Tự động nhận ban đầu",
+        "en": "Automatically obtained early game"
       }
     },
     {
@@ -1953,51 +2203,60 @@
       "pveTier": "S+",
       "notes": {
         "ko": "시즌4 극강 영웅",
-        "vi": "Anh hùng cực mạnh Season 4"
+        "vi": "Anh hùng cực mạnh Season 4",
+        "en": "Top-tier Season 4 hero"
       },
       "skills": [
         {
           "name": {
             "ko": "영웅 스킬",
-            "vi": "Kỹ Năng Anh Hùng"
+            "vi": "Kỹ Năng Anh Hùng",
+            "en": "Hero Skill"
           },
           "type": "normal",
           "description": {
             "ko": "적에게 강력한 스킬 피해를 입힌다",
-            "vi": "Gây sát thương kỹ năng mạnh cho địch"
+            "vi": "Gây sát thương kỹ năng mạnh cho địch",
+            "en": "Deals powerful skill damage to enemies"
           }
         },
         {
           "name": {
             "ko": "스킬 강화",
-            "vi": "Tăng Cường Kỹ Năng"
+            "vi": "Tăng Cường Kỹ Năng",
+            "en": "Skill Enhancement"
           },
           "type": "active",
           "description": {
             "ko": "영웅 스킬 데미지 24% 증가 (5성 시 추가 10%)",
-            "vi": "Tăng 24% sát thương kỹ năng anh hùng (thêm 10% ở 5 sao)"
+            "vi": "Tăng 24% sát thương kỹ năng anh hùng (thêm 10% ở 5 sao)",
+            "en": "Increases hero skill damage by 24% (additional 10% at 5-star)"
           }
         },
         {
           "name": {
             "ko": "상성 강화",
-            "vi": "Tăng Cường Tương Khắc"
+            "vi": "Tăng Cường Tương Khắc",
+            "en": "Counter Enhancement"
           },
           "type": "deployment",
           "description": {
             "ko": "상성 유리한 진영에 데미지 10% 증가, 상성 불리한 진영으로부터 받는 데미지 10% 감소",
-            "vi": "Tăng 10% sát thương cho phe tương khắc có lợi, giảm 10% sát thương nhận từ phe tương khắc bất lợi"
+            "vi": "Tăng 10% sát thương cho phe tương khắc có lợi, giảm 10% sát thương nhận từ phe tương khắc bất lợi",
+            "en": "Increases damage by 10% against countered factions, reduces damage taken by 10% from factions that counter you"
           }
         },
         {
           "name": {
             "ko": "전속 포텐셜",
-            "vi": "Tiềm Năng Chuyên Thuộc"
+            "vi": "Tiềm Năng Chuyên Thuộc",
+            "en": "Exclusive Potential"
           },
           "type": "potential",
           "description": {
             "ko": "업데이트 중",
-            "vi": "Đang cập nhật"
+            "vi": "Đang cập nhật",
+            "en": "To be updated"
           }
         }
       ],
@@ -2010,7 +2269,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌4 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 4"
+        "vi": "Tuyển mộ sự kiện Season 4",
+        "en": "Season 4 Event Recruitment"
       }
     },
     {
@@ -2031,51 +2291,60 @@
       "pveTier": "S+",
       "notes": {
         "ko": "시즌3 없으면 극히 어려움",
-        "vi": "Season 3 cực kỳ khó nếu không có"
+        "vi": "Season 3 cực kỳ khó nếu không có",
+        "en": "Extremely difficult without in Season 3"
       },
       "skills": [
         {
           "name": {
             "ko": "영웅 스킬",
-            "vi": "Kỹ Năng Anh Hùng"
+            "vi": "Kỹ Năng Anh Hùng",
+            "en": "Hero Skill"
           },
           "type": "normal",
           "description": {
             "ko": "적에게 강력한 스킬 피해를 입힌다",
-            "vi": "Gây sát thương kỹ năng mạnh cho địch"
+            "vi": "Gây sát thương kỹ năng mạnh cho địch",
+            "en": "Deals powerful skill damage to enemies"
           }
         },
         {
           "name": {
             "ko": "부대 강화",
-            "vi": "Tăng Cường Đội Quân"
+            "vi": "Tăng Cường Đội Quân",
+            "en": "Troop Enhancement"
           },
           "type": "active",
           "description": {
             "ko": "병력 수용량 +90 (고정), 영웅 공격력/방어력 최대 20% 증가",
-            "vi": "Sức chứa quân +90 (cố định), tăng tấn công/phòng thủ anh hùng tối đa 20%"
+            "vi": "Sức chứa quân +90 (cố định), tăng tấn công/phòng thủ anh hùng tối đa 20%",
+            "en": "Troop capacity +90 (fixed), increases hero ATK/DEF by up to 20%"
           }
         },
         {
           "name": {
             "ko": "시즌 시너지",
-            "vi": "Hiệp Đồng Mùa"
+            "vi": "Hiệp Đồng Mùa",
+            "en": "Season Synergy"
           },
           "type": "deployment",
           "description": {
             "ko": "S2 영웅과 함께 배치 시 피해 저항 7.5% 증가. 5성: 병력 수용량 7.5% 추가 증가, 모든 병종에 적용",
-            "vi": "Tăng 7.5% kháng sát thương khi triển khai cùng anh hùng S2. 5 sao: thêm 7.5% sức chứa quân, áp dụng cho mọi loại quân"
+            "vi": "Tăng 7.5% kháng sát thương khi triển khai cùng anh hùng S2. 5 sao: thêm 7.5% sức chứa quân, áp dụng cho mọi loại quân",
+            "en": "Increases damage resistance by 7.5% when deployed with S2 heroes. 5-star: additional 7.5% troop capacity, applies to all troop types"
           }
         },
         {
           "name": {
             "ko": "전속 포텐셜",
-            "vi": "Tiềm Năng Chuyên Thuộc"
+            "vi": "Tiềm Năng Chuyên Thuộc",
+            "en": "Exclusive Potential"
           },
           "type": "potential",
           "description": {
             "ko": "업데이트 중",
-            "vi": "Đang cập nhật"
+            "vi": "Đang cập nhật",
+            "en": "To be updated"
           }
         }
       ],
@@ -2088,7 +2357,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌3 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 3"
+        "vi": "Tuyển mộ sự kiện Season 3",
+        "en": "Season 3 Event Recruitment"
       }
     },
     {
@@ -2109,51 +2379,60 @@
       "pveTier": "S",
       "notes": {
         "ko": "장기적으로 뛰어난 프론트라인",
-        "vi": "Frontline xuất sắc về lâu dài"
+        "vi": "Frontline xuất sắc về lâu dài",
+        "en": "Excellent frontline in the long run"
       },
       "skills": [
         {
           "name": {
             "ko": "붕괴의 합창",
-            "vi": "Choir of Collapse"
+            "vi": "Choir of Collapse",
+            "en": "Choir of Collapse"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 성급 업그레이드 시 추가 피해 계수 증가",
-            "vi": "Tăng hệ số sát thương thường. Nâng sao tăng thêm hệ số"
+            "vi": "Tăng hệ số sát thương thường. Nâng sao tăng thêm hệ số",
+            "en": "Increases normal attack damage coefficient. Star upgrades add bonus coefficient"
           }
         },
         {
           "name": {
             "ko": "해머 파괴",
-            "vi": "Hammer Havoc"
+            "vi": "Hammer Havoc",
+            "en": "Hammer Havoc"
           },
           "type": "active",
           "description": {
             "ko": "거대한 해머를 휘둘러 범위 피해. 피해 계수 최대 1241",
-            "vi": "Vung búa khổng lồ gây sát thương diện rộng. Hệ số tối đa 1241"
+            "vi": "Vung búa khổng lồ gây sát thương diện rộng. Hệ số tối đa 1241",
+            "en": "Swings a massive hammer dealing AoE damage. Max coefficient 1241"
           }
         },
         {
           "name": {
             "ko": "승리에 지쳐서",
-            "vi": "Tired of Winning"
+            "vi": "Tired of Winning",
+            "en": "Tired of Winning"
           },
           "type": "deployment",
           "description": {
             "ko": "부대 내 기마 병종 체력 및 피해량 증가",
-            "vi": "Tăng HP và sát thương Kỵ binh trong đội"
+            "vi": "Tăng HP và sát thương Kỵ binh trong đội",
+            "en": "Increases Rider troop HP and damage in the squad"
           }
         },
         {
           "name": {
             "ko": "끝없는 광기",
-            "vi": "Endless Madness"
+            "vi": "Endless Madness",
+            "en": "Endless Madness"
           },
           "type": "potential",
           "description": {
             "ko": "질서의 수호자 영웅 5명 배치 시 부대 체력 10% 증가",
-            "vi": "Triển khai 5 anh hùng Guard of Order tăng 10% HP đội"
+            "vi": "Triển khai 5 anh hùng Guard of Order tăng 10% HP đội",
+            "en": "Deploying 5 Guard of Order heroes increases troop HP by 10%"
           }
         }
       ],
@@ -2166,7 +2445,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌2 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 2"
+        "vi": "Tuyển mộ sự kiện Season 2",
+        "en": "Season 2 Event Recruitment"
       }
     },
     {
@@ -2187,51 +2467,60 @@
       "pveTier": "S",
       "notes": {
         "ko": "미배치 시에도 진영 병력 데미지 10% 버프. 배치 시 최대 45% 방어 증가",
-        "vi": "Buff 10% sát thương quân phe ngay cả khi không triển khai. Khi triển khai tăng phòng thủ tối đa 45%"
+        "vi": "Buff 10% sát thương quân phe ngay cả khi không triển khai. Khi triển khai tăng phòng thủ tối đa 45%",
+        "en": "Buffs faction troop damage by 10% even when not deployed. Up to 45% DEF increase when deployed"
       },
       "skills": [
         {
           "name": {
             "ko": "메카 개조",
-            "vi": "Mech Modification"
+            "vi": "Mech Modification",
+            "en": "Mech Modification"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 성급 업그레이드 시 최대 +600 추가 피해 계수",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng thêm tối đa +600 hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng thêm tối đa +600 hệ số",
+            "en": "Normal attack damage coefficient 900. Star upgrades add up to +600 bonus coefficient"
           }
         },
         {
           "name": {
             "ko": "오토바이 광란",
-            "vi": "Motorcycle Frenzy"
+            "vi": "Motorcycle Frenzy",
+            "en": "Motorcycle Frenzy"
           },
           "type": "active",
           "description": {
             "ko": "차량 탑재 미사일 발사. 피해 계수 1200. 성급 업그레이드 시 미사일 수 증가 (2성: +1, 고성급: +2)",
-            "vi": "Phóng tên lửa gắn xe. Hệ số sát thương 1200. Nâng sao tăng số tên lửa (2 sao: +1, sao cao: +2)"
+            "vi": "Phóng tên lửa gắn xe. Hệ số sát thương 1200. Nâng sao tăng số tên lửa (2 sao: +1, sao cao: +2)",
+            "en": "Fires vehicle-mounted missiles. Coefficient 1200. Star upgrades increase missile count (2-star: +1, high star: +2)"
           }
         },
         {
           "name": {
             "ko": "질풍질주",
-            "vi": "Blazing Fast"
+            "vi": "Blazing Fast",
+            "en": "Blazing Fast"
           },
           "type": "deployment",
           "description": {
             "ko": "부대 내 기마 병종 방어력 15% 증가 (최대 16%). 성급 업그레이드 시 기마 공격력 최대 15% 추가 증가",
-            "vi": "Tăng 15% phòng thủ Kỵ binh trong đội (tối đa 16%). Nâng sao tăng thêm tối đa 15% tấn công Kỵ binh"
+            "vi": "Tăng 15% phòng thủ Kỵ binh trong đội (tối đa 16%). Nâng sao tăng thêm tối đa 15% tấn công Kỵ binh",
+            "en": "Increases Rider troop DEF by 15% (up to 16%). Star upgrades add up to 15% bonus Rider ATK"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "배치 여부와 관계없이 모든 기마 병종 피해량 10% 증가",
-            "vi": "Tăng 10% sát thương tất cả Kỵ binh bất kể có triển khai hay không"
+            "vi": "Tăng 10% sát thương tất cả Kỵ binh bất kể có triển khai hay không",
+            "en": "Increases all Rider troop damage by 10% regardless of deployment"
           }
         }
       ],
@@ -2244,7 +2533,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌1 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 1"
+        "vi": "Tuyển mộ sự kiện Season 1",
+        "en": "Season 1 Event Recruitment"
       }
     },
     {
@@ -2265,51 +2555,60 @@
       "pveTier": "A+",
       "notes": {
         "ko": "진영 병종 훈련속도 70% 증가. 5성 시 모든 병종 공격력/방어력 증가",
-        "vi": "Tăng 70% tốc độ huấn luyện quân phe. 5 sao: tăng ATK/DEF mọi loại quân"
+        "vi": "Tăng 70% tốc độ huấn luyện quân phe. 5 sao: tăng ATK/DEF mọi loại quân",
+        "en": "Faction troop training speed +70%. At 5-star: increases ATK/DEF for all troop types"
       },
       "skills": [
         {
           "name": {
             "ko": "중장갑 병사",
-            "vi": "Heavy Armor Soldier"
+            "vi": "Heavy Armor Soldier",
+            "en": "Heavy Armor Soldier"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 레벨업 시 피해 계수 증가",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng cấp tăng hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng cấp tăng hệ số",
+            "en": "Normal attack damage coefficient 900. Upgrades increase coefficient"
           }
         },
         {
           "name": {
             "ko": "화력 제압",
-            "vi": "Fire Suppression"
+            "vi": "Fire Suppression",
+            "en": "Fire Suppression"
           },
           "type": "active",
           "description": {
             "ko": "로켓 11발을 발사하여 폭발 범위 내 적에게 피해. 피해 계수 1200",
-            "vi": "Phóng 11 tên lửa gây sát thương cho địch trong phạm vi nổ. Hệ số sát thương 1200"
+            "vi": "Phóng 11 tên lửa gây sát thương cho địch trong phạm vi nổ. Hệ số sát thương 1200",
+            "en": "Fires 11 rockets dealing damage to enemies within blast radius. Coefficient 1200"
           }
         },
         {
           "name": {
             "ko": "여왕의 명령",
-            "vi": "Queen's Orders"
+            "vi": "Queen's Orders",
+            "en": "Queen's Orders"
           },
           "type": "deployment",
           "description": {
             "ko": "기마 캠프 훈련속도 40% 증가. 성급 업그레이드: 기마 공격력/방어력 증가, 훈련 자원 비용 감소, 5성 시 모든 병종에 적용",
-            "vi": "Tăng 40% tốc độ huấn luyện Kỵ binh. Nâng sao: tăng ATK/DEF Kỵ binh, giảm chi phí huấn luyện, 5 sao áp dụng mọi loại quân"
+            "vi": "Tăng 40% tốc độ huấn luyện Kỵ binh. Nâng sao: tăng ATK/DEF Kỵ binh, giảm chi phí huấn luyện, 5 sao áp dụng mọi loại quân",
+            "en": "Rider camp training speed +40%. Star upgrades: Rider ATK/DEF increase, training cost reduction, at 5-star applies to all troop types"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "질서의 수호자 영웅 1명 배치 시마다 부대 공격력/방어력 5% 증가. 5명 배치 시 병력 수용량 추가 10% 증가",
-            "vi": "Mỗi anh hùng Guard of Order triển khai tăng 5% ATK/DEF đội. 5 anh hùng: tăng thêm 10% sức chứa quân"
+            "vi": "Mỗi anh hùng Guard of Order triển khai tăng 5% ATK/DEF đội. 5 anh hùng: tăng thêm 10% sức chứa quân",
+            "en": "Each deployed Guard of Order hero increases troop ATK/DEF by 5%. With 5 deployed: additional 10% troop capacity"
           }
         }
       ],
@@ -2322,7 +2621,8 @@
       "f2pFriendly": false,
       "obtainMethod": {
         "ko": "시즌1 이벤트 모집",
-        "vi": "Tuyển mộ sự kiện Season 1"
+        "vi": "Tuyển mộ sự kiện Season 1",
+        "en": "Season 1 Event Recruitment"
       }
     },
     {
@@ -2343,51 +2643,60 @@
       "pveTier": "A",
       "notes": {
         "ko": "핵심 가치: 차량 설계도. 무료 차량 설계도 최대 500장/일 + 개조 업그레이드 경험치 30% 증가. 5성: 차량 스킬 데미지 증가",
-        "vi": "Giá trị cốt lõi: bản vẽ xe. Bản vẽ xe miễn phí tối đa 500/ngày + EXP nâng cấp mod tăng 30%. 5 sao: tăng sát thương kỹ năng xe"
+        "vi": "Giá trị cốt lõi: bản vẽ xe. Bản vẽ xe miễn phí tối đa 500/ngày + EXP nâng cấp mod tăng 30%. 5 sao: tăng sát thương kỹ năng xe",
+        "en": "Core value: vehicle blueprints. Free vehicle blueprints up to 500/day + mod upgrade EXP +30%. 5-star: vehicle skill damage increase"
       },
       "skills": [
         {
           "name": {
             "ko": "전기 증폭",
-            "vi": "Electro Amplification"
+            "vi": "Electro Amplification",
+            "en": "Electro Amplification"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 성급 업그레이드 시 피해 계수 +90~+210 증가",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số",
+            "en": "Normal attack damage coefficient 900. Star upgrades increase coefficient by +90~+210"
           }
         },
         {
           "name": {
             "ko": "번개 연결",
-            "vi": "Lightning Link"
+            "vi": "Lightning Link",
+            "en": "Lightning Link"
           },
           "type": "active",
           "description": {
             "ko": "적 사이를 튕기는 번개를 발사. 피해 계수 1200. 성급 업그레이드 시 튕김 횟수 증가, 피해 계수 최대 +300",
-            "vi": "Phóng tia sét bật nảy giữa quái. Hệ số 1200. Nâng sao tăng số lần bật, +300 hệ số"
+            "vi": "Phóng tia sét bật nảy giữa quái. Hệ số 1200. Nâng sao tăng số lần bật, +300 hệ số",
+            "en": "Fires lightning that bounces between enemies. Coefficient 1200. Star upgrades increase bounce count, up to +300 coefficient"
           }
         },
         {
           "name": {
             "ko": "개조 전문가",
-            "vi": "Modification Expert"
+            "vi": "Modification Expert",
+            "en": "Modification Expert"
           },
           "type": "deployment",
           "description": {
             "ko": "매일 무료 개조 설계도 500장 + 개조 차량 업그레이드 경험치 20% 증가. 5성: 개조 차량 스킬 데미지 200% 증가",
-            "vi": "Nhận 500 bản vẽ cải tạo miễn phí/ngày + EXP nâng cấp xe cải tạo +20%. 5 sao: sát thương kỹ năng xe cải tạo +200%"
+            "vi": "Nhận 500 bản vẽ cải tạo miễn phí/ngày + EXP nâng cấp xe cải tạo +20%. 5 sao: sát thương kỹ năng xe cải tạo +200%",
+            "en": "500 free mod blueprints/day + mod vehicle upgrade EXP +20%. 5-star: mod vehicle skill damage +200%"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "자신의 공격력 10%, 방어력 10%, 병력 수용량 5% 증가",
-            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân"
+            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân",
+            "en": "Increases own ATK by 10%, DEF by 10%, and troop capacity by 5%"
           }
         }
       ],
@@ -2400,7 +2709,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -2421,51 +2731,60 @@
       "pveTier": "A",
       "notes": {
         "ko": "핵심 가치: 연맹 대결 포인트 최대 55% 증가",
-        "vi": "Giá trị cốt lõi: tăng điểm Alliance Duel tối đa 55%"
+        "vi": "Giá trị cốt lõi: tăng điểm Alliance Duel tối đa 55%",
+        "en": "Core value: Alliance Duel points up to +55%"
       },
       "skills": [
         {
           "name": {
             "ko": "거합 베기",
-            "vi": "Iaido Slash"
+            "vi": "Iaido Slash",
+            "en": "Iaido Slash"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 900. 성급 업그레이드 시 피해 계수 +90~+210 증가",
-            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số"
+            "vi": "Hệ số sát thương thường tăng lên 900. Nâng sao tăng +90~+210 hệ số",
+            "en": "Normal attack damage coefficient 900. Star upgrades increase coefficient by +90~+210"
           }
         },
         {
           "name": {
             "ko": "나선 검기",
-            "vi": "Spiral Sword Energy"
+            "vi": "Spiral Sword Energy",
+            "en": "Spiral Sword Energy"
           },
           "type": "active",
           "description": {
             "ko": "칼을 빠르게 휘둘러 강력한 에너지 폭풍 발사. 피해 계수 1200. 성급 업그레이드 시 범위 +30%, 전진 효과 추가",
-            "vi": "Vung kiếm nhanh phóng bão năng lượng mạnh. Hệ số 1200. Nâng sao tăng phạm vi +30%, thêm hiệu ứng tiến"
+            "vi": "Vung kiếm nhanh phóng bão năng lượng mạnh. Hệ số 1200. Nâng sao tăng phạm vi +30%, thêm hiệu ứng tiến",
+            "en": "Swings sword rapidly to fire a powerful energy storm. Coefficient 1200. Star upgrades: range +30%, adds advance effect"
           }
         },
         {
           "name": {
             "ko": "사무라이 정신",
-            "vi": "Samurai Spirit"
+            "vi": "Samurai Spirit",
+            "en": "Samurai Spirit"
           },
           "type": "deployment",
           "description": {
             "ko": "연맹 대결 포인트 25% 증가. 성급 업그레이드 시 2~7% 추가 증가",
-            "vi": "Tăng 25% điểm Alliance Duel. Nâng sao tăng thêm 2~7%"
+            "vi": "Tăng 25% điểm Alliance Duel. Nâng sao tăng thêm 2~7%",
+            "en": "Alliance Duel points +25%. Star upgrades add +2~7%"
           }
         },
         {
           "name": {
             "ko": "잠재력 해방",
-            "vi": "Potential Unleashed"
+            "vi": "Potential Unleashed",
+            "en": "Potential Unleashed"
           },
           "type": "potential",
           "description": {
             "ko": "자신의 공격력 10%, 방어력 10%, 병력 수용량 5% 증가",
-            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân"
+            "vi": "Tăng 10% tấn công, 10% phòng thủ, 5% sức chứa quân của bản thân",
+            "en": "Increases own ATK by 10%, DEF by 10%, and troop capacity by 5%"
           }
         }
       ],
@@ -2478,7 +2797,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -2499,51 +2819,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "훈련속도 50% 증가 + 병력 연구 비용 감소 패시브 보유",
-        "vi": "Có passive tăng 50% tốc độ huấn luyện + giảm chi phí nghiên cứu quân"
+        "vi": "Có passive tăng 50% tốc độ huấn luyện + giảm chi phí nghiên cứu quân",
+        "en": "Has passive for +50% training speed + reduced troop research cost"
       },
       "skills": [
         {
           "name": {
             "ko": "해머 강타",
-            "vi": "Hammer Strike"
+            "vi": "Hammer Strike",
+            "en": "Hammer Strike"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +45, 레벨 4: +60, 레벨 5: +105",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +45, Lv4: +60, Lv5: +105"
           }
         },
         {
           "name": {
             "ko": "멸망의 심판",
-            "vi": "Doom Judgement"
+            "vi": "Doom Judgement",
+            "en": "Doom Judgement"
           },
           "type": "active",
           "description": {
             "ko": "해머 공격. 레벨 1-2: +90, 레벨 3: 넉백 효과, 레벨 4: +220, 레벨 5: 넉백 강화",
-            "vi": "Tấn công búa. Lv1-2: +90, Lv3: đẩy lùi, Lv4: +220, Lv5: đẩy mạnh"
+            "vi": "Tấn công búa. Lv1-2: +90, Lv3: đẩy lùi, Lv4: +220, Lv5: đẩy mạnh",
+            "en": "Hammer attack. Lv1-2: +90, Lv3: knockback effect, Lv4: +220, Lv5: enhanced knockback"
           }
         },
         {
           "name": {
             "ko": "훈련 전문가",
-            "vi": "Training Expert"
+            "vi": "Training Expert",
+            "en": "Training Expert"
           },
           "type": "deployment",
           "description": {
             "ko": "병력 훈련속도 +2~5% 증가 + 훈련 자원 소모 2~3% 감소",
-            "vi": "Tăng tốc huấn luyện +2~5% + giảm chi phí huấn luyện 2~3%"
+            "vi": "Tăng tốc huấn luyện +2~5% + giảm chi phí huấn luyện 2~3%",
+            "en": "Troop training speed +2~5% + training resource cost -2~3%"
           }
         },
         {
           "name": {
             "ko": "진영 지휘관",
-            "vi": "Faction Commander"
+            "vi": "Faction Commander",
+            "en": "Faction Commander"
           },
           "type": "potential",
           "description": {
             "ko": "병력 수용량 5% 증가",
-            "vi": "Tăng 5% sức chứa quân"
+            "vi": "Tăng 5% sức chứa quân",
+            "en": "Increases troop capacity by 5%"
           }
         }
       ],
@@ -2555,7 +2884,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -2576,51 +2906,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "주황 전환 전 임시 옵션",
-        "vi": "Lựa chọn tạm trước khi chuyển cam"
+        "vi": "Lựa chọn tạm trước khi chuyển cam",
+        "en": "Temporary option before transitioning to legendary"
       },
       "skills": [
         {
           "name": {
             "ko": "흉조",
-            "vi": "Bad Omen"
+            "vi": "Bad Omen",
+            "en": "Bad Omen"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +45, 레벨 4: +60, 레벨 5: +105",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +45, Lv4: +60, Lv5: +105"
           }
         },
         {
           "name": {
             "ko": "산탄 사격",
-            "vi": "Scatter Shot"
+            "vi": "Scatter Shot",
+            "en": "Scatter Shot"
           },
           "type": "active",
           "description": {
             "ko": "산탄 공격. 레벨 1-2: +90, 레벨 3: 속박 효과, 레벨 4: +220, 레벨 5: 속박 +1초",
-            "vi": "Bắn tản mát. Lv1-2: +90, Lv3: bất động, Lv4: +220, Lv5: +1s"
+            "vi": "Bắn tản mát. Lv1-2: +90, Lv3: bất động, Lv4: +220, Lv5: +1s",
+            "en": "Scatter shot attack. Lv1-2: +90, Lv3: immobilize effect, Lv4: +220, Lv5: immobilize +1s"
           }
         },
         {
           "name": {
             "ko": "방어 전문가",
-            "vi": "Defense Expert"
+            "vi": "Defense Expert",
+            "en": "Defense Expert"
           },
           "type": "deployment",
           "description": {
             "ko": "방어력 증가. 레벨 1-2: +50, 레벨 3: +100, 레벨 4: +200, 레벨 5: +300",
-            "vi": "Tăng DEF. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
+            "vi": "Tăng DEF. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300",
+            "en": "Increases DEF. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
           }
         },
         {
           "name": {
             "ko": "진영 방어",
-            "vi": "Faction Defense"
+            "vi": "Faction Defense",
+            "en": "Faction Defense"
           },
           "type": "potential",
           "description": {
             "ko": "질서의 수호자 영웅 방어력 10% 증가",
-            "vi": "Tăng 10% DEF anh hùng Guard of Order"
+            "vi": "Tăng 10% DEF anh hùng Guard of Order",
+            "en": "Increases Guard of Order hero DEF by 10%"
           }
         }
       ],
@@ -2632,7 +2971,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -2653,51 +2993,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "단기 무과금 영웅",
-        "vi": "Anh hùng F2P ngắn hạn"
+        "vi": "Anh hùng F2P ngắn hạn",
+        "en": "Short-term F2P hero"
       },
       "skills": [
         {
           "name": {
             "ko": "정밀 사격",
-            "vi": "Crack Shot"
+            "vi": "Crack Shot",
+            "en": "Crack Shot"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +45, 레벨 4: +60, 레벨 5: +105",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +45, Lv4: +60, Lv5: +105",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +45, Lv4: +60, Lv5: +105"
           }
         },
         {
           "name": {
             "ko": "침묵의 화살",
-            "vi": "Arrow of Silence"
+            "vi": "Arrow of Silence",
+            "en": "Arrow of Silence"
           },
           "type": "active",
           "description": {
             "ko": "화살 공격. 레벨 1-2: +90, 레벨 3: 지속 +1초, 레벨 4: +220, 레벨 5: 화상 효과",
-            "vi": "Bắn tên. Lv1-2: +90, Lv3: +1s, Lv4: +220, Lv5: bỏng"
+            "vi": "Bắn tên. Lv1-2: +90, Lv3: +1s, Lv4: +220, Lv5: bỏng",
+            "en": "Arrow attack. Lv1-2: +90, Lv3: duration +1s, Lv4: +220, Lv5: burn effect"
           }
         },
         {
           "name": {
             "ko": "공격 전문가",
-            "vi": "Attack Expert"
+            "vi": "Attack Expert",
+            "en": "Attack Expert"
           },
           "type": "deployment",
           "description": {
             "ko": "공격력 증가. 레벨 1-2: +50, 레벨 3: +100, 레벨 4: +200, 레벨 5: +300",
-            "vi": "Tăng ATK. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
+            "vi": "Tăng ATK. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300",
+            "en": "Increases ATK. Lv1-2: +50, Lv3: +100, Lv4: +200, Lv5: +300"
           }
         },
         {
           "name": {
             "ko": "진영 공격",
-            "vi": "Faction Attack"
+            "vi": "Faction Attack",
+            "en": "Faction Attack"
           },
           "type": "potential",
           "description": {
             "ko": "질서의 수호자 영웅 공격력 10% 증가",
-            "vi": "Tăng 10% ATK anh hùng Guard of Order"
+            "vi": "Tăng 10% ATK anh hùng Guard of Order",
+            "en": "Increases Guard of Order hero ATK by 10%"
           }
         }
       ],
@@ -2708,7 +3057,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "초반 자동 획득",
-        "vi": "Tự động nhận ban đầu"
+        "vi": "Tự động nhận ban đầu",
+        "en": "Automatically obtained early game"
       }
     },
     {
@@ -2729,51 +3079,60 @@
       "pveTier": "B",
       "notes": {
         "ko": "훈련속도 30% 증가 패시브 보유. 전투에는 미사용",
-        "vi": "Có passive tăng 30% tốc độ huấn luyện. Không dùng chiến đấu"
+        "vi": "Có passive tăng 30% tốc độ huấn luyện. Không dùng chiến đấu",
+        "en": "Has passive for +30% training speed. Not used in combat"
       },
       "skills": [
         {
           "name": {
             "ko": "강화 탄환",
-            "vi": "Enhanced Bullets"
+            "vi": "Enhanced Bullets",
+            "en": "Enhanced Bullets"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +30, 레벨 4: +40, 레벨 5: +70",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +30, Lv4: +40, Lv5: +70"
           }
         },
         {
           "name": {
             "ko": "폭발 수류탄",
-            "vi": "Explosive Grenade"
+            "vi": "Explosive Grenade",
+            "en": "Explosive Grenade"
           },
           "type": "active",
           "description": {
             "ko": "수류탄 공격. 레벨 1-3: +60, 레벨 4: +80, 레벨 5: +140",
-            "vi": "Ném lựu đạn nổ. Lv1-3: +60, Lv4: +80, Lv5: +140"
+            "vi": "Ném lựu đạn nổ. Lv1-3: +60, Lv4: +80, Lv5: +140",
+            "en": "Explosive grenade attack. Lv1-3: +60, Lv4: +80, Lv5: +140"
           }
         },
         {
           "name": {
             "ko": "훈련 강화",
-            "vi": "Well Training"
+            "vi": "Well Training",
+            "en": "Well Training"
           },
           "type": "deployment",
           "description": {
             "ko": "병력 훈련속도 증가. 레벨 1-2: +2%, 레벨 3-4: +3%, 레벨 5: +5%",
-            "vi": "Tăng tốc huấn luyện. Lv1-2: +2%, Lv3-4: +3%, Lv5: +5%"
+            "vi": "Tăng tốc huấn luyện. Lv1-2: +2%, Lv3-4: +3%, Lv5: +5%",
+            "en": "Increases troop training speed. Lv1-2: +2%, Lv3-4: +3%, Lv5: +5%"
           }
         },
         {
           "name": {
             "ko": "진영 방어",
-            "vi": "Faction Defense"
+            "vi": "Faction Defense",
+            "en": "Faction Defense"
           },
           "type": "potential",
           "description": {
             "ko": "질서의 수호자 영웅 방어력 5% 증가",
-            "vi": "Tăng 5% DEF anh hùng Guard of Order"
+            "vi": "Tăng 5% DEF anh hùng Guard of Order",
+            "en": "Increases Guard of Order hero DEF by 5%"
           }
         }
       ],
@@ -2785,7 +3144,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "일반 모집으로 획득 가능",
-        "vi": "Có thể nhận qua tuyển mộ thường"
+        "vi": "Có thể nhận qua tuyển mộ thường",
+        "en": "Available through Recruitment System"
       }
     },
     {
@@ -2806,51 +3166,60 @@
       "pveTier": "C",
       "notes": {
         "ko": "채집 영웅 전용",
-        "vi": "Chỉ dùng để thu thập"
+        "vi": "Chỉ dùng để thu thập",
+        "en": "Gathering hero only"
       },
       "skills": [
         {
           "name": {
             "ko": "탄환 업그레이드",
-            "vi": "Bullet Upgrade"
+            "vi": "Bullet Upgrade",
+            "en": "Bullet Upgrade"
           },
           "type": "normal",
           "description": {
             "ko": "일반 공격 피해 계수 증가. 레벨 1-3: +30, 레벨 4: +40, 레벨 5: +70",
-            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70"
+            "vi": "Tăng hệ số sát thương. Lv1-3: +30, Lv4: +40, Lv5: +70",
+            "en": "Increases normal attack damage coefficient. Lv1-3: +30, Lv4: +40, Lv5: +70"
           }
         },
         {
           "name": {
             "ko": "권총 사격",
-            "vi": "Pistol Shooting"
+            "vi": "Pistol Shooting",
+            "en": "Pistol Shooting"
           },
           "type": "active",
           "description": {
             "ko": "권총 공격. 레벨 1-3: +60, 레벨 4: +80, 레벨 5: +140",
-            "vi": "Bắn súng lục. Lv1-3: +60, Lv4: +80, Lv5: +140"
+            "vi": "Bắn súng lục. Lv1-3: +60, Lv4: +80, Lv5: +140",
+            "en": "Pistol attack. Lv1-3: +60, Lv4: +80, Lv5: +140"
           }
         },
         {
           "name": {
             "ko": "채집 달인: 전기",
-            "vi": "Gathering Master: Electricity"
+            "vi": "Gathering Master: Electricity",
+            "en": "Gathering Master: Electricity"
           },
           "type": "deployment",
           "description": {
             "ko": "전기 채집 속도 3~6% 증가. 식량 산출 +15%, 자원 산출 +20%, 전체 채집 속도 +15%",
-            "vi": "Tăng tốc thu thập điện 3~6%. Thức ăn +15%, tài nguyên +20%, tốc độ thu thập +15%"
+            "vi": "Tăng tốc thu thập điện 3~6%. Thức ăn +15%, tài nguyên +20%, tốc độ thu thập +15%",
+            "en": "Electricity gathering speed +3~6%. Food output +15%, resource output +20%, overall gathering speed +15%"
           }
         },
         {
           "name": {
             "ko": "진영 공격",
-            "vi": "Faction Attack"
+            "vi": "Faction Attack",
+            "en": "Faction Attack"
           },
           "type": "potential",
           "description": {
             "ko": "질서의 수호자 영웅 공격력 5% 증가",
-            "vi": "Tăng 5% ATK anh hùng Guard of Order"
+            "vi": "Tăng 5% ATK anh hùng Guard of Order",
+            "en": "Increases Guard of Order hero ATK by 5%"
           }
         }
       ],
@@ -2861,7 +3230,8 @@
       "f2pFriendly": true,
       "obtainMethod": {
         "ko": "초반 자동 획득",
-        "vi": "Tự động nhận ban đầu"
+        "vi": "Tự động nhận ban đầu",
+        "en": "Automatically obtained early game"
       }
     }
   ],
@@ -2899,11 +3269,13 @@
     "lastUpdated": "2026-03-23",
     "notes": {
       "ko": "시즌4 영웅이 현재 메타 지배. 진영간 상성 존재 (슈터(새벽의 날개) > 돌격(블러디 로즈) > 라이더(질서의 수호자) > 슈터). 무과금 플레이어도 90일 내 모든 영웅 획득 가능",
-      "vi": "Anh hùng Season 4 thống trị meta hiện tại. Có tương khắc giữa các phe (Xạ thủ(Wings of Dawn) > Đột kích(Blood Rose) > Kỵ binh(Guard of Order) > Xạ thủ). F2P có thể có tất cả anh hùng trong 90 ngày"
+      "vi": "Anh hùng Season 4 thống trị meta hiện tại. Có tương khắc giữa các phe (Xạ thủ(Wings of Dawn) > Đột kích(Blood Rose) > Kỵ binh(Guard of Order) > Xạ thủ). F2P có thể có tất cả anh hùng trong 90 ngày",
+      "en": "Season 4 heroes dominate the current meta. Faction counter system exists (Shooter(Wings of Dawn) > Assaulter(Blood Rose) > Rider(Guard of Order) > Shooter). F2P players can obtain all heroes within 90 days"
     },
     "formationTip": {
       "ko": "진형 전략: 앞줄 방어 영웅 2명, 뒷줄 DPS 영웅 3명 (3+2 메타)",
-      "vi": "Chiến thuật đội hình: 2 anh hùng phòng thủ phía trước, 3 anh hùng DPS phía sau (meta 3+2)"
+      "vi": "Chiến thuật đội hình: 2 anh hùng phòng thủ phía trước, 3 anh hùng DPS phía sau (meta 3+2)",
+      "en": "Formation strategy: 2 defense heroes in front row, 3 DPS heroes in back row (3+2 meta)"
     }
   }
 }

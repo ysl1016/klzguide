@@ -17,77 +17,87 @@ export default async function FullPrepPage({
 
 function FullPrepContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const themes = [
     {
-      name: isKorean ? '건물 업그레이드' : 'Shelter Upgrade',
+      name: l('건물 업그레이드', 'Shelter Upgrade', 'Shelter Upgrade'),
       icon: Building2,
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
       activities: [
-        { action: isKorean ? 'Structure power +10 증가' : 'Tăng 10 Structure power', points: '1pt' },
-        { action: isKorean ? '건설 가속 1분당' : '1 phút tăng tốc xây', points: '10pt' },
+        { action: l('Structure power +10 증가', 'Tăng 10 Structure power', '+10 Structure Power'), points: '1pt' },
+        { action: l('건설 가속 1분당', '1 phút tăng tốc xây', '1 min construction speedup'), points: '10pt' },
       ],
     },
     {
-      name: isKorean ? '과학의 시대' : 'Age of Science',
+      name: l('과학의 시대', 'Age of Science', 'Age of Science'),
       icon: FlaskConical,
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
       activities: [
-        { action: isKorean ? 'Tech power +10 증가' : 'Tăng 10 Tech power', points: '1pt' },
-        { action: isKorean ? '연구 가속 1분당' : '1 phút tăng tốc NC', points: '10pt' },
+        { action: l('Tech power +10 증가', 'Tăng 10 Tech power', '+10 Tech Power'), points: '1pt' },
+        { action: l('연구 가속 1분당', '1 phút tăng tốc NC', '1 min research speedup'), points: '10pt' },
       ],
     },
     {
-      name: isKorean ? '차량 개조' : 'Mod Vehicle Boost',
+      name: l('차량 개조', 'Mod Vehicle Boost', 'Mod Vehicle Boost'),
       icon: Wrench,
       color: 'text-orange-400',
       bg: 'bg-orange-500/10',
       activities: [
-        { action: isKorean ? '청사진 소모' : 'Tiêu thụ Blueprint', points: '4pt' },
-        { action: isKorean ? '좀비/거대좀비 처치' : 'Kill Zombie/Giant Zombie', points: '840-2000pt' },
+        { action: l('청사진 소모', 'Tiêu thụ Blueprint', 'Consume Blueprint'), points: '4pt' },
+        { action: l('좀비/거대좀비 처치', 'Kill Zombie/Giant Zombie', 'Kill Zombie/Giant Zombie'), points: '840-2000pt' },
       ],
     },
     {
-      name: isKorean ? '영웅육성' : 'Hero Initiative',
+      name: l('영웅육성', 'Hero Initiative', 'Hero Initiative'),
       icon: Users,
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
       activities: [
-        { action: isKorean ? '프라임 모집' : 'Prime Recruit', points: '400pt' },
-        { action: isKorean ? 'EXP 2000당' : 'Mỗi 2000 EXP', points: '1pt' },
+        { action: l('프라임 모집', 'Prime Recruit', 'Prime Recruit'), points: '400pt' },
+        { action: l('EXP 2000당', 'Mỗi 2000 EXP', 'Per 2,000 EXP'), points: '1pt' },
       ],
     },
     {
-      name: isKorean ? '병력 확장' : 'Army Expansion',
+      name: l('병력 확장', 'Army Expansion', 'Army Expansion'),
       icon: Swords,
       color: 'text-red-400',
       bg: 'bg-red-500/10',
       activities: [
-        { action: isKorean ? 'Lv.6 유닛 훈련' : 'Train Lv.6 Unit', points: '150pt' },
-        { action: isKorean ? '훈련 가속 1분당' : '1 phút tăng tốc HL', points: '10pt' },
+        { action: l('Lv.6 유닛 훈련', 'Train Lv.6 Unit', 'Train Lv.6 Unit'), points: '150pt' },
+        { action: l('훈련 가속 1분당', '1 phút tăng tốc HL', '1 min training speedup'), points: '10pt' },
       ],
     },
   ];
 
   const tips = [
-    isKorean
-      ? '4시간 창이 끝나기 전에 수동으로 상자를 수령하세요!'
-      : 'Thu thủ công hộp trước khi kết thúc 4 tiếng!',
-    isKorean
-      ? '비슷한 쉘터 레벨의 플레이어와 경쟁 - 순위는 상대적'
-      : 'Cạnh tranh với người chơi cùng level shelter - xếp hạng tương đối',
-    isKorean
-      ? '연맹 대결과 겹칠 때 활동하면 보상 2배 효과 (골든 아워)'
-      : 'Hoạt động khi trùng AD = thưởng gấp đôi (Golden Hour)',
-    isKorean
-      ? '테마 변경 직후 큰 비용의 건설/훈련을 시작하지 마세요'
-      : 'KHÔNG bắt đầu xây/huấn luyện tốn kém ngay sau khi đổi theme',
-    isKorean
-      ? '차량 개조 테마에서 좀비/거대좀비 처치가 최고 효율'
-      : 'Theme Mod Vehicle: kill Zombie/Giant Zombie hiệu quả nhất',
+    l(
+      '4시간 창이 끝나기 전에 수동으로 상자를 수령하세요!',
+      'Thu thủ công hộp trước khi kết thúc 4 tiếng!',
+      'Manually collect your chest before the 4-hour window ends!'
+    ),
+    l(
+      '비슷한 쉘터 레벨의 플레이어와 경쟁 - 순위는 상대적',
+      'Cạnh tranh với người chơi cùng level shelter - xếp hạng tương đối',
+      'You compete with players of similar Shelter level - rankings are relative'
+    ),
+    l(
+      '연맹 대결과 겹칠 때 활동하면 보상 2배 효과 (골든 아워)',
+      'Hoạt động khi trùng AD = thưởng gấp đôi (Golden Hour)',
+      'Activity during Alliance Duel overlap earns double rewards (Golden Hour)'
+    ),
+    l(
+      '테마 변경 직후 큰 비용의 건설/훈련을 시작하지 마세요',
+      'KHÔNG bắt đầu xây/huấn luyện tốn kém ngay sau khi đổi theme',
+      'Do NOT start expensive construction/training right after a theme change'
+    ),
+    l(
+      '차량 개조 테마에서 좀비/거대좀비 처치가 최고 효율',
+      'Theme Mod Vehicle: kill Zombie/Giant Zombie hiệu quả nhất',
+      'During Mod Vehicle Boost theme, killing Zombies/Giant Zombies is the most efficient'
+    ),
   ];
 
   return (
@@ -106,25 +116,27 @@ function FullPrepContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Timer className="h-8 w-8 text-highlight" />
-            {isKorean ? '전면전비 (Full Preparedness) 가이드' : 'Hướng dẫn Full Preparedness'}
+            {l('전면전비 (Full Preparedness) 가이드', 'Hướng dẫn Full Preparedness', 'Full Preparedness Guide')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '매일 4시간마다 테마가 변경되는 일일 이벤트입니다. 테마에 맞는 활동만 포인트를 획득할 수 있습니다.'
-              : 'Sự kiện hàng ngày đổi theme mỗi 4 tiếng. Chỉ hoạt động đúng theme mới được điểm.'}
+            {l(
+              '매일 4시간마다 테마가 변경되는 일일 이벤트입니다. 테마에 맞는 활동만 포인트를 획득할 수 있습니다.',
+              'Sự kiện hàng ngày đổi theme mỗi 4 tiếng. Chỉ hoạt động đúng theme mới được điểm.',
+              'A daily event where the theme rotates every 4 hours. Only activities matching the current theme earn points.'
+            )}
           </p>
         </div>
 
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '5개 테마가 4시간마다 순환' : '5 theme xoay vòng mỗi 4 tiếng'}</li>
-              <li>• {isKorean ? '현재 테마에 해당하는 활동만 포인트 획득 가능' : 'Chỉ hoạt động đúng theme hiện tại mới được điểm'}</li>
-              <li>• {isKorean ? '4시간 창 끝나기 전 수동으로 상자 수령 필수!' : 'Thu thủ công hộp trước khi hết 4 tiếng!'}</li>
-              <li>• {isKorean ? '개인 마일스톤: 1,500점 → 4,000점 → 12,000점' : 'Mốc cá nhân: 1,500 → 4,000 → 12,000 điểm'}</li>
-              <li>• {isKorean ? '골든 아워 (08:00, 20:00): 연맹 대결과 겹칠 때 = 보상 2배' : 'Golden Hour (08:00, 20:00): trùng AD = thưởng gấp đôi'}</li>
+              <li>• {l('5개 테마가 4시간마다 순환', '5 theme xoay vòng mỗi 4 tiếng', '5 themes rotate every 4 hours')}</li>
+              <li>• {l('현재 테마에 해당하는 활동만 포인트 획득 가능', 'Chỉ hoạt động đúng theme hiện tại mới được điểm', 'Only activities matching the current theme earn points')}</li>
+              <li>• {l('4시간 창 끝나기 전 수동으로 상자 수령 필수!', 'Thu thủ công hộp trước khi hết 4 tiếng!', 'You MUST manually collect your chest before the 4-hour window ends!')}</li>
+              <li>• {l('개인 마일스톤: 1,500점 → 4,000점 → 12,000점', 'Mốc cá nhân: 1,500 → 4,000 → 12,000 điểm', 'Personal milestones: 1,500 → 4,000 → 12,000 points')}</li>
+              <li>• {l('골든 아워 (08:00, 20:00): 연맹 대결과 겹칠 때 = 보상 2배', 'Golden Hour (08:00, 20:00): trùng AD = thưởng gấp đôi', 'Golden Hour (08:00, 20:00): overlaps with Alliance Duel = double rewards')}</li>
             </ul>
           </CardContent>
         </Card>
@@ -136,12 +148,14 @@ function FullPrepContent({ locale }: { locale: string }) {
               <AlertTriangle className="h-6 w-6 text-destructive shrink-0" />
               <div>
                 <p className="font-semibold text-destructive mb-1">
-                  {isKorean ? '핵심 규칙' : 'Quy tắc cốt lõi'}
+                  {l('핵심 규칙', 'Quy tắc cốt lõi', 'Core Rule')}
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean
-                    ? '4시간 창이 끝나기 전에 수동으로 상자를 수령하세요! 자동 수령되지 않으며, 시간이 지나면 보상을 잃습니다. 테마 변경 직후에는 비용이 큰 건설/훈련을 시작하지 마세요.'
-                    : 'Thu thủ công hộp trước khi kết thúc 4 tiếng! Không tự động nhận, hết giờ sẽ mất thưởng. KHÔNG bắt đầu xây/huấn luyện tốn kém ngay sau khi đổi theme.'}
+                  {l(
+                    '4시간 창이 끝나기 전에 수동으로 상자를 수령하세요! 자동 수령되지 않으며, 시간이 지나면 보상을 잃습니다. 테마 변경 직후에는 비용이 큰 건설/훈련을 시작하지 마세요.',
+                    'Thu thủ công hộp trước khi kết thúc 4 tiếng! Không tự động nhận, hết giờ sẽ mất thưởng. KHÔNG bắt đầu xây/huấn luyện tốn kém ngay sau khi đổi theme.',
+                    'Manually collect your chest before the 4-hour window ends! It will NOT auto-collect, and you lose rewards if time runs out. Do NOT start expensive construction/training right after a theme change.'
+                  )}
                 </p>
               </div>
             </div>
@@ -151,7 +165,7 @@ function FullPrepContent({ locale }: { locale: string }) {
         {/* 5 Themes */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '5개 테마 (4시간마다 순환)' : '5 Theme (Xoay vòng mỗi 4 tiếng)'}
+            {l('5개 테마 (4시간마다 순환)', '5 Theme (Xoay vòng mỗi 4 tiếng)', '5 Themes (Rotating every 4 hours)')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {themes.map((theme) => {
@@ -185,12 +199,14 @@ function FullPrepContent({ locale }: { locale: string }) {
               <Gift className="h-6 w-6 text-highlight shrink-0" />
               <div>
                 <p className="font-semibold text-highlight mb-1">
-                  {isKorean ? '골든 아워 (연맹 대결 + 전면전비)' : 'Golden Hour (AD + Full Prep)'}
+                  {l('골든 아워 (연맹 대결 + 전면전비)', 'Golden Hour (AD + Full Prep)', 'Golden Hour (Alliance Duel + Full Preparedness)')}
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean
-                    ? '연맹 대결과 전면전비의 테마가 겹칠 때 (주로 08:00, 20:00 주기) 활동하면 두 이벤트에서 동시에 포인트를 획득합니다. 가속 아이템 사용의 최적 타이밍입니다.'
-                    : 'Khi theme AD và Full Prep trùng nhau (thường chu kỳ 08:00, 20:00), hoạt động sẽ được điểm cả hai sự kiện. Đây là thời điểm tốt nhất để dùng tăng tốc.'}
+                  {l(
+                    '연맹 대결과 전면전비의 테마가 겹칠 때 (주로 08:00, 20:00 주기) 활동하면 두 이벤트에서 동시에 포인트를 획득합니다. 가속 아이템 사용의 최적 타이밍입니다.',
+                    'Khi theme AD và Full Prep trùng nhau (thường chu kỳ 08:00, 20:00), hoạt động sẽ được điểm cả hai sự kiện. Đây là thời điểm tốt nhất để dùng tăng tốc.',
+                    'When Alliance Duel and Full Preparedness themes overlap (usually at 08:00, 20:00 cycles), your activities earn points in both events simultaneously. This is the best time to use speedups.'
+                  )}
                 </p>
               </div>
             </div>
@@ -200,25 +216,25 @@ function FullPrepContent({ locale }: { locale: string }) {
         {/* Personal Milestones */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '개인 마일스톤 보상' : 'Mốc thưởng cá nhân'}
+            {l('개인 마일스톤 보상', 'Mốc thưởng cá nhân', 'Personal Milestone Rewards')}
           </h2>
           <div className="grid gap-3 sm:grid-cols-3">
             <Card className="bg-green-500/10 border-none">
               <CardContent className="p-4 text-center">
                 <p className="text-green-400 font-bold text-2xl">1,500</p>
-                <p className="text-xs text-muted-foreground mt-1">{isKorean ? '1단계 상자' : 'Hộp giai đoạn 1'}</p>
+                <p className="text-xs text-muted-foreground mt-1">{l('1단계 상자', 'Hộp giai đoạn 1', 'Stage 1 Chest')}</p>
               </CardContent>
             </Card>
             <Card className="bg-blue-500/10 border-none">
               <CardContent className="p-4 text-center">
                 <p className="text-blue-400 font-bold text-2xl">4,000</p>
-                <p className="text-xs text-muted-foreground mt-1">{isKorean ? '2단계 상자' : 'Hộp giai đoạn 2'}</p>
+                <p className="text-xs text-muted-foreground mt-1">{l('2단계 상자', 'Hộp giai đoạn 2', 'Stage 2 Chest')}</p>
               </CardContent>
             </Card>
             <Card className="bg-purple-500/10 border-none">
               <CardContent className="p-4 text-center">
                 <p className="text-purple-400 font-bold text-2xl">12,000</p>
-                <p className="text-xs text-muted-foreground mt-1">{isKorean ? '3단계 상자 (최종)' : 'Hộp giai đoạn 3 (cuối)'}</p>
+                <p className="text-xs text-muted-foreground mt-1">{l('3단계 상자 (최종)', 'Hộp giai đoạn 3 (cuối)', 'Stage 3 Chest (Final)')}</p>
               </CardContent>
             </Card>
           </div>
@@ -227,28 +243,30 @@ function FullPrepContent({ locale }: { locale: string }) {
         {/* Competition Info */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '경쟁 방식' : 'Cách cạnh tranh'}
+            {l('경쟁 방식', 'Cách cạnh tranh', 'Competition')}
           </h2>
           <Card>
             <CardContent className="p-4">
               <div className="space-y-3 text-sm text-muted-foreground">
                 <p>
-                  {isKorean
-                    ? '비슷한 쉘터 레벨의 플레이어들과 경쟁합니다. 순위는 상대적이므로 비슷한 수준의 플레이어 중에서 더 열심히 하면 높은 순위를 얻을 수 있습니다.'
-                    : 'Cạnh tranh với người chơi cùng level shelter. Xếp hạng tương đối nên cố gắng hơn trong nhóm sẽ được xếp hạng cao hơn.'}
+                  {l(
+                    '비슷한 쉘터 레벨의 플레이어들과 경쟁합니다. 순위는 상대적이므로 비슷한 수준의 플레이어 중에서 더 열심히 하면 높은 순위를 얻을 수 있습니다.',
+                    'Cạnh tranh với người chơi cùng level shelter. Xếp hạng tương đối nên cố gắng hơn trong nhóm sẽ được xếp hạng cao hơn.',
+                    'You compete with players of similar Shelter level. Rankings are relative, so putting in more effort than others in your bracket will earn you a higher rank.'
+                  )}
                 </p>
                 <div className="grid gap-2 sm:grid-cols-3 pt-2">
                   <div className="text-center p-3 rounded-lg bg-yellow-500/10">
                     <p className="text-yellow-400 font-bold">1st</p>
-                    <p className="text-xs">{isKorean ? '최고 보상' : 'Thưởng cao nhất'}</p>
+                    <p className="text-xs">{l('최고 보상', 'Thưởng cao nhất', 'Best Rewards')}</p>
                   </div>
                   <div className="text-center p-3 rounded-lg bg-gray-500/10">
                     <p className="text-gray-400 font-bold">2nd-3rd</p>
-                    <p className="text-xs">{isKorean ? '우수 보상' : 'Thưởng khá'}</p>
+                    <p className="text-xs">{l('우수 보상', 'Thưởng khá', 'Great Rewards')}</p>
                   </div>
                   <div className="text-center p-3 rounded-lg bg-orange-500/10">
                     <p className="text-orange-400 font-bold">Top 10</p>
-                    <p className="text-xs">{isKorean ? '기본 보상' : 'Thưởng cơ bản'}</p>
+                    <p className="text-xs">{l('기본 보상', 'Thưởng cơ bản', 'Basic Rewards')}</p>
                   </div>
                 </div>
               </div>
@@ -258,7 +276,7 @@ function FullPrepContent({ locale }: { locale: string }) {
 
         {/* Tips */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold">{isKorean ? '팁' : 'Mẹo'}</h2>
+          <h2 className="text-2xl font-bold">{l('팁', 'Mẹo', 'Tips')}</h2>
           <div className="grid gap-3">
             {tips.map((tip, idx) => (
               <div key={idx} className="info-tip flex gap-3">

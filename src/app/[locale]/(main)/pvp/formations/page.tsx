@@ -17,111 +17,131 @@ export default async function FormationsPage({
 
 function FormationsContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const formations = [
     {
-      name: isKorean ? '공격 진형' : 'Đội hình tấn công',
+      name: l('공격 진형', 'Đội hình tấn công', 'Attack Formation'),
       icon: Swords,
       color: 'text-red-400',
       bg: 'bg-red-500/10',
       border: 'border-red-500/30',
-      description: isKorean
-        ? '적 기지 공격, 랠리 시 사용'
-        : 'Dùng khi tấn công căn cứ địch, rally',
-      composition: isKorean
-        ? 'DPS 영웅 3 + 서포트 2 또는 DPS 4 + 탱커 1'
-        : 'DPS 3 + Support 2 hoặc DPS 4 + Tank 1',
-      troops: isKorean ? '돌격/슈터 위주' : 'Chủ yếu Assaulter/Shooter',
+      description: l(
+        '적 기지 공격, 랠리 시 사용',
+        'Dùng khi tấn công căn cứ địch, rally',
+        'Used for attacking enemy bases and rallies'
+      ),
+      composition: l(
+        'DPS 영웅 3 + 서포트 2 또는 DPS 4 + 탱커 1',
+        'DPS 3 + Support 2 hoặc DPS 4 + Tank 1',
+        '3 DPS + 2 Support or 4 DPS + 1 Tank'
+      ),
+      troops: l('돌격/슈터 위주', 'Chủ yếu Assaulter/Shooter', 'Mainly Assaulter/Shooter'),
     },
     {
-      name: isKorean ? '방어 진형' : 'Đội hình phòng thủ',
+      name: l('방어 진형', 'Đội hình phòng thủ', 'Defense Formation'),
       icon: Shield,
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
       border: 'border-blue-500/30',
-      description: isKorean
-        ? '기지 방어, 수비 시 사용'
-        : 'Dùng khi phòng thủ căn cứ',
-      composition: isKorean
-        ? '탱커 2 + DPS 2 + 서포트 1'
-        : 'Tank 2 + DPS 2 + Support 1',
-      troops: isKorean ? '라이더 + 균형 병종' : 'Rider + quân cân bằng',
+      description: l(
+        '기지 방어, 수비 시 사용',
+        'Dùng khi phòng thủ căn cứ',
+        'Used for base defense'
+      ),
+      composition: l(
+        '탱커 2 + DPS 2 + 서포트 1',
+        'Tank 2 + DPS 2 + Support 1',
+        '2 Tank + 2 DPS + 1 Support'
+      ),
+      troops: l('라이더 + 균형 병종', 'Rider + quân cân bằng', 'Rider + balanced troops'),
     },
     {
-      name: isKorean ? '랠리 진형' : 'Đội hình Rally',
+      name: l('랠리 진형', 'Đội hình Rally', 'Rally Formation'),
       icon: Target,
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
       border: 'border-yellow-500/30',
-      description: isKorean
-        ? '연맹 랠리, 대규모 공격 시 사용'
-        : 'Dùng cho rally liên minh, tấn công lớn',
-      composition: isKorean
-        ? '동일 진영 5명 (시너지 극대화)'
-        : '5 người cùng phe (tối đa synergy)',
-      troops: isKorean ? '고티어 병종 집중' : 'Tập trung quân tier cao',
+      description: l(
+        '연맹 랠리, 대규모 공격 시 사용',
+        'Dùng cho rally liên minh, tấn công lớn',
+        'Used for alliance rallies and large-scale attacks'
+      ),
+      composition: l(
+        '동일 진영 5명 (시너지 극대화)',
+        '5 người cùng phe (tối đa synergy)',
+        '5 same-faction heroes (maximize synergy)'
+      ),
+      troops: l('고티어 병종 집중', 'Tập trung quân tier cao', 'Focus on high-tier troops'),
     },
   ];
 
   const counterChart = [
     {
-      faction: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
-      strong: isKorean ? '블러디 로즈' : 'Blood Rose',
-      weak: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
+      faction: l('새벽의 날개', 'Cánh Bình Minh', 'Wings of Dawn'),
+      strong: l('블러디 로즈', 'Blood Rose', 'Blood Rose'),
+      weak: l('질서의 수호자', 'Người Bảo Vệ Trật Tự', 'Guard of Order'),
       color: 'text-blue-400',
     },
     {
-      faction: isKorean ? '블러디 로즈' : 'Blood Rose',
-      strong: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
-      weak: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
+      faction: l('블러디 로즈', 'Blood Rose', 'Blood Rose'),
+      strong: l('질서의 수호자', 'Người Bảo Vệ Trật Tự', 'Guard of Order'),
+      weak: l('새벽의 날개', 'Cánh Bình Minh', 'Wings of Dawn'),
       color: 'text-red-400',
     },
     {
-      faction: isKorean ? '질서의 수호자' : 'Người Bảo Vệ Trật Tự',
-      strong: isKorean ? '새벽의 날개' : 'Cánh Bình Minh',
-      weak: isKorean ? '블러디 로즈' : 'Blood Rose',
+      faction: l('질서의 수호자', 'Người Bảo Vệ Trật Tự', 'Guard of Order'),
+      strong: l('새벽의 날개', 'Cánh Bình Minh', 'Wings of Dawn'),
+      weak: l('블러디 로즈', 'Blood Rose', 'Blood Rose'),
       color: 'text-green-400',
     },
   ];
 
   const troopTypes = [
     {
-      name: isKorean ? '돌격 (Assaulter)' : 'Assaulter',
-      strength: isKorean ? '높은 공격력' : 'ATK cao',
-      weakness: isKorean ? '낮은 방어력' : 'DEF thấp',
-      use: isKorean ? '공격 진형, 블러디 로즈' : 'Đội hình tấn công, Blood Rose',
+      name: l('돌격 (Assaulter)', 'Assaulter', 'Assaulter'),
+      strength: l('높은 공격력', 'ATK cao', 'High ATK'),
+      weakness: l('낮은 방어력', 'DEF thấp', 'Low DEF'),
+      use: l('공격 진형, 블러디 로즈', 'Đội hình tấn công, Blood Rose', 'Attack formation, Blood Rose'),
       color: 'text-red-400',
     },
     {
-      name: isKorean ? '슈터 (Shooter)' : 'Shooter',
-      strength: isKorean ? '균형 잡힌 스탯' : 'Stat cân bằng',
-      weakness: isKorean ? '특화 없음' : 'Không chuyên biệt',
-      use: isKorean ? '범용, 새벽의 날개' : 'Đa năng, Cánh Bình Minh',
+      name: l('슈터 (Shooter)', 'Shooter', 'Shooter'),
+      strength: l('균형 잡힌 스탯', 'Stat cân bằng', 'Balanced stats'),
+      weakness: l('특화 없음', 'Không chuyên biệt', 'No specialization'),
+      use: l('범용, 새벽의 날개', 'Đa năng, Cánh Bình Minh', 'Versatile, Wings of Dawn'),
       color: 'text-blue-400',
     },
     {
-      name: isKorean ? '라이더 (Rider)' : 'Rider',
-      strength: isKorean ? '높은 HP/방어' : 'HP/DEF cao',
-      weakness: isKorean ? '낮은 공격력' : 'ATK thấp',
-      use: isKorean ? '방어 진형, 질서의 수호자' : 'Đội hình phòng thủ, Người Bảo Vệ Trật Tự',
+      name: l('라이더 (Rider)', 'Rider', 'Rider'),
+      strength: l('높은 HP/방어', 'HP/DEF cao', 'High HP/DEF'),
+      weakness: l('낮은 공격력', 'ATK thấp', 'Low ATK'),
+      use: l('방어 진형, 질서의 수호자', 'Đội hình phòng thủ, Người Bảo Vệ Trật Tự', 'Defense formation, Guard of Order'),
       color: 'text-green-400',
     },
   ];
 
   const tips = [
-    isKorean
-      ? '서버 70%가 블러디 로즈 선택 → 새벽의 날개 카운터로 유리'
-      : '70% server chọn Blood Rose → counter Cánh Bình Minh có lợi',
-    isKorean
-      ? '동일 진영 5명 = 히든 버프 발동 (공격/방어/병력 스탯 증가)'
-      : '5 người cùng phe = buff ẩn (tăng ATK/DEF/stat quân)',
-    isKorean
-      ? '영웅 스킬과 병종 매칭 필수 - 슈터 버프 영웅 = 슈터 병종'
-      : 'Bắt buộc kết hợp skill anh hùng với loại quân',
-    isKorean
-      ? '고티어 소수 병력 > 저티어 다수 병력'
-      : 'Ít quân tier cao > nhiều quân tier thấp',
+    l(
+      '서버 70%가 블러디 로즈 선택 → 새벽의 날개 카운터로 유리',
+      '70% server chọn Blood Rose → counter Cánh Bình Minh có lợi',
+      '70% of servers pick Blood Rose → Wings of Dawn counter is advantageous'
+    ),
+    l(
+      '동일 진영 5명 = 히든 버프 발동 (공격/방어/병력 스탯 증가)',
+      '5 người cùng phe = buff ẩn (tăng ATK/DEF/stat quân)',
+      'Full same-faction team = hidden buff (ATK/DEF/troop stats increase)'
+    ),
+    l(
+      '영웅 스킬과 병종 매칭 필수 - 슈터 버프 영웅 = 슈터 병종',
+      'Bắt buộc kết hợp skill anh hùng với loại quân',
+      'Must match hero skills with troop types - Shooter buff hero = Shooter troops'
+    ),
+    l(
+      '고티어 소수 병력 > 저티어 다수 병력',
+      'Ít quân tier cao > nhiều quân tier thấp',
+      'Fewer high-tier troops > many low-tier troops'
+    ),
   ];
 
   return (
@@ -140,24 +160,26 @@ function FormationsContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Users className="h-8 w-8 text-highlight" />
-            {isKorean ? '진형 조합 가이드' : 'Hướng dẫn kết hợp đội hình'}
+            {l('진형 조합 가이드', 'Hướng dẫn kết hợp đội hình', 'Formation Composition Guide')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '공격/방어/랠리 진형 구성과 카운터 시스템을 알아봅니다.'
-              : 'Tìm hiểu cấu trúc đội hình tấn công/phòng thủ/rally và hệ thống counter.'}
+            {l(
+              '공격/방어/랠리 진형 구성과 카운터 시스템을 알아봅니다.',
+              'Tìm hiểu cấu trúc đội hình tấn công/phòng thủ/rally và hệ thống counter.',
+              'Learn about attack/defense/rally formation compositions and the counter system.'
+            )}
           </p>
         </div>
 
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Key Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '카운터: 새벽의 날개 > 블러디 로즈 > 질서의 수호자 > 새벽의 날개' : 'Counter: Cánh Bình Minh > Blood Rose > Người Bảo Vệ Trật Tự > Cánh Bình Minh'}</li>
-              <li>• {isKorean ? '동일 진영 5명 = 히든 버프 (최대 시너지)' : '5 người cùng phe = buff ẩn (synergy tối đa)'}</li>
-              <li>• {isKorean ? '영웅 스킬과 병종 타입 매칭 필수' : 'Bắt buộc kết hợp skill anh hùng với loại quân'}</li>
-              <li>• {isKorean ? '고티어 소수 > 저티어 다수' : 'Ít tier cao > nhiều tier thấp'}</li>
+              <li>• {l('카운터: 새벽의 날개 > 블러디 로즈 > 질서의 수호자 > 새벽의 날개', 'Counter: Cánh Bình Minh > Blood Rose > Người Bảo Vệ Trật Tự > Cánh Bình Minh', 'Counter: Wings of Dawn > Blood Rose > Guard of Order > Wings of Dawn')}</li>
+              <li>• {l('동일 진영 5명 = 히든 버프 (최대 시너지)', '5 người cùng phe = buff ẩn (synergy tối đa)', 'Full same-faction team = hidden buff (max synergy)')}</li>
+              <li>• {l('영웅 스킬과 병종 타입 매칭 필수', 'Bắt buộc kết hợp skill anh hùng với loại quân', 'Must match hero skills with troop types')}</li>
+              <li>• {l('고티어 소수 > 저티어 다수', 'Ít tier cao > nhiều tier thấp', 'Few high-tier > many low-tier')}</li>
             </ul>
           </CardContent>
         </Card>
@@ -165,7 +187,7 @@ function FormationsContent({ locale }: { locale: string }) {
         {/* Formation Types */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '진형 유형' : 'Loại đội hình'}
+            {l('진형 유형', 'Loại đội hình', 'Formation Types')}
           </h2>
           <div className="space-y-4">
             {formations.map((formation) => {
@@ -180,11 +202,11 @@ function FormationsContent({ locale }: { locale: string }) {
                         <p className="text-sm text-muted-foreground mb-2">{formation.description}</p>
                         <div className="grid gap-2 sm:grid-cols-2 text-sm">
                           <div>
-                            <span className="text-muted-foreground">{isKorean ? '구성:' : 'Cấu thành:'}</span>
+                            <span className="text-muted-foreground">{l('구성:', 'Cấu thành:', 'Composition:')}</span>
                             <span className="ml-2">{formation.composition}</span>
                           </div>
                           <div>
-                            <span className="text-muted-foreground">{isKorean ? '병종:' : 'Quân:'}</span>
+                            <span className="text-muted-foreground">{l('병종:', 'Quân:', 'Troops:')}</span>
                             <span className="ml-2">{formation.troops}</span>
                           </div>
                         </div>
@@ -200,7 +222,7 @@ function FormationsContent({ locale }: { locale: string }) {
         {/* Counter System */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '카운터 시스템' : 'Hệ thống Counter'}
+            {l('카운터 시스템', 'Hệ thống Counter', 'Counter System')}
           </h2>
           <Card>
             <CardContent className="p-4">
@@ -208,17 +230,17 @@ function FormationsContent({ locale }: { locale: string }) {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border">
-                      <th className="text-left p-2">{isKorean ? '진영' : 'Phe'}</th>
-                      <th className="text-left p-2">{isKorean ? '강함 (승리)' : 'Mạnh (thắng)'}</th>
-                      <th className="text-left p-2">{isKorean ? '약함 (패배)' : 'Yếu (thua)'}</th>
+                      <th className="text-left p-2">{l('진영', 'Phe', 'Faction')}</th>
+                      <th className="text-left p-2">{l('강함 (승리)', 'Mạnh (thắng)', 'Strong (wins)')}</th>
+                      <th className="text-left p-2">{l('약함 (패배)', 'Yếu (thua)', 'Weak (loses)')}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {counterChart.map((row) => (
                       <tr key={row.faction} className="border-b border-border/50">
                         <td className={`p-2 font-semibold ${row.color}`}>{row.faction}</td>
-                        <td className="p-2 text-green-400">→ {row.strong}</td>
-                        <td className="p-2 text-red-400">← {row.weak}</td>
+                        <td className="p-2 text-green-400">&rarr; {row.strong}</td>
+                        <td className="p-2 text-red-400">&larr; {row.weak}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -229,9 +251,11 @@ function FormationsContent({ locale }: { locale: string }) {
           <div className="info-important flex gap-3">
             <AlertTriangle className="h-5 w-5 text-yellow-400 shrink-0 mt-0.5" />
             <p className="text-sm text-muted-foreground">
-              {isKorean
-                ? '서버 대부분(~70%)이 블러디 로즈를 선택합니다. 새벽의 날개 선택 시 카운터 이점을 얻을 수 있습니다.'
-                : 'Đa số server (~70%) chọn Blood Rose. Chọn Cánh Bình Minh có lợi thế counter.'}
+              {l(
+                '서버 대부분(~70%)이 블러디 로즈를 선택합니다. 새벽의 날개 선택 시 카운터 이점을 얻을 수 있습니다.',
+                'Đa số server (~70%) chọn Blood Rose. Chọn Cánh Bình Minh có lợi thế counter.',
+                'Most servers (~70%) pick Blood Rose. Choosing Wings of Dawn gives you a counter advantage.'
+              )}
             </p>
           </div>
         </section>
@@ -239,7 +263,7 @@ function FormationsContent({ locale }: { locale: string }) {
         {/* Troop Types */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '병종 특성' : 'Đặc điểm loại quân'}
+            {l('병종 특성', 'Đặc điểm loại quân', 'Troop Type Traits')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-3">
             {troopTypes.map((troop) => (
@@ -267,12 +291,14 @@ function FormationsContent({ locale }: { locale: string }) {
         <Card className="border-highlight/30 bg-highlight/5">
           <CardContent className="p-4 space-y-3">
             <p className="font-semibold text-highlight">
-              {isKorean ? '3+2 혼합 진형이 유리한 이유' : 'Tại sao đội hình trộn 3+2 có lợi'}
+              {l('3+2 혼합 진형이 유리한 이유', 'Tại sao đội hình trộn 3+2 có lợi', 'Why the 3+2 mixed formation is advantageous')}
             </p>
             <p className="text-sm text-muted-foreground">
-              {isKorean
-                ? '서버 플레이어의 약 70%가 블러디 로즈를 선택합니다. 새벽의 날개 3명 + 블러디 로즈 2명 구성은 대부분의 상대를 카운터하면서 시즌 시너지 보너스도 확보합니다. 120M 새벽의 날개 진형이 130M 블러디 로즈 진형을 이길 수 있습니다 — 진영 우위가 1,000만 전투력 차이를 극복합니다.'
-                : 'Khoảng 70% người chơi server chọn Blood Rose. Đội hình Wings of Dawn 3 + Blood Rose 2 counter đa số đối thủ và có bonus season synergy. Đội 120M WoD thắng 130M BR — lợi thế phe vượt qua 10M chênh lệch CP.'}
+              {l(
+                '서버 플레이어의 약 70%가 블러디 로즈를 선택합니다. 새벽의 날개 3명 + 블러디 로즈 2명 구성은 대부분의 상대를 카운터하면서 시즌 시너지 보너스도 확보합니다. 120M 새벽의 날개 진형이 130M 블러디 로즈 진형을 이길 수 있습니다 — 진영 우위가 1,000만 전투력 차이를 극복합니다.',
+                'Khoảng 70% người chơi server chọn Blood Rose. Đội hình Wings of Dawn 3 + Blood Rose 2 counter đa số đối thủ và có bonus season synergy. Đội 120M WoD thắng 130M BR — lợi thế phe vượt qua 10M chênh lệch CP.',
+                'About 70% of server players pick Blood Rose. A 3 Wings of Dawn + 2 Blood Rose lineup counters most opponents while securing season synergy bonuses. A 120M WoD team can beat a 130M BR team — faction advantage overcomes 10M CP difference.'
+              )}
             </p>
           </CardContent>
         </Card>
@@ -281,19 +307,21 @@ function FormationsContent({ locale }: { locale: string }) {
         <Card className="border-blue-500/30 bg-blue-500/5">
           <CardContent className="p-4 space-y-2">
             <p className="font-semibold text-blue-400">
-              {isKorean ? '지휘관 슬롯 배치 규칙' : 'Quy tắc đặt slot Chỉ huy'}
+              {l('지휘관 슬롯 배치 규칙', 'Quy tắc đặt slot Chỉ huy', 'Commander Slot Placement Rules')}
             </p>
             <p className="text-sm text-muted-foreground">
-              {isKorean
-                ? '지휘관 슬롯에는 전체 병종 버프 영웅을 배치하세요 — 추가 보너스가 적용됩니다. 추천 영웅: 퀴니, 릴리아나. 유틸 전용 영웅(레이더, 자원 생산)은 전투 진형에서 제외하세요.'
-                : 'Đặt anh hùng buff toàn quân ở slot Chỉ huy — có bonus thêm. Đề xuất: Queenie, Liliana. Loại bỏ anh hùng utility (radar, sản xuất tài nguyên) khỏi đội hình chiến đấu.'}
+              {l(
+                '지휘관 슬롯에는 전체 병종 버프 영웅을 배치하세요 — 추가 보너스가 적용됩니다. 추천 영웅: 퀴니, 릴리아나. 유틸 전용 영웅(레이더, 자원 생산)은 전투 진형에서 제외하세요.',
+                'Đặt anh hùng buff toàn quân ở slot Chỉ huy — có bonus thêm. Đề xuất: Queenie, Liliana. Loại bỏ anh hùng utility (radar, sản xuất tài nguyên) khỏi đội hình chiến đấu.',
+                'Place heroes with army-wide buffs in the Commander slot — they get bonus effects. Recommended: Queenie, Liliana. Remove utility-only heroes (radar, resource production) from combat formations.'
+              )}
             </p>
           </CardContent>
         </Card>
 
         {/* Tips */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold">{isKorean ? '진형 팁' : 'Mẹo đội hình'}</h2>
+          <h2 className="text-2xl font-bold">{l('진형 팁', 'Mẹo đội hình', 'Formation Tips')}</h2>
           <div className="grid gap-3">
             {tips.map((tip, idx) => (
               <div key={idx} className="info-tip flex gap-3">
@@ -308,22 +336,22 @@ function FormationsContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Users className="h-6 w-6 text-highlight" />
-            {isKorean ? '추천 팀 구성' : 'Doi hinh khuyen nghi'}
+            {l('추천 팀 구성', 'Doi hinh khuyen nghi', 'Recommended Team Compositions')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-3">
             <Card className="border-blue-500/30 bg-blue-500/5">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg text-blue-400">
-                  {isKorean ? '메인 푸시 (3 WoD + 2 BR)' : 'Main Push (3 WoD + 2 BR)'}
+                  {l('메인 푸시 (3 WoD + 2 BR)', 'Main Push (3 WoD + 2 BR)', 'Main Push (3 WoD + 2 BR)')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <div className="space-y-1">
-                  <p className="text-blue-400 font-medium">{isKorean ? '새벽의 날개' : 'Canh Binh Minh'}</p>
+                  <p className="text-blue-400 font-medium">{l('새벽의 날개', 'Canh Binh Minh', 'Wings of Dawn')}</p>
                   <p className="text-muted-foreground">Queenie, Liliana, Alma</p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-red-400 font-medium">{isKorean ? '블러디 로즈' : 'Blood Rose'}</p>
+                  <p className="text-red-400 font-medium">{l('블러디 로즈', 'Blood Rose', 'Blood Rose')}</p>
                   <p className="text-muted-foreground">Yu Chan, Licia</p>
                 </div>
               </CardContent>
@@ -332,12 +360,12 @@ function FormationsContent({ locale }: { locale: string }) {
             <Card className="border-green-500/30 bg-green-500/5">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg text-green-400">
-                  {isKorean ? 'F2P 균형' : 'F2P Can bang'}
+                  {l('F2P 균형', 'F2P Can bang', 'F2P Balanced')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <div className="space-y-1">
-                  <p className="text-muted-foreground">Laura ({isKorean ? '탱크' : 'Tank'}), Amelia, Christina</p>
+                  <p className="text-muted-foreground">Laura ({l('탱크', 'Tank', 'Tank')}), Amelia, Christina</p>
                 </div>
                 <div className="space-y-1">
                   <p className="text-muted-foreground">Sophia, Miranda</p>
@@ -348,7 +376,7 @@ function FormationsContent({ locale }: { locale: string }) {
             <Card className="border-yellow-500/30 bg-yellow-500/5">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg text-yellow-400">
-                  {isKorean ? '질서의 수호자' : 'Nguoi Bao Ve Trat Tu'}
+                  {l('질서의 수호자', 'Nguoi Bao Ve Trat Tu', 'Guard of Order')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
@@ -369,7 +397,7 @@ function FormationsContent({ locale }: { locale: string }) {
             <CardHeader className="pb-2">
               <CardTitle className="text-lg flex items-center gap-2 text-destructive">
                 <AlertTriangle className="h-5 w-5" />
-                {isKorean ? '칩 시스템 경고' : 'Canh bao he thong Chip'}
+                {l('칩 시스템 경고', 'Canh bao he thong Chip', 'Chip System Warning')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
@@ -377,25 +405,31 @@ function FormationsContent({ locale }: { locale: string }) {
                 <li className="flex items-start gap-2">
                   <span className="text-destructive font-bold">!</span>
                   <span className="text-muted-foreground">
-                    {isKorean
-                      ? '각 진형마다 별도 칩이 필요합니다.'
-                      : 'Moi doi hinh can chip rieng.'}
+                    {l(
+                      '각 진형마다 별도 칩이 필요합니다.',
+                      'Moi doi hinh can chip rieng.',
+                      'Each formation requires separate chips.'
+                    )}
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-destructive font-bold">!</span>
                   <span className="text-muted-foreground">
-                    {isKorean
-                      ? '메인 진영을 칩 도착 전에 결정해야 합니다.'
-                      : 'Phai quyet dinh phe chinh truoc khi nhan chip.'}
+                    {l(
+                      '메인 진영을 칩 도착 전에 결정해야 합니다.',
+                      'Phai quyet dinh phe chinh truoc khi nhan chip.',
+                      'You must decide your main faction before chips arrive.'
+                    )}
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-destructive font-bold">!</span>
                   <span className="text-muted-foreground">
-                    {isKorean
-                      ? '진영 변경 후 칩 재투자 비용이 매우 높습니다.'
-                      : 'Chi phi tai dau tu chip sau khi doi phe rat cao.'}
+                    {l(
+                      '진영 변경 후 칩 재투자 비용이 매우 높습니다.',
+                      'Chi phi tai dau tu chip sau khi doi phe rat cao.',
+                      'Chip reinvestment costs after switching factions are extremely high.'
+                    )}
                   </span>
                 </li>
               </ul>

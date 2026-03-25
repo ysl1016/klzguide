@@ -10,7 +10,7 @@ interface PageProps {
 
 export async function generateStaticParams() {
   const heroIds = getAllHeroIds();
-  const locales = ['ko', 'vi'];
+  const locales = ['ko', 'vi', 'en'];
   return locales.flatMap((locale) =>
     heroIds.map((heroId) => ({ locale, heroId }))
   );
@@ -21,9 +21,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const hero = getHeroById(heroId);
   if (!hero) return { title: 'Hero Not Found' };
 
-  const loc = locale as 'ko' | 'vi';
+  const loc = locale as 'ko' | 'vi' | 'en';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
   return {
-    title: `${hero.name[loc]} - ${hero.tier} ${loc === 'ko' ? '영웅 가이드' : 'Hướng dẫn anh hùng'}`,
+    title: `${hero.name[loc]} - ${hero.tier} ${l('영웅 가이드', 'Hướng dẫn anh hùng', 'Hero Guide')}`,
     description: hero.notes[loc],
   };
 }

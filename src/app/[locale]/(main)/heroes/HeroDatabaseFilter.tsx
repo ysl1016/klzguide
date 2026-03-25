@@ -22,7 +22,8 @@ interface HeroDatabaseFilterProps {
 
 export function HeroDatabaseFilter({ heroes }: HeroDatabaseFilterProps) {
   const t = useTranslations();
-  const locale = useLocale() as 'ko' | 'vi';
+  const locale = useLocale();
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
   const [classFilter, setClassFilter] = useState<string | null>(null);
   const [factionFilter, setFactionFilter] = useState<string | null>(null);
   const [tierFilter, setTierFilter] = useState<string | null>(null);
@@ -122,12 +123,12 @@ export function HeroDatabaseFilter({ heroes }: HeroDatabaseFilterProps) {
                 }}
                 className="text-muted-foreground"
               >
-                {locale === 'ko' ? '초기화' : 'Xóa bộ lọc'}
+                {l('초기화', 'Xóa bộ lọc', 'Clear')}
               </Button>
             )}
 
             <span className="ml-auto text-sm text-muted-foreground">
-              {filteredHeroes.length}{locale === 'ko' ? '명' : ' anh hùng'}
+              {filteredHeroes.length}{l('명', ' anh hùng', ' heroes')}
             </span>
           </div>
         </CardContent>
@@ -143,9 +144,11 @@ export function HeroDatabaseFilter({ heroes }: HeroDatabaseFilterProps) {
       {filteredHeroes.length === 0 && (
         <Card>
           <CardContent className="py-12 text-center text-muted-foreground">
-            {locale === 'ko'
-              ? '조건에 맞는 영웅이 없습니다.'
-              : 'Không có anh hùng phù hợp với điều kiện.'}
+            {l(
+              '조건에 맞는 영웅이 없습니다.',
+              'Không có anh hùng phù hợp với điều kiện.',
+              'No heroes match the selected filters.'
+            )}
           </CardContent>
         </Card>
       )}

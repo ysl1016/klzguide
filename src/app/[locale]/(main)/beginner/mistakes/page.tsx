@@ -17,118 +17,157 @@ export default async function MistakesPage({
 
 function MistakesContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
-  // 실제 lastzguides.com 기반 실수 목록
   const mistakes = [
     {
       number: 1,
-      title: isKorean ? '영웅 자원을 모든 영웅에 분산' : 'Phân tán tài nguyên cho tất cả anh hùng',
-      wrong: isKorean
-        ? '모든 영웅을 조금씩 키움'
-        : 'Nuôi tất cả anh hùng một chút',
-      right: isKorean
-        ? '메인 진형 5명에만 집중 투자. 서포트 영웅은 4성까지만'
-        : 'Chỉ tập trung đầu tư vào 5 anh hùng chính. Anh hùng hỗ trợ tối đa 4 sao',
+      title: l('영웅 자원을 모든 영웅에 분산', 'Phân tán tài nguyên cho tất cả anh hùng', 'Spreading Resources Across All Heroes'),
+      wrong: l(
+        '모든 영웅을 조금씩 키움',
+        'Nuôi tất cả anh hùng một chút',
+        'Leveling all heroes a little bit'
+      ),
+      right: l(
+        '메인 진형 5명에만 집중 투자. 서포트 영웅은 4성까지만',
+        'Chỉ tập trung đầu tư vào 5 anh hùng chính. Anh hùng hỗ trợ tối đa 4 sao',
+        'Focus investment on your 5 main heroes only. Support heroes cap at 4 stars'
+      ),
       severity: 'high',
     },
     {
       number: 2,
-      title: isKorean ? '자원 생산 건물 업그레이드' : 'Nâng cấp công trình sản xuất tài nguyên',
-      wrong: isKorean
-        ? '농장, 거주지, 풍력발전기, 제련소, 창고를 업그레이드'
-        : 'Nâng cấp Nông trại, Khu dân cư, Turbine gió, Xưởng luyện kim, Kho',
-      right: isKorean
-        ? '이 건물들은 ROI가 매우 낮음. 본부(HQ)와 연구소에만 집중. 요구사항 아니면 스킵'
-        : 'Những công trình này có ROI rất thấp. Chỉ tập trung HQ và Lab. Bỏ qua nếu không phải yêu cầu',
+      title: l('자원 생산 건물 업그레이드', 'Nâng cấp công trình sản xuất tài nguyên', 'Upgrading Resource Production Buildings'),
+      wrong: l(
+        '농장, 거주지, 풍력발전기, 제련소, 창고를 업그레이드',
+        'Nâng cấp Nông trại, Khu dân cư, Turbine gió, Xưởng luyện kim, Kho',
+        'Upgrading Farms, Residential areas, Wind Turbines, Smelters, Warehouses'
+      ),
+      right: l(
+        '이 건물들은 ROI가 매우 낮음. 본부(HQ)와 연구소에만 집중. 요구사항 아니면 스킵',
+        'Những công trình này có ROI rất thấp. Chỉ tập trung HQ và Lab. Bỏ qua nếu không phải yêu cầu',
+        'These buildings have very low ROI. Focus on HQ and Research Lab only. Skip unless required'
+      ),
       severity: 'high',
     },
     {
       number: 3,
-      title: isKorean ? '가속 아이템 무분별 사용' : 'Sử dụng tăng tốc bừa bãi',
-      wrong: isKorean
-        ? '가속 아이템을 아무 때나 사용'
-        : 'Dùng tăng tốc bất cứ lúc nào',
-      right: isKorean
-        ? '연맹 대결 테마에 맞춰 사용 (7일 연속, 6개 테마 순환). 건물 업그레이드 날: 건설가속, 과학의 시대 날: 연구가속, 종합 성장 날: 훈련가속'
-        : 'Dùng theo theme Alliance Duel (7 ngày, 6 theme xoay vòng). Ngày Shelter Upgrade: tăng tốc xây, Age of Science: NC, Holistic Growth: HL',
+      title: l('가속 아이템 무분별 사용', 'Sử dụng tăng tốc bừa bãi', 'Using Speed-Ups Randomly'),
+      wrong: l(
+        '가속 아이템을 아무 때나 사용',
+        'Dùng tăng tốc bất cứ lúc nào',
+        'Using speed-ups whenever you feel like it'
+      ),
+      right: l(
+        '연맹 대결 테마에 맞춰 사용 (7일 연속, 6개 테마 순환). 건물 업그레이드 날: 건설가속, 과학의 시대 날: 연구가속, 종합 성장 날: 훈련가속',
+        'Dùng theo theme Alliance Duel (7 ngày, 6 theme xoay vòng). Ngày Shelter Upgrade: tăng tốc xây, Age of Science: NC, Holistic Growth: HL',
+        'Match speed-ups to Alliance Duel themes (7-day event, 6 rotating themes). Shelter Upgrade day: construction, Age of Science day: research, Holistic Growth day: training'
+      ),
       severity: 'high',
     },
     {
       number: 4,
-      title: isKorean ? '연맹표창(AR) 연구 미루기' : 'Trì hoãn nghiên cứu Alliance Recognition',
-      wrong: isKorean
-        ? '전투 연구부터 시작하고 연맹표창은 나중에'
-        : 'Bắt đầu nghiên cứu chiến đấu trước, Alliance Recognition sau',
-      right: isKorean
-        ? '연맹표창 연구를 먼저 완료. 일일 보상(배지, 합금, 조각)이 2배됨'
-        : 'Hoàn thành AR trước. Phần thưởng hàng ngày (huy hiệu, hợp kim, mảnh) tăng gấp đôi',
+      title: l('연맹표창(AR) 연구 미루기', 'Trì hoãn nghiên cứu Alliance Recognition', 'Delaying Alliance Recognition Research'),
+      wrong: l(
+        '전투 연구부터 시작하고 연맹표창은 나중에',
+        'Bắt đầu nghiên cứu chiến đấu trước, Alliance Recognition sau',
+        'Starting with combat research and leaving AR for later'
+      ),
+      right: l(
+        '연맹표창 연구를 먼저 완료. 일일 보상(배지, 합금, 조각)이 2배됨',
+        'Hoàn thành AR trước. Phần thưởng hàng ngày (huy hiệu, hợp kim, mảnh) tăng gấp đôi',
+        'Complete Alliance Recognition first. It doubles daily rewards (badges, alloys, fragments)'
+      ),
       severity: 'high',
     },
     {
       number: 5,
-      title: isKorean ? '비활성 연맹에 머무름' : 'Ở lại liên minh không hoạt động',
-      wrong: isKorean
-        ? '친분 때문에 비활성 연맹에 계속 있음'
-        : 'Ở lại liên minh không hoạt động vì tình bạn',
-      right: isKorean
-        ? '활동적인 연맹으로 이동. 연맹 도움, 상점, 이벤트가 성장의 핵심'
-        : 'Chuyển sang liên minh hoạt động. Hỗ trợ, shop, sự kiện liên minh là chìa khóa phát triển',
+      title: l('비활성 연맹에 머무름', 'Ở lại liên minh không hoạt động', 'Staying in an Inactive Alliance'),
+      wrong: l(
+        '친분 때문에 비활성 연맹에 계속 있음',
+        'Ở lại liên minh không hoạt động vì tình bạn',
+        'Staying in a dead alliance because of friendships'
+      ),
+      right: l(
+        '활동적인 연맹으로 이동. 연맹 도움, 상점, 이벤트가 성장의 핵심',
+        'Chuyển sang liên minh hoạt động. Hỗ trợ, shop, sự kiện liên minh là chìa khóa phát triển',
+        'Move to an active alliance. Alliance help, shop, and events are key to growth'
+      ),
       severity: 'high',
     },
     {
       number: 6,
-      title: isKorean ? '진영 혼합 (Mixed Factions)' : 'Trộn phe phái',
-      wrong: isKorean
-        ? '3개 진영 영웅을 섞어서 사용'
-        : 'Dùng anh hùng từ 3 phe lẫn lộn',
-      right: isKorean
-        ? '메인 진영 하나 선택 + 서브 진영 2명 조합 (예: 새벽의 날개 3 + 블러디 로즈 2)'
-        : 'Chọn một phe chính + 2 phụ (VD: 3 Cánh Bình Minh + 2 Blood Rose)',
+      title: l('진영 혼합 (Mixed Factions)', 'Trộn phe phái', 'Mixing Factions'),
+      wrong: l(
+        '3개 진영 영웅을 섞어서 사용',
+        'Dùng anh hùng từ 3 phe lẫn lộn',
+        'Using heroes from all 3 factions mixed together'
+      ),
+      right: l(
+        '메인 진영 하나 선택 + 서브 진영 2명 조합 (예: 새벽의 날개 3 + 블러디 로즈 2)',
+        'Chọn một phe chính + 2 phụ (VD: 3 Cánh Bình Minh + 2 Blood Rose)',
+        'Pick one main faction + 2 from a sub faction (e.g., 3 Wings of Dawn + 2 Blood Rose)'
+      ),
       severity: 'high',
     },
     {
       number: 7,
-      title: isKorean ? '영웅훈련 연구 깊이 파기' : 'Đào sâu nghiên cứu Hero Training',
-      wrong: isKorean
-        ? '영웅훈련(Hero Training) 연구를 끝까지 완료'
-        : 'Hoàn thành toàn bộ nghiên cứu Hero Training',
-      right: isKorean
-        ? '조종석까지만 하고 멈춤. 이후는 배지 대비 효율이 극히 낮음 (배지 함정)'
-        : 'Dừng ở Cockpit. Sau đó hiệu quả badge cực thấp (bẫy badge)',
+      title: l('영웅훈련 연구 깊이 파기', 'Đào sâu nghiên cứu Hero Training', 'Over-Investing in Hero Training Research'),
+      wrong: l(
+        '영웅훈련(Hero Training) 연구를 끝까지 완료',
+        'Hoàn thành toàn bộ nghiên cứu Hero Training',
+        'Completing the entire Hero Training research tree'
+      ),
+      right: l(
+        '조종석까지만 하고 멈춤. 이후는 배지 대비 효율이 극히 낮음 (배지 함정)',
+        'Dừng ở Cockpit. Sau đó hiệu quả badge cực thấp (bẫy badge)',
+        'Stop at Cockpit. Beyond that, badge efficiency is extremely low (badge trap)'
+      ),
       severity: 'medium',
     },
     {
       number: 8,
-      title: isKorean ? '이벤트 테마 무시하고 자원 사용' : 'Dùng tài nguyên không theo theme sự kiện',
-      wrong: isKorean
-        ? '아무 때나 자원과 아이템 사용'
-        : 'Dùng tài nguyên và vật phẩm bất cứ lúc nào',
-      right: isKorean
-        ? '연맹 대결(7일, 6테마 순환) + 전면전비(4시간마다 5테마 변경) 겹칠 때 활동하면 보상 극대화. 해당 테마에 맞는 가속/아이템 사용'
-        : 'Hoạt động khi Alliance Duel (7 ngày, 6 theme) + Full Prep (5 theme đổi mỗi 4 tiếng) trùng nhau để tối đa thưởng. Dùng tăng tốc/item theo theme phù hợp',
+      title: l('이벤트 테마 무시하고 자원 사용', 'Dùng tài nguyên không theo theme sự kiện', 'Ignoring Event Themes When Using Resources'),
+      wrong: l(
+        '아무 때나 자원과 아이템 사용',
+        'Dùng tài nguyên và vật phẩm bất cứ lúc nào',
+        'Using resources and items whenever'
+      ),
+      right: l(
+        '연맹 대결(7일, 6테마 순환) + 전면전비(4시간마다 5테마 변경) 겹칠 때 활동하면 보상 극대화. 해당 테마에 맞는 가속/아이템 사용',
+        'Hoạt động khi Alliance Duel (7 ngày, 6 theme) + Full Prep (5 theme đổi mỗi 4 tiếng) trùng nhau để tối đa thưởng. Dùng tăng tốc/item theo theme phù hợp',
+        'Maximize rewards by playing when Alliance Duel (7-day, 6 themes) and Full Preparedness (5 themes rotating every 4h) overlap. Use speed-ups/items matching the theme'
+      ),
       severity: 'medium',
     },
     {
       number: 9,
-      title: isKorean ? '난폭 두목 공격 안 함' : 'Không tấn công Furylord',
-      wrong: isKorean
-        ? '연료가 없어서 난폭 두목 공격을 스킵'
-        : 'Bỏ qua tấn công Furylord vì không có nhiên liệu',
-      right: isKorean
-        ? '연료 없이도 공격. 일요일 제외 매일 4회(00/06/12/18시). 300만 데미지로 보라장비 해금'
-        : 'Tấn công dù không có nhiên liệu. 4 lần/ngày (00/06/12/18h) trừ CN. 3M damage mở trang bị tím',
+      title: l('난폭 두목 공격 안 함', 'Không tấn công Furylord', 'Skipping Furylord Attacks'),
+      wrong: l(
+        '연료가 없어서 난폭 두목 공격을 스킵',
+        'Bỏ qua tấn công Furylord vì không có nhiên liệu',
+        'Skipping Furylord because you\'re out of fuel'
+      ),
+      right: l(
+        '연료 없이도 공격. 일요일 제외 매일 4회(00/06/12/18시). 300만 데미지로 보라장비 해금',
+        'Tấn công dù không có nhiên liệu. 4 lần/ngày (00/06/12/18h) trừ CN. 3M damage mở trang bị tím',
+        'Attack even without fuel. 4 times daily (00/06/12/18h) except Sunday. 3M damage unlocks purple gear'
+      ),
       severity: 'medium',
     },
     {
       number: 10,
-      title: isKorean ? '소피아(Sophia) 육성 안 함' : 'Không nuôi Sophia',
-      wrong: isKorean
-        ? '소피아는 에픽이라서 무시하고 레전더리만 키움'
-        : 'Bỏ qua Sophia vì là Epic, chỉ nuôi Legendary',
-      right: isKorean
-        ? '소피아 5성 필수. 건설 비용 10% 감소 + 속도 증가. 수십억 자원 절약'
-        : 'Sophia 5 sao bắt buộc. Giảm 10% chi phí xây dựng + tăng tốc. Tiết kiệm hàng tỷ tài nguyên',
+      title: l('소피아(Sophia) 육성 안 함', 'Không nuôi Sophia', 'Not Building Sophia'),
+      wrong: l(
+        '소피아는 에픽이라서 무시하고 레전더리만 키움',
+        'Bỏ qua Sophia vì là Epic, chỉ nuôi Legendary',
+        'Ignoring Sophia because she\'s Epic and only building Legendaries'
+      ),
+      right: l(
+        '소피아 5성 필수. 건설 비용 10% 감소 + 속도 증가. 수십억 자원 절약',
+        'Sophia 5 sao bắt buộc. Giảm 10% chi phí xây dựng + tăng tốc. Tiết kiệm hàng tỷ tài nguyên',
+        'Sophia 5 stars is a must. 10% construction cost reduction + speed boost. Saves billions of resources'
+      ),
       severity: 'medium',
     },
   ];
@@ -138,19 +177,19 @@ function MistakesContent({ locale }: { locale: string }) {
       color: 'text-red-400',
       bg: 'bg-red-500/10',
       border: 'border-red-500/30',
-      label: isKorean ? '치명적' : 'Nghiêm trọng',
+      label: l('치명적', 'Nghiêm trọng', 'Critical'),
     },
     medium: {
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
       border: 'border-yellow-500/30',
-      label: isKorean ? '주의' : 'Cẩn thận',
+      label: l('주의', 'Cẩn thận', 'Caution'),
     },
     low: {
       color: 'text-blue-400',
       bg: 'bg-blue-500/10',
       border: 'border-blue-500/30',
-      label: isKorean ? '참고' : 'Tham khảo',
+      label: l('참고', 'Tham khảo', 'FYI'),
     },
   };
 
@@ -169,12 +208,14 @@ function MistakesContent({ locale }: { locale: string }) {
             </span>
           </div>
           <h1 className="text-3xl font-bold">
-            {isKorean ? '초반 실수 TOP 10' : 'TOP 10 sai lầm ban đầu'}
+            {l('초반 실수 TOP 10', 'TOP 10 sai lầm ban đầu', 'Top 10 Beginner Mistakes')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '초보자들이 자주 하는 실수와 올바른 방법을 알아봅니다.'
-              : 'Tìm hiểu những sai lầm thường gặp của người mới và cách làm đúng.'}
+            {l(
+              '초보자들이 자주 하는 실수와 올바른 방법을 알아봅니다.',
+              'Tìm hiểu những sai lầm thường gặp của người mới và cách làm đúng.',
+              'Learn the most common beginner mistakes and how to avoid them.'
+            )}
           </p>
         </div>
 
@@ -183,12 +224,14 @@ function MistakesContent({ locale }: { locale: string }) {
           <AlertTriangle className="h-5 w-5 text-red-500 shrink-0 mt-0.5" />
           <div>
             <p className="font-medium text-red-400">
-              {isKorean ? '중요' : 'Quan trọng'}
+              {l('중요', 'Quan trọng', 'Important')}
             </p>
             <p className="text-sm text-muted-foreground">
-              {isKorean
-                ? '이 실수들은 초반 성장을 크게 방해합니다. 특히 "치명적" 표시된 항목은 반드시 피하세요.'
-                : 'Những sai lầm này cản trở đáng kể sự phát triển ban đầu. Đặc biệt tránh các mục đánh dấu "Nghiêm trọng".'}
+              {l(
+                '이 실수들은 초반 성장을 크게 방해합니다. 특히 "치명적" 표시된 항목은 반드시 피하세요.',
+                'Những sai lầm này cản trở đáng kể sự phát triển ban đầu. Đặc biệt tránh các mục đánh dấu "Nghiêm trọng".',
+                'These mistakes seriously hinder early-game progress. Especially avoid items marked "Critical".'
+              )}
             </p>
           </div>
         </div>
@@ -227,7 +270,7 @@ function MistakesContent({ locale }: { locale: string }) {
                           <XCircle className="h-5 w-5 text-red-400 shrink-0" />
                           <div>
                             <p className="text-xs font-medium text-red-400 mb-1">
-                              {isKorean ? '잘못된 방법' : 'Cách sai'}
+                              {l('잘못된 방법', 'Cách sai', 'Wrong')}
                             </p>
                             <p className="text-sm text-muted-foreground">
                               {mistake.wrong}
@@ -238,7 +281,7 @@ function MistakesContent({ locale }: { locale: string }) {
                           <CheckCircle2 className="h-5 w-5 text-green-400 shrink-0" />
                           <div>
                             <p className="text-xs font-medium text-green-400 mb-1">
-                              {isKorean ? '올바른 방법' : 'Cách đúng'}
+                              {l('올바른 방법', 'Cách đúng', 'Right')}
                             </p>
                             <p className="text-sm text-muted-foreground">
                               {mistake.right}
@@ -258,14 +301,14 @@ function MistakesContent({ locale }: { locale: string }) {
         <Card className="border-tip/30 bg-tip/5">
           <CardContent className="p-4">
             <h2 className="font-semibold text-tip mb-3">
-              {isKorean ? '핵심 요약' : 'Tóm tắt quan trọng'}
+              {l('핵심 요약', 'Tóm tắt quan trọng', 'Key Takeaways')}
             </h2>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• {isKorean ? '메인 5명 영웅에만 집중 투자' : 'Chỉ tập trung đầu tư vào 5 anh hùng chính'}</li>
-              <li>• {isKorean ? '자원 생산 건물 스킵, 본부(HQ)와 연구소에 집중' : 'Bỏ qua công trình sản xuất, tập trung HQ và Lab'}</li>
-              <li>• {isKorean ? '가속 아이템은 연맹 대결 테마에 맞춰 사용 (7일 연속, 6테마 순환)' : 'Dùng tăng tốc theo theme Alliance Duel (7 ngày, 6 theme xoay vòng)'}</li>
-              <li>• {isKorean ? '전면전비와 연맹 대결 겹칠 때 활동하면 보상 극대화' : 'Hoạt động khi Full Prep + AD trùng để tối đa thưởng'}</li>
-              <li>• {isKorean ? '소피아 5성 필수 육성 (건설 비용 절약)' : 'Nuôi Sophia 5 sao bắt buộc (tiết kiệm chi phí xây dựng)'}</li>
+              <li>• {l('메인 5명 영웅에만 집중 투자', 'Chỉ tập trung đầu tư vào 5 anh hùng chính', 'Focus investment on your 5 main heroes only')}</li>
+              <li>• {l('자원 생산 건물 스킵, 본부(HQ)와 연구소에 집중', 'Bỏ qua công trình sản xuất, tập trung HQ và Lab', 'Skip resource buildings - focus on HQ and Research Lab')}</li>
+              <li>• {l('가속 아이템은 연맹 대결 테마에 맞춰 사용 (7일 연속, 6테마 순환)', 'Dùng tăng tốc theo theme Alliance Duel (7 ngày, 6 theme xoay vòng)', 'Use speed-ups during Alliance Duel themes (7-day event, 6 rotating themes)')}</li>
+              <li>• {l('전면전비와 연맹 대결 겹칠 때 활동하면 보상 극대화', 'Hoạt động khi Full Prep + AD trùng để tối đa thưởng', 'Maximize rewards when Full Preparedness and Alliance Duel overlap')}</li>
+              <li>• {l('소피아 5성 필수 육성 (건설 비용 절약)', 'Nuôi Sophia 5 sao bắt buộc (tiết kiệm chi phí xây dựng)', 'Sophia 5 stars is a must (saves construction costs)')}</li>
             </ul>
           </CardContent>
         </Card>

@@ -276,9 +276,9 @@ export function SearchBar({ className, autoFocus, onClose }: SearchBarProps) {
           </ScrollArea>
           <div className="border-t border-border px-4 py-2 text-xs text-muted-foreground">
             <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px]">↑↓</kbd>
-            <span className="ml-1 mr-3">{t('common.searchPlaceholder').includes('검색') ? '이동' : 'Navigate'}</span>
+            <span className="ml-1 mr-3">Navigate</span>
             <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px]">Enter</kbd>
-            <span className="ml-1">{t('common.searchPlaceholder').includes('검색') ? '선택' : 'Select'}</span>
+            <span className="ml-1">Select</span>
           </div>
         </div>
       )}
@@ -287,9 +287,7 @@ export function SearchBar({ className, autoFocus, onClose }: SearchBarProps) {
       {isOpen && query && results.length === 0 && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-popover border border-border rounded-lg shadow-lg overflow-hidden z-50">
           <div className="px-4 py-6 text-center text-sm text-muted-foreground">
-            {t('common.searchPlaceholder').includes('검색')
-              ? `"${query}"에 대한 검색 결과가 없습니다.`
-              : `No results found for "${query}".`}
+{`No results found for "${query}".`}
           </div>
         </div>
       )}

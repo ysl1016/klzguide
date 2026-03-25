@@ -18,8 +18,8 @@ export default async function HQPage({
 
 function HQContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
-  const loc = locale as 'ko' | 'vi';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
+  const loc = locale as 'ko' | 'vi' | 'en';
 
   const formatNumber = (num: number) => {
     if (num >= 1000000000) return `${(num / 1000000000).toFixed(1)}B`;
@@ -44,23 +44,25 @@ function HQContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Building2 className="h-8 w-8 text-highlight" />
-            {isKorean ? '본부(HQ) 업그레이드 가이드' : 'Hướng dẫn nâng cấp Trụ sở'}
+            {l('본부(HQ) 업그레이드 가이드', 'Hướng dẫn nâng cấp Trụ sở', 'HQ Upgrade Guide')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '본부(HQ) 1-35 레벨별 업그레이드 비용, 소요 시간, 요구사항을 확인하세요.'
-              : 'Xem chi phí, thời gian và yêu cầu nâng cấp HQ từ level 1-35.'}
+            {l(
+              '본부(HQ) 1-35 레벨별 업그레이드 비용, 소요 시간, 요구사항을 확인하세요.',
+              'Xem chi phí, thời gian và yêu cầu nâng cấp HQ từ level 1-35.',
+              'Check upgrade costs, build times, and requirements for HQ levels 1-35.'
+            )}
           </p>
         </div>
 
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'TL;DR')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '본부(HQ) 1-18: 보너스 포함 2일 이내 가능' : 'HQ 1-18: Có thể dưới 2 ngày với bonus'}</li>
-              <li>• {isKorean ? '본부(HQ) 30: T10 병종 해금 핵심 목표 (140일 기본 시간)' : 'HQ 30: Mục tiêu chính T10 (140 ngày cơ bản)'}</li>
-              <li>• {isKorean ? '소피아 5성 필수 - 건설 비용 10% 감소로 수십억 자원 절약' : 'Sophia 5 sao bắt buộc - giảm 10% chi phí tiết kiệm hàng tỷ'}</li>
+              <li>• {l('본부(HQ) 1-18: 보너스 포함 2일 이내 가능', 'HQ 1-18: Có thể dưới 2 ngày với bonus', 'HQ 1-18: Achievable in under 2 days with bonuses')}</li>
+              <li>• {l('본부(HQ) 30: T10 병종 해금 핵심 목표 (140일 기본 시간)', 'HQ 30: Mục tiêu chính T10 (140 ngày cơ bản)', 'HQ 30: Key goal to unlock T10 troops (140 days base time)')}</li>
+              <li>• {l('소피아 5성 필수 - 건설 비용 10% 감소로 수십억 자원 절약', 'Sophia 5 sao bắt buộc - giảm 10% chi phí tiết kiệm hàng tỷ', 'Sophia 5-star is essential — 10% construction cost reduction saves billions')}</li>
             </ul>
           </CardContent>
         </Card>
@@ -80,7 +82,7 @@ function HQContent({ locale }: { locale: string }) {
                   <span className="font-semibold text-highlight">HQ {ex.hq}</span>
                   <ArrowRight className="h-3 w-3 text-muted-foreground" />
                   <span className="text-muted-foreground">
-                    {isKorean ? `영웅 Lv.${ex.heroCap}` : `Anh hùng Lv.${ex.heroCap}`}
+                    {l(`영웅 Lv.${ex.heroCap}`, `Anh hùng Lv.${ex.heroCap}`, `Hero Lv.${ex.heroCap}`)}
                   </span>
                 </div>
               ))}
@@ -93,7 +95,7 @@ function HQContent({ locale }: { locale: string }) {
           <Info className="h-5 w-5 text-tip shrink-0 mt-0.5" />
           <div>
             <p className="font-medium text-tip mb-1">
-              {isKorean ? '요구 건물 패턴' : 'Pattern yêu cầu công trình'}
+              {l('요구 건물 패턴', 'Pattern yêu cầu công trình', 'Building Requirement Pattern')}
             </p>
             <p className="text-sm text-muted-foreground">
               {hqData.requirementPattern[loc]}
@@ -104,7 +106,7 @@ function HQContent({ locale }: { locale: string }) {
         {/* Phases */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '본부(HQ) 업그레이드 단계' : 'Các giai đoạn nâng cấp HQ'}
+            {l('본부(HQ) 업그레이드 단계', 'Các giai đoạn nâng cấp HQ', 'HQ Upgrade Phases')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {hqData.phases.map((phase, idx) => (
@@ -125,12 +127,14 @@ function HQContent({ locale }: { locale: string }) {
         {/* Full Cost Table */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '본부(HQ) 레벨별 상세 비용표' : 'Bảng chi phí chi tiết theo cấp HQ'}
+            {l('본부(HQ) 레벨별 상세 비용표', 'Bảng chi phí chi tiết theo cấp HQ', 'Detailed HQ Upgrade Cost Table')}
           </h2>
           <p className="text-sm text-muted-foreground">
-            {isKorean
-              ? '※ 표시된 시간은 보너스 없는 기본 시간입니다. 연구/피난민/버프로 크게 단축됩니다.'
-              : '※ Thời gian hiển thị là cơ bản không bonus. Có thể rút ngắn nhiều với NC/người tị nạn/buff.'}
+            {l(
+              '※ 표시된 시간은 보너스 없는 기본 시간입니다. 연구/피난민/버프로 크게 단축됩니다.',
+              '※ Thời gian hiển thị là cơ bản không bonus. Có thể rút ngắn nhiều với NC/người tị nạn/buff.',
+              '※ Times shown are base values without bonuses. Can be significantly reduced with research/refugees/buffs.'
+            )}
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -138,26 +142,26 @@ function HQContent({ locale }: { locale: string }) {
                 <tr className="border-b border-border bg-muted/30">
                   <th className="text-left p-2 font-semibold sticky left-0 bg-muted/30">Lv</th>
                   <th className="text-right p-2 font-semibold">
-                    {isKorean ? '식량' : 'Thực phẩm'}
+                    {l('식량', 'Thực phẩm', 'Food')}
                   </th>
                   <th className="text-right p-2 font-semibold">
-                    {isKorean ? '목재' : 'Gỗ'}
+                    {l('목재', 'Gỗ', 'Wood')}
                   </th>
                   <th className="text-right p-2 font-semibold">Zent</th>
                   <th className="text-right p-2 font-semibold">
-                    {isKorean ? '스틸' : 'Thép'}
+                    {l('스틸', 'Thép', 'Steel')}
                   </th>
                   <th className="text-center p-2 font-semibold">
-                    {isKorean ? '시간' : 'Thời gian'}
+                    {l('시간', 'Thời gian', 'Time')}
                   </th>
                   <th className="text-right p-2 font-semibold">
-                    {isKorean ? '전투력' : 'CP'}
+                    {l('전투력', 'CP', 'CP')}
                   </th>
                   <th className="text-center p-2 font-semibold">
-                    {isKorean ? '영웅Lv' : 'Hero Lv'}
+                    {l('영웅Lv', 'Hero Lv', 'Hero Lv')}
                   </th>
                   <th className="text-left p-2 font-semibold">
-                    {isKorean ? '요구사항' : 'Yêu cầu'}
+                    {l('요구사항', 'Yêu cầu', 'Requirements')}
                   </th>
                 </tr>
               </thead>
@@ -208,13 +212,13 @@ function HQContent({ locale }: { locale: string }) {
         {/* Building Priority */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '건물 우선순위' : 'Ưu tiên công trình'}
+            {l('건물 우선순위', 'Ưu tiên công trình', 'Building Priority')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <Card className="border-tip/30">
               <CardHeader className="pb-2">
                 <CardTitle className="text-tip text-lg">
-                  {isKorean ? '필수 업그레이드' : 'Bắt buộc nâng cấp'}
+                  {l('필수 업그레이드', 'Bắt buộc nâng cấp', 'Must Upgrade')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -231,7 +235,7 @@ function HQContent({ locale }: { locale: string }) {
             <Card className="border-destructive/30">
               <CardHeader className="pb-2">
                 <CardTitle className="text-destructive text-lg">
-                  {isKorean ? '스킵 권장' : 'Nên bỏ qua'}
+                  {l('스킵 권장', 'Nên bỏ qua', 'Skip These')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -253,19 +257,19 @@ function HQContent({ locale }: { locale: string }) {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-warning">
               <AlertTriangle className="h-5 w-5" />
-              {isKorean ? '본부(HQ) 31+ 스틸(Steel) 자원' : 'Tài nguyên Thép (Steel) HQ 31+'}
+              {l('본부(HQ) 31+ 스틸(Steel) 자원', 'Tài nguyên Thép (Steel) HQ 31+', 'Steel Resource for HQ 31+')}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
             <p className="text-sm text-muted-foreground">
-              {hqData.steelInfo[loc].description}
+              {(hqData.steelInfo.description as Record<string, string>)[loc]}
             </p>
             <div>
               <p className="text-sm font-medium mb-2">
-                {isKorean ? '획득처:' : 'Nguồn:'}
+                {l('획득처:', 'Nguồn:', 'Sources:')}
               </p>
               <div className="flex flex-wrap gap-2">
-                {hqData.steelInfo[loc].sources.map((source: string, idx: number) => (
+                {((hqData.steelInfo.sources as Record<string, string[]>)[loc] ?? []).map((source: string, idx: number) => (
                   <Badge key={idx} variant="outline" className="text-xs">
                     {source}
                   </Badge>
@@ -273,7 +277,7 @@ function HQContent({ locale }: { locale: string }) {
               </div>
             </div>
             <p className="text-xs text-warning">
-              💡 {hqData.steelInfo[loc].tip}
+              {(hqData.steelInfo.tip as Record<string, string>)[loc]}
             </p>
           </CardContent>
         </Card>
@@ -281,14 +285,16 @@ function HQContent({ locale }: { locale: string }) {
         {/* Construction Boosts */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '건설 속도 부스트 쌓기' : 'Cộng dồn boost tốc độ xây dựng'}
+            {l('건설 속도 부스트 쌓기', 'Cộng dồn boost tốc độ xây dựng', 'Stacking Construction Speed Boosts')}
           </h2>
           <Card>
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground mb-3">
-                {isKorean
-                  ? '이 보너스들을 최대한 활용하세요:'
-                  : 'Tận dụng tối đa các bonus này:'}
+                {l(
+                  '이 보너스들을 최대한 활용하세요:',
+                  'Tận dụng tối đa các bonus này:',
+                  'Make the most of these bonuses:'
+                )}
               </p>
               <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {hqData.constructionBoosts[loc].map((boost: string, idx: number) => (
@@ -305,7 +311,7 @@ function HQContent({ locale }: { locale: string }) {
         {/* Tips */}
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">
-            {isKorean ? '업그레이드 팁' : 'Mẹo nâng cấp'}
+            {l('업그레이드 팁', 'Mẹo nâng cấp', 'Upgrade Tips')}
           </h2>
           <div className="grid gap-3">
             {hqData.tips[loc].map((tip: string, idx: number) => (

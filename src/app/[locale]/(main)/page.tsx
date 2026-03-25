@@ -13,53 +13,6 @@ import { getAllHeroes } from '@/lib/heroes';
 import { getActiveCodes, getLastUpdated } from '@/lib/redeem-codes';
 import { getSixDayRotation, getFullPrepThemes } from '@/lib/events';
 
-const latestGuides = [
-  {
-    title: '게임 소개',
-    titleVi: 'Giới thiệu game',
-    description: 'Last Z: Survival Shooter의 기본 시스템과 게임 방법을 알아봅니다.',
-    descriptionVi: 'Tìm hiểu hệ thống cơ bản và cách chơi của Last Z: Survival Shooter.',
-    href: '/beginner/intro',
-    difficulty: 'beginner' as const,
-    readTime: 10,
-    category: '입문',
-    categoryVi: 'Cơ bản',
-  },
-  {
-    title: '초보자 필수 팁 10가지',
-    titleVi: '10 mẹo quan trọng cho người mới',
-    description: '처음 시작하는 분들이 꼭 알아야 할 필수 팁을 정리했습니다.',
-    descriptionVi: 'Tổng hợp các mẹo quan trọng mà người mới bắt đầu cần biết.',
-    href: '/beginner/tips',
-    difficulty: 'beginner' as const,
-    readTime: 8,
-    category: '입문',
-    categoryVi: 'Cơ bản',
-  },
-  {
-    title: '본부(HQ) 업그레이드 가이드',
-    titleVi: 'Hướng dẫn nâng cấp Trụ sở',
-    description: '본부(HQ) 레벨별 업그레이드 비용과 우선순위를 확인하세요.',
-    descriptionVi: 'Xem chi phí và thứ tự ưu tiên nâng cấp theo cấp độ Trụ sở.',
-    href: '/progression/hq',
-    difficulty: 'basic' as const,
-    readTime: 15,
-    category: '성장',
-    categoryVi: 'Phát triển',
-  },
-  {
-    title: '영웅 티어표 (2026)',
-    titleVi: 'Bảng xếp hạng anh hùng (2026)',
-    description: '현재 메타에서 가장 강력한 영웅들의 순위를 확인하세요.',
-    descriptionVi: 'Xem thứ hạng của các anh hùng mạnh nhất trong meta hiện tại.',
-    href: '/heroes/tier-list',
-    difficulty: 'intermediate' as const,
-    readTime: 12,
-    category: '영웅',
-    categoryVi: 'Anh hùng',
-  },
-];
-
 export default async function HomePage({
   params,
 }: {
@@ -74,13 +27,64 @@ export default async function HomePage({
 function HomePageContent({ locale }: { locale: string }) {
   const t = useTranslations('home');
   const tc = useTranslations('common');
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const heroes = getAllHeroes();
   const activeCodes = getActiveCodes();
   const codesLastUpdated = getLastUpdated();
   const sixDayRotation = getSixDayRotation();
   const fullPrepThemes = getFullPrepThemes();
+
+  const latestGuides = [
+    {
+      title: l('게임 소개', 'Giới thiệu game', 'Game Introduction'),
+      description: l(
+        'Last Z: Survival Shooter의 기본 시스템과 게임 방법을 알아봅니다.',
+        'Tìm hiểu hệ thống cơ bản và cách chơi của Last Z: Survival Shooter.',
+        'Learn the basic systems and gameplay of Last Z: Survival Shooter.'
+      ),
+      href: '/beginner/intro',
+      difficulty: 'beginner' as const,
+      readTime: 10,
+      category: l('입문', 'Cơ bản', 'Beginner'),
+    },
+    {
+      title: l('초보자 필수 팁 10가지', '10 mẹo quan trọng cho người mới', '10 Essential Beginner Tips'),
+      description: l(
+        '처음 시작하는 분들이 꼭 알아야 할 필수 팁을 정리했습니다.',
+        'Tổng hợp các mẹo quan trọng mà người mới bắt đầu cần biết.',
+        'Essential tips every new player should know.'
+      ),
+      href: '/beginner/tips',
+      difficulty: 'beginner' as const,
+      readTime: 8,
+      category: l('입문', 'Cơ bản', 'Beginner'),
+    },
+    {
+      title: l('본부(HQ) 업그레이드 가이드', 'Hướng dẫn nâng cấp Trụ sở', 'HQ Upgrade Guide'),
+      description: l(
+        '본부(HQ) 레벨별 업그레이드 비용과 우선순위를 확인하세요.',
+        'Xem chi phí và thứ tự ưu tiên nâng cấp theo cấp độ Trụ sở.',
+        'Check upgrade costs and priorities by HQ level.'
+      ),
+      href: '/progression/hq',
+      difficulty: 'basic' as const,
+      readTime: 15,
+      category: l('성장', 'Phát triển', 'Progression'),
+    },
+    {
+      title: l('영웅 티어표 (2026)', 'Bảng xếp hạng anh hùng (2026)', 'Hero Tier List (2026)'),
+      description: l(
+        '현재 메타에서 가장 강력한 영웅들의 순위를 확인하세요.',
+        'Xem thứ hạng của các anh hùng mạnh nhất trong meta hiện tại.',
+        'Check the rankings of the strongest heroes in the current meta.'
+      ),
+      href: '/heroes/tier-list',
+      difficulty: 'intermediate' as const,
+      readTime: 12,
+      category: l('영웅', 'Anh hùng', 'Heroes'),
+    },
+  ];
 
   return (
     <div className="py-8 px-4 lg:px-8">
@@ -125,34 +129,34 @@ function HomePageContent({ locale }: { locale: string }) {
               color="primary"
             />
             <QuickStartCard
-              title={isKorean ? '전투력 올리기' : 'Tăng sức mạnh chiến đấu'}
-              description={
-                isKorean
-                  ? '효율적인 전투력 상승 방법을 알아보세요.'
-                  : 'Tìm hiểu cách tăng sức mạnh chiến đấu hiệu quả.'
-              }
+              title={l('전투력 올리기', 'Tăng sức mạnh chiến đấu', 'Increase Combat Power')}
+              description={l(
+                '효율적인 전투력 상승 방법을 알아보세요.',
+                'Tìm hiểu cách tăng sức mạnh chiến đấu hiệu quả.',
+                'Learn how to efficiently increase your combat power.'
+              )}
               href="/progression/combat-power"
               iconName="trending-up"
               color="warning"
             />
             <QuickStartCard
-              title={isKorean ? '영웅 도감' : 'Cơ sở dữ liệu anh hùng'}
-              description={
-                isKorean
-                  ? '37명 전체 영웅의 스킬, 시너지, 육성 가이드를 확인하세요.'
-                  : 'Xem kỹ năng, hiệp lực, hướng dẫn phát triển của 37 anh hùng.'
-              }
+              title={l('영웅 도감', 'Cơ sở dữ liệu anh hùng', 'Hero Database')}
+              description={l(
+                '37명 전체 영웅의 스킬, 시너지, 육성 가이드를 확인하세요.',
+                'Xem kỹ năng, hiệp lực, hướng dẫn phát triển của 37 anh hùng.',
+                'Browse skills, synergies, and build guides for all 37 heroes.'
+              )}
               href="/heroes/tier-list"
               iconName="users"
               color="highlight"
             />
             <QuickStartCard
-              title={isKorean ? '리딤 코드' : 'Mã đổi thưởng'}
-              description={
-                isKorean
-                  ? '무료 보상을 받을 수 있는 코드를 확인하세요.'
-                  : 'Xem mã để nhận phần thưởng miễn phí.'
-              }
+              title={l('리딤 코드', 'Mã đổi thưởng', 'Redeem Codes')}
+              description={l(
+                '무료 보상을 받을 수 있는 코드를 확인하세요.',
+                'Xem mã để nhận phần thưởng miễn phí.',
+                'Check codes for free rewards.'
+              )}
               href="/economy/redeem-codes"
               iconName="gift"
               color="tip"
@@ -177,12 +181,12 @@ function HomePageContent({ locale }: { locale: string }) {
             {latestGuides.map((guide) => (
               <GuideCard
                 key={guide.href}
-                title={isKorean ? guide.title : guide.titleVi}
-                description={isKorean ? guide.description : guide.descriptionVi}
+                title={guide.title}
+                description={guide.description}
                 href={guide.href}
                 difficulty={guide.difficulty}
                 readTime={guide.readTime}
-                category={isKorean ? guide.category : guide.categoryVi}
+                category={guide.category}
               />
             ))}
           </div>

@@ -19,7 +19,7 @@ export default async function TierListPage({
 
 function TierListPageContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const meta = heroesData.meta;
 
@@ -42,34 +42,42 @@ function TierListPageContent({ locale }: { locale: string }) {
             {t('submenu.tierList')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '영웅 등급표와 육성 우선순위를 확인하세요. 최신 메타 기준으로 작성되었습니다.'
-              : 'Xem bảng xếp hạng anh hùng và ưu tiên phát triển. Dựa trên meta mới nhất.'}
+            {l(
+              '영웅 등급표와 육성 우선순위를 확인하세요. 최신 메타 기준으로 작성되었습니다.',
+              'Xem bảng xếp hạng anh hùng và ưu tiên phát triển. Dựa trên meta mới nhất.',
+              'Check the hero tier list and leveling priorities. Based on the latest meta.'
+            )}
           </p>
         </div>
 
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold text-foreground mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
+            <h2 className="font-semibold text-foreground mb-2">{l('핵심 요약', 'Tóm tắt', 'Summary')}</h2>
             <ul className="text-sm text-muted-foreground space-y-1">
               <li>
                 •{' '}
-                {isKorean
-                  ? 'S+티어: 유찬, 리시아, 퀴니, 릴리아나, 앰버, 도데메키 - 시즌 영웅 필수 육성'
-                  : 'Tier S+: Yu Chan, Licia, Queenie, Liliana, Amber, Dodemeki - Bắt buộc phát triển anh hùng mùa'}
+                {l(
+                  'S+티어: 유찬, 리시아, 퀴니, 릴리아나, 앰버, 도데메키 - 시즌 영웅 필수 육성',
+                  'Tier S+: Yu Chan, Licia, Queenie, Liliana, Amber, Dodemeki - Bắt buộc phát triển anh hùng mùa',
+                  'S+ Tier: Yu Chan, Licia, Queenie, Liliana, Amber, Dodemeki - Must-level season heroes'
+                )}
               </li>
               <li>
                 •{' '}
-                {isKorean
-                  ? 'S티어: 벨라, 셀레나, 알마, 니콜스, 스칼렛, 로라, 할리에나, 사쿠라 - 핵심 전력'
-                  : 'Tier S: Bella, Selena, Alma, Nyx, Scarlett, Laura, Harleyena, Sakura - Lực lượng chính'}
+                {l(
+                  'S티어: 벨라, 셀레나, 알마, 니콜스, 스칼렛, 로라, 할리에나, 사쿠라 - 핵심 전력',
+                  'Tier S: Bella, Selena, Alma, Nyx, Scarlett, Laura, Harleyena, Sakura - Lực lượng chính',
+                  'S Tier: Bella, Selena, Alma, Nyx, Scarlett, Laura, Harleyena, Sakura - Core lineup'
+                )}
               </li>
               <li>
                 •{' '}
-                {isKorean
-                  ? '무과금 필수: 소피아 (건설시간 버프), 로라 (유일한 프론트라인)'
-                  : 'F2P bắt buộc: Sophia (buff xây dựng), Laura (frontline duy nhất)'}
+                {l(
+                  '무과금 필수: 소피아 (건설시간 버프), 로라 (유일한 프론트라인)',
+                  'F2P bắt buộc: Sophia (buff xây dựng), Laura (frontline duy nhất)',
+                  'F2P essentials: Sophia (construction time buff), Laura (only frontline)'
+                )}
               </li>
             </ul>
           </CardContent>
@@ -80,13 +88,13 @@ function TierListPageContent({ locale }: { locale: string }) {
           <Info className="h-5 w-5 text-tip shrink-0 mt-0.5" />
           <div>
             <p className="font-medium text-tip mb-1">
-              {isKorean ? '현재 메타' : 'Meta hiện tại'}
+              {l('현재 메타', 'Meta hiện tại', 'Current Meta')}
             </p>
             <p className="text-sm text-muted-foreground">
-              {meta.notes[locale as 'ko' | 'vi']}
+              {meta.notes[(locale as 'ko' | 'vi' | 'en') === 'en' ? 'ko' : locale as 'ko' | 'vi']}
             </p>
             <p className="text-sm text-muted-foreground mt-1">
-              {meta.formationTip[locale as 'ko' | 'vi']}
+              {meta.formationTip[(locale as 'ko' | 'vi' | 'en') === 'en' ? 'ko' : locale as 'ko' | 'vi']}
             </p>
           </div>
         </div>
@@ -96,7 +104,7 @@ function TierListPageContent({ locale }: { locale: string }) {
           <div className="flex items-center gap-2">
             <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
             <span className="text-muted-foreground">
-              {isKorean ? '추천 영웅' : 'Anh hùng khuyến nghị'}
+              {l('추천 영웅', 'Anh hùng khuyến nghị', 'Recommended Hero')}
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -107,7 +115,7 @@ function TierListPageContent({ locale }: { locale: string }) {
               S4
             </Badge>
             <span className="text-muted-foreground">
-              {isKorean ? '시즌 영웅' : 'Anh hùng mùa'}
+              {l('시즌 영웅', 'Anh hùng mùa', 'Season Hero')}
             </span>
           </div>
         </div>

@@ -42,7 +42,7 @@ interface HeroCardProps {
 }
 
 export function HeroCard({ hero, compact = false }: HeroCardProps) {
-  const locale = useLocale() as 'ko' | 'vi';
+  const locale = useLocale() as 'ko' | 'vi' | 'en';
   const t = useTranslations();
   const ClassIcon = classIcons[hero.class];
 
@@ -135,7 +135,7 @@ export function HeroCard({ hero, compact = false }: HeroCardProps) {
             <span>PvP: {hero.pvpTier}</span>
             <span>PvE: {hero.pveTier}</span>
             <span className="ml-auto">
-              {locale === 'ko' ? '우선순위' : 'Ưu tiên'}: {'★'.repeat(hero.investmentPriority)}
+              {locale === 'ko' ? '우선순위' : locale === 'vi' ? 'Ưu tiên' : 'Priority'}: {'★'.repeat(hero.investmentPriority)}
               {'☆'.repeat(5 - hero.investmentPriority)}
             </span>
           </div>

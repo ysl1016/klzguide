@@ -1,6 +1,7 @@
 export interface LocalizedString {
   ko: string;
   vi: string;
+  en: string;
 }
 
 export interface HeroSkill {

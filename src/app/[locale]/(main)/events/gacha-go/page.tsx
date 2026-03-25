@@ -17,14 +17,14 @@ export default async function GachaGoPage({
 
 function GachaGoContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const keyExchangeRates = [
     {
       keys: '10',
       wrenches: '2',
       ratio: '5.0',
-      efficiency: isKorean ? '최악' : 'Tệ nhất',
+      efficiency: l('최악', 'Tệ nhất', 'Worst'),
       color: 'text-red-400',
       bg: 'bg-red-500/10 border-red-500/30',
     },
@@ -32,7 +32,7 @@ function GachaGoContent({ locale }: { locale: string }) {
       keys: '60',
       wrenches: '12',
       ratio: '5.0',
-      efficiency: isKorean ? '보통' : 'Trung bình',
+      efficiency: l('보통', 'Trung bình', 'Average'),
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10 border-yellow-500/30',
     },
@@ -40,7 +40,7 @@ function GachaGoContent({ locale }: { locale: string }) {
       keys: '300',
       wrenches: '70',
       ratio: '4.3',
-      efficiency: isKorean ? '최고' : 'Tốt nhất',
+      efficiency: l('최고', 'Tốt nhất', 'Best'),
       color: 'text-green-400',
       bg: 'bg-green-500/10 border-green-500/30',
       recommended: true,
@@ -50,73 +50,89 @@ function GachaGoContent({ locale }: { locale: string }) {
   const milestoneRewards = [
     {
       points: '5,000',
-      rewards: isKorean
-        ? '골드렌치 + 보너스 아이템'
-        : 'Golden Wrench + bonus items',
+      rewards: l(
+        '골드렌치 + 보너스 아이템',
+        'Golden Wrench + bonus items',
+        'Golden Wrench + bonus items'
+      ),
     },
     {
       points: '8,000',
-      rewards: isKorean
-        ? '골드렌치 15개, 개조 청사진, 기프트 바우처'
-        : '15 Golden Wrench, Blueprint, Gift Voucher',
+      rewards: l(
+        '골드렌치 15개, 개조 청사진, 기프트 바우처',
+        '15 Golden Wrench, Blueprint, Gift Voucher',
+        '15 Golden Wrenches, Mod Blueprint, Gift Voucher'
+      ),
     },
     {
       points: '10,000+',
-      rewards: isKorean
-        ? '추가 골드렌치 및 희귀 아이템'
-        : 'Thêm Golden Wrench và item hiếm',
+      rewards: l(
+        '추가 골드렌치 및 희귀 아이템',
+        'Thêm Golden Wrench và item hiếm',
+        'Additional Golden Wrenches and rare items'
+      ),
     },
   ];
 
   const rewards = [
-    { name: isKorean ? '골드렌치' : 'Golden Wrench', desc: isKorean ? '최고 보상 - 프리미엄 차량 개조용' : 'Thưởng tốt nhất - cải tạo xe cao cấp', rarity: 'legendary' },
-    { name: isKorean ? '키 (Key)' : 'Key', desc: isKorean ? '렌치 교환용 - 300개 모으기 권장' : 'Đổi lấy cờ lê - nên tích 300', rarity: 'epic' },
-    { name: isKorean ? '개조 청사진' : 'Modification Blueprint', desc: isKorean ? '차량 개조 재료' : 'Nguyên liệu cải tạo xe', rarity: 'epic' },
-    { name: isKorean ? '기프트 박스' : 'Gift Box', desc: isKorean ? '다양한 보상 포함' : 'Chứa nhiều phần thưởng', rarity: 'rare' },
-    { name: isKorean ? '가속 아이템' : 'Speedup', desc: isKorean ? '각종 가속 아이템' : 'Các item tăng tốc', rarity: 'common' },
-    { name: isKorean ? '기프트 바우처' : 'Gift Voucher', desc: isKorean ? '마일스톤 보상' : 'Thưởng milestone', rarity: 'rare' },
+    { name: l('골드렌치', 'Golden Wrench', 'Golden Wrench'), desc: l('최고 보상 - 프리미엄 차량 개조용', 'Thưởng tốt nhất - cải tạo xe cao cấp', 'Best reward - for premium vehicle mods'), rarity: 'legendary' },
+    { name: l('키 (Key)', 'Key', 'Key'), desc: l('렌치 교환용 - 300개 모으기 권장', 'Đổi lấy cờ lê - nên tích 300', 'Exchange for Wrenches - save up to 300'), rarity: 'epic' },
+    { name: l('개조 청사진', 'Modification Blueprint', 'Mod Blueprint'), desc: l('차량 개조 재료', 'Nguyên liệu cải tạo xe', 'Vehicle mod material'), rarity: 'epic' },
+    { name: l('기프트 박스', 'Gift Box', 'Gift Box'), desc: l('다양한 보상 포함', 'Chứa nhiều phần thưởng', 'Contains various rewards'), rarity: 'rare' },
+    { name: l('가속 아이템', 'Speedup', 'Speedup'), desc: l('각종 가속 아이템', 'Các item tăng tốc', 'Various speedup items'), rarity: 'common' },
+    { name: l('기프트 바우처', 'Gift Voucher', 'Gift Voucher'), desc: l('마일스톤 보상', 'Thưởng milestone', 'Milestone reward'), rarity: 'rare' },
   ];
 
   const budgetGuide = [
     {
       budget: '1,000',
       pulls: '10',
-      result: isKorean ? '최소 참여 (키 축적용)' : 'Tham gia tối thiểu (tích key)',
+      result: l('최소 참여 (키 축적용)', 'Tham gia tối thiểu (tích key)', 'Minimal participation (for key accumulation)'),
     },
     {
       budget: '3,000',
       pulls: '30',
-      result: isKorean ? '기본 참여' : 'Tham gia cơ bản',
+      result: l('기본 참여', 'Tham gia cơ bản', 'Basic participation'),
     },
     {
       budget: '5,000',
       pulls: '50',
-      result: isKorean ? '적극 참여 (마일스톤 목표)' : 'Tham gia tích cực (nhắm milestone)',
+      result: l('적극 참여 (마일스톤 목표)', 'Tham gia tích cực (nhắm milestone)', 'Active participation (milestone target)'),
       recommended: true,
     },
     {
       budget: '10,000+',
       pulls: '100+',
-      result: isKorean ? '과금 유저' : 'Whale',
+      result: l('과금 유저', 'Whale', 'Whale'),
     },
   ];
 
   const tips = [
-    isKorean
-      ? '키는 다음 이벤트로 이월됨 - 300개 모을 때까지 교환하지 말 것!'
-      : 'Key được chuyển sang event tiếp - KHÔNG đổi cho đến khi có 300!',
-    isKorean
-      ? '300키 → 70렌치 교환이 가장 효율적 (키당 4.3개)'
-      : '300 key → 70 cờ lê hiệu quả nhất (4.3 key/cờ lê)',
-    isKorean
-      ? '골드렌치와 마일스톤 보상이 주 목적 - 순수 렌치만 원하면 VIP 상점 이용'
-      : 'Mục tiêu chính là Golden Wrench và milestone - chỉ muốn cờ lê thì dùng VIP shop',
-    isKorean
-      ? '마일스톤 보상이 핵심 - 예산에 맞는 마일스톤 목표 설정'
-      : 'Thưởng milestone là chính - đặt mục tiêu milestone theo ngân sách',
-    isKorean
-      ? '뽑기 애니메이션 스킵 가능 - 시간 절약'
-      : 'Có thể bỏ qua animation quay - tiết kiệm thời gian',
+    l(
+      '키는 다음 이벤트로 이월됨 - 300개 모을 때까지 교환하지 말 것!',
+      'Key được chuyển sang event tiếp - KHÔNG đổi cho đến khi có 300!',
+      'Keys carry over to the next event - do NOT exchange until you have 300!'
+    ),
+    l(
+      '300키 → 70렌치 교환이 가장 효율적 (키당 4.3개)',
+      '300 key → 70 cờ lê hiệu quả nhất (4.3 key/cờ lê)',
+      '300 keys → 70 Wrenches is the most efficient exchange (4.3 keys per Wrench)'
+    ),
+    l(
+      '골드렌치와 마일스톤 보상이 주 목적 - 순수 렌치만 원하면 VIP 상점 이용',
+      'Mục tiêu chính là Golden Wrench và milestone - chỉ muốn cờ lê thì dùng VIP shop',
+      'Golden Wrenches and milestone rewards are the main goal - use VIP Shop if you only want regular Wrenches'
+    ),
+    l(
+      '마일스톤 보상이 핵심 - 예산에 맞는 마일스톤 목표 설정',
+      'Thưởng milestone là chính - đặt mục tiêu milestone theo ngân sách',
+      'Milestone rewards are key - set milestone targets based on your budget'
+    ),
+    l(
+      '뽑기 애니메이션 스킵 가능 - 시간 절약',
+      'Có thể bỏ qua animation quay - tiết kiệm thời gian',
+      'You can skip the pull animation - saves time'
+    ),
   ];
 
   return (
@@ -135,39 +151,41 @@ function GachaGoContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Sparkles className="h-8 w-8 text-pink-400" />
-            {isKorean ? '행운의 흔들기 (Lucky Shake) 가이드' : 'Hướng dẫn Lucky Shake'}
+            {l('행운의 흔들기 (Lucky Shake) 가이드', 'Hướng dẫn Lucky Shake', 'Lucky Shake Guide')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '다이아몬드로 참여하는 뽑기 이벤트입니다. 키를 모아 렌치로 교환하고, 마일스톤 보상으로 골드렌치를 획득하세요.'
-              : 'Sự kiện quay thưởng bằng diamond. Tích key để đổi cờ lê, lấy Golden Wrench từ thưởng milestone.'}
+            {l(
+              '다이아몬드로 참여하는 뽑기 이벤트입니다. 키를 모아 렌치로 교환하고, 마일스톤 보상으로 골드렌치를 획득하세요.',
+              'Sự kiện quay thưởng bằng diamond. Tích key để đổi cờ lê, lấy Golden Wrench từ thưởng milestone.',
+              'A diamond-based gacha event. Collect keys to exchange for Wrenches, and earn Golden Wrenches from milestone rewards.'
+            )}
           </p>
         </div>
 
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li className="flex items-baseline gap-2">
                 <span className="text-primary">•</span>
-                <span>{isKorean ? '비용: 1회 뽑기 = 100 다이아몬드, 5회 = 500 다이아' : 'Chi phí: 1 lần = 100 diamond, 5 lần = 500 diamond'}</span>
+                <span>{l('비용: 1회 뽑기 = 100 다이아몬드, 5회 = 500 다이아', 'Chi phí: 1 lần = 100 diamond, 5 lần = 500 diamond', 'Cost: 1 pull = 100 diamonds, 5 pulls = 500 diamonds')}</span>
               </li>
               <li className="flex items-baseline gap-2">
                 <span className="text-primary">•</span>
-                <span>{isKorean ? '뽑기 → 키 획득 → 키로 렌치 교환' : 'Quay → nhận Key → đổi Key lấy Cờ lê'}</span>
+                <span>{l('뽑기 → 키 획득 → 키로 렌치 교환', 'Quay → nhận Key → đổi Key lấy Cờ lê', 'Pull → get Keys → exchange Keys for Wrenches')}</span>
               </li>
               <li className="flex items-baseline gap-2">
                 <span className="text-primary">•</span>
-                <span>{isKorean ? '300키 → 70렌치 교환이 최고 효율 (반드시 이것만 사용!)' : '300 key → 70 cờ lê hiệu quả nhất (CHỈ dùng cái này!)'}</span>
+                <span>{l('300키 → 70렌치 교환이 최고 효율 (반드시 이것만 사용!)', '300 key → 70 cờ lê hiệu quả nhất (CHỈ dùng cái này!)', '300 keys → 70 Wrenches is the best rate (ONLY use this option!)')}</span>
               </li>
               <li className="flex items-baseline gap-2">
                 <span className="text-primary">•</span>
-                <span>{isKorean ? '키는 다음 이벤트로 이월됨 - 장기 축적 가능' : 'Key chuyển sang event sau - có thể tích lũy dài hạn'}</span>
+                <span>{l('키는 다음 이벤트로 이월됨 - 장기 축적 가능', 'Key chuyển sang event sau - có thể tích lũy dài hạn', 'Keys carry over to the next event - long-term accumulation possible')}</span>
               </li>
               <li className="flex items-baseline gap-2">
                 <span className="text-primary">•</span>
-                <span>{isKorean ? '마일스톤 포인트로 골드렌치 추가 획득' : 'Nhận thêm Golden Wrench từ điểm milestone'}</span>
+                <span>{l('마일스톤 포인트로 골드렌치 추가 획득', 'Nhận thêm Golden Wrench từ điểm milestone', 'Earn additional Golden Wrenches from milestone points')}</span>
               </li>
             </ul>
           </CardContent>
@@ -177,14 +195,14 @@ function GachaGoContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Gem className="h-6 w-6 text-highlight" />
-            {isKorean ? '비용' : 'Chi phí'}
+            {l('비용', 'Chi phí', 'Cost')}
           </h2>
           <Card className="border-highlight/30 bg-highlight/5">
             <CardContent className="p-6 text-center">
               <p className="text-5xl font-bold text-highlight">100</p>
-              <p className="text-lg text-muted-foreground">{isKorean ? '다이아몬드 / 1회 뽑기' : 'diamond / 1 lần quay'}</p>
+              <p className="text-lg text-muted-foreground">{l('다이아몬드 / 1회 뽑기', 'diamond / 1 lần quay', 'diamonds / 1 pull')}</p>
               <p className="text-sm text-muted-foreground mt-2">
-                {isKorean ? '5회 연속 뽑기 = 500 다이아' : '5 lần liên tục = 500 diamond'}
+                {l('5회 연속 뽑기 = 500 다이아', '5 lần liên tục = 500 diamond', '5 consecutive pulls = 500 diamonds')}
               </p>
             </CardContent>
           </Card>
@@ -194,33 +212,33 @@ function GachaGoContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <TrendingUp className="h-6 w-6 text-blue-400" />
-            {isKorean ? '작동 방식' : 'Cách hoạt động'}
+            {l('작동 방식', 'Cách hoạt động', 'How It Works')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-3">
             <Card>
               <CardContent className="p-4 text-center">
                 <div className="text-3xl mb-2">1️⃣</div>
-                <p className="font-semibold">{isKorean ? '다이아로 뽑기' : 'Quay bằng diamond'}</p>
+                <p className="font-semibold">{l('다이아로 뽑기', 'Quay bằng diamond', 'Pull with Diamonds')}</p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean ? '100 다이아 = 1회' : '100 diamond = 1 lần'}
+                  {l('100 다이아 = 1회', '100 diamond = 1 lần', '100 diamonds = 1 pull')}
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4 text-center">
                 <div className="text-3xl mb-2">2️⃣</div>
-                <p className="font-semibold">{isKorean ? '키 획득' : 'Nhận Key'}</p>
+                <p className="font-semibold">{l('키 획득', 'Nhận Key', 'Get Keys')}</p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean ? '뽑기마다 키 지급' : 'Mỗi lần quay nhận Key'}
+                  {l('뽑기마다 키 지급', 'Mỗi lần quay nhận Key', 'Keys awarded per pull')}
                 </p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4 text-center">
                 <div className="text-3xl mb-2">3️⃣</div>
-                <p className="font-semibold">{isKorean ? '키 → 렌치 교환' : 'Đổi Key → Cờ lê'}</p>
+                <p className="font-semibold">{l('키 → 렌치 교환', 'Đổi Key → Cờ lê', 'Exchange Keys → Wrenches')}</p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean ? '300키 모아서 교환!' : 'Tích 300 key rồi đổi!'}
+                  {l('300키 모아서 교환!', 'Tích 300 key rồi đổi!', 'Save 300 keys then exchange!')}
                 </p>
               </CardContent>
             </Card>
@@ -231,7 +249,7 @@ function GachaGoContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Key className="h-6 w-6 text-yellow-400" />
-            {isKorean ? '키 교환 비율' : 'Tỷ lệ đổi Key'}
+            {l('키 교환 비율', 'Tỷ lệ đổi Key', 'Key Exchange Rates')}
           </h2>
           <Card>
             <CardContent className="p-4">
@@ -239,10 +257,10 @@ function GachaGoContent({ locale }: { locale: string }) {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border bg-muted/30">
-                      <th className="text-left p-2">{isKorean ? '키' : 'Key'}</th>
-                      <th className="text-center p-2">{isKorean ? '렌치' : 'Cờ lê'}</th>
-                      <th className="text-center p-2">{isKorean ? '키/렌치' : 'Key/Cờ lê'}</th>
-                      <th className="text-right p-2">{isKorean ? '효율' : 'Hiệu quả'}</th>
+                      <th className="text-left p-2">{l('키', 'Key', 'Keys')}</th>
+                      <th className="text-center p-2">{l('렌치', 'Cờ lê', 'Wrenches')}</th>
+                      <th className="text-center p-2">{l('키/렌치', 'Key/Cờ lê', 'Keys/Wrench')}</th>
+                      <th className="text-right p-2">{l('효율', 'Hiệu quả', 'Efficiency')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -264,9 +282,11 @@ function GachaGoContent({ locale }: { locale: string }) {
                 </table>
               </div>
               <p className="text-xs text-muted-foreground mt-3 text-center">
-                {isKorean
-                  ? '※ 300키 교환만 사용할 것! 다른 옵션은 손해'
-                  : '※ CHỈ dùng đổi 300 key! Các tùy chọn khác bị lỗ'}
+                {l(
+                  '※ 300키 교환만 사용할 것! 다른 옵션은 손해',
+                  '※ CHỈ dùng đổi 300 key! Các tùy chọn khác bị lỗ',
+                  '※ ONLY use the 300-key exchange! Other options are a loss'
+                )}
               </p>
             </CardContent>
           </Card>
@@ -279,12 +299,14 @@ function GachaGoContent({ locale }: { locale: string }) {
               <Key className="h-6 w-6 text-green-400 shrink-0" />
               <div>
                 <p className="font-semibold text-green-400 mb-1">
-                  {isKorean ? '키 이월 시스템' : 'Hệ thống chuyển Key'}
+                  {l('키 이월 시스템', 'Hệ thống chuyển Key', 'Key Carry-Over System')}
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean
-                    ? '키는 이벤트 종료 후에도 사라지지 않고 다음 행운의 흔들기 이벤트로 이월됩니다. 300개가 될 때까지 모은 후 한 번에 교환하세요!'
-                    : 'Key KHÔNG biến mất sau event, được chuyển sang Lucky Shake tiếp theo. Tích cho đến khi có 300 rồi đổi một lần!'}
+                  {l(
+                    '키는 이벤트 종료 후에도 사라지지 않고 다음 행운의 흔들기 이벤트로 이월됩니다. 300개가 될 때까지 모은 후 한 번에 교환하세요!',
+                    'Key KHÔNG biến mất sau event, được chuyển sang Lucky Shake tiếp theo. Tích cho đến khi có 300 rồi đổi một lần!',
+                    'Keys do NOT disappear after the event ends - they carry over to the next Lucky Shake. Save up to 300 then exchange all at once!'
+                  )}
                 </p>
               </div>
             </div>
@@ -295,14 +317,16 @@ function GachaGoContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Target className="h-6 w-6 text-purple-400" />
-            {isKorean ? '마일스톤 보상' : 'Thưởng Milestone'}
+            {l('마일스톤 보상', 'Thưởng Milestone', 'Milestone Rewards')}
           </h2>
           <Card>
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground mb-4">
-                {isKorean
-                  ? '뽑기 시 포인트가 누적되며, 일정 포인트 달성 시 추가 보상을 받습니다.'
-                  : 'Điểm tích lũy khi quay, đạt điểm nhất định sẽ nhận thêm thưởng.'}
+                {l(
+                  '뽑기 시 포인트가 누적되며, 일정 포인트 달성 시 추가 보상을 받습니다.',
+                  'Điểm tích lũy khi quay, đạt điểm nhất định sẽ nhận thêm thưởng.',
+                  'Points accumulate with each pull. Reaching certain point thresholds grants additional rewards.'
+                )}
               </p>
               <div className="space-y-3">
                 {milestoneRewards.map((milestone, idx) => (
@@ -311,7 +335,7 @@ function GachaGoContent({ locale }: { locale: string }) {
                     className="flex items-center justify-between p-3 rounded-lg bg-muted/30"
                   >
                     <span className="font-mono font-bold text-purple-400">
-                      {milestone.points} {isKorean ? '포인트' : 'điểm'}
+                      {milestone.points} {l('포인트', 'điểm', 'points')}
                     </span>
                     <span className="text-sm text-muted-foreground">{milestone.rewards}</span>
                   </div>
@@ -325,7 +349,7 @@ function GachaGoContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Gift className="h-6 w-6 text-purple-400" />
-            {isKorean ? '획득 가능 보상' : 'Phần thưởng có thể nhận'}
+            {l('획득 가능 보상', 'Phần thưởng có thể nhận', 'Available Rewards')}
           </h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {rewards.map((reward, idx) => (
@@ -373,12 +397,14 @@ function GachaGoContent({ locale }: { locale: string }) {
               <Wrench className="h-6 w-6 text-yellow-400 shrink-0" />
               <div>
                 <p className="font-semibold text-yellow-400 mb-1">
-                  {isKorean ? '골드렌치 (Golden Wrench)' : 'Golden Wrench'}
+                  {l('골드렌치 (Golden Wrench)', 'Golden Wrench', 'Golden Wrench')}
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean
-                    ? '행운의 흔들기에서 획득 가능한 최고 보상입니다. 프리미엄 차량 개조에 사용되며, 개조도면로는 할 수 없는 고급 업그레이드가 가능합니다. 마일스톤 보상에서 확정적으로 획득할 수 있으며, 뽑기에서 직접 나오기도 합니다.'
-                    : 'Phần thưởng tốt nhất trong Lucky Shake. Dùng để cải tạo xe cao cấp, có thể nâng cấp mà cờ lê thường không làm được. Có thể nhận chắc chắn từ thưởng milestone, cũng có thể rơi trực tiếp khi quay.'}
+                  {l(
+                    '행운의 흔들기에서 획득 가능한 최고 보상입니다. 프리미엄 차량 개조에 사용되며, 개조도면로는 할 수 없는 고급 업그레이드가 가능합니다. 마일스톤 보상에서 확정적으로 획득할 수 있으며, 뽑기에서 직접 나오기도 합니다.',
+                    'Phần thưởng tốt nhất trong Lucky Shake. Dùng để cải tạo xe cao cấp, có thể nâng cấp mà cờ lê thường không làm được. Có thể nhận chắc chắn từ thưởng milestone, cũng có thể rơi trực tiếp khi quay.',
+                    'The best reward from Lucky Shake. Used for premium vehicle mods that regular Mod Blueprints cannot achieve. Guaranteed from milestone rewards, and can also drop directly from pulls.'
+                  )}
                 </p>
               </div>
             </div>
@@ -392,12 +418,14 @@ function GachaGoContent({ locale }: { locale: string }) {
               <Calculator className="h-6 w-6 text-orange-400 shrink-0" />
               <div>
                 <p className="font-semibold text-orange-400 mb-1">
-                  {isKorean ? '효율 비교' : 'So sánh hiệu quả'}
+                  {l('효율 비교', 'So sánh hiệu quả', 'Efficiency Comparison')}
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  {isKorean
-                    ? '행운의 흔들기는 골드렌치와 마일스톤 보상 획득이 주 목적입니다. VIP 상점에서는 300 다이아에 개조도면 구매가 가능하므로, 순수 렌치 획득 목적이라면 VIP 상점을 이용하세요. 행운의 흔들기는 골드렌치가 필요할 때 참여하는 것이 효율적입니다.'
-                    : 'Lucky Shake chủ yếu để lấy Golden Wrench và thưởng milestone. VIP shop bán 300 diamond/cờ lê thường, nếu chỉ muốn cờ lê thì dùng VIP shop. Tham gia Lucky Shake khi cần Golden Wrench.'}
+                  {l(
+                    '행운의 흔들기는 골드렌치와 마일스톤 보상 획득이 주 목적입니다. VIP 상점에서는 300 다이아에 개조도면 구매가 가능하므로, 순수 렌치 획득 목적이라면 VIP 상점을 이용하세요. 행운의 흔들기는 골드렌치가 필요할 때 참여하는 것이 효율적입니다.',
+                    'Lucky Shake chủ yếu để lấy Golden Wrench và thưởng milestone. VIP shop bán 300 diamond/cờ lê thường, nếu chỉ muốn cờ lê thì dùng VIP shop. Tham gia Lucky Shake khi cần Golden Wrench.',
+                    'Lucky Shake is primarily for Golden Wrenches and milestone rewards. The VIP Shop sells Mod Blueprints for 300 diamonds, so use the VIP Shop if you only want regular Wrenches. Participate in Lucky Shake when you need Golden Wrenches.'
+                  )}
                 </p>
               </div>
             </div>
@@ -408,7 +436,7 @@ function GachaGoContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Calculator className="h-6 w-6 text-green-400" />
-            {isKorean ? '예산 가이드' : 'Hướng dẫn ngân sách'}
+            {l('예산 가이드', 'Hướng dẫn ngân sách', 'Budget Guide')}
           </h2>
           <Card>
             <CardContent className="p-4">
@@ -416,9 +444,9 @@ function GachaGoContent({ locale }: { locale: string }) {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border bg-muted/30">
-                      <th className="text-left p-2">{isKorean ? '예산 (다이아)' : 'Ngân sách (diamond)'}</th>
-                      <th className="text-right p-2">{isKorean ? '뽑기 횟수' : 'Số lần quay'}</th>
-                      <th className="text-left p-2">{isKorean ? '평가' : 'Đánh giá'}</th>
+                      <th className="text-left p-2">{l('예산 (다이아)', 'Ngân sách (diamond)', 'Budget (Diamonds)')}</th>
+                      <th className="text-right p-2">{l('뽑기 횟수', 'Số lần quay', 'Pulls')}</th>
+                      <th className="text-left p-2">{l('평가', 'Đánh giá', 'Assessment')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -439,9 +467,11 @@ function GachaGoContent({ locale }: { locale: string }) {
                 </table>
               </div>
               <p className="text-xs text-muted-foreground mt-3 text-center">
-                {isKorean
-                  ? '※ 권장 예산: 3,000~5,000 다이아 (마일스톤 달성 목표)'
-                  : '※ Ngân sách khuyến nghị: 3,000~5,000 diamond (đạt milestone)'}
+                {l(
+                  '※ 권장 예산: 3,000~5,000 다이아 (마일스톤 달성 목표)',
+                  '※ Ngân sách khuyến nghị: 3,000~5,000 diamond (đạt milestone)',
+                  '※ Recommended budget: 3,000-5,000 diamonds (aim for milestones)'
+                )}
               </p>
             </CardContent>
           </Card>
@@ -454,24 +484,24 @@ function GachaGoContent({ locale }: { locale: string }) {
               <AlertTriangle className="h-6 w-6 text-destructive shrink-0" />
               <div>
                 <p className="font-semibold text-destructive mb-1">
-                  {isKorean ? '주의사항' : 'Lưu ý'}
+                  {l('주의사항', 'Lưu ý', 'Important Notes')}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li className="flex items-baseline gap-2">
                     <span className="text-destructive">•</span>
-                    <span>{isKorean ? '10키, 60키 교환은 손해! 반드시 300키 모아서 교환' : 'Đổi 10 key, 60 key bị lỗ! Nhất định phải tích 300 key'}</span>
+                    <span>{l('10키, 60키 교환은 손해! 반드시 300키 모아서 교환', 'Đổi 10 key, 60 key bị lỗ! Nhất định phải tích 300 key', 'Exchanging 10 or 60 keys is a loss! Always save up 300 keys')}</span>
                   </li>
                   <li className="flex items-baseline gap-2">
                     <span className="text-destructive">•</span>
-                    <span>{isKorean ? '예산 한도를 미리 정하고 초과 지출 금지!' : 'Đặt giới hạn ngân sách trước và KHÔNG vượt quá!'}</span>
+                    <span>{l('예산 한도를 미리 정하고 초과 지출 금지!', 'Đặt giới hạn ngân sách trước và KHÔNG vượt quá!', 'Set a budget limit in advance and do NOT overspend!')}</span>
                   </li>
                   <li className="flex items-baseline gap-2">
                     <span className="text-destructive">•</span>
-                    <span>{isKorean ? '가챠는 도박과 유사 - 충동적 소비 주의' : 'Gacha giống như cờ bạc - cẩn thận tiêu tiền bốc đồng'}</span>
+                    <span>{l('가챠는 도박과 유사 - 충동적 소비 주의', 'Gacha giống như cờ bạc - cẩn thận tiêu tiền bốc đồng', 'Gacha is similar to gambling - beware of impulsive spending')}</span>
                   </li>
                   <li className="flex items-baseline gap-2">
                     <span className="text-destructive">•</span>
-                    <span>{isKorean ? '순수 렌치 목적이면 VIP 상점이 더 효율적' : 'Nếu chỉ muốn cờ lê, VIP shop hiệu quả hơn'}</span>
+                    <span>{l('순수 렌치 목적이면 VIP 상점이 더 효율적', 'Nếu chỉ muốn cờ lê, VIP shop hiệu quả hơn', 'If you only want Wrenches, the VIP Shop is more efficient')}</span>
                   </li>
                 </ul>
               </div>
@@ -483,7 +513,7 @@ function GachaGoContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Lightbulb className="h-6 w-6 text-tip" />
-            {isKorean ? '팁' : 'Mẹo'}
+            {l('팁', 'Mẹo', 'Tips')}
           </h2>
           <div className="grid gap-3">
             {tips.map((tip, idx) => (

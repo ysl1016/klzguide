@@ -23,8 +23,8 @@ export function EventCalendarPreview({
   sixDayRotation,
   fullPrepThemes,
 }: EventCalendarPreviewProps) {
-  const locale = useLocale() as 'ko' | 'vi';
-  const isKorean = locale === 'ko';
+  const locale = useLocale() as 'ko' | 'vi' | 'en';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale] ?? en);
   const [mounted, setMounted] = useState(false);
   const [now, setNow] = useState(new Date());
 
@@ -60,13 +60,13 @@ export function EventCalendarPreview({
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold flex items-center gap-2">
           <Calendar className="h-5 w-5 text-highlight" />
-          {isKorean ? '오늘의 이벤트' : 'Sự kiện hôm nay'}
+          {l('오늘의 이벤트', 'Sự kiện hôm nay', "Today's Events")}
         </h2>
         <Link
           href={`/${locale}/events/full-prep`}
           className="text-sm text-highlight hover:underline flex items-center gap-1"
         >
-          {isKorean ? '자세히' : 'Chi tiết'}
+          {l('자세히', 'Chi tiết', 'Details')}
           <ChevronRight className="h-3 w-3" />
         </Link>
       </div>
@@ -78,7 +78,7 @@ export function EventCalendarPreview({
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-1.5">
                 <Badge variant="outline" className="bg-blue-500/10 text-blue-400 border-blue-500/30 text-[11px] px-1.5 py-0">
-                  {isKorean ? '연맹 대결' : 'AD'} D{rotationDay}
+                  {l('연맹 대결', 'AD', 'AD')} D{rotationDay}
                 </Badge>
               </div>
               <div className="flex items-center gap-1 text-[11px] text-muted-foreground whitespace-nowrap">
@@ -100,7 +100,7 @@ export function EventCalendarPreview({
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-2">
               <Badge variant="outline" className="bg-highlight/10 text-highlight border-highlight/30 text-[11px] px-1.5 py-0">
-                {isKorean ? '전면전비' : 'Full Prep'}
+                {l('전면전비', 'Full Prep', 'Full Prep')}
               </Badge>
               <div className="flex items-center gap-1 text-[11px] text-muted-foreground whitespace-nowrap">
                 <Clock className="h-3 w-3 shrink-0" />

@@ -4,79 +4,79 @@
       {
         "day": 1,
         "theme": "modification",
-        "name": { "ko": "수정의 날", "vi": "Ngày Cải tiến" },
-        "description": { "ko": "골드렌치, 차량 개조 도면, 개조 부품 상자 획득", "vi": "Nhận Cờ lê vàng, Bản vẽ cải tiến xe, Hộp linh kiện" },
-        "primaryRewards": { "ko": "골드렌치, 개조 도면, 부품 상자", "vi": "Cờ lê vàng, Bản vẽ cải tiến, Hộp linh kiện" }
+        "name": { "ko": "수정의 날", "vi": "Ngày Cải tiến", "en": "Modification Day" },
+        "description": { "ko": "골드렌치, 차량 개조 도면, 개조 부품 상자 획득", "vi": "Nhận Cờ lê vàng, Bản vẽ cải tiến xe, Hộp linh kiện", "en": "Earn Golden Wrenches, Vehicle Mod Blueprints, and Mod Parts Boxes" },
+        "primaryRewards": { "ko": "골드렌치, 개조 도면, 부품 상자", "vi": "Cờ lê vàng, Bản vẽ cải tiến, Hộp linh kiện", "en": "Golden Wrenches, Mod Blueprints, Parts Boxes" }
       },
       {
         "day": 2,
         "theme": "construction",
-        "name": { "ko": "건설의 날", "vi": "Ngày Xây dựng" },
-        "description": { "ko": "주황 현상금 미션, 피난민 모집, 건설 가속", "vi": "Nhiệm vụ truy nã cam, Tuyển dụng người tị nạn, Tăng tốc xây dựng" },
-        "primaryRewards": { "ko": "건설 가속, 피난민", "vi": "Tăng tốc xây dựng, Người tị nạn" }
+        "name": { "ko": "건설의 날", "vi": "Ngày Xây dựng", "en": "Construction Day" },
+        "description": { "ko": "주황 현상금 미션, 피난민 모집, 건설 가속", "vi": "Nhiệm vụ truy nã cam, Tuyển dụng người tị nạn, Tăng tốc xây dựng", "en": "Orange Bounty Missions, Refugee Recruitment, Construction Speedups" },
+        "primaryRewards": { "ko": "건설 가속, 피난민", "vi": "Tăng tốc xây dựng, Người tị nạn", "en": "Construction Speedups, Refugees" }
       },
       {
         "day": 3,
         "theme": "research",
-        "name": { "ko": "연구의 날", "vi": "Ngày Nghiên cứu" },
-        "description": { "ko": "주황 교역(트럭), 경찰휘장, 연구 가속 획득", "vi": "Giao dịch cam (xe tải), Huy hiệu, Tăng tốc nghiên cứu" },
-        "primaryRewards": { "ko": "경찰휘장, 연구 가속", "vi": "Huy hiệu, Tăng tốc nghiên cứu" }
+        "name": { "ko": "연구의 날", "vi": "Ngày Nghiên cứu", "en": "Research Day" },
+        "description": { "ko": "주황 교역(트럭), 경찰휘장, 연구 가속 획득", "vi": "Giao dịch cam (xe tải), Huy hiệu, Tăng tốc nghiên cứu", "en": "Orange Trade (Trucks), Badges, Research Speedups" },
+        "primaryRewards": { "ko": "경찰휘장, 연구 가속", "vi": "Huy hiệu, Tăng tốc nghiên cứu", "en": "Badges, Research Speedups" }
       },
       {
         "day": 4,
         "theme": "heroes",
-        "name": { "ko": "영웅의 날", "vi": "Ngày Anh hùng" },
-        "description": { "ko": "영웅 파편, 프라임 모집, 에너지코어, 강화 합금 획득", "vi": "Mảnh anh hùng, Tuyển mộ Prime, Lõi năng lượng, Hợp kim cường hóa" },
-        "primaryRewards": { "ko": "영웅 파편, 에너지코어", "vi": "Mảnh anh hùng, Lõi năng lượng" }
+        "name": { "ko": "영웅의 날", "vi": "Ngày Anh hùng", "en": "Hero Day" },
+        "description": { "ko": "영웅 파편, 프라임 모집, 에너지코어, 강화 합금 획득", "vi": "Mảnh anh hùng, Tuyển mộ Prime, Lõi năng lượng, Hợp kim cường hóa", "en": "Hero Shards, Prime Recruitment, Power Cores, Enhancement Alloy" },
+        "primaryRewards": { "ko": "영웅 파편, 에너지코어", "vi": "Mảnh anh hùng, Lõi năng lượng", "en": "Hero Shards, Power Cores" }
       },
       {
         "day": 5,
         "theme": "training",
-        "name": { "ko": "훈련의 날", "vi": "Ngày Huấn luyện" },
-        "description": { "ko": "레이더 이벤트, 병력 훈련/조합/승급, 가속 획득", "vi": "Sự kiện Radar, Huấn luyện/Kết hợp/Thăng cấp binh, Tăng tốc" },
-        "primaryRewards": { "ko": "훈련 가속, 병력", "vi": "Tăng tốc huấn luyện, Binh lính" }
+        "name": { "ko": "훈련의 날", "vi": "Ngày Huấn luyện", "en": "Training Day" },
+        "description": { "ko": "레이더 이벤트, 병력 훈련/조합/승급, 가속 획득", "vi": "Sự kiện Radar, Huấn luyện/Kết hợp/Thăng cấp binh, Tăng tốc", "en": "Radar Event, Troop Training/Merging/Promotion, Speedups" },
+        "primaryRewards": { "ko": "훈련 가속, 병력", "vi": "Tăng tốc huấn luyện, Binh lính", "en": "Training Speedups, Troops" }
       },
       {
         "day": 6,
         "theme": "combat",
-        "name": { "ko": "전투의 날", "vi": "Ngày Chiến đấu" },
-        "description": { "ko": "주황 교역, 현상금 미션, 적 유닛 격파", "vi": "Giao dịch cam, Nhiệm vụ truy nã, Tiêu diệt đơn vị địch" },
-        "primaryRewards": { "ko": "전투 보상", "vi": "Phần thưởng chiến đấu" }
+        "name": { "ko": "전투의 날", "vi": "Ngày Chiến đấu", "en": "Combat Day" },
+        "description": { "ko": "주황 교역, 현상금 미션, 적 유닛 격파", "vi": "Giao dịch cam, Nhiệm vụ truy nã, Tiêu diệt đơn vị địch", "en": "Orange Trade, Bounty Missions, Eliminate Enemy Units" },
+        "primaryRewards": { "ko": "전투 보상", "vi": "Phần thưởng chiến đấu", "en": "Combat Rewards" }
       }
     ],
     "fullPrepThemes": [
       {
         "id": "science",
-        "name": { "ko": "과학시대", "vi": "Thời đại Khoa học" },
-        "description": { "ko": "연구 관련 과제", "vi": "Nhiệm vụ liên quan nghiên cứu" }
+        "name": { "ko": "과학시대", "vi": "Thời đại Khoa học", "en": "Age of Science" },
+        "description": { "ko": "연구 관련 과제", "vi": "Nhiệm vụ liên quan nghiên cứu", "en": "Research-related tasks" }
       },
       {
         "id": "army",
-        "name": { "ko": "군비확장", "vi": "Mở rộng Quân đội" },
-        "description": { "ko": "훈련/병력 관련 과제", "vi": "Nhiệm vụ liên quan huấn luyện/binh lính" }
+        "name": { "ko": "군비확장", "vi": "Mở rộng Quân đội", "en": "Army Expansion" },
+        "description": { "ko": "훈련/병력 관련 과제", "vi": "Nhiệm vụ liên quan huấn luyện/binh lính", "en": "Training/troop-related tasks" }
       },
       {
         "id": "hero",
-        "name": { "ko": "영웅육성", "vi": "Anh hùng Dẫn đầu" },
-        "description": { "ko": "영웅 관련 과제", "vi": "Nhiệm vụ liên quan anh hùng" }
+        "name": { "ko": "영웅육성", "vi": "Anh hùng Dẫn đầu", "en": "Hero Initiative" },
+        "description": { "ko": "영웅 관련 과제", "vi": "Nhiệm vụ liên quan anh hùng", "en": "Hero-related tasks" }
       },
       {
         "id": "vehicle",
-        "name": { "ko": "차량개조", "vi": "Cải tiến Xe" },
-        "description": { "ko": "차량 개조 관련 과제", "vi": "Nhiệm vụ liên quan cải tiến xe" }
+        "name": { "ko": "차량개조", "vi": "Cải tiến Xe", "en": "Vehicle Modification" },
+        "description": { "ko": "차량 개조 관련 과제", "vi": "Nhiệm vụ liên quan cải tiến xe", "en": "Vehicle modification tasks" }
       },
       {
         "id": "shelter",
-        "name": { "ko": "거점강화", "vi": "Nâng cấp Căn cứ" },
-        "description": { "ko": "건설/업그레이드 관련 과제", "vi": "Nhiệm vụ liên quan xây dựng/nâng cấp" }
+        "name": { "ko": "거점강화", "vi": "Nâng cấp Căn cứ", "en": "Shelter Fortification" },
+        "description": { "ko": "건설/업그레이드 관련 과제", "vi": "Nhiệm vụ liên quan xây dựng/nâng cấp", "en": "Construction/upgrade tasks" }
       }
     ],
     "canyonClash": {
       "timeline": [
-        { "day": "mon-tue", "phase": { "ko": "투표", "vi": "Bỏ phiếu" } },
-        { "day": "wed", "phase": { "ko": "등록", "vi": "Đăng ký" } },
-        { "day": "thu", "phase": { "ko": "매칭", "vi": "Ghép cặp" } },
-        { "day": "fri", "phase": { "ko": "전투", "vi": "Chiến đấu" } }
+        { "day": "mon-tue", "phase": { "ko": "투표", "vi": "Bỏ phiếu", "en": "Voting" } },
+        { "day": "wed", "phase": { "ko": "등록", "vi": "Đăng ký", "en": "Registration" } },
+        { "day": "thu", "phase": { "ko": "매칭", "vi": "Ghép cặp", "en": "Matching" } },
+        { "day": "fri", "phase": { "ko": "전투", "vi": "Chiến đấu", "en": "Battle" } }
       ]
     },
     "hotEventRotation": ["gachaGo", "bullseye", "luckyDiscounter", "luckyChest"]

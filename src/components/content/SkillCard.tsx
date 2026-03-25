@@ -7,26 +7,26 @@ import type { HeroSkill } from '@/types/hero';
 
 const skillTypeConfig: Record<
   string,
-  { icon: React.ElementType; label: { ko: string; vi: string }; color: string }
+  { icon: React.ElementType; label: { ko: string; vi: string; en: string }; color: string }
 > = {
   normal: {
     icon: Sword,
-    label: { ko: '일반공격', vi: 'Tấn công thường' },
+    label: { ko: '일반공격', vi: 'Tấn công thường', en: 'Normal Attack' },
     color: 'bg-gray-500/20 text-gray-400 border-gray-500/30',
   },
   active: {
     icon: Zap,
-    label: { ko: '액티브', vi: 'Chủ động' },
+    label: { ko: '액티브', vi: 'Chủ động', en: 'Active' },
     color: 'bg-red-500/20 text-red-400 border-red-500/30',
   },
   deployment: {
     icon: Globe,
-    label: { ko: '전체효력', vi: 'Hiệu lực toàn bộ' },
+    label: { ko: '전체효력', vi: 'Hiệu lực toàn bộ', en: 'Deployment' },
     color: 'bg-green-500/20 text-green-400 border-green-500/30',
   },
   potential: {
     icon: Star,
-    label: { ko: '전속 포텐셜', vi: 'Tiềm năng chuyên thuộc' },
+    label: { ko: '전속 포텐셜', vi: 'Tiềm năng chuyên thuộc', en: 'Potential' },
     color: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
   },
 };
@@ -36,7 +36,7 @@ interface SkillCardProps {
 }
 
 export function SkillCard({ skill }: SkillCardProps) {
-  const locale = useLocale() as 'ko' | 'vi';
+  const locale = useLocale() as 'ko' | 'vi' | 'en';
   const config = skillTypeConfig[skill.type];
   const Icon = config.icon;
 

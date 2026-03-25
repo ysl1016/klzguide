@@ -26,7 +26,7 @@ import {
 export default function CPCalculatorPage() {
   const t = useTranslations();
   const locale = useLocale();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const [structurePower, setStructurePower] = useState<number>(0);
   const [techPower, setTechPower] = useState<number>(0);
@@ -84,82 +84,102 @@ export default function CPCalculatorPage() {
   const powerCategories = [
     {
       key: 'structure',
-      name: isKorean ? '건물' : 'Công trình',
+      name: l('건물', 'Công trình', 'Structures'),
       icon: Building2,
       color: 'text-blue-400',
       bgColor: 'bg-blue-500/10',
       value: structurePower,
       setValue: setStructurePower,
-      description: isKorean
-        ? '본부(HQ), 연구소, 캠프 등 건물 레벨에서 발생'
-        : 'Từ level các công trình như HQ, Lab, Camp',
-      howToIncrease: isKorean
-        ? '본부(HQ)와 연구소 업그레이드 우선'
-        : 'Ưu tiên nâng HQ và Lab',
+      description: l(
+        '본부(HQ), 연구소, 캠프 등 건물 레벨에서 발생',
+        'Từ level các công trình như HQ, Lab, Camp',
+        'From building levels such as HQ, Lab, Camp'
+      ),
+      howToIncrease: l(
+        '본부(HQ)와 연구소 업그레이드 우선',
+        'Ưu tiên nâng HQ và Lab',
+        'Prioritize upgrading HQ and Research Lab'
+      ),
       idealRange: '15-20%',
     },
     {
       key: 'tech',
-      name: isKorean ? '기술' : 'Công nghệ',
+      name: l('기술', 'Công nghệ', 'Technology'),
       icon: FlaskConical,
       color: 'text-purple-400',
       bgColor: 'bg-purple-500/10',
       value: techPower,
       setValue: setTechPower,
-      description: isKorean
-        ? '연구소에서 완료한 연구 수에서 발생'
-        : 'Từ số nghiên cứu hoàn thành trong Lab',
-      howToIncrease: isKorean
-        ? '연맹표창(AR) 연구 먼저 완료'
-        : 'Hoàn thành NC Alliance Recognition trước',
+      description: l(
+        '연구소에서 완료한 연구 수에서 발생',
+        'Từ số nghiên cứu hoàn thành trong Lab',
+        'From completed research in the Lab'
+      ),
+      howToIncrease: l(
+        '연맹표창(AR) 연구 먼저 완료',
+        'Hoàn thành NC Alliance Recognition trước',
+        'Complete Alliance Recognition (AR) research first'
+      ),
       idealRange: '10-15%',
     },
     {
       key: 'troop',
-      name: isKorean ? '병력' : 'Quân đội',
+      name: l('병력', 'Quân đội', 'Troops'),
       icon: Swords,
       color: 'text-green-400',
       bgColor: 'bg-green-500/10',
       value: troopPower,
       setValue: setTroopPower,
-      description: isKorean
-        ? '병사 수와 티어(레벨)에서 발생'
-        : 'Từ số lượng và tier (level) lính',
-      howToIncrease: isKorean
-        ? '훈련 대기열 24시간 유지, 고티어 병사 우선'
-        : 'Giữ hàng đợi huấn luyện 24/7, ưu tiên lính tier cao',
+      description: l(
+        '병사 수와 티어(레벨)에서 발생',
+        'Từ số lượng và tier (level) lính',
+        'From troop count and tier (level)'
+      ),
+      howToIncrease: l(
+        '훈련 대기열 24시간 유지, 고티어 병사 우선',
+        'Giữ hàng đợi huấn luyện 24/7, ưu tiên lính tier cao',
+        'Keep training queue running 24/7, prioritize high-tier troops'
+      ),
       idealRange: '40-50%',
     },
     {
       key: 'hero',
-      name: isKorean ? '영웅' : 'Anh hùng',
+      name: l('영웅', 'Anh hùng', 'Heroes'),
       icon: Users,
       color: 'text-yellow-400',
       bgColor: 'bg-yellow-500/10',
       value: heroPower,
       setValue: setHeroPower,
-      description: isKorean
-        ? '영웅 레벨, 성급, 스킬, 장비에서 발생'
-        : 'Từ level, sao, kỹ năng, trang bị anh hùng',
-      howToIncrease: isKorean
-        ? '메인 5명 영웅에만 집중 투자'
-        : 'Chỉ tập trung đầu tư 5 anh hùng chính',
+      description: l(
+        '영웅 레벨, 성급, 스킬, 장비에서 발생',
+        'Từ level, sao, kỹ năng, trang bị anh hùng',
+        'From hero level, stars, skills, and gear'
+      ),
+      howToIncrease: l(
+        '메인 5명 영웅에만 집중 투자',
+        'Chỉ tập trung đầu tư 5 anh hùng chính',
+        'Focus investment on your main 5 heroes only'
+      ),
       idealRange: '15-25%',
     },
     {
       key: 'vehicle',
-      name: isKorean ? '차량' : 'Xe',
+      name: l('차량', 'Xe', 'Vehicles'),
       icon: Wrench,
       color: 'text-orange-400',
       bgColor: 'bg-orange-500/10',
       value: vehiclePower,
       setValue: setVehiclePower,
-      description: isKorean
-        ? '차량 레벨, 개조, 부품에서 발생'
-        : 'Từ level xe, cải tạo, linh kiện',
-      howToIncrease: isKorean
-        ? '부품 레벨 100+ 목표, 타이탄(Titan) 우선'
-        : 'Mục tiêu linh kiện level 100+, ưu tiên Titan',
+      description: l(
+        '차량 레벨, 개조, 부품에서 발생',
+        'Từ level xe, cải tạo, linh kiện',
+        'From vehicle level, modifications, and parts'
+      ),
+      howToIncrease: l(
+        '부품 레벨 100+ 목표, 타이탄(Titan) 우선',
+        'Mục tiêu linh kiện level 100+, ưu tiên Titan',
+        'Aim for parts level 100+, prioritize Titan'
+      ),
       idealRange: '5-10%',
     },
   ];
@@ -201,18 +221,22 @@ export default function CPCalculatorPage() {
     if (troopPercent < 30) {
       issues.push({
         type: 'warning',
-        message: isKorean
-          ? '병력 비율이 낮습니다. 훈련을 24시간 유지하세요.'
-          : 'Tỷ lệ quân đội thấp. Giữ huấn luyện 24/7.',
+        message: l(
+          '병력 비율이 낮습니다. 훈련을 24시간 유지하세요.',
+          'Tỷ lệ quân đội thấp. Giữ huấn luyện 24/7.',
+          'Troop ratio is low. Keep training running 24/7.'
+        ),
       });
     } else if (troopPercent >= 40 && troopPercent <= 55) {
-      goods.push(isKorean ? '병력 비율이 적절합니다' : 'Tỷ lệ quân đội tốt');
+      goods.push(l('병력 비율이 적절합니다', 'Tỷ lệ quân đội tốt', 'Troop ratio is good'));
     } else if (troopPercent > 60) {
       issues.push({
         type: 'info',
-        message: isKorean
-          ? '병력 비율이 높습니다. 다른 영역도 투자하세요.'
-          : 'Tỷ lệ quân đội cao. Đầu tư thêm các lĩnh vực khác.',
+        message: l(
+          '병력 비율이 높습니다. 다른 영역도 투자하세요.',
+          'Tỷ lệ quân đội cao. Đầu tư thêm các lĩnh vực khác.',
+          'Troop ratio is high. Invest in other areas too.'
+        ),
       });
     }
 
@@ -220,33 +244,39 @@ export default function CPCalculatorPage() {
     if (structurePercent < 10) {
       issues.push({
         type: 'warning',
-        message: isKorean
-          ? '건물 전투력이 낮습니다. 본부(HQ) 업그레이드를 진행하세요.'
-          : 'CP công trình thấp. Tiến hành nâng cấp HQ.',
+        message: l(
+          '건물 전투력이 낮습니다. 본부(HQ) 업그레이드를 진행하세요.',
+          'CP công trình thấp. Tiến hành nâng cấp HQ.',
+          'Structure CP is low. Proceed with HQ upgrades.'
+        ),
       });
     } else if (structurePercent >= 15 && structurePercent <= 25) {
-      goods.push(isKorean ? '건물 비율이 적절합니다' : 'Tỷ lệ công trình tốt');
+      goods.push(l('건물 비율이 적절합니다', 'Tỷ lệ công trình tốt', 'Structure ratio is good'));
     }
 
     // 영웅 체크 (15-25% 이상적)
     if (heroPercent < 10) {
       issues.push({
         type: 'info',
-        message: isKorean
-          ? '영웅 전투력이 낮습니다. 메인 5명에 집중 투자하세요.'
-          : 'CP anh hùng thấp. Tập trung đầu tư 5 anh hùng chính.',
+        message: l(
+          '영웅 전투력이 낮습니다. 메인 5명에 집중 투자하세요.',
+          'CP anh hùng thấp. Tập trung đầu tư 5 anh hùng chính.',
+          'Hero CP is low. Focus investment on your main 5 heroes.'
+        ),
       });
     } else if (heroPercent >= 15 && heroPercent <= 30) {
-      goods.push(isKorean ? '영웅 비율이 적절합니다' : 'Tỷ lệ anh hùng tốt');
+      goods.push(l('영웅 비율이 적절합니다', 'Tỷ lệ anh hùng tốt', 'Hero ratio is good'));
     }
 
     // 기술 체크
     if (techPercent < 5) {
       issues.push({
         type: 'info',
-        message: isKorean
-          ? '기술 전투력이 낮습니다. 연구를 계속 진행하세요.'
-          : 'CP công nghệ thấp. Tiếp tục nghiên cứu.',
+        message: l(
+          '기술 전투력이 낮습니다. 연구를 계속 진행하세요.',
+          'CP công nghệ thấp. Tiếp tục nghiên cứu.',
+          'Technology CP is low. Keep researching.'
+        ),
       });
     }
 
@@ -254,9 +284,11 @@ export default function CPCalculatorPage() {
     if (vehiclePercent < 3 && totalPower > 10000000) {
       issues.push({
         type: 'info',
-        message: isKorean
-          ? '차량 전투력이 낮습니다. 부품 레벨업을 고려하세요.'
-          : 'CP xe thấp. Cân nhắc nâng cấp linh kiện.',
+        message: l(
+          '차량 전투력이 낮습니다. 부품 레벨업을 고려하세요.',
+          'CP xe thấp. Cân nhắc nâng cấp linh kiện.',
+          'Vehicle CP is low. Consider upgrading parts.'
+        ),
       });
     }
 
@@ -289,12 +321,14 @@ export default function CPCalculatorPage() {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Calculator className="h-8 w-8 text-highlight" />
-            {isKorean ? 'CP 계산기' : 'Máy tính CP'}
+            {l('CP 계산기', 'Máy tính CP', 'CP Calculator')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '전투력 구성 요소를 입력하여 총 CP와 비율을 확인하고, 밸런스 분석을 받아보세요.'
-              : 'Nhập các thành phần sức mạnh để kiểm tra tổng CP, tỷ lệ và nhận phân tích cân bằng.'}
+            {l(
+              '전투력 구성 요소를 입력하여 총 CP와 비율을 확인하고, 밸런스 분석을 받아보세요.',
+              'Nhập các thành phần sức mạnh để kiểm tra tổng CP, tỷ lệ và nhận phân tích cân bằng.',
+              'Enter your power components to check total CP, ratios, and get a balance analysis.'
+            )}
           </p>
         </div>
 
@@ -303,26 +337,32 @@ export default function CPCalculatorPage() {
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center gap-2 text-lg text-info">
               <HelpCircle className="h-5 w-5" />
-              {isKorean ? 'CP 확인 방법' : 'Cách xem CP'}
+              {l('CP 확인 방법', 'Cách xem CP', 'How to Check CP')}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-2 text-sm text-muted-foreground">
             <p>
-              {isKorean
-                ? '게임 내에서 다음 경로로 CP를 확인할 수 있습니다:'
-                : 'Bạn có thể xem CP trong game theo đường dẫn sau:'}
+              {l(
+                '게임 내에서 다음 경로로 CP를 확인할 수 있습니다:',
+                'Bạn có thể xem CP trong game theo đường dẫn sau:',
+                'You can check your CP in-game via the following path:'
+              )}
             </p>
             <div className="bg-background/50 rounded-lg p-3 space-y-1">
               <p className="font-mono">
-                {isKorean
-                  ? '프로필 아이콘 (좌상단) → 전투력 상세 보기'
-                  : 'Icon profile (góc trái trên) → Xem chi tiết sức mạnh'}
+                {l(
+                  '프로필 아이콘 (좌상단) → 전투력 상세 보기',
+                  'Icon profile (góc trái trên) → Xem chi tiết sức mạnh',
+                  'Profile icon (top left) → View power details'
+                )}
               </p>
             </div>
             <p className="text-xs">
-              {isKorean
-                ? '※ 각 카테고리별 전투력이 표시됩니다. 해당 숫자를 아래에 입력하세요.'
-                : '※ CP từng loại sẽ được hiển thị. Nhập số đó vào bên dưới.'}
+              {l(
+                '※ 각 카테고리별 전투력이 표시됩니다. 해당 숫자를 아래에 입력하세요.',
+                '※ CP từng loại sẽ được hiển thị. Nhập số đó vào bên dưới.',
+                '※ CP for each category will be displayed. Enter those numbers below.'
+              )}
             </p>
           </CardContent>
         </Card>
@@ -332,14 +372,16 @@ export default function CPCalculatorPage() {
           <CardContent className="p-6">
             <div className="text-center mb-4">
               <p className="text-sm text-muted-foreground mb-2">
-                {isKorean ? '총 전투력' : 'Tổng CP'}
+                {l('총 전투력', 'Tổng CP', 'Total CP')}
               </p>
               <p className="text-5xl font-bold text-highlight">{formatNumber(totalPower)}</p>
               {estimatedHQ && totalPower > 0 && (
                 <p className="text-sm text-muted-foreground mt-2">
-                  {isKorean
-                    ? `예상 본부(HQ) 레벨: ${estimatedHQ}+`
-                    : `Dự đoán level HQ: ${estimatedHQ}+`}
+                  {l(
+                    `예상 본부(HQ) 레벨: ${estimatedHQ}+`,
+                    `Dự đoán level HQ: ${estimatedHQ}+`,
+                    `Estimated HQ level: ${estimatedHQ}+`
+                  )}
                 </p>
               )}
             </div>
@@ -348,7 +390,7 @@ export default function CPCalculatorPage() {
             {totalPower > 0 && (
               <div className="border-t border-border/50 pt-4 mt-4">
                 <p className="text-xs text-muted-foreground text-center mb-3">
-                  {isKorean ? '본부(HQ) 레벨별 예상 전투력' : 'CP dự kiến theo level HQ'}
+                  {l('본부(HQ) 레벨별 예상 전투력', 'CP dự kiến theo level HQ', 'Expected CP by HQ level')}
                 </p>
                 <div className="flex flex-wrap justify-center gap-2">
                   {hqBenchmarks.map((bench) => (
@@ -374,7 +416,7 @@ export default function CPCalculatorPage() {
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center gap-2 text-lg">
               <Target className="h-5 w-5 text-highlight" />
-              {isKorean ? '목표 마일스톤' : 'Mục tiêu mốc'}
+              {l('목표 마일스톤', 'Mục tiêu mốc', 'Target Milestone')}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -400,16 +442,20 @@ export default function CPCalculatorPage() {
               <div className="p-3 rounded-lg bg-secondary/30 border">
                 {totalPower >= targetMilestone ? (
                   <p className="text-sm text-green-400 font-medium">
-                    {isKorean
-                      ? `목표 달성! 현재 ${formatNumber(totalPower)} / ${formatNumber(targetMilestone)}`
-                      : `Đạt mục tiêu! Hiện tại ${formatNumber(totalPower)} / ${formatNumber(targetMilestone)}`}
+                    {l(
+                      `목표 달성! 현재 ${formatNumber(totalPower)} / ${formatNumber(targetMilestone)}`,
+                      `Đạt mục tiêu! Hiện tại ${formatNumber(totalPower)} / ${formatNumber(targetMilestone)}`,
+                      `Goal reached! Current ${formatNumber(totalPower)} / ${formatNumber(targetMilestone)}`
+                    )}
                   </p>
                 ) : (
                   <div>
                     <p className="text-sm text-muted-foreground mb-2">
-                      {isKorean
-                        ? `목표까지 ${formatNumber(targetMilestone - totalPower)} 남음`
-                        : `Còn ${formatNumber(targetMilestone - totalPower)} để đạt mục tiêu`}
+                      {l(
+                        `목표까지 ${formatNumber(targetMilestone - totalPower)} 남음`,
+                        `Còn ${formatNumber(targetMilestone - totalPower)} để đạt mục tiêu`,
+                        `${formatNumber(targetMilestone - totalPower)} remaining to reach goal`
+                      )}
                     </p>
                     <div className="h-2 bg-muted rounded-full overflow-hidden">
                       <div
@@ -431,7 +477,7 @@ export default function CPCalculatorPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-bold flex items-center gap-2">
             <Target className="h-5 w-5 text-highlight" />
-            {isKorean ? '전투력 입력' : 'Nhập CP'}
+            {l('전투력 입력', 'Nhập CP', 'Enter CP')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {powerCategories.map((cat) => {
@@ -458,7 +504,7 @@ export default function CPCalculatorPage() {
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">
-                        {isKorean ? '비율' : 'Tỷ lệ'}
+                        {l('비율', 'Tỷ lệ', 'Ratio')}
                       </span>
                       <span className={cat.color}>{getPercentage(cat.value)}%</span>
                     </div>
@@ -469,7 +515,7 @@ export default function CPCalculatorPage() {
                       />
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      {isKorean ? '이상적 비율' : 'Tỷ lệ lý tưởng'}: {cat.idealRange}
+                      {l('이상적 비율', 'Tỷ lệ lý tưởng', 'Ideal ratio')}: {cat.idealRange}
                     </p>
                   </CardContent>
                 </Card>
@@ -484,7 +530,7 @@ export default function CPCalculatorPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-highlight" />
-                {isKorean ? '밸런스 분석' : 'Phân tích cân bằng'}
+                {l('밸런스 분석', 'Phân tích cân bằng', 'Balance Analysis')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -519,9 +565,11 @@ export default function CPCalculatorPage() {
               )}
               {analysis.issues.length === 0 && analysis.goods.length === 0 && (
                 <p className="text-sm text-muted-foreground">
-                  {isKorean
-                    ? '더 정확한 분석을 위해 모든 카테고리에 값을 입력하세요.'
-                    : 'Nhập giá trị cho tất cả các loại để phân tích chính xác hơn.'}
+                  {l(
+                    '더 정확한 분석을 위해 모든 카테고리에 값을 입력하세요.',
+                    'Nhập giá trị cho tất cả các loại để phân tích chính xác hơn.',
+                    'Enter values for all categories for a more accurate analysis.'
+                  )}
                 </p>
               )}
             </CardContent>
@@ -532,7 +580,7 @@ export default function CPCalculatorPage() {
         {totalPower > 0 && (
           <Card>
             <CardHeader>
-              <CardTitle>{isKorean ? '전투력 분포' : 'Phân bố CP'}</CardTitle>
+              <CardTitle>{l('전투력 분포', 'Phân bố CP', 'CP Distribution')}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
@@ -571,7 +619,7 @@ export default function CPCalculatorPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Lightbulb className="h-5 w-5 text-tip" />
-              {isKorean ? '카테고리별 올리는 방법' : 'Cách tăng từng loại'}
+              {l('카테고리별 올리는 방법', 'Cách tăng từng loại', 'How to Increase Each Category')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -597,34 +645,42 @@ export default function CPCalculatorPage() {
           <CardHeader className="pb-2">
             <CardTitle className="flex items-center gap-2 text-tip">
               <Lightbulb className="h-5 w-5" />
-              {isKorean ? '초보자 팁' : 'Mẹo cho người mới'}
+              {l('초보자 팁', 'Mẹo cho người mới', 'Beginner Tips')}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-tip">•</span>
-                {isKorean
-                  ? '균형 잡힌 성장이 중요합니다. 한 카테고리에 치우치지 않고 모든 요소를 고르게 발전시키세요.'
-                  : 'Phát triển cân bằng rất quan trọng. Đừng nghiêng về một loại.'}
+                {l(
+                  '균형 잡힌 성장이 중요합니다. 한 카테고리에 치우치지 않고 모든 요소를 고르게 발전시키세요.',
+                  'Phát triển cân bằng rất quan trọng. Đừng nghiêng về một loại.',
+                  'Balanced growth is important. Do not lean too heavily into one category.'
+                )}
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-tip">•</span>
-                {isKorean
-                  ? '병력 전투력 48M + 건물 전투력 10M 조합으로 98-99%의 플레이어를 이길 수 있습니다.'
-                  : 'Kết hợp 48M quân + 10M công trình có thể thắng 98-99% người chơi.'}
+                {l(
+                  '병력 전투력 48M + 건물 전투력 10M 조합으로 98-99%의 플레이어를 이길 수 있습니다.',
+                  'Kết hợp 48M quân + 10M công trình có thể thắng 98-99% người chơi.',
+                  'A combination of 48M troop CP + 10M structure CP can beat 98-99% of players.'
+                )}
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-tip">•</span>
-                {isKorean
-                  ? '병력 비율이 40-50%가 되도록 훈련을 지속적으로 유지하세요.'
-                  : 'Duy trì huấn luyện liên tục để tỷ lệ quân đội đạt 40-50%.'}
+                {l(
+                  '병력 비율이 40-50%가 되도록 훈련을 지속적으로 유지하세요.',
+                  'Duy trì huấn luyện liên tục để tỷ lệ quân đội đạt 40-50%.',
+                  'Keep training continuously so troop ratio reaches 40-50%.'
+                )}
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-tip">•</span>
-                {isKorean
-                  ? '연맹표창(AR) 연구를 먼저 완료하면 모든 보상이 2배가 됩니다.'
-                  : 'Hoàn thành NC Alliance Recognition trước để nhân đôi mọi phần thưởng.'}
+                {l(
+                  '연맹표창(AR) 연구를 먼저 완료하면 모든 보상이 2배가 됩니다.',
+                  'Hoàn thành NC Alliance Recognition trước để nhân đôi mọi phần thưởng.',
+                  'Complete Alliance Recognition (AR) research first to double all rewards.'
+                )}
               </li>
             </ul>
           </CardContent>

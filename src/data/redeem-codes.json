@@ -4,7 +4,8 @@
       "code": "MONDAYGO7X3F",
       "rewards": {
         "ko": "각종 보상",
-        "vi": "Phần thưởng đa dạng"
+        "vi": "Phần thưởng đa dạng",
+        "en": "Various Rewards"
       },
       "expiry": "2026-03-31",
       "isNew": false,
@@ -14,7 +15,8 @@
       "code": "CELEBRATE220KTY",
       "rewards": {
         "ko": "각종 보상",
-        "vi": "Phần thưởng đa dạng"
+        "vi": "Phần thưởng đa dạng",
+        "en": "Various Rewards"
       },
       "expiry": null,
       "isNew": false,
@@ -24,7 +26,8 @@
       "code": "LZDCA180K",
       "rewards": {
         "ko": "한정 보상",
-        "vi": "Phần thưởng giới hạn"
+        "vi": "Phần thưởng giới hạn",
+        "en": "Limited Rewards"
       },
       "expiry": null,
       "isNew": false,
@@ -34,7 +37,8 @@
       "code": "LZDC150K",
       "rewards": {
         "ko": "한정 보상",
-        "vi": "Phần thưởng giới hạn"
+        "vi": "Phần thưởng giới hạn",
+        "en": "Limited Rewards"
       },
       "expiry": null,
       "isNew": false,
@@ -44,7 +48,8 @@
       "code": "WELCOMELZX",
       "rewards": {
         "ko": "신규 유저 보상",
-        "vi": "Phần thưởng người chơi mới"
+        "vi": "Phần thưởng người chơi mới",
+        "en": "New Player Rewards"
       },
       "expiry": null,
       "isNew": false,
@@ -54,7 +59,8 @@
       "code": "WELCOMELZFB",
       "rewards": {
         "ko": "신규 유저 보상",
-        "vi": "Phần thưởng người chơi mới"
+        "vi": "Phần thưởng người chơi mới",
+        "en": "New Player Rewards"
       },
       "expiry": null,
       "isNew": false,
@@ -64,7 +70,8 @@
       "code": "WELCOMELZDC",
       "rewards": {
         "ko": "신규 유저 보상",
-        "vi": "Phần thưởng người chơi mới"
+        "vi": "Phần thưởng người chơi mới",
+        "en": "New Player Rewards"
       },
       "expiry": null,
       "isNew": false,
@@ -74,7 +81,8 @@
       "code": "STARTWEEK9R5",
       "rewards": {
         "ko": "각종 보상",
-        "vi": "Phần thưởng đa dạng"
+        "vi": "Phần thưởng đa dạng",
+        "en": "Various Rewards"
       },
       "expiry": null,
       "isNew": false,
@@ -84,7 +92,8 @@
       "code": "NEWWEEK",
       "rewards": {
         "ko": "각종 보상",
-        "vi": "Phần thưởng đa dạng"
+        "vi": "Phần thưởng đa dạng",
+        "en": "Various Rewards"
       },
       "expiry": "2026-03-01",
       "isNew": false,
@@ -94,7 +103,8 @@
       "code": "MONDAYBLESS",
       "rewards": {
         "ko": "각종 보상",
-        "vi": "Phần thưởng đa dạng"
+        "vi": "Phần thưởng đa dạng",
+        "en": "Various Rewards"
       },
       "expiry": "2026-03-01",
       "isNew": false,
@@ -104,7 +114,8 @@
       "code": "GOLDBAR2026",
       "rewards": {
         "ko": "각종 보상",
-        "vi": "Phần thưởng đa dạng"
+        "vi": "Phần thưởng đa dạng",
+        "en": "Various Rewards"
       },
       "expiry": null,
       "isNew": false,
@@ -114,7 +125,8 @@
       "code": "LZHAPPY2026",
       "rewards": {
         "ko": "각종 보상",
-        "vi": "Phần thưởng đa dạng"
+        "vi": "Phần thưởng đa dạng",
+        "en": "Various Rewards"
       },
       "expiry": null,
       "isNew": true,

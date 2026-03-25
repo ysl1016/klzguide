@@ -11,6 +11,7 @@ interface ChangelogEntry {
   changes: {
     ko: string[];
     vi: string[];
+    en: string[];
   };
 }
 
@@ -36,7 +37,7 @@ export default async function ChangelogPage({
 
 function ChangelogContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const entries = changelogData as ChangelogEntry[];
 
@@ -56,12 +57,14 @@ function ChangelogContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <History className="h-8 w-8 text-highlight" />
-            {isKorean ? '업데이트 내역' : 'Lịch sử cập nhật'}
+            {l('업데이트 내역', 'Lịch sử cập nhật', 'Changelog')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '사이트의 최신 업데이트 내역을 확인하세요.'
-              : 'Xem lịch sử cập nhật mới nhất của website.'}
+            {l(
+              '사이트의 최신 업데이트 내역을 확인하세요.',
+              'Xem lịch sử cập nhật mới nhất của website.',
+              'Check the latest updates to the site.'
+            )}
           </p>
         </div>
 
@@ -69,7 +72,7 @@ function ChangelogContent({ locale }: { locale: string }) {
         <div className="space-y-4">
           {entries.map((entry, idx) => {
             const showNewBadge = entry.isNew || isRecent(entry.date);
-            const changes = isKorean ? entry.changes.ko : entry.changes.vi;
+            const changes = (entry.changes as Record<string, string[]>)[locale] ?? entry.changes.en;
 
             return (
               <Card key={idx}>

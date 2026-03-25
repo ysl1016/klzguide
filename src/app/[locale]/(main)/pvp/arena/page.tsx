@@ -7,11 +7,14 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
   return {
-    title: locale === 'ko' ? '아레나 가이드 | KLZ Guide' : 'Hướng dẫn Đấu trường | KLZ Guide',
-    description: locale === 'ko'
-      ? '아레나 시스템 완벽 가이드 - 주간 다이아 보상, 상점 우선순위, 상대 선택 전략'
-      : 'Hướng dẫn hoàn chỉnh Đấu trường - thưởng kim cương tuần, ưu tiên shop, chiến thuật chọn đối thủ',
+    title: l('아레나 가이드 | KLZ Guide', 'Hướng dẫn Đấu trường | KLZ Guide', 'Arena Guide | KLZ Guide'),
+    description: l(
+      '아레나 시스템 완벽 가이드 - 주간 다이아 보상, 상점 우선순위, 상대 선택 전략',
+      'Hướng dẫn hoàn chỉnh Đấu trường - thưởng kim cương tuần, ưu tiên shop, chiến thuật chọn đối thủ',
+      'Complete Arena guide - weekly diamond rewards, shop priority, opponent selection strategy'
+    ),
   };
 }
 
@@ -23,7 +26,7 @@ export default async function ArenaPage({ params }: { params: Promise<{ locale: 
 
 function ArenaContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const weeklyRewards = [
     { rank: '1', diamonds: '5,000', color: 'text-yellow-400', bg: 'bg-yellow-500/10', icon: '1st' },
@@ -39,84 +42,94 @@ function ArenaContent({ locale }: { locale: string }) {
   const shopPriority = [
     {
       rank: 1,
-      item: isKorean ? '영웅 파편 (핵심 영웅)' : 'Hero Shards (Core Heroes)',
-      reason: isKorean ? '영웅 승급에 필수 - 가장 높은 가성비' : 'Cần cho thăng cấp hero - giá trị cao nhất',
+      item: l('영웅 파편 (핵심 영웅)', 'Hero Shards (Core Heroes)', 'Hero Shards (Core Heroes)'),
+      reason: l('영웅 승급에 필수 - 가장 높은 가성비', 'Cần cho thăng cấp hero - giá trị cao nhất', 'Essential for hero promotion - best value'),
       color: 'text-yellow-400',
     },
     {
       rank: 2,
-      item: isKorean ? '가속 아이템' : 'Speed-up Items',
-      reason: isKorean ? '건설/연구 가속에 항상 유용' : 'Luôn hữu ích cho xây dựng/nghiên cứu',
+      item: l('가속 아이템', 'Speed-up Items', 'Speed-up Items'),
+      reason: l('건설/연구 가속에 항상 유용', 'Luôn hữu ích cho xây dựng/nghiên cứu', 'Always useful for construction/research speed-ups'),
       color: 'text-blue-400',
     },
     {
       rank: 3,
-      item: isKorean ? '장비 재료' : 'Equipment Materials',
-      reason: isKorean ? '장비 강화에 필요한 재료 확보' : 'Lấy vật liệu nâng cấp trang bị',
+      item: l('장비 재료', 'Equipment Materials', 'Equipment Materials'),
+      reason: l('장비 강화에 필요한 재료 확보', 'Lấy vật liệu nâng cấp trang bị', 'Acquire materials for gear enhancement'),
       color: 'text-purple-400',
     },
     {
       rank: 4,
-      item: isKorean ? '자원 상자' : 'Resource Boxes',
-      reason: isKorean ? '잉여 코인이 있을 때만 구매' : 'Chỉ mua khi dư coin',
+      item: l('자원 상자', 'Resource Boxes', 'Resource Boxes'),
+      reason: l('잉여 코인이 있을 때만 구매', 'Chỉ mua khi dư coin', 'Only buy when you have excess coins'),
       color: 'text-green-400',
     },
   ];
 
   const opponentStrategy = [
     {
-      type: isKorean ? '전투력이 낮은 상대' : 'Đối thủ CP thấp hơn',
-      action: isKorean ? '우선 공격' : 'Tấn công ưu tiên',
+      type: l('전투력이 낮은 상대', 'Đối thủ CP thấp hơn', 'Lower CP opponent'),
+      action: l('우선 공격', 'Tấn công ưu tiên', 'Attack first'),
       color: 'text-green-400',
       bg: 'bg-green-500/10',
-      desc: isKorean ? '승리 확률 높음 - 안정적인 포인트 획득' : 'Xác suất thắng cao - tích điểm ổn định',
+      desc: l('승리 확률 높음 - 안정적인 포인트 획득', 'Xác suất thắng cao - tích điểm ổn định', 'High win rate - stable point gain'),
     },
     {
-      type: isKorean ? '비슷한 전투력' : 'CP tương đương',
-      action: isKorean ? '진형 확인 후 도전' : 'Kiểm tra đội hình rồi đánh',
+      type: l('비슷한 전투력', 'CP tương đương', 'Similar CP'),
+      action: l('진형 확인 후 도전', 'Kiểm tra đội hình rồi đánh', 'Check formation before challenging'),
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
-      desc: isKorean ? '상대 진형을 카운터할 수 있으면 도전' : 'Đánh nếu counter được đội hình đối thủ',
+      desc: l('상대 진형을 카운터할 수 있으면 도전', 'Đánh nếu counter được đội hình đối thủ', 'Challenge if you can counter their formation'),
     },
     {
-      type: isKorean ? '전투력이 높은 상대' : 'Đối thủ CP cao hơn',
-      action: isKorean ? '피하기' : 'Tránh',
+      type: l('전투력이 높은 상대', 'Đối thủ CP cao hơn', 'Higher CP opponent'),
+      action: l('피하기', 'Tránh', 'Avoid'),
       color: 'text-red-400',
       bg: 'bg-red-500/10',
-      desc: isKorean ? '패배 시 순위 하락 - 리스크 대비 보상 낮음' : 'Thua sẽ tụt hạng - rủi ro không đáng',
+      desc: l('패배 시 순위 하락 - 리스크 대비 보상 낮음', 'Thua sẽ tụt hạng - rủi ro không đáng', 'Losing drops rank - risk not worth the reward'),
     },
   ];
 
   const defenseFormation = [
-    isKorean ? '방어 진형은 가장 강한 영웅 조합으로 배치하세요' : 'Đặt đội hình phòng thủ với tổ hợp hero mạnh nhất',
-    isKorean ? '탱커를 전열에, 딜러를 후열에 배치' : 'Tank ở hàng trước, dealer ở hàng sau',
-    isKorean ? '힐러가 있다면 반드시 포함 - 방어 승률이 크게 올라갑니다' : 'Nếu có healer nhất định phải dùng - tỷ lệ thắng phòng thủ tăng nhiều',
-    isKorean ? '매주 메타에 맞게 진형을 조정하세요' : 'Điều chỉnh đội hình theo meta mỗi tuần',
+    l('방어 진형은 가장 강한 영웅 조합으로 배치하세요', 'Đặt đội hình phòng thủ với tổ hợp hero mạnh nhất', 'Set your defense formation with your strongest hero lineup'),
+    l('탱커를 전열에, 딜러를 후열에 배치', 'Tank ở hàng trước, dealer ở hàng sau', 'Place tanks in the front row, DPS in the back row'),
+    l('힐러가 있다면 반드시 포함 - 방어 승률이 크게 올라갑니다', 'Nếu có healer nhất định phải dùng - tỷ lệ thắng phòng thủ tăng nhiều', 'Always include a healer if you have one - defense win rate increases significantly'),
+    l('매주 메타에 맞게 진형을 조정하세요', 'Điều chỉnh đội hình theo meta mỗi tuần', 'Adjust your formation to match the weekly meta'),
   ];
 
   const dailyChecklist = [
-    { task: isKorean ? '아레나 5회 참가' : 'Tham gia Arena 5 lần', priority: isKorean ? '필수' : 'Bắt buộc', color: 'text-red-400' },
-    { task: isKorean ? '상대 목록 확인 (낮은 CP 우선)' : 'Kiểm tra danh sách đối thủ (CP thấp trước)', priority: isKorean ? '중요' : 'Quan trọng', color: 'text-yellow-400' },
-    { task: isKorean ? '방어 진형 업데이트' : 'Cập nhật đội hình phòng thủ', priority: isKorean ? '주간' : 'Hàng tuần', color: 'text-blue-400' },
-    { task: isKorean ? '아레나 상점 코인 사용' : 'Dùng coin Arena shop', priority: isKorean ? '코인 충분 시' : 'Khi đủ coin', color: 'text-green-400' },
+    { task: l('아레나 5회 참가', 'Tham gia Arena 5 lần', 'Enter Arena 5 times'), priority: l('필수', 'Bắt buộc', 'Required'), color: 'text-red-400' },
+    { task: l('상대 목록 확인 (낮은 CP 우선)', 'Kiểm tra danh sách đối thủ (CP thấp trước)', 'Check opponent list (lower CP first)'), priority: l('중요', 'Quan trọng', 'Important'), color: 'text-yellow-400' },
+    { task: l('방어 진형 업데이트', 'Cập nhật đội hình phòng thủ', 'Update defense formation'), priority: l('주간', 'Hàng tuần', 'Weekly'), color: 'text-blue-400' },
+    { task: l('아레나 상점 코인 사용', 'Dùng coin Arena shop', 'Spend Arena shop coins'), priority: l('코인 충분 시', 'Khi đủ coin', 'When enough coins'), color: 'text-green-400' },
   ];
 
   const tips = [
-    isKorean
-      ? '매일 5경기 무조건 참가 - 보상 다이아는 무과금 핵심 수입원입니다'
-      : 'Nhất định tham gia 5 trận mỗi ngày - kim cương thưởng là nguồn thu chính F2P',
-    isKorean
-      ? '전투력이 낮은 상대를 먼저 공격하세요 - 안전한 승리가 최선입니다'
-      : 'Tấn công đối thủ CP thấp trước - thắng an toàn là tốt nhất',
-    isKorean
-      ? '주간 보상은 월요일 초기화 - 일요일에 순위 밀어올리세요'
-      : 'Thưởng tuần reset thứ Hai - đẩy hạng vào Chủ Nhật',
-    isKorean
-      ? '아레나 상점은 영웅 파편이 최우선 구매 대상입니다'
-      : 'Arena shop ưu tiên mua hero shards',
-    isKorean
-      ? '방어 진형을 비워두지 마세요 - 다른 플레이어의 쉬운 포인트가 됩니다'
-      : 'Đừng để trống đội hình phòng thủ - sẽ thành điểm miễn phí cho người khác',
+    l(
+      '매일 5경기 무조건 참가 - 보상 다이아는 무과금 핵심 수입원입니다',
+      'Nhất định tham gia 5 trận mỗi ngày - kim cương thưởng là nguồn thu chính F2P',
+      'Always play 5 matches daily - diamond rewards are a key F2P income source'
+    ),
+    l(
+      '전투력이 낮은 상대를 먼저 공격하세요 - 안전한 승리가 최선입니다',
+      'Tấn công đối thủ CP thấp trước - thắng an toàn là tốt nhất',
+      'Attack lower CP opponents first - safe wins are the best strategy'
+    ),
+    l(
+      '주간 보상은 월요일 초기화 - 일요일에 순위 밀어올리세요',
+      'Thưởng tuần reset thứ Hai - đẩy hạng vào Chủ Nhật',
+      'Weekly rewards reset Monday - push rank on Sunday'
+    ),
+    l(
+      '아레나 상점은 영웅 파편이 최우선 구매 대상입니다',
+      'Arena shop ưu tiên mua hero shards',
+      'Hero shards are the top priority in the Arena shop'
+    ),
+    l(
+      '방어 진형을 비워두지 마세요 - 다른 플레이어의 쉬운 포인트가 됩니다',
+      'Đừng để trống đội hình phòng thủ - sẽ thành điểm miễn phí cho người khác',
+      'Never leave your defense formation empty - you become free points for others'
+    ),
   ];
 
   return (
@@ -135,24 +148,26 @@ function ArenaContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Swords className="h-8 w-8 text-highlight" />
-            {isKorean ? '아레나 가이드' : 'Hướng dẫn Đấu trường (Arena)'}
+            {l('아레나 가이드', 'Hướng dẫn Đấu trường (Arena)', 'Arena Guide')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '매일 5경기 필수 참가! 주간 다이아 보상은 무과금 플레이어의 핵심 수입원입니다.'
-              : 'Nhất định tham gia 5 trận mỗi ngày! Thưởng kim cương tuần là nguồn thu chính cho F2P.'}
+            {l(
+              '매일 5경기 필수 참가! 주간 다이아 보상은 무과금 플레이어의 핵심 수입원입니다.',
+              'Nhất định tham gia 5 trận mỗi ngày! Thưởng kim cương tuần là nguồn thu chính cho F2P.',
+              'Play 5 matches daily! Weekly diamond rewards are a core income source for F2P players.'
+            )}
           </p>
         </div>
 
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tom tat'}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tom tat', 'Key Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '매일 5경기 필수 - 무조건 참가하세요' : 'Nhất định 5 trận mỗi ngày'}</li>
-              <li>• {isKorean ? '주간 1위: 5,000 다이아, 상위권 유지가 핵심' : '1st tuần: 5,000 kim cương, giữ hạng cao là chìa khóa'}</li>
-              <li>• {isKorean ? '낮은 전투력 상대 우선 공격 = 안전한 승리' : 'Tấn công đối thủ CP thấp trước = thắng an toàn'}</li>
-              <li>• {isKorean ? '아레나 상점: 영웅 파편 최우선 구매' : 'Arena shop: ưu tiên mua hero shards'}</li>
+              <li>• {l('매일 5경기 필수 - 무조건 참가하세요', 'Nhất định 5 trận mỗi ngày', 'Play 5 matches daily - always participate')}</li>
+              <li>• {l('주간 1위: 5,000 다이아, 상위권 유지가 핵심', '1st tuần: 5,000 kim cương, giữ hạng cao là chìa khóa', 'Weekly 1st: 5,000 diamonds, staying in top ranks is key')}</li>
+              <li>• {l('낮은 전투력 상대 우선 공격 = 안전한 승리', 'Tấn công đối thủ CP thấp trước = thắng an toàn', 'Attack lower CP opponents first = safe wins')}</li>
+              <li>• {l('아레나 상점: 영웅 파편 최우선 구매', 'Arena shop: ưu tiên mua hero shards', 'Arena shop: hero shards are top priority')}</li>
             </ul>
           </CardContent>
         </Card>
@@ -161,7 +176,7 @@ function ArenaContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Gem className="h-6 w-6 text-blue-400" />
-            {isKorean ? '주간 다이아 보상' : 'Thưởng kim cương hàng tuần'}
+            {l('주간 다이아 보상', 'Thưởng kim cương hàng tuần', 'Weekly Diamond Rewards')}
           </h2>
           <Card>
             <CardContent className="p-4">
@@ -171,18 +186,20 @@ function ArenaContent({ locale }: { locale: string }) {
                     <div className="flex items-center justify-center mb-1">
                       <Trophy className={`h-5 w-5 ${reward.color} mr-1`} />
                       <span className={`text-sm font-medium ${reward.color}`}>
-                        {isKorean ? `${reward.rank}위` : `Hạng ${reward.rank}`}
+                        {l(`${reward.rank}위`, `Hạng ${reward.rank}`, `Rank ${reward.rank}`)}
                       </span>
                     </div>
                     <p className={`text-2xl font-bold ${reward.color}`}>{reward.diamonds}</p>
-                    <p className="text-xs text-muted-foreground">{isKorean ? '다이아' : 'Kim cương'}</p>
+                    <p className="text-xs text-muted-foreground">{l('다이아', 'Kim cương', 'Diamonds')}</p>
                   </div>
                 ))}
               </div>
               <p className="text-xs text-muted-foreground mt-3 text-center">
-                {isKorean
-                  ? '* 보상은 매주 월요일 초기화됩니다'
-                  : '* Thưởng reset mỗi thứ Hai'}
+                {l(
+                  '* 보상은 매주 월요일 초기화됩니다',
+                  '* Thưởng reset mỗi thứ Hai',
+                  '* Rewards reset every Monday'
+                )}
               </p>
             </CardContent>
           </Card>
@@ -192,7 +209,7 @@ function ArenaContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <ShoppingCart className="h-6 w-6 text-green-400" />
-            {isKorean ? '아레나 상점 구매 우선순위' : 'Ưu tiên mua Arena Shop'}
+            {l('아레나 상점 구매 우선순위', 'Ưu tiên mua Arena Shop', 'Arena Shop Purchase Priority')}
           </h2>
           <Card>
             <CardContent className="p-4">
@@ -217,7 +234,7 @@ function ArenaContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Target className="h-6 w-6 text-red-400" />
-            {isKorean ? '상대 선택 전략' : 'Chiến thuật chọn đối thủ'}
+            {l('상대 선택 전략', 'Chiến thuật chọn đối thủ', 'Opponent Selection Strategy')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-3">
             {opponentStrategy.map((strat, idx) => (
@@ -238,7 +255,7 @@ function ArenaContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Shield className="h-6 w-6 text-blue-400" />
-            {isKorean ? '방어 진형 팁' : 'Mẹo đội hình phòng thủ'}
+            {l('방어 진형 팁', 'Mẹo đội hình phòng thủ', 'Defense Formation Tips')}
           </h2>
           <Card>
             <CardContent className="p-4">
@@ -260,7 +277,7 @@ function ArenaContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <CheckSquare className="h-6 w-6 text-green-400" />
-            {isKorean ? '일일 아레나 체크리스트' : 'Checklist Arena hàng ngày'}
+            {l('일일 아레나 체크리스트', 'Checklist Arena hàng ngày', 'Daily Arena Checklist')}
           </h2>
           <Card>
             <CardContent className="p-4">
@@ -288,12 +305,12 @@ function ArenaContent({ locale }: { locale: string }) {
               <AlertTriangle className="h-6 w-6 text-destructive shrink-0" />
               <div>
                 <p className="font-semibold text-destructive mb-1">
-                  {isKorean ? '절대 하지 마세요' : 'ĐỪNG làm những điều này'}
+                  {l('절대 하지 마세요', 'ĐỪNG làm những điều này', 'Never Do This')}
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• {isKorean ? '아레나 5경기 스킵 - 매일 다이아를 놓치게 됩니다' : 'Bỏ 5 trận Arena - sẽ mất kim cương mỗi ngày'}</li>
-                  <li>• {isKorean ? '전투력이 훨씬 높은 상대 도전 - 순위만 떨어집니다' : 'Đánh đối thủ CP cao hơn nhiều - chỉ tụt hạng'}</li>
-                  <li>• {isKorean ? '방어 진형 비워두기 - 무료 포인트를 제공하는 꼴입니다' : 'Để trống phòng thủ - cho điểm miễn phí'}</li>
+                  <li>• {l('아레나 5경기 스킵 - 매일 다이아를 놓치게 됩니다', 'Bỏ 5 trận Arena - sẽ mất kim cương mỗi ngày', 'Skip Arena 5 matches - you lose diamonds every day')}</li>
+                  <li>• {l('전투력이 훨씬 높은 상대 도전 - 순위만 떨어집니다', 'Đánh đối thủ CP cao hơn nhiều - chỉ tụt hạng', 'Challenge much higher CP opponents - you only drop rank')}</li>
+                  <li>• {l('방어 진형 비워두기 - 무료 포인트를 제공하는 꼴입니다', 'Để trống phòng thủ - cho điểm miễn phí', 'Leave defense empty - you give away free points')}</li>
                 </ul>
               </div>
             </div>
@@ -302,7 +319,7 @@ function ArenaContent({ locale }: { locale: string }) {
 
         {/* Tips */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold">{isKorean ? '팁' : 'Mẹo'}</h2>
+          <h2 className="text-2xl font-bold">{l('팁', 'Mẹo', 'Tips')}</h2>
           <div className="grid gap-3">
             {tips.map((tip, idx) => (
               <div key={idx} className="info-tip flex gap-3">

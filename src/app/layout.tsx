@@ -7,16 +7,19 @@ export const metadata: Metadata = {
     template: '%s | KLZ Guide',
   },
   description:
-    '[KLZ] 연맹원들을 위한 Last Z: Survival Shooter 한국어/베트남어 공략 사이트',
+    '[KLZ] Alliance guide for Last Z: Survival Shooter - Korean/Vietnamese/English',
   keywords: [
     'Last Z',
     'Survival Shooter',
     '공략',
     '가이드',
+    'guide',
     'KLZ',
     '연맹',
+    'alliance',
     '한국어',
     '베트남어',
+    'English',
   ],
   manifest: '/manifest.json',
   appleWebApp: {

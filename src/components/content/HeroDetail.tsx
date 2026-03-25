@@ -57,24 +57,24 @@ interface HeroDetailProps {
 type Tab = 'overview' | 'skills' | 'synergy';
 
 export function HeroDetail({ hero, synergyHeroes }: HeroDetailProps) {
-  const locale = useLocale() as 'ko' | 'vi';
+  const locale = useLocale() as 'ko' | 'vi' | 'en';
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale] ?? en);
   const [activeTab, setActiveTab] = useState<Tab>('overview');
 
   const ClassIcon = classIcons[hero.class];
 
   const tabs: { key: Tab; label: string }[] = [
-    { key: 'overview', label: isKorean ? '개요' : 'Tổng quan' },
-    { key: 'skills', label: isKorean ? '스킬' : 'Kỹ năng' },
-    { key: 'synergy', label: isKorean ? '시너지' : 'Hiệp lực' },
+    { key: 'overview', label: l('개요', 'Tổng quan', 'Overview') },
+    { key: 'skills', label: l('스킬', 'Kỹ năng', 'Skills') },
+    { key: 'synergy', label: l('시너지', 'Hiệp lực', 'Synergy') },
   ];
 
-  const roleLabels: Record<string, { ko: string; vi: string }> = {
-    tank: { ko: '탱커', vi: 'Đỡ đòn' },
-    dps: { ko: '딜러', vi: 'Sát thương' },
-    support: { ko: '서포터', vi: 'Hỗ trợ' },
-    gatherer: { ko: '채집', vi: 'Thu thập' },
+  const roleLabels: Record<string, { ko: string; vi: string; en: string }> = {
+    tank: { ko: '탱커', vi: 'Đỡ đòn', en: 'Tank' },
+    dps: { ko: '딜러', vi: 'Sát thương', en: 'DPS' },
+    support: { ko: '서포터', vi: 'Hỗ trợ', en: 'Support' },
+    gatherer: { ko: '채집', vi: 'Thu thập', en: 'Gatherer' },
   };
 
   return (
@@ -84,7 +84,7 @@ export function HeroDetail({ hero, synergyHeroes }: HeroDetailProps) {
         <Link href={`/${locale}/heroes/tier-list`}>
           <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground">
             <ArrowLeft className="h-4 w-4" />
-            {isKorean ? '티어표로 돌아가기' : 'Quay lại bảng xếp hạng'}
+            {l('티어표로 돌아가기', 'Quay lại bảng xếp hạng', 'Back to Tier List')}
           </Button>
         </Link>
 
@@ -179,7 +179,7 @@ export function HeroDetail({ hero, synergyHeroes }: HeroDetailProps) {
             <Card>
               <CardContent className="p-3 text-center">
                 <div className="text-xs text-muted-foreground mb-1">
-                  {isKorean ? '육성 우선순위' : 'Ưu tiên'}
+                  {l('육성 우선순위', 'Ưu tiên', 'Priority')}
                 </div>
                 <div className="text-sm font-medium">
                   {'★'.repeat(hero.investmentPriority)}
@@ -190,7 +190,7 @@ export function HeroDetail({ hero, synergyHeroes }: HeroDetailProps) {
             <Card>
               <CardContent className="p-3 text-center">
                 <div className="text-xs text-muted-foreground mb-1">
-                  {isKorean ? '등급' : 'Độ hiếm'}
+                  {l('등급', 'Độ hiếm', 'Rarity')}
                 </div>
                 <div className="text-sm font-medium capitalize">{hero.rarity}</div>
               </CardContent>
@@ -202,7 +202,7 @@ export function HeroDetail({ hero, synergyHeroes }: HeroDetailProps) {
             <CardHeader className="pb-2">
               <CardTitle className="text-sm flex items-center gap-2">
                 <Target className="h-4 w-4" />
-                {isKorean ? '획득 방법' : 'Cách nhận'}
+                {l('획득 방법', 'Cách nhận', 'How to Obtain')}
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-0">
@@ -217,7 +217,7 @@ export function HeroDetail({ hero, synergyHeroes }: HeroDetailProps) {
           <div className="flex items-center gap-2 mb-2">
             <Zap className="h-5 w-5 text-highlight" />
             <h2 className="font-semibold">
-              {isKorean ? '스킬 목록' : 'Danh sách kỹ năng'}
+              {l('스킬 목록', 'Danh sách kỹ năng', 'Skill List')}
             </h2>
           </div>
           {hero.skills.map((skill, idx) => (
@@ -231,7 +231,7 @@ export function HeroDetail({ hero, synergyHeroes }: HeroDetailProps) {
           <div className="flex items-center gap-2 mb-2">
             <Users className="h-5 w-5 text-highlight" />
             <h2 className="font-semibold">
-              {isKorean ? '시너지 영웅' : 'Anh hùng hiệp lực'}
+              {l('시너지 영웅', 'Anh hùng hiệp lực', 'Synergy Heroes')}
             </h2>
           </div>
           {synergyHeroes.length > 0 ? (
@@ -271,9 +271,7 @@ export function HeroDetail({ hero, synergyHeroes }: HeroDetailProps) {
           ) : (
             <Card>
               <CardContent className="py-8 text-center text-muted-foreground">
-                {isKorean
-                  ? '시너지 정보가 아직 없습니다.'
-                  : 'Chưa có thông tin hiệp lực.'}
+                {l('시너지 정보가 아직 없습니다.', 'Chưa có thông tin hiệp lực.', 'No synergy info available yet.')}
               </CardContent>
             </Card>
           )}

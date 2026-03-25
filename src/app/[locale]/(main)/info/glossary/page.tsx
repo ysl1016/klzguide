@@ -17,367 +17,445 @@ export default async function GlossaryPage({
 
 function GlossaryContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const glossaryTerms = [
     // 기본 용어
     {
-      term: isKorean ? '본부 (HQ)' : 'HQ (Headquarters)',
+      term: l('본부 (HQ)', 'HQ (Headquarters)', 'HQ (Headquarters)'),
       ko: '본부',
       en: 'Headquarters',
       vi: 'Trụ sở chính',
-      definition: isKorean
-        ? '메인 건물. 다른 모든 건물의 최대 레벨을 결정'
-        : 'Công trình chính. Quyết định level tối đa của mọi công trình khác',
+      definition: l(
+        '메인 건물. 다른 모든 건물의 최대 레벨을 결정',
+        'Công trình chính. Quyết định level tối đa của mọi công trình khác',
+        'Main building. Determines the max level of all other buildings'
+      ),
     },
     {
-      term: isKorean ? '전투력 (CP)' : 'CP (Combat Power)',
+      term: l('전투력 (CP)', 'CP (Combat Power)', 'CP (Combat Power)'),
       ko: '전투력',
       en: 'Combat Power',
       vi: 'Sức mạnh chiến đấu',
-      definition: isKorean
-        ? '계정의 총 전투력. 건물/기술/병력/영웅/차량 파워의 합'
-        : 'Tổng sức mạnh tài khoản. Tổng của công trình/công nghệ/quân/anh hùng/xe',
+      definition: l(
+        '계정의 총 전투력. 건물/기술/병력/영웅/차량 파워의 합',
+        'Tổng sức mạnh tài khoản. Tổng của công trình/công nghệ/quân/anh hùng/xe',
+        'Total account power. Sum of structure/tech/troop/hero/vehicle power'
+      ),
     },
     {
-      term: isKorean ? '무과금 (F2P)' : 'F2P (Free to Play)',
+      term: l('무과금 (F2P)', 'F2P (Free to Play)', 'F2P (Free to Play)'),
       ko: '무과금',
       en: 'Free to Play',
       vi: 'Chơi miễn phí',
-      definition: isKorean
-        ? '현금 결제 없이 플레이하는 방식'
-        : 'Cách chơi không nạp tiền',
+      definition: l(
+        '현금 결제 없이 플레이하는 방식',
+        'Cách chơi không nạp tiền',
+        'Playing without spending real money'
+      ),
     },
     {
-      term: isKorean ? '연맹표창 (AR)' : 'AR (Alliance Recognition)',
+      term: l('연맹표창 (AR)', 'AR (Alliance Recognition)', 'AR (Alliance Recognition)'),
       ko: '연맹표창',
       en: 'Alliance Recognition',
       vi: 'Alliance Recognition',
-      definition: isKorean
-        ? '일일 보상을 2배로 증가시키는 핵심 연구'
-        : 'NC cốt lõi tăng gấp đôi phần thưởng hàng ngày',
+      definition: l(
+        '일일 보상을 2배로 증가시키는 핵심 연구',
+        'NC cốt lõi tăng gấp đôi phần thưởng hàng ngày',
+        'Core research that doubles daily rewards'
+      ),
     },
     // 이벤트
     {
-      term: isKorean ? '서버 대전 (SVS)' : 'SVS (Server vs Server)',
+      term: l('서버 대전 (SVS)', 'SVS (Server vs Server)', 'SVS (Server vs Server)'),
       ko: '서버 대전',
       en: 'Server vs Server',
       vi: 'Server vs Server',
-      definition: isKorean
-        ? '서버 간 대규모 전투 이벤트'
-        : 'Sự kiện chiến đấu lớn giữa các server',
+      definition: l(
+        '서버 간 대규모 전투 이벤트',
+        'Sự kiện chiến đấu lớn giữa các server',
+        'Large-scale battle event between servers'
+      ),
     },
     {
-      term: isKorean ? '랠리 (단결/집결)' : 'Rally',
+      term: l('랠리 (단결/집결)', 'Rally', 'Rally'),
       ko: '랠리 (단결/집결)',
       en: 'Rally',
       vi: 'Rally',
-      definition: isKorean
-        ? '연맹원들이 함께 공격하는 집단 공격. 게임 내 표기는 "단결" 또는 "집결"'
-        : 'Tấn công tập thể cùng thành viên liên minh',
+      definition: l(
+        '연맹원들이 함께 공격하는 집단 공격. 게임 내 표기는 "단결" 또는 "집결"',
+        'Tấn công tập thể cùng thành viên liên minh',
+        'Group attack where alliance members attack together. In-game labeled as "Unite" or "Gather"'
+      ),
     },
     {
-      term: isKorean ? '난폭 두목' : 'Furylord',
+      term: l('난폭 두목', 'Furylord', 'Furylord'),
       ko: '난폭 두목',
       en: 'Furylord',
       vi: 'Furylord',
-      definition: isKorean
-        ? '일일 보스. 4회/일 (00/06/12/18시), 일요일 제외'
-        : 'Boss hàng ngày. 4 lần/ngày (00/06/12/18h), trừ CN',
+      definition: l(
+        '일일 보스. 4회/일 (00/06/12/18시), 일요일 제외',
+        'Boss hàng ngày. 4 lần/ngày (00/06/12/18h), trừ CN',
+        'Daily boss. 4 times/day (00/06/12/18h), except Sunday'
+      ),
     },
     {
-      term: isKorean ? '전면전비' : 'Full Preparedness',
+      term: l('전면전비', 'Full Preparedness', 'Full Preparedness'),
       ko: '전면전비',
       en: 'Full Preparedness',
       vi: 'Full Preparedness',
-      definition: isKorean
-        ? '일일 이벤트. 4시간마다 5개 테마가 순환 (건물, 연구, 차량, 영웅, 훈련)'
-        : 'Sự kiện hàng ngày. 5 theme xoay vòng mỗi 4 tiếng (Xây, NC, Xe, Anh hùng, HL)',
+      definition: l(
+        '일일 이벤트. 4시간마다 5개 테마가 순환 (건물, 연구, 차량, 영웅, 훈련)',
+        'Sự kiện hàng ngày. 5 theme xoay vòng mỗi 4 tiếng (Xây, NC, Xe, Anh hùng, HL)',
+        'Daily event. 5 themes rotate every 4 hours (Building, Research, Vehicle, Hero, Training)'
+      ),
     },
     {
-      term: isKorean ? '좀비폭군' : 'Tyrant',
+      term: l('좀비폭군', 'Tyrant', 'Tyrant'),
       ko: '좀비폭군',
       en: 'Tyrant',
       vi: 'Tyrant',
-      definition: isKorean
-        ? '연맹 랠리 보스. Steel 획득의 주요 이벤트'
-        : 'Boss rally liên minh. Sự kiện chính để farm Steel',
+      definition: l(
+        '연맹 랠리 보스. Steel 획득의 주요 이벤트',
+        'Boss rally liên minh. Sự kiện chính để farm Steel',
+        'Alliance rally boss. Main event for earning Steel'
+      ),
     },
     {
-      term: isKorean ? '좀비공성' : 'Zombie Siege',
+      term: l('좀비공성', 'Zombie Siege', 'Zombie Siege'),
       ko: '좀비공성',
       en: 'Zombie Siege',
       vi: 'Zombie Siege',
-      definition: isKorean
-        ? '연맹 방어 이벤트. 30웨이브, 렌치 보상'
-        : 'Sự kiện phòng thủ liên minh. 30 wave, thưởng Wrench',
+      definition: l(
+        '연맹 방어 이벤트. 30웨이브, 렌치 보상',
+        'Sự kiện phòng thủ liên minh. 30 wave, thưởng Wrench',
+        'Alliance defense event. 30 waves, Wrench rewards'
+      ),
     },
     {
-      term: isKorean ? '연맹 대결' : 'Alliance Duel',
+      term: l('연맹 대결', 'Alliance Duel', 'Alliance Duel'),
       ko: '연맹 대결',
       en: 'Alliance Duel',
       vi: 'Alliance Duel',
-      definition: isKorean
-        ? '연맹 간 경쟁 이벤트. 렌치 획득처'
-        : 'Sự kiện cạnh tranh giữa các liên minh. Nguồn farm Wrench',
+      definition: l(
+        '연맹 간 경쟁 이벤트. 렌치 획득처',
+        'Sự kiện cạnh tranh giữa các liên minh. Nguồn farm Wrench',
+        'Alliance competition event. Source of Wrenches'
+      ),
     },
     // 연구
     {
-      term: isKorean ? '영웅훈련' : 'Hero Training',
+      term: l('영웅훈련', 'Hero Training', 'Hero Training'),
       ko: '영웅훈련',
       en: 'Hero Training',
       vi: 'Hero Training',
-      definition: isKorean
-        ? '영웅 스킬 및 스탯 강화 연구 트리. 조종석까지만 진행 권장'
-        : 'Cây NC tăng kỹ năng và stat anh hùng. Chỉ nên làm tới Cockpit',
+      definition: l(
+        '영웅 스킬 및 스탯 강화 연구 트리. 조종석까지만 진행 권장',
+        'Cây NC tăng kỹ năng và stat anh hùng. Chỉ nên làm tới Cockpit',
+        'Research tree for hero skills and stats. Only recommended up to Cockpit'
+      ),
     },
     {
-      term: isKorean ? '조종석' : 'Cockpit',
+      term: l('조종석', 'Cockpit', 'Cockpit'),
       ko: '조종석',
       en: 'Cockpit',
       vi: 'Cockpit',
-      definition: isKorean
-        ? '영웅훈련 연구 트리의 주요 분기점. 이후는 배지 대비 효율이 극히 낮음'
-        : 'Điểm rẽ chính trong cây NC Hero Training. Sau đó hiệu quả badge cực thấp',
+      definition: l(
+        '영웅훈련 연구 트리의 주요 분기점. 이후는 배지 대비 효율이 극히 낮음',
+        'Điểm rẽ chính trong cây NC Hero Training. Sau đó hiệu quả badge cực thấp',
+        'Key branching point in Hero Training research tree. Badge efficiency drops drastically after this'
+      ),
     },
     {
-      term: isKorean ? '엘리트부대' : 'Elite Troops',
+      term: l('엘리트부대', 'Elite Troops', 'Elite Troops'),
       ko: '엘리트부대',
       en: 'Elite Troops',
       vi: 'Elite Troops',
-      definition: isKorean
-        ? '병력 기본 스탯 강화 연구 트리. 100% 완료 시 군사이론 해금'
-        : 'Cây NC tăng stat cơ bản quân. 100% mở Military Strategies',
+      definition: l(
+        '병력 기본 스탯 강화 연구 트리. 100% 완료 시 군사이론 해금',
+        'Cây NC tăng stat cơ bản quân. 100% mở Military Strategies',
+        'Research tree for troop base stats. Unlocks Military Strategies at 100%'
+      ),
     },
     {
-      term: isKorean ? '군사이론' : 'Military Strategies',
+      term: l('군사이론', 'Military Strategies', 'Military Strategies'),
       ko: '군사이론',
       en: 'Military Strategies',
       vi: 'Military Strategies',
-      definition: isKorean
-        ? '병력 HP 및 전투 버프 연구 트리. 엘리트부대 100% 후 해금'
-        : 'Cây NC HP quân và buff chiến đấu. Mở sau Elite Troops 100%',
+      definition: l(
+        '병력 HP 및 전투 버프 연구 트리. 엘리트부대 100% 후 해금',
+        'Cây NC HP quân và buff chiến đấu. Mở sau Elite Troops 100%',
+        'Research tree for troop HP and combat buffs. Unlocks after Elite Troops 100%'
+      ),
     },
     {
-      term: isKorean ? '피난소건설' : 'Shelter',
+      term: l('피난소건설', 'Shelter', 'Shelter'),
       ko: '피난소건설',
       en: 'Shelter',
       vi: 'Shelter',
-      definition: isKorean
-        ? '방어 및 자원 보호 연구 트리. 50% 완료 시 전쟁수호 해금 조건'
-        : 'Cây NC phòng thủ và bảo vệ tài nguyên. 50% là điều kiện mở Peace Shield',
+      definition: l(
+        '방어 및 자원 보호 연구 트리. 50% 완료 시 전쟁수호 해금 조건',
+        'Cây NC phòng thủ và bảo vệ tài nguyên. 50% là điều kiện mở Peace Shield',
+        'Defense and resource protection research tree. 50% completion unlocks Peace Shield'
+      ),
     },
     {
-      term: isKorean ? '전쟁수호' : 'Peace Shield',
+      term: l('전쟁수호', 'Peace Shield', 'Peace Shield'),
       ko: '전쟁수호',
       en: 'Peace Shield',
       vi: 'Peace Shield',
-      definition: isKorean
-        ? '방어 연구 트리. 긴급구조(-20% 병력 손실) 포함. 피난소건설 50% + 군사이론 45% 필요'
-        : 'Cây NC phòng thủ. Gồm Urgent Rescue (-20% mất quân). Cần Shelter 50% + Military 45%',
+      definition: l(
+        '방어 연구 트리. 긴급구조(-20% 병력 손실) 포함. 피난소건설 50% + 군사이론 45% 필요',
+        'Cây NC phòng thủ. Gồm Urgent Rescue (-20% mất quân). Cần Shelter 50% + Military 45%',
+        'Defense research tree. Includes Urgent Rescue (-20% troop loss). Requires Shelter 50% + Military 45%'
+      ),
     },
     {
-      term: isKorean ? '긴급구조' : 'Urgent Rescue',
+      term: l('긴급구조', 'Urgent Rescue', 'Urgent Rescue'),
       ko: '긴급구조',
       en: 'Urgent Rescue',
       vi: 'Urgent Rescue',
-      definition: isKorean
-        ? '전쟁수호 연구. 병력 손실 -20% 감소. 방어 플레이어 필수'
-        : 'NC trong Peace Shield. Giảm 20% mất quân. Bắt buộc cho phòng thủ',
+      definition: l(
+        '전쟁수호 연구. 병력 손실 -20% 감소. 방어 플레이어 필수',
+        'NC trong Peace Shield. Giảm 20% mất quân. Bắt buộc cho phòng thủ',
+        'Peace Shield research. Reduces troop loss by 20%. Essential for defensive players'
+      ),
     },
     {
-      term: isKorean ? '도시함락' : 'Siege to Seize',
+      term: l('도시함락', 'Siege to Seize', 'Siege to Seize'),
       ko: '도시함락',
       en: 'Siege to Seize',
       vi: 'Siege to Seize',
-      definition: isKorean
-        ? '공격 보너스 연구 트리. 군사이론 40% 필요. 100% 완료 시 야전연구 해금'
-        : 'Cây NC bonus tấn công. Cần Military Strategies 40%. 100% mở Field Research',
+      definition: l(
+        '공격 보너스 연구 트리. 군사이론 40% 필요. 100% 완료 시 야전연구 해금',
+        'Cây NC bonus tấn công. Cần Military Strategies 40%. 100% mở Field Research',
+        'Attack bonus research tree. Requires Military Strategies 40%. Unlocks Field Research at 100%'
+      ),
     },
     {
-      term: isKorean ? '야전연구' : 'Field Research',
+      term: l('야전연구', 'Field Research', 'Field Research'),
       ko: '야전연구',
       en: 'Field Research',
       vi: 'Field Research',
-      definition: isKorean
-        ? '고급 연구 트리. Recharge Shield 등 엔드게임 콘텐츠. 도시함락 100% 필요'
-        : 'Cây NC cao cấp. Nội dung endgame như Recharge Shield. Cần Siege to Seize 100%',
+      definition: l(
+        '고급 연구 트리. Recharge Shield 등 엔드게임 콘텐츠. 도시함락 100% 필요',
+        'Cây NC cao cấp. Nội dung endgame như Recharge Shield. Cần Siege to Seize 100%',
+        'Advanced research tree. Endgame content like Recharge Shield. Requires Siege to Seize 100%'
+      ),
     },
     // 진영
     {
-      term: isKorean ? '새벽의 날개' : 'Dawn Wings',
+      term: l('새벽의 날개', 'Dawn Wings', 'Dawn Wings'),
       ko: '새벽의 날개',
       en: 'Dawn Wings',
       vi: 'Cánh Bình Minh',
-      definition: isKorean
-        ? '세 진영 중 하나. 블러디 로즈에 강함. 슈터 특화'
-        : 'Một trong 3 phe. Mạnh chống Blood Rose. Chuyên Shooter',
+      definition: l(
+        '세 진영 중 하나. 블러디 로즈에 강함. 슈터 특화',
+        'Một trong 3 phe. Mạnh chống Blood Rose. Chuyên Shooter',
+        'One of three factions. Strong against Blood Rose. Specializes in Shooters'
+      ),
     },
     {
-      term: isKorean ? '블러디 로즈' : 'Blood Rose',
+      term: l('블러디 로즈', 'Blood Rose', 'Blood Rose'),
       ko: '블러디 로즈',
       en: 'Blood Rose',
       vi: 'Blood Rose',
-      definition: isKorean
-        ? '세 진영 중 하나. 질서의 수호자에 강함. 돌격 특화'
-        : 'Một trong 3 phe. Mạnh chống Người Bảo Vệ Trật Tự. Chuyên Assaulter',
+      definition: l(
+        '세 진영 중 하나. 질서의 수호자에 강함. 돌격 특화',
+        'Một trong 3 phe. Mạnh chống Người Bảo Vệ Trật Tự. Chuyên Assaulter',
+        'One of three factions. Strong against Order Keepers. Specializes in Assaulters'
+      ),
     },
     {
-      term: isKorean ? '질서의 수호자' : 'Order Keepers',
+      term: l('질서의 수호자', 'Order Keepers', 'Order Keepers'),
       ko: '질서의 수호자',
       en: 'Order Keepers',
       vi: 'Người Bảo Vệ Trật Tự',
-      definition: isKorean
-        ? '세 진영 중 하나. 새벽의 날개에 강함. 라이더 특화'
-        : 'Một trong 3 phe. Mạnh chống Cánh Bình Minh. Chuyên Rider',
+      definition: l(
+        '세 진영 중 하나. 새벽의 날개에 강함. 라이더 특화',
+        'Một trong 3 phe. Mạnh chống Cánh Bình Minh. Chuyên Rider',
+        'One of three factions. Strong against Dawn Wings. Specializes in Riders'
+      ),
     },
     // 병종
     {
-      term: isKorean ? '돌격병' : 'Assaulter',
+      term: l('돌격병', 'Assaulter', 'Assaulter'),
       ko: '돌격병',
       en: 'Assaulter',
       vi: 'Assaulter',
-      definition: isKorean
-        ? '병종. 높은 공격력, 낮은 방어력. 슈터에 강함'
-        : 'Loại quân. ATK cao, DEF thấp. Mạnh chống Shooter',
+      definition: l(
+        '병종. 높은 공격력, 낮은 방어력. 슈터에 강함',
+        'Loại quân. ATK cao, DEF thấp. Mạnh chống Shooter',
+        'Troop type. High ATK, low DEF. Strong against Shooters'
+      ),
     },
     {
-      term: isKorean ? '슈터' : 'Shooter',
+      term: l('슈터', 'Shooter', 'Shooter'),
       ko: '슈터',
       en: 'Shooter',
       vi: 'Shooter',
-      definition: isKorean
-        ? '병종. 균형 잡힌 스탯. 라이더에 강함'
-        : 'Loại quân. Stat cân bằng. Mạnh chống Rider',
+      definition: l(
+        '병종. 균형 잡힌 스탯. 라이더에 강함',
+        'Loại quân. Stat cân bằng. Mạnh chống Rider',
+        'Troop type. Balanced stats. Strong against Riders'
+      ),
     },
     {
-      term: isKorean ? '라이더' : 'Rider',
+      term: l('라이더', 'Rider', 'Rider'),
       ko: '라이더',
       en: 'Rider',
       vi: 'Rider',
-      definition: isKorean
-        ? '병종. 높은 HP/방어력, 낮은 공격력. 돌격병에 강함'
-        : 'Loại quân. HP/DEF cao, ATK thấp. Mạnh chống Assaulter',
+      definition: l(
+        '병종. 높은 HP/방어력, 낮은 공격력. 돌격병에 강함',
+        'Loại quân. HP/DEF cao, ATK thấp. Mạnh chống Assaulter',
+        'Troop type. High HP/DEF, low ATK. Strong against Assaulters'
+      ),
     },
     // 장비/재화
     {
-      term: isKorean ? '에너지코어' : 'Power Core',
+      term: l('에너지코어', 'Power Core', 'Power Core'),
       ko: '에너지코어',
       en: 'Power Core',
       vi: 'Power Core',
-      definition: isKorean
-        ? '주황 장비 승급(헥사곤)에 필요한 재화'
-        : 'Tiền tệ cần để thăng cấp (hexagon) trang bị cam',
+      definition: l(
+        '주황 장비 승급(헥사곤)에 필요한 재화',
+        'Tiền tệ cần để thăng cấp (hexagon) trang bị cam',
+        'Currency needed for orange gear promotion (hexagon)'
+      ),
     },
     {
-      term: isKorean ? '헥사곤' : 'Hexagon',
+      term: l('헥사곤', 'Hexagon', 'Hexagon'),
       ko: '헥사곤',
       en: 'Hexagon',
       vi: 'Hexagon',
-      definition: isKorean
-        ? '장비 성급 시스템. 에너지코어로 업그레이드'
-        : 'Hệ thống sao trang bị. Nâng bằng Power Core',
+      definition: l(
+        '장비 성급 시스템. 에너지코어로 업그레이드',
+        'Hệ thống sao trang bị. Nâng bằng Power Core',
+        'Gear star system. Upgraded with Power Cores'
+      ),
     },
     {
-      term: isKorean ? '강화 합금' : 'Enhancement Alloy',
+      term: l('강화 합금', 'Enhancement Alloy', 'Enhancement Alloy'),
       ko: '강화 합금',
       en: 'Enhancement Alloy',
       vi: 'Enhancement Alloy',
-      definition: isKorean
-        ? '장비 레벨업에 필요한 재화'
-        : 'Tiền tệ cần để lên level trang bị',
+      definition: l(
+        '장비 레벨업에 필요한 재화',
+        'Tiền tệ cần để lên level trang bị',
+        'Currency needed for gear leveling'
+      ),
     },
     {
-      term: isKorean ? '용사훈장' : 'Valor Medals',
+      term: l('용사훈장', 'Valor Medals', 'Valor Medals'),
       ko: '용사훈장',
       en: 'Valor Medals',
       vi: 'Valor Medals',
-      definition: isKorean
-        ? 'SVS 보상. 공훈상점에서 주황 장비 교환 가능'
-        : 'Thưởng SVS. Có thể đổi trang bị cam ở Black Market',
+      definition: l(
+        'SVS 보상. 공훈상점에서 주황 장비 교환 가능',
+        'Thưởng SVS. Có thể đổi trang bị cam ở Black Market',
+        'SVS reward. Can be exchanged for orange gear in the Black Market'
+      ),
     },
     {
-      term: isKorean ? '렌치' : 'Wrench',
+      term: l('렌치', 'Wrench', 'Wrench'),
       ko: '렌치',
       en: 'Wrench',
       vi: 'Wrench',
-      definition: isKorean
-        ? '차량 개조에 필요한 재화. 연맹 대결/좀비공성에서 획득'
-        : 'Tiền tệ để mod xe. Farm từ Alliance Duel/Zombie Siege',
+      definition: l(
+        '차량 개조에 필요한 재화. 연맹 대결/좀비공성에서 획득',
+        'Tiền tệ để mod xe. Farm từ Alliance Duel/Zombie Siege',
+        'Currency for vehicle modifications. Earned from Alliance Duel/Zombie Siege'
+      ),
     },
     {
-      term: isKorean ? '골든 렌치' : 'Golden Wrench',
+      term: l('골든 렌치', 'Golden Wrench', 'Golden Wrench'),
       ko: '골든 렌치',
       en: 'Golden Wrench',
       vi: 'Golden Wrench',
-      definition: isKorean
-        ? '프리미엄 차량 개조 재화. 가챠 고에서 획득'
-        : 'Tiền tệ mod xe cao cấp. Farm từ Gacha Go',
+      definition: l(
+        '프리미엄 차량 개조 재화. 가챠 고에서 획득',
+        'Tiền tệ mod xe cao cấp. Farm từ Gacha Go',
+        'Premium vehicle modification currency. Earned from Gacha Go'
+      ),
     },
     {
-      term: isKorean ? '스틸' : 'Steel',
+      term: l('스틸', 'Steel', 'Steel'),
       ko: '스틸',
       en: 'Steel',
       vi: 'Steel',
-      definition: isKorean
-        ? 'HQ 31+ 건설에 필요한 재화. 좀비폭군에서 획득'
-        : 'Tiền tệ xây HQ 31+. Farm từ Tyrant',
+      definition: l(
+        'HQ 31+ 건설에 필요한 재화. 좀비폭군에서 획득',
+        'Tiền tệ xây HQ 31+. Farm từ Tyrant',
+        'Currency needed for HQ 31+ construction. Earned from Tyrant'
+      ),
     },
     // 상점
     {
-      term: isKorean ? '공훈상점' : 'Merit Shop',
+      term: l('공훈상점', 'Merit Shop', 'Merit Shop'),
       ko: '공훈상점',
       en: 'Merit Shop',
       vi: 'Merit Shop',
-      definition: isKorean
-        ? '연맹 활동으로 얻은 공훈으로 아이템 구매하는 상점'
-        : 'Shop mua đồ bằng Merit từ hoạt động liên minh',
+      definition: l(
+        '연맹 활동으로 얻은 공훈으로 아이템 구매하는 상점',
+        'Shop mua đồ bằng Merit từ hoạt động liên minh',
+        'Shop where you buy items with Merit earned from alliance activities'
+      ),
     },
     {
-      term: isKorean ? '특권상점' : 'VIP Shop',
+      term: l('특권상점', 'VIP Shop', 'VIP Shop'),
       ko: '특권상점',
       en: 'VIP Shop',
       vi: 'VIP Shop',
-      definition: isKorean
-        ? 'VIP 레벨에 따라 이용 가능한 프리미엄 상점'
-        : 'Shop cao cấp theo level VIP',
+      definition: l(
+        'VIP 레벨에 따라 이용 가능한 프리미엄 상점',
+        'Shop cao cấp theo level VIP',
+        'Premium shop available based on VIP level'
+      ),
     },
     {
-      term: isKorean ? '암시장' : 'Black Market',
+      term: l('암시장', 'Black Market', 'Black Market'),
       ko: '암시장',
       en: 'Black Market',
       vi: 'Black Market',
-      definition: isKorean
-        ? '용사훈장으로 주황 장비를 구매하는 상점 (공훈상점)'
-        : 'Shop mua trang bị cam bằng Valor Medals',
+      definition: l(
+        '용사훈장으로 주황 장비를 구매하는 상점 (공훈상점)',
+        'Shop mua trang bị cam bằng Valor Medals',
+        'Shop where you buy orange gear with Valor Medals'
+      ),
     },
     // 기타
     {
-      term: isKorean ? '좀비' : 'Creep',
+      term: l('좀비', 'Creep', 'Creep'),
       ko: '좀비',
       en: 'Creep',
       vi: 'Creep',
-      definition: isKorean
-        ? '월드맵의 좀비 몬스터. 자원과 경험치 획득'
-        : 'Zombie trên bản đồ. Cho tài nguyên và EXP',
+      definition: l(
+        '월드맵의 좀비 몬스터. 자원과 경험치 획득',
+        'Zombie trên bản đồ. Cho tài nguyên và EXP',
+        'Zombie monsters on the world map. Gives resources and EXP'
+      ),
     },
     {
-      term: isKorean ? '쉴드 (보호막)' : 'Shield',
+      term: l('쉴드 (보호막)', 'Shield', 'Shield'),
       ko: '쉴드',
       en: 'Shield',
       vi: 'Shield',
-      definition: isKorean
-        ? '공격으로부터 기지를 보호하는 아이템'
-        : 'Item bảo vệ căn cứ khỏi tấn công',
+      definition: l(
+        '공격으로부터 기지를 보호하는 아이템',
+        'Item bảo vệ căn cứ khỏi tấn công',
+        'Item that protects your base from attacks'
+      ),
     },
     {
-      term: isKorean ? '파밍' : 'Farming',
+      term: l('파밍', 'Farming', 'Farming'),
       ko: '파밍',
       en: 'Farming',
       vi: 'Farming',
-      definition: isKorean
-        ? '자원이나 아이템을 반복적으로 수집하는 행위'
-        : 'Hành động thu thập tài nguyên/item lặp đi lặp lại',
+      definition: l(
+        '자원이나 아이템을 반복적으로 수집하는 행위',
+        'Hành động thu thập tài nguyên/item lặp đi lặp lại',
+        'Repeatedly collecting resources or items'
+      ),
     },
   ];
 
@@ -400,12 +478,14 @@ function GlossaryContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <BookOpen className="h-8 w-8 text-highlight" />
-            {isKorean ? '용어 사전' : 'Từ điển thuật ngữ'}
+            {l('용어 사전', 'Từ điển thuật ngữ', 'Glossary')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '게임에서 자주 사용되는 용어들을 정리했습니다.'
-              : 'Tổng hợp các thuật ngữ thường dùng trong game.'}
+            {l(
+              '게임에서 자주 사용되는 용어들을 정리했습니다.',
+              'Tổng hợp các thuật ngữ thường dùng trong game.',
+              'A collection of commonly used in-game terms.'
+            )}
           </p>
         </div>
 
@@ -418,7 +498,7 @@ function GlossaryContent({ locale }: { locale: string }) {
                   <div className="sm:w-1/3">
                     <p className="font-semibold text-highlight">{item.term}</p>
                     <p className="text-sm text-muted-foreground">
-                      {isKorean ? item.en : item.ko}
+                      {locale === 'ko' ? item.en : locale === 'vi' ? item.ko : item.ko}
                     </p>
                   </div>
                   <p className="sm:w-2/3 text-sm text-muted-foreground">

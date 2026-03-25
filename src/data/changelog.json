@@ -26,7 +26,13 @@
         "리딤 코드 페이지 수정: 공유 데이터 소스(redeem-codes.json) 연동, 코드 최신화, 사용법 수정 (last-z.com/giftCenter)",
         "리딤 코드 자동 갱신: GitHub Actions 매일 크론 (ldshop.gg + lootbar.gg 스크래핑, 실패 시 Issue 자동 생성)",
         "용어 추가: 영웅 이니셔티브→영웅육성",
-        "오늘의 이벤트 카드 레이아웃 개선: 뱃지+카운트다운 한 줄 표시, 컴팩트 시간 포맷 (Nh Nm)"
+        "오늘의 이벤트 카드 레이아웃 개선: 뱃지+카운트다운 한 줄 표시, 컴팩트 시간 포맷 (Nh Nm)",
+        "영어(English) 버전 추가: 3개 언어 지원 (한국어/베트남어/영어)",
+        "47개 페이지 인라인 삼항 연산자 ~1,668개 → l() 헬퍼 함수로 전환",
+        "messages/en.json 생성: UI 라벨/네비게이션/난이도 등 전체 영어 번역",
+        "6개 데이터 파일 en 필드 추가: heroes.json(37명 스킬/노트), events.json, glossary.json, hq-costs.json, changelog.json, redeem-codes.json",
+        "언어 스위처 3개 언어 표시 (🇰🇷/🇻🇳/🇺🇸), Breadcrumb 57개 라벨 en 추가",
+        "SEO: next-sitemap en alternate ref, manifest.json 영어 설명 추가"
       ],
       "vi": [
         "Đại tu hệ thống skill anh hùng: 3 slot → 4 slot (normal/active/deployment/potential)",
@@ -49,7 +55,42 @@
         "Sửa trang mã đổi thưởng: kết nối nguồn dữ liệu chung, cập nhật mã mới",
         "Tự động cập nhật mã đổi thưởng: GitHub Actions cron hàng ngày",
         "Đổi thuật ngữ: Hero Initiative → 영웅육성",
-        "Cải thiện layout card sự kiện: badge + đếm ngược 1 dòng, format thời gian gọn (Nh Nm)"
+        "Cải thiện layout card sự kiện: badge + đếm ngược 1 dòng, format thời gian gọn (Nh Nm)",
+        "Thêm phiên bản tiếng Anh (English): hỗ trợ 3 ngôn ngữ (Hàn/Việt/Anh)",
+        "Chuyển đổi ~1,668 toán tử tam phân sang hàm l() trên 47 trang",
+        "Tạo messages/en.json: dịch toàn bộ nhãn UI/điều hướng sang tiếng Anh",
+        "Thêm trường en vào 6 file dữ liệu: heroes, events, glossary, hq-costs, changelog, redeem-codes",
+        "Bộ chuyển ngôn ngữ hiển thị 3 ngôn ngữ (🇰🇷/🇻🇳/🇺🇸), thêm en cho 57 nhãn breadcrumb",
+        "SEO: thêm en alternate ref cho sitemap, cập nhật manifest.json"
+      ],
+      "en": [
+        "Hero skill system overhaul: migrated from 3-slot to 4-slot system (normal/active/deployment/potential)",
+        "Verified skill data for 29 heroes from lastzdata.com and lastz.info",
+        "Vehicle Modification page rewrite: added Conqueror, fixed unlock conditions, corrected Golden Wrench costs (70,640 total)",
+        "New page: Battlefield Breakout guide — 5-stage walkthrough, recommended teams, reward tiers",
+        "New page: Trap Detection guide — warning signs, kill/CP ratio, faction advantage mechanics",
+        "New page: Field Research cost table — 14 nodes/145 levels, 594,430 Badges total",
+        "Full Preparedness improvements: personal milestones (1,500/4,000/12,000), Golden Hour windows (08:00, 20:00)",
+        "Alliance Duel improvements: daily difficulty tips and key scoring strategies",
+        "Lucky Discounter improvements: value comparison cards, purchase strategies by discount tier",
+        "Shop Guide improvements: 7 items to never buy + reasons, free 500 Power Cores/week from Tyrant",
+        "Free Diamonds improvements: 2,000 diamond Friday reserve rule, bounty box bulk opening strategy",
+        "Research Priority improvements: HP stack strategy (35-40%), Alliance Recognition 9-box overinvestment warning",
+        "Formation Guide improvements: 3+2 mixed meta rationale, commander slot rules",
+        "Terminology standardization across all pages",
+        "Fixed event time calculations to use Apocalypse Time (UTC-2)",
+        "Improved Today's Events UI: unified card design with countdown timers",
+        "Full Prep theme schedule: applied day-of-week 6-cycle rotation",
+        "Redeem codes page: connected shared data source, updated codes",
+        "Auto-updating redeem codes: daily GitHub Actions cron job",
+        "Added term: Hero Initiative",
+        "Improved event card layout: compact badge + countdown on single line",
+        "Added English version: 3-language support (Korean/Vietnamese/English)",
+        "Converted ~1,668 inline ternary operators to l() helper across 47 pages",
+        "Created messages/en.json: full English translations for UI labels, navigation, and content",
+        "Added en fields to 6 data files: heroes.json (37 heroes), events.json, glossary.json, hq-costs.json, changelog.json, redeem-codes.json",
+        "Language switcher now shows 3 languages (🇰🇷/🇻🇳/🇺🇸), added en to 57 breadcrumb labels",
+        "SEO: added en alternate ref to sitemap, updated manifest.json"
       ]
     }
   },
@@ -87,6 +128,22 @@
         "Thêm điều hướng breadcrumb",
         "Thêm 11 thuật ngữ mới vào từ điển",
         "Sửa hệ thống tương khắc (Xạ thủ > Đột kích > Kỵ binh > Xạ thủ)"
+      ],
+      "en": [
+        "Major site renovation (Phase 1-5)",
+        "Built hero database: all 37 heroes with skills/synergies/leveling guides",
+        "Added 37 individual hero detail pages (dynamic routes)",
+        "Homepage redesign: active redeem codes, today's events, S+ hero snapshot",
+        "Added Event Calendar page (6-day rotation, Full Prep, Canyon Clash timeline)",
+        "Added Hero Database page (filterable 37-hero card grid)",
+        "4 new guides: Vehicle Modification, Arena, Refugee System, Base Building Order",
+        "PvP Strategy improvements: faction counter triangle, 3WoD+2BR composition, scouting protocol",
+        "Added Team Builder tool (5 slots, counter analysis, synergy, URL sharing)",
+        "Hero Compare tool overhaul (all 37 heroes, compare up to 4 at once)",
+        "CP Calculator improvements: milestone targets, localStorage save",
+        "Added breadcrumb navigation",
+        "Added 11 new glossary terms",
+        "Fixed faction counter system (Shooter > Assaulter > Rider > Shooter)"
       ]
     }
   },
@@ -116,6 +173,18 @@
         "Đổi thuật ngữ 오렌지 → 주황",
         "Đổi tên anh hùng Nyx → 니콜스",
         "Đồng bộ thuật ngữ NC trên toàn bộ trang"
+      ],
+      "en": [
+        "Localized research page terminology to Korean",
+        "Renamed Alliance Recognition → Alliance Commendation across all pages",
+        "Added 9 research-related terms to glossary",
+        "Fixed glossary: Zombie Siege terminology",
+        "Renamed Valor Medals across all pages",
+        "Renamed Black Market → Dark Market, updated Merit Shop references",
+        "Fixed glossary: Creep → Zombie terminology",
+        "Standardized Orange → Orange rank terminology",
+        "Renamed hero Nyx → Nichols",
+        "Synchronized research terminology across all pages"
       ]
     }
   },
@@ -141,6 +210,16 @@
         "Sửa giờ Golden Hour",
         "Đổi bộ đếm khách theo giờ KST",
         "Sửa lỗi bộ đếm khách hàng tháng"
+      ],
+      "en": [
+        "Lucky Shake page overhaul (key system, milestones, efficiency comparison)",
+        "Lucky Shake exact costs: 100 diamonds/pull, 500 diamonds/5 pulls",
+        "Alliance Duel page overhaul (6 themes, Golden Hour, Full Prep schedule)",
+        "Alliance Duel recruitment ticket distinction (Day 2: Refugees, Day 4: Heroes)",
+        "Fixed Alliance Duel day order (Day 1 = Monday, Day 6 = Saturday)",
+        "Fixed Golden Hour times (Apoc 08:00-12:00, 20:00-00:00)",
+        "Changed visitor counter to KST timezone",
+        "Fixed monthly visitor counter bug (months with <31 days)"
       ]
     }
   },
@@ -148,42 +227,48 @@
     "date": "2025-02-01",
     "changes": {
       "ko": ["업데이트 내역 페이지 추가", "HQ 업그레이드 요구사항 데이터 수정", "사이드바 아코디언 동작 개선", "방문자 카운터 로딩 최적화"],
-      "vi": ["Thêm trang lịch sử cập nhật", "Sửa dữ liệu yêu cầu nâng cấp HQ", "Cải thiện accordion sidebar", "Tối ưu hóa tải bộ đếm khách"]
+      "vi": ["Thêm trang lịch sử cập nhật", "Sửa dữ liệu yêu cầu nâng cấp HQ", "Cải thiện accordion sidebar", "Tối ưu hóa tải bộ đếm khách"],
+      "en": ["Added changelog page", "Fixed HQ upgrade requirement data", "Improved sidebar accordion behavior", "Optimized visitor counter loading"]
     }
   },
   {
     "date": "2025-01-31",
     "changes": {
       "ko": ["용어사전 한국어 중심 개선", "PC 버전 홈 버튼 추가", "검색 기능 구현"],
-      "vi": ["Cải thiện từ điển thuật ngữ", "Thêm nút Home cho PC", "Triển khai chức năng tìm kiếm"]
+      "vi": ["Cải thiện từ điển thuật ngữ", "Thêm nút Home cho PC", "Triển khai chức năng tìm kiếm"],
+      "en": ["Improved glossary with Korean-centric terms", "Added Home button for PC", "Implemented search functionality"]
     }
   },
   {
     "date": "2025-01-30",
     "changes": {
       "ko": ["PWA 지원 추가 (홈 화면 추가 기능)", "이벤트 페이지 대폭 확장", "한국어 게임 용어 전면 수정"],
-      "vi": ["Thêm hỗ trợ PWA", "Mở rộng các trang sự kiện", "Sửa đổi thuật ngữ game tiếng Hàn"]
+      "vi": ["Thêm hỗ trợ PWA", "Mở rộng các trang sự kiện", "Sửa đổi thuật ngữ game tiếng Hàn"],
+      "en": ["Added PWA support (Add to Home Screen)", "Major event pages expansion", "Korean game terminology overhaul"]
     }
   },
   {
     "date": "2025-01-29",
     "changes": {
       "ko": ["다국어 지원 개선 (한국어/베트남어)", "네비게이션 구조 개선", "모바일 반응형 디자인 수정"],
-      "vi": ["Cải thiện hỗ trợ đa ngôn ngữ", "Cải thiện cấu trúc điều hướng", "Sửa thiết kế responsive"]
+      "vi": ["Cải thiện hỗ trợ đa ngôn ngữ", "Cải thiện cấu trúc điều hướng", "Sửa thiết kế responsive"],
+      "en": ["Improved multilingual support (Korean/Vietnamese)", "Improved navigation structure", "Fixed mobile responsive design"]
     }
   },
   {
     "date": "2025-01-28",
     "changes": {
       "ko": ["영웅 티어표 페이지 추가", "장비 강화 가이드 추가", "리딤 코드 페이지 추가"],
-      "vi": ["Thêm trang bảng xếp hạng anh hùng", "Thêm hướng dẫn nâng cấp trang bị", "Thêm trang mã đổi thưởng"]
+      "vi": ["Thêm trang bảng xếp hạng anh hùng", "Thêm hướng dẫn nâng cấp trang bị", "Thêm trang mã đổi thưởng"],
+      "en": ["Added Hero Tier List page", "Added Gear Enhancement guide", "Added Redeem Codes page"]
     }
   },
   {
     "date": "2025-01-27",
     "changes": {
       "ko": ["사이트 초기 런칭", "입문 가이드 섹션 추가", "성장 가이드 섹션 추가", "FAQ 페이지 추가"],
-      "vi": ["Ra mắt website", "Thêm phần hướng dẫn cơ bản", "Thêm phần hướng dẫn phát triển", "Thêm trang FAQ"]
+      "vi": ["Ra mắt website", "Thêm phần hướng dẫn cơ bản", "Thêm phần hướng dẫn phát triển", "Thêm trang FAQ"],
+      "en": ["Initial site launch", "Added Beginner Guide section", "Added Progression Guide section", "Added FAQ page"]
     }
   }
 ]

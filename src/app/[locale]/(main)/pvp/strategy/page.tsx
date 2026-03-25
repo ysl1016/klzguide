@@ -17,91 +17,113 @@ export default async function PvPStrategyPage({
 
 function PvPStrategyContent({ locale }: { locale: string }) {
   const t = useTranslations();
-  const isKorean = locale === 'ko';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const attackStrategies = [
     {
-      name: isKorean ? '정찰 먼저' : 'Trinh sát trước',
-      description: isKorean
-        ? '공격 전 반드시 정찰. 상대 진영/병력/영웅 확인 후 카운터 구성'
-        : 'Bắt buộc trinh sát trước khi tấn công. Kiểm tra phe/quân/anh hùng đối thủ rồi cấu thành counter',
+      name: l('정찰 먼저', 'Trinh sát trước', 'Scout First'),
+      description: l(
+        '공격 전 반드시 정찰. 상대 진영/병력/영웅 확인 후 카운터 구성',
+        'Bắt buộc trinh sát trước khi tấn công. Kiểm tra phe/quân/anh hùng đối thủ rồi cấu thành counter',
+        'Always scout before attacking. Check opponent faction/troops/heroes, then build a counter formation'
+      ),
     },
     {
-      name: isKorean ? '가짜 랠리' : 'Rally giả',
-      description: isKorean
-        ? '진짜 공격 전 가짜 랠리로 상대 방어 유도 후 취소, 자원 낭비 유도'
-        : 'Rally giả trước tấn công thật để dụ phòng thủ rồi hủy, khiến đối thủ lãng phí tài nguyên',
+      name: l('가짜 랠리', 'Rally giả', 'Fake Rally'),
+      description: l(
+        '진짜 공격 전 가짜 랠리로 상대 방어 유도 후 취소, 자원 낭비 유도',
+        'Rally giả trước tấn công thật để dụ phòng thủ rồi hủy, khiến đối thủ lãng phí tài nguyên',
+        'Use a fake rally before the real attack to bait defenses, then cancel to waste opponent resources'
+      ),
     },
     {
-      name: isKorean ? '다중 랠리' : 'Rally đa điểm',
-      description: isKorean
-        ? '여러 타겟에 동시 랠리로 상대 방어 분산'
-        : 'Rally đồng thời nhiều mục tiêu để phân tán phòng thủ đối thủ',
+      name: l('다중 랠리', 'Rally đa điểm', 'Multi-Target Rally'),
+      description: l(
+        '여러 타겟에 동시 랠리로 상대 방어 분산',
+        'Rally đồng thời nhiều mục tiêu để phân tán phòng thủ đối thủ',
+        'Rally multiple targets simultaneously to spread enemy defenses thin'
+      ),
     },
     {
-      name: isKorean ? '타이밍 공격' : 'Tấn công đúng thời điểm',
-      description: isKorean
-        ? '상대 쉴드 끝나는 시간, 비활성 시간대 노려 공격'
-        : 'Tấn công khi shield đối thủ hết, vào giờ không hoạt động',
+      name: l('타이밍 공격', 'Tấn công đúng thời điểm', 'Timed Attack'),
+      description: l(
+        '상대 쉴드 끝나는 시간, 비활성 시간대 노려 공격',
+        'Tấn công khi shield đối thủ hết, vào giờ không hoạt động',
+        'Attack when opponent shield expires or during inactive hours'
+      ),
     },
   ];
 
   const defenseStrategies = [
     {
-      name: isKorean ? '쉴드 관리' : 'Quản lý Shield',
-      description: isKorean
-        ? '오프라인 시 반드시 쉴드. 무과금도 8시간 쉴드는 자주 사용 가능'
-        : 'Bắt buộc shield khi offline. F2P cũng có thể dùng shield 8 giờ thường xuyên',
+      name: l('쉴드 관리', 'Quản lý Shield', 'Shield Management'),
+      description: l(
+        '오프라인 시 반드시 쉴드. 무과금도 8시간 쉴드는 자주 사용 가능',
+        'Bắt buộc shield khi offline. F2P cũng có thể dùng shield 8 giờ thường xuyên',
+        'Always shield when offline. Even F2P can frequently use 8-hour shields'
+      ),
     },
     {
-      name: isKorean ? '병력 대피' : 'Sơ tán quân',
-      description: isKorean
-        ? '대규모 공격 예상 시 병력을 연맹 요새나 자원 타일로 대피'
-        : 'Khi dự đoán tấn công lớn, sơ tán quân sang pháo đài liên minh hoặc ô tài nguyên',
+      name: l('병력 대피', 'Sơ tán quân', 'Troop Evacuation'),
+      description: l(
+        '대규모 공격 예상 시 병력을 연맹 요새나 자원 타일로 대피',
+        'Khi dự đoán tấn công lớn, sơ tán quân sang pháo đài liên minh hoặc ô tài nguyên',
+        'When expecting a large attack, evacuate troops to alliance fortress or resource tiles'
+      ),
     },
     {
-      name: isKorean ? '방어 진형 전환' : 'Chuyển đội hình phòng thủ',
-      description: isKorean
-        ? '공격 감지 시 방어 특화 진형으로 빠르게 전환'
-        : 'Khi phát hiện tấn công, nhanh chóng chuyển sang đội hình phòng thủ chuyên biệt',
+      name: l('방어 진형 전환', 'Chuyển đội hình phòng thủ', 'Switch to Defense Formation'),
+      description: l(
+        '공격 감지 시 방어 특화 진형으로 빠르게 전환',
+        'Khi phát hiện tấn công, nhanh chóng chuyển sang đội hình phòng thủ chuyên biệt',
+        'When an attack is detected, quickly switch to a specialized defense formation'
+      ),
     },
     {
-      name: isKorean ? '연맹 지원 요청' : 'Yêu cầu hỗ trợ liên minh',
-      description: isKorean
-        ? '대규모 랠리 시 연맹원 지원병 요청'
-        : 'Yêu cầu quân hỗ trợ từ thành viên liên minh khi bị rally lớn',
+      name: l('연맹 지원 요청', 'Yêu cầu hỗ trợ liên minh', 'Request Alliance Reinforcements'),
+      description: l(
+        '대규모 랠리 시 연맹원 지원병 요청',
+        'Yêu cầu quân hỗ trợ từ thành viên liên minh khi bị rally lớn',
+        'Request reinforcements from alliance members during large rallies'
+      ),
     },
   ];
 
   const battleTips = [
     {
       icon: Eye,
-      title: isKorean ? '전장 인식' : 'Nhận thức chiến trường',
-      tip: isKorean
-        ? '적 움직임 항상 모니터링. 랠리 타이머, 행군 방향 주시'
-        : 'Luôn theo dõi di chuyển của địch. Chú ý timer rally, hướng hành quân',
+      title: l('전장 인식', 'Nhận thức chiến trường', 'Battlefield Awareness'),
+      tip: l(
+        '적 움직임 항상 모니터링. 랠리 타이머, 행군 방향 주시',
+        'Luôn theo dõi di chuyển của địch. Chú ý timer rally, hướng hành quân',
+        'Always monitor enemy movement. Watch rally timers and march directions'
+      ),
     },
     {
       icon: Target,
-      title: isKorean ? '우선순위 타겟' : 'Mục tiêu ưu tiên',
-      tip: isKorean
-        ? '전력이 약한 적부터 제거하여 수적 우위 확보'
-        : 'Loại bỏ địch yếu trước để có lợi thế số lượng',
+      title: l('우선순위 타겟', 'Mục tiêu ưu tiên', 'Priority Targets'),
+      tip: l(
+        '전력이 약한 적부터 제거하여 수적 우위 확보',
+        'Loại bỏ địch yếu trước để có lợi thế số lượng',
+        'Eliminate weaker enemies first to gain numerical advantage'
+      ),
     },
     {
       icon: Shield,
-      title: isKorean ? '자원 보호' : 'Bảo vệ tài nguyên',
-      tip: isKorean
-        ? '전투 전 자원 모두 사용하거나 창고 용량 내로 유지'
-        : 'Trước chiến đấu, dùng hết tài nguyên hoặc giữ trong dung lượng kho',
+      title: l('자원 보호', 'Bảo vệ tài nguyên', 'Resource Protection'),
+      tip: l(
+        '전투 전 자원 모두 사용하거나 창고 용량 내로 유지',
+        'Trước chiến đấu, dùng hết tài nguyên hoặc giữ trong dung lượng kho',
+        'Before combat, use all resources or keep them within warehouse capacity'
+      ),
     },
   ];
 
   const commonMistakes = [
-    isKorean ? '정찰 없이 공격 → 카운터 당함' : 'Tấn công không trinh sát → bị counter',
-    isKorean ? '오프라인 시 쉴드 미사용 → 병력 손실' : 'Không shield khi offline → mất quân',
-    isKorean ? '단독 행동 → 연맹 지원 없이 고립' : 'Hành động đơn độc → bị cô lập không hỗ trợ',
-    isKorean ? '저티어 다수 병력 사용 → 쉽게 격파당함' : 'Dùng nhiều quân tier thấp → dễ bị đánh bại',
+    l('정찰 없이 공격 → 카운터 당함', 'Tấn công không trinh sát → bị counter', 'Attacking without scouting → get countered'),
+    l('오프라인 시 쉴드 미사용 → 병력 손실', 'Không shield khi offline → mất quân', 'No shield while offline → troop losses'),
+    l('단독 행동 → 연맹 지원 없이 고립', 'Hành động đơn độc → bị cô lập không hỗ trợ', 'Acting alone → isolated without alliance support'),
+    l('저티어 다수 병력 사용 → 쉽게 격파당함', 'Dùng nhiều quân tier thấp → dễ bị đánh bại', 'Using many low-tier troops → easily defeated'),
   ];
 
   return (
@@ -120,24 +142,26 @@ function PvPStrategyContent({ locale }: { locale: string }) {
           </div>
           <h1 className="text-3xl font-bold flex items-center gap-3">
             <Swords className="h-8 w-8 text-highlight" />
-            {isKorean ? 'PvP 전략 가이드' : 'Hướng dẫn chiến thuật PvP'}
+            {l('PvP 전략 가이드', 'Hướng dẫn chiến thuật PvP', 'PvP Strategy Guide')}
           </h1>
           <p className="text-muted-foreground">
-            {isKorean
-              ? '공격/방어 전략과 전투 팁을 알아봅니다.'
-              : 'Tìm hiểu chiến thuật tấn công/phòng thủ và mẹo chiến đấu.'}
+            {l(
+              '공격/방어 전략과 전투 팁을 알아봅니다.',
+              'Tìm hiểu chiến thuật tấn công/phòng thủ và mẹo chiến đấu.',
+              'Learn attack/defense strategies and combat tips.'
+            )}
           </p>
         </div>
 
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{isKorean ? '핵심 요약' : 'Tóm tắt'}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Key Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {isKorean ? '공격 전 반드시 정찰 → 카운터 구성' : 'Bắt buộc trinh sát trước tấn công → cấu thành counter'}</li>
-              <li>• {isKorean ? '오프라인 시 반드시 쉴드 사용' : 'Bắt buộc dùng shield khi offline'}</li>
-              <li>• {isKorean ? '연맹과 협력 - 단독 행동 금지' : 'Hợp tác với liên minh - cấm hành động đơn độc'}</li>
-              <li>• {isKorean ? '전투 전 자원 보호 (사용 또는 창고 내)' : 'Bảo vệ tài nguyên trước chiến đấu'}</li>
+              <li>• {l('공격 전 반드시 정찰 → 카운터 구성', 'Bắt buộc trinh sát trước tấn công → cấu thành counter', 'Always scout before attacking → build counter formation')}</li>
+              <li>• {l('오프라인 시 반드시 쉴드 사용', 'Bắt buộc dùng shield khi offline', 'Always use shield when offline')}</li>
+              <li>• {l('연맹과 협력 - 단독 행동 금지', 'Hợp tác với liên minh - cấm hành động đơn độc', 'Cooperate with alliance - never act alone')}</li>
+              <li>• {l('전투 전 자원 보호 (사용 또는 창고 내)', 'Bảo vệ tài nguyên trước chiến đấu', 'Protect resources before combat (use or store)')}</li>
             </ul>
           </CardContent>
         </Card>
@@ -146,7 +170,7 @@ function PvPStrategyContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Swords className="h-6 w-6 text-red-400" />
-            {isKorean ? '공격 전략' : 'Chiến thuật tấn công'}
+            {l('공격 전략', 'Chiến thuật tấn công', 'Attack Strategies')}
           </h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {attackStrategies.map((strategy, idx) => (
@@ -164,7 +188,7 @@ function PvPStrategyContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Shield className="h-6 w-6 text-blue-400" />
-            {isKorean ? '방어 전략' : 'Chiến thuật phòng thủ'}
+            {l('방어 전략', 'Chiến thuật phòng thủ', 'Defense Strategies')}
           </h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {defenseStrategies.map((strategy, idx) => (
@@ -180,7 +204,7 @@ function PvPStrategyContent({ locale }: { locale: string }) {
 
         {/* Battle Tips */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-bold">{isKorean ? '전투 팁' : 'Mẹo chiến đấu'}</h2>
+          <h2 className="text-2xl font-bold">{l('전투 팁', 'Mẹo chiến đấu', 'Combat Tips')}</h2>
           <div className="grid gap-4 sm:grid-cols-3">
             {battleTips.map((tip, idx) => {
               const Icon = tip.icon;
@@ -201,13 +225,13 @@ function PvPStrategyContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <AlertTriangle className="h-6 w-6 text-destructive" />
-            {isKorean ? '흔한 실수' : 'Sai lầm thường gặp'}
+            {l('흔한 실수', 'Sai lầm thường gặp', 'Common Mistakes')}
           </h2>
           <Card className="border-destructive/30 bg-destructive/5">
             <CardContent className="p-4 space-y-2">
               {commonMistakes.map((mistake, idx) => (
                 <div key={idx} className="flex gap-2">
-                  <span className="text-destructive">✗</span>
+                  <span className="text-destructive">&#10007;</span>
                   <span className="text-sm text-muted-foreground">{mistake}</span>
                 </div>
               ))}
@@ -219,32 +243,34 @@ function PvPStrategyContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Swords className="h-6 w-6 text-highlight" />
-            {isKorean ? '진영 상성 시스템' : 'He thong tuong khac phe'}
+            {l('진영 상성 시스템', 'He thong tuong khac phe', 'Faction Counter System')}
           </h2>
           <Card>
             <CardContent className="p-6">
               <div className="flex flex-col items-center space-y-4">
                 <div className="flex items-center justify-center gap-3 flex-wrap">
                   <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-sm px-3 py-1">
-                    {isKorean ? '슈터 (새벽의 날개)' : 'Shooter (Canh Binh Minh)'}
+                    {l('슈터 (새벽의 날개)', 'Shooter (Canh Binh Minh)', 'Shooter (Wings of Dawn)')}
                   </Badge>
                   <span className="text-green-400 font-bold text-lg">&rarr;</span>
                   <Badge className="bg-red-500/20 text-red-400 border-red-500/30 text-sm px-3 py-1">
-                    {isKorean ? '돌격 (블러디 로즈)' : 'Assaulter (Blood Rose)'}
+                    {l('돌격 (블러디 로즈)', 'Assaulter (Blood Rose)', 'Assaulter (Blood Rose)')}
                   </Badge>
                   <span className="text-green-400 font-bold text-lg">&rarr;</span>
                   <Badge className="bg-green-500/20 text-green-400 border-green-500/30 text-sm px-3 py-1">
-                    {isKorean ? '라이더 (질서의 수호자)' : 'Rider (Nguoi Bao Ve Trat Tu)'}
+                    {l('라이더 (질서의 수호자)', 'Rider (Nguoi Bao Ve Trat Tu)', 'Rider (Guard of Order)')}
                   </Badge>
                   <span className="text-green-400 font-bold text-lg">&rarr;</span>
                   <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-sm px-3 py-1">
-                    {isKorean ? '슈터' : 'Shooter'}
+                    {l('슈터', 'Shooter', 'Shooter')}
                   </Badge>
                 </div>
                 <p className="text-sm text-muted-foreground text-center">
-                  {isKorean
-                    ? '화살표 방향이 카운터 관계입니다. 슈터는 돌격을, 돌격은 라이더를, 라이더는 슈터를 이깁니다.'
-                    : 'Huong mui ten la quan he counter. Shooter thang Assaulter, Assaulter thang Rider, Rider thang Shooter.'}
+                  {l(
+                    '화살표 방향이 카운터 관계입니다. 슈터는 돌격을, 돌격은 라이더를, 라이더는 슈터를 이깁니다.',
+                    'Huong mui ten la quan he counter. Shooter thang Assaulter, Assaulter thang Rider, Rider thang Shooter.',
+                    'Arrows show the counter relationship. Shooter beats Assaulter, Assaulter beats Rider, Rider beats Shooter.'
+                  )}
                 </p>
               </div>
             </CardContent>
@@ -255,33 +281,39 @@ function PvPStrategyContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Target className="h-6 w-6 text-highlight" />
-            {isKorean ? '추천 구성' : 'Cau hinh khuyen nghi'}
+            {l('추천 구성', 'Cau hinh khuyen nghi', 'Recommended Composition')}
           </h2>
           <Card className="border-blue-500/30 bg-blue-500/5">
             <CardContent className="p-4 space-y-3">
               <div className="flex items-center gap-2">
                 <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">
-                  {isKorean ? '최적 조합' : 'To hop toi uu'}
+                  {l('최적 조합', 'To hop toi uu', 'Optimal Lineup')}
                 </Badge>
               </div>
               <p className="text-sm">
-                {isKorean
-                  ? '새벽의 날개(슈터) 3명 + 블러디 로즈(돌격) 2명 하이브리드 구성이 최적입니다.'
-                  : 'Ket hop 3 Canh Binh Minh (Shooter) + 2 Blood Rose (Assaulter) la toi uu.'}
+                {l(
+                  '새벽의 날개(슈터) 3명 + 블러디 로즈(돌격) 2명 하이브리드 구성이 최적입니다.',
+                  'Ket hop 3 Canh Binh Minh (Shooter) + 2 Blood Rose (Assaulter) la toi uu.',
+                  'The optimal lineup is 3 Wings of Dawn (Shooter) + 2 Blood Rose (Assaulter) hybrid composition.'
+                )}
               </p>
               <p className="text-sm text-muted-foreground">
-                {isKorean
-                  ? '이유: 대부분의 서버에서 블러디 로즈 유저가 다수이므로 슈터 위주 구성이 카운터 이점을 가집니다.'
-                  : 'Ly do: Da so server co nhieu Blood Rose nen doi hinh Shooter co loi the counter.'}
+                {l(
+                  '이유: 대부분의 서버에서 블러디 로즈 유저가 다수이므로 슈터 위주 구성이 카운터 이점을 가집니다.',
+                  'Ly do: Da so server co nhieu Blood Rose nen doi hinh Shooter co loi the counter.',
+                  'Reason: Most servers have a Blood Rose majority, so a Shooter-heavy lineup has a counter advantage.'
+                )}
               </p>
             </CardContent>
           </Card>
           <div className="info-warning flex gap-3">
             <AlertTriangle className="h-5 w-5 text-warning shrink-0 mt-0.5" />
             <p className="text-sm text-muted-foreground">
-              {isKorean
-                ? '칩은 진영 고정이므로 변경 비용이 매우 높습니다. 메인 진영을 신중하게 결정한 후 칩을 투자하세요.'
-                : 'Chip co dinh theo phe nen chi phi thay doi rat cao. Hay can nhac ky truoc khi dau tu chip vao phe chinh.'}
+              {l(
+                '칩은 진영 고정이므로 변경 비용이 매우 높습니다. 메인 진영을 신중하게 결정한 후 칩을 투자하세요.',
+                'Chip co dinh theo phe nen chi phi thay doi rat cao. Hay can nhac ky truoc khi dau tu chip vao phe chinh.',
+                'Chips are faction-locked, so switching costs are very high. Choose your main faction carefully before investing chips.'
+              )}
             </p>
           </div>
         </section>
@@ -290,39 +322,43 @@ function PvPStrategyContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Search className="h-6 w-6 text-highlight" />
-            {isKorean ? '정찰 프로토콜' : 'Quy trinh trinh sat'}
+            {l('정찰 프로토콜', 'Quy trinh trinh sat', 'Scout Protocol')}
           </h2>
           <Card>
             <CardContent className="p-4">
               <p className="text-sm text-muted-foreground mb-3">
-                {isKorean
-                  ? '공격 전 반드시 다음 항목을 확인하세요:'
-                  : 'Bat buoc kiem tra cac muc sau truoc khi tan cong:'}
+                {l(
+                  '공격 전 반드시 다음 항목을 확인하세요:',
+                  'Bat buoc kiem tra cac muc sau truoc khi tan cong:',
+                  'Always check the following before attacking:'
+                )}
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2 text-sm">
                   <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
                   <span>
-                    {isKorean
-                      ? '킬수 vs 파워 비교: 높은 파워 + 낮은 킬수 = 건물/연구로 부풀린 파워 (쉬운 타겟)'
-                      : 'So sanh Kill vs Power: Power cao + Kill thap = Power thoi phong tu cong trinh/NC (muc tieu de)'}
+                    {l(
+                      '킬수 vs 파워 비교: 높은 파워 + 낮은 킬수 = 건물/연구로 부풀린 파워 (쉬운 타겟)',
+                      'So sanh Kill vs Power: Power cao + Kill thap = Power thoi phong tu cong trinh/NC (muc tieu de)',
+                      'Kill count vs Power: High power + low kills = inflated power from buildings/research (easy target)'
+                    )}
                   </span>
                 </li>
                 <li className="flex items-start gap-2 text-sm">
                   <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
-                  <span>{isKorean ? '영웅 파워 확인' : 'Kiem tra Power anh hung'}</span>
+                  <span>{l('영웅 파워 확인', 'Kiem tra Power anh hung', 'Check hero power')}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm">
                   <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
-                  <span>{isKorean ? '차량 개조 파워 확인' : 'Kiem tra Power xe do'}</span>
+                  <span>{l('차량 개조 파워 확인', 'Kiem tra Power xe do', 'Check vehicle mod power')}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm">
                   <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
-                  <span>{isKorean ? '기술 연구 진행도 확인' : 'Kiem tra tien do nghien cuu ky thuat'}</span>
+                  <span>{l('기술 연구 진행도 확인', 'Kiem tra tien do nghien cuu ky thuat', 'Check tech research progress')}</span>
                 </li>
                 <li className="flex items-start gap-2 text-sm">
                   <Eye className="h-4 w-4 text-highlight shrink-0 mt-0.5" />
-                  <span>{isKorean ? '연맹 소속 및 지원 가능성 확인' : 'Kiem tra lien minh va kha nang ho tro'}</span>
+                  <span>{l('연맹 소속 및 지원 가능성 확인', 'Kiem tra lien minh va kha nang ho tro', 'Check alliance membership and reinforcement potential')}</span>
                 </li>
               </ul>
             </CardContent>
@@ -333,32 +369,38 @@ function PvPStrategyContent({ locale }: { locale: string }) {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
             <Timer className="h-6 w-6 text-highlight" />
-            {isKorean ? '토요일 공격 타이밍' : 'Thoi diem tan cong thu Bay'}
+            {l('토요일 공격 타이밍', 'Thoi diem tan cong thu Bay', 'Saturday Attack Timing')}
           </h2>
           <Card className="border-destructive/30 bg-destructive/5">
             <CardContent className="p-4 space-y-3">
               <div className="flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5 text-destructive" />
                 <span className="font-semibold text-destructive">
-                  {isKorean ? '토요일 공격이 가장 효율적' : 'Tan cong thu Bay hieu qua nhat'}
+                  {l('토요일 공격이 가장 효율적', 'Tan cong thu Bay hieu qua nhat', 'Saturday attacks are most efficient')}
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
-                {isKorean
-                  ? '토요일에는 Enemy Buster + State Ruler 이벤트가 동시에 진행되어 병원 용량이 2배로 증가합니다.'
-                  : 'Thu Bay co Enemy Buster + State Ruler dong thoi, dung luong benh vien tang gap 2.'}
+                {l(
+                  '토요일에는 Enemy Buster + State Ruler 이벤트가 동시에 진행되어 병원 용량이 2배로 증가합니다.',
+                  'Thu Bay co Enemy Buster + State Ruler dong thoi, dung luong benh vien tang gap 2.',
+                  'On Saturday, Enemy Buster + State Ruler events run simultaneously, doubling hospital capacity.'
+                )}
               </p>
               <div className="bg-background rounded-lg p-3 border border-border">
                 <p className="text-sm">
-                  {isKorean
-                    ? '각 LV25 병원: 3,480 슬롯 (토요일 2배 = 6,960 슬롯)'
-                    : 'Moi benh vien LV25: 3.480 slot (thu Bay x2 = 6.960 slot)'}
+                  {l(
+                    '각 LV25 병원: 3,480 슬롯 (토요일 2배 = 6,960 슬롯)',
+                    'Moi benh vien LV25: 3.480 slot (thu Bay x2 = 6.960 slot)',
+                    'Each LV25 Hospital: 3,480 slots (Saturday 2x = 6,960 slots)'
+                  )}
                 </p>
               </div>
               <p className="text-sm text-muted-foreground">
-                {isKorean
-                  ? '병원 용량 증가로 병력 손실 부담이 줄어들어, 적극적인 공격이 가능합니다. 또한 Enemy Buster 포인트와 State Ruler 포인트를 동시에 획득할 수 있습니다.'
-                  : 'Dung luong benh vien tang giup giam mat quan, co the tan cong tich cuc hon. Dong thoi nhan diem Enemy Buster va State Ruler.'}
+                {l(
+                  '병원 용량 증가로 병력 손실 부담이 줄어들어, 적극적인 공격이 가능합니다. 또한 Enemy Buster 포인트와 State Ruler 포인트를 동시에 획득할 수 있습니다.',
+                  'Dung luong benh vien tang giup giam mat quan, co the tan cong tich cuc hon. Dong thoi nhan diem Enemy Buster va State Ruler.',
+                  'Increased hospital capacity reduces troop loss burden, enabling aggressive attacks. You also earn Enemy Buster and State Ruler points simultaneously.'
+                )}
               </p>
             </CardContent>
           </Card>

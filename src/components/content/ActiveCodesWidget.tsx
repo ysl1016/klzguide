@@ -16,8 +16,8 @@ interface ActiveCodesWidgetProps {
 }
 
 export function ActiveCodesWidget({ codes, lastUpdated }: ActiveCodesWidgetProps) {
-  const locale = useLocale() as 'ko' | 'vi';
-  const isKorean = locale === 'ko';
+  const locale = useLocale() as 'ko' | 'vi' | 'en';
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale] ?? en);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
   const activeCodes = codes.filter((c) => c.isActive);
@@ -40,17 +40,17 @@ export function ActiveCodesWidget({ codes, lastUpdated }: ActiveCodesWidgetProps
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg flex items-center gap-2">
             <Gift className="h-5 w-5 text-highlight" />
-            {isKorean ? '활성 리딤 코드' : 'Mã đổi thưởng'}
+            {l('활성 리딤 코드', 'Mã đổi thưởng', 'Active Redeem Codes')}
           </CardTitle>
           <Link href={`/${locale}/economy/redeem-codes`}>
             <Button variant="ghost" size="sm" className="text-xs gap-1 text-muted-foreground">
-              {isKorean ? '전체 보기' : 'Xem tất cả'}
+              {l('전체 보기', 'Xem tất cả', 'View All')}
               <ExternalLink className="h-3 w-3" />
             </Button>
           </Link>
         </div>
         <p className="text-xs text-muted-foreground">
-          {isKorean ? '업데이트' : 'Cập nhật'}: {lastUpdated}
+          {l('업데이트', 'Cập nhật', 'Updated')}: {lastUpdated}
         </p>
       </CardHeader>
       <CardContent className="space-y-2">
@@ -88,7 +88,7 @@ export function ActiveCodesWidget({ codes, lastUpdated }: ActiveCodesWidgetProps
         ))}
         {activeCodes.length > 4 && (
           <p className="text-xs text-center text-muted-foreground">
-            +{activeCodes.length - 4} {isKorean ? '개 더보기' : 'thêm'}
+            +{activeCodes.length - 4} {l('개 더보기', 'thêm', 'more')}
           </p>
         )}
       </CardContent>

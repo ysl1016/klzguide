@@ -41,7 +41,7 @@ interface Hero {
   recommended: boolean;
   pvpTier: string;
   pveTier: string;
-  notes?: { ko: string; vi: string };
+  notes?: { ko: string; vi: string; en?: string };
 }
 
 interface TierListProps {
@@ -75,7 +75,8 @@ const factionColors: Record<string, string> = {
 
 export function TierList({ heroes }: TierListProps) {
   const t = useTranslations();
-  const locale = useLocale() as 'ko' | 'vi';
+  const locale = useLocale();
+  const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
   const [classFilter, setClassFilter] = useState<string | null>(null);
   const [factionFilter, setFactionFilter] = useState<string | null>(null);
@@ -100,7 +101,7 @@ export function TierList({ heroes }: TierListProps) {
         (a, b) => tierOrder.indexOf(a.tier) - tierOrder.indexOf(b.tier)
       );
     } else {
-      result.sort((a, b) => a.name[locale].localeCompare(b.name[locale]));
+      result.sort((a, b) => a.name[locale as 'ko' | 'vi' | 'en'].localeCompare(b.name[locale as 'ko' | 'vi' | 'en']));
     }
 
     return result;
@@ -265,7 +266,7 @@ export function TierList({ heroes }: TierListProps) {
                   </Badge>
                   <span className="text-muted-foreground text-sm font-normal">
                     {tierHeroes.length}{' '}
-                    {locale === 'ko' ? '명' : 'anh hùng'}
+                    {l('명', 'anh hùng', 'heroes')}
                   </span>
                 </CardTitle>
               </CardHeader>
@@ -274,7 +275,8 @@ export function TierList({ heroes }: TierListProps) {
                   <TooltipProvider>
                     {tierHeroes.map((hero) => {
                       const ClassIcon = classIcons[hero.class];
-                      const hasNote = hero.notes && hero.notes[locale];
+                      const loc = locale as 'ko' | 'vi' | 'en';
+                      const hasNote = hero.notes && hero.notes[loc];
                       return (
                         <Link
                           key={hero.id}
@@ -295,7 +297,7 @@ export function TierList({ heroes }: TierListProps) {
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2">
                               <span className="font-medium truncate">
-                                {hero.name[locale]}
+                                {hero.name[loc]}
                               </span>
                               {hero.recommended && (
                                 <Star className="h-4 w-4 text-yellow-400 fill-yellow-400 shrink-0" />
@@ -317,7 +319,7 @@ export function TierList({ heroes }: TierListProps) {
                                     side="top"
                                     className="max-w-xs text-sm"
                                   >
-                                    {hero.notes![locale]}
+                                    {hero.notes![loc]}
                                   </TooltipContent>
                                 </Tooltip>
                               )}
@@ -350,9 +352,11 @@ export function TierList({ heroes }: TierListProps) {
       {filteredHeroes.length === 0 && (
         <Card>
           <CardContent className="py-12 text-center text-muted-foreground">
-            {locale === 'ko'
-              ? '조건에 맞는 영웅이 없습니다.'
-              : 'Không có anh hùng phù hợp với điều kiện.'}
+            {l(
+              '조건에 맞는 영웅이 없습니다.',
+              'Không có anh hùng phù hợp với điều kiện.',
+              'No heroes match the selected filters.'
+            )}
           </CardContent>
         </Card>
       )}
