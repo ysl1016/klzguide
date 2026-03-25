@@ -19,7 +19,13 @@
         "진형 가이드 보강: 3+2 혼합 메타 근거 (70% BR → WoD 카운터), 지휘관 슬롯 규칙",
         "피난민 시스템: 외교관 우선순위 '중' → '최우선' 변경, 헬프 시간 증폭 복리 효과 설명",
         "기지 건설: 자원 생산 건물 스킵 (채집 10~50배), 랠리 광장 Lv.20 캡, 생산센터 우선",
-        "용어 통일: 럭키→행운, 난민→피난민, 모집 티켓→모집권, 헤라클레스→타이탄, 디스트로이어→파괴자, 불스아이→사격장, 황금렌치→골드렌치, 일반 렌치→개조도면"
+        "용어 통일: 럭키→행운, 난민→피난민, 모집 티켓→모집권, 헤라클레스→타이탄, 디스트로이어→파괴자, 불스아이→사격장, 황금렌치→골드렌치, 일반 렌치→개조도면",
+        "오늘의 이벤트 시간 계산 수정: Apocalypse Time(UTC-2) 기준으로 전환 — 6일 로테이션 Day 번호, 전면전비 테마, 남은 시간 정확도 개선",
+        "오늘의 이벤트 UI 개선: 로테이션 카드 디자인 통일 (컬러 테두리, 컬러 제목, 카운트다운 타이머 추가)",
+        "전면전비 테마 스케줄: 요일별 6주기 테마 순서 적용 (기존 고정 순서 → 실제 게임 스케줄)",
+        "리딤 코드 페이지 수정: 공유 데이터 소스(redeem-codes.json) 연동, 코드 최신화, 사용법 수정 (last-z.com/giftCenter)",
+        "리딤 코드 자동 갱신: GitHub Actions 매일 크론 (ldshop.gg + lootbar.gg 스크래핑, 실패 시 Issue 자동 생성)",
+        "용어 추가: 영웅 이니셔티브→영웅육성"
       ],
       "vi": [
         "Đại tu hệ thống skill anh hùng: 3 slot → 4 slot (normal/active/deployment/potential)",
@@ -35,7 +41,13 @@
         "Cải thiện Diamond F2P: quy tắc 2,000 diamond, mở bulk hộp bounty",
         "Cải thiện NC: HP stack 35-40%, cảnh báo AR 9 hộp",
         "Cải thiện đội hình: lý do meta 3+2, quy tắc slot chỉ huy",
-        "Đồng bộ thuật ngữ toàn bộ trang"
+        "Đồng bộ thuật ngữ toàn bộ trang",
+        "Sửa tính toán sự kiện hôm nay: chuyển sang Apocalypse Time (UTC-2)",
+        "Cải thiện UI sự kiện hôm nay: thống nhất thiết kế card, thêm đếm ngược",
+        "Lịch Full Prep: áp dụng thứ tự theme theo ngày trong tuần",
+        "Sửa trang mã đổi thưởng: kết nối nguồn dữ liệu chung, cập nhật mã mới",
+        "Tự động cập nhật mã đổi thưởng: GitHub Actions cron hàng ngày",
+        "Đổi thuật ngữ: Hero Initiative → 영웅육성"
       ]
     }
   },
