@@ -32,7 +32,11 @@
         "messages/en.json 생성: UI 라벨/네비게이션/난이도 등 전체 영어 번역",
         "6개 데이터 파일 en 필드 추가: heroes.json(37명 스킬/노트), events.json, glossary.json, hq-costs.json, changelog.json, redeem-codes.json",
         "언어 스위처 3개 언어 표시 (🇰🇷/🇻🇳/🇺🇸), Breadcrumb 57개 라벨 en 추가",
-        "SEO: next-sitemap en alternate ref, manifest.json 영어 설명 추가"
+        "SEO: next-sitemap en alternate ref, manifest.json 영어 설명 추가",
+        "모바일 헤더에 홈 버튼 추가 (기존 PC 전용 → 모바일에서도 우측 상단에 표시)",
+        "모바일 Pull-to-Refresh 추가: 페이지 상단에서 아래로 드래그하면 새로고침",
+        "리딤 코드 제한 유형 표시: 유효기간(날짜 만료) / 인원제한(선착순) / 미확인 배지 추가",
+        "리딤 코드 주의사항 보강: 인원제한 코드 즉시 사용 권장 안내"
       ],
       "vi": [
         "Đại tu hệ thống skill anh hùng: 3 slot → 4 slot (normal/active/deployment/potential)",
@@ -61,7 +65,11 @@
         "Tạo messages/en.json: dịch toàn bộ nhãn UI/điều hướng sang tiếng Anh",
         "Thêm trường en vào 6 file dữ liệu: heroes, events, glossary, hq-costs, changelog, redeem-codes",
         "Bộ chuyển ngôn ngữ hiển thị 3 ngôn ngữ (🇰🇷/🇻🇳/🇺🇸), thêm en cho 57 nhãn breadcrumb",
-        "SEO: thêm en alternate ref cho sitemap, cập nhật manifest.json"
+        "SEO: thêm en alternate ref cho sitemap, cập nhật manifest.json",
+        "Thêm nút Home trên mobile (trước đây chỉ PC → hiển thị góc trên phải trên mobile)",
+        "Thêm Pull-to-Refresh trên mobile: kéo xuống từ đầu trang để tải lại",
+        "Hiển thị loại giới hạn mã đổi thưởng: giới hạn thời gian / số lượng / chưa xác nhận",
+        "Cập nhật lưu ý mã đổi thưởng: khuyến nghị sử dụng ngay mã giới hạn số lượng"
       ],
       "en": [
         "Hero skill system overhaul: migrated from 3-slot to 4-slot system (normal/active/deployment/potential)",
@@ -90,7 +98,11 @@
         "Created messages/en.json: full English translations for UI labels, navigation, and content",
         "Added en fields to 6 data files: heroes.json (37 heroes), events.json, glossary.json, hq-costs.json, changelog.json, redeem-codes.json",
         "Language switcher now shows 3 languages (🇰🇷/🇻🇳/🇺🇸), added en to 57 breadcrumb labels",
-        "SEO: added en alternate ref to sitemap, updated manifest.json"
+        "SEO: added en alternate ref to sitemap, updated manifest.json",
+        "Added home button to mobile header (previously desktop-only)",
+        "Added pull-to-refresh on mobile: swipe down from top to reload page",
+        "Redeem code limit type indicators: time-limited / quantity-limited / unknown badges",
+        "Updated redeem code notices: recommend immediate use for quantity-limited codes"
       ]
     }
   },
