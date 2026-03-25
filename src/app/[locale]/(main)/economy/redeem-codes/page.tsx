@@ -5,7 +5,6 @@ import { useTranslations, useLocale } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import {
   Clock,
   Copy,
@@ -14,34 +13,14 @@ import {
   ExternalLink,
   AlertCircle,
 } from 'lucide-react';
-
-// 리딤 코드 데이터 - lastzguides.com 기준 (현재 유효한 코드 없음)
-// 새 코드가 발견되면 여기에 추가
-const redeemCodes: {
-  code: string;
-  rewards: { ko: string; vi: string };
-  expiry: string | null;
-  isNew: boolean;
-  isActive: boolean;
-}[] = [
-  // 현재 유효한 코드 없음
-  // 예시 형식:
-  // {
-  //   code: 'EXAMPLECODE',
-  //   rewards: {
-  //     ko: '다이아몬드 500 + 골드 10,000',
-  //     vi: 'Kim cương 500 + Vàng 10,000',
-  //   },
-  //   expiry: '2025-12-31',
-  //   isNew: true,
-  //   isActive: true,
-  // },
-];
+import { getAllCodes, getLastUpdated } from '@/lib/redeem-codes';
 
 export default function RedeemCodesPage() {
   const t = useTranslations();
   const locale = useLocale() as 'ko' | 'vi';
   const isKorean = locale === 'ko';
+  const redeemCodes = getAllCodes();
+  const lastUpdated = getLastUpdated();
 
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
@@ -94,20 +73,26 @@ export default function RedeemCodesPage() {
               <li>
                 1.{' '}
                 {isKorean
-                  ? '게임 내 설정 > 리딤 코드 메뉴로 이동'
-                  : 'Vào Cài đặt > Menu Mã đổi thưởng trong game'}
+                  ? '공식 리딤 사이트 (last-z.com/giftCenter) 접속'
+                  : 'Truy cập trang đổi thưởng (last-z.com/giftCenter)'}
               </li>
               <li>
                 2.{' '}
+                {isKorean
+                  ? '게임 내 UID (유저 ID)를 입력'
+                  : 'Nhập UID (User ID) trong game'}
+              </li>
+              <li>
+                3.{' '}
                 {isKorean
                   ? '아래 코드를 복사하여 입력창에 붙여넣기'
                   : 'Sao chép mã bên dưới và dán vào ô nhập'}
               </li>
               <li>
-                3.{' '}
+                4.{' '}
                 {isKorean
-                  ? '확인 버튼을 눌러 보상 수령'
-                  : 'Nhấn nút xác nhận để nhận thưởng'}
+                  ? '확인 후 게임 내 우편함에서 보상 수령'
+                  : 'Xác nhận rồi nhận thưởng trong hộp thư game'}
               </li>
             </ol>
           </CardContent>
@@ -120,7 +105,7 @@ export default function RedeemCodesPage() {
               {isKorean ? '유효한 코드' : 'Mã hợp lệ'} ({activeCodes.length})
             </h2>
             <p className="text-xs text-muted-foreground">
-              {isKorean ? '최종 업데이트: 2025.01.28' : 'Cập nhật: 28/01/2025'}
+              {isKorean ? '최종 업데이트: ' : 'Cập nhật: '}{lastUpdated}
             </p>
           </div>
 

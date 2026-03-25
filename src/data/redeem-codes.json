@@ -2,46 +2,81 @@
   "codes": [
     {
       "code": "MONDAYGO7X3F",
-      "rewards": { "ko": "자원 및 보상", "vi": "Tài nguyên và phần thưởng" },
+      "rewards": { "ko": "각종 보상", "vi": "Phần thưởng đa dạng" },
       "expiry": "2026-03-31",
       "isNew": false,
       "isActive": true
     },
     {
       "code": "CELEBRATE220KTY",
-      "rewards": { "ko": "자원 및 보상", "vi": "Tài nguyên và phần thưởng" },
+      "rewards": { "ko": "각종 보상", "vi": "Phần thưởng đa dạng" },
       "expiry": null,
       "isNew": true,
+      "isActive": true
+    },
+    {
+      "code": "LZDCA180K",
+      "rewards": { "ko": "한정 보상", "vi": "Phần thưởng giới hạn" },
+      "expiry": null,
+      "isNew": true,
+      "isActive": true
+    },
+    {
+      "code": "LZDC150K",
+      "rewards": { "ko": "한정 보상", "vi": "Phần thưởng giới hạn" },
+      "expiry": null,
+      "isNew": false,
       "isActive": true
     },
     {
       "code": "WELCOMELZX",
       "rewards": { "ko": "신규 유저 보상", "vi": "Phần thưởng người chơi mới" },
       "expiry": null,
-      "isNew": true,
+      "isNew": false,
       "isActive": true
     },
     {
       "code": "WELCOMELZFB",
       "rewards": { "ko": "신규 유저 보상", "vi": "Phần thưởng người chơi mới" },
       "expiry": null,
-      "isNew": true,
+      "isNew": false,
       "isActive": true
     },
     {
       "code": "WELCOMELZDC",
       "rewards": { "ko": "신규 유저 보상", "vi": "Phần thưởng người chơi mới" },
       "expiry": null,
-      "isNew": true,
+      "isNew": false,
       "isActive": true
     },
     {
       "code": "STARTWEEK9R5",
-      "rewards": { "ko": "자원 및 보상", "vi": "Tài nguyên và phần thưởng" },
+      "rewards": { "ko": "각종 보상", "vi": "Phần thưởng đa dạng" },
       "expiry": null,
       "isNew": false,
       "isActive": true
+    },
+    {
+      "code": "NEWWEEK",
+      "rewards": { "ko": "각종 보상", "vi": "Phần thưởng đa dạng" },
+      "expiry": "2026-03-01",
+      "isNew": false,
+      "isActive": false
+    },
+    {
+      "code": "MONDAYBLESS",
+      "rewards": { "ko": "각종 보상", "vi": "Phần thưởng đa dạng" },
+      "expiry": "2026-03-01",
+      "isNew": false,
+      "isActive": false
+    },
+    {
+      "code": "GOLDBAR2026",
+      "rewards": { "ko": "각종 보상", "vi": "Phần thưởng đa dạng" },
+      "expiry": null,
+      "isNew": false,
+      "isActive": false
     }
   ],
-  "lastUpdated": "2026-03-19"
+  "lastUpdated": "2026-03-25"
 }
