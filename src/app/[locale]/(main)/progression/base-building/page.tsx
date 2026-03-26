@@ -58,13 +58,13 @@ function BaseBuildingContent({ locale }: { locale: string }) {
     },
     {
       rank: 3,
-      name: l('훈련소', 'Trại huấn luyện (Training Camp)', 'Training Camp'),
+      name: l('훈련병영', 'Trại huấn luyện (Training Camp)', 'Training Camp'),
       reason: l('더 높은 레벨의 병력 훈련 해금. 전투력 직결', 'Mở khóa huấn luyện quân cấp cao hơn. Liên quan trực tiếp CP', 'Unlocks higher tier troop training. Directly impacts CP'),
       color: 'text-orange-400',
       bg: 'bg-orange-500/10',
       icon: Shield,
       detail: l(
-        '훈련소 레벨이 높을수록 강한 병력을 훈련할 수 있습니다. HQ 업그레이드 직후 바로 올려야 합니다.',
+        '훈련병영 레벨이 높을수록 강한 병력을 훈련할 수 있습니다. HQ 업그레이드 직후 바로 올려야 합니다.',
         'Training Camp level cao hơn huấn luyện được quân mạnh hơn. Nâng ngay sau khi nâng HQ.',
         'Higher Training Camp levels unlock stronger troops. Upgrade immediately after each HQ upgrade.'
       ),
@@ -103,7 +103,7 @@ function BaseBuildingContent({ locale }: { locale: string }) {
       bg: 'bg-green-500/10',
       icon: Wheat,
       detail: l(
-        '자원 건물은 균형 있게 올리되, HQ/병원/훈련소보다 우선하지 마세요.',
+        '자원 건물은 균형 있게 올리되, HQ/병원/훈련병영보다 우선하지 마세요.',
         'Nâng tòa tài nguyên cân bằng nhưng đừng ưu tiên hơn HQ/Bệnh viện/Trại HL.',
         'Upgrade resource buildings evenly, but never prioritize them over HQ/Hospital/Training Camp.'
       ),
@@ -137,7 +137,7 @@ function BaseBuildingContent({ locale }: { locale: string }) {
       'Pre-level prerequisite buildings (walls, etc.) before upgrading HQ.'
     ),
     l(
-      'HQ 레벨이 오르면 바로 훈련소와 연구소를 업그레이드하세요.',
+      'HQ 레벨이 오르면 바로 훈련병영와 연구소를 업그레이드하세요.',
       'Khi HQ lên level, nâng ngay Trại HL và Phòng NC.',
       'As soon as HQ levels up, upgrade Training Camp and Research Lab immediately.'
     ),
@@ -272,7 +272,7 @@ function BaseBuildingContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'TL;DR')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {l('건설 우선순위: HQ > 병원 > 훈련소 > 연구소 > 성벽 > 자원 건물', 'Ưu tiên: HQ > Bệnh viện > Trại HL > Phòng NC > Tường > Tòa tài nguyên', 'Priority: HQ > Hospital > Training Camp > Research Lab > Walls > Resource Buildings')}</li>
+              <li>• {l('건설 우선순위: HQ > 병원 > 훈련병영 > 연구소 > 성벽 > 자원 건물', 'Ưu tiên: HQ > Bệnh viện > Trại HL > Phòng NC > Tường > Tòa tài nguyên', 'Priority: HQ > Hospital > Training Camp > Research Lab > Walls > Resource Buildings')}</li>
               <li>• {l('HQ는 항상 최우선 - 다른 모든 건물의 레벨 상한을 결정', 'HQ luôn ưu tiên số 1 - quyết định giới hạn level tất cả tòa', 'HQ is always #1 — it determines the level cap for all other buildings')}</li>
               <li>• {l('연구소는 1개면 충분 - 레벨업에 집중', 'Phòng NC 1 cái đủ - tập trung nâng level', '1 Research Lab is enough — focus on leveling it up')}</li>
               <li>• {l('장식/불필요한 건물은 건너뛰기', 'Bỏ qua trang trí/tòa không cần thiết', 'Skip decorations and unnecessary buildings')}</li>

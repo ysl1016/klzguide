@@ -5,15 +5,18 @@
     "changes": {
       "ko": [
         "용어 수정: 집사 → 관리인 (피난민 시스템, 상점 가이드, 무과금 다이아, 용어사전 일괄 반영)",
-        "용어 수정: 장교 → 군관 (피난민 시스템 가이드 일괄 반영)"
+        "용어 수정: 장교 → 군관 (피난민 시스템 가이드 일괄 반영)",
+        "용어 수정: 군관 → 교관, 훈련소 → 훈련병영, 교관 → 체력훈련사, 사관학교 → 훈련장 (피난민 시스템, 기지 건설, HQ 비용표 일괄 반영)"
       ],
       "vi": [
         "Sửa thuật ngữ: 집사 → 관리인 (trang người tị nạn, shop guide, diamond F2P, từ điển)",
-        "Sửa thuật ngữ: 장교 → 군관 (trang người tị nạn)"
+        "Sửa thuật ngữ: 장교 → 군관 (trang người tị nạn)",
+        "Sửa thuật ngữ: 군관 → 교관, 훈련소 → 훈련병영, 교관 → 체력훈련사, 사관학교 → 훈련장 (người tị nạn, xây dựng, HQ)"
       ],
       "en": [
         "Terminology fix: renamed Korean term for Butler from 집사 to 관리인 across refugees, shop guide, free diamonds, and glossary",
-        "Terminology fix: renamed Korean term for Officer from 장교 to 군관 in refugees guide"
+        "Terminology fix: renamed Korean term for Officer from 장교 to 군관 in refugees guide",
+        "Terminology fix: Officer 군관→교관, Training Camp 훈련소→훈련병영, Instructor 교관→체력훈련사, Academy 사관학교→훈련장 across refugees, base building, and HQ costs"
       ]
     }
   },

@@ -110,7 +110,7 @@
     {
       "level": 7,
       "heroCap": 35,
-      "requirements": { "ko": "훈련소, 연맹센터", "vi": "Trại huấn luyện, Trung tâm LM", "en": "Training Camp, Alliance Center" },
+      "requirements": { "ko": "훈련병영, 연맹센터", "vi": "Trại huấn luyện, Trung tâm LM", "en": "Training Camp, Alliance Center" },
       "food": 279900,
       "wood": 279900,
       "zent": 54800,

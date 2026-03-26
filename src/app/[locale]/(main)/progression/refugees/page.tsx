@@ -70,8 +70,8 @@ function RefugeesContent({ locale }: { locale: string }) {
       desc: l('PvP/이벤트 후 병력 회복에 중요', 'Quan trọng cho hồi phục quân sau PvP/event', 'Important for troop recovery after PvP/events'),
     },
     {
-      name: l('군관 (Officer)', 'Officer', 'Officer'),
-      building: l('훈련소', 'Training Camp', 'Training Camp'),
+      name: l('교관 (Officer)', 'Officer', 'Officer'),
+      building: l('훈련병영', 'Training Camp', 'Training Camp'),
       bonus: l('훈련 속도 증가', 'Tăng tốc huấn luyện', 'Increases training speed'),
       icon: Users,
       color: 'text-yellow-400',
@@ -80,8 +80,8 @@ function RefugeesContent({ locale }: { locale: string }) {
       desc: l('병력 훈련 속도 버프 - 전투력 향상에 필수', 'Buff tốc độ huấn luyện - cần thiết cho tăng CP', 'Training speed buff - essential for CP growth'),
     },
     {
-      name: l('교관 (Instructor)', 'Instructor', 'Instructor'),
-      building: l('사관학교', 'Academy', 'Academy'),
+      name: l('체력훈련사 (Instructor)', 'Instructor', 'Instructor'),
+      building: l('훈련장', 'Academy', 'Academy'),
       bonus: l('영웅 EXP 획득 증가', 'Tăng EXP hero', 'Increases hero EXP gain'),
       icon: Star,
       color: 'text-orange-400',
@@ -139,7 +139,7 @@ function RefugeesContent({ locale }: { locale: string }) {
     },
     {
       rank: 2,
-      type: l('군관', 'Officer', 'Officer'),
+      type: l('교관', 'Officer', 'Officer'),
       reason: l('훈련 속도 = 전투력 직결. 병력이 많을수록 강해집니다', 'Tốc độ HL = liên quan trực tiếp CP. Càng nhiều quân càng mạnh', 'Training speed = direct CP impact. More troops means more power'),
       color: 'text-yellow-400',
     },
@@ -157,7 +157,7 @@ function RefugeesContent({ locale }: { locale: string }) {
     },
     {
       rank: 5,
-      type: l('교관', 'Instructor', 'Instructor'),
+      type: l('체력훈련사', 'Instructor', 'Instructor'),
       reason: l('영웅 육성은 장기 투자 - 여유가 있을 때', 'Phát triển hero là đầu tư dài hạn - khi có dư', 'Hero development is a long-term investment - when you can spare it'),
       color: 'text-orange-400',
     },
@@ -181,7 +181,7 @@ function RefugeesContent({ locale }: { locale: string }) {
       'You can earn Recruitment Tickets from the Furylord event'
     ),
     l(
-      '과학자와 군관를 최우선으로 파견하세요 - 성장 속도에 직접적인 영향',
+      '과학자와 교관을 최우선으로 파견하세요 - 성장 속도에 직접적인 영향',
       'Cử Scientist và Officer ưu tiên - ảnh hưởng trực tiếp tốc độ phát triển',
       'Dispatch Scientists and Officers first - they directly impact growth speed'
     ),
@@ -234,8 +234,8 @@ function RefugeesContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {l('6종 피난민: 외교관, 관리인, 과학자, 간호사, 군관, 교관', '6 loại: Diplomat, Butler, Scientist, Nurse, Officer, Instructor', '6 refugee types: Diplomat, Butler, Scientist, Nurse, Officer, Instructor')}</li>
-              <li>• {l('파견 우선순위: 과학자 > 군관 > 관리인', 'Ưu tiên cử đi: Scientist > Officer > Butler', 'Dispatch priority: Scientist > Officer > Butler')}</li>
+              <li>• {l('6종 피난민: 외교관, 관리인, 과학자, 간호사, 교관, 체력훈련사', '6 loại: Diplomat, Butler, Scientist, Nurse, Officer, Instructor', '6 refugee types: Diplomat, Butler, Scientist, Nurse, Officer, Instructor')}</li>
+              <li>• {l('파견 우선순위: 과학자 > 교관 > 관리인', 'Ưu tiên cử đi: Scientist > Officer > Butler', 'Dispatch priority: Scientist > Officer > Butler')}</li>
               <li>• {l('모집권 2,000장 단위 소환 권장 - 고급 보장', 'Khuyến nghị dùng 2,000 vé/lần - đảm bảo cao cấp', 'Recommended to summon in batches of 2,000 tickets - guaranteed advanced tier')}</li>
               <li>• {l('난폭 두목에서 모집권 획득 가능', 'Có thể lấy vé từ Furylord', 'Recruitment Tickets can be earned from Furylord')}</li>
             </ul>
