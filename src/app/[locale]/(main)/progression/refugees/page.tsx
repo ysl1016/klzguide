@@ -40,7 +40,7 @@ function RefugeesContent({ locale }: { locale: string }) {
       desc: l('헬프 시간 증폭으로 건설/연구/치료 가속 — 복리 효과', 'Tăng thời gian help → tăng tốc xây/NC/chữa — hiệu ứng lãi kép', 'Help duration amplification accelerates construction/research/healing - compound effect'),
     },
     {
-      name: l('집사 (Butler)', 'Butler', 'Butler'),
+      name: l('관리인 (Butler)', 'Butler', 'Butler'),
       building: l('본부(HQ)', 'HQ', 'HQ'),
       bonus: l('자원 생산량 증가', 'Tăng sản xuất tài nguyên', 'Increases resource production'),
       icon: Building2,
@@ -145,7 +145,7 @@ function RefugeesContent({ locale }: { locale: string }) {
     },
     {
       rank: 3,
-      type: l('집사', 'Butler', 'Butler'),
+      type: l('관리인', 'Butler', 'Butler'),
       reason: l('자원 생산 증가는 패시브로 모든 활동에 도움', 'Tăng sản xuất tài nguyên hỗ trợ mọi hoạt động thụ động', 'Resource production boost passively supports all activities'),
       color: 'text-green-400',
     },
@@ -234,8 +234,8 @@ function RefugeesContent({ locale }: { locale: string }) {
           <CardContent className="p-4">
             <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
-              <li>• {l('6종 피난민: 외교관, 집사, 과학자, 간호사, 장교, 교관', '6 loại: Diplomat, Butler, Scientist, Nurse, Officer, Instructor', '6 refugee types: Diplomat, Butler, Scientist, Nurse, Officer, Instructor')}</li>
-              <li>• {l('파견 우선순위: 과학자 > 장교 > 집사', 'Ưu tiên cử đi: Scientist > Officer > Butler', 'Dispatch priority: Scientist > Officer > Butler')}</li>
+              <li>• {l('6종 피난민: 외교관, 관리인, 과학자, 간호사, 장교, 교관', '6 loại: Diplomat, Butler, Scientist, Nurse, Officer, Instructor', '6 refugee types: Diplomat, Butler, Scientist, Nurse, Officer, Instructor')}</li>
+              <li>• {l('파견 우선순위: 과학자 > 장교 > 관리인', 'Ưu tiên cử đi: Scientist > Officer > Butler', 'Dispatch priority: Scientist > Officer > Butler')}</li>
               <li>• {l('모집권 2,000장 단위 소환 권장 - 고급 보장', 'Khuyến nghị dùng 2,000 vé/lần - đảm bảo cao cấp', 'Recommended to summon in batches of 2,000 tickets - guaranteed advanced tier')}</li>
               <li>• {l('난폭 두목에서 모집권 획득 가능', 'Có thể lấy vé từ Furylord', 'Recruitment Tickets can be earned from Furylord')}</li>
             </ul>

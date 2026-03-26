@@ -92,7 +92,7 @@ function FreeDiamondsContent({ locale }: { locale: string }) {
     {
       item: l('피난민 모집권', 'Refugee Tickets', 'Refugee Recruitment Tickets'),
       priority: 3,
-      reason: l('집사(건설속도), 과학자(연구속도) 우선 — 영구 계정 보너스', 'Butler(xây), Scientist(NC) — bonus vĩnh viễn', 'Focus Butlers (construction speed) and Scientists (research speed) — permanent account bonuses'),
+      reason: l('관리인(건설속도), 과학자(연구속도) 우선 — 영구 계정 보너스', 'Butler(xây), Scientist(NC) — bonus vĩnh viễn', 'Focus Butlers (construction speed) and Scientists (research speed) — permanent account bonuses'),
     },
     {
       item: l('행운 할인 (40%+ 할인 시만)', 'Lucky Discounter (40%+ only)', 'Lucky Discounter (40%+ discount only)'),

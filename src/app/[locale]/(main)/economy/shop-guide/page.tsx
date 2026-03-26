@@ -102,7 +102,7 @@ function ShopGuideContent({ locale }: { locale: string }) {
       items: [
         { name: l('Key Licenses (전략, 개조, 연구)', 'Key Licenses (Strategy, Modification, Research)', 'Key Licenses (Strategy, Modification, Research)'), desc: l('1회 구매, 영구 혜택', 'One-time purchase, lifetime benefits', 'One-time purchase, lifetime benefits') },
         { name: l('4명의 건설자 (Builders)', 'All 4 Builders', 'All 4 Builders'), desc: l('건설 효율 대폭 향상', 'Dramatically improves construction', 'Dramatically improves construction') },
-        { name: l('피난민 모집권', 'Refugee Recruitment Tickets', 'Refugee Recruitment Tickets'), desc: l('집사(건설), 과학자(연구) 우선', 'Focus on Butlers & Scientists', 'Focus on Butlers & Scientists') },
+        { name: l('피난민 모집권', 'Refugee Recruitment Tickets', 'Refugee Recruitment Tickets'), desc: l('관리인(건설), 과학자(연구) 우선', 'Focus on Butlers & Scientists', 'Focus on Butlers & Scientists') },
         { name: l('주간 쉴드', 'Weekly Shields', 'Weekly Shields'), desc: l('금요일까지 최소 2,000 다이아 유지', 'Keep 2,000 diamonds by Friday', 'Keep 2,000 diamonds by Friday') },
       ],
     },

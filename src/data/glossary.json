@@ -215,7 +215,7 @@
       "ko": "피난민",
       "vi": "Người tị nạn",
       "definition": {
-        "ko": "건물에 배치하여 다양한 보너스를 제공하는 NPC입니다. 외교관, 집사, 과학자 등의 종류가 있습니다.",
+        "ko": "건물에 배치하여 다양한 보너스를 제공하는 NPC입니다. 외교관, 관리인, 과학자 등의 종류가 있습니다.",
         "vi": "NPC đặt trong công trình để cung cấp bonus. Gồm Ngoại giao, Quản gia, Nhà khoa học, v.v.",
         "en": "NPCs assigned to buildings that provide various bonuses. Types include Diplomat, Butler, Scientist, etc."
       }
