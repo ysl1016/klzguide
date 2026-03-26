@@ -1,7 +1,21 @@
 [
   {
-    "date": "2026-03-25",
+    "date": "2026-03-26",
     "isNew": true,
+    "changes": {
+      "ko": [
+        "용어 수정: 집사 → 관리인 (피난민 시스템, 상점 가이드, 무과금 다이아, 용어사전 일괄 반영)"
+      ],
+      "vi": [
+        "Sửa thuật ngữ: 집사 → 관리인 (trang người tị nạn, shop guide, diamond F2P, từ điển)"
+      ],
+      "en": [
+        "Terminology fix: renamed Korean term for Butler from 집사 to 관리인 across refugees, shop guide, free diamonds, and glossary"
+      ]
+    }
+  },
+  {
+    "date": "2026-03-25",
     "changes": {
       "ko": [
         "영웅 스킬 체계 전면 개편: 3슬롯(active/passive/global) → 4슬롯(normal/active/deployment/potential) 마이그레이션",
