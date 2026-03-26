@@ -41,13 +41,13 @@ function RefugeesContent({ locale }: { locale: string }) {
     },
     {
       name: l('관리인 (Butler)', 'Butler', 'Butler'),
-      building: l('본부(HQ)', 'HQ', 'HQ'),
-      bonus: l('자원 생산량 증가', 'Tăng sản xuất tài nguyên', 'Increases resource production'),
+      building: l('별장', 'Villa', 'Villa'),
+      bonus: l('건축속도 상승', 'Tăng tốc xây dựng', 'Increases construction speed'),
       icon: Building2,
       color: 'text-green-400',
       bg: 'bg-green-500/10',
       priority: l('높음', 'Cao', 'High'),
-      desc: l('패시브 자원 수입 증가 - 장기적으로 큰 차이', 'Tăng thu nhập tài nguyên thụ động - khác biệt lớn lâu dài', 'Passive resource income boost - big difference long-term'),
+      desc: l('건축 속도 버프 - 모든 건물 업그레이드에 직접 영향', 'Buff tốc độ xây dựng - ảnh hưởng trực tiếp mọi nâng cấp công trình', 'Construction speed buff - directly impacts all building upgrades'),
     },
     {
       name: l('과학자 (Scientist)', 'Scientist', 'Scientist'),
@@ -146,7 +146,7 @@ function RefugeesContent({ locale }: { locale: string }) {
     {
       rank: 3,
       type: l('관리인', 'Butler', 'Butler'),
-      reason: l('자원 생산 증가는 패시브로 모든 활동에 도움', 'Tăng sản xuất tài nguyên hỗ trợ mọi hoạt động thụ động', 'Resource production boost passively supports all activities'),
+      reason: l('건축 속도 상승으로 HQ/건물 업그레이드 가속 — 성장에 직결', 'Tăng tốc xây dựng giúp nâng cấp HQ/công trình nhanh hơn — ảnh hưởng trực tiếp phát triển', 'Construction speed boost accelerates HQ/building upgrades — directly tied to growth'),
       color: 'text-green-400',
     },
     {
