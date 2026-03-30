@@ -32,14 +32,8 @@ export function HeroDatabaseFilter({ heroes }: HeroDatabaseFilterProps) {
   const seasons = useMemo(() => {
     const set = new Set<string>();
     heroes.forEach((h) => { if (h.season) set.add(h.season); });
-    return ['S1', 'S2', 'S3', 'S4', 'Purple', 'Blue'].filter((s) => set.has(s));
+    return ['S1', 'S2', 'S3', 'S4'].filter((s) => set.has(s));
   }, [heroes]);
-
-  const seasonLabel = (s: string) => {
-    if (s === 'Purple') return l('보라등급', 'Hạng Tím', 'Purple Grade');
-    if (s === 'Blue') return l('블루등급', 'Hạng Xanh', 'Blue Grade');
-    return s;
-  };
 
   const filteredHeroes = useMemo(() => {
     let result = [...heroes];
@@ -138,7 +132,7 @@ export function HeroDatabaseFilter({ heroes }: HeroDatabaseFilterProps) {
                   {seasonFilter
                     ? seasonFilter === '_none'
                       ? l('시즌 없음', 'Không mùa', 'No Season')
-                      : seasonLabel(seasonFilter)
+                      : seasonFilter
                     : l('전체 시즌', 'Tất cả mùa', 'All Seasons')}
                   <ChevronDown className="h-4 w-4" />
                 </Button>
@@ -149,7 +143,7 @@ export function HeroDatabaseFilter({ heroes }: HeroDatabaseFilterProps) {
                 </DropdownMenuItem>
                 {seasons.map((s) => (
                   <DropdownMenuItem key={s} onClick={() => setSeasonFilter(s)}>
-                    {seasonLabel(s)}
+                    {s}
                   </DropdownMenuItem>
                 ))}
                 <DropdownMenuItem onClick={() => setSeasonFilter('_none')}>
