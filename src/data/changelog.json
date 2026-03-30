@@ -7,19 +7,22 @@
         "오늘의 이벤트: 일요일 '휴식의 날' 표시 추가 (서버쟁패전/연맹전 없음)",
         "6일 로테이션 Day 계산 수정: 6일 순환 → 요일 기반(월~토 + 일요일 휴식)",
         "Day 1 이름 수정: 수정의 날 → 차량개조의 날",
-        "리딤 코드 업데이트: STARTWEEK9R5 재활성화 (3/31 만료), LZDC150K 인원 소진으로 비활성화"
+        "리딤 코드 업데이트: STARTWEEK9R5 재활성화 (3/31 만료), LZDC150K 인원 소진으로 비활성화",
+        "영웅 도감 시즌 필터 추가: S1~S4, 보라등급, 블루등급, 시즌 없음(기본) 필터링 가능"
       ],
       "vi": [
         "Sự kiện hôm nay: thêm 'Ngày Nghỉ' cho Chủ nhật (không SVS/Alliance Duel)",
         "Sửa tính toán xoay vòng 6 ngày: chuyển sang tính theo thứ (T2-T7 + CN nghỉ)",
         "Sửa tên Day 1: Ngày Cải tiến → Ngày Cải tiến Xe",
-        "Cập nhật mã đổi thưởng: STARTWEEK9R5 kích hoạt lại (hết hạn 31/3), LZDC150K hết số lượng"
+        "Cập nhật mã đổi thưởng: STARTWEEK9R5 kích hoạt lại (hết hạn 31/3), LZDC150K hết số lượng",
+        "Thêm bộ lọc mùa cho trang anh hùng: S1~S4, Hạng Tím, Hạng Xanh, Không mùa"
       ],
       "en": [
         "Today's Events: added Sunday 'Rest Day' display (no SVS or Alliance Duel)",
         "Fixed 6-day rotation calculation: changed from 6-day cycle to weekday-based (Mon-Sat + Sunday rest)",
         "Fixed Day 1 name: Modification Day → Vehicle Modification Day",
-        "Redeem code update: STARTWEEK9R5 reactivated (expires 3/31), LZDC150K deactivated (quantity exhausted)"
+        "Redeem code update: STARTWEEK9R5 reactivated (expires 3/31), LZDC150K deactivated (quantity exhausted)",
+        "Added season filter to hero database: S1-S4, Purple Grade, Blue Grade, No Season (Base)"
       ]
     }
   },
