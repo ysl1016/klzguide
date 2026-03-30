@@ -46,7 +46,7 @@
       "expiry": null,
       "limitType": "quantity",
       "isNew": false,
-      "isActive": true
+      "isActive": false
     },
     {
       "code": "WELCOMELZX",
@@ -87,14 +87,14 @@
     {
       "code": "STARTWEEK9R5",
       "rewards": {
-        "ko": "각종 보상",
-        "vi": "Phần thưởng đa dạng",
-        "en": "Various Rewards"
+        "ko": "가속, 모집권, 자원 상자",
+        "vi": "Tăng tốc, vé tuyển mộ, hộp tài nguyên",
+        "en": "Speedups, Recruitment Tickets, Resource Boxes"
       },
-      "expiry": null,
-      "limitType": "quantity",
-      "isNew": false,
-      "isActive": false
+      "expiry": "2026-03-31",
+      "limitType": "both",
+      "isNew": true,
+      "isActive": true
     },
     {
       "code": "NEWWEEK",
@@ -141,9 +141,9 @@
       },
       "expiry": null,
       "limitType": "unknown",
-      "isNew": true,
+      "isNew": false,
       "isActive": true
     }
   ],
-  "lastUpdated": "2026-03-25"
+  "lastUpdated": "2026-03-30"
 }
