@@ -26,26 +26,20 @@ export function toApocTime(date: Date = new Date()): Date {
 }
 
 /**
- * Get current 6-day rotation day (1-6)
- * Day 1 = Monday in Apocalypse Time
+ * Get current rotation day (1-6) or 0 for Sunday (Rest Day)
  *
- * Reference anchor: 2026-03-23 (Mon) Apoc time = Day 1
+ * The game follows a weekly schedule:
+ * - Monday = Day 1, Tuesday = Day 2, ... Saturday = Day 6
+ * - Sunday = Rest Day (no SVS or Alliance Duel)
+ *
+ * Returns 0 for Sunday, 1-6 for Mon-Sat
  */
 export function getRotationDay(date: Date = new Date()): number {
   const apoc = toApocTime(date);
+  const dayOfWeek = apoc.getUTCDay(); // 0=Sun, 1=Mon, ... 6=Sat
 
-  // Reference: 2026-03-23 00:00 Apoc (UTC-2) = 2026-03-23 02:00 UTC
-  // Use UTC epoch day calculation to avoid timezone issues
-  const apocDaysSinceEpoch = Math.floor(apoc.getTime() / (1000 * 60 * 60 * 24));
-  const refDaysSinceEpoch = Math.floor(
-    Date.UTC(2026, 2, 23, 0, 0, 0) / (1000 * 60 * 60 * 24)
-  );
-
-  const diffDays = apocDaysSinceEpoch - refDaysSinceEpoch;
-
-  // Rotation: 0-5 → 1-6
-  const day = ((diffDays % 6) + 6) % 6;
-  return day + 1;
+  if (dayOfWeek === 0) return 0; // Sunday = Rest Day
+  return dayOfWeek; // 1=Mon(Day1), 2=Tue(Day2), ... 6=Sat(Day6)
 }
 
 /**

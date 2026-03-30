@@ -14,7 +14,13 @@ export interface FullPrepTheme {
   description: LocalizedString;
 }
 
+export interface RestDay {
+  name: LocalizedString;
+  description: LocalizedString;
+}
+
 export interface EventSchedule {
+  restDay: RestDay;
   sixDayRotation: DayRotation[];
   fullPrepThemes: FullPrepTheme[];
   canyonClash: {

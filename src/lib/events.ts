@@ -12,6 +12,10 @@ export function getSixDayRotation(): DayRotation[] {
   return data.schedule.sixDayRotation;
 }
 
+export function getRestDay() {
+  return data.schedule.restDay;
+}
+
 export function getFullPrepThemes() {
   return data.schedule.fullPrepThemes;
 }

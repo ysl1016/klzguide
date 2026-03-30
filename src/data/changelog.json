@@ -1,7 +1,27 @@
 [
   {
-    "date": "2026-03-26",
+    "date": "2026-03-30",
     "isNew": true,
+    "changes": {
+      "ko": [
+        "오늘의 이벤트: 일요일 '휴식의 날' 표시 추가 (서버쟁패전/연맹전 없음)",
+        "6일 로테이션 Day 계산 수정: 6일 순환 → 요일 기반(월~토 + 일요일 휴식)",
+        "Day 1 이름 수정: 수정의 날 → 차량개조의 날"
+      ],
+      "vi": [
+        "Sự kiện hôm nay: thêm 'Ngày Nghỉ' cho Chủ nhật (không SVS/Alliance Duel)",
+        "Sửa tính toán xoay vòng 6 ngày: chuyển sang tính theo thứ (T2-T7 + CN nghỉ)",
+        "Sửa tên Day 1: Ngày Cải tiến → Ngày Cải tiến Xe"
+      ],
+      "en": [
+        "Today's Events: added Sunday 'Rest Day' display (no SVS or Alliance Duel)",
+        "Fixed 6-day rotation calculation: changed from 6-day cycle to weekday-based (Mon-Sat + Sunday rest)",
+        "Fixed Day 1 name: Modification Day → Vehicle Modification Day"
+      ]
+    }
+  },
+  {
+    "date": "2026-03-26",
     "changes": {
       "ko": [
         "용어 수정: 집사 → 관리인 (피난민 시스템, 상점 가이드, 무과금 다이아, 용어사전 일괄 반영)",

@@ -11,7 +11,7 @@ import {
 import { Compass } from 'lucide-react';
 import { getAllHeroes } from '@/lib/heroes';
 import { getActiveCodes, getLastUpdated } from '@/lib/redeem-codes';
-import { getSixDayRotation, getFullPrepThemes } from '@/lib/events';
+import { getSixDayRotation, getFullPrepThemes, getRestDay } from '@/lib/events';
 
 export default async function HomePage({
   params,
@@ -34,6 +34,7 @@ function HomePageContent({ locale }: { locale: string }) {
   const codesLastUpdated = getLastUpdated();
   const sixDayRotation = getSixDayRotation();
   const fullPrepThemes = getFullPrepThemes();
+  const restDay = getRestDay();
 
   const latestGuides = [
     {
@@ -108,6 +109,7 @@ function HomePageContent({ locale }: { locale: string }) {
           <EventCalendarPreview
             sixDayRotation={sixDayRotation}
             fullPrepThemes={fullPrepThemes}
+            restDay={restDay}
           />
         </div>
 

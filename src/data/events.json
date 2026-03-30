@@ -1,10 +1,14 @@
 {
   "schedule": {
+    "restDay": {
+      "name": { "ko": "휴식의 날", "vi": "Ngày Nghỉ", "en": "Rest Day" },
+      "description": { "ko": "일요일은 서버쟁패전이나 연맹전이 없는 휴식의 날입니다", "vi": "Chủ nhật là ngày nghỉ — không có SVS hoặc Alliance Duel", "en": "Sunday is a rest day — no SVS or Alliance Duel" }
+    },
     "sixDayRotation": [
       {
         "day": 1,
         "theme": "modification",
-        "name": { "ko": "수정의 날", "vi": "Ngày Cải tiến", "en": "Modification Day" },
+        "name": { "ko": "차량개조의 날", "vi": "Ngày Cải tiến Xe", "en": "Vehicle Modification Day" },
         "description": { "ko": "골드렌치, 차량 개조 도면, 개조 부품 상자 획득", "vi": "Nhận Cờ lê vàng, Bản vẽ cải tiến xe, Hộp linh kiện", "en": "Earn Golden Wrenches, Vehicle Mod Blueprints, and Mod Parts Boxes" },
         "primaryRewards": { "ko": "골드렌치, 개조 도면, 부품 상자", "vi": "Cờ lê vàng, Bản vẽ cải tiến, Hộp linh kiện", "en": "Golden Wrenches, Mod Blueprints, Parts Boxes" }
       },
