@@ -6,8 +6,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-geist-mono);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -45,7 +46,7 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* Military Theme Colors */
+  /* Arcade Theme Colors */
   --color-military: var(--military);
   --color-military-foreground: var(--military-foreground);
   --color-warning: var(--warning);
@@ -60,115 +61,78 @@
   --color-info-foreground: var(--info-foreground);
 }
 
-/* Dark Military Theme (Default) */
+/* ═══════════════════════════════════════════════════
+   DARK ARCADE RETROFUTURISM THEME
+   ═══════════════════════════════════════════════════ */
 :root {
-  --radius: 0.625rem;
+  --radius: 0.25rem;
 
-  /* Base Colors - Dark Military Tone */
-  --background: #1A1A2E;
-  --foreground: #F5F5F5;
+  /* Base — Deep Charcoal CRT */
+  --background: #0E0E12;
+  --foreground: #E8E8E8;
 
-  /* Card */
-  --card: #232340;
-  --card-foreground: #F5F5F5;
+  /* Card — Panel */
+  --card: #16161C;
+  --card-foreground: #E8E8E8;
 
   /* Popover */
-  --popover: #232340;
-  --popover-foreground: #F5F5F5;
+  --popover: #16161C;
+  --popover-foreground: #E8E8E8;
 
-  /* Primary - Military Green */
-  --primary: #2D4A3E;
-  --primary-foreground: #F5F5F5;
+  /* Primary — Neon Red */
+  --primary: #FF3B30;
+  --primary-foreground: #0E0E12;
 
-  /* Secondary */
-  --secondary: #2A2A45;
-  --secondary-foreground: #F5F5F5;
+  /* Secondary — Dark Panel */
+  --secondary: #1C1C24;
+  --secondary-foreground: #E8E8E8;
 
   /* Muted */
-  --muted: #2A2A45;
-  --muted-foreground: #9CA3AF;
+  --muted: #1C1C24;
+  --muted-foreground: #7A7A8A;
 
-  /* Accent */
-  --accent: #2D4A3E;
-  --accent-foreground: #F5F5F5;
+  /* Accent — Amber */
+  --accent: #F39C12;
+  --accent-foreground: #0E0E12;
 
   /* Destructive */
-  --destructive: #DC2626;
+  --destructive: #FF3B30;
 
-  /* Border */
-  --border: rgba(255, 255, 255, 0.1);
+  /* Border — Visible arcade panel edges */
+  --border: rgba(255, 255, 255, 0.12);
   --input: rgba(255, 255, 255, 0.15);
-  --ring: #22D3EE;
+  --ring: #00F6FF;
 
-  /* Sidebar */
-  --sidebar: #16162A;
-  --sidebar-foreground: #F5F5F5;
-  --sidebar-primary: #2D4A3E;
-  --sidebar-primary-foreground: #F5F5F5;
-  --sidebar-accent: #2A2A45;
-  --sidebar-accent-foreground: #F5F5F5;
-  --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #22D3EE;
+  /* Sidebar — Darkest */
+  --sidebar: #0A0A0E;
+  --sidebar-foreground: #E8E8E8;
+  --sidebar-primary: #FF3B30;
+  --sidebar-primary-foreground: #0E0E12;
+  --sidebar-accent: #1C1C24;
+  --sidebar-accent-foreground: #E8E8E8;
+  --sidebar-border: rgba(255, 59, 48, 0.15);
+  --sidebar-ring: #00F6FF;
 
-  /* Charts */
-  --chart-1: #2D4A3E;
-  --chart-2: #FF6B35;
-  --chart-3: #22D3EE;
-  --chart-4: #DC2626;
-  --chart-5: #FBBF24;
+  /* Charts — Arcade Neon */
+  --chart-1: #FF3B30;
+  --chart-2: #F39C12;
+  --chart-3: #00F6FF;
+  --chart-4: #6BFF8E;
+  --chart-5: #FF6B9D;
 
   /* Custom Theme Colors */
-  --military: #2D4A3E;
-  --military-foreground: #F5F5F5;
-  --warning: #FF6B35;
-  --warning-foreground: #FFFFFF;
-  --alert: #DC2626;
+  --military: #FF3B30;
+  --military-foreground: #0E0E12;
+  --warning: #F39C12;
+  --warning-foreground: #0E0E12;
+  --alert: #FF3B30;
   --alert-foreground: #FFFFFF;
-  --highlight: #22D3EE;
-  --highlight-foreground: #1A1A2E;
-  --tip: #10B981;
-  --tip-foreground: #FFFFFF;
-  --info: #3B82F6;
-  --info-foreground: #FFFFFF;
-}
-
-/* Light Mode (Optional) */
-.light {
-  --background: #F8FAFC;
-  --foreground: #1A1A2E;
-
-  --card: #FFFFFF;
-  --card-foreground: #1A1A2E;
-
-  --popover: #FFFFFF;
-  --popover-foreground: #1A1A2E;
-
-  --primary: #2D4A3E;
-  --primary-foreground: #FFFFFF;
-
-  --secondary: #E2E8F0;
-  --secondary-foreground: #1A1A2E;
-
-  --muted: #E2E8F0;
-  --muted-foreground: #64748B;
-
-  --accent: #2D4A3E;
-  --accent-foreground: #FFFFFF;
-
-  --destructive: #DC2626;
-
-  --border: rgba(0, 0, 0, 0.1);
-  --input: rgba(0, 0, 0, 0.08);
-  --ring: #2D4A3E;
-
-  --sidebar: #F1F5F9;
-  --sidebar-foreground: #1A1A2E;
-  --sidebar-primary: #2D4A3E;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E2E8F0;
-  --sidebar-accent-foreground: #1A1A2E;
-  --sidebar-border: rgba(0, 0, 0, 0.08);
-  --sidebar-ring: #2D4A3E;
+  --highlight: #00F6FF;
+  --highlight-foreground: #0E0E12;
+  --tip: #6BFF8E;
+  --tip-foreground: #0E0E12;
+  --info: #00F6FF;
+  --info-foreground: #0E0E12;
 }
 
 @layer base {
@@ -176,49 +140,113 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
+    letter-spacing: 0.02em;
   }
+  h1, h2, h3, [data-slot="card-title"] {
+    font-family: var(--font-geist-mono), monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    font-weight: 800;
+  }
+  /* Pixel font only for English locale (Latin basic only) */
+  :lang(en) h1, :lang(en) h2, :lang(en) h3, :lang(en) [data-slot="card-title"] {
+    font-family: var(--font-display), var(--font-geist-mono), monospace;
+  }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.125rem; }
+  h3 { font-size: 0.9375rem; }
 }
 
-/* Custom Scrollbar */
+/* ═══ CRT SCANLINE OVERLAY ═══ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+/* ═══ FILM GRAIN OVERLAY ═══ */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ═══ SCREEN GLOW (vignette) ═══ */
+.screen-glow {
+  box-shadow:
+    inset 0 0 80px rgba(0, 246, 255, 0.03),
+    inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ═══ NEON GLOW UTILITIES ═══ */
+.glow-red { box-shadow: 0 0 12px rgba(255, 59, 48, 0.35); }
+.glow-cyan { box-shadow: 0 0 12px rgba(0, 246, 255, 0.35); }
+.glow-amber { box-shadow: 0 0 12px rgba(243, 156, 18, 0.35); }
+.glow-green { box-shadow: 0 0 12px rgba(107, 255, 142, 0.35); }
+
+/* ═══ LED INDICATORS ═══ */
+.led-active {
+  @apply w-2 h-2 rounded-full bg-[#6BFF8E];
+  box-shadow: 0 0 6px rgba(107, 255, 142, 0.6);
+}
+.led-warning {
+  @apply w-2 h-2 rounded-full bg-[#F39C12];
+  box-shadow: 0 0 6px rgba(243, 156, 18, 0.6);
+}
+.led-danger {
+  @apply w-2 h-2 rounded-full bg-[#FF3B30];
+  box-shadow: 0 0 6px rgba(255, 59, 48, 0.6);
+}
+
+/* ═══ SCROLLBAR — Neon Red ═══ */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #0A0A0E;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: var(--muted);
-  border-radius: 4px;
+  background: #FF3B30;
+  border-radius: 0;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted-foreground);
+  background: #00F6FF;
 }
 
-/* Difficulty Badges */
-.badge-beginner { @apply bg-emerald-500/20 text-emerald-400 border-emerald-500/30; }
-.badge-basic { @apply bg-blue-500/20 text-blue-400 border-blue-500/30; }
-.badge-intermediate { @apply bg-yellow-500/20 text-yellow-400 border-yellow-500/30; }
-.badge-advanced { @apply bg-orange-500/20 text-orange-400 border-orange-500/30; }
-.badge-expert { @apply bg-red-500/20 text-red-400 border-red-500/30; }
+/* ═══ DIFFICULTY BADGES — Arcade ═══ */
+.badge-beginner { @apply bg-[#6BFF8E]/15 text-[#6BFF8E] border-[#6BFF8E]/30 uppercase tracking-wider; }
+.badge-basic { @apply bg-[#00F6FF]/15 text-[#00F6FF] border-[#00F6FF]/30 uppercase tracking-wider; }
+.badge-intermediate { @apply bg-[#F39C12]/15 text-[#F39C12] border-[#F39C12]/30 uppercase tracking-wider; }
+.badge-advanced { @apply bg-[#FF3B30]/15 text-[#FF3B30] border-[#FF3B30]/30 uppercase tracking-wider; }
+.badge-expert { @apply bg-[#FF6B9D]/15 text-[#FF6B9D] border-[#FF6B9D]/30 uppercase tracking-wider; }
 
-/* Info Boxes */
+/* ═══ INFO BOXES — Control Panel ═══ */
 .info-tip {
-  @apply bg-emerald-500/10 border-l-4 border-emerald-500 p-4 rounded-r-lg;
+  @apply bg-[#6BFF8E]/8 border-l-4 border-[#6BFF8E] p-4 rounded-sm;
 }
-
 .info-warning {
-  @apply bg-orange-500/10 border-l-4 border-orange-500 p-4 rounded-r-lg;
+  @apply bg-[#F39C12]/8 border-l-4 border-[#F39C12] p-4 rounded-sm;
 }
-
 .info-important {
-  @apply bg-red-500/10 border-l-4 border-red-500 p-4 rounded-r-lg;
+  @apply bg-[#FF3B30]/8 border-l-4 border-[#FF3B30] p-4 rounded-sm;
 }
-
 .info-note {
-  @apply bg-blue-500/10 border-l-4 border-blue-500 p-4 rounded-r-lg;
+  @apply bg-[#00F6FF]/8 border-l-4 border-[#00F6FF] p-4 rounded-sm;
 }

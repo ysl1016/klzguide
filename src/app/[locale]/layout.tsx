@@ -1,17 +1,18 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Press_Start_2P, JetBrains_Mono } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const pressStart2P = Press_Start_2P({
+  weight: '400',
+  variable: '--font-display',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: '--font-geist-mono',
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
 });
 
 export function generateStaticParams() {
@@ -44,7 +45,7 @@ export default async function LocaleLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="KLZ Guide" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#0a0a0a" />
+        <meta name="theme-color" content="#0E0E12" />
 
         {/* PWA Icons */}
         <link rel="manifest" href="/manifest.json" />
@@ -52,7 +53,7 @@ export default async function LocaleLayout({
         <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${pressStart2P.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}

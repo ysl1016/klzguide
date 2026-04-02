@@ -17,17 +17,17 @@ const skillTypeConfig: Record<
   active: {
     icon: Zap,
     label: { ko: '액티브', vi: 'Chủ động', en: 'Active' },
-    color: 'bg-red-500/20 text-red-400 border-red-500/30',
+    color: 'bg-[#FF3B30]/20 text-[#FF3B30] border-[#FF3B30]/30',
   },
   deployment: {
     icon: Globe,
     label: { ko: '전체효력', vi: 'Hiệu lực toàn bộ', en: 'Deployment' },
-    color: 'bg-green-500/20 text-green-400 border-green-500/30',
+    color: 'bg-[#6BFF8E]/20 text-[#6BFF8E] border-[#6BFF8E]/30',
   },
   potential: {
     icon: Star,
     label: { ko: '전속 포텐셜', vi: 'Tiềm năng chuyên thuộc', en: 'Potential' },
-    color: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+    color: 'bg-[#00F6FF]/20 text-[#00F6FF] border-[#00F6FF]/30',
   },
 };
 

@@ -14,13 +14,13 @@ export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b-2 border-[#FF3B30]/20 bg-background/98 backdrop-blur-sm">
       <div className="flex h-16 items-center justify-between px-4 lg:px-6">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <MobileNav />
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
+            <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-primary shadow-[0_0_12px_rgba(255,59,48,0.35)]">
               <Shield className="h-5 w-5 text-primary-foreground" />
             </div>
             <div className="hidden sm:block">
