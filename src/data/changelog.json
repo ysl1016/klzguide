@@ -1,7 +1,43 @@
 [
   {
-    "date": "2026-03-30",
+    "date": "2026-04-02",
     "isNew": true,
+    "changes": {
+      "ko": [
+        "UI 전면 리디자인: Dark Arcade Retrofuturism 테마 적용",
+        "색상 팔레트 전환: 밀리터리 그린 → Neon Red (#FF3B30), Electric Cyan (#00F6FF), CRT Green (#6BFF8E), Amber (#F39C12)",
+        "배경색: #1A1A2E (다크 네이비) → #0E0E12 (Deep Charcoal CRT)",
+        "타이포그래피: Geist Sans → Press Start 2P (영어 제목, pixel) + JetBrains Mono (본문, monospace)",
+        "CRT 효과: 스캔라인 오버레이, 필름 그레인, 스크린 글로우 vignette 추가",
+        "UI 요소: hard-edge 모서리 (rounded-sm), 두꺼운 테두리 (border-2), 네온 글로우 shadow",
+        "뱃지/버튼: 대문자 + 넓은 자간, 아케이드 컨트롤 패널 스타일",
+        "스킬 카드: Neon Red(액티브), CRT Green(전체효력), Electric Cyan(포텐셜) 색상 적용",
+        "헤더/푸터: 레드 틴트 테두리, 로고 LED 글로우 효과",
+        "스크롤바: Neon Red thumb, 직각 모서리",
+        "한국어/베트남어 폰트 최적화: Press Start 2P는 영어 전용, 비라틴 문자는 JetBrains Mono 800 폴백"
+      ],
+      "vi": [
+        "Thiết kế lại UI: áp dụng theme Dark Arcade Retrofuturism",
+        "Bảng màu: Military Green → Neon Red, Electric Cyan, CRT Green, Amber",
+        "Nền: #0E0E12 (Deep Charcoal CRT)",
+        "Typography: Press Start 2P (tiêu đề EN) + JetBrains Mono (nội dung)",
+        "Hiệu ứng CRT: scanline, film grain, screen glow",
+        "UI: góc cứng, viền dày, bóng neon glow",
+        "Tối ưu font cho tiếng Việt: JetBrains Mono 800 fallback cho dấu tiếng Việt"
+      ],
+      "en": [
+        "Full UI redesign: Dark Arcade Retrofuturism theme applied",
+        "Color palette: Military Green → Neon Red (#FF3B30), Electric Cyan (#00F6FF), CRT Green (#6BFF8E), Amber (#F39C12)",
+        "Background: #0E0E12 (Deep Charcoal CRT)",
+        "Typography: Press Start 2P (EN headings, pixel) + JetBrains Mono (body, monospace)",
+        "CRT effects: scanline overlay, film grain, screen glow vignette",
+        "UI elements: hard-edge corners, thick borders, neon glow shadows",
+        "Font optimization: Press Start 2P for English only, JetBrains Mono 800 fallback for Korean/Vietnamese"
+      ]
+    }
+  },
+  {
+    "date": "2026-03-30",
     "changes": {
       "ko": [
         "오늘의 이벤트: 일요일 '휴식의 날' 표시 추가 (서버쟁패전/연맹전 없음)",
