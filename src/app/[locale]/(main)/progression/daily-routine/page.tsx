@@ -310,7 +310,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {allianceDuelCycle.map((event) => (
               <Card key={event.theme} className={`border ${event.border}`}>
-                <CardHeader className={`pb-2 ${event.bg} rounded-t-lg`}>
+                <CardHeader className={`pb-2 ${event.bg} rounded-t-sm`}>
                   <CardTitle className={`text-lg flex items-center gap-2 ${event.color}`}>
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-background text-sm font-bold">
                       {event.theme}

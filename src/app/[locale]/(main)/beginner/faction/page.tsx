@@ -177,7 +177,7 @@ function FactionContent({ locale }: { locale: string }) {
             const Icon = faction.icon;
             return (
               <Card key={faction.nameEn} className={`border ${faction.borderColor}`}>
-                <CardHeader className={`${faction.bgColor} rounded-t-lg`}>
+                <CardHeader className={`${faction.bgColor} rounded-t-sm`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className={`p-2 rounded-lg bg-background ${faction.color}`}>
