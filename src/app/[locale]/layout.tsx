@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Press_Start_2P, JetBrains_Mono } from 'next/font/google';
+import { Press_Start_2P, JetBrains_Mono, Noto_Sans_KR } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 
 const pressStart2P = Press_Start_2P({
@@ -13,6 +13,12 @@ const pressStart2P = Press_Start_2P({
 const jetbrainsMono = JetBrains_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin', 'latin-ext'],
+});
+
+const notoSansKR = Noto_Sans_KR({
+  variable: '--font-ko',
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '800'],
 });
 
 export function generateStaticParams() {
@@ -53,7 +59,7 @@ export default async function LocaleLayout({
         <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
       </head>
       <body
-        className={`${pressStart2P.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${pressStart2P.variable} ${jetbrainsMono.variable} ${notoSansKR.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}
