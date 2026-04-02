@@ -309,16 +309,16 @@ function DailyRoutineContent({ locale }: { locale: string }) {
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {allianceDuelCycle.map((event) => (
-              <Card key={event.theme} className={`border ${event.border}`}>
-                <CardHeader className={`pb-2 ${event.bg} rounded-t-sm`}>
-                  <CardTitle className={`text-lg flex items-center gap-2 ${event.color}`}>
+              <Card key={event.theme} className={`border ${event.border} !py-0 !gap-0 overflow-hidden`}>
+                <div className={`px-4 py-3 ${event.bg}`}>
+                  <div className={`text-lg font-semibold flex items-center gap-2 ${event.color}`} data-slot="card-title">
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-background text-sm font-bold">
                       {event.theme}
                     </span>
                     {event.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-3">
+                  </div>
+                </div>
+                <CardContent className="pt-4 pb-4">
                   <ul className="space-y-2">
                     {event.tasks.map((task, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">

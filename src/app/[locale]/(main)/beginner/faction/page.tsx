@@ -176,15 +176,15 @@ function FactionContent({ locale }: { locale: string }) {
           {factions.map((faction) => {
             const Icon = faction.icon;
             return (
-              <Card key={faction.nameEn} className={`border ${faction.borderColor}`}>
-                <CardHeader className={`${faction.bgColor} rounded-t-sm`}>
+              <Card key={faction.nameEn} className={`border ${faction.borderColor} !py-0 !gap-0 overflow-hidden`}>
+                <div className={`${faction.bgColor} px-4 py-4`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg bg-background ${faction.color}`}>
+                      <div className={`p-2 rounded-sm bg-background ${faction.color}`}>
                         <Icon className="h-6 w-6" />
                       </div>
                       <div>
-                        <CardTitle className={faction.color}>{faction.name}</CardTitle>
+                        <div className={`font-semibold ${faction.color}`} data-slot="card-title">{faction.name}</div>
                         <p className="text-sm text-muted-foreground">{faction.style}</p>
                       </div>
                     </div>
@@ -201,7 +201,7 @@ function FactionContent({ locale }: { locale: string }) {
                       ))}
                     </div>
                   </div>
-                </CardHeader>
+                </div>
                 <CardContent className="p-4 space-y-4">
                   <p className="text-muted-foreground">{faction.description}</p>
 
