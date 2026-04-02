@@ -14,7 +14,7 @@ export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b-2 border-[#FF3B30]/20 bg-background/98 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b-2 border-[#FF3B30]/20 bg-background/98 backdrop-blur-sm pt-[env(safe-area-inset-top)]">
       <div className="flex h-16 items-center justify-between px-4 lg:px-6">
         {/* Logo */}
         <div className="flex items-center gap-2">

@@ -24,8 +24,11 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'black-translucent',
+    statusBarStyle: 'default',
     title: 'KLZ Guide',
+  },
+  other: {
+    'viewport': 'width=device-width, initial-scale=1, viewport-fit=cover',
   },
   formatDetection: {
     telephone: false,
