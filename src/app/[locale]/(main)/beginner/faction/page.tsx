@@ -132,7 +132,7 @@ function FactionContent({ locale }: { locale: string }) {
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'TL;DR')}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Key Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {l('새벽의 날개(슈터) 추천 - 서버 70%가 블러디 로즈라서 카운터 이점', 'Cánh Bình Minh (Xạ thủ) được khuyến nghị - Counter 70% server chọn Blood Rose', 'Wings of Dawn (Shooter) recommended - counters 70% of servers running Blood Rose')}</li>
               <li>• {l('상성: 새벽의 날개 > 블러디 로즈 > 질서의 수호자 > 새벽의 날개 (가위바위보)', 'Tương khắc: Cánh Bình Minh > Blood Rose > Người Bảo Vệ Trật Tự > Cánh Bình Minh (oẳn tù tì)', 'Counter cycle: Wings of Dawn > Blood Rose > Guard of Order > Wings of Dawn (rock-paper-scissors)')}</li>

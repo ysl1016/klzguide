@@ -58,7 +58,7 @@ function HQContent({ locale }: { locale: string }) {
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'TL;DR')}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Key Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {l('본부(HQ) 1-18: 보너스 포함 2일 이내 가능', 'HQ 1-18: Có thể dưới 2 ngày với bonus', 'HQ 1-18: Achievable in under 2 days with bonuses')}</li>
               <li>• {l('본부(HQ) 30: T10 병종 해금 핵심 목표 (140일 기본 시간)', 'HQ 30: Mục tiêu chính T10 (140 ngày cơ bản)', 'HQ 30: Key goal to unlock T10 troops (140 days base time)')}</li>

@@ -188,7 +188,7 @@ function VehicleModContent({ locale }: { locale: string }) {
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'TL;DR')}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Key Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {l('차량 진행: 정복자 → 치타 → 타이탄 → 파괴자 → 파괴자 EX', 'Tiến trình xe: Conqueror → Cheetah → Hercules → Destroyer → Destroyer EX', 'Vehicle progression: Conqueror → Cheetah → Hercules → Destroyer → Destroyer EX')}</li>
               <li>• {l('총 골드렌치 필요량: Lv.0 → 240 = 약 70,640개', 'Tổng cờ lê vàng cần: Lv.0 → 240 = ~70,640', 'Total Golden Wrenches needed: Lv.0 → 240 = ~70,640')}</li>

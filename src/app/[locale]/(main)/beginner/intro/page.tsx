@@ -100,7 +100,7 @@ function BeginnerIntroContent({ locale }: { locale: string }) {
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg">{l('핵심 요약', 'Tóm tắt', 'TL;DR')}</CardTitle>
+            <CardTitle className="text-lg">{l('핵심 요약', 'Tóm tắt', 'Key Summary')}</CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2 text-muted-foreground">

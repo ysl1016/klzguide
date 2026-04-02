@@ -195,7 +195,7 @@ function CombatPowerContent({ locale }: { locale: string }) {
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'TL;DR')}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Key Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {l('연맹표창(AR) 연구 최우선 - 모든 보상 2배', 'NC Alliance Recognition ưu tiên nhất - gấp đôi mọi phần thưởng', 'Alliance Recognition (AR) research first — doubles all rewards')}</li>
               <li>• {l('메인 5영웅에만 집중 투자', 'Chỉ tập trung đầu tư 5 anh hùng chính', 'Focus investment on your main 5 heroes only')}</li>

@@ -189,7 +189,7 @@ function BeginnerTipsContent({ locale }: { locale: string }) {
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'TL;DR')}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Key Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {l('메인 5명 영웅에만 집중, 자원 분산 금지', 'Chỉ tập trung 5 anh hùng chính, không phân tán tài nguyên', 'Focus on 5 main heroes only - never spread resources')}</li>
               <li>• {l('가속 아이템은 연맹 대결 테마에 맞춰 사용 (7일 연속, 6개 테마 순환)', 'Dùng tăng tốc theo theme Alliance Duel (7 ngày liên tục, 6 theme xoay vòng)', 'Use speed-ups during Alliance Duel themes (7-day event, 6 rotating themes)')}</li>

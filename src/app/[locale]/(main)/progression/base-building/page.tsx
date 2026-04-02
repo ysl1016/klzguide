@@ -270,7 +270,7 @@ function BaseBuildingContent({ locale }: { locale: string }) {
         {/* TL;DR */}
         <Card className="border-primary/30 bg-primary/5">
           <CardContent className="p-4">
-            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'TL;DR')}</h2>
+            <h2 className="font-semibold mb-2">{l('핵심 요약', 'Tóm tắt', 'Key Summary')}</h2>
             <ul className="space-y-1 text-sm text-muted-foreground">
               <li>• {l('건설 우선순위: HQ > 병원 > 훈련병영 > 연구소 > 성벽 > 자원 건물', 'Ưu tiên: HQ > Bệnh viện > Trại HL > Phòng NC > Tường > Tòa tài nguyên', 'Priority: HQ > Hospital > Training Camp > Research Lab > Walls > Resource Buildings')}</li>
               <li>• {l('HQ는 항상 최우선 - 다른 모든 건물의 레벨 상한을 결정', 'HQ luôn ưu tiên số 1 - quyết định giới hạn level tất cả tòa', 'HQ is always #1 — it determines the level cap for all other buildings')}</li>
