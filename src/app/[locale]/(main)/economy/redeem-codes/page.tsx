@@ -298,48 +298,70 @@ export default function RedeemCodesPage() {
                   'New codes are published here first'
                 ),
                 icon: ExternalLink,
+                href: 'https://www.facebook.com/LastZSurvivalShooter/',
               },
               {
-                title: l('공식 디스코드', 'Discord chính thức', 'Official Discord'),
+                title: l('공식 X (Twitter)', 'X (Twitter) chính thức', 'Official X (Twitter)'),
                 desc: l(
-                  '커뮤니티 이벤트 코드',
-                  'Mã sự kiện cộng đồng',
-                  'Community event codes'
+                  '공식 이벤트 및 업데이트 공지',
+                  'Thông báo sự kiện và cập nhật chính thức',
+                  'Official event and update announcements'
                 ),
                 icon: ExternalLink,
+                href: 'https://x.com/LastZ_EN',
               },
               {
-                title: l('유튜브/트위치', 'YouTube/Twitch', 'YouTube/Twitch'),
+                title: l('커뮤니티 디스코드', 'Discord cộng đồng', 'Community Discord'),
                 desc: l(
-                  '스트리머 전용 코드',
-                  'Mã dành riêng cho streamer',
-                  'Streamer-exclusive codes'
+                  '커뮤니티 이벤트 코드 및 공략 공유',
+                  'Mã sự kiện cộng đồng và chia sẻ hướng dẫn',
+                  'Community event codes and strategy sharing'
                 ),
                 icon: ExternalLink,
+                href: 'https://discord.gg/hjdmKz5sap',
               },
               {
-                title: l('게임 내 이벤트', 'Sự kiện trong game', 'In-Game Events'),
+                title: 'Reddit (r/LastZShooterRun)',
                 desc: l(
-                  '특별 이벤트 기간 코드',
-                  'Mã trong thời gian sự kiện đặc biệt',
-                  'Codes during special event periods'
+                  '커뮤니티 공략 및 코드 공유',
+                  'Hướng dẫn cộng đồng và chia sẻ mã',
+                  'Community guides and code sharing'
+                ),
+                icon: ExternalLink,
+                href: 'https://www.reddit.com/r/LastZShooterRun/',
+              },
+              {
+                title: l('공식 리딤 사이트', 'Trang đổi mã chính thức', 'Official Redeem Site'),
+                desc: l(
+                  'UID 입력 후 코드 사용',
+                  'Nhập UID rồi sử dụng mã',
+                  'Enter your UID and redeem codes'
                 ),
                 icon: Gift,
+                href: 'https://last-z.com/giftCenter/',
               },
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <Card key={idx}>
-                  <CardContent className="p-4 flex items-start gap-3">
-                    <Icon className="h-5 w-5 text-highlight shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium">{item.title}</p>
-                      <p className="text-sm text-muted-foreground">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <a
+                  key={idx}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="hover:border-highlight/50 transition-colors cursor-pointer">
+                    <CardContent className="p-4 flex items-start gap-3">
+                      <Icon className="h-5 w-5 text-highlight shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-medium">{item.title}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </a>
               );
             })}
           </div>
