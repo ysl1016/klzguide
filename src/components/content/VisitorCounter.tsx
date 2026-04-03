@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Users, CalendarDays, Calendar } from 'lucide-react';
 
@@ -13,74 +13,23 @@ interface VisitorStats {
 
 interface VisitorCounterProps {
   locale: string;
+  initialStats: VisitorStats;
 }
 
-export function VisitorCounter({ locale }: VisitorCounterProps) {
-  const [stats, setStats] = useState<VisitorStats | null>(null);
-  const [mounted, setMounted] = useState(false);
+export function VisitorCounter({ locale, initialStats }: VisitorCounterProps) {
   const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
+  // Record visit (POST only, no GET — initial data already provided by server)
   useEffect(() => {
-    setMounted(true);
-    const controller = new AbortController();
+    const visited = sessionStorage.getItem('klz_visited');
+    if (visited) return;
 
-    const loadStats = async () => {
-      try {
-        // 1. Record visit first (POST) — so the count includes this visit
-        const visited = sessionStorage.getItem('klz_visited');
-        if (!visited) {
-          try {
-            await fetch('/api/visitors', {
-              method: 'POST',
-              signal: controller.signal,
-            });
-            sessionStorage.setItem('klz_visited', 'true');
-          } catch (error) {
-            if ((error as Error).name === 'AbortError') return;
-          }
-        }
-
-        // 2. Then fetch the latest stats (GET) — now includes this visit
-        const response = await fetch('/api/visitors', {
-          signal: controller.signal,
-        });
-        const data = await response.json();
-        setStats(data);
-      } catch (error) {
-        if ((error as Error).name !== 'AbortError') {
-          console.error('Failed to fetch visitor stats:', error);
-          // Show nothing rather than stale data
-        }
-      }
-    };
-
-    loadStats();
-
-    return () => controller.abort();
+    fetch('/api/visitors', { method: 'POST' })
+      .then(() => sessionStorage.setItem('klz_visited', 'true'))
+      .catch(() => {});
   }, []);
 
-  // Skeleton until API responds
-  if (!mounted || !stats) {
-    return (
-      <Card className="border-border/50 bg-muted/30">
-        <CardContent className="p-4">
-          <div className="flex items-center justify-center gap-6 sm:gap-10">
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="text-center">
-                <div className="flex items-center justify-center gap-1.5 mb-1">
-                  <div className="h-4 w-4 rounded bg-muted-foreground/20 animate-pulse" />
-                  <div className="h-3 w-10 rounded bg-muted-foreground/20 animate-pulse" />
-                </div>
-                <div className="h-8 w-12 mx-auto rounded bg-muted-foreground/20 animate-pulse" />
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
-
-  if (!stats.configured) {
+  if (!initialStats.configured) {
     return null;
   }
 
@@ -97,7 +46,7 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
               <span className="text-xs">{l('오늘', 'Hôm nay', 'Today')}</span>
             </div>
             <p className="text-2xl font-bold text-foreground">
-              {formatNumber(stats.daily)}
+              {formatNumber(initialStats.daily)}
             </p>
           </div>
 
@@ -110,7 +59,7 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
               <span className="text-xs">{l('이번 달', 'Tháng này', 'This Month')}</span>
             </div>
             <p className="text-2xl font-bold text-foreground">
-              {formatNumber(stats.monthly)}
+              {formatNumber(initialStats.monthly)}
             </p>
           </div>
 
@@ -123,7 +72,7 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
               <span className="text-xs">{l('총 방문', 'Tổng cộng', 'Total')}</span>
             </div>
             <p className="text-2xl font-bold text-highlight">
-              {formatNumber(stats.total)}
+              {formatNumber(initialStats.total)}
             </p>
           </div>
         </div>

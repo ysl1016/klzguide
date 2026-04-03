@@ -12,6 +12,10 @@ import { Compass } from 'lucide-react';
 import { getAllHeroes } from '@/lib/heroes';
 import { getActiveCodes, getLastUpdated } from '@/lib/redeem-codes';
 import { getSixDayRotation, getFullPrepThemes, getRestDay } from '@/lib/events';
+import { getVisitorStats } from '@/lib/visitor-stats';
+
+// Force dynamic rendering — visitor stats must be fetched per request
+export const dynamic = 'force-dynamic';
 
 export default async function HomePage({
   params,
@@ -21,10 +25,13 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <HomePageContent locale={locale} />;
+  // Fetch visitor stats on the server — renders instantly with no client delay
+  const visitorStats = await getVisitorStats();
+
+  return <HomePageContent locale={locale} visitorStats={visitorStats} />;
 }
 
-function HomePageContent({ locale }: { locale: string }) {
+function HomePageContent({ locale, visitorStats }: { locale: string; visitorStats: { daily: number; monthly: number; total: number; configured: boolean } }) {
   const t = useTranslations('home');
   const tc = useTranslations('common');
   const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
@@ -101,7 +108,7 @@ function HomePageContent({ locale }: { locale: string }) {
         </section>
 
         {/* Visitor Counter */}
-        <VisitorCounter locale={locale} />
+        <VisitorCounter locale={locale} initialStats={visitorStats} />
 
         {/* Active Redeem Codes + Today's Event - Side by Side */}
         <div className="grid gap-6 lg:grid-cols-2">
