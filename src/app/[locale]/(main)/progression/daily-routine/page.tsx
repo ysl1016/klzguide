@@ -30,8 +30,20 @@ function DailyRoutineContent({ locale }: { locale: string }) {
   const allianceDuelCycle = [
     {
       theme: 1,
-      name: l('건물 업그레이드', 'Shelter Upgrade', 'Shelter Upgrade'),
-      nameEn: 'Shelter Upgrade',
+      name: l('차량개조의 날', 'Modded Vehicle Day', 'Modded Vehicle Day'),
+      nameEn: 'Modded Vehicle Day',
+      tasks: [
+        l('렌치, 개조도면, 부품으로 차량 업그레이드', 'Nâng xe bằng cờ lê, bản vẽ, linh kiện', 'Upgrade vehicles with wrenches, blueprints, and parts'),
+        l('강력한 부머 처치로 추가 포인트', 'Tiêu diệt Boomer mạnh để có thêm điểm', 'Kill powerful Boomers for extra points'),
+      ],
+      color: 'text-orange-400',
+      bg: 'bg-orange-500/10',
+      border: 'border-orange-500/30',
+    },
+    {
+      theme: 2,
+      name: l('건설의 날', 'Construction Day', 'Construction Day'),
+      nameEn: 'Construction Day',
       tasks: [
         l('건물 개선 완료', 'Hoàn thành cải thiện công trình', 'Complete building upgrades'),
         l('건설 가속 사용', 'Dùng tăng tốc xây', 'Use construction speedups'),
@@ -43,13 +55,13 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       border: 'border-blue-500/30',
     },
     {
-      theme: 2,
-      name: l('과학의 시대', 'Age of Science', 'Age of Science'),
-      nameEn: 'Age of Science',
+      theme: 3,
+      name: l('테크연구의 날', 'Tech Research Day', 'Tech Research Day'),
+      nameEn: 'Tech Research Day',
       tasks: [
         l('연구 완료', 'Hoàn thành NC', 'Complete research'),
         l('연구 가속 사용', 'Dùng tăng tốc NC', 'Use research speedups'),
-        l('배지 관련 연구', 'NC liên quan badge', 'Badge-related research'),
+        l('경찰휘장 관련 연구', 'NC liên quan badge', 'Badge-related research'),
         l('인터스테이트 트럭 주황 퀘스트 찾기', 'Refresh Interstate Truck tìm quest cam', 'Find orange quests via Interstate Truck refresh'),
       ],
       color: 'text-purple-400',
@@ -57,23 +69,23 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       border: 'border-purple-500/30',
     },
     {
-      theme: 3,
-      name: l('영웅육성', 'Hero Initiative', 'Hero Initiative'),
-      nameEn: 'Hero Initiative',
+      theme: 4,
+      name: l('영웅육성의 날', 'Hero Initiative Day', 'Hero Initiative Day'),
+      nameEn: 'Hero Initiative Day',
       tasks: [
         l('영웅 업그레이드', 'Nâng anh hùng', 'Upgrade heroes'),
         l('영웅 조각 사용', 'Dùng mảnh anh hùng', 'Use hero fragments'),
         l('모집권 사용', 'Dùng vé tuyển mộ', 'Use recruitment tickets'),
-        l('이 날을 위해 조각/티켓 저장!', 'Lưu mảnh/vé cho ngày này!', 'Save fragments/tickets for this day!'),
+        l('이 날을 위해 조각/모집권 저장!', 'Lưu mảnh/vé cho ngày này!', 'Save fragments/tickets for this day!'),
       ],
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/10',
       border: 'border-yellow-500/30',
     },
     {
-      theme: 4,
-      name: l('종합 성장', 'Holistic Growth', 'Holistic Growth'),
-      nameEn: 'Holistic Growth',
+      theme: 5,
+      name: l('전면적 발전의 날', 'Holistic Growth Day', 'Holistic Growth Day'),
+      nameEn: 'Holistic Growth Day',
       tasks: [
         l('병력 훈련', 'Huấn luyện quân', 'Train troops'),
         l('훈련 가속 사용', 'Dùng tăng tốc HL', 'Use training speedups'),
@@ -84,21 +96,9 @@ function DailyRoutineContent({ locale }: { locale: string }) {
       border: 'border-green-500/30',
     },
     {
-      theme: 5,
-      name: l('차량 개조', 'Modded Vehicle Boost', 'Modded Vehicle Boost'),
-      nameEn: 'Modded Vehicle Boost',
-      tasks: [
-        l('렌치, 설계도, 부품으로 차량 업그레이드', 'Nâng xe bằng cờ lê, bản vẽ, linh kiện', 'Upgrade vehicles with wrenches, blueprints, and parts'),
-        l('강력한 부머 처치로 추가 포인트', 'Tiêu diệt Boomer mạnh để có thêm điểm', 'Kill powerful Boomers for extra points'),
-      ],
-      color: 'text-orange-400',
-      bg: 'bg-orange-500/10',
-      border: 'border-orange-500/30',
-    },
-    {
       theme: 6,
-      name: l('적 파괴자', 'Enemy Buster', 'Enemy Buster'),
-      nameEn: 'Enemy Buster',
+      name: l('킬데이', 'Kill Day', 'Kill Day'),
+      nameEn: 'Kill Day',
       tasks: [
         l('적 기지 공격', 'Tấn công căn cứ địch', 'Attack enemy bases'),
         l('약한 본부(HQ) 타겟', 'Nhắm HQ yếu', 'Target weak HQs'),
