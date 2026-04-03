@@ -14,14 +14,14 @@ export interface SeasonSynergy {
   type: 's1_atkdef' | 's2_hp' | 's3_resistance' | 's4_counter';
   active: boolean;
   heroes: string[];          // 관련 영웅 IDs
-  description: { ko: string; vi: string };
+  description: { ko: string; vi: string; en: string };
 }
 
 export interface HeroSynergyPair {
   hero1Id: string;
   hero2Id: string;
-  hero1Name: { ko: string; vi: string };
-  hero2Name: { ko: string; vi: string };
+  hero1Name: { ko: string; vi: string; en: string };
+  hero2Name: { ko: string; vi: string; en: string };
   mutual: boolean;
 }
 
@@ -50,8 +50,8 @@ export interface TeamAnalysis {
   counterAnalysis: CounterAnalysis;
   roleBalance: RoleBalance;
   overallScore: number;
-  warnings: { ko: string; vi: string }[];
-  recommendations: { ko: string; vi: string }[];
+  warnings: { ko: string; vi: string; en: string }[];
+  recommendations: { ko: string; vi: string; en: string }[];
 }
 
 // --- Counter map ---
@@ -99,6 +99,7 @@ function analyzeSeasonSynergies(heroes: Hero[]): SeasonSynergy[] {
     description: {
       ko: '같은 진영 영웅당 공격력/방어력 +5%, 5명 시 정원 +10%',
       vi: 'ATK/DEF +5% mỗi anh hùng cùng phe, 5 người: sức chứa +10%',
+      en: 'ATK/DEF +5% per same-faction hero, 5 heroes: capacity +10%',
     },
   });
 
@@ -112,6 +113,7 @@ function analyzeSeasonSynergies(heroes: Hero[]): SeasonSynergy[] {
     description: {
       ko: '같은 진영 5명 배치 시 부대 HP +10%',
       vi: 'HP quân +10% khi triển khai 5 anh hùng cùng phe',
+      en: 'Troop HP +10% when deploying 5 same-faction heroes',
     },
   });
 
@@ -125,6 +127,7 @@ function analyzeSeasonSynergies(heroes: Hero[]): SeasonSynergy[] {
     description: {
       ko: 'S2 영웅과 함께 배치 시 피해 저항 7.5% 증가',
       vi: 'Kháng sát thương +7.5% khi triển khai cùng anh hùng S2',
+      en: 'Damage resistance +7.5% when deployed with S2 heroes',
     },
   });
 
@@ -137,6 +140,7 @@ function analyzeSeasonSynergies(heroes: Hero[]): SeasonSynergy[] {
     description: {
       ko: '상성 유리 진영 데미지 +10%, 불리 진영 피해 -10%',
       vi: 'Sát thương +10% cho phe có lợi, -10% sát thương nhận từ phe bất lợi',
+      en: '+10% damage to countered factions, -10% damage from countering factions',
     },
   });
 
@@ -248,14 +252,15 @@ function generateWarnings(
   slots: (Hero | null)[],
   factionBonuses: FactionBonus[],
   roleBalance: RoleBalance
-): { ko: string; vi: string }[] {
-  const warnings: { ko: string; vi: string }[] = [];
+): { ko: string; vi: string; en: string }[] {
+  const warnings: { ko: string; vi: string; en: string }[] = [];
 
   // No tank in front row
   if (heroes.length >= 2 && !roleBalance.hasFrontlineTank) {
     warnings.push({
       ko: '전열에 탱크가 없습니다. 프론트라인에 탱크 역할 영웅을 배치하세요.',
       vi: 'Không có tank ở hàng trước. Hãy đặt anh hùng tank ở frontline.',
+      en: 'No tank in the front row. Place a tank-role hero in the frontline.',
     });
   }
 
@@ -264,6 +269,7 @@ function generateWarnings(
     warnings.push({
       ko: '3개 이상의 진영이 혼합되어 있습니다. 진영 보너스가 분산됩니다.',
       vi: 'Trộn 3+ phe. Bonus phe sẽ bị phân tán.',
+      en: '3+ factions mixed. Faction bonuses are diluted.',
     });
   }
 
@@ -272,6 +278,7 @@ function generateWarnings(
     warnings.push({
       ko: '칩 비용 경고: 혼합 진영은 별도 칩 세트가 필요합니다 (S2+ 해금). 메인 진영을 일찍 결정하세요.',
       vi: 'Cảnh báo chip: Trộn phe cần bộ chip riêng (mở khóa S2+). Hãy quyết định phe chính sớm.',
+      en: 'Chip cost warning: Mixed factions require separate chip sets (unlocked S2+). Decide your main faction early.',
     });
   }
 
@@ -280,6 +287,7 @@ function generateWarnings(
     warnings.push({
       ko: '서포트와 탱크가 모두 없습니다. 밸런스 있는 구성을 고려하세요.',
       vi: 'Không có support và tank. Hãy cân nhắc đội hình cân bằng hơn.',
+      en: 'No support or tank heroes. Consider a more balanced composition.',
     });
   }
 
@@ -288,6 +296,7 @@ function generateWarnings(
     warnings.push({
       ko: '채집 영웅이 팀에 포함되어 있습니다. 전투에는 부적합합니다.',
       vi: 'Có anh hùng thu thập trong đội. Không phù hợp cho chiến đấu.',
+      en: 'Gatherer hero in the team. Not suitable for combat.',
     });
   }
 
@@ -299,8 +308,8 @@ function generateRecommendations(
   factionBonuses: FactionBonus[],
   seasonSynergies: SeasonSynergy[],
   allHeroes: Hero[]
-): { ko: string; vi: string }[] {
-  const recs: { ko: string; vi: string }[] = [];
+): { ko: string; vi: string; en: string }[] {
+  const recs: { ko: string; vi: string; en: string }[] = [];
   const heroIds = new Set(heroes.map((h) => h.id));
 
   if (heroes.length < 5) {
@@ -320,10 +329,12 @@ function generateRecommendations(
         const names = {
           ko: candidates.map((c) => c.name.ko).join(', '),
           vi: candidates.map((c) => c.name.vi).join(', '),
+          en: candidates.map((c) => c.name.en ?? c.name.ko).join(', '),
         };
         recs.push({
           ko: `순수 진영 완성을 위해 추천: ${names.ko}`,
           vi: `Đề xuất để hoàn thành phe thuần: ${names.vi}`,
+          en: `Recommended to complete pure faction: ${names.en}`,
         });
       }
     }
@@ -350,6 +361,7 @@ function generateRecommendations(
         recs.push({
           ko: `시너지 파트너: ${topPartners.map((p) => p.name.ko).join(', ')}`,
           vi: `Đối tác synergy: ${topPartners.map((p) => p.name.vi).join(', ')}`,
+          en: `Synergy partners: ${topPartners.map((p) => p.name.en ?? p.name.ko).join(', ')}`,
         });
       }
     }
@@ -364,11 +376,13 @@ function generateRecommendations(
       recs.push({
         ko: 'S2 영웅을 추가하면 피해 저항 7.5% 시너지가 활성화됩니다.',
         vi: 'Thêm anh hùng S2 để kích hoạt kháng sát thương 7.5%.',
+        en: 'Adding an S2 hero activates the 7.5% damage resistance synergy.',
       });
     } else if (!hasS3 && hasS2) {
       recs.push({
         ko: 'S3 영웅을 추가하면 피해 저항 7.5% 시너지가 활성화됩니다.',
         vi: 'Thêm anh hùng S3 để kích hoạt kháng sát thương 7.5%.',
+        en: 'Adding an S3 hero activates the 7.5% damage resistance synergy.',
       });
     }
   }
