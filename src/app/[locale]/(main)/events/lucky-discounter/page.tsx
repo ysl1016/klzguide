@@ -303,12 +303,12 @@ function LuckyDiscounterContent({ locale }: { locale: string }) {
               <div className="p-3 rounded-lg bg-green-500/10 text-center">
                 <p className="text-green-400 font-bold">{l('행운 할인 90%', 'Lucky Discounter 90%', 'Lucky Discounter 90%')}</p>
                 <p className="text-2xl font-bold text-green-400">0.3</p>
-                <p className="text-xs text-muted-foreground">{l('다이아/뱃지', 'diamond/badge', 'diamond/badge')}</p>
+                <p className="text-xs text-muted-foreground">{l('다이아/경찰휘장', 'diamond/badge', 'diamond/badge')}</p>
               </div>
               <div className="p-3 rounded-lg bg-red-500/10 text-center">
                 <p className="text-red-400 font-bold">{l('특권상점 (VIP)', 'VIP Store', 'VIP Shop')}</p>
                 <p className="text-2xl font-bold text-red-400">1.5</p>
-                <p className="text-xs text-muted-foreground">{l('다이아/뱃지', 'diamond/badge', 'diamond/badge')}</p>
+                <p className="text-xs text-muted-foreground">{l('다이아/경찰휘장', 'diamond/badge', 'diamond/badge')}</p>
               </div>
             </div>
             <p className="text-xs text-muted-foreground text-center">

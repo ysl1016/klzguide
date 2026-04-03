@@ -100,7 +100,7 @@ function ResearchPriorityContent({ locale }: { locale: string }) {
   const badgeCosts = [
     { name: l('긴급구조', 'Urgent Rescue', 'Urgent Rescue'), badges: '~50K', note: l('10랭크', '10 rank', '10 ranks') },
     { name: 'T10 Units (UST)', badges: '~1.4M', note: l('F2P 수년 소요', 'F2P mất nhiều năm', 'Takes years for F2P') },
-    { name: l('에너지 실드', 'Recharge Shield', 'Recharge Shield'), badges: '594K', note: l('야전연구 (총 뱃지 594,430개)', 'Field Research (tổng 594,430 badge)', 'Field Research (594,430 Badges total)') },
+    { name: l('에너지 실드', 'Recharge Shield', 'Recharge Shield'), badges: '594K', note: l('야전연구 (총 경찰휘장 594,430개)', 'Field Research (tổng 594,430 badge)', 'Field Research (594,430 Badges total)') },
   ];
 
   const tips = [

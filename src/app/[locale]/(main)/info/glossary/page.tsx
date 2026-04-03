@@ -368,8 +368,8 @@ function GlossaryContent({ locale }: { locale: string }) {
       ),
     },
     {
-      term: l('골든 렌치', 'Golden Wrench', 'Golden Wrench'),
-      ko: '골든 렌치',
+      term: l('골드렌치', 'Golden Wrench', 'Golden Wrench'),
+      ko: '골드렌치',
       en: 'Golden Wrench',
       vi: 'Golden Wrench',
       definition: l(
