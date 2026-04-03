@@ -11,7 +11,8 @@
         "연맹 대결 테마 카드 헤더 배경 어긋남 수정 (CardHeader → overflow-hidden div 구조 변경)",
         "리딤 코드 자동 갱신 개선: 코드 변경 없어도 확인 날짜(lastUpdated) 매일 갱신",
         "용어 수정: 골든 렌치→골드렌치, 뱃지→경찰휘장 (용어사전, 연구, 연맹대결, 행운할인)",
-        "리딤 코드 페이지: 공식 채널 직접 링크 연동 (페이스북, X, 디스코드, Reddit, 공식 리딤 사이트)"
+        "리딤 코드 페이지: 공식 채널 직접 링크 연동 (페이스북, X, 디스코드, Reddit, 공식 리딤 사이트)",
+        "방문자 카운터 즉시 표시: 서버 사이드 렌더링으로 전환 — 접속 즉시 정확한 숫자 표시 (기존 1~2초 지연/깜빡임 제거)"
       ],
       "vi": [
         "Sửa font tiếng Hàn trên Windows: thêm Noto Sans KR",
@@ -21,7 +22,8 @@
         "Sửa header card theme Alliance Duel bị lệch",
         "Cải thiện tự động cập nhật mã: lastUpdated cập nhật hàng ngày",
         "Sửa thuật ngữ: 골든 렌치→골드렌치, 뱃지→경찰휘장",
-        "Trang mã đổi thưởng: liên kết trực tiếp kênh chính thức"
+        "Trang mã đổi thưởng: liên kết trực tiếp kênh chính thức",
+        "Bộ đếm khách: chuyển sang SSR — hiển thị số ngay khi tải trang (xóa độ trễ 1-2s)"
       ],
       "en": [
         "Windows Korean font fix: added Noto Sans KR web font (prevents Gulim fallback)",
@@ -31,7 +33,8 @@
         "Alliance Duel theme card header misalignment fix",
         "Redeem code auto-update improvement: lastUpdated refreshed daily",
         "Terminology fixes: Golden Wrench → 골드렌치, Badge → 경찰휘장",
-        "Redeem codes page: direct links to official channels (Facebook, X, Discord, Reddit, Redeem Site)"
+        "Redeem codes page: direct links to official channels (Facebook, X, Discord, Reddit, Redeem Site)",
+        "Visitor counter instant display: switched to server-side rendering — accurate numbers shown immediately on page load (removed 1-2s delay/flicker)"
       ]
     }
   },
