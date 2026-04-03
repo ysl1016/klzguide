@@ -91,10 +91,10 @@ function TierListPageContent({ locale }: { locale: string }) {
               {l('현재 메타', 'Meta hiện tại', 'Current Meta')}
             </p>
             <p className="text-sm text-muted-foreground">
-              {meta.notes[(locale as 'ko' | 'vi' | 'en') === 'en' ? 'ko' : locale as 'ko' | 'vi']}
+              {(meta.notes as Record<string, string>)[locale] || meta.notes['en']}
             </p>
             <p className="text-sm text-muted-foreground mt-1">
-              {meta.formationTip[(locale as 'ko' | 'vi' | 'en') === 'en' ? 'ko' : locale as 'ko' | 'vi']}
+              {(meta.formationTip as Record<string, string>)[locale] || meta.formationTip['en']}
             </p>
           </div>
         </div>

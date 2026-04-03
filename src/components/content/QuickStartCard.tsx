@@ -80,12 +80,12 @@ export function QuickStartCard({
     <Link href={href}>
       <Card
         className={cn(
-          'group relative overflow-hidden transition-all duration-200 bg-gradient-to-br',
+          'group relative overflow-hidden transition-all duration-200 bg-gradient-to-br h-full',
           colorClasses[color]
         )}
       >
-        <CardContent className="p-6">
-          <div className="flex items-start gap-4">
+        <CardContent className="p-6 h-full">
+          <div className="flex items-start gap-4 h-full">
             <div
               className={cn(
                 'shrink-0 rounded-lg p-2.5 bg-background/50',
