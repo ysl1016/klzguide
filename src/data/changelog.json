@@ -1,7 +1,42 @@
 [
   {
-    "date": "2026-04-02",
+    "date": "2026-04-03",
     "isNew": true,
+    "changes": {
+      "ko": [
+        "Windows 한글 폰트 수정: Noto Sans KR 웹폰트 추가 (굴림체 폴백 방지)",
+        "iOS PWA 상태바 수정: 투명 → 불투명 + safe-area 패딩 적용",
+        "Android PWA 상태바: theme_color를 배경색(#0E0E12)과 통일",
+        "영어 버전 '핵심 요약' 섹션 텍스트 수정: TL;DR → Key Summary (8개 페이지)",
+        "연맹 대결 테마 카드 헤더 배경 어긋남 수정 (CardHeader → overflow-hidden div 구조 변경)",
+        "리딤 코드 자동 갱신 개선: 코드 변경 없어도 확인 날짜(lastUpdated) 매일 갱신",
+        "용어 수정: 골든 렌치→골드렌치, 뱃지→경찰휘장 (용어사전, 연구, 연맹대결, 행운할인)",
+        "리딤 코드 페이지: 공식 채널 직접 링크 연동 (페이스북, X, 디스코드, Reddit, 공식 리딤 사이트)"
+      ],
+      "vi": [
+        "Sửa font tiếng Hàn trên Windows: thêm Noto Sans KR",
+        "Sửa status bar iOS PWA: trong suốt → mờ đục + safe-area padding",
+        "Sửa status bar Android PWA: theme_color = màu nền (#0E0E12)",
+        "Sửa text EN 'Key Summary': TL;DR → Key Summary (8 trang)",
+        "Sửa header card theme Alliance Duel bị lệch",
+        "Cải thiện tự động cập nhật mã: lastUpdated cập nhật hàng ngày",
+        "Sửa thuật ngữ: 골든 렌치→골드렌치, 뱃지→경찰휘장",
+        "Trang mã đổi thưởng: liên kết trực tiếp kênh chính thức"
+      ],
+      "en": [
+        "Windows Korean font fix: added Noto Sans KR web font (prevents Gulim fallback)",
+        "iOS PWA status bar fix: transparent → opaque + safe-area padding",
+        "Android PWA status bar: theme_color aligned with background (#0E0E12)",
+        "English 'Key Summary' heading: TL;DR → Key Summary (8 pages)",
+        "Alliance Duel theme card header misalignment fix",
+        "Redeem code auto-update improvement: lastUpdated refreshed daily",
+        "Terminology fixes: Golden Wrench → 골드렌치, Badge → 경찰휘장",
+        "Redeem codes page: direct links to official channels (Facebook, X, Discord, Reddit, Redeem Site)"
+      ]
+    }
+  },
+  {
+    "date": "2026-04-02",
     "changes": {
       "ko": [
         "UI 전면 리디자인: Dark Arcade Retrofuturism 테마 적용",
