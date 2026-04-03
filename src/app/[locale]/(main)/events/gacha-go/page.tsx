@@ -59,7 +59,7 @@ function GachaGoContent({ locale }: { locale: string }) {
     {
       points: '8,000',
       rewards: l(
-        '골드렌치 15개, 개조 청사진, 기프트 바우처',
+        '골드렌치 15개, 개조도면, 기프트 바우처',
         '15 Golden Wrench, Blueprint, Gift Voucher',
         '15 Golden Wrenches, Mod Blueprint, Gift Voucher'
       ),
@@ -77,7 +77,7 @@ function GachaGoContent({ locale }: { locale: string }) {
   const rewards = [
     { name: l('골드렌치', 'Golden Wrench', 'Golden Wrench'), desc: l('최고 보상 - 프리미엄 차량 개조용', 'Thưởng tốt nhất - cải tạo xe cao cấp', 'Best reward - for premium vehicle mods'), rarity: 'legendary' },
     { name: l('키 (Key)', 'Key', 'Key'), desc: l('렌치 교환용 - 300개 모으기 권장', 'Đổi lấy cờ lê - nên tích 300', 'Exchange for Wrenches - save up to 300'), rarity: 'epic' },
-    { name: l('개조 청사진', 'Modification Blueprint', 'Mod Blueprint'), desc: l('차량 개조 재료', 'Nguyên liệu cải tạo xe', 'Vehicle mod material'), rarity: 'epic' },
+    { name: l('개조도면', 'Modification Blueprint', 'Mod Blueprint'), desc: l('차량 개조 재료', 'Nguyên liệu cải tạo xe', 'Vehicle mod material'), rarity: 'epic' },
     { name: l('기프트 박스', 'Gift Box', 'Gift Box'), desc: l('다양한 보상 포함', 'Chứa nhiều phần thưởng', 'Contains various rewards'), rarity: 'rare' },
     { name: l('가속 아이템', 'Speedup', 'Speedup'), desc: l('각종 가속 아이템', 'Các item tăng tốc', 'Various speedup items'), rarity: 'common' },
     { name: l('기프트 바우처', 'Gift Voucher', 'Gift Voucher'), desc: l('마일스톤 보상', 'Thưởng milestone', 'Milestone reward'), rarity: 'rare' },

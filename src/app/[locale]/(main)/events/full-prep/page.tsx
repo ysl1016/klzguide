@@ -46,7 +46,7 @@ function FullPrepContent({ locale }: { locale: string }) {
       color: 'text-orange-400',
       bg: 'bg-orange-500/10',
       activities: [
-        { action: l('청사진 소모', 'Tiêu thụ Blueprint', 'Consume Blueprint'), points: '4pt' },
+        { action: l('개조도면 소모', 'Tiêu thụ Blueprint', 'Consume Blueprint'), points: '4pt' },
         { action: l('좀비/거대좀비 처치', 'Kill Zombie/Giant Zombie', 'Kill Zombie/Giant Zombie'), points: '840-2000pt' },
       ],
     },
