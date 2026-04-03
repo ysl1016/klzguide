@@ -15,104 +15,52 @@ interface VisitorCounterProps {
   locale: string;
 }
 
-const CACHE_KEY = 'klz_visitor_stats';
-const CACHE_TTL = 60000; // 1 minute
-
-// Get cached stats from localStorage
-function getCachedStats(): VisitorStats | null {
-  if (typeof window === 'undefined') return null;
-  try {
-    const cached = localStorage.getItem(CACHE_KEY);
-    if (!cached) return null;
-    const { data, timestamp } = JSON.parse(cached);
-    // Return cached data if less than TTL old
-    if (Date.now() - timestamp < CACHE_TTL) {
-      return data;
-    }
-    return data; // Return stale data for immediate display
-  } catch {
-    return null;
-  }
-}
-
-// Save stats to localStorage
-function setCachedStats(stats: VisitorStats) {
-  if (typeof window === 'undefined') return;
-  try {
-    localStorage.setItem(
-      CACHE_KEY,
-      JSON.stringify({ data: stats, timestamp: Date.now() })
-    );
-  } catch {
-    // Ignore localStorage errors
-  }
-}
-
 export function VisitorCounter({ locale }: VisitorCounterProps) {
   const [stats, setStats] = useState<VisitorStats | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
   const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
-  // Mark as mounted to avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
-    const cached = getCachedStats();
-    if (cached) {
-      setStats(cached);
-      setIsLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
     const controller = new AbortController();
 
-    // Fetch and update stats
-    const fetchStats = async () => {
+    const loadStats = async () => {
       try {
+        // 1. Record visit first (POST) — so the count includes this visit
+        const visited = sessionStorage.getItem('klz_visited');
+        if (!visited) {
+          try {
+            await fetch('/api/visitors', {
+              method: 'POST',
+              signal: controller.signal,
+            });
+            sessionStorage.setItem('klz_visited', 'true');
+          } catch (error) {
+            if ((error as Error).name === 'AbortError') return;
+          }
+        }
+
+        // 2. Then fetch the latest stats (GET) — now includes this visit
         const response = await fetch('/api/visitors', {
           signal: controller.signal,
         });
         const data = await response.json();
         setStats(data);
-        setCachedStats(data);
-        setIsLoading(false);
       } catch (error) {
         if ((error as Error).name !== 'AbortError') {
           console.error('Failed to fetch visitor stats:', error);
-          setIsLoading(false);
+          // Show nothing rather than stale data
         }
       }
     };
 
-    // Record visit (only once per session)
-    const recordVisit = async () => {
-      // Check sessionStorage to prevent duplicate counting
-      const visited = sessionStorage.getItem('klz_visited');
-      if (visited) return;
-
-      try {
-        await fetch('/api/visitors', {
-          method: 'POST',
-          signal: controller.signal,
-        });
-        sessionStorage.setItem('klz_visited', 'true');
-      } catch (error) {
-        if ((error as Error).name !== 'AbortError') {
-          console.error('Failed to record visit:', error);
-        }
-      }
-    };
-
-    // Fetch stats first (faster), then record visit in background
-    fetchStats();
-    recordVisit();
+    loadStats();
 
     return () => controller.abort();
   }, []);
 
-  // Always show skeleton on server and before mount to prevent hydration mismatch
-  if (!mounted || (isLoading && !stats)) {
+  // Skeleton until API responds
+  if (!mounted || !stats) {
     return (
       <Card className="border-border/50 bg-muted/30">
         <CardContent className="p-4">
@@ -132,20 +80,17 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
     );
   }
 
-  // Don't render if not configured
-  if (!stats?.configured) {
+  if (!stats.configured) {
     return null;
   }
 
-  const formatNumber = (num: number) => {
-    return num.toLocaleString();
-  };
+  const formatNumber = (num: number) => num.toLocaleString();
 
   return (
     <Card className="border-border/50 bg-muted/30">
       <CardContent className="p-4">
         <div className="flex items-center justify-center gap-6 sm:gap-10">
-          {/* Daily Visitors */}
+          {/* Daily */}
           <div className="text-center">
             <div className="flex items-center justify-center gap-1.5 text-muted-foreground mb-1">
               <CalendarDays className="h-4 w-4" />
@@ -156,10 +101,9 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
             </p>
           </div>
 
-          {/* Divider */}
           <div className="h-10 w-px bg-border" />
 
-          {/* Monthly Visitors */}
+          {/* Monthly */}
           <div className="text-center">
             <div className="flex items-center justify-center gap-1.5 text-muted-foreground mb-1">
               <Calendar className="h-4 w-4" />
@@ -170,10 +114,9 @@ export function VisitorCounter({ locale }: VisitorCounterProps) {
             </p>
           </div>
 
-          {/* Divider */}
           <div className="h-10 w-px bg-border" />
 
-          {/* Total Visitors */}
+          {/* Total */}
           <div className="text-center">
             <div className="flex items-center justify-center gap-1.5 text-muted-foreground mb-1">
               <Users className="h-4 w-4" />
