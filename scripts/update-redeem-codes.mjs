@@ -258,11 +258,16 @@ async function main() {
   console.log(`Expired codes: ${expiredCodes.length}${expiredCodes.length > 0 ? ` (${expiredCodes.join(', ')})` : ''}`);
   console.log(`Unchanged: ${unchangedCodes.length}`);
 
-  const hasChanges = newCodes.length > 0 || expiredCodes.length > 0;
+  const hasCodeChanges = newCodes.length > 0 || expiredCodes.length > 0;
+  const today = new Date().toISOString().split('T')[0];
+  const dateChanged = currentData.lastUpdated !== today;
+
+  // Always update lastUpdated to show "verified as of today"
+  // Even if no code changes, users need to know the data was checked today
+  const hasChanges = hasCodeChanges || dateChanged;
 
   if (!hasChanges) {
-    console.log('\nNo changes needed.');
-    // Output for GitHub Actions
+    console.log('\nNo changes needed (date already current).');
     if (process.env.GITHUB_OUTPUT) {
       fs.appendFileSync(process.env.GITHUB_OUTPUT, 'has_changes=false\n');
     }
@@ -270,7 +275,6 @@ async function main() {
   }
 
   // Build updated data
-  const today = new Date().toISOString().split('T')[0];
   const updatedCodes = [];
 
   // Keep existing codes, update status
@@ -286,7 +290,7 @@ async function main() {
   for (const code of newCodes) {
     updatedCodes.push({
       code,
-      rewards: { ko: '각종 보상', vi: 'Phần thưởng đa dạng' },
+      rewards: { ko: '각종 보상', vi: 'Phần thưởng đa dạng', en: 'Various Rewards' },
       expiry: null,
       isNew: true,
       isActive: true,
@@ -297,6 +301,9 @@ async function main() {
     codes: updatedCodes,
     lastUpdated: today,
   };
+
+  console.log(`\nDate: ${currentData.lastUpdated} → ${today}${hasCodeChanges ? ' (codes changed)' : ' (date only)'}`);
+
 
   if (applyChanges) {
     fs.writeFileSync(JSON_PATH, JSON.stringify(updatedData, null, 2) + '\n');

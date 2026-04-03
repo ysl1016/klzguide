@@ -42,7 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data/redeem-codes.json
-          git commit -m "chore: auto-update redeem codes ($(date +%Y-%m-%d))"
+          git commit -m "chore: verify redeem codes ($(date +%Y-%m-%d))"
           git push
 
       - name: Create issue on scraping failure
