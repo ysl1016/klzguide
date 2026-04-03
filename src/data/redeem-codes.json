@@ -93,7 +93,7 @@
       },
       "expiry": "2026-03-31",
       "limitType": "both",
-      "isNew": true,
+      "isNew": false,
       "isActive": true
     },
     {
@@ -142,8 +142,8 @@
       "expiry": null,
       "limitType": "unknown",
       "isNew": false,
-      "isActive": true
+      "isActive": false
     }
   ],
-  "lastUpdated": "2026-03-30"
+  "lastUpdated": "2026-04-03"
 }
