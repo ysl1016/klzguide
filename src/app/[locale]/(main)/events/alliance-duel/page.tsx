@@ -86,7 +86,7 @@ function AllianceDuelContent({ locale }: { locale: string }) {
       difficulty: l('보통', 'Normal', 'Normal'),
       keyTip: l('경찰휘장 전용 날. 오렌지 교역 4회 = 120만 포인트. 주간 경찰휘장 10,000개 생산 가능', 'Ngày badge. 4 giao dịch cam = 1.2M pts. Có thể tạo 10,000 badge/tuần', 'Badge day. 4 orange trades = 1.2M pts. Can produce 10,000 badges per week'),
       activities: l(
-        '연구 완료|연구 가속 사용|경찰휘장 소모 연구|인터스테이트 트럭 새로고침 (주황 퀘스트)',
+        '연구 완료|연구 가속 사용|경찰휘장 소모 연구|도시교역 트럭 새로고침 (주황 퀘스트)',
         'Hoàn thành nghiên cứu|Dùng tăng tốc NC|NC tiêu badge|Refresh Interstate Truck (quest cam)',
         'Complete research|Use research speed-ups|Badge-consuming research|Refresh Interstate Truck (orange quest)'
       ).split('|'),

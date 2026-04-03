@@ -62,7 +62,7 @@ function DailyRoutineContent({ locale }: { locale: string }) {
         l('연구 완료', 'Hoàn thành NC', 'Complete research'),
         l('연구 가속 사용', 'Dùng tăng tốc NC', 'Use research speedups'),
         l('경찰휘장 관련 연구', 'NC liên quan badge', 'Badge-related research'),
-        l('인터스테이트 트럭 주황 퀘스트 찾기', 'Refresh Interstate Truck tìm quest cam', 'Find orange quests via Interstate Truck refresh'),
+        l('도시교역 트럭 주황 퀘스트 찾기', 'Refresh Interstate Truck tìm quest cam', 'Find orange quests via Interstate Truck refresh'),
       ],
       color: 'text-purple-400',
       bg: 'bg-purple-500/10',
