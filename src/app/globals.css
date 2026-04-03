@@ -162,6 +162,14 @@
   :lang(en) h2 { font-size: 0.8rem; }
   :lang(en) h3 { font-size: 0.7rem; }
   :lang(en) [data-slot="card-title"] { font-size: 0.75rem; }
+  /* Vietnamese: longer text + diacritics need tighter spacing */
+  :lang(vi) h1, :lang(vi) h2, :lang(vi) h3, :lang(vi) [data-slot="card-title"] {
+    letter-spacing: 0.03em;
+    text-transform: none;
+  }
+  :lang(vi) h1 { font-size: 1.25rem; }
+  :lang(vi) h2 { font-size: 0.95rem; }
+  :lang(vi) h3 { font-size: 0.8125rem; }
 }
 
 /* ═══ CRT SCANLINE OVERLAY ═══ */

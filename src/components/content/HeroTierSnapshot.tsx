@@ -82,7 +82,7 @@ export function HeroTierSnapshot({ heroes }: HeroTierSnapshotProps) {
                     </Badge>
                   )}
                 </div>
-                <span className="text-[9px] text-muted-foreground text-center leading-tight">
+                <span className="text-[9px] text-muted-foreground text-center leading-tight w-full line-clamp-1">
                   {t(`faction.${hero.faction}`)}
                 </span>
               </div>
