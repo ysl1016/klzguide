@@ -142,6 +142,7 @@ function TeamBuilderContent() {
   const locale = useLocale();
   const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
   const localeKey = (locale === 'ko' || locale === 'vi') ? locale : 'en';
+  const loc = (obj: { ko: string; vi: string; en?: string }) => (obj as Record<string, string>)[locale] ?? obj.en ?? obj.ko;
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -844,7 +845,7 @@ function TeamBuilderContent() {
                           </span>
                         </div>
                         <p className="text-xs text-muted-foreground pl-6">
-                          {locale === 'ko' ? syn.description.ko : syn.description.vi}
+                          {loc(syn.description)}
                         </p>
                         {syn.active && syn.heroes.length > 0 && (
                           <div className="flex flex-wrap gap-1 mt-2 pl-6">
@@ -881,7 +882,7 @@ function TeamBuilderContent() {
                         className="flex items-center gap-3 p-2.5 rounded-lg bg-green-500/5 border border-green-500/15"
                       >
                         <span className="text-sm font-medium">
-                          {locale === 'ko' ? pair.hero1Name.ko : pair.hero1Name.vi}
+                          {loc(pair.hero1Name)}
                         </span>
                         <span className="text-green-400 text-xs flex items-center gap-1">
                           {pair.mutual ? (
@@ -897,7 +898,7 @@ function TeamBuilderContent() {
                           )}
                         </span>
                         <span className="text-sm font-medium">
-                          {locale === 'ko' ? pair.hero2Name.ko : pair.hero2Name.vi}
+                          {loc(pair.hero2Name)}
                         </span>
                       </div>
                     ))}
@@ -1079,7 +1080,7 @@ function TeamBuilderContent() {
                       <div key={i} className="flex items-start gap-2 text-sm">
                         <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                         <span className="text-muted-foreground">
-                          {locale === 'ko' ? w.ko : w.vi}
+                          {loc(w)}
                         </span>
                       </div>
                     ))}
@@ -1101,7 +1102,7 @@ function TeamBuilderContent() {
                       <div key={i} className="flex items-start gap-2 text-sm">
                         <Sparkles className="w-4 h-4 text-green-400 shrink-0 mt-0.5" />
                         <span className="text-muted-foreground">
-                          {locale === 'ko' ? r.ko : r.vi}
+                          {loc(r)}
                         </span>
                       </div>
                     ))}

@@ -117,7 +117,7 @@ export default function HeroComparePage() {
   const filteredHeroes = useMemo(() => {
     return allHeroes.filter((h) => {
       if (alreadySelectedIds.has(h.id)) return false;
-      const name = (locale === 'ko' ? h.name.ko : h.name.vi).toLowerCase();
+      const name = ((h.name as Record<string, string>)[locale] ?? h.name.en ?? h.name.ko).toLowerCase();
       const en = h.name.en?.toLowerCase() ?? '';
       const q = searchQuery.toLowerCase();
       if (q && !name.includes(q) && !en.includes(q)) return false;
