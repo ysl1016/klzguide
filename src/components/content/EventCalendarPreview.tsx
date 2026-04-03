@@ -109,10 +109,10 @@ export function EventCalendarPreview({
                     {rotationTimeLeft.hours}h {rotationTimeLeft.minutes}m
                   </div>
                 </div>
-                <h3 className="font-semibold text-lg text-blue-400 mb-1">
+                <h3 className="font-semibold text-base sm:text-lg text-blue-400 mb-1">
                   {todayRotation?.name[locale]}
                 </h3>
-                <p className="text-xs text-muted-foreground line-clamp-2">
+                <p className="text-[11px] sm:text-xs text-muted-foreground line-clamp-2">
                   {todayRotation?.description[locale]}
                 </p>
               </>
@@ -132,10 +132,10 @@ export function EventCalendarPreview({
                 {timeLeft.hours > 0 && `${timeLeft.hours}h `}{timeLeft.minutes}m
               </div>
             </div>
-            <h3 className="font-semibold text-lg text-highlight mb-1">
+            <h3 className="font-semibold text-base sm:text-lg text-highlight mb-1">
               {currentFullPrep?.name[locale]}
             </h3>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-[11px] sm:text-xs text-muted-foreground line-clamp-2">
               {currentFullPrep?.description[locale]}
             </p>
           </CardContent>

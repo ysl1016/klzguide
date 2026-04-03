@@ -46,7 +46,7 @@ export function GuideCard({
       >
         <CardHeader className="pb-3">
           <div className="flex items-start justify-between gap-2">
-            <CardTitle className="text-lg font-semibold group-hover:text-highlight transition-colors">
+            <CardTitle className="text-base sm:text-lg font-semibold group-hover:text-highlight transition-colors">
               {title}
             </CardTitle>
             <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-highlight transition-colors shrink-0" />

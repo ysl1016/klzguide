@@ -56,14 +56,14 @@ export function HeroTierSnapshot({ heroes }: HeroTierSnapshotProps) {
             >
               <div
                 className={cn(
-                  'flex flex-col items-center gap-2 p-4 rounded-sm border transition-all hover:scale-105 hover:shadow-lg w-[120px] sm:w-[130px]',
+                  'flex flex-col items-center gap-1.5 p-3 rounded-sm border transition-all hover:scale-105 hover:shadow-lg w-[105px] sm:w-[120px]',
                   factionColors[hero.faction]
                 )}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-background">
-                  <ClassIcon className="h-6 w-6" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-background">
+                  <ClassIcon className="h-5 w-5" />
                 </div>
-                <span className="font-semibold text-xs text-center leading-tight min-h-[2rem] flex items-center">
+                <span className="font-semibold text-[11px] text-center leading-tight h-[2rem] flex items-center">
                   {hero.name[locale]}
                 </span>
                 <div className="flex items-center gap-1">
@@ -82,7 +82,7 @@ export function HeroTierSnapshot({ heroes }: HeroTierSnapshotProps) {
                     </Badge>
                   )}
                 </div>
-                <span className="text-[10px] text-muted-foreground">
+                <span className="text-[9px] text-muted-foreground text-center leading-tight">
                   {t(`faction.${hero.faction}`)}
                 </span>
               </div>
