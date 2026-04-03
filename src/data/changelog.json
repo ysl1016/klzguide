@@ -1,7 +1,41 @@
 [
   {
-    "date": "2026-04-03",
+    "date": "2026-04-04",
     "isNew": true,
+    "changes": {
+      "ko": [
+        "연맹 대결 6개 테마 순서 및 명칭 수정: 차량개조의 날, 건설의 날, 테크연구의 날, 영웅육성의 날, 전면적 발전의 날, 킬데이",
+        "용어 수정: 인터스테이트→도시교역, 개조 청사진/청사진→개조도면",
+        "텍스트 가독성 향상: muted 텍스트 컬러 밝기 조정 (#7A7A8A → #9A9AB0, WCAG AAA 7.8:1)",
+        "영어 버전 UI 최적화: 제목 폰트 크기 축소, 영웅 카드 균일화, 이벤트 카드 반응형 조정",
+        "베트남어 버전 UI 최적화: 제목 크기 축소, letter-spacing 조정, uppercase 해제",
+        "영어 버전 한국어/베트남어 잔존 수정: 팀 빌더 경고/추천/시너지 영어 번역 추가 (team-analysis.ts 17개소)",
+        "영어 버전 티어 리스트 '현재 메타' 섹션 한국어→영어 수정",
+        "모바일 영웅 티어 카드 크기 최적화: 카드 너비/간격/아이콘 축소, 진영명 오버플로우 방지"
+      ],
+      "vi": [
+        "Sửa thứ tự và tên 6 theme Alliance Duel",
+        "Sửa thuật ngữ: Interstate → Giao dịch thành phố, Blueprint → Bản vẽ cải tạo",
+        "Tăng độ sáng text phụ: #7A7A8A → #9A9AB0 (WCAG AAA)",
+        "Tối ưu UI tiếng Anh: giảm cỡ font tiêu đề, cân bằng card anh hùng",
+        "Tối ưu UI tiếng Việt: giảm cỡ tiêu đề, letter-spacing, bỏ uppercase",
+        "Sửa text KO/VI còn sót ở bản EN: thêm bản dịch EN cho team-analysis (17 chỗ)",
+        "Tối ưu card anh hùng mobile: thu nhỏ chiều rộng/khoảng cách, chống tràn tên phe"
+      ],
+      "en": [
+        "Alliance Duel 6-theme order and names corrected: Vehicle Mod Day, Construction Day, Tech Research Day, Hero Initiative Day, Holistic Growth Day, Kill Day",
+        "Terminology: Interstate → City Trade, Blueprint → Mod Blueprint",
+        "Muted text brightness improved: #7A7A8A → #9A9AB0 (WCAG AAA 7.8:1)",
+        "English UI optimization: reduced heading font sizes, equalized hero cards, responsive event cards",
+        "Vietnamese UI optimization: reduced heading sizes, tighter letter-spacing, removed uppercase",
+        "Fixed Korean/Vietnamese text appearing in English version: added EN translations to team-analysis warnings/recommendations/synergies (17 locations)",
+        "Tier list 'Current Meta' section: Korean text → English text fix",
+        "Mobile hero tier cards: compact width/spacing/icons, faction name overflow prevention"
+      ]
+    }
+  },
+  {
+    "date": "2026-04-03",
     "changes": {
       "ko": [
         "Windows 한글 폰트 수정: Noto Sans KR 웹폰트 추가 (굴림체 폴백 방지)",
