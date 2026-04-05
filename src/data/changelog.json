@@ -5,15 +5,18 @@
     "changes": {
       "ko": [
         "영어 버전 폰트 크기 추가 최적화: 제목 h1~h3 및 카드 타이틀 크기 축소, 모바일 레이아웃 오버플로우 방지",
-        "사이드바 메뉴: 영어 pixel 폰트 제외 — JetBrains Mono로 정상 크기 표시"
+        "사이드바 메뉴: 영어 pixel 폰트 제외 — JetBrains Mono로 정상 크기 표시",
+        "본부(HQ) 업그레이드 비용표: 요구사항 열 모바일 텍스트 잘림 수정 — 전체 텍스트 표시 + 좌우 스크롤"
       ],
       "vi": [
         "Tối ưu thêm cỡ font EN: giảm h1~h3 và card title, chống tràn layout mobile",
-        "Menu sidebar: loại bỏ pixel font cho EN — hiển thị JetBrains Mono kích thước bình thường"
+        "Menu sidebar: loại bỏ pixel font cho EN — hiển thị JetBrains Mono kích thước bình thường",
+        "Bảng chi phí nâng HQ: sửa cắt text cột yêu cầu trên mobile — hiển thị đầy đủ + cuộn ngang"
       ],
       "en": [
         "English heading font further reduced: h1 0.8rem, h2 0.65rem, h3 0.55rem — prevents mobile layout overflow",
-        "Sidebar nav excluded from pixel font — uses JetBrains Mono at normal size for readability"
+        "Sidebar nav excluded from pixel font — uses JetBrains Mono at normal size for readability",
+        "HQ upgrade cost table: fixed requirements column text truncation on mobile — full text with horizontal scroll"
       ]
     }
   },
