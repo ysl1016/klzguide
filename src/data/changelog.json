@@ -1,7 +1,24 @@
 [
   {
-    "date": "2026-04-04",
+    "date": "2026-04-05",
     "isNew": true,
+    "changes": {
+      "ko": [
+        "영어 버전 폰트 크기 추가 최적화: 제목 h1~h3 및 카드 타이틀 크기 축소, 모바일 레이아웃 오버플로우 방지",
+        "사이드바 메뉴: 영어 pixel 폰트 제외 — JetBrains Mono로 정상 크기 표시"
+      ],
+      "vi": [
+        "Tối ưu thêm cỡ font EN: giảm h1~h3 và card title, chống tràn layout mobile",
+        "Menu sidebar: loại bỏ pixel font cho EN — hiển thị JetBrains Mono kích thước bình thường"
+      ],
+      "en": [
+        "English heading font further reduced: h1 0.8rem, h2 0.65rem, h3 0.55rem — prevents mobile layout overflow",
+        "Sidebar nav excluded from pixel font — uses JetBrains Mono at normal size for readability"
+      ]
+    }
+  },
+  {
+    "date": "2026-04-04",
     "changes": {
       "ko": [
         "연맹 대결 6개 테마 순서 및 명칭 수정: 차량개조의 날, 건설의 날, 테크연구의 날, 영웅육성의 날, 전면적 발전의 날, 킬데이",
