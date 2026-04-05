@@ -198,7 +198,7 @@ function HQContent({ locale }: { locale: string }) {
                       <td className="p-2 text-center text-xs">
                         {level.heroCap}
                       </td>
-                      <td className="p-2 text-xs text-muted-foreground max-w-[150px] truncate">
+                      <td className="p-2 text-xs text-muted-foreground whitespace-nowrap">
                         {level.requirements[loc]}
                       </td>
                     </tr>
