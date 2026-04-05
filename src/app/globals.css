@@ -157,11 +157,24 @@
   h1 { font-size: 1.5rem; }
   h2 { font-size: 1.125rem; }
   h3 { font-size: 0.9375rem; }
-  /* Pixel font renders visually larger — reduce for English */
-  :lang(en) h1 { font-size: 1rem; }
-  :lang(en) h2 { font-size: 0.8rem; }
-  :lang(en) h3 { font-size: 0.7rem; }
-  :lang(en) [data-slot="card-title"] { font-size: 0.75rem; }
+  /* Pixel font renders ~1.8x visually larger — aggressively reduce for English */
+  :lang(en) h1 { font-size: 0.8rem; }
+  :lang(en) h2 { font-size: 0.65rem; }
+  :lang(en) h3 { font-size: 0.55rem; }
+  :lang(en) [data-slot="card-title"] { font-size: 0.6rem; }
+  :lang(en) h1, :lang(en) h2, :lang(en) h3, :lang(en) [data-slot="card-title"] {
+    letter-spacing: 0.04em;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  /* Sidebar/mobile nav accordion headers should NOT use pixel font sizing */
+  :lang(en) [data-slot="accordion-item"] h3,
+  :lang(en) [data-slot="accordion-trigger"] {
+    font-family: var(--font-geist-mono), sans-serif;
+    font-size: 0.875rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
   /* Vietnamese: longer text + diacritics need tighter spacing */
   :lang(vi) h1, :lang(vi) h2, :lang(vi) h3, :lang(vi) [data-slot="card-title"] {
     letter-spacing: 0.03em;
