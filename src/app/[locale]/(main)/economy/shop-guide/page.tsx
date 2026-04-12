@@ -2,7 +2,8 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clock, ShoppingCart, Store, Crown, Medal, Timer, Zap, Lightbulb, AlertTriangle, Ban, Check, X } from 'lucide-react';
+import { Clock, ShoppingCart, Store, Crown, Medal, Timer, Zap, Lightbulb, AlertTriangle, Ban, Check, X, Gem, ExternalLink } from 'lucide-react';
+import { Link } from '@/i18n/navigation';
 
 export default async function ShopGuidePage({
   params,
@@ -400,6 +401,42 @@ function ShopGuideContent({ locale }: { locale: string }) {
             ))}
           </div>
         </section>
+
+        {/* Gold Bar Store CTA */}
+        <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-6">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Gem className="h-8 w-8 text-yellow-400 shrink-0" />
+            <div className="flex-1 text-center sm:text-left">
+              <h3 className="text-lg font-bold">
+                {l('더 많은 혜택을 원하시나요?', 'Muốn thêm ưu đãi?', 'Want more rewards?')}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                {l(
+                  '공식 골드바 스토어에서 추가 보너스와 리차지 이벤트 보상을 확인하세요.',
+                  'Kiểm tra bonus thêm và phần thưởng sự kiện Recharge tại Cửa hàng Gold Bar chính thức.',
+                  'Check out bonus rewards and Recharge Event milestones at the official Gold Bar Store.'
+                )}
+              </p>
+            </div>
+            <div className="flex gap-2 shrink-0">
+              <Link
+                href="/economy/gold-bar-store"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 font-medium rounded-lg transition-colors text-sm"
+              >
+                {l('가이드 보기', 'Xem hướng dẫn', 'View Guide')}
+              </Link>
+              <a
+                href="https://store.last-z.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-black font-medium rounded-lg transition-colors text-sm"
+              >
+                {l('스토어', 'Cửa hàng', 'Store')}
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
+          </div>
+        </div>
 
         {/* Tips */}
         <section className="space-y-4">

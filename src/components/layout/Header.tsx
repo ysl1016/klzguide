@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { MobileNav } from './MobileNav';
 import { SearchBar } from './SearchBar';
-import { Home, Search, Shield } from 'lucide-react';
+import { Gem, Home, Search, Shield } from 'lucide-react';
 import { useState } from 'react';
 
 export function Header() {
@@ -49,6 +49,18 @@ export function Header() {
             onClick={() => setIsSearchOpen(!isSearchOpen)}
           >
             <Search className="h-5 w-5" />
+          </Button>
+
+          {/* Gold Bar Store */}
+          <Button variant="ghost" size="icon" asChild>
+            <a
+              href="https://store.last-z.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Gold Bar Store"
+            >
+              <Gem className="h-5 w-5 text-yellow-400" />
+            </a>
           </Button>
 
           {/* Home Button (Desktop + Mobile) */}

@@ -331,6 +331,16 @@ export default function RedeemCodesPage() {
                 href: 'https://www.reddit.com/r/LastZShooterRun/',
               },
               {
+                title: l('공식 골드바 스토어', 'Cửa hàng Gold Bar chính thức', 'Official Gold Bar Store'),
+                desc: l(
+                  '추가 보너스와 함께 골드바 구매',
+                  'Mua Gold Bar với bonus thêm',
+                  'Buy Gold Bars with bonus rewards'
+                ),
+                icon: ExternalLink,
+                href: 'https://store.last-z.com/',
+              },
+              {
                 title: l('공식 리딤 사이트', 'Trang đổi mã chính thức', 'Official Redeem Site'),
                 desc: l(
                   'UID 입력 후 코드 사용',

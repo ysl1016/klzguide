@@ -64,6 +64,7 @@ const searchItems: SearchItem[] = [
   { key: 'svs', href: '/events/svs', parentKey: 'events', icon: Calendar },
   // Economy
   { key: 'shopGuide', href: '/economy/shop-guide', parentKey: 'economy', icon: Coins },
+  { key: 'goldBarStore', href: '/economy/gold-bar-store', parentKey: 'economy', icon: Coins },
   { key: 'farming', href: '/economy/farming', parentKey: 'economy', icon: Coins },
   { key: 'freeDiamonds', href: '/economy/free-diamonds', parentKey: 'economy', icon: Coins },
   { key: 'redeemCodes', href: '/economy/redeem-codes', parentKey: 'economy', icon: Coins },
@@ -106,6 +107,7 @@ const searchKeywords: Record<string, string[]> = {
   farming: ['파밍', '자원', 'farm', 'resource'],
   freeDiamonds: ['무과금', '다이아', 'free', 'diamond', 'F2P'],
   redeemCodes: ['리딤', '코드', 'redeem', 'code', '쿠폰'],
+  goldBarStore: ['골드바', '스토어', '충전', '결제', 'gold bar', 'store', 'recharge', 'top up', 'payment', 'nạp', 'vàng'],
   cpCalculator: ['계산기', 'calculator', 'CP'],
   heroCompare: ['비교', 'compare', '영웅'],
   glossary: ['용어', '사전', 'glossary', 'term'],

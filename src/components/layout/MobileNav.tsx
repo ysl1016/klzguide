@@ -132,6 +132,7 @@ const navItems: NavItem[] = [
     icon: Coins,
     children: [
       { key: 'shopGuide', href: '/economy/shop-guide' },
+      { key: 'goldBarStore', href: '/economy/gold-bar-store' },
       { key: 'farming', href: '/economy/farming' },
       { key: 'freeDiamonds', href: '/economy/free-diamonds' },
       { key: 'redeemCodes', href: '/economy/redeem-codes' },
