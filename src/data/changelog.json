@@ -1,7 +1,36 @@
 [
   {
-    "date": "2026-04-05",
+    "date": "2026-04-12",
     "isNew": true,
+    "changes": {
+      "ko": [
+        "신규 페이지: 골드바 스토어 가이드 — 공식 스토어 이용법, 구매 방법(4단계), 충전 보너스, 리차지 이벤트 마일스톤, 결제 수단, 서드파티 충전 플랫폼 안내",
+        "홈화면 추가 가이드: iOS(Safari) / Android(Chrome) 별 스토어 바로가기 등록 방법 탭 UI",
+        "헤더에 골드바 스토어 바로가기 버튼 추가 (Gem 아이콘, 골드 컬러)",
+        "사이드바·모바일 내비·검색바에 골드바 스토어 메뉴 항목 추가",
+        "리딤 코드 페이지: 외부 링크에 공식 골드바 스토어 카드 추가",
+        "상점 가이드 페이지: 하단에 골드바 스토어 연계 CTA 배너 추가"
+      ],
+      "vi": [
+        "Trang mới: Hướng dẫn Cửa hàng Gold Bar — cách sử dụng, 4 bước mua, bonus nạp, mốc sự kiện Recharge, phương thức thanh toán, nền tảng nạp bên thứ ba",
+        "Hướng dẫn thêm vào màn hình chính: tab iOS (Safari) / Android (Chrome)",
+        "Thêm nút truy cập nhanh Cửa hàng Gold Bar ở header (biểu tượng Gem, màu vàng)",
+        "Thêm mục Cửa hàng Gold Bar vào sidebar, nav mobile và thanh tìm kiếm",
+        "Trang mã đổi thưởng: thêm card Cửa hàng Gold Bar vào liên kết ngoài",
+        "Trang hướng dẫn shop: thêm banner CTA Cửa hàng Gold Bar ở cuối trang"
+      ],
+      "en": [
+        "New page: Gold Bar Store Guide — official store usage, 4-step purchase flow, recharge bonuses, Recharge Event milestones, payment methods, third-party top-up platforms",
+        "Add to Home Screen guide: iOS (Safari) / Android (Chrome) tab UI for store shortcut setup",
+        "Header quick-access button for Gold Bar Store (Gem icon, gold color)",
+        "Added Gold Bar Store menu item to sidebar, mobile nav, and search bar",
+        "Redeem codes page: added official Gold Bar Store card to external links section",
+        "Shop guide page: added Gold Bar Store CTA banner at the bottom"
+      ]
+    }
+  },
+  {
+    "date": "2026-04-05",
     "changes": {
       "ko": [
         "영어 버전 폰트 크기 추가 최적화: 제목 h1~h3 및 카드 타이틀 크기 축소, 모바일 레이아웃 오버플로우 방지",
