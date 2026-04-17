@@ -3,6 +3,10 @@ export { QuickStartCard } from './QuickStartCard';
 export { RedeemCodeCard } from './RedeemCodeCard';
 export { TierList } from './TierList';
 export { VisitorCounter } from './VisitorCounter';
+export {
+  VisitorCounterSection,
+  VisitorCounterSkeleton,
+} from './VisitorCounterSection';
 export { HeroCard } from './HeroCard';
 export { HeroDetail } from './HeroDetail';
 export { SkillCard } from './SkillCard';

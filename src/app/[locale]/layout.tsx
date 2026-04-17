@@ -4,21 +4,33 @@ import { notFound } from 'next/navigation';
 import { Press_Start_2P, JetBrains_Mono, Noto_Sans_KR } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 
+// Press_Start_2P: decorative display font, used only for English h1-h3.
+// Disable preload — most users (ko/vi) never render it.
 const pressStart2P = Press_Start_2P({
   weight: '400',
   variable: '--font-display',
   subsets: ['latin'],
+  display: 'swap',
+  preload: false,
 });
 
+// JetBrains_Mono: primary body font (globals.css `body { @apply font-mono }`).
+// Must preload.
 const jetbrainsMono = JetBrains_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  preload: true,
 });
 
+// Noto_Sans_KR: fallback for Korean glyphs. All four weights are in use
+// (400 body, 500 medium, 700 bold, 800 for h1-h3 per globals.css line 151).
 const notoSansKR = Noto_Sans_KR({
   variable: '--font-ko',
   subsets: ['latin'],
   weight: ['400', '500', '700', '800'],
+  display: 'swap',
+  preload: true,
 });
 
 export function generateStaticParams() {

@@ -1,21 +1,23 @@
+import { Suspense } from 'react';
 import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import {
   GuideCard,
   QuickStartCard,
-  VisitorCounter,
+  VisitorCounterSection,
+  VisitorCounterSkeleton,
   ActiveCodesWidget,
   HeroTierSnapshot,
   EventCalendarPreview,
 } from '@/components/content';
 import { Compass } from 'lucide-react';
-import { getAllHeroes } from '@/lib/heroes';
+import { getSPlusHeroSummaries } from '@/lib/heroes';
 import { getActiveCodes, getLastUpdated } from '@/lib/redeem-codes';
 import { getSixDayRotation, getFullPrepThemes, getRestDay } from '@/lib/events';
-import { getVisitorStats } from '@/lib/visitor-stats';
 
-// Force dynamic rendering — visitor stats must be fetched per request
-export const dynamic = 'force-dynamic';
+// ISR: regenerate at most every 60s. Visitor stats refresh aligns with
+// unstable_cache TTL in getVisitorStats (see src/lib/visitor-stats.ts).
+export const revalidate = 60;
 
 export default async function HomePage({
   params,
@@ -25,18 +27,15 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  // Fetch visitor stats on the server — renders instantly with no client delay
-  const visitorStats = await getVisitorStats();
-
-  return <HomePageContent locale={locale} visitorStats={visitorStats} />;
+  return <HomePageContent locale={locale} />;
 }
 
-function HomePageContent({ locale, visitorStats }: { locale: string; visitorStats: { daily: number; monthly: number; total: number; configured: boolean } }) {
+function HomePageContent({ locale }: { locale: string }) {
   const t = useTranslations('home');
   const tc = useTranslations('common');
   const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale as string] ?? en);
 
-  const heroes = getAllHeroes();
+  const topHeroes = getSPlusHeroSummaries();
   const activeCodes = getActiveCodes();
   const codesLastUpdated = getLastUpdated();
   const sixDayRotation = getSixDayRotation();
@@ -107,8 +106,10 @@ function HomePageContent({ locale, visitorStats }: { locale: string; visitorStat
           </p>
         </section>
 
-        {/* Visitor Counter */}
-        <VisitorCounter locale={locale} initialStats={visitorStats} />
+        {/* Visitor Counter — streamed via Suspense so shell renders immediately */}
+        <Suspense fallback={<VisitorCounterSkeleton />}>
+          <VisitorCounterSection locale={locale} />
+        </Suspense>
 
         {/* Active Redeem Codes + Today's Event - Side by Side */}
         <div className="grid gap-6 lg:grid-cols-2">
@@ -121,7 +122,7 @@ function HomePageContent({ locale, visitorStats }: { locale: string; visitorStat
         </div>
 
         {/* S+ Hero Tier Snapshot */}
-        <HeroTierSnapshot heroes={heroes} />
+        <HeroTierSnapshot heroes={topHeroes} />
 
         {/* Quick Start Section */}
         <section className="space-y-6">

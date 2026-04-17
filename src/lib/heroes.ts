@@ -1,7 +1,18 @@
 import heroesData from '@/data/heroes.json';
-import type { Hero, HeroData } from '@/types/hero';
+import type { Hero, HeroData, HeroSummary } from '@/types/hero';
 
 const data = heroesData as HeroData;
+
+function toSummary(h: Hero): HeroSummary {
+  return {
+    id: h.id,
+    name: h.name,
+    class: h.class,
+    faction: h.faction,
+    tier: h.tier,
+    season: h.season,
+  };
+}
 
 export function getAllHeroes(): Hero[] {
   return data.heroes;
@@ -29,6 +40,10 @@ export function getRecommendedHeroes(): Hero[] {
 
 export function getTopTierHeroes(): Hero[] {
   return data.heroes.filter((h) => h.tier === 'S+' || h.tier === 'S');
+}
+
+export function getSPlusHeroSummaries(): HeroSummary[] {
+  return data.heroes.filter((h) => h.tier === 'S+').map(toSummary);
 }
 
 export function getHeroSynergies(heroId: string): Hero[] {

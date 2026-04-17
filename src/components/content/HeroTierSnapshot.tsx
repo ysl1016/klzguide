@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Shield, Crosshair, Bike, Star, ChevronRight } from 'lucide-react';
-import type { Hero } from '@/types/hero';
+import type { HeroSummary } from '@/types/hero';
 
 const classIcons: Record<string, React.ElementType> = {
   assaulter: Shield,
@@ -20,15 +20,14 @@ const factionColors: Record<string, string> = {
 };
 
 interface HeroTierSnapshotProps {
-  heroes: Hero[];
+  // Expect pre-filtered S+ summaries from the server to keep RSC payload small.
+  heroes: HeroSummary[];
 }
 
-export function HeroTierSnapshot({ heroes }: HeroTierSnapshotProps) {
+export function HeroTierSnapshot({ heroes: topHeroes }: HeroTierSnapshotProps) {
   const locale = useLocale() as 'ko' | 'vi' | 'en';
   const t = useTranslations();
   const l = (ko: string, vi: string, en: string) => ({ ko, vi, en }[locale] ?? en);
-
-  const topHeroes = heroes.filter((h) => h.tier === 'S+');
 
   return (
     <section className="space-y-4">

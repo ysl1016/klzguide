@@ -47,3 +47,14 @@ export interface HeroData {
 export type HeroClass = Hero['class'];
 export type HeroFaction = Hero['faction'];
 export type HeroRole = Hero['role'];
+
+// Lightweight projection — use for lists/cards that only need identity + badges.
+// Keeps RSC payload small when passing data to client components.
+export interface HeroSummary {
+  id: string;
+  name: LocalizedString;
+  class: Hero['class'];
+  faction: Hero['faction'];
+  tier: string;
+  season: string | null;
+}

@@ -1,6 +1,9 @@
+import { unstable_cache } from 'next/cache';
 import { getSupabase, isSupabaseConfigured } from '@/lib/supabase';
 
 const KST_OFFSET = 9 * 60 * 60 * 1000;
+const SUPABASE_TIMEOUT_MS = 5000;
+const CACHE_TTL_SECONDS = 60;
 
 function getKoreaDate(): Date {
   return new Date(Date.now() + KST_OFFSET);
@@ -29,18 +32,37 @@ export interface VisitorStats {
   configured: boolean;
 }
 
-/**
- * Fetch visitor stats directly from Supabase (server-side).
- * Called from server components for instant rendering.
- */
-export async function getVisitorStats(): Promise<VisitorStats> {
+const FALLBACK_CONFIGURED: VisitorStats = {
+  daily: 0,
+  monthly: 0,
+  total: 0,
+  configured: true,
+};
+
+const FALLBACK_UNCONFIGURED: VisitorStats = {
+  daily: 0,
+  monthly: 0,
+  total: 0,
+  configured: false,
+};
+
+// Race promise against timeout; on timeout resolve with sentinel
+function withTimeout<T>(p: Promise<T>, ms: number): Promise<T | typeof TIMEOUT> {
+  return Promise.race([
+    p,
+    new Promise<typeof TIMEOUT>((resolve) => setTimeout(() => resolve(TIMEOUT), ms)),
+  ]);
+}
+const TIMEOUT = Symbol('timeout');
+
+async function fetchVisitorStatsRaw(): Promise<VisitorStats> {
   if (!isSupabaseConfigured()) {
-    return { daily: 0, monthly: 0, total: 0, configured: false };
+    return FALLBACK_UNCONFIGURED;
   }
 
   const supabase = getSupabase();
   if (!supabase) {
-    return { daily: 0, monthly: 0, total: 0, configured: false };
+    return FALLBACK_UNCONFIGURED;
   }
 
   try {
@@ -48,7 +70,7 @@ export async function getVisitorStats(): Promise<VisitorStats> {
     const currentMonth = getCurrentMonth();
     const lastDayOfMonth = getLastDayOfMonth();
 
-    const [dailyResult, monthlyResult, totalResult] = await Promise.all([
+    const queries = Promise.all([
       supabase
         .from('visitor_stats')
         .select('count')
@@ -64,14 +86,30 @@ export async function getVisitorStats(): Promise<VisitorStats> {
         .select('count'),
     ]);
 
+    const result = await withTimeout(queries, SUPABASE_TIMEOUT_MS);
+    if (result === TIMEOUT) {
+      console.error('Visitor stats: Supabase query timed out');
+      return FALLBACK_CONFIGURED;
+    }
+
+    const [dailyResult, monthlyResult, totalResult] = result;
+
     return {
       daily: dailyResult.data?.count || 0,
-      monthly: monthlyResult.data?.reduce((sum, row) => sum + (row.count || 0), 0) || 0,
-      total: totalResult.data?.reduce((sum, row) => sum + (row.count || 0), 0) || 0,
+      monthly:
+        monthlyResult.data?.reduce((sum, row) => sum + (row.count || 0), 0) || 0,
+      total:
+        totalResult.data?.reduce((sum, row) => sum + (row.count || 0), 0) || 0,
       configured: true,
     };
   } catch (error) {
     console.error('Error fetching visitor stats:', error);
-    return { daily: 0, monthly: 0, total: 0, configured: true };
+    return FALLBACK_CONFIGURED;
   }
 }
+
+export const getVisitorStats = unstable_cache(
+  fetchVisitorStatsRaw,
+  ['visitor-stats'],
+  { revalidate: CACHE_TTL_SECONDS, tags: ['visitor-stats'] }
+);
