@@ -4,37 +4,22 @@
     "isNew": true,
     "changes": {
       "ko": [
-        "성능 개선: 홈페이지를 ISR(60초 재검증) 방식으로 전환 — force-dynamic 제거로 초기 응답 시간(TTFB) 대폭 단축",
-        "성능 개선: 방문자 카운터를 Suspense 스트리밍으로 분리 — 페이지 본문 즉시 렌더, Supabase 쿼리 5초 타임아웃 + 자동 fallback으로 장애 내성 강화",
-        "폰트 최적화: 모든 웹폰트에 display:swap 적용 — 폰트 로딩 중에도 텍스트 즉시 표시(FOIT 제거)",
-        "폰트 최적화: 영어 전용 장식 폰트(Press_Start_2P) preload 비활성화 — 한국어/베트남어 사용자 네트워크 라운드트립 1회 절약",
-        "UX 개선: 페이지 전환 스켈레톤 UI 6종 추가 (공용 fallback, 영웅 리스트/티어표, 팀 빌더, 영웅 비교, CP 계산기) — 네비게이션 시 빈 화면 제거",
-        "번들 최적화: HeroSummary 경량 타입 도입 — 홈 페이지 RSC 페이로드에서 불필요한 영웅 필드(스킬/설명/획득방법 등) 제거",
-        "번들 최적화: lucide-react 및 Radix UI 패키지에 optimizePackageImports 적용 — 사용하지 않는 아이콘/컴포넌트 tree-shaking 강화",
-        "의존성 정리: 미사용 fuse.js 패키지 제거",
-        "빌드 설정: compress 활성화, X-Powered-By 헤더 제거"
+        "홈페이지 초기 로딩 속도 개선",
+        "페이지 이동 시 로딩 스켈레톤 추가 — 빈 화면 제거",
+        "폰트 렌더링 최적화로 텍스트 즉시 표시",
+        "방문자 카운터 안정성 강화 (네트워크 지연 시 자동 복구)"
       ],
       "vi": [
-        "Tối ưu hiệu năng: Chuyển trang chủ sang ISR (xác thực lại mỗi 60s) — gỡ bỏ force-dynamic, giảm đáng kể thời gian phản hồi (TTFB)",
-        "Tối ưu hiệu năng: Tách bộ đếm khách truy cập thành Suspense streaming — thân trang render ngay, fallback tự động khi Supabase timeout (5s)",
-        "Tối ưu font: Áp dụng display:swap cho tất cả webfont — chữ hiển thị ngay trong khi font đang tải (loại bỏ FOIT)",
-        "Tối ưu font: Vô hiệu hóa preload cho font trang trí Press_Start_2P (chỉ dùng cho EN) — tiết kiệm 1 lần round-trip cho người dùng KO/VI",
-        "UX: Thêm 6 skeleton UI cho chuyển trang (fallback chung, danh sách/bảng xếp hạng anh hùng, team builder, so sánh anh hùng, máy tính CP) — không còn màn hình trắng khi điều hướng",
-        "Tối ưu bundle: Thêm kiểu HeroSummary thu gọn — loại bỏ trường không cần thiết (kỹ năng, mô tả, cách nhận) khỏi payload RSC của trang chủ",
-        "Tối ưu bundle: Áp dụng optimizePackageImports cho lucide-react và Radix UI — tree-shaking mạnh hơn cho icon/component không dùng",
-        "Dọn dẹp dependency: Gỡ package fuse.js không sử dụng",
-        "Cấu hình build: Bật compress, loại bỏ header X-Powered-By"
+        "Cải thiện tốc độ tải trang chủ",
+        "Thêm skeleton khi chuyển trang — loại bỏ màn hình trắng",
+        "Tối ưu render font — chữ hiển thị ngay lập tức",
+        "Tăng độ ổn định bộ đếm khách truy cập (tự động phục hồi khi mạng chậm)"
       ],
       "en": [
-        "Performance: Homepage switched to ISR (60s revalidation) — removed force-dynamic, significantly cut initial response time (TTFB)",
-        "Performance: Visitor counter moved to a Suspense-streamed boundary — page body renders immediately; Supabase calls have a 5s timeout + auto-fallback for resilience",
-        "Font: Enabled display:swap for all webfonts — text appears instantly while fonts load (eliminates FOIT)",
-        "Font: Disabled preload for Press_Start_2P (English-only decorative font) — saves one network round-trip for KO/VI users",
-        "UX: Added 6 loading skeletons (global fallback, heroes list/tier-list, team builder, hero compare, CP calculator) — no more blank screens during navigation",
-        "Bundle: Introduced HeroSummary lightweight projection — removes unused hero fields (skills, descriptions, obtain method) from the homepage RSC payload",
-        "Bundle: Enabled optimizePackageImports for lucide-react and Radix UI — stronger tree-shaking of unused icons/components",
-        "Dependencies: Removed unused fuse.js package",
-        "Build config: Enabled compression, dropped X-Powered-By header"
+        "Faster homepage load",
+        "Added loading skeletons for page navigation — no more blank screens",
+        "Optimized font rendering — text appears instantly",
+        "Improved visitor counter resilience (auto-recover on network delay)"
       ]
     }
   },
