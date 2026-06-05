@@ -154,7 +154,18 @@
       "expiry": null,
       "isNew": false,
       "isActive": true
+    },
+    {
+      "code": "THANKU250KCOM",
+      "rewards": {
+        "ko": "각종 보상",
+        "vi": "Phần thưởng đa dạng",
+        "en": "Various Rewards"
+      },
+      "expiry": null,
+      "isNew": true,
+      "isActive": true
     }
   ],
-  "lastUpdated": "2026-06-04"
+  "lastUpdated": "2026-06-05"
 }
