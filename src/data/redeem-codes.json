@@ -165,7 +165,18 @@
       "expiry": null,
       "isNew": false,
       "isActive": true
+    },
+    {
+      "code": "F0F1F5",
+      "rewards": {
+        "ko": "각종 보상",
+        "vi": "Phần thưởng đa dạng",
+        "en": "Various Rewards"
+      },
+      "expiry": null,
+      "isNew": true,
+      "isActive": true
     }
   ],
-  "lastUpdated": "2026-06-11"
+  "lastUpdated": "2026-06-12"
 }
