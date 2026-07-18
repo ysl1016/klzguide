@@ -10,7 +10,7 @@
       "expiry": "2026-03-31",
       "limitType": "both",
       "isNew": false,
-      "isActive": true
+      "isActive": false
     },
     {
       "code": "CELEBRATE220KTY",
@@ -94,7 +94,7 @@
       "expiry": "2026-03-31",
       "limitType": "both",
       "isNew": false,
-      "isActive": true
+      "isActive": false
     },
     {
       "code": "NEWWEEK",
@@ -189,5 +189,5 @@
       "isActive": true
     }
   ],
-  "lastUpdated": "2026-07-17"
+  "lastUpdated": "2026-07-18"
 }
