@@ -153,7 +153,7 @@
       },
       "expiry": null,
       "isNew": false,
-      "isActive": true
+      "isActive": false
     },
     {
       "code": "THANKU250KCOM",
@@ -189,5 +189,5 @@
       "isActive": true
     }
   ],
-  "lastUpdated": "2026-07-21"
+  "lastUpdated": "2026-07-22"
 }
