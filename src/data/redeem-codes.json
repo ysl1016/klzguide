@@ -22,7 +22,7 @@
       "expiry": null,
       "limitType": "quantity",
       "isNew": false,
-      "isActive": true
+      "isActive": false
     },
     {
       "code": "LZDCA180K",
@@ -34,7 +34,7 @@
       "expiry": null,
       "limitType": "quantity",
       "isNew": false,
-      "isActive": true
+      "isActive": false
     },
     {
       "code": "LZDC150K",
@@ -186,8 +186,8 @@
       },
       "expiry": null,
       "isNew": false,
-      "isActive": true
+      "isActive": false
     }
   ],
-  "lastUpdated": "2026-09-13"
+  "lastUpdated": "2026-09-14"
 }
